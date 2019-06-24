@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<!-- <head> from "layouts/partials/head.html"-->
+	{{ partial "head.html" }}
+
+	<body>
+
+		<main>
+
+			<!-- <nav> from "layouts/partials/nav.html"-->
+			{{ partial "nav.html" . }}
+
+			<!-- <header> from "layouts/partials/header.html" -->
+			{{ partial "header.html" . }}
+
+			// Edit layout AND content below into <code>"layouts/index.html"</code>.</p>
+			<article>
+	
+				<form>
+					<input type="text" name="" />
+					<input type="submit" value="Tester votre site" />
+				</form>
+
+			</article>
+
+			<!-- <footer> from "layouts/partials/footer.html" -->
+			{{ partial "footer.html" }}
+
+		</main>
+
+	</body>
+
+</html>
