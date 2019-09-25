@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}ecoindex_title{% endtrans %}{% endblock %}
+
+{% block body %}
+    <section>
+        <h1>{% trans %}ecoindex_enter_url{% endtrans %} :</h1>
+        <input type="url" class="themeBorder" placeholder="https://my-website.me" />
+        <button class="themeBorder">{% trans %}analyse{% endtrans %}</button>
+    </section>
+    <section>
+        <aside>
+            <h2>Optimiser les images bitmap</h2>
+            <p>
+                Les images bitmap représentent souvent la majorité des octets téléchargés, juste avant les librairies CSS et Javascript. Leur optimisation est donc cruciale pour réduire la bande passante consommée. La première étape consiste à choisir le bon format entre bitmap (JPEG, PNG, GIF, etc.) et vectorielle (SVG).
+                Les images bitmap / matricielles doivent être réservées essentiellement aux photos et aux éléments de l'interface qui ne peuvent pas être pris en charge par des icônes ou des styles CSS. Le choix du format bitmap dépend ensuite des caractéristiques de l'image : noir et blanc ou couleur, palette de couleurs, besoin de transparence, etc. Parmi ces caractéristiques, le fait de pouvoir dégrader l'image définitivement (lossy) oriente plutôt vers les formats JPEG et Webp (Google) tandis qu'un besoin de transparence et / ou l'impossibilité de dégrader l'image (lossless) orientera plutôt vers GIF ou PNG.
+                Des outils tels que pngcrush, ImageMagick ou jpegtran vous aideront à réduire au maximum de poids des images matricielles.
+            </p>
+        </aside>
+    </section>
+{% endblock %}

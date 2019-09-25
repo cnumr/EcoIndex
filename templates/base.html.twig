@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|default('fr') }}">
+    <head>
+        <meta charset="UTF-8">
+        {% if app.request.locale|default('fr') != 'fr' %}
+            <link rel="alternate" hreflang="fr" href="https://ecoindex.docroms.com" />
+        {% endif %}
+        {% if app.request.locale|default('fr') != 'en' %}
+            <link rel="alternate" hreflang="en" href="https://ecoindex.docroms.com/en" />
+        {% endif %}
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <style>
+            html{height: 100%}
+            body{margin:0;font-family:Arial,Helvetica,sans-serif;background: #333;height: 100%}
+            nav{padding: 20px;
+                background: #565656;
+                color: #f6f6f6;
+                font-size: 22px;}
+            section{
+                font-size: 17px;
+                margin: auto;
+                max-width: 1024px;
+                text-align: center;
+                min-height: 25%;
+            }
+            a{color: #f6f6f6; text-decoration: none; padding: 10px}
+            button{
+                width: 150px;
+                padding: 10px;
+                background: #6E9A1D;
+                color: #FFF;
+                font-size: 20px;
+            }
+            input{
+                padding: 10px;
+                text-align: center;
+                font-size: 20px;
+                width: 300px;
+            }
+            aside{
+                border: 1px solid #FFF;
+                color: #FFF;
+                font-size: 14px;
+                max-width: 600px;
+                margin: auto;
+                padding: 10px;
+                text-align: justify;
+            }
+            h1{color:#FFF}
+            .themeBorder{border: 1px solid #6E9A1D}
+        </style>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </head>
+    <body>
+        <nav>
+            <span><a href="{{ url('home') }}">EcoIndex v3</a></span>
+            <span><a href="{{ url('what_is_it') }}">{% trans %}ecoindex_what_it_is{% endtrans %}</a></span>
+            <span><a href="{{ url('search') }}">{% trans %}ecoindex_last_search{% endtrans %}</a></span>
+            <span><a href="{{ url('about') }}">{% trans %}ecoindex_about{% endtrans %}</a></span>
+        </nav>
+        {% block body %}{% endblock %}
+    </body>
+</html>

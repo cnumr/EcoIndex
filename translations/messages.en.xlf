@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="ecoindex_title">
+                <source>ecoindex_title</source>
+                <target>EcoIndex | Audit your website</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_what_it_is">
+                <source>ecoindex_what_it_is</source>
+                <target>What is EcoIndex ?</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_last_search">
+                <source>ecoindex_last_search</source>
+                <target>Last search</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_about">
+                <source>ecoindex_about</source>
+                <target>About</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_enter_url">
+                <source>ecoindex_enter_url</source>
+                <target>Enter the URL of the site to analyze</target>
+            </trans-unit>
+            <trans-unit id="analyse">
+                <source>analyse</source>
+                <target>Analyse</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
