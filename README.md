@@ -1,2 +1,2 @@
 # ecoindex
-Site Web su site www.ecoindex.fr
+ www.ecoindex.fr
