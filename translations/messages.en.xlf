@@ -4,7 +4,7 @@
         <body>
             <trans-unit id="ecoindex_title">
                 <source>ecoindex_title</source>
-                <target>EcoIndex | auditionnez vore site web</target>
+                <target>EcoIndex | Audit your website</target>
             </trans-unit>
         </body>
     </file>

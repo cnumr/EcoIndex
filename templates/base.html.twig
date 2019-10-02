@@ -4,9 +4,44 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <style>
-            body{margin:0}
-            nav{padding:10px;background:#565656;color:#f6f6f6}
+            html{height: 100%}
+            body{margin:0;font-family:Arial,Helvetica,sans-serif;background: #333;height: 100%}
+            nav{padding: 20px;
+                background: #565656;
+                color: #f6f6f6;
+                font-size: 22px;}
+            section{
+                font-size: 17px;
+                margin: auto;
+                max-width: 1024px;
+                text-align: center;
+                min-height: 25%;
+            }
             a{color: #f6f6f6; text-decoration: none; padding: 10px}
+            button{
+                width: 150px;
+                padding: 10px;
+                background: #6E9A1D;
+                color: #FFF;
+                font-size: 20px;
+            }
+            input{
+                padding: 10px;
+                text-align: center;
+                font-size: 20px;
+                width: 300px;
+            }
+            aside{
+                border: 1px solid #FFF;
+                color: #FFF;
+                font-size: 14px;
+                max-width: 600px;
+                margin: auto;
+                padding: 10px;
+                text-align: justify;
+            }
+            h1{color:#FFF}
+            .themeBorder{border: 1px solid #6E9A1D}
         </style>
         {% block stylesheets %}{% endblock %}
         {% block javascripts %}{% endblock %}
