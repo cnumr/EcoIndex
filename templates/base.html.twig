@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale|default('fr') }}">
     <head>
         <meta charset="UTF-8">
+        {% if app.request.locale|default('fr') != 'fr' %}
+            <link rel="alternate" hreflang="fr" href="https://ecoindex.docroms.com" />
+        {% endif %}
+        {% if app.request.locale|default('fr') != 'en' %}
+            <link rel="alternate" hreflang="en" href="https://ecoindex.docroms.com/en" />
+        {% endif %}
         <title>{% block title %}Welcome!{% endblock %}</title>
         <style>
             html{height: 100%}
