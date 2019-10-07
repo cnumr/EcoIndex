@@ -4,7 +4,27 @@
         <body>
             <trans-unit id="ecoindex_title">
                 <source>ecoindex_title</source>
-                <target>EcoIndex | WeSite Audit</target>
+                <target>EcoIndex | Audit de site web</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_what_it_is">
+                <source>ecoindex_what_it_is</source>
+                <target>Qu'est-ce qu'EcoIndex ?</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_last_search">
+                <source>ecoindex_last_search</source>
+                <target>Dernières recherches</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_about">
+                <source>ecoindex_about</source>
+                <target>A propos</target>
+            </trans-unit>
+            <trans-unit id="ecoindex_enter_url">
+                <source>ecoindex_enter_url</source>
+                <target>Saisissez L'URL du site à analyser</target>
+            </trans-unit>
+            <trans-unit id="analyse">
+                <source>analyse</source>
+                <target>Analyser</target>
             </trans-unit>
         </body>
     </file>

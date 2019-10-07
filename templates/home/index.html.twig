@@ -3,18 +3,10 @@
 {% block title %}{% trans %}ecoindex_title{% endtrans %}{% endblock %}
 
 {% block body %}
-    <nav>
-        <span><a href="#">EcoIndex v3</a></span>
-        <span><a href="">Qu'est-ce qu'EcoIndex ?</a></span>
-        <span><a href="">Dernières Recherches</a></span>
-        <span><a href="">A propos</a></span>
-    </nav>
     <section>
-        <h1>Saisissez L'URL du site à analyser:</h1>
-        <input type="url" class="themeBorder" placeholder="https://votreSite.tld" />
-        <button class="themeBorder">
-            Analyser
-        </button>
+        <h1>{% trans %}ecoindex_enter_url{% endtrans %} :</h1>
+        <input type="url" class="themeBorder" placeholder="https://my-website.me" />
+        <button class="themeBorder">{% trans %}analyse{% endtrans %}</button>
     </section>
     <section>
         <aside>

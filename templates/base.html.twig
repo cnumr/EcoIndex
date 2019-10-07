@@ -53,6 +53,12 @@
         {% block javascripts %}{% endblock %}
     </head>
     <body>
+        <nav>
+            <span><a href="{{ url('home') }}">EcoIndex v3</a></span>
+            <span><a href="{{ url('what_is_it') }}">{% trans %}ecoindex_what_it_is{% endtrans %}</a></span>
+            <span><a href="{{ url('search') }}">{% trans %}ecoindex_last_search{% endtrans %}</a></span>
+            <span><a href="{{ url('about') }}">{% trans %}ecoindex_about{% endtrans %}</a></span>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>
