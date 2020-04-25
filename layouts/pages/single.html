@@ -14,11 +14,16 @@
 			<!-- <header> from "layouts/partials/header.html" -->
 			{{ partial "header.html" . }}
 
-			<!-- From "content/main/...md" -->
+			<!-- From "content/pages/...md" -->
 			<p>// The content starts below. Edit it in <code>"content/{{ .File }}"</code>.<br/>
-			// You can also edit the corresponding layout into <code>"layouts/main/single.html"</code>.</p>
-			<h1>{{ .Title }}</h1>
-			{{ .Content }}
+			// You can also edit the corresponding layout into <code>"layouts/pages/single.html"</code>.</p>
+
+			<article>
+
+				<h1>{{ .Title }}</h1>
+				{{ .Content }}
+			
+			</article>
 
 			<!-- <footer> from "layouts/partials/footer.html" -->
 			{{ partial "footer.html" }}

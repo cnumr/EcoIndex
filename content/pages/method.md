@@ -1,5 +1,5 @@
 ---
-title: "Method"
+title: "Méthode"
 date: 2020-04-25T10:56:09+02:00
 draft: false
 ---

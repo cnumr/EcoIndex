@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Mentions</title>
+      <title>Mentions légales</title>
       <link>/pages/mentions/</link>
       <pubDate>Sat, 25 Apr 2020 10:57:19 +0200</pubDate>
       
@@ -22,7 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     </item>
     
     <item>
-      <title>Method</title>
+      <title>Méthode</title>
       <link>/pages/method/</link>
       <pubDate>Sat, 25 Apr 2020 10:56:09 +0200</pubDate>
       
@@ -32,7 +32,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     </item>
     
     <item>
-      <title>About</title>
+      <title>A propos</title>
       <link>/pages/about/</link>
       <pubDate>Sat, 25 Apr 2020 10:55:53 +0200</pubDate>
       

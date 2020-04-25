@@ -1,0 +1,21 @@
+body {
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+main {
+	padding: 10px
+}
+nav, header, article, footer {
+	padding: 10px;
+	border: solid 1px;
+	margin: 10px 0;
+	background-color: whitesmoke;
+}
+
+
+code {
+	background-color: dimgray;
+	color: white;
+	padding: 2px;
+}

@@ -12,14 +12,17 @@
 			{{ partial "nav.html" . }}
 
 			<!-- <header> from "layouts/partials/header.html" -->
-			{{ partial "header.html" }}
+			{{ partial "header.html" . }}
 
-			// Edit layout AND content into <code>"layouts/index.html"</code>.</p>
-			<h1>{{ .Title }}</h1>
-			<form>
-				<input type="text" name="" />
-				<input type="submit" value="Tester votre site" />
-			</form>
+			// Edit layout AND content below into <code>"layouts/index.html"</code>.</p>
+			<article>
+	
+				<form>
+					<input type="text" name="" />
+					<input type="submit" value="Tester votre site" />
+				</form>
+
+			</article>
 
 			<!-- <footer> from "layouts/partials/footer.html" -->
 			{{ partial "footer.html" }}
