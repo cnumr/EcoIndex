@@ -1,0 +1,11 @@
+<nav>
+
+	<a href="{{ .Site.Home.Permalink }}">Accueil</a>
+
+	{{ range .Site.RegularPages }}
+
+		<a href="{{.Permalink}}">{{.Title}}</a>
+
+	{{ end }}
+
+</nav>	
