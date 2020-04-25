@@ -14,11 +14,12 @@
 			<!-- <header> from "layouts/partials/header.html" -->
 			{{ partial "header.html" }}
 
-			<!-- From "content/main/...md" -->
-			<p>// The content starts below. Edit it in <code>"content/{{ .File }}"</code>.<br/>
-			// You can also edit the corresponding layout into <code>"layouts/main/single.html"</code>.</p>
+			// Edit layout AND content into <code>"layouts/index.html"</code>.</p>
 			<h1>{{ .Title }}</h1>
-			{{ .Content }}
+			<form>
+				<input type="text" name="" />
+				<input type="submit" value="Tester votre site" />
+			</form>
 
 			<!-- <footer> from "layouts/partials/footer.html" -->
 			{{ partial "footer.html" }}
