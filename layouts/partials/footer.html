@@ -1,3 +1,11 @@
 <footer>
-	<p>Développé par <a href="http://www.greenit.fr/">greenit.fr</a></p>
+	<p>{{ i18n "developper" }} <a href="http://www.greenit.fr/">greenit.fr</a></p>
+
+	<ul>
+		{{ range $.Site.Home.AllTranslations }}
+		<li>
+			<a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+		</li>
+		{{ end }}
+	</ul>
 </footer>

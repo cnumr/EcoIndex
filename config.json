@@ -1,8 +1,17 @@
 {
 
 	"baseURL": "/",
-	"languageCode":"fr-fr",
 	"title": "Ecoindex",
-	"relativeURLs": "true"
+
+	"languages": {
+		"en": {
+			"languageName": "English",
+			"weight": 2
+		},
+		"fr": {
+			"languageName": "Français",
+			"weight": 1
+		}
+	}
 
 }

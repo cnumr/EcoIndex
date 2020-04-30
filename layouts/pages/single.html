@@ -10,11 +10,6 @@
 
 		<main>
 
-
-			<!-- From "content/pages/...md" -->
-			<p>// The content starts below. Edit it in <code>"content/{{ .File }}"</code>.<br/>
-			// You can also edit the corresponding layout into <code>"layouts/pages/single.html"</code>.</p>
-
 			<article>
 
 				<h1>{{ .Title }}</h1>
@@ -25,7 +20,7 @@
 		</main>
 
 		<!-- <footer> from "layouts/partials/footer.html" -->
-		{{ partial "footer.html" }}
+		{{ partial "footer.html" . }}
 
 	</body>
 
