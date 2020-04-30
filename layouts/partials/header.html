@@ -1,5 +1,11 @@
 <header>
-	<p>I'm a <strong>header</strong>.<br/>
-	Edit me in <code>"layouts/partials/header.html"</code>.</p>
-	<h1>{{ .Site.Title }}</h1>
+	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/logo.png" alt="EcoIndex.fr" /></a></div>
+	<ul>
+		<li><a href="{{ .Site.Home.Permalink }}">Testez votre site!</a></li>
+		{{ range .Site.RegularPages }}
+
+			<li><a href="{{.Permalink}}">{{.Title}}</a></li>
+
+		{{ end }}
+	</ul>
 </header>

@@ -5,14 +5,11 @@
 	{{ partial "head.html" }}
 
 	<body>
+		<!-- <header> from "layouts/partials/header.html" -->
+		{{ partial "header.html" . }}
 
 		<main>
 
-			<!-- <nav> from "layouts/partials/nav.html"-->
-			{{ partial "nav.html" . }}
-
-			<!-- <header> from "layouts/partials/header.html" -->
-			{{ partial "header.html" . }}
 
 			<!-- From "content/pages/...md" -->
 			<p>// The content starts below. Edit it in <code>"content/{{ .File }}"</code>.<br/>
@@ -25,10 +22,10 @@
 			
 			</article>
 
-			<!-- <footer> from "layouts/partials/footer.html" -->
-			{{ partial "footer.html" }}
-
 		</main>
+
+		<!-- <footer> from "layouts/partials/footer.html" -->
+		{{ partial "footer.html" }}
 
 	</body>
 
