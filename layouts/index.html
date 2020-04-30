@@ -6,13 +6,11 @@
 
 	<body>
 
+		<!-- <header> from "layouts/partials/header.html" -->
+		{{ partial "header.html" . }}
+
 		<main>
 
-			<!-- <nav> from "layouts/partials/nav.html"-->
-			{{ partial "nav.html" . }}
-
-			<!-- <header> from "layouts/partials/header.html" -->
-			{{ partial "header.html" . }}
 
 			// Edit layout AND content below into <code>"layouts/index.html"</code>.</p>
 			<article>
@@ -24,11 +22,11 @@
 
 			</article>
 
-			<!-- <footer> from "layouts/partials/footer.html" -->
-			{{ partial "footer.html" }}
-
 		</main>
 
+
+		<!-- <footer> from "layouts/partials/footer.html" -->
+		{{ partial "footer.html" }}
 	</body>
 
 </html>
