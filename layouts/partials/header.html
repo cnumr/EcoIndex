@@ -1,11 +1,12 @@
 <header>
 	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/logo.png" alt="EcoIndex.fr" /></a></div>
 	<ul>
-		<li><a href="{{ .Site.Home.Permalink }}">Testez votre site!</a></li>
+		<li><a href="{{ .Site.Home.Permalink }}">{{ i18n "home" }}</a></li>
 		{{ range .Site.RegularPages }}
 
 			<li><a href="{{.Permalink}}">{{.Title}}</a></li>
 
 		{{ end }}
+
 	</ul>
 </header>

@@ -11,13 +11,14 @@
 
 		<main>
 
+			<h1>{{ i18n "analyse-title" }}</h1>
+			<p>{{ i18n "analyse-description" }}</p>
 
-			// Edit layout AND content below into <code>"layouts/index.html"</code>.</p>
 			<article>
 	
-				<form>
-					<input type="text" name="" />
-					<input type="submit" value="Tester votre site" />
+				<form action="/" method="post">
+					<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
+					<input type="submit" value="{{ i18n "analyse-cta" }}" />
 				</form>
 
 			</article>
@@ -26,7 +27,7 @@
 
 
 		<!-- <footer> from "layouts/partials/footer.html" -->
-		{{ partial "footer.html" }}
+		{{ partial "footer.html" . }}
 	</body>
 
 </html>
