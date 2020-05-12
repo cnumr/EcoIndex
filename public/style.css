@@ -1,24 +1,63 @@
 body {
 	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Raleway', sans-serif;
-}
-main {
-	padding: 10px
-}
-
-header {
 	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-size: 14px;
 	background-color: #333333;
 }
 
+h1, h2, h3, h4 {
+	font-family: serif;
+}
 
-nav, article, footer {
-	background-color: #333;;
-	padding: 10px;
-	border: solid 1px;
-	margin: 10px 0;
-	background-color: whitesmoke;
+a { color: #70d628}
+a:visited { color: #6E9A1D}
+
+header, footer {
+	margin: 0;
+	color: white;
+	padding: 0.25em;
+}
+
+header a, header a:visited {
+	color: white;
+}
+
+header .logo {
+	float: left;
+}
+
+header ul {
+	list-style: none;
+	display: flex;
+}
+
+header li+li {
+	border-left: 1px solid white;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+header li a {
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 0.25em;
+}
+
+header li a:hover {
+	background-color: #6E9A1D;
+}
+
+footer {
+	padding: 1em;
+}
+
+main {
+	padding: 1em;
+	background-color: white;
+	min-height: 30em;
 }
 
 
@@ -26,4 +65,32 @@ code {
 	background-color: dimgray;
 	color: white;
 	padding: 2px;
+}
+
+
+::placeholder {
+	color: #6E9A1D;
+}
+
+
+input {
+	background-color: white;
+	border: 1px solid #6E9A1D;
+	color: #6E9A1D;
+	padding: 1em 2em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: larger;
+}
+
+input[type="submit"] {
+	background-color: #6E9A1D;
+	border: none;
+	color: white;
+	padding: 1em 2em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: larger;
 }

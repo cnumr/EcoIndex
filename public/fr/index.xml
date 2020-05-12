@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ecoindex</title>
-    <link>/</link>
+    <link>/fr/</link>
     <description>Recent content on Ecoindex</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 25 Apr 2020 10:57:19 +0200</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/fr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Legal</title>
-      <link>/pages/mentions/</link>
+      <title>Mentions légales</title>
+      <link>/fr/pages/mentions/</link>
       <pubDate>Sat, 25 Apr 2020 10:57:19 +0200</pubDate>
       
-      <guid>/pages/mentions/</guid>
-      <description>Thi is the legal page in english.
+      <guid>/fr/pages/mentions/</guid>
+      <description>Ceci est la page &amp;ldquo;Mentions légales&amp;rdquo; en français.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
-      <title>Method</title>
-      <link>/pages/method/</link>
+      <title>Méthode</title>
+      <link>/fr/pages/method/</link>
       <pubDate>Sat, 25 Apr 2020 10:56:09 +0200</pubDate>
       
-      <guid>/pages/method/</guid>
-      <description>This is the method page in english.
+      <guid>/fr/pages/method/</guid>
+      <description>Ceci est la page &amp;ldquo;Méthode&amp;rdquo; en français.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
-      <title>About</title>
-      <link>/pages/about/</link>
+      <title>A propos</title>
+      <link>/fr/pages/about/</link>
       <pubDate>Sat, 25 Apr 2020 10:55:53 +0200</pubDate>
       
-      <guid>/pages/about/</guid>
-      <description>This is the about page in english.
+      <guid>/fr/pages/about/</guid>
+      <description>Cece est la page &amp;ldquo;A propos&amp;rdquo; en français.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
