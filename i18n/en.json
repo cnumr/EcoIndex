@@ -1,0 +1,17 @@
+{
+  "home": {
+    "other": "Home"
+  },
+  "developper": {
+    "other": "Built by "
+  },
+  "analyse-cta": {
+    "other": "Test your website!"
+  },
+  "analyse-title": {
+    "other": "Test your website ... or another one !"
+  },
+  "analyse-description": {
+    "other": "Put the website url in the field below."
+  }
+}

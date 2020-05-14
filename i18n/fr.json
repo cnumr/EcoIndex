@@ -1,0 +1,17 @@
+{
+  "home": {
+    "other": "Testez votre site!"
+  },
+  "developper": {
+    "other": "Développé par "
+  },
+  "analyse-cta": {
+    "other": "Testez votre site!"
+  },
+  "analyse-title": {
+    "other": "Testez votre site ... ou un autre !"
+  },
+  "analyse-description": {
+    "other": "Indiquez dans le champ ci-dessous l'url de la page dont vous souhaitez connaitre l'ecoindex"
+  }
+}
