@@ -1,0 +1,12 @@
+baseURL = "/"
+title = "Ecoindex"
+
+[languages]
+
+  [languages.en]
+  languageName = "English"
+  weight = 2.0
+
+  [languages.fr]
+  languageName = "Français"
+  weight = 1.0
