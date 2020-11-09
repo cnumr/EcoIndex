@@ -9,13 +9,13 @@
 		<!-- <header> from "layouts/partials/header.html" -->
 		{{ partial "header.html" . }}
 
+		<!-- main content of the website : The analyse page -->
 		<main>
 
 			<h1>{{ i18n "analyse-title" }}</h1>
 			<p>{{ i18n "analyse-description" }}</p>
 
 			<article>
-	
 				<form action="/" method="post">
 					<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
 					<input type="submit" value="{{ i18n "analyse-cta" }}" />

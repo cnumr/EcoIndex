@@ -1,10 +1,10 @@
 ---
-title: "Comment ça marche ?"
-date: 2020-04-25T10:56:09+02:00
+title: "Join Us"
+date: 2020-11-09T14:00:00+02:00
 draft: false
 ---
 
-Ceci est la page "Comment ça marche ?" en français.
+This is the "join us" page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

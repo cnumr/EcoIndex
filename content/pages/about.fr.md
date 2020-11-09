@@ -4,7 +4,7 @@ date: 2020-04-25T10:55:53+02:00
 draft: false
 ---
 
-Cece est la page "A propos" en français.
+Ceci est la page "A propos" en français.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
