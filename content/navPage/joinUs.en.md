@@ -1,12 +1,12 @@
 ---
-title: "Testez un site"
+title: "Join Us"
 date: 2020-11-09T14:00:00+02:00
-draft: true
+draft: false
+weight: 6
+type: basic
 ---
 
-<!--Cette page n'est pas utile si on garde l'analyse dans le index.html-->
-
-Ceci est la page "Testez un site" en français.
+This is the "join us" page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

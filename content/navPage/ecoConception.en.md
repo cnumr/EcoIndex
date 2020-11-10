@@ -1,10 +1,12 @@
 ---
-title: "Join Us"
+title: "ecodesign"
 date: 2020-11-09T14:00:00+02:00
 draft: false
+weight: 3
+type: basic
 ---
 
-This is the "join us" page in english.
+This is the "ecodesign" page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

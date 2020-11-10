@@ -1,10 +1,13 @@
 ---
-title: "ecodesign"
+title: "Test a website"
 date: 2020-11-09T14:00:00+02:00
-draft: false
+draft: true
+weight: 11
 ---
 
-This is the "ecodesign" page in english.
+<!--Cette page n'est pas utile si on garde l'analyse dans le index.html-->
+
+This is the "Test a website" page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

@@ -1,11 +1,12 @@
 ---
-title: "Legal"
-date: 2020-04-25T10:57:19+02:00
+title: "Comment ça marche ?"
+date: 2020-04-25T10:56:09+02:00
 draft: false
+weight: 2
+type: basic
 ---
 
-Thi is the legal page in english.
-
+Ceci est la page "Comment ça marche ?" en français.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

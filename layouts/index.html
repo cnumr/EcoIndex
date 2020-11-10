@@ -9,8 +9,9 @@
 		<!-- <header> from "layouts/partials/header.html" -->
 		{{ partial "header.html" . }}
 
-		<!-- main content of the website : The analyse page -->
+		<!-- main content of the website : The analyse page N0_ACCUEIL in specification -->
 		<main>
+			index.html
 
 			<h1>{{ i18n "analyse-title" }}</h1>
 			<p>{{ i18n "analyse-description" }}</p>
@@ -23,8 +24,17 @@
 
 			</article>
 
-		</main>
+<!-- debug -->
+			{{ $.Title }}
 
+			{{range sort .Site.RegularPages "Weight" "asc" }}
+					<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
+			{{end}}
+
+			Home page :
+				<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
+
+		</main>
 
 		<!-- <footer> from "layouts/partials/footer.html" -->
 		{{ partial "footer.html" . }}

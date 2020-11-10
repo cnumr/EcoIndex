@@ -1,10 +1,15 @@
 ---
-title: "Top 25"
-date: 2020-11-09T14:00:00+02:00
+title: "Mentions légales"
+date: 2020-04-25T10:57:19+02:00
 draft: true
+weight: 10
+type: basic
 ---
 
-This is the top25 page in english. DRAFT VERSION
+<!-- Où est-ce qu'on accede à cette page ? -->
+
+Ceci est la page "Mentions légales" en français.
+
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

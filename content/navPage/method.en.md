@@ -1,11 +1,12 @@
 ---
-title: "Mentions légales"
-date: 2020-04-25T10:57:19+02:00
+title: "Method"
+date: 2020-04-25T10:56:09+02:00
 draft: false
+weight: 2
+type: basic
 ---
 
-Ceci est la page "Mentions légales" en français.
-
+This is the method page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
