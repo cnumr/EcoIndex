@@ -9,44 +9,12 @@
 		{{ partial "header.html" . }}
 
 		<main>
-      <!-- debug -->
-			index.html
 
 			<!--Content for index.html-->
 	<article>
 
 		<h1>{{ .Title }}</h1>
 		<p>{{ .Content }}</p>
-
-		<article>
-			<form action="/analyse/loading" method="post">
-				<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
-				<input type="submit" value="{{ i18n "analyse-cta" }}" />
-			</form>
-
-		</article>
-
-		index.html (home)
-<br />
-		<!-- debug -->
-		{{ $.Title }}
-	<br />
-		Menu
-
-		<ul>
-			{{ range .Site.Menus.main }}
-				<li>{{.}}</li>
-			{{ end }}
-		</ul>
-
-				Regular pages
-				{{range sort .Site.RegularPages "Weight" "asc" }}
-					<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
-				{{end}}
-
-				Home page :
-				<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
-
 
 	</article>
 

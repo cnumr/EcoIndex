@@ -10,3 +10,5 @@ menu:
 ---
 
 Put the website url in the field below.
+{{< analyseURL "www.mybeautifulsite.com" "Test my site" >}}
+{{< textBlock Titre1 Titre2 >}} Le texte a afficher {{< /textBlock>}}

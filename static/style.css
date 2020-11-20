@@ -7,8 +7,32 @@ body {
 	background-color: #333333;
 }
 
+p.greyRectangle {
+  width: 209px;
+  height: 255px;
+  padding: 27px 19px 32px 28px;
+  border-radius: 5px;
+  background-color: #eeeeee;
+}
+
 h1, h2, h3, h4 {
-	font-family: serif;
+	font-family: Arial;
+	color: #0d2e38;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+}
+
+h2 {
+  margin: 0 0 25px;
+  font-size: 48px;
+}
+
+h3 {
+	margin: 0 0 20px;
+	font-size: 24px;
 }
 
 a { color: #70d628}
