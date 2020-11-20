@@ -1,6 +1,9 @@
 baseURL = "/"
 title = "Ecoindex"
 
+[permalinks]
+  pages = "/:filename/"
+
 [languages]
 
   [languages.en]

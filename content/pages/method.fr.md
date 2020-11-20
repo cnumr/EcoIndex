@@ -3,7 +3,8 @@ title: "Comment ça marche ?"
 date: 2020-04-25T10:56:09+02:00
 draft: false
 weight: 2
-type: basic
+
+menu: main
 ---
 
 Ceci est la page "Comment ça marche ?" en français.

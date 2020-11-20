@@ -1,13 +1,13 @@
 ---
-title: "Testez un site"
-date: 2020-11-09T14:00:00+02:00
-draft: true
-weight: 11
+title: "Method"
+date: 2020-04-25T10:56:09+02:00
+draft: false
+weight: 2
+
+menu: main
 ---
 
-<!--Cette page n'est pas utile si on garde l'analyse dans le index.html-->
-
-Ceci est la page "Testez un site" en français.
+This is the method page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

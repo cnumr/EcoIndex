@@ -1,15 +1,5 @@
 <header>
 	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a></div>
-	<ul>
-		<li><a href="{{ .Site.Home.Permalink }}">{{ i18n "home" }}</a></li>
-		<!-- Display all naviagation pages -->
-		{{ range sort .Site.RegularPages "Weight" "asc" }}
-
-			{{if eq .Section "navPage" }}
-				<li><a href="{{.Permalink}}">{{.Title}}</a></li>
-			{{end}}
-
-		{{ end }}
-
-	</ul>
+	<!-- Hugo menu-->
+	{{ partial "nav.html" . }}
 </header>

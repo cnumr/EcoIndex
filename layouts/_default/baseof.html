@@ -2,20 +2,18 @@
 <html>
 
 	<!-- <head> from "layouts/partials/head.html"-->
-	{{ partial "head.html" }}
+	{{ partial "head.html" . }}
 
 	<body>
 		<!-- <header> from "layouts/partials/header.html" -->
 		{{ partial "header.html" . }}
 
 		<main>
-			single.html (basic)
-			<article>
+      <!-- debug -->
+			baseof.html (_default)
 
-				<h1>{{ .Title }}</h1>
-				{{ .Content }}
-
-			</article>
+      <!-- Content from page in markdown + layout from single in html -->
+			{{ block "main" .}}{{end}}
 
 		</main>
 

@@ -1,15 +1,11 @@
-<!-- This nav element is never used -->
 <nav>
-
-	<p>I'm a <strong>nav</strong>.<br/>
-	Edit me in <code>"layouts/partials/nav.html"</code>.</p>
-
-	<a href="{{ .Site.Home.Permalink }}">Accueil</a>
-
-	{{ range .Site.RegularPages }}
-
-		<a href="{{.Permalink}}">{{.Title}}</a>
-
-	{{ end }}
-
+	<ul>
+		{{ range .Site.Menus.main }}
+		<li>
+			<a href="{{ .URL }}">
+				<span>{{ .Title }}</span>
+			</a>
+		</li>
+		{{ end }}
+	</ul>
 </nav>

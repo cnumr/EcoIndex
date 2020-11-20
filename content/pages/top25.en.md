@@ -1,12 +1,13 @@
 ---
-title: "L'écoconception"
+title: "Top 25"
 date: 2020-11-09T14:00:00+02:00
-draft: false
-weight: 3
-type: basic
+draft: true
+weight: 4
+
+menu: main
 ---
 
-Ceci est la page "L'écoconception" en français.
+This is the top25 page in english. DRAFT VERSION
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

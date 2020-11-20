@@ -1,15 +1,14 @@
 ---
-title: "Legal"
-date: 2020-04-25T10:57:19+02:00
-draft: true
-weight: 10
-type: basic
+title: "About"
+date: 2020-04-25T10:55:53+02:00
+draft: false
+weight: 5
+
+menu: main
+
 ---
 
-<!-- doublon avec a propos ? -->
-
-Thi is the legal page in english.
-
+This is the about page in english.
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,

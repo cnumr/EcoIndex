@@ -2,42 +2,59 @@
 <html>
 
 	<!-- <head> from "layouts/partials/head.html"-->
-	{{ partial "head.html" }}
+	{{ partial "head.html" . }}
 
 	<body>
-
 		<!-- <header> from "layouts/partials/header.html" -->
 		{{ partial "header.html" . }}
 
-		<!-- main content of the website : The analyse page N0_ACCUEIL in specification -->
 		<main>
+      <!-- debug -->
 			index.html
 
-			<h1>{{ i18n "analyse-title" }}</h1>
-			<p>{{ i18n "analyse-description" }}</p>
+			<!--Content for index.html-->
+	<article>
 
-			<article>
-				<form action="/action/loading" method="post">
-					<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
-					<input type="submit" value="{{ i18n "analyse-cta" }}" />
-				</form>
+		<h1>{{ .Title }}</h1>
+		<p>{{ .Content }}</p>
 
-			</article>
+		<article>
+			<form action="/analyse/loading" method="post">
+				<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
+				<input type="submit" value="{{ i18n "analyse-cta" }}" />
+			</form>
 
-<!-- debug -->
-			{{ $.Title }}
+		</article>
 
-			{{range sort .Site.RegularPages "Weight" "asc" }}
+		index.html (home)
+<br />
+		<!-- debug -->
+		{{ $.Title }}
+	<br />
+		Menu
+
+		<ul>
+			{{ range .Site.Menus.main }}
+				<li>{{.}}</li>
+			{{ end }}
+		</ul>
+
+				Regular pages
+				{{range sort .Site.RegularPages "Weight" "asc" }}
 					<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
-			{{end}}
+				{{end}}
 
-			Home page :
+				Home page :
 				<p>{{.}} {{.Title}} | Weight : {{.Weight}} | Kind : {{.Kind}} | Layout : {{.Layout}} | Language : {{.Language}} | Section : {{.Section}} | Type : {{.Type}}</p>
+
+
+	</article>
 
 		</main>
 
 		<!-- <footer> from "layouts/partials/footer.html" -->
 		{{ partial "footer.html" . }}
+
 	</body>
 
 </html>

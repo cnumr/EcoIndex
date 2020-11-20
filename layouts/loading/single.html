@@ -1,31 +1,14 @@
-<!DOCTYPE html>
-<html>
+{{ define "main" }}
+<article>
 
-	<!-- <head> from "layouts/partials/head.html"-->
-	{{ partial "head.html" }}
+	<h1>{{ .Title }}</h1>
+	{{ .Content }}
 
-	<body>
-		<!-- <header> from "layouts/partials/header.html" -->
-		{{ partial "header.html" . }}
+	<a href="/analyse/result">Acceder aux résultats</a>
+	<a href="/analyse/erreuranalyse">Erreur analyse</a>
+	<a href="/analyse/stopanalyse">Stop analyse</a>
 
-		<main>
-			single.html (loading)
-			<article>
+	Layout single.html pour la page de loading
 
-				<h1>{{ .Title }}</h1>
-				{{ .Content }}
-
-				<a href="/action/result">Acceder aux résultats</a>
-				<a href="/action/erreuranalyse">Erreur analyse</a>
-				<a href="/action/stopanalyse">Stop analyse</a>
-
-			</article>
-
-		</main>
-
-		<!-- <footer> from "layouts/partials/footer.html" -->
-		{{ partial "footer.html" . }}
-
-	</body>
-
-</html>
+</article>
+{{ end }}
