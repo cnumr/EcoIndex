@@ -1,0 +1,15 @@
+{{ $st := .page }}
+
+<h1>{{ $st.Title }}</h1>
+<div>
+  <p>
+  {{ $st.Content }}
+  </p>
+</div>
+
+<article>
+  <form action="{{ index $st.Params.content.url }}" method="post">
+    <input type="text" name="siteurl" placeholder="{{ index $st.Params.content.placeholder }}" size="40" />
+    <input type="submit" value="{{ index $st.Params.content.submitText }}" />
+  </form>
+</article>

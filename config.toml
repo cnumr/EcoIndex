@@ -7,9 +7,13 @@ title = "Ecoindex"
 [languages]
 
   [languages.en]
+  languageCode = "en-us"
+  contentDir = "content/en"
   languageName = "English"
-  weight = 2.0
+  weight = 1.0
 
   [languages.fr]
+  languageCode = "fr"
+  contentDir = "content/fr"
   languageName = "Français"
-  weight = 1.0
+  weight = 2.0
