@@ -24,28 +24,10 @@
   {{ end }}
 {{ end }}
 
-<h3>Debug</h3>
-<p>
-{{ printf "page : %#v" $page}}<br/>
-{{ printf "headless bundle : %#v" $headless_bundle}}<br>
-{{ printf "headless bundle : %#s" $headless_bundle}}<br>
-{{ printf "headless bundle : %#q" $headless_bundle}}<br>
-{{ printf "site : %#v" $.Site}}<br>
-{{ printf "ste : %#s" $.Site}}<br>
-</p>
-
-<h4>range pages</h4>
-{{ range .Pages }}
-    {{/* The context, ".", is now each one of the pages as it goes through the loop */}}
-    {{ printf "%#v" . }}
-{{ end }}
+<!-- Continuer l'analyse a partir de la -->
 
 {{/* Load page sections */}}
 {{ range $index, $st := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
-<h4>Debug section </h4>
-<p>
-{{ printf "variables :  %#s" $headless_bundle.Resources}}
-</p>
 
   {{/* Begin widget styling */}}
   {{ $bg := $st.Params.design.background }}

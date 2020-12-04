@@ -7,7 +7,7 @@ body {
 	background-color: #333333;
 }
 
-p.greyRectangle {
+div.greyRectangle > p {
   width: 209px;
   height: 255px;
   padding: 27px 19px 32px 28px;

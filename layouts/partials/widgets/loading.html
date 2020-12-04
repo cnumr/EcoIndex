@@ -1,0 +1,12 @@
+{{ $st := .page }}
+{{ $baseLangUrl := "/" }}
+{{ if ne $st.Lang "en" }}
+	{{ $baseLangUrl = printf "%s%s/" $baseLangUrl $st.Lang }}
+{{ end }}
+<article>
+	{{ $st.Content }}
+	<a href="{{ $baseLangUrl }}result">Acceder aux résultats</a>
+	<a href="{{ $baseLangUrl }}erreuranalyse">Erreur analyse</a>
+	<a href="{{ $baseLangUrl }}stopanalyse">Stop analyse</a>
+
+</article>

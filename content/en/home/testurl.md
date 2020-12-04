@@ -8,7 +8,7 @@ active = true
 weight = 10
 
 [content]
- url = "/analyse/loading"
+ url = "/loading"
  placeholder = "www.mybeautifulsite.com"
  submitText = "Test my site"
 +++
