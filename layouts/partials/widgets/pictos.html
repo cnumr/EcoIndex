@@ -1,17 +1,14 @@
 {{ $st := .page }}
 
-<div class="textBlock">
-  <h2>{{ $st.Title }}</h2>
-
-  <h3>
-    {{ $st.Params.content.subtitle }}
-  </h3>
+<div class="pictoBlock">
+  <h3>{{ $st.Title }}</h3>
 
 <!-- A remplacer par un vrai séparateur -->
   <p>
     --------
   </p>
 
+<!-- a remplacer par les pictos -->
   <div class="contentParagraph">
     {{ $st.Content }}
   </div>

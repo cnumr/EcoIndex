@@ -7,11 +7,18 @@ body {
 	background-color: #333333;
 }
 
-div.greyRectangle > p {
-  width: 209px;
-  height: 255px;
+div.contentParagraph{
+  width: 240px;
   padding: 27px 19px 32px 28px;
   border-radius: 5px;
+	border-color: #eeeeee;
+	border-style: dashed;
+  background-color: #ffffff;
+}
+
+div.frame-gray {
+  width: 209px;
+  padding: 27px 19px 32px 28px;
   background-color: #eeeeee;
 }
 

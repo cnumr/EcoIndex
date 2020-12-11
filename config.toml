@@ -17,3 +17,12 @@ title = "Ecoindex"
   contentDir = "content/fr"
   languageName = "Français"
   weight = 2.0
+
+
+# Configure the Markdown renderer.
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Enable user to embed HTML snippets like shortcodes in Markdown content.
+      #Wowchemy utilise du JS pour vérifier que le html ne contient pas de code malveillant. Est-ce qu'on veux reprendre ce code pour ecoindex ? 

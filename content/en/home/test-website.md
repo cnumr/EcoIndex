@@ -11,6 +11,7 @@ weight = 10
  url = "/loading"
  placeholder = "www.mybeautifulsite.com"
  submitText = "Test my site"
+ subtitle = "Put the website url in the field below."
 +++
 
-Put the website url in the field below.
+More than 40 000 sites already tested ! [Method](/method)

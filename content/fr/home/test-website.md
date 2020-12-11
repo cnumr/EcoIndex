@@ -11,6 +11,7 @@ weight = 10
  url = "loading"
  placeholder = "www.monbeausite.fr"
  submitText = "Tester mon site"
+ subtitle = "Indiquez dans le champ ci-dessous l'url de la page dont vous souhaitez connaitre l'ecoindex"
 +++
 
-Indiquez dans le champ ci-dessous l'url de la page dont vous souhaitez connaitre l'ecoindex
+Déjà plus de 40 000 pages testées ! [Comment ça marche ?](/fr/method)
