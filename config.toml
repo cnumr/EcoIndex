@@ -18,6 +18,26 @@ title = "Ecoindex"
   languageName = "Français"
   weight = 2.0
 
+  [[languages.fr.menu.footer]]
+    identifier = "joinUs"
+    title = "Nous rejoindre"
+    url = "/joinUs"
+    weight = 1
+
+  [[languages.fr.menu.footer]]
+    identifier = "github"
+    title = "Github"
+    url = "https://github.com/cnumr/Ecoindex"
+    weight = 2
+    [languages.fr.menu.footer.params]
+      newtab = true
+
+  [[languages.fr.menu.footer]]
+    identifier = "confidentialite"
+    title = "Politique de confidentialité"
+    url = "/confidentialite"
+    weight = 3
+
 
 # Configure the Markdown renderer.
 [markup]
@@ -25,4 +45,4 @@ title = "Ecoindex"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true  # Enable user to embed HTML snippets like shortcodes in Markdown content.
-      #Wowchemy utilise du JS pour vérifier que le html ne contient pas de code malveillant. Est-ce qu'on veux reprendre ce code pour ecoindex ? 
+      #Wowchemy utilise du JS pour vérifier que le html ne contient pas de code malveillant. Est-ce qu'on veux reprendre ce code pour ecoindex ?

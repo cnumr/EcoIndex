@@ -7,5 +7,5 @@ weight: 3
 
 menu:
   main:
-    title: "Ecoconception"
+    title: "L'écoconception"
 ---

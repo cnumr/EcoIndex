@@ -59,8 +59,19 @@ header .logo {
 	float: left;
 }
 
+header nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
 header ul {
 	list-style: none;
+	display: flex;
+}
+
+header div {
 	display: flex;
 }
 
@@ -83,6 +94,39 @@ header li a:hover {
 
 footer {
 	padding: 1em;
+}
+
+footer a, footer a:visited {
+	color: white;
+}
+
+footer nav {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: left;
+}
+
+footer ul {
+	list-style: none;
+	display: flex;
+}
+
+footer li+li {
+	border-left: 1px solid white;
+	margin-left: 1em;
+	padding-left: 1em;
+}
+
+footer li a {
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 0.25em;
+}
+
+footer li a:hover {
+	background-color: #6E9A1D;
 }
 
 main {

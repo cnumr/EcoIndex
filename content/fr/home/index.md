@@ -8,5 +8,5 @@ type: widget_page
 
 menu:
   main:
-    title: "Testez votre site"
+    title: "Testez un site"
 ---

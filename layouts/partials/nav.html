@@ -8,4 +8,24 @@
 		</li>
 		{{ end }}
 	</ul>
+
+	<div>
+		<ul>
+			{{ range .Site.Menus.extra }}
+			<li>
+				<a href="{{ .URL }}">
+					<span>{{ .Title }}</span>
+				</a>
+			</li>
+			{{ end }}
+		</ul>
+
+		<ul class="languages">
+			{{ range $.Site.Home.AllTranslations }}
+			<li>
+				<a href="{{ .Permalink }}">{{ .Language }}</a>
+			</li>
+			{{ end }}
+		</ul>
+	</div>
 </nav>
