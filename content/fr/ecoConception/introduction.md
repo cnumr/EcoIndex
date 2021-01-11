@@ -2,7 +2,7 @@
 title= "Ecoconception et bonnes pratiques"
 date= 2020-12-03T12:22:02+01:00
 draft= false
-widget= "text" # We may change this widget to a new one (introduction) in the future
+widget= "introduction"
 headless= true  # This file represents a page section.
 active= true
 weight= 10
