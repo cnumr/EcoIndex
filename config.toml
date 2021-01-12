@@ -21,7 +21,7 @@ title = "Ecoindex"
   [[languages.fr.menu.footer]]
     identifier = "joinUs"
     title = "Nous rejoindre"
-    url = "/joinus"
+    url = "/fr/joinus"
     weight = 1
 
   [[languages.fr.menu.footer]]
@@ -33,9 +33,9 @@ title = "Ecoindex"
       newtab = true
 
   [[languages.fr.menu.footer]]
-    identifier = "confidentialite"
+    identifier = "privacy"
     title = "Politique de confidentialité"
-    url = "/confidentialite"
+    url = "/fr/privacy"
     weight = 3
 
 
