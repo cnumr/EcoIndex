@@ -6,6 +6,6 @@ type: widget_page
 weight: 10
 
 menu:
-  main:
+  extra:
     title: "Legal"
 ---

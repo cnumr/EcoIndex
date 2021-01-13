@@ -6,6 +6,6 @@ type: widget_page
 weight: 6
 
 menu:
-  main:
+  extra:
     title: "Join us"
 ---

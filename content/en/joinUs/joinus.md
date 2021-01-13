@@ -8,6 +8,7 @@ active= true
 weight= 20
 
 +++
+**[WARNING !!! A passer en anglais]**
 Pour échanger sur les sujets du numérique responsable, de la sobriété numérique,
 de l’écoconception facteur 4, de la lowtech, etc. nous vous proposons de nous retrouver sur :
 - [Linkedin](https://www.linkedin.com/groups/1912076/)

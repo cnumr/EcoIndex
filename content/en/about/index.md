@@ -6,6 +6,6 @@ type: widget_page
 weight: 5
 
 menu:
-  main:
+  extra:
     title: "About"
 ---

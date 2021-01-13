@@ -12,6 +12,26 @@ title = "Ecoindex"
   languageName = "English"
   weight = 1.0
 
+  [[languages.en.menu.footer]]
+    identifier = "joinUs"
+    title = "Join us"
+    url = "/joinus"
+    weight = 1
+
+  [[languages.en.menu.footer]]
+    identifier = "github"
+    title = "Github"
+    url = "https://github.com/cnumr/Ecoindex"
+    weight = 2
+    [languages.en.menu.footer.params]
+      newtab = true
+
+  [[languages.en.menu.footer]]
+    identifier = "privacy"
+    title = "Privacy policy"
+    url = "/privacy"
+    weight = 3
+
   [languages.fr]
   languageCode = "fr"
   contentDir = "content/fr"
