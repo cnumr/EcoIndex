@@ -1,11 +1,10 @@
 ---
-title: "Nous rejoindre !"
+title: "Nous rejoindre"
 date: 2020-12-03T12:22:02+01:00
 draft: false
-widget: text
+widget: introduction
 headless: true  # This file represents a page section.
 active: true
 weight: 10
 
 ---
-Ceci est la page "Nous rejoindre" en français.
