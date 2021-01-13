@@ -11,7 +11,7 @@ weight= 70
 
 <!-- possibilité de changer ce shortcode -->
 {{% framed gray %}}
-###Empreinte physique
+### Empreinte physique
 L’empreinte physique du site se caractérise, notamment, par la quantité de mémoire vive (RAM)
 et le nombre de cycles processeur (CPU) consommés par le processus navigateur affichant l’URL analysée.
 L’analyse de l’empreinte physique dans le temps – évolution de la consommation mémoire et

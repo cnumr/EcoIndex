@@ -1,0 +1,22 @@
+{{ $st := .page }}
+
+<div class="textBlock">
+  <h2>{{ $st.Title }}</h2>
+
+  <h3>
+    {{ $st.Params.content.subtitle }}
+  </h3>
+
+<!-- A remplacer par un vrai séparateur -->
+  <p>
+    --------
+  </p>
+
+  <div class="contentParagraph">
+    {{ $st.Content }}
+  </div>
+</div>
+
+<p>
+  --------
+</p>
