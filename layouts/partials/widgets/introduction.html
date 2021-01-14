@@ -1,7 +1,7 @@
-{{ $st := .page }}
+{{ $section := .page }}
 
 <!-- Titre de la page entière -->
-<h1>{{ $st.Title }}</h1>
+<h1>{{ $section.Title }}</h1>
 <div class="textBlock">
 <!-- A remplacer par un vrai séparateur -->
   <p>
@@ -10,7 +10,7 @@
 
 <!-- introduction -->
   <div class="contentParagraph">
-    {{ $st.Content }}
+    {{ $section.Content }}
   </div>
 </div>
 

@@ -1,10 +1,10 @@
-{{ $st := .page }}
+{{ $section := .page }}
 
 <div class="textBlock">
-  <h2>{{ $st.Title }}</h2>
+  <h2>{{ $section.Title }}</h2>
 
   <h3>
-    {{ $st.Params.content.subtitle }}
+    {{ $section.Params.content.subtitle }}
   </h3>
 
 <!-- A remplacer par un vrai séparateur -->
@@ -13,7 +13,7 @@
   </p>
 
   <div class="contentParagraph">
-    {{ $st.Content }}
+    {{ $section.Content }}
   </div>
 </div>
 

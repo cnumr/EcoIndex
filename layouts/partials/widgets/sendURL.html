@@ -1,20 +1,20 @@
-{{ $st := .page }}
+{{ $section := .page }}
 
-<h1>{{ $st.Title }}</h1>
+<h1>{{ $section.Title }}</h1>
 
 <div>
   <p>
-  {{ $st.Params.content.subtitle }}
+  {{ $section.Params.content.subtitle }}
   </p>
 </div>
 
 <article>
-  <form action="{{ index $st.Params.content.url }}" method="post">
-    <input type="text" name="siteurl" placeholder="{{ index $st.Params.content.placeholder }}" size="40" />
-    <input type="submit" value="{{ index $st.Params.content.submitText }}" />
+  <form action="{{ index $section.Params.content.url }}" method="post">
+    <input type="text" name="siteurl" placeholder="{{ index $section.Params.content.placeholder }}" size="40" />
+    <input type="submit" value="{{ index $section.Params.content.submitText }}" />
   </form>
 </article>
 
 <div>
-  {{ $st.Content }}
+  {{ $section.Content }}
 </div>
