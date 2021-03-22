@@ -1,0 +1,11 @@
+<section class="b6">
+    <div class="b6-title">
+        <h2>{{ .Get "B6Title" }}</h2>
+        <p>{{ .Get "B6SubTitle" }}</p>
+    </div>
+    <div class="b6-content">
+
+        {{.Inner | markdownify}}
+
+    </div>
+</section>

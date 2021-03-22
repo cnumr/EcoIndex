@@ -108,3 +108,11 @@ article {
 	border-radius: 1em;
 	color: #0a3540;
 }
+
+.b6 {
+	display: flex;
+}
+
+.b6 div {
+	flex: 1 1 0;
+}
