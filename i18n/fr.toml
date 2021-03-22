@@ -8,7 +8,7 @@ other = "Développé par "
 other = "Testez votre site!"
 
 [analyse-title]
-other = "Testez votre site ... ou un autre !"
+other = "Quel est l'impact environnemental de votre site ?"
 
 [analyse-description]
-other = "Indiquez dans le champ ci-dessous l'url de la page dont vous souhaitez connaitre l'ecoindex"
+other = "Entrez l'adresse d'une page web pour découvrir le score :"

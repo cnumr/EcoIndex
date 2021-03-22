@@ -10,19 +10,21 @@
 		{{ partial "header.html" . }}
 
 		<main>
+			<section class="action">
+				<h1>{{ i18n "analyse-title" }}</h1>
+				<p>{{ i18n "analyse-description" }}</p>
 
-			<h1>{{ i18n "analyse-title" }}</h1>
-			<p>{{ i18n "analyse-description" }}</p>
-
-			<article>
-	
 				<form action="/" method="post">
 					<input type="text" name="siteurl" placeholder="http://example.com" size="40" />
 					<input type="submit" value="{{ i18n "analyse-cta" }}" />
 				</form>
+			</section>
+			<article>
+				<h2>Pourquoi c'est important ?</h2>
+				<p>Aujourd'hui, l'empreinte environnementale des nouvelles technologies représente plus de gaz à effet de serre que l'aviation civile.
 
+					Et ce chiffre est en constante augmentation car de plus en plus de gens ont accès au numérique et les équipements et objets connectés ne cessent de se multiplier.</p>
 			</article>
-
 		</main>
 
 

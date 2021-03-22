@@ -2,95 +2,109 @@ body {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
-	font-size: 14px;
-	background-color: #333333;
+	font-family: Arial;
+	font-size: 16px;
+	line-height: 1.63;
+	color: white;
+	background-color: #007e5f;
 }
 
 h1, h2, h3, h4 {
 	font-family: serif;
 }
 
-a { color: #70d628}
-a:visited { color: #6E9A1D}
+header {
+	padding: 28px 100px 28px 101px;
+	box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.13);
+	background-color: #007e5f;
+}
 
 header, footer {
 	margin: 0;
 	color: white;
-	padding: 0.25em;
+	padding: 10px;
 }
 
 header a, header a:visited {
 	color: white;
 }
 
-header .logo {
-	float: left;
+
+header {
+	display: flex;
+	justify-content: space-between;
 }
 
-header ul {
+header ul, footer ul {
 	list-style: none;
 	display: flex;
 }
 
-header li+li {
-	border-left: 1px solid white;
-	margin-left: 1em;
-	padding-left: 1em;
-}
-
-header li a {
+header li a, footer li a {
+	height: 16px;
 	display: block;
 	text-decoration: none;
-	text-transform: uppercase;
-	padding: 0.25em;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 1.43;
+	color: white;
+	padding: 10px 20px;
 }
 
-header li a:hover {
-	background-color: #6E9A1D;
+header li.logo a {
+	padding: 0;
 }
 
-footer {
-	padding: 1em;
-}
 
 main {
 	padding: 1em;
-	background-color: white;
-	min-height: 30em;
+	background: url(illustration.png) no-repeat top right;
 }
 
+main section.action {
+	max-width: 60em;
+	margin: auto;
+	padding-top: 7em;
+	padding-bottom: 5em;
+}
 
-code {
-	background-color: dimgray;
+main section.action h1 {
+	margin: 0 0 29px;
+	font-size: 74px;
+	line-height: 1.11;
 	color: white;
-	padding: 2px;
+	font-weight: normal;
 }
 
-
-::placeholder {
-	color: #6E9A1D;
-}
-
-
-input {
+article {
 	background-color: white;
-	border: 1px solid #6E9A1D;
-	color: #6E9A1D;
-	padding: 1em 2em;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: larger;
 }
 
-input[type="submit"] {
-	background-color: #6E9A1D;
-	border: none;
+
+main section.action input[type=text] {
+	background-color: #00654c;
+	border: 1px solid #00654c;
+	border-radius: 5px;
 	color: white;
-	padding: 1em 2em;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: larger;
+	padding: 10px 20px;
+}
+
+main section.action input[type=submit] {
+	margin: 0 0 0 25px;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid white;
+	color: black;
+	padding: 10px 20px;
+}
+
+form {
+	display: flex;
+}
+
+
+article {
+	padding: 2em;
+	border-radius: 1em;
+	color: #0a3540;
 }

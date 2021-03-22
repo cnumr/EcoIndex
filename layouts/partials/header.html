@@ -1,12 +1,25 @@
 <header>
-	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a></div>
 	<ul>
-		<li><a href="{{ .Site.Home.Permalink }}">{{ i18n "home" }}</a></li>
+		<li class="logo">
+			<a href="{{ .Site.Home.Permalink }}" title="Got to home">
+				<img src="/logo.png" srcset="/logo.png 1x, /logo@2x.png 2x, /logo@3x.png 3x"  alt="Eco Index logo." />
+			</a>
+		</li>
 		{{ range .Site.RegularPages }}
 
-			<li><a href="{{.Permalink}}">{{.Title}}</a></li>
+			<li>
+				<a href="{{.Permalink}}">{{.Title}}</a>
+			</li>
 
 		{{ end }}
 
+	</ul>
+
+	<ul>
+		{{ range $.Site.Home.AllTranslations }}
+		<li>
+			<a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+		</li>
+		{{ end }}
 	</ul>
 </header>
