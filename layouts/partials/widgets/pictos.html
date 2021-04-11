@@ -1,19 +1,10 @@
 {{ $section := .page }}
 
 <div class="pictoBlock">
-  <h3>{{ $section.Title }}</h3>
+	<h3>{{- $section.Title -}}</h3>
 
-<!-- A remplacer par un vrai séparateur -->
-  <p>
-    --------
-  </p>
-
-<!-- a remplacer par les pictos -->
-  <div class="contentParagraph">
-    {{ $section.Content }}
-  </div>
+	{{- /* a remplacer par les pictos */}}
+	<div class="contentParagraph">
+		{{ $section.Content }}
+	</div>
 </div>
-
-<p>
-  --------
-</p>

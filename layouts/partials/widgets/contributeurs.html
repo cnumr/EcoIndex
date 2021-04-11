@@ -1,12 +1,7 @@
 {{ $section := .page }}
 
 <div class="contribBlock">
-  <h2>{{ $section.Title }}</h2>
+	<h2>{{- $section.Title -}}</h2>
 
-  <!-- liste des contributeurs s'affiche sous forme de liste -->
-    {{ $section.Content }}
+	{{ $section.Content }}
 </div>
-
-<p>
-  --------
-</p>

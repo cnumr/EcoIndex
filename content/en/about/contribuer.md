@@ -6,9 +6,9 @@ widget= "text"
 headless= true  # This file represents a page section.
 active= true
 weight= 30
-
 +++
-**[WARNING !!! A passer en anglais]**
-Rejoignez la communauté des acteur·ices du numérique responsable et de l’écoconception et participez à nos actions.
+
+[**WARNING !!! A passer en anglais**] Rejoignez la communauté des acteur·ices du numérique responsable et de
+l’écoconception et participez à nos actions.
 
 [Nous rejoindre](/joinus)

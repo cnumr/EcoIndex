@@ -1,10 +1,6 @@
-{{ define "main" }}
-<article>
-
-	<h1>{{ .Title }}</h1>
-	{{ .Content }}
-
-	single.html (default)
-
-</article>
-{{ end }}
+{{- define "main" -}}
+	<article>
+		<h1>{{- .Title -}}</h1>
+		{{- .Content -}} single.html (default)
+	</article>
+{{- end -}}

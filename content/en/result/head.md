@@ -5,9 +5,12 @@ widget= "result-head"
 headless= true  # This file represents a page section.
 active= true
 weight= 10
-
 +++
 
 Retour à EcoIndex.fr
-Calculé le XX/XX/XXXX <!-- la date change en fonction des données -->
+
+Calculé le XX/XX/XXXX
+
+[//]: # "TODO: la date change en fonction des données"
+
 Résultat pour URL

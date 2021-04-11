@@ -1,23 +1,9 @@
 <!DOCTYPE html>
 <html>
-
-	<!-- <head> from "layouts/partials/head.html"-->
 	{{ partial "head.html" . }}
-
 	<body>
-		<!-- <header> from "layouts/partials/header.html" -->
-		{{ partial "header.html" . }}
-
-		<main>
-
-      <!-- Content from page in markdown + layout from single in html -->
-			{{ block "main" .}}{{end}}
-
-		</main>
-
-		<!-- <footer> from "layouts/partials/footer.html" -->
+		{{ partial "header.html" . -}}
+		<main>{{- block "main" . -}}{{- end -}}</main>
 		{{ partial "footer.html" . }}
-
 	</body>
-
 </html>

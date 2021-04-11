@@ -1,19 +1,11 @@
 <footer>
-
 	<nav>
 		<ul>
-			{{ range .Site.Menus.footer }}
+			{{- range .Site.Menus.footer }}
 			<li>
-				{{ if .Params.Newtab}}
-				<a href="{{ .URL }}" target="_blank">
-				{{ else }}
-				<a href="{{ .URL }}">
-				{{ end }}
-					<span>{{ .Title }}</span>
-				</a>
+				<a href="{{- .URL -}}" {{- if .Params.Newtab -}} target="_blank" {{- end -}}><span>{{- .Title -}}</span></a>
 			</li>
-			{{ end }}
+			{{- end }}
 		</ul>
 	</nav>
-
 </footer>

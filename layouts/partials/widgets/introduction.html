@@ -1,19 +1,7 @@
 {{ $section := .page }}
-
-<!-- Titre de la page entière -->
-<h1>{{ $section.Title }}</h1>
+<h1>{{- $section.Title -}}</h1>
 <div class="textBlock">
-<!-- A remplacer par un vrai séparateur -->
-  <p>
-    --------
-  </p>
-
-<!-- introduction -->
-  <div class="contentParagraph">
-    {{ $section.Content }}
-  </div>
+	<div class="contentParagraph">
+		{{ $section.Content }}
+	</div>
 </div>
-
-<p>
-  --------
-</p>

@@ -1,5 +1,6 @@
 <header>
-	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a></div>
-	<!-- Hugo menu-->
-	{{ partial "nav.html" . }}
+	<div class="logo">
+		<a href="{{- .Site.Home.Permalink -}}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a>
+	</div>
+	{{ partial "nav.html" . -}}
 </header>

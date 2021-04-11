@@ -5,4 +5,4 @@ draft: false
 type: error
 ---
 
-Arret de l'analyse Français
+Arret de l’analyse Français

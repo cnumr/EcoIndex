@@ -65,4 +65,6 @@ title = "Ecoindex"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true  # Enable user to embed HTML snippets like shortcodes in Markdown content.
-      #Wowchemy utilise du JS pour vérifier que le html ne contient pas de code malveillant. Est-ce qu'on veux reprendre ce code pour ecoindex ?
+      # TODO
+			# Wowchemy utilise du JS pour vérifier que le html ne contient pas de code malveillant.
+			# Est-ce qu'on veut reprendre ce code pour ecoindex ?

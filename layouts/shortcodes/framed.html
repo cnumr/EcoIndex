@@ -1,6 +1,4 @@
-<!-- Only 1 parameter to determine the style of frame to display -->
-<div class="frame frame-{{ .Get 0 }}">
-  <div>
-    {{ .Inner }} <!--  | markdownify -->
-  </div>
+{{- /* Only 1 parameter to determine the style of frame to display */ -}}
+<div class="frame frame-{{- .Get 0 -}}">
+	{{ .Inner | .Page.RenderString (dict "display" "block") }}
 </div>
