@@ -1,0 +1,10 @@
+{{ $section := .page }}
+
+<div class="pictoBlock">
+	<h3>{{- $section.Title -}}</h3>
+
+	{{- /* a remplacer par les pictos */}}
+	<div class="contentParagraph">
+		{{ $section.Content }}
+	</div>
+</div>

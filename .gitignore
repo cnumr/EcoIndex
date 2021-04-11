@@ -1,4 +1,28 @@
+public
+resources/_gen
+node_modules
+hugo_stats.json
+assets/jsconfig.json
+
+# OS Files
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+## OSX
+.DS_Store
+
+
+# Editors Files
+
+## Illustrator
 .idea
+
+## IntelliJ
 *.iml
+
+## VIM
 .*.swp
-/public

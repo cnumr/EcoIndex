@@ -1,12 +1,6 @@
 <header>
-	<div class="logo"><a href="{{ .Site.Home.Permalink }}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a></div>
-	<ul>
-		<li><a href="{{ .Site.Home.Permalink }}">{{ i18n "home" }}</a></li>
-		{{ range .Site.RegularPages }}
-
-			<li><a href="{{.Permalink}}">{{.Title}}</a></li>
-
-		{{ end }}
-
-	</ul>
+	<div class="logo">
+		<a href="{{- .Site.Home.Permalink -}}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a>
+	</div>
+	{{ partial "nav.html" . -}}
 </header>

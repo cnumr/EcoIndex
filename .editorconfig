@@ -1,0 +1,22 @@
+# Documentation: https://EditorConfig.org
+
+# Top-most EditorConfig file
+root = true
+
+[*]
+indent_style = tab
+indent_size = tab
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+# Avoid trailing space trim for mardown files
+# See https://github.com/editorconfig/editorconfig-vscode/issues/153
+[*.{markdown,md}]
+trim_trailing_whitespace = false
+
+# TODO: check option "insert_final_newline"
+# Not working with prettier...
+# See https://github.com/prettier/prettier/issues/6360
+insert_final_newline = false

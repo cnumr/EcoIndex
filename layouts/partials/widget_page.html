@@ -1,0 +1,43 @@
+{{- /* Get widget page */ -}}
+{{- $page := "" -}}
+{{- $headless_bundle := "" -}}
+{{ if .IsHome }}
+	{{- $page = "/home/index.md" -}}
+	{{- $headless_bundle = site.GetPage $page -}}
+
+	{{- /* Check homepage exists */ -}}
+	{{ if not $headless_bundle }}
+		{{ warnf "Homepage not found at %s!" $page }}
+		{{ warnf "Add the `/home/index.md` homepage file to each language's content folder. For example, your site should have a `content/home/` folder containing `index.md` and your homepage sections, or for multi-language sites, `content/en/home/` and `content/zh/home/` etc. Refer to the 'Build Your Homepage' and 'Language' documentation at https://wowchemy.com/docs/ and the example homepage at https://github.com/wowchemy/starter-academic/tree/master/exampleSite/content/home/index.md ." }}
+	{{ end }}
+	{{ else }}
+	{{- $page = .File.Path -}}
+	{{- $headless_bundle = site.GetPage $page -}}
+	{{- /* Check widget page exists. */ -}}
+	{{ if not $headless_bundle }}
+		{{ warnf "Widget Page not found at %s!" $page }}
+		{{ warnf "View the Widget Page documentation at https://wowchemy.com/docs/managing-content/#create-a-widget-page ." }}
+		{{ warnf "If the Hugo version is between 0.65 and 0.68, it may be a confirmed Hugo bug that is expected to be fixed in Hugo v0.69: https://github.com/wowchemy/wowchemy-hugo-modules/issues/1595#issuecomment-605514973 ." }}
+	{{ end }}
+{{ end }}
+
+{{- /* Load page sections */}}
+{{ range $index, $section := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
+	{{- /* each element st is a widget define in an md file */ -}}
+
+	{{- /* Fix Hugo's ContentBaseName returning wrong file base name when page section is within a bundle. */ -}}
+	{{- $hash_id := replace $section.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
+
+	{{- /* text is the default widget */ -}}
+	{{- $widget := or $section.Params.widget "text" -}}
+
+	{{- $widget_path := printf "widgets/%s.html" $widget -}}
+	{{- $widget_args := dict "root" $ "page" $section "hash_id" $hash_id -}}
+
+	{{- /* define css class based on the widget type */ -}}
+	{{- $widget_class := printf "wg-%s" (replace (replace $widget "." "-") "_" "-") -}}
+	<section id="{{ $hash_id }}" class="home-section {{ $widget_class }}">
+		{{- /* Call the widget's partial */}}
+		{{ partial $widget_path $widget_args -}}
+	</section>
+{{ end -}}
