@@ -24,7 +24,7 @@ L’empreinte en eau témoigne de la consommation d’eau nécessaire à l’aff
 métaux nécessaires à la fabrication des équipements requiert une grande quantité d’eau.
 
 Ces valeurs sont calculées à partir des émissions d’une page moyenne et modulées en fonction de l’EcoIndex de la page
-analysée. Pour en savoir plus sur notre méthode de calcul, c’est par [ici](/fr/method)
+analysée. Pour en savoir plus sur notre méthode de calcul, c’est par [ici](/method)
 
 Pour [dropdown : 1 ; 1000 ; 10 000; 100 000] visites, l’empreinte de cette page est de :
 

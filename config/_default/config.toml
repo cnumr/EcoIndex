@@ -1,0 +1,7 @@
+defaultContentLanguage = "fr"
+baseURL = "/"
+title = "EcoIndex.fr"
+
+# Do not output RSS for home (default output for home is HTML + RSS)
+[outputs]
+  home = ["HTML"]

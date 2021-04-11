@@ -10,4 +10,4 @@ weight = 50
 
 Rejoignez la communauté des acteur·ices du numérique responsable et de l’écoconception et participez à nos actions.
 
-[**Nous rejoindre**](/fr/joinus)
+[**Nous rejoindre**](/joinus)

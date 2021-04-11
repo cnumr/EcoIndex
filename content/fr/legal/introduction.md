@@ -19,4 +19,4 @@ Ce site est hébergé par OVH SAS, situé à Gravelines (France).
 ### Conditions d’utilisation et données personnelles
 
 Pour obtenir des informations à ce sujet, veuillez consulter notre page relatives aux conditions d’utilisation et
-données personnelles [lien vers la page](/fr/)
+données personnelles [lien vers la page](/)

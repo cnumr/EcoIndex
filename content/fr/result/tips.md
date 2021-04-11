@@ -27,4 +27,4 @@ weight= 60
   - Regroupez les images d’interface dans un sprite
   - Regroupez certaines feuilles de styles (CSS) et librairies Javascript (JS).
 
-Pour aller plus loin : [L’écoconception et les bonnes pratiques](/fr/ecoconception)
+Pour aller plus loin : [L’écoconception et les bonnes pratiques](/ecoconception)

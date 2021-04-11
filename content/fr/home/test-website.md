@@ -14,4 +14,4 @@ weight = 10
  subtitle = "Entrez l’adresse d’une page web pour le découvrir !"
 +++
 
-Déjà plus de 40 000 pages testées ! [Comment ça marche ?](/fr/method)
+Déjà plus de 40 000 pages testées ! [Comment ça marche ?](/method)

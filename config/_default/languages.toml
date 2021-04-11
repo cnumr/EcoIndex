@@ -1,0 +1,51 @@
+[fr]
+languageCode = "fr"
+contentDir = "content/fr"
+languageName = "Français"
+weight = 1
+
+[[fr.menu.footer]]
+    identifier = "joinUs"
+    title = "Nous rejoindre"
+    url = "/fr/joinus"
+    weight = 1
+
+[[fr.menu.footer]]
+	identifier = "github"
+	title = "Github"
+	url = "https://github.com/cnumr/Ecoindex"
+	weight = 2
+	[fr.menu.footer.params]
+		newtab = true
+
+[[fr.menu.footer]]
+	identifier = "privacy"
+	title = "Politique de confidentialité"
+	url = "/fr/privacy"
+	weight = 3
+
+[en]
+languageCode = "en-us"
+contentDir = "content/en"
+languageName = "English"
+weight = 2
+
+[[en.menu.footer]]
+    identifier = "joinUs"
+    title = "Join us"
+    url = "/en/joinus"
+    weight = 1
+
+[[en.menu.footer]]
+	identifier = "github"
+	title = "Github"
+	url = "https://github.com/cnumr/Ecoindex"
+	weight = 2
+	[en.menu.footer.params]
+		newtab = true
+
+[[en.menu.footer]]
+	identifier = "privacy"
+	title = "Privacy policy"
+	url = "/en/privacy"
+	weight = 3
