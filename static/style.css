@@ -7,22 +7,31 @@ body {
 	background-color: #333333;
 }
 
-div.contentParagraph{
-  width: 240px;
-  padding: 27px 19px 32px 28px;
-  border-radius: 5px;
+div.contentParagraph {
+	padding: 27px 19px 32px 28px;
+	border-radius: 5px;
 	border-color: #eeeeee;
 	border-style: dashed;
-  background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 div.frame-gray {
-  width: 209px;
-  padding: 27px 19px 32px 28px;
-  background-color: #eeeeee;
+	width: 209px;
+	padding: 27px 19px 32px 28px;
+	background-color: #eeeeee;
 }
 
-h1, h2, h3, h4 {
+section {
+	max-width: 65ch;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
 	font-family: Arial;
 	color: #0d2e38;
 	font-weight: normal;
@@ -33,8 +42,8 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  margin: 0 0 25px;
-  font-size: 48px;
+	margin: 0 0 25px;
+	font-size: 48px;
 }
 
 h3 {
@@ -42,16 +51,22 @@ h3 {
 	font-size: 24px;
 }
 
-a { color: #70d628}
-a:visited { color: #6E9A1D}
+a {
+	color: #70d628;
+}
+a:visited {
+	color: #6e9a1d;
+}
 
-header, footer {
+header,
+footer {
 	margin: 0;
 	color: white;
 	padding: 0.25em;
 }
 
-header a, header a:visited {
+header a,
+header a:visited {
 	color: white;
 }
 
@@ -75,7 +90,7 @@ header div {
 	display: flex;
 }
 
-header li+li {
+header li + li {
 	border-left: 1px solid white;
 	margin-left: 1em;
 	padding-left: 1em;
@@ -89,14 +104,15 @@ header li a {
 }
 
 header li a:hover {
-	background-color: #6E9A1D;
+	background-color: #6e9a1d;
 }
 
 footer {
 	padding: 1em;
 }
 
-footer a, footer a:visited {
+footer a,
+footer a:visited {
 	color: white;
 }
 
@@ -112,7 +128,7 @@ footer ul {
 	display: flex;
 }
 
-footer li+li {
+footer li + li {
 	border-left: 1px solid white;
 	margin-left: 1em;
 	padding-left: 1em;
@@ -126,7 +142,7 @@ footer li a {
 }
 
 footer li a:hover {
-	background-color: #6E9A1D;
+	background-color: #6e9a1d;
 }
 
 main {
@@ -135,23 +151,20 @@ main {
 	min-height: 30em;
 }
 
-
 code {
 	background-color: dimgray;
 	color: white;
 	padding: 2px;
 }
 
-
 ::placeholder {
-	color: #6E9A1D;
+	color: #6e9a1d;
 }
-
 
 input {
 	background-color: white;
-	border: 1px solid #6E9A1D;
-	color: #6E9A1D;
+	border: 1px solid #6e9a1d;
+	color: #6e9a1d;
 	padding: 1em 2em;
 	text-align: center;
 	text-decoration: none;
@@ -160,7 +173,7 @@ input {
 }
 
 input[type="submit"] {
-	background-color: #6E9A1D;
+	background-color: #6e9a1d;
 	border: none;
 	color: white;
 	padding: 1em 2em;
