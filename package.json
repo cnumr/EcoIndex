@@ -1,4 +1,8 @@
 {
+	"name": "ecoindex",
+	"scripts": {
+		"format": "prettier --write ."
+	},
 	"devDependencies": {
 		"prettier": "^2.2.1",
 		"prettier-plugin-go-template": "^0.0.10"
