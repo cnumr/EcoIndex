@@ -1,8 +1,8 @@
-public
-resources/_gen
-node_modules
-hugo_stats.json
-assets/jsconfig.json
+/public
+/resources/_gen
+/node_modules
+/hugo_stats.json
+/assets/jsconfig.json
 
 # OS Files
 
