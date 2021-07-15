@@ -1,0 +1,249 @@
+:root {
+	line-height: var(--line-height);
+	font-size: calc(0.1vw + 1em);
+	font-family: var(--font-plain);
+	background-color: var(--color-light);
+	color: var(--color-dark);
+}
+
+*,
+*::before,
+*::after {
+	font-family: inherit;
+	color: inherit;
+	overflow-wrap: break-word;
+	border-style: solid;
+	border-width: 0;
+	border-color: currentColor;
+}
+
+::placeholder {
+	color: var(--color-darkish);
+	padding: var(--s-5);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-color: var(--color-lightest);
+}
+
+/* Main link */
+[href="#main"] {
+	padding: 0 var(--s-1);
+	background-color: var(--color-light);
+}
+[href="#main"]:focus {
+	color: var(--color-dark);
+	border-color: var(--color-lightish);
+	left: var(--border-thick);
+	top: var(--border-thick);
+}
+
+/* Block quotes */
+blockquote {
+	font-style: italic;
+	padding-top: var(--s1);
+	padding-bottom: var(--s1);
+}
+blockquote > p:before {
+	content: "\00ab\202F";
+}
+blockquote > p:after {
+	content: "\202F\00bb";
+}
+
+/* If no JS available, some text can be displayed */
+noscript {
+	padding: var(--s-1);
+	background-color: var(--color-lightish);
+}
+
+input[type="text"] {
+	width: 100%;
+}
+
+/* Shadow container */
+.shadow-container {
+	box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.13);
+}
+
+/* Navigation */
+nav a {
+	position: relative;
+	text-decoration: none;
+}
+nav a[aria-current="page"]::before,
+nav a[data-state="active"]::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: var(--border-thin);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding-top: 0.25rem;
+	border-bottom-width: var(--border-thin);
+	border-color: var(--color-highlight-dark);
+}
+
+/* Header */
+header .logo {
+	padding-right: var(--s1);
+}
+header > * {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+header > * > * {
+	padding-top: var(--s1);
+	padding-bottom: var(--s1);
+}
+header > * > *:last-child,
+header .menu-btn-container {
+	flex-grow: 1;
+}
+
+header .menu-btn-container {
+	text-align: right;
+}
+
+@media (max-width: 60rem) {
+	header {
+		justify-content: space-between;
+		text-align: center;
+	}
+	header > * {
+		justify-content: center;
+	}
+	header nav {
+		flex-basis: 100%;
+	}
+}
+
+/* Main navigation */
+.js-ok .menu-btn-container {
+	display: none;
+}
+.js-ok .menu-btn {
+	width: fit-content;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--font-special);
+	font-size: var(--s2);
+	font-weight: var(--font-weight-bold);
+	cursor: pointer;
+	background-color: unset;
+	color: var(--color-light);
+	border-width: 0;
+}
+.js-ok .menu-btn .icon-l {
+	margin-right: var(--s-3);
+}
+
+.js-ok .menu-btn path {
+	stroke-width: var(--border-thin);
+	transition: d 0.25s;
+}
+.js-ok .menu-btn[aria-expanded="true"] path {
+	d: path("M3,3 27,27 M15,15 15,15 M3,27 27,3");
+}
+
+.main-nav-container > * {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	margin: calc(var(--s1) / 2 * -1);
+}
+.main-nav-container > * > * {
+	margin: calc(var(--s1) / 2);
+}
+
+@media (max-width: 60rem) {
+	.main-nav-container > * {
+		justify-content: center;
+		font-size: var(--s1);
+	}
+
+	.main-nav-container > * ul {
+		justify-content: center;
+	}
+
+	.js-ok .main-nav-container[data-open="true"] {
+		height: 100vh;
+		display: block;
+	}
+
+	.js-ok .main-nav-container[data-open="false"] {
+		display: none;
+	}
+
+	.js-ok .menu-btn-container {
+		display: block;
+	}
+}
+
+body {
+	background-color: var(--color-darkish);
+	color: var(--color-light);
+}
+
+main {
+	min-height: 70vh;
+}
+
+header,
+main,
+footer {
+	padding-left: var(--s1);
+	padding-right: var(--s1);
+}
+
+footer {
+	padding-top: var(--s5);
+}
+footer > * {
+	padding-top: var(--s4);
+	padding-bottom: var(--s4);
+}
+
+.hero h1 {
+	padding: calc(2 * var(--s4)) 25% var(--s4) 0;
+}
+
+.wg {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.language-switcher {
+	text-align: center;
+}
+
+.language-switcher .lang {
+	position: relative;
+	padding: var(--s-5);
+	border-radius: var(--s-5);
+}
+
+.language-switcher .lang[aria-current="true"]::after {
+	position: absolute;
+	content: "\A";
+	top: 100%;
+	left: calc(50% - var(--s-3) / 2);
+	width: var(--s-3);
+	height: var(--s-3);
+	border-radius: 50%;
+	background: var(--color-highlight-dark);
+}
+
+.language-switcher .lang[aria-current="true"] {
+	font-weight: var(--font-weight-bold);
+}
+
+.language-switcher .lang[aria-current="true"]::after {
+	color: var(--color-lightish);
+}

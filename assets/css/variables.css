@@ -1,0 +1,17 @@
+:root {
+	/* Measure */
+	--measure: 75ch;
+
+	/* Colors */
+	--color-dark: #0d2e38;
+	--color-darkish: #007e5f;
+	--color-lightish: hsl(0, 0%, 90%);
+	--color-light: hsl(0, 0%, 99%);
+	--color-lightest: white;
+	--color-mid: hsl(0, 0%, 50%);
+	--color-highlight-dark: #86bfaf;
+	--color-highlight-light: hsl(181, 90%, 80%);
+
+	/* Border sizes */
+	--border-focus: var(--border-thin);
+}
