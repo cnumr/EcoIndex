@@ -1,6 +1,51 @@
-<header>
-	<div class="logo">
-		<a href="{{- .Site.Home.Permalink -}}"><img src="/ecoIndex-logo.png" alt="Logo ecoIndex" /></a>
-	</div>
-	{{ partial "nav.html" . -}}
-</header>
+{{ $currentPage := . }}
+<div class="shadow-container">
+	<header role="banner" class="wrapper">
+		<div>
+			<a href="{{ .Site.Home.RelPermalink }}" class="logo" title="Retour à la page d'accueil"
+				>{{- $logoResource := resources.Get "images/logo.svg" -}}
+				<img src="{{- $logoResource.RelPermalink -}}"
+					width="132"
+					height="36"
+					alt="Logo ecoIndex, retour à la page d'accueil" /></a>
+			<div class="menu-btn-container" hidden>
+				<button class="menu-btn" aria-expanded="false">
+					<div class="with-icon-l">
+						<svg class="icon-l" focusable="false" viewBox="0 0 30 30" stroke="currentColor" width="1em" height="1em">
+							<path d="M3,3 27,3 M3,15 27,15 M3,27 27,27"></path>
+						</svg>
+						Menu
+					</div>
+				</button>
+			</div>
+			<nav role="navigation" class="main-nav-container" data-open="false" aria-labelledby="main-nav-label">
+				<div>
+					<span id="main-nav-label" hidden>Navigation principale</span>
+					<div class="cluster-l">
+						<ul class>
+							{{ range .Site.Menus.main }}
+								{{- $ariaCurrent := "" -}}
+								{{- if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
+									{{- $ariaCurrent = `aria-current="page"` -}}
+								{{- end -}}
+								<li><a href="{{- .URL | safeHTMLAttr -}}" {{ $ariaCurrent | safeHTMLAttr -}}>{{ .Name }}</a></li>
+							{{- end -}}
+						</ul>
+					</div>
+					<div class="cluster-l">
+						<ul class>
+							{{ range .Site.Menus.extra }}
+								{{- $ariaCurrent := "" -}}
+								{{- if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
+									{{- $ariaCurrent = `aria-current="page"` -}}
+								{{- end -}}
+								<li><a href="{{- .URL | safeHTMLAttr -}}" {{ $ariaCurrent | safeHTMLAttr -}}>{{ .Name }}</a></li>
+							{{- end -}}
+						</ul>
+					</div>
+					{{- partial "header/language_switcher" . }}
+				</div>
+			</nav>
+		</div>
+	</header>
+</div>
