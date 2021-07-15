@@ -7,7 +7,7 @@
 	[[fr.menu.footer]]
 		identifier = "joinUs"
 		title = "Nous rejoindre"
-		url = "/fr/joinus"
+		url = "/joinus"
 		weight = 1
 
 	[[fr.menu.footer]]
@@ -21,7 +21,7 @@
 	[[fr.menu.footer]]
 		identifier = "privacy"
 		title = "Politique de confidentialité"
-		url = "/fr/privacy"
+		url = "/privacy"
 		weight = 3
 
 [en]

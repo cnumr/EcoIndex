@@ -1,5 +1,7 @@
-defaultContentLanguage = "fr"
-baseURL = "/"
+_merge = "deep"
+
+activate_web_components = true
+disableKinds = ["section", "taxonomy", "term"]
 title = "EcoIndex.fr"
 
 # Do not output RSS for home (default output for home is HTML + RSS)

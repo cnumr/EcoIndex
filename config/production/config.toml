@@ -1,3 +1,0 @@
-# Only disable in prod in order to display style guides in dev mode
-# See import "hugo-content-module-style-guides"
-disableKinds = ["section", "taxonomy", "term"]

@@ -1,0 +1,5 @@
+github.com/hankchizljaw/modern-css-reset v0.0.0-20210118105237-e7500a6c7fa3/go.mod h1:ap+WKyyJNJvvmdhCQ+VmdP+Q4rgzSkrCkCRlQ69N/jo=
+gitlab.com/goodimpact/every-layout-css v0.0.0-20210715154149-ad348d9c8b27 h1:ebEnZa/wni/1Jk3yE+CXMpin6fgTvxZp/UCQDxE+NBM=
+gitlab.com/goodimpact/every-layout-css v0.0.0-20210715154149-ad348d9c8b27/go.mod h1:cBM2FnF4tvjSUw+eWlCQ9Pt9eMGguyvm4CwzAcYalys=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210715154427-56b595836c2f h1:VJ1ITcnXTOVAmtE1w07zKJgVsWwxl7AuPJ2m6hI1q4k=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210715154427-56b595836c2f/go.mod h1:bIKVLaQ1Qf6h9EFRjZFkT9Jxmp0lgyqkMOLWTvCaQwY=
