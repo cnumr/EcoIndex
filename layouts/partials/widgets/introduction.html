@@ -1,6 +1,7 @@
 {{ $section := .page }}
-<h1>{{- $section.Title -}}</h1>
-<div class="textBlock">
+{{- partial "main/hero" . }}
+<!-- <h1>{{- $section.Title -}}</h1> -->
+<div class="center-l">
 	<div class="contentParagraph">
 		{{ $section.Content }}
 	</div>
