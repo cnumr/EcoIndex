@@ -1,10 +1,46 @@
 {
-	"name": "ecoindex",
-	"scripts": {
-		"format": "prettier --write ."
-	},
-	"devDependencies": {
-		"prettier": "^2.2.1",
-		"prettier-plugin-go-template": "^0.0.10"
-	}
+  "comments": {
+    "dependencies": {
+      "@babel/cli": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "@babel/core": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "@babel/preset-env": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "@fullhuman/postcss-purgecss": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "@webcomponents/webcomponentsjs": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "autoprefixer": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "babel-plugin-array-includes": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "css-vars-ponyfill": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "postcss": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "postcss-calc": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "postcss-cli": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "postcss-preset-env": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "postcss-simple-vars": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "purgecss": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure"
+    },
+    "devDependencies": {
+      "prettier": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
+      "prettier-plugin-go-template": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure"
+    }
+  },
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "autoprefixer": "^10.2.5",
+    "babel-plugin-array-includes": "^2.0.3",
+    "css-vars-ponyfill": "^2.3.2",
+    "postcss": "^8.2.13",
+    "postcss-calc": "^8.0",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7",
+    "postcss-simple-vars": "^6.0",
+    "purgecss": "^4.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1",
+    "prettier-plugin-go-template": "^0.0.10"
+  },
+  "name": "cnumrTests",
+  "version": "0.1.0"
 }
