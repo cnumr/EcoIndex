@@ -8,12 +8,12 @@
 	{{- /* Check homepage exists */ -}}
 	{{ if not $headless_bundle }}
 		{{ warnf "Homepage not found at %s!" $page }}
-		{{ warnf "Add the `/home/index.md` homepage file to each language's content folder. For example, your site should have a `content/home/` folder containing `index.md` and your homepage sections, or for multi-language sites, `content/en/home/` and `content/zh/home/` etc. Refer to the 'Build Your Homepage' and 'Language' documentation at https://wowchemy.com/docs/ and the example homepage at https://github.com/wowchemy/starter-academic/tree/master/exampleSite/content/home/index.md ." }}
+		{{ warnf "Add the `/home/index.md` homepage file to each language's content folder. For example, your site should have a `content/home/` folder containing `index.md` and your homepage widgets, or for multi-language sites, `content/en/home/` and `content/zh/home/` etc. Refer to the 'Build Your Homepage' and 'Language' documentation at https://wowchemy.com/docs/ and the example homepage at https://github.com/wowchemy/starter-academic/tree/master/exampleSite/content/home/index.md ." }}
 	{{ end }}
 	{{ else }}
 	{{- $page = .File.Path -}}
 	{{- $headless_bundle = site.GetPage $page -}}
-	{{- /* Check widget page exists. */ -}}
+	{{- /* Check widget page exists */ -}}
 	{{ if not $headless_bundle }}
 		{{ warnf "Widget Page not found at %s!" $page }}
 		{{ warnf "View the Widget Page documentation at https://wowchemy.com/docs/managing-content/#create-a-widget-page ." }}
@@ -21,23 +21,34 @@
 	{{ end }}
 {{ end }}
 
+<div class="stack-l --s3">
 {{- /* Load page sections */}}
-{{ range $index, $section := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
+{{ range $index, $widget := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
 	{{- /* each element st is a widget define in an md file */ -}}
 
-	{{- /* Fix Hugo's ContentBaseName returning wrong file base name when page section is within a bundle. */ -}}
-	{{- $hash_id := replace $section.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
+	{{- /* Fix Hugo's ContentBaseName returning wrong file base name when page widget is within a bundle. */ -}}
+	{{- $hash_id := replace $widget.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
 
-	{{- /* text is the default widget */ -}}
-	{{- $widget := or $section.Params.widget "text" -}}
+	{{- /* text is the default widget type */ -}}
+	{{- $widget_type := or $widget.Params.widget "text" -}}
 
-	{{- $widget_path := printf "widgets/%s.html" $widget -}}
-	{{- $widget_args := dict "root" $ "page" $section "hash_id" $hash_id -}}
+	{{- /* div is the default htmlElement */ -}}
+	{{- $html_element := or $widget.Params.htmlElement "div" -}}
+
+	{{- $widget_path := printf "widgets/%s.html" $widget_type -}}
+	{{- $widget_args := dict "root" $ "page" $widget "hash_id" $hash_id -}}
 
 	{{- /* define css class based on the widget type */ -}}
-	{{- $widget_class := printf "wg-%s" (replace (replace $widget "." "-") "_" "-") -}}
-	<section id="{{ $hash_id }}" class="home-section {{ $widget_class }}">
+	{{- $widget_class := printf "wg-%s" (replace (replace $widget_type "." "-") "_" "-") -}}
+
+	{{- $widget_html_start := printf `<%s id="%s" class="box-l %s">` $html_element $hash_id $widget_class -}}
+	{{- $widget_html_end := printf `</%s>` $html_element -}}
+
+	{{- $widget_html_start | safeHTML -}}
+	<div class="wrapper">
 		{{- /* Call the widget's partial */}}
 		{{ partial $widget_path $widget_args -}}
-	</section>
+	</div>
+	{{- $widget_html_end | safeHTML -}}
 {{ end -}}
+</div>
