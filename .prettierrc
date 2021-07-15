@@ -1,6 +1,7 @@
 {
 	"printWidth": 120,
 	"singleQuote": false,
+	"useTabs": true,
 	"quoteProps": "as-needed",
 	"trailingComma": "es5",
 	"proseWrap": "always",

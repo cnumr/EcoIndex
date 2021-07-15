@@ -1,8 +1,18 @@
-public
-resources/_gen
-node_modules
-hugo_stats.json
+# Apache
+.htpasswd
+
+# Backup Files
+*.markdown~
+*.md~
+
+# Hugo
 assets/jsconfig.json
+hugo_stats.json
+public/
+resources/
+
+# Node
+node_modules/
 
 # OS Files
 
@@ -14,7 +24,6 @@ $RECYCLE.BIN/
 
 ## OSX
 .DS_Store
-
 
 # Editors Files
 

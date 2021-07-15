@@ -26,10 +26,9 @@ Plusieurs critères sont pris en compte par notre méthode de calcul :
   stockées sur un serveur. Lorsque vous accédez à une page, votre navigateur envoie une requête au serveur pour qu’il
   lui communique ces données, afin de les mettre en forme et de les afficher sur votre écran. Seulement voilà : **le
   transport de ces données, plus ou moins lourdes, du serveur au navigateur nécessite de l’énergie.**
-  - Petite précision : Dans cette version, nous considérons que la connexion est de **type Wi-Fi via ADSL**. Dans la
-    prochaine version, nous prendrons en compte différents types de connexions, notamment la 4G. En effet, une
-    **connexion 4G nécessite jusqu’à 23 fois plus d’énergie** pour transporter la même quantité de données qu’une
-    connexion ADSL.
+- Petite précision : Dans cette version, nous considérons que la connexion est de **type Wi-Fi via ADSL**. Dans la
+  prochaine version, nous prendrons en compte différents types de connexions, notamment la 4G. En effet, une **connexion
+  4G nécessite jusqu’à 23 fois plus d’énergie** pour transporter la même quantité de données qu’une connexion ADSL.
 - **Le nombre de requêtes HTTP** : Ce critère permet de prendre en compte l’effort fait par les serveurs pour afficher
   la page testée. Plus le nombre de requêtes est important pour une même page, plus il faudra de serveurs pour servir
   cette page.

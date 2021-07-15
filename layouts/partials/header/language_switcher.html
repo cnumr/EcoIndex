@@ -1,0 +1,10 @@
+<nav role="navigation" class="language-switcher">
+	{{- range $i, $v := .AllTranslations -}}
+		{{- if eq .Language $.Language -}}
+			<span class="lang" aria-current="true">{{- .Language -}}</span>
+			{{- else -}}
+			<a href="{{ .RelPermalink }}" hreflang="{{- .Language -}}" class="lang">{{- .Language -}}</a>
+		{{- end -}}
+		{{- if gt (len .AllTranslations) (add $i 1) }} &nbsp;|&nbsp; {{- end -}}
+	{{- end -}}
+</nav>

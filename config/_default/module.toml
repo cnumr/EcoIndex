@@ -1,0 +1,70 @@
+#---
+# TODO Try removing that bloc which is here to make webcomponents mounts work
+# It's a duplicate of what's in base-structure
+# WARNGING! Make sure to test web components in production (`hugo`, not `hugo serve`)
+# E.g. by adding  `_merge = "deep"`and `activate_web_components = true`
+# in the front matter of a test page
+[[mounts]]
+	source = "archetypes"
+	target = "archetypes"
+
+[[mounts]]
+	source = "assets"
+	target = "assets"
+
+[[mounts]]
+	source = "data"
+	target = "data"
+
+[[mounts]]
+	source = "i18n"
+	target = "i18n"
+
+[[mounts]]
+	source = "layouts"
+	target = "layouts"
+
+[[mounts]]
+	source = "static"
+	target = "static"
+
+[[mounts]]
+	source = "./node_modules/@webcomponents/webcomponentsjs"
+	target = "assets/@webcomponents/webcomponentsjs"
+
+[[mounts]]
+	source = "./node_modules/@webcomponents/webcomponentsjs/bundles"
+	target = "static/@webcomponents/webcomponentsjs/bundles"
+#---
+
+# Import Good Impact "Base structure" (HTML + JS + CSS)
+[[imports]]
+	path = "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure"
+
+	[[imports.mounts]]
+		source = "archetypes"
+		target = "archetypes"
+
+	[[imports.mounts]]
+		source = "assets"
+		target = "assets"
+
+	[[imports.mounts]]
+		source = "content"
+		target = "content"
+
+	[[imports.mounts]]
+		source = "data"
+		target = "data"
+
+	[[imports.mounts]]
+		source = "i18n"
+		target = "i18n"
+
+	[[imports.mounts]]
+		source = "layouts"
+		target = "layouts"
+
+	[[imports.mounts]]
+		source = "static"
+		target = "static"

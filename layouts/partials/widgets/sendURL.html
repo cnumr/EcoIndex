@@ -1,14 +1,16 @@
 {{- $section := .page }}
-<h1>{{- $section.Title -}}</h1>
-<div>
+{{- partial "main/hero" . }}
+<div class="center-l">
 	<p>{{- $section.Params.content.subtitle -}}</p>
 </div>
 
-<article>
+<article class="center-l">
 	<form action="{{- index $section.Params.content.url -}}" method="post">
 		<input type="text" name="siteurl" placeholder="{{- index $section.Params.content.placeholder -}}" size="40" />
 		<input type="submit" value="{{- index $section.Params.content.submitText -}}" />
 	</form>
 </article>
 
-<div>{{ $section.Content }}</div>
+<div class="center-l">
+	{{ $section.Content }}
+</div>
