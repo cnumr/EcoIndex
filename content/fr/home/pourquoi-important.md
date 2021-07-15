@@ -6,6 +6,7 @@ widget = "text"
 headless = true  # This file represents a page section.
 active = true
 weight = 20
+htmlElement = "section"
 
 [content]
  subtitle = "Le numérique, ce n’est pas que du vent !"

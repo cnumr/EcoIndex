@@ -6,6 +6,7 @@ widget = "text"
 headless = true  # This file represents a page section.
 active = true
 weight = 40
+htmlElement = "section"
 +++
 
 Le poids d’une page web a été multiplié par 115 entre 1995 et 2015 et n’a pas cessé d’augmenter depuis !
