@@ -26,6 +26,10 @@
 {{ range $index, $widget := where ( $headless_bundle.Resources.ByType "page" ) ".Params.active" "!=" false }}
 	{{- /* each element st is a widget define in an md file */ -}}
 
+	{{ with $widget.Params.style.containerBefore }}
+	<div class="{{ . | safeHTMLAttr }}">
+	{{ end }}
+
 	{{- /* Fix Hugo's ContentBaseName returning wrong file base name when page widget is within a bundle. */ -}}
 	{{- $hash_id := replace $widget.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
 
@@ -50,5 +54,9 @@
 		{{ partial $widget_path $widget_args -}}
 	</div>
 	{{- $widget_html_end | safeHTML -}}
+
+	{{ with $widget.Params.style.containerAfter }}
+	</div>
+	{{ end }}
 {{ end -}}
 </div>

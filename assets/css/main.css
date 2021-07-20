@@ -219,16 +219,23 @@ footer > * {
 	position: relative;
 }
 
+.info-container {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: var(--color-light);
+	color: var(--color-dark);
+	border-radius: var(--border-radius-large);
+}
+
+/* Language Switcher */
 .language-switcher {
 	text-align: center;
 }
-
 .language-switcher .lang {
 	position: relative;
 	padding: var(--s-5);
 	border-radius: var(--s-5);
 }
-
 .language-switcher .lang[aria-current="true"]::after {
 	position: absolute;
 	content: "\A";
@@ -239,11 +246,9 @@ footer > * {
 	border-radius: 50%;
 	background: var(--color-highlight-dark);
 }
-
 .language-switcher .lang[aria-current="true"] {
 	font-weight: var(--font-weight-bold);
 }
-
 .language-switcher .lang[aria-current="true"]::after {
 	color: var(--color-lightish);
 }
