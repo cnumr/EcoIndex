@@ -14,4 +14,7 @@
 
 	/* Border sizes */
 	--border-focus: var(--border-thin);
+
+	/* Border radius */
+	--border-radius-large: 20px;
 }

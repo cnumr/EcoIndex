@@ -9,7 +9,11 @@ weight = 20
 htmlElement = "section"
 
 [content]
- subtitle = "Le numérique, ce n’est pas que du vent !"
+	subtitle = "Le numérique, ce n’est pas que du vent !"
+
+[style]
+	containerBefore = "info-container stack-l --s2"
+
 +++
 
 Aujourd’hui, l’empreinte environnementale des nouvelles technologies représente plus de gaz à effet de serre que

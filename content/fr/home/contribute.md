@@ -7,6 +7,9 @@ headless = true  # This file represents a page section.
 active = true
 weight = 50
 htmlElement = "section"
+
+[style]
+	containerAfter = "info-container"
 +++
 
 Rejoignez la communauté des acteur·ices du numérique responsable et de l’écoconception et participez à nos actions.
