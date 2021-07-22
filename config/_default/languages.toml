@@ -5,15 +5,15 @@
 	weight = 1
 
 	[[fr.menu.footer]]
-		identifier = "joinUs"
+		identifier = "join-us"
 		title = "Nous rejoindre"
-		url = "/joinus"
+		url = "/nous-rejoindre/"
 		weight = 1
 
 	[[fr.menu.footer]]
 		identifier = "github"
 		title = "Github"
-		url = "https://github.com/cnumr/Ecoindex"
+		url = "https://github.com/cnumr/Ecoindex/"
 		weight = 2
 		[fr.menu.footer.params]
 			newtab = true
@@ -21,25 +21,25 @@
 	[[fr.menu.footer]]
 		identifier = "privacy"
 		title = "Politique de confidentialité"
-		url = "/privacy"
+		url = "/confidentialite/"
 		weight = 3
 
 [en]
-	languageCode = "en-us"
+	languageCode = "en"
 	contentDir = "content/en"
 	languageName = "English"
 	weight = 2
 
 	[[en.menu.footer]]
-		identifier = "joinUs"
-			title = "Join us"
-		url = "/en/joinus"
+		identifier = "join-us"
+		title = "Join us"
+		url = "/en/join-us/"
 		weight = 1
 
 	[[en.menu.footer]]
 		identifier = "github"
 		title = "Github"
-		url = "https://github.com/cnumr/Ecoindex"
+		url = "https://github.com/cnumr/Ecoindex/"
 		weight = 2
 		[en.menu.footer.params]
 			newtab = true
@@ -47,5 +47,5 @@
 	[[en.menu.footer]]
 		identifier = "privacy"
 		title = "Privacy policy"
-		url = "/en/privacy"
+		url = "/en/privacy/"
 		weight = 3
