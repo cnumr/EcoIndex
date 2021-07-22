@@ -2,7 +2,7 @@
 <div class="shadow-container">
 	<header role="banner" class="wrapper">
 		<div>
-			<a href="{{ .Site.Home.RelPermalink }}" class="logo" title="Retour à la page d'accueil"
+			<a href="{{ (site.GetPage `/home/index.md`).URL }}" class="logo" title="Retour à la page d'accueil"
 				>{{- $logoResource := resources.Get "images/logo.svg" -}}
 				<img src="{{- $logoResource.RelPermalink -}}"
 					width="132"
