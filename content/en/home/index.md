@@ -1,5 +1,5 @@
 +++
-title="Test your website ... or another one !"
+title="Test your website"
 date="2020-11-20T14:26:50+01:00"
 draft=false
 weight=1

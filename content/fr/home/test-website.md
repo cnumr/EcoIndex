@@ -9,10 +9,10 @@ active = true
 weight = 10
 
 [content]
- url = "loading"
+ url = "/loading"
  placeholder = "http://www.monbeausite.fr"
  submitText = "Tester mon site"
  subtitle = "Entrez l’adresse d’une page web pour le découvrir !"
 +++
 
-Déjà plus de 40 000 pages testées ! [Comment ça marche ?](/method)
+Déjà plus de 40 000 pages testées ! [Comment ça marche ?](/comment-ca-marche/)

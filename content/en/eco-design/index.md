@@ -1,12 +1,12 @@
 +++
-title = "Method"
+title = "Ecodesign"
 date = 2020-11-20T14:26:50+01:00
 draft = false
 type = "widget_page"
-weight = 2
-translationKey = "method"
+weight = 3
+translationKey = "eco-design"
 
 [menu]
 	[menu.main]
-		title = "Method"
+		title = "Ecodesign"
 +++

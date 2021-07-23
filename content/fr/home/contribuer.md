@@ -6,9 +6,12 @@ widget = "text"
 headless = true  # This file represents a page section.
 active = true
 weight = 50
+htmlElement = "section"
+
+[style]
+	containerAfter = true
 +++
 
-[**WARNING !!! A passer en anglais**] Rejoignez la communauté des acteur·ices du numérique responsable et de
-l’écoconception et participez à nos actions.
+Rejoignez la communauté des acteur·ices du numérique responsable et de l’écoconception et participez à nos actions.
 
-[**Join us**](/en/join-us)
+[**Nous rejoindre**](/nous-rejoindre/)
