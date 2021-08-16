@@ -9,7 +9,7 @@ active = true
 weight = 10
 
 [content]
- url = "/loading"
+ url = "/chargement"
  placeholder = "http://www.monbeausite.fr"
  submitText = "Tester mon site"
  subtitle = "Entrez l’adresse d’une page web pour le découvrir !"

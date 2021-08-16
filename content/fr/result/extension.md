@@ -1,11 +1,11 @@
 +++
-title= "Installez l’extension GreenIT Analysis"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 70
+title = "Installez l’extension GreenIT Analysis"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 70
 
 [content]
  subtitle = "EcoIndex existe également en extension. Sur Chrome et Firefox, vous pouvez tester la performance et l’empreinte de n’importe quelle page web, même derrière un firewall."

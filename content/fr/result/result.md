@@ -1,11 +1,11 @@
 +++
-title= "Appréciation sur la note"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "result"
-headless= true  # This file represents a page section.
-active= true
-weight= 20
+title = "Appréciation sur la note"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "result"
+headless = true  # This file represents a page section.
+active = true
+weight = 20
 +++
 
 [//]: # "TODO: le texte doit changer en fonction du résultat"

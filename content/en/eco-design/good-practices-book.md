@@ -1,11 +1,11 @@
 +++
-title= "Les 115 bonnes pratiques tu suivras"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 30
+title = "Les 115 bonnes pratiques tu suivras"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 30
 +++
 
 [**WARNING !!! A passer en anglais**] Destiné aux concepteurs et aux développeurs de sites web, le livre

@@ -1,11 +1,11 @@
 +++
-title= "Sources et conditions d’utilisation"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 40
+title = "Sources et conditions d’utilisation"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 40
 +++
 
 [**WARNING !!! A passer en anglais**] Vous pouvez trouvez les sources et contribuer sur

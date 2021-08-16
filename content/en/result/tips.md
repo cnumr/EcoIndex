@@ -1,11 +1,11 @@
 +++
-title= "Comment améliorer mon score ?"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text" #we may use a different widget here
-headless= true  # This file represents a page section.
-active= true
-weight= 60
+title = "Comment améliorer mon score ?"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text" #we may use a different widget here
+headless = true  # This file represents a page section.
+active = true
+weight = 60
 +++
 
 - La page est trop lourde

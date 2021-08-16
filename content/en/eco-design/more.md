@@ -1,11 +1,11 @@
 +++
-title= "Au-delà de l’écoconception"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 60
+title = "Au-delà de l’écoconception"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 60
 +++
 
 [**WARNING !!! A passer en anglais**] L’écoconception des services numériques ne peut pas à elle seule réduire

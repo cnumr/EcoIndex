@@ -1,11 +1,11 @@
 +++
-title= "Utilisation des données des URL renseignées"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 30
+title = "Utilisation des données des URL renseignées"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 30
 +++
 
 Nous collectons des informations au sujet des URL renseignées dans notre barre de test et les stockons dans notre base
