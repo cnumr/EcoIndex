@@ -1,0 +1,6 @@
+[GoToResults]
+	other = "Go to results"
+[AnalysisError]
+	other = "An error occured during analysis"
+[StopAnalysis]
+	other = "Stop analysis"
