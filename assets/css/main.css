@@ -52,6 +52,17 @@ blockquote > p:after {
 	content: "\202F\00bb";
 }
 
+dt {
+	margin: var(--s1) 0;
+	list-style-position: inside;
+}
+
+dd {
+	display: list-item;
+	margin: var(--s-1) var(--s1);
+	list-style-position: inside;
+}
+
 /* If no JS available, some text can be displayed */
 noscript {
 	padding: var(--s-1);
