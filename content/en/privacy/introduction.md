@@ -1,11 +1,11 @@
 +++
-title= "Conditions d’utilisation et données personnelles "
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "introduction"
-headless= true  # This file represents a page section.
-active= true
-weight= 10
+title = "Conditions d’utilisation et données personnelles "
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "introduction"
+headless = true  # This file represents a page section.
+active = true
+weight = 10
 +++
 
 **[WARNING !!! Revoir le texte ici]** **[WARNING !!! not in english]** EcoIndex est un service proposé par GreenIT.fr et

@@ -1,11 +1,11 @@
 +++
-title= "Données personnelles"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 20
+title = "Données personnelles"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 20
 +++
 
 Aucune donnée personnelle des utilisateur·ices procédant à un test sur EcoIndex.fr n’est collectée. Ce site n’utilise

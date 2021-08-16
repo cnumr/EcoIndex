@@ -1,11 +1,11 @@
 +++
-title= "À propos"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "introduction"
-headless= true  # This file represents a page section.
-active= true
-weight= 10
+title = "À propos"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "introduction"
+headless = true  # This file represents a page section.
+active = true
+weight = 10
 +++
 
 [**WARNING !!! A passer en anglais**] À l’origine, EcoIndex.fr est un service en ligne conçu et proposé par Frédéric

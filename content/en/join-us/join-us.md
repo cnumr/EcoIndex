@@ -1,11 +1,11 @@
 +++
-title= "Prenez part à la communauté des acteurs du numérique responsable"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 20
+title = "Prenez part à la communauté des acteurs du numérique responsable"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 20
 +++
 
 [**WARNING !!! A passer en anglais**] Pour échanger sur les sujets du numérique responsable, de la sobriété numérique,

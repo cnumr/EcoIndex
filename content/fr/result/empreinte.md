@@ -1,11 +1,11 @@
 +++
-title= "Empreinte environnementale"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "empreinte"
-headless= true  # This file represents a page section.
-active= true
-weight= 40
+title = "Empreinte environnementale"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "empreinte"
+headless = true  # This file represents a page section.
+active = true
+weight = 40
 +++
 
 L’empreinte environnementale de la page est exprimée par 2 indicateurs environnementaux.

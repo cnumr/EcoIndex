@@ -1,11 +1,11 @@
 +++
-title= "Quelques bonnes pratiques"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text" # We may change this widget to a new one (tips) in the future
-headless= true  # This file represents a page section.
-active= true
-weight= 40
+title = "Quelques bonnes pratiques"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text" # We may change this widget to a new one (tips) in the future
+headless = true  # This file represents a page section.
+active = true
+weight = 40
 +++
 
 [**WARNING !!! A passer en anglais**] Voici, pour commencer, quelques bonnes pratiques à mettre en application !

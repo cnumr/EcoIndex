@@ -1,11 +1,11 @@
 +++
-title= "L’écoconception, c’est quoi ?"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "text"
-headless= true  # This file represents a page section.
-active= true
-weight= 20
+title = "L’écoconception, c’est quoi ?"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "text"
+headless = true  # This file represents a page section.
+active = true
+weight = 20
 +++
 
 [**WARNING !!! A passer en anglais**] Ecoconcevoir un site web, par exemple, ça signifie prendre en compte son

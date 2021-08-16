@@ -10,3 +10,5 @@ type = "widget_page"
 	[menu.main]
 		title = "Testez un site"
 +++
+
+Salut !

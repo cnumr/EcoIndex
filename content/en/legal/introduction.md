@@ -1,11 +1,11 @@
 +++
-title= "Legal"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "introduction"
-headless= true  # This file represents a page section.
-active= true
-weight= 10
+title = "Legal"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "introduction"
+headless = true  # This file represents a page section.
+active = true
+weight = 10
 +++
 
 [**WARNING !!! A passer en anglais**]

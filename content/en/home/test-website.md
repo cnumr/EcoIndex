@@ -15,4 +15,4 @@ weight = 10
  subtitle = "Put the website url in the field below."
 +++
 
-More than 40 000 sites already tested ! [Method](/en/method/)
+More than 40 000 sites already tested ! [Method](/en/how-it-works/)

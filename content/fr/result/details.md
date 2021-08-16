@@ -1,11 +1,11 @@
 +++
-title= "Détails du score"
-date= 2020-12-03T12:22:02+01:00
-draft= false
-widget= "details-score"
-headless= true  # This file represents a page section.
-active= true
-weight= 50
+title = "Détails du score"
+date = 2020-12-03T12:22:02+01:00
+draft = false
+widget = "details-score"
+headless = true  # This file represents a page section.
+active = true
+weight = 50
 +++
 
 [//]: # "infobulle"
