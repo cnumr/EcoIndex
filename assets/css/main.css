@@ -87,8 +87,9 @@ nav a[data-state="active"]::before {
 }
 
 /* Header */
-header .logo {
-	padding-right: var(--s1);
+header 
+{
+	margin-right: var(--s1);
 }
 header > * {
 	display: flex;
