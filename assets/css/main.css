@@ -98,8 +98,7 @@ nav a[data-state="active"]::before {
 }
 
 /* Header */
-header 
-{
+header .logo {
 	margin-right: var(--s1);
 }
 header > * {
