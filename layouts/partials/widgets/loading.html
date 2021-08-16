@@ -1,8 +1,7 @@
-{{ $section := .page }} {{ $baseLangUrl := "/" }}
-{{- if ne $section.Lang "en" -}} {{ $baseLangUrl = printf "%s%s/" $baseLangUrl $section.Lang }} {{- end }}
+{{ $page := .page }}
 <article>
-	{{ $section.Content }}
-	<a href="{{- $baseLangUrl -}}result">Acceder aux résultats</a>
-	<a href="{{- $baseLangUrl -}}erreuranalyse">Erreur analyse</a>
-	<a href="{{- $baseLangUrl -}}stopanalyse">Stop analyse</a>
+	{{ $page.Content }}
+	<a href="{{ ($page.GetPage `/result`).RelPermalink }}">{{ i18n "GoToResults" }}</a>
+	<a href="{{ ($page.GetPage `/error`).RelPermalink }}">{{ i18n "AnalysisError" }}</a>
+	<a href="{{ ($page.GetPage `/stop-analysis`).RelPermalink }}">{{ i18n "StopAnalysis" }}</a>
 </article>
