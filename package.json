@@ -38,8 +38,8 @@
 		"purgecss": "^4.0"
 	},
 	"devDependencies": {
-		"prettier": "^2.2.1",
-		"prettier-plugin-go-template": "^0.0.10"
+		"prettier": "*",
+		"prettier-plugin-go-template": "*"
 	},
 	"name": "EcoIndex",
 	"version": "0.1.0"
