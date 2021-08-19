@@ -27,6 +27,14 @@ a:not([class]) {
 	text-decoration-color: var(--color-lightest);
 }
 
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+	hyphens: initial;
+}
+
 /* Main link */
 [href="#main"] {
 	padding: 0 var(--s-1);
@@ -61,6 +69,7 @@ dd {
 	display: list-item;
 	margin: var(--s-1) var(--s1);
 	list-style-position: inside;
+	list-style-type: var(--list-style-type);
 }
 
 /* If no JS available, some text can be displayed */
@@ -220,8 +229,23 @@ footer > * {
 	padding-bottom: var(--s4);
 }
 
+.hero {
+	width: 100%;
+}
+
 .hero h1 {
-	padding: calc(2 * var(--s4)) 25% var(--s4) 0;
+	font-size: var(--s5);
+	font-weight: normal;
+	padding-top: calc(2 * var(--s5));
+	padding-right: 30%;
+}
+
+@media (max-width: 60rem) {
+	.hero h1 {
+		text-align: center;
+		font-size: var(--s3);
+		padding-right: 0;
+	}
 }
 
 .wg {
