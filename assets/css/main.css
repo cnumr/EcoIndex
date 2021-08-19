@@ -132,6 +132,17 @@ header {
 }
 header .logo {
 	margin-right: var(--s1);
+
+}
+
+.header-container {
+	position: relative;
+	z-index: 1;
+	background-color: var(--color-darkish);
+}
+
+header .logo {
+	padding-right: var(--s1);
 }
 header > * {
 	display: flex;
@@ -255,6 +266,10 @@ footer > * {
 .hero {
 	width: 100%;
 }
+/* Svg */
+.svg-symbols {
+	display: none;
+}
 
 .hero h1 {
 	font-size: var(--s5);
@@ -313,4 +328,66 @@ footer > * {
 }
 .language-switcher .lang[aria-current="true"] {
 	font-weight: var(--font-weight-bold);
+}
+.language-switcher .lang[aria-current="true"]::after {
+	color: var(--color-lightish);
+}
+
+/* TODO: maybe split in deco.css*/
+/* Blob svg decos */
+
+.deco-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.deco-object {
+	position: absolute;
+}
+
+.deco-object svg {
+	width: 100%;
+	height: 100%;
+}
+
+.deco-blob-1 {
+	top: -24vw;
+	right: -2vw;
+	transform: rotate(-76deg);
+	width: 49vw;
+	height: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-blob-2 {
+	top: -35.5vw;
+	right: 8vw;
+	transform: rotate(206deg) scaleX(-1);
+	width: 49vw;
+	height: 49vw;
+	fill: var(--color-light-green);
+}
+
+.deco-blob-3 {
+	top: 2vw;
+	right: -31vw;
+	transform: rotate(105deg);
+	width: 47vw;
+	height: 47vw;
+	fill: var(--color-dark-green);
+}
+
+.deco-burger {
+	--db-color-1: var(--color-light-yellow);
+	--db-color-2: var(--color-yellow);
+	top: 15.5vw;
+	right: 10.2vw;
+	width: 11vw;
+	height: 11vw;
 }
