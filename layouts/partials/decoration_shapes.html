@@ -1,0 +1,20 @@
+{{/* 
+   * Add shape derations from given "decotype" param of page
+   * 
+   * Partial symbols need to be added on top of <body> before calling this : "{{ partial "svg/inline-svg" "symbols"}}"  
+   */}}
+   {{/* TODO: add generic render from types passed */}}
+<div class="deco-container deco-type-{{ . }}" aria-hidden="true">
+	<div class="deco-object deco-blob-1">
+		{{ partial "svg/inline-svg-use" "deco-blob"}}
+	</div>
+	<div class="deco-object deco-blob-2">
+		{{ partial "svg/inline-svg-use" "deco-blob"}}
+	</div>
+	<div class="deco-object deco-blob-3">
+		{{ partial "svg/inline-svg-use" "deco-blob"}}
+	</div>
+	<div class="deco-object deco-burger">
+		{{ partial "svg/inline-svg-use" "deco-burger"}}
+	</div>
+</div>
