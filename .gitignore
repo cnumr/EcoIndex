@@ -10,6 +10,7 @@ assets/jsconfig.json
 hugo_stats.json
 public/
 resources/
+_vendor
 
 # Node
 node_modules/
@@ -26,6 +27,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 # Editors Files
+dev.sh
 
 ## Illustrator
 .idea
@@ -35,3 +37,6 @@ $RECYCLE.BIN/
 
 ## VIM
 .*.swp
+
+# VSCODE
+.history
