@@ -2,12 +2,14 @@
 <div class="shadow-container">
 	<header role="banner" class="wrapper">
 		<div>
-			<a href="{{ (site.GetPage `/home/index.md`).RelPermalink }}" class="logo" title="Retour à la page d'accueil"
+			<a href="{{ `/` | relLangURL }}" class="logo" title="Retour à la page d'accueil"
 				>{{- $logoResource := resources.Get "images/logo.svg" -}}
-				<img src="{{- $logoResource.RelPermalink -}}"
+				<img
+					src="{{- $logoResource.RelPermalink -}}"
 					width="132"
 					height="36"
-					alt="Logo ecoIndex, retour à la page d'accueil" /></a>
+					alt="Logo ecoIndex, retour à la page d'accueil"
+			/></a>
 			<div class="menu-btn-container" hidden>
 				<button class="menu-btn" aria-expanded="false">
 					<div class="with-icon-l">
