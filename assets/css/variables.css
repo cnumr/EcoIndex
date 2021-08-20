@@ -3,17 +3,18 @@
 	--measure: 75ch;
 
 	/* Colors */
-	--color-dark: #0d2e38;
-	--color-darkish: #007e5f;
-	--color-lightish: hsl(0, 0%, 90%);
+	--color-dark: hsl(194, 62%, 14%);
+	--color-darkish: hsl(165, 100%, 25%);
+	--color-lightish: hsl(165, 50%, 90%);
 	--color-light: hsl(0, 0%, 99%);
 	--color-lightest: white;
 	--color-mid: hsl(0, 0%, 50%);
-	--color-highlight-dark: #86bfaf;
-	--color-highlight-light: hsl(181, 90%, 80%);
+
+	--color-focus-dark: hsl(165, 100%, 40%);
+	--color-focus-light: hsl(165, 100%, 80%);
 
 	/* Border sizes */
-	--border-focus: var(--border-thin);
+	--border-focus: var(--border-medium);
 
 	/* Border radius */
 	--border-radius-large: 20px;
