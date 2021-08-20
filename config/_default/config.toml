@@ -2,7 +2,6 @@ _merge = "deep"
 
 defaultContentLanguage = "fr"
 
-activate_web_components = true
 disableKinds = ["section", "taxonomy", "term"]
 title = "EcoIndex.fr"
 
