@@ -1,0 +1,97 @@
+{{- /* Shortcode "widgets" */ -}}
+{{- /* Usage: {{< widgets >}} or {{< widgets 1 >}} {{< widgets 2 >}} */ -}}
+{{- /* Displays content of headless pages within the same folder, */ -}}
+{{- /* files starting with "_" or "_#1_", "_#2_", "_#intro_", etc. */ -}}
+
+{{- /* Retrieve widgets within the folder where this shortcode's page lives. */ -}}
+{{- /* Widgets are headless pages starting with: */ -}}
+{{- /* - "_" (no zone specified) */ -}}
+{{- /*   or */ -}}
+{{- /* - "_#x_" x=1, 2, intro... (specific named or numbered zone in page) */ -}}
+{{- $widget_pattern := "_" -}}
+{{- $widgets_type := "" -}}
+{{- $widgets_zone := "" -}}
+{{- $container_class := "" -}}
+{{- if .IsNamedParams -}}
+	{{- $widgets_zone = .Get "zone" -}}
+	{{- $widgets_type = .Get "type" -}}
+{{- else -}}
+	{{- $widgets_zone = .Get 0 -}}
+{{- end -}}
+{{- if $widgets_zone -}}
+	{{- $widget_pattern = print $widget_pattern "#" $widgets_zone "_" -}}
+{{- else -}}
+	{{- $widget_pattern = print $widget_pattern "[!#]" -}}
+{{- end -}}
+{{- $widget_pattern = print $widget_pattern "*" -}}
+
+{{- /* @TODO: complete here for future widgets containers types */ -}}
+{{- if (eq $widgets_type "info-container") -}}
+	{{- $container_class = "info-container stack-l --s3" -}}
+{{- else if (eq $widgets_type "...") -}}
+	{{- $container_class = "..." -}}
+{{- else -}}
+	{{- $container_class = "stack-l --s2" -}}
+{{- end -}}
+
+{{- $page := $.Page -}}
+{{- $widgets_folder_path := $page.File.Path -}}
+{{- if eq $page.File.Dir "/" -}}
+	{{- $widgets_folder_path = print "_home_widgets/" $widgets_folder_path -}}
+{{- end -}}
+{{- $resources := ($page.GetPage $widgets_folder_path).Resources -}}
+
+
+<div class="{{- $container_class | safeHTMLAttr -}}">
+	{{- /* Load widgets */ -}}
+	{{- $widgets_crit1 := where ($resources.Match $widget_pattern) ".Params.active" "!=" false -}}
+	{{- $widgets_crit2 := where ($resources.ByType "page") ".Params.active" "!=" false -}}
+	{{- $widgets := $widgets_crit1 | intersect $widgets_crit2 -}}
+
+	{{- if not $widgets -}}
+		{{- $warn_txt:= print "No widget found for page " $page.RelPermalink -}}
+		{{- if $widgets_zone -}}
+			{{- $warn_txt = print $warn_txt ", widget zone " $widgets_zone -}}
+		{{- end -}}
+		{{- $warn_txt = print $warn_txt " (pattern: " $widget_pattern ")" -}}
+		{{- warnf $warn_txt -}}
+	{{- end -}}
+
+	{{- range $index, $widget := $widgets -}}
+		{{- /* each element st is a widget define in an md file */ -}}
+
+		{{- $params := $widget.Params -}}
+
+		{{- /* for each widget we add an 'id' attribute: */ -}}
+		{{- /* - specified in the front matter ('id') */ -}}
+		{{- /* - or computed by default with file name */ -}}
+		{{- $hash_id := replace $widget.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
+		{{- /* ^ Fix Hugo's ContentBaseName returning wrong file base name when page widget is within a bundle. */ -}}
+		{{- $hash_id := or $params.id $hash_id -}}
+
+		{{- /* TODO verify that ids are unique in the page */ -}}
+
+		{{- /* text is the default widget type */ -}}
+		{{- $widget_type := or $params.widget "text" -}}
+
+		{{- /* div is the default htmlElement */ -}}
+		<!-- {{- $html_element := or $params.htmlElement "div" -}} -->
+
+		{{- $widget_path := printf "widgets/%s.html" $widget_type -}}
+		{{- $widget_args := dict "root" $ "page" $widget "hash_id" $hash_id -}}
+
+		{{- /* define css class based on the widget type */ -}}
+		{{- /* wg-xxx     : widget type (e.g. "wg-text") */ -}}
+		{{- /* wgi-xxx-yyy: widget type (e.g. "wgi-text-introduction") */ -}}
+		{{- $wg_type_formatted := (replace (replace $widget_type "." "-") "_" "-") -}}
+		{{- $widget_class := printf "wg-%s wgi-%s-%s" $wg_type_formatted $wg_type_formatted $hash_id -}}
+
+		{{- $widget_html_start := printf `<div id="%s" class="%s">` $hash_id $widget_class -}}
+		{{- $widget_html_end := printf `</div>` -}}
+
+		{{- $widget_html_start | safeHTML -}}
+		{{- /* Call the widget's partial */}}
+		{{ partial $widget_path $widget_args -}}
+		{{- $widget_html_end | safeHTML -}}
+	{{ end -}}
+</div>

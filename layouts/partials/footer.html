@@ -3,14 +3,14 @@
 		<div class="cluster-l">
 			<ul class>
 				{{- range .Site.Menus.footer }}
-				<li>
-					<a href="{{- .URL | safeHTMLAttr -}}" {{ if .Params.Newtab -}} target="_blank" {{- end -}}>{{- .Title -}}</a>
-				</li>
+					<li>
+						<a href="{{- .URL | safeHTMLAttr -}}" {{ if .Params.Newtab -}}target="_blank"{{- end -}}>{{- .Title -}}</a>
+					</li>
 				{{- end }}
 				{{- if eq hugo.Environment "development" -}}
-				<li>
-					<a href="/style-guides/type/">[DEV] Guide de style</span></a>
-				</li>
+					<li>
+						<a href="/style-guides/type/">[DEV]&nbsp;{{- i18n "StyleGuide" -}}</a>
+					</li>
 				{{- end }}
 			</ul>
 		</div>

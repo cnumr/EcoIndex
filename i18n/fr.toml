@@ -1,0 +1,10 @@
+[EcoIndexFormIntro]
+	other = "Entrez l’adresse d’une page web pour le découvrir !"
+[EcoIndexFormSubmitText]
+	other = "Tester le site"
+[GoToResults]
+	other = "Accéder aux résultats"
+[AnalysisError]
+	other = "Erreur lors de l'analyse"
+[StopAnalysis]
+	other = "Arrêter l'analyse"

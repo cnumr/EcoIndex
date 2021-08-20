@@ -1,7 +1,5 @@
-{{- $section := .page -}}
-
-<div class="stack-l center-l">
-	<h2>{{- $section.Title -}}</h2>
-	<h3>{{- $section.Params.content.subtitle -}}</h3>
-	<div class="contentParagraph">{{ $section.Content }}</div>
+<div class="box-l">
+	<section class="stack-l center-l">
+		{{ .page.Content }}
+	</section>
 </div>

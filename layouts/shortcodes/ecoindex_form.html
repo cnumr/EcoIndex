@@ -1,0 +1,4 @@
+<form action="{{- ($.Page.GetPage `/loading`).RelPermalink -}}" method="post">
+	<input type="text" name="siteurl" placeholder="{{ i18n `EcoIndexFormPlaceholder` }}" size="40" />
+	<input type="submit" value="{{ i18n `EcoIndexFormSubmitText` }}" />
+</form>

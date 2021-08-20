@@ -27,6 +27,14 @@ a:not([class]) {
 	text-decoration-color: var(--color-lightest);
 }
 
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+	hyphens: initial;
+}
+
 /* Main link */
 [href="#main"] {
 	padding: 0 var(--s-1);
@@ -50,6 +58,18 @@ blockquote > p:before {
 }
 blockquote > p:after {
 	content: "\202F\00bb";
+}
+
+dt {
+	margin: var(--s1) 0;
+	list-style-position: inside;
+}
+
+dd {
+	display: list-item;
+	margin: var(--s-1) var(--s1);
+	list-style-position: inside;
+	list-style-type: var(--list-style-type);
 }
 
 /* If no JS available, some text can be displayed */
@@ -76,19 +96,22 @@ nav a[aria-current="page"]::before,
 nav a[data-state="active"]::before {
 	content: "";
 	display: block;
-	width: 100%;
+	width: calc(100% - 2 * var(--s-1));
 	height: var(--border-thin);
 	position: absolute;
-	top: 100%;
-	left: 0;
+	top: calc(100% - var(--s-1));
+	left: var(--s-1);
 	padding-top: 0.25rem;
 	border-bottom-width: var(--border-thin);
-	border-color: var(--color-highlight-dark);
+	border-color: var(--color-highlight-light);
 }
 
 /* Header */
-header 
-{
+header {
+	padding-top: var(--s-3);
+	padding-bottom: var(--s-3);
+}
+header .logo {
 	margin-right: var(--s1);
 }
 header > * {
@@ -161,6 +184,9 @@ header .menu-btn-container {
 .main-nav-container > * > * {
 	margin: calc(var(--s1) / 2);
 }
+.main-nav-container li > a {
+	padding: var(--s-1);
+}
 
 @media (max-width: 60rem) {
 	.main-nav-container > * {
@@ -210,8 +236,23 @@ footer > * {
 	padding-bottom: var(--s4);
 }
 
+.hero {
+	width: 100%;
+}
+
 .hero h1 {
-	padding: calc(2 * var(--s4)) 25% var(--s4) 0;
+	font-size: var(--s5);
+	font-weight: normal;
+	padding-top: calc(2 * var(--s5));
+	padding-right: 30%;
+}
+
+@media (max-width: 60rem) {
+	.hero h1 {
+		text-align: center;
+		font-size: var(--s3);
+		padding-right: 0;
+	}
 }
 
 .wg {
@@ -226,6 +267,14 @@ footer > * {
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	border-radius: var(--border-radius-large);
+}
+
+:focus {
+	outline: var(--border-focus) var(--focus-style) var(--color-focus-light);
+}
+
+.info-container :focus {
+	outline: var(--border-focus) var(--focus-style) var(--color-focus-dark);
 }
 
 /* Language Switcher */
@@ -245,11 +294,8 @@ footer > * {
 	width: var(--s-3);
 	height: var(--s-3);
 	border-radius: 50%;
-	background: var(--color-highlight-dark);
+	background-color: var(--color-highlight-light);
 }
 .language-switcher .lang[aria-current="true"] {
 	font-weight: var(--font-weight-bold);
-}
-.language-switcher .lang[aria-current="true"]::after {
-	color: var(--color-lightish);
 }
