@@ -3,18 +3,30 @@
    * 
    * Partial symbols need to be added on top of <body> before calling this : "{{ partial "svg/inline-svg" "symbols"}}"  
    */}}
-   {{/* TODO: add generic render from types passed */}}
-<div class="deco-container deco-type-{{ . }}" aria-hidden="true">
-	<div class="deco-object deco-blob-1">
-		{{ partial "svg/inline-svg-use" "deco-blob"}}
-	</div>
-	<div class="deco-object deco-blob-2">
-		{{ partial "svg/inline-svg-use" "deco-blob"}}
-	</div>
-	<div class="deco-object deco-blob-3">
-		{{ partial "svg/inline-svg-use" "deco-blob"}}
-	</div>
-	<div class="deco-object deco-burger">
-		{{ partial "svg/inline-svg-use" "deco-burger"}}
-	</div>
-</div>
+
+{{/* TODO: add generic render from types passed */}}
+{{ $decotype := . }}
+
+{{ $blobcount := 0 }}
+{{ $isDecoBurgerVisible := false }}
+{{ if (eq $decotype "home") }}
+  {{ $blobcount = 3 }}
+  {{ $isDecoBurgerVisible = true }}
+{{ else if (eq $decotype "contribute") }}
+    {{ $blobcount = 3 }}
+{{ end }}
+
+{{ if or ($blobcount) ($isDecoBurgerVisible) }}
+    <div class="deco-container deco-type-{{ $decotype }}" aria-hidden="true">
+        {{ range $num := (seq $blobcount) }}
+            <div class="deco-object deco-object--blob-{{ . }}">
+                {{ partial "svg/inline-svg-use" "deco-blob"}}
+            </div>
+        {{ end }}
+        {{ if ($isDecoBurgerVisible) }}
+            <div class="deco-object deco-object--burger">
+                {{ partial "svg/inline-svg-use" "deco-burger"}}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}

@@ -141,6 +141,12 @@ header .logo {
 	background-color: var(--color-darkish);
 }
 
+header 
+{
+	margin-right: var(--s1);
+
+}
+
 header .logo {
 	padding-right: var(--s1);
 }
@@ -333,7 +339,7 @@ footer > * {
 	color: var(--color-lightish);
 }
 
-/* TODO: maybe split in deco.css*/
+/* TODO: maybe move in separate file like decorations.css */
 /* Blob svg decos */
 
 .deco-container {
@@ -356,7 +362,8 @@ footer > * {
 	height: 100%;
 }
 
-.deco-blob-1 {
+/* TODO: mobile styles */
+.deco-type-home .deco-object--blob-1 {
 	top: -24vw;
 	right: -2vw;
 	transform: rotate(-76deg);
@@ -365,8 +372,8 @@ footer > * {
 	fill: var(--color-yellow);
 }
 
-.deco-blob-2 {
-	top: -35.5vw;
+.deco-type-home .deco-object--blob-2 {
+	top: -33.5vw;
 	right: 8vw;
 	transform: rotate(206deg) scaleX(-1);
 	width: 49vw;
@@ -374,8 +381,8 @@ footer > * {
 	fill: var(--color-light-green);
 }
 
-.deco-blob-3 {
-	top: 2vw;
+.deco-type-home .deco-object--blob-3 {
+	top: 3vw;
 	right: -31vw;
 	transform: rotate(105deg);
 	width: 47vw;
@@ -383,11 +390,38 @@ footer > * {
 	fill: var(--color-dark-green);
 }
 
-.deco-burger {
+.deco-type-home .deco-object--burger {
 	--db-color-1: var(--color-light-yellow);
 	--db-color-2: var(--color-yellow);
 	top: 15.5vw;
 	right: 10.2vw;
 	width: 11vw;
 	height: 11vw;
+}
+
+.deco-type-contribute .deco-object--blob-1 {
+	top: -21vw;
+	left: -25vw;
+	transform: rotate(-76deg);
+	width: 49vw;
+	height: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-contribute .deco-object--blob-2 {
+	top: -40.4vw;
+	right: -11vw;
+	transform: rotate(-83deg) scaleX(-1);
+	width: 72vw;
+	height: 72vw;
+	fill: var(--color-light-green);
+}
+
+.deco-type-contribute .deco-object--blob-3 {
+	top: 0vw;
+	right: -26vw;
+	transform: rotate(105deg);
+	width: 47vw;
+	height: 47vw;
+	fill: var(--color-dark-green);
 }
