@@ -18,7 +18,7 @@
 }
 
 ::placeholder {
-	color: var(--color-darkish);
+	color: var(--color-lightest);
 	padding: var(--s-5);
 }
 
@@ -78,7 +78,22 @@ noscript {
 	background-color: var(--color-lightish);
 }
 
+/* Forms */
+
+input {
+	padding: var(--s1);
+	border-width: 0;
+	border-radius: var(--border-radius-small);
+}
+
+input[type="submit"] {
+	background-color: var(--color-light);
+	color: var(--color-dark);
+	font-weight: var(--font-weight-bold);
+}
+
 input[type="text"] {
+	background-color: var(--color-darkish);
 	width: 100%;
 }
 
@@ -213,7 +228,7 @@ header .menu-btn-container {
 }
 
 body {
-	background-color: var(--color-darkish);
+	background-color: var(--color-primary);
 	color: var(--color-light);
 }
 

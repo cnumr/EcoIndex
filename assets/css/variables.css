@@ -3,8 +3,9 @@
 	--measure: 75ch;
 
 	/* Colors */
+	--color-primary: hsl(165, 100%, 25%);
 	--color-dark: hsl(194, 62%, 14%);
-	--color-darkish: hsl(165, 100%, 25%);
+	--color-darkish: hsl(165, 100%, 20%);
 	--color-lightish: hsl(165, 50%, 90%);
 	--color-light: hsl(0, 0%, 99%);
 	--color-lightest: white;
@@ -17,5 +18,6 @@
 	--border-focus: var(--border-medium);
 
 	/* Border radius */
+	--border-radius-small: 5px;
 	--border-radius-large: 20px;
 }
