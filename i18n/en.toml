@@ -1,3 +1,9 @@
+[EcoIndexFormIntro]
+	other = "Enter a website URL to discover it!"
+[EcoIndexFormPlaceholder]
+	other = "https://example.org"
+[EcoIndexFormSubmitText]
+	other = "Test website"
 [GoToResults]
 	other = "Go to results"
 [AnalysisError]
