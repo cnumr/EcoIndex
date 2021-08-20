@@ -11,12 +11,6 @@
 			"options": {
 				"parser": "go-template"
 			}
-		},
-		{
-			"files": "*.md",
-			"options": {
-				"proseWrap": "preserve"
-			}
 		}
 	]
 }
