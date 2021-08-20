@@ -1,8 +1,16 @@
 +++
 title = "Politique de confidentialité"
-date = 2020-04-25T10:57:19+02:00
-draft = false
-type = "widget_page"
-weight = 10
 slug = "confidentialite"
+
+[menu]
+	[menu.footer]
+		weight = 3
 +++
+
+{{% hero %}}
+
+# Politique de confidentialité
+
+{{% /hero %}}
+
+{{< widgets type="info-container" >}}

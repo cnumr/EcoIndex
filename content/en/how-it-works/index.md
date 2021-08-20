@@ -1,11 +1,17 @@
 +++
-title = "Method"
-date = 2020-11-20T14:26:50+01:00
-draft = false
-type = "widget_page"
-weight = 2
+title = "How it works"
 
 [menu]
 	[menu.main]
-		title = "Method"
+		weight = 2
 +++
+
+{{% hero %}}
+
+# How it works
+
+{{% /hero %}}
+
+{{< widgets zone="first" type= "intro" >}}
+
+{{< widgets type="info-container" >}}

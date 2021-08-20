@@ -11,19 +11,19 @@
 					alt="Logo ecoIndex, retour à la page d'accueil"
 			/></a>
 			<div class="menu-btn-container" hidden>
-				<button class="menu-btn" aria-expanded="false">
-					<div class="with-icon-l">
+				<div class="with-icon-l">
+					<button class="menu-btn" aria-expanded="false">
 						<svg class="icon-l" focusable="false" viewBox="0 0 30 30" stroke="currentColor" width="1em" height="1em">
 							<path d="M3,3 27,3 M3,15 27,15 M3,27 27,27"></path>
 						</svg>
 						Menu
-					</div>
-				</button>
+					</button>
+				</div>
 			</div>
 			<nav role="navigation" class="main-nav-container" data-open="false" aria-labelledby="main-nav-label">
 				<div>
 					<span id="main-nav-label" hidden>Navigation principale</span>
-					<div class="cluster-l">
+					<div class="cluster-l --s-1">
 						<ul class>
 							{{ range .Site.Menus.main }}
 								{{- $ariaCurrent := "" -}}
@@ -34,7 +34,7 @@
 							{{- end -}}
 						</ul>
 					</div>
-					<div class="cluster-l">
+					<div class="cluster-l --s-1">
 						<ul class>
 							{{ range .Site.Menus.extra }}
 								{{- $ariaCurrent := "" -}}

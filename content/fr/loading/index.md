@@ -1,7 +1,12 @@
 +++
 title = "Chargement"
-date = 2020-11-20T14:26:50+01:00
-draft = false
-type = "widget_page"
 slug = "chargement"
 +++
+
+{{% hero %}}
+
+# Chargement
+
+{{% /hero %}}
+
+{{< widgets type="info-container" >}}

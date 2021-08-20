@@ -1,12 +1,18 @@
 +++
 title = "L’écoconception"
-date = 2020-11-09T14:00:00+02:00
-draft = false
-type = "widget_page"
-weight = 3
 slug = "ecoconception"
 
 [menu]
 	[menu.main]
-		title = "L’écoconception"
+		weight = 3
 +++
+
+{{% hero %}}
+
+# Écoconception et bonnes pratiques
+
+{{% /hero %}}
+
+{{< widgets zone="first" type= "intro" >}}
+
+{{< widgets type="info-container" >}}
