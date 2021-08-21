@@ -1,6 +1,6 @@
 github.com/hankchizljaw/modern-css-reset v0.0.0-20210118105237-e7500a6c7fa3/go.mod h1:ap+WKyyJNJvvmdhCQ+VmdP+Q4rgzSkrCkCRlQ69N/jo=
-gitlab.com/goodimpact/every-layout-css v0.0.0-20210819124942-bed0a4a252a6/go.mod h1:cBM2FnF4tvjSUw+eWlCQ9Pt9eMGguyvm4CwzAcYalys=
+gitlab.com/goodimpact/every-layout-css v0.0.0-20210821004915-8552b478ef08/go.mod h1:cBM2FnF4tvjSUw+eWlCQ9Pt9eMGguyvm4CwzAcYalys=
 gitlab.com/goodimpact/every-layout-wc v0.0.0-20210715225714-a9629e5e8f4a/go.mod h1:JI47MJnTDNgIXwh0bRHdTtRW44zurYCeiOE3GVExCz4=
-gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210820165007-4464eb2e462a h1:sjMGu2n92qL+Uf9tmm6B3q6LRbiqfAhRi1GgiGcWM8w=
-gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210820165007-4464eb2e462a/go.mod h1:3DLJflelx0CxnH56BbSI+BiLme8l/q4E95dvqo+If7E=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210821005038-491eed6efa7a h1:pPlE92arPXvZyjT0jgvkHGb8eL+w1FKCsMIU+0EmcrY=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20210821005038-491eed6efa7a/go.mod h1:X0BLm4s7xwrE0nqbjx5MHUOrq3ehzfCKnw+Rdr2c7Ss=
 gitlab.com/neotericdesign-tools/hugo-content-module-style-guides.git v0.0.0-20200513165827-e43fa80f0593/go.mod h1:p+A5GOjgLL7ajjbNwmRajJEhZ0ccEq+zLJAPkql0qs8=
