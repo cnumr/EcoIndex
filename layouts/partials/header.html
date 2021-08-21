@@ -23,7 +23,7 @@
 			<nav role="navigation" class="main-nav-container" data-open="false" aria-labelledby="main-nav-label">
 				<div>
 					<span id="main-nav-label" hidden>Navigation principale</span>
-					<div class="cluster-l --s-1">
+					<div class="cluster-l">
 						<ul class>
 							{{ range .Site.Menus.main }}
 								{{- $ariaCurrent := "" -}}
@@ -34,7 +34,7 @@
 							{{- end -}}
 						</ul>
 					</div>
-					<div class="cluster-l --s-1">
+					<div class="cluster-l">
 						<ul class>
 							{{ range .Site.Menus.extra }}
 								{{- $ariaCurrent := "" -}}

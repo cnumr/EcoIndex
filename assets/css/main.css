@@ -111,11 +111,11 @@ nav a[aria-current="page"]::before,
 nav a[data-state="active"]::before {
 	content: "";
 	display: block;
-	width: calc(100% - 2 * var(--s-1));
+	width: 100%;
 	height: var(--border-thin);
 	position: absolute;
-	top: calc(100% - var(--s-1));
-	left: var(--s-1);
+	top: 100%;
+	left: 0;
 	padding-top: 0.25rem;
 	border-bottom-width: var(--border-thin);
 	border-color: var(--color-highlight-light);
@@ -194,13 +194,10 @@ header .menu-btn-container {
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
-	margin: calc(var(--s1) / 2 * -1);
+	margin: calc(var(--s4) / 2 * -1);
 }
 .main-nav-container > * > * {
-	margin: calc(var(--s1) / 2);
-}
-.main-nav-container li > a {
-	padding: var(--s-1);
+	margin: calc(var(--s4) / 2);
 }
 
 @media (max-width: 60rem) {
