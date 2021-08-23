@@ -86,6 +86,11 @@ input {
 	border-radius: var(--border-radius-small);
 }
 
+input[type="submit"],
+input[type="button"] {
+	max-width: fit-content;
+}
+
 input[type="submit"] {
 	background-color: var(--color-light);
 	color: var(--color-dark);
@@ -94,7 +99,6 @@ input[type="submit"] {
 
 input[type="text"] {
 	background-color: var(--color-darkish);
-	width: 100%;
 }
 
 /* Shadow container */
@@ -261,7 +265,6 @@ footer > * {
 
 @media (max-width: 60rem) {
 	.hero h1 {
-		text-align: center;
 		font-size: var(--s3);
 		padding-right: 0;
 	}
