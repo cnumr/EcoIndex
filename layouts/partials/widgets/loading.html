@@ -1,7 +1,5 @@
-{{ $page := .page }}
 <article>
-	{{ $page.Content }}
-	<a href="{{ ($page.GetPage `/result`).RelPermalink }}">{{ i18n "GoToResults" }}</a>
-	<a href="{{ ($page.GetPage `/error`).RelPermalink }}">{{ i18n "AnalysisError" }}</a>
-	<a href="{{ ($page.GetPage `/stop-analysis`).RelPermalink }}">{{ i18n "StopAnalysis" }}</a>
+	<a href="{{ (.GetPage `/result`).RelPermalink }}">{{ i18n "GoToResults" }}</a>
+	<a href="{{ (.GetPage `/error`).RelPermalink }}">{{ i18n "AnalysisError" }}</a>
+	<a href="{{ (.GetPage `/stop-analysis`).RelPermalink }}">{{ i18n "StopAnalysis" }}</a>
 </article>

@@ -78,7 +78,6 @@
 		<!-- {{- $html_element := or $params.htmlElement "div" -}} -->
 
 		{{- $widget_path := printf "widgets/%s.html" $widget_type -}}
-		{{- $widget_args := dict "root" $ "page" $widget "hash_id" $hash_id -}}
 
 		{{- /* define css class based on the widget type */ -}}
 		{{- /* wg-xxx     : widget type (e.g. "wg-text") */ -}}
@@ -90,8 +89,8 @@
 		{{- $widget_html_end := printf `</div>` -}}
 
 		{{- $widget_html_start | safeHTML -}}
-		{{- /* Call the widget's partial */}}
-		{{ partial $widget_path $widget_args -}}
+		{{- /* Call the widget's partial with widget context */ -}}
+		{{ partial $widget_path $widget -}}
 		{{- $widget_html_end | safeHTML -}}
 	{{ end -}}
 </div>
