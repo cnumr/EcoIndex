@@ -2,7 +2,7 @@
 	line-height: var(--line-height);
 	font-size: calc(0.1vw + 1em);
 	font-family: var(--font-plain);
-	background-color: var(--color-light);
+	background-color: var(--color-darkish);
 	color: var(--color-dark);
 }
 
