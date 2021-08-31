@@ -276,6 +276,11 @@ footer > * {
 	position: relative;
 }
 
+.highlight {
+	background-color: var(--color-mid);
+	padding: var(--s1);
+}
+
 .info-container {
 	padding-top: 5%;
 	padding-bottom: 5%;
