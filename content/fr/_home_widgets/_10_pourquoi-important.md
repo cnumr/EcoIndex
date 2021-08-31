@@ -1,7 +1,6 @@
 +++
 id = "pourquoi-important"
 weight = 10
-#widget = "info_2_columns"
 title = "Pourquoi c’est important ?"
 subtitle = "Le numérique, ce n’est pas que du vent"
 +++
