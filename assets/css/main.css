@@ -29,10 +29,12 @@ a:not([class]) {
 
 /* Headings */
 h1,
-h2,
-h3,
-h4 {
-	hyphens: initial;
+h2 {
+	font-weight: var(--font-weight-normal);
+}
+
+hr {
+	border-color: var(--color-mid);
 }
 
 /* Main link */
@@ -88,7 +90,7 @@ input {
 
 input[type="submit"],
 input[type="button"] {
-	max-width: fit-content;
+	text-align: left;
 }
 
 input[type="submit"] {
@@ -235,13 +237,25 @@ body {
 
 main {
 	min-height: 70vh;
+	padding-left: var(--s1);
+	padding-right: var(--s1);
+}
+
+@media (max-width: 30rem) {
+	main {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	main > * > *:not(.info-container) {
+		padding-left: var(--s1);
+		padding-right: var(--s1);
+	}
 }
 
 header,
-main,
 footer {
-	padding-left: var(--s1);
-	padding-right: var(--s1);
+	padding-left: var(--s4);
+	padding-right: var(--s4);
 }
 
 footer {
@@ -258,7 +272,6 @@ footer > * {
 
 .hero h1 {
 	font-size: var(--s5);
-	font-weight: normal;
 	padding-top: calc(2 * var(--s5));
 	padding-right: 30%;
 }
@@ -266,6 +279,7 @@ footer > * {
 @media (max-width: 60rem) {
 	.hero h1 {
 		font-size: var(--s3);
+		padding-top: calc(2 * var(--s4));
 		padding-right: 0;
 	}
 }
@@ -282,11 +296,19 @@ footer > * {
 }
 
 .info-container {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	width: 80rem;
+	max-width: 100%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	border-radius: var(--border-radius-large);
+}
+.info-container > * + * > * {
+	border-top-width: var(--border-thin);
+	border-color: var(--color-mid);
 }
 
 :focus {

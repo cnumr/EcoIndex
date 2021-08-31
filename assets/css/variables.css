@@ -9,7 +9,7 @@
 	--color-lightish: hsl(165, 50%, 90%);
 	--color-light: hsl(0, 0%, 99%);
 	--color-lightest: white;
-	--color-mid: hsl(0, 0%, 50%);
+	--color-mid: #eeeeee;
 
 	--color-focus-dark: hsl(165, 100%, 40%);
 	--color-focus-light: hsl(165, 100%, 80%);
