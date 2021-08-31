@@ -319,3 +319,10 @@ footer > * {
 .language-switcher .lang[aria-current="true"] {
 	font-weight: var(--font-weight-bold);
 }
+
+.info_2_columns_col1 {
+	flex-basis: calc(var(--measure) / 3);
+}
+.info_2_columns_col1 hr {
+	width: 30%;
+}
