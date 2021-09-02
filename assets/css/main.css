@@ -137,7 +137,7 @@ header .logo {
 
 .header-container {
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	background-color: var(--color-darkish);
 }
 
@@ -251,6 +251,8 @@ body {
 }
 
 main {
+	position: relative;
+	z-index: 1;
 	min-height: 70vh;
 }
 
