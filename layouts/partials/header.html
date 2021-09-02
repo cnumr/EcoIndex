@@ -5,6 +5,9 @@
 <div class="svg-symbols">
 	{{ partial "svg/inline-svg" "symbols"}}
 </div>
+{{/* Decoration svg shapes for header and background */}}
+{{ partial "decoration_shapes" $currentPage.Params.decotype }}
+
 <div class="header-container shadow-container">
 	<header role="banner" class="wrapper">
 		<div>
@@ -57,5 +60,3 @@
 		</div>
 	</header>
 </div>
-{{/* Decoration svg shapes for header and background */}}
-{{ partial "decoration_shapes" $currentPage.Params.decotype }}
