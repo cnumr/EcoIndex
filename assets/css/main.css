@@ -109,12 +109,14 @@ input[type="text"] {
 }
 
 /* Navigation */
-nav a {
+nav a,
+span[aria-current="page"],
+span[data-state="active"] {
 	position: relative;
 	text-decoration: none;
 }
-nav a[aria-current="page"]::before,
-nav a[data-state="active"]::before {
+nav span[aria-current="page"]::before,
+nav span[data-state="active"]::before {
 	content: "";
 	display: block;
 	width: 100%;
