@@ -1,8 +1,6 @@
 +++
 id = "pourquoi-important"
 weight = 10
-title = "Pourquoi c’est important ?"
-subtitle = "Le numérique, ce n’est pas que du vent"
 +++
 
 {{% info_2_columns %}}

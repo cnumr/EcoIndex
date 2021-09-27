@@ -19,7 +19,7 @@
 
 ::placeholder {
 	color: var(--color-lightest);
-	padding: var(--s-5);
+	padding: var(--s-5) var(--s-5) var(--s-5) 0;
 }
 
 /* A elements that don't have a class get default styles */
@@ -31,6 +31,12 @@ a:not([class]) {
 h1,
 h2 {
 	font-weight: var(--font-weight-normal);
+}
+h1 {
+	font-size: var(--s5);
+}
+h2 {
+	font-size: var(--s4);
 }
 
 hr {
@@ -239,19 +245,6 @@ body {
 
 main {
 	min-height: 70vh;
-	padding-left: var(--s1);
-	padding-right: var(--s1);
-}
-
-@media (max-width: 30rem) {
-	main {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	main > * > *:not(.info-container) {
-		padding-left: var(--s1);
-		padding-right: var(--s1);
-	}
 }
 
 header,
@@ -298,18 +291,23 @@ footer > * {
 }
 
 .info-container {
-	width: 80rem;
-	max-width: 100%;
-	padding-top: 2%;
-	padding-bottom: 2%;
-	margin-left: auto;
-	margin-right: auto;
+	padding-top: var(--s0p5);
+	padding-bottom: var(--s0p5);
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	border-radius: var(--border-radius-large);
 }
-.info-container > * + * > * {
-	border-top-width: var(--border-thin);
+
+.info-container > *:not(:first-child) > * {
+	padding-top: calc(var(--s3) + 2%);
+}
+
+.info-container > *:not(:last-child) > * {
+	padding-bottom: calc(var(--s3) + 2%);
+}
+
+.info-container > *:not(:last-child) > * {
+	border-bottom-width: var(--border-thin);
 	border-color: var(--color-mid);
 }
 
@@ -350,3 +348,20 @@ footer > * {
 .info_2_columns_col1 hr {
 	width: 30%;
 }
+.info_2_columns_col2 {
+	padding-top: var(--s0);
+}
+
+/* DEBUG */
+/* .stack-l {
+	border-color: #0000ffaa !important;
+	border-width: 3px !important;
+}
+.box-l {
+	border-color: #ff00ffaa !important;
+	border-width: 3px !important;
+}
+.center-l {
+	border-color: #ff0000aa !important;
+	border-width: 3px !important;
+} */
