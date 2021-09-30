@@ -35,6 +35,10 @@ h4 {
 	hyphens: initial;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 /* Main link */
 [href="#main"] {
 	padding: 0 var(--s-1);
@@ -271,6 +275,23 @@ footer > * {
 .hero {
 	width: 100%;
 }
+
+/* Blocs */
+
+.em_card {
+	display: flex;
+    flex-direction: column;
+	min-height: 14.5rem;
+	padding: var(--s2);
+	border-radius: 5px;
+	background-color: var(--color-very-light-pink);
+}
+.em_card svg {
+	margin-bottom: auto;
+    max-width: var(--s4);
+    max-height: var(--s4);
+}
+
 /* Svg */
 .svg-symbols {
 	display: none;
@@ -356,7 +377,7 @@ footer > * {
 	position: absolute;
 	height: 0;
 	/* height = width */
-	padding-bottom: 50%; 
+	padding-bottom: 50%;
 }
 
 .deco-object svg {

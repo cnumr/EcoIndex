@@ -1,6 +1,6 @@
 :root {
 	/* Measure */
-	--measure: 75ch;
+	--measure: 87ch;
 
 	/* Colors */
 	--color-primary: hsl(165, 100%, 25%);
@@ -19,6 +19,7 @@
 	--color-light-yellow: #F7EDC0;
 	--color-light-green: #B6D295;
 	--color-dark-green: #2D665E;
+	--color-very-light-pink: #eeeeee;
 
 	/* Border sizes */
 	--border-focus: var(--border-medium);
