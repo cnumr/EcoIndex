@@ -1,0 +1,3 @@
+<div class="grid-l {{ with .Get "class" }}{{ . }}{{ end }}" {{ with .Get "min-cell-width" }}style="--min-cell-width:{{ . }}px;"{{ end }}>
+	{{ .Inner }}
+</div>
