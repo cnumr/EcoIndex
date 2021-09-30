@@ -12,9 +12,9 @@ weight = 20
 
 
 
-<div class="grid-l" style="--min-cell-width:160px;">
-{{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
-{{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
-{{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
-{{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
-</div>
+{{<grid min-cell-width="160">}}
+    {{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
+    {{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
+    {{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
+    {{< highlight_info_card icon="energy" title="4,2%" text="consommation d'energie primaire" >}}
+{{</grid>}}
