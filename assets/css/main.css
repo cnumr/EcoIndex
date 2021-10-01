@@ -278,7 +278,7 @@ footer > * {
 
 /* Blocs */
 
-.em_card {
+.em-card {
 	display: flex;
     flex-direction: column;
 	min-height: 14.5rem;
@@ -286,7 +286,8 @@ footer > * {
 	border-radius: 5px;
 	background-color: var(--color-very-light-pink);
 }
-.em_card svg {
+.em-card svg {
+	fill: currentColor;
 	margin-bottom: auto;
     max-width: var(--s4);
     max-height: var(--s4);
