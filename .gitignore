@@ -40,3 +40,6 @@ dev.sh
 
 # VSCODE
 .history
+
+# Netlify
+.netlify

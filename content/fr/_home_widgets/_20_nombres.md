@@ -19,12 +19,12 @@ weight = 20
     {{<highlight_info_card 
         icon="water-drop" 
         title="0,2 %" 
-        text="consomation <br/> d’eau" 
+        text="consommation <br/> d’eau" 
     >}}
     {{<highlight_info_card 
         icon="electricity" 
         title="5,6 %" 
-        text="consomation <br/> d’électricité" 
+        text="consommation <br/> d’électricité" 
     >}} 
 {{</grid>}}
 
