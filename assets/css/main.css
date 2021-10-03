@@ -508,6 +508,10 @@ footer > * {
 	padding-top: var(--s0);
 }
 
+.info_1_column {
+	flex-basis: calc(var(--measure) * 3 / 8 + var(--s4p1) / 2) !important;
+}
+
 /* DEBUG */
 /* .stack-l {
 	border-color: #0000ffaa !important;
