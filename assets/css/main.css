@@ -347,7 +347,8 @@ footer > * {
 }
 
 .info_2_columns_col1 {
-	flex-basis: calc(var(--measure) / 3);
+	flex-basis: calc(var(--measure) * 3 / 8);
+	hyphens: auto;
 }
 .info_2_columns_col1 hr {
 	width: 30%;
