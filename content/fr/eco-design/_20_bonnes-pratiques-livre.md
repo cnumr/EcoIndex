@@ -3,7 +3,15 @@ id = "bonnes-pratiques-livre"
 weight = 20
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Les 115 bonnes pratiques tu suivras
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
 
 Destiné aux concepteurs et aux développeurs de sites web, le livre
 [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/) explique de manière très concrète comment
@@ -14,3 +22,7 @@ clé : une empreinte ressources divisée au minimum par deux !
 - Le livre : Ecoconception web, les 115 bonnes pratiques
 - La liste des bonnes pratiques en français : Checklist des bonnes pratiques
 - La liste des bonnes pratiques en anglais : Ecometer best practices
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

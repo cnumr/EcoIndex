@@ -1,4 +1,4 @@
 {{- /* Only 1 parameter to determine the style of frame to display */ -}}
-<div class="frame frame-{{- .Get 0 -}}">
+<div class="highlight">
 	{{ .Inner | .Page.RenderString (dict "display" "block") }}
 </div>

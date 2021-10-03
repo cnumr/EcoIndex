@@ -9,14 +9,16 @@ weight = 60
 
 [//]: # "possibilité de changer ce shortcode"
 
-{{% framed gray %}}
+{{% highlight %}}
 
 ### Empreinte physique
 
 L’empreinte physique du site se caractérise, notamment, par la quantité de mémoire vive (RAM) et le nombre de cycles
 processeur (CPU) consommés par le processus navigateur affichant l’URL analysée. L’analyse de l’empreinte physique dans
 le temps – évolution de la consommation mémoire et charge CPU – permet d’identifier des corrélations et effet de seuil :
-blocage CPU, surconsommation mémoire, etc. {{% /framed %}}
+blocage CPU, surconsommation mémoire, etc.
+
+{{% /highlight %}}
 
 L’empreinte environnementale d’une page est représentée par son équivalence en matière de **consommation de gaz à effet
 de serre et d’eau pour un nombre de visiteurs donné.** Elle est calculée en fonction du niveau d’écoconception du site.

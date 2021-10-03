@@ -1,10 +1,20 @@
+{{ $currentPage := . }}
 <footer role="contentinfo" class="wrapper">
 	<nav role="navigation">
 		<div class="cluster-l">
 			<ul class>
 				{{- range .Site.Menus.footer }}
+					{{- $ariaCurrent := "" -}}
+					{{- if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) -}}
+						{{- $ariaCurrent = `aria-current="page"` -}}
+					{{- end -}}
 					<li>
-						<a href="{{- .URL | safeHTMLAttr -}}" {{ if .Params.Newtab -}}target="_blank"{{- end -}}>{{- .Title -}}</a>
+						<a
+							href="{{- .URL | safeHTMLAttr -}}"
+							{{ if .Params.Newtab -}}target="_blank"{{- end -}}
+							{{ $ariaCurrent | safeHTMLAttr -}}
+							>{{ .Title }}</a
+						>
 					</li>
 				{{- end }}
 				{{- if eq hugo.Environment "development" -}}

@@ -35,22 +35,22 @@
 					<div class="cluster-l">
 						<ul class>
 							{{ range .Site.Menus.main }}
-								{{- $ariaCurrent := "" -}}
 								{{- if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) -}}
-									{{- $ariaCurrent = `aria-current="page"` -}}
+									<li><span aria-current="page">{{ .Name }}</span></li>
+								{{- else -}}
+									<li><a href="{{- .URL | safeHTMLAttr -}}">{{ .Name }}</a></li>
 								{{- end -}}
-								<li><a href="{{- .URL | safeHTMLAttr -}}" {{ $ariaCurrent | safeHTMLAttr -}}>{{ .Name }}</a></li>
 							{{- end -}}
 						</ul>
 					</div>
 					<div class="cluster-l">
 						<ul class>
 							{{ range .Site.Menus.extra }}
-								{{- $ariaCurrent := "" -}}
 								{{- if or ($currentPage.IsMenuCurrent "extra" .) ($currentPage.HasMenuCurrent "extra" .) -}}
-									{{- $ariaCurrent = `aria-current="page"` -}}
+									<li><span aria-current="page">{{ .Name }}</span></li>
+								{{- else -}}
+									<li><a href="{{- .URL | safeHTMLAttr -}}">{{ .Name }}</a></li>
 								{{- end -}}
-								<li><a href="{{- .URL | safeHTMLAttr -}}" {{ $ariaCurrent | safeHTMLAttr -}}>{{ .Name }}</a></li>
 							{{- end -}}
 						</ul>
 					</div>
