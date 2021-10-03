@@ -9,7 +9,7 @@ slug = "ecoconception"
 
 {{% hero %}}
 
-# Écoconception et bonnes pratiques
+# Éco&shy;conception et bonnes pratiques
 
 {{% /hero %}}
 

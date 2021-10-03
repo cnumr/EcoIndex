@@ -2,7 +2,7 @@
 	line-height: var(--line-height);
 	font-size: calc(0.1vw + 1em);
 	font-family: var(--font-plain);
-	background-color: var(--color-light);
+	background-color: var(--color-darkish);
 	color: var(--color-dark);
 }
 
@@ -19,7 +19,7 @@
 
 ::placeholder {
 	color: var(--color-lightest);
-	padding: var(--s-5);
+	padding: var(--s-5) var(--s-5) var(--s-5) 0;
 }
 
 /* A elements that don't have a class get default styles */
@@ -29,10 +29,18 @@ a:not([class]) {
 
 /* Headings */
 h1,
-h2,
-h3,
-h4 {
-	hyphens: initial;
+h2 {
+	font-weight: var(--font-weight-normal);
+}
+h1 {
+	font-size: var(--s5);
+}
+h2 {
+	font-size: var(--s4);
+}
+
+hr {
+	border-color: var(--color-mid);
 }
 
 /* Main link */
@@ -88,7 +96,7 @@ input {
 
 input[type="submit"],
 input[type="button"] {
-	max-width: fit-content;
+	text-align: left;
 }
 
 input[type="submit"] {
@@ -107,12 +115,14 @@ input[type="text"] {
 }
 
 /* Navigation */
-nav a {
+nav a,
+span[aria-current="page"],
+span[data-state="active"] {
 	position: relative;
 	text-decoration: none;
 }
-nav a[aria-current="page"]::before,
-nav a[data-state="active"]::before {
+nav span[aria-current="page"]::before,
+nav span[data-state="active"]::before {
 	content: "";
 	display: block;
 	width: 100%;
@@ -238,10 +248,9 @@ main {
 }
 
 header,
-main,
 footer {
-	padding-left: var(--s1);
-	padding-right: var(--s1);
+	padding-left: var(--s4);
+	padding-right: var(--s4);
 }
 
 footer {
@@ -258,7 +267,6 @@ footer > * {
 
 .hero h1 {
 	font-size: var(--s5);
-	font-weight: normal;
 	padding-top: calc(2 * var(--s5));
 	padding-right: 30%;
 }
@@ -266,6 +274,7 @@ footer > * {
 @media (max-width: 60rem) {
 	.hero h1 {
 		font-size: var(--s3);
+		padding-top: calc(2 * var(--s4));
 		padding-right: 0;
 	}
 }
@@ -276,12 +285,34 @@ footer > * {
 	position: relative;
 }
 
+.highlight {
+	background-color: var(--color-mid);
+	padding: var(--s1);
+}
+
 .info-container {
-	padding-top: 5%;
-	padding-bottom: 5%;
+	padding-top: var(--s0p5);
+	padding-bottom: var(--s0p5);
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	border-radius: var(--border-radius-large);
+}
+
+.info-container a:not([class]) {
+	text-decoration-color: inherit;
+}
+
+.info-container > *:not(:first-child) > * {
+	padding-top: calc(var(--s3) + 2%);
+}
+
+.info-container > *:not(:last-child) > * {
+	padding-bottom: calc(var(--s3) + 2%);
+}
+
+.info-container > *:not(:last-child) > * {
+	border-bottom-width: var(--border-thin);
+	border-color: var(--color-mid);
 }
 
 :focus {
@@ -314,3 +345,28 @@ footer > * {
 .language-switcher .lang[aria-current="true"] {
 	font-weight: var(--font-weight-bold);
 }
+
+.info_2_columns_col1 {
+	flex-basis: calc(var(--measure) * 3 / 8);
+	hyphens: auto;
+}
+.info_2_columns_col1 hr {
+	width: 30%;
+}
+.info_2_columns_col2 {
+	padding-top: var(--s0);
+}
+
+/* DEBUG */
+/* .stack-l {
+	border-color: #0000ffaa !important;
+	border-width: 3px !important;
+}
+.box-l {
+	border-color: #ff00ffaa !important;
+	border-width: 3px !important;
+}
+.center-l {
+	border-color: #ff0000aa !important;
+	border-width: 3px !important;
+} */
