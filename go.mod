@@ -4,5 +4,5 @@ go 1.16
 
 require (
 	gitlab.com/goodimpact/every-layout-wc v0.0.0-20210715225714-a9629e5e8f4a // indirect
-	gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211003110535-3bc0e9a3eb4c // indirect
+	gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211003224547-2238b19c5c47 // indirect
 )

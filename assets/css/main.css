@@ -43,6 +43,10 @@ hr {
 	border-color: var(--color-mid);
 }
 
+.bold {
+	font-weight: bold;
+}
+
 /* Main link */
 [href="#main"] {
 	padding: 0 var(--s-1);
@@ -140,9 +144,10 @@ header {
 	padding-top: var(--s-3);
 	padding-bottom: var(--s-3);
 }
+
 header .logo {
 	margin-right: var(--s1);
-
+	padding-right: var(--s1);
 }
 
 .header-container {
@@ -151,15 +156,6 @@ header .logo {
 	background-color: var(--color-darkish);
 }
 
-header 
-{
-	margin-right: var(--s1);
-
-}
-
-header .logo {
-	padding-right: var(--s1);
-}
 header > * {
 	display: flex;
 	flex-wrap: wrap;
@@ -283,6 +279,24 @@ footer > * {
 .hero {
 	width: 100%;
 }
+
+/* Blocs */
+
+.em-card {
+	display: flex;
+	flex-direction: column;
+	min-height: 14.5rem;
+	padding: var(--s2);
+	border-radius: 5px;
+	background-color: var(--color-very-light-pink);
+}
+.em-card svg {
+	fill: currentColor;
+	margin-bottom: auto;
+	max-width: var(--s4);
+	max-height: var(--s4);
+}
+
 /* Svg */
 .svg-symbols {
 	display: none;
@@ -389,9 +403,13 @@ footer > * {
 
 .deco-object {
 	position: absolute;
+	height: 0;
+	/* height = width */
+	padding-bottom: 50%;
 }
 
 .deco-object svg {
+	position: absolute;
 	width: 100%;
 	height: 100%;
 }
@@ -402,7 +420,6 @@ footer > * {
 	right: -2vw;
 	transform: rotate(-76deg);
 	width: 49vw;
-	height: 49vw;
 	fill: var(--color-yellow);
 }
 
@@ -411,7 +428,6 @@ footer > * {
 	right: 8vw;
 	transform: rotate(206deg) scaleX(-1);
 	width: 49vw;
-	height: 49vw;
 	fill: var(--color-light-green);
 }
 
@@ -420,7 +436,6 @@ footer > * {
 	right: -31vw;
 	transform: rotate(105deg);
 	width: 47vw;
-	height: 47vw;
 	fill: var(--color-dark-green);
 }
 
@@ -430,7 +445,31 @@ footer > * {
 	top: 15.5vw;
 	right: 10.2vw;
 	width: 11vw;
-	height: 11vw;
+	padding-bottom: 12%;
+}
+
+/* TODO */
+/* mobile home */
+@media (max-width: 60rem) {
+	.deco-type-home .deco-object--blob-3 {
+		top: -79vw;
+		right: -97vw;
+		-webkit-transform: rotate(15deg);
+		transform: rotate(-91deg) scaleY(-1);
+		width: 170vw;
+		height: 170vw;
+	}
+	.deco-type-home .deco-object--blob-1 {
+		top: -47vw;
+		right: 58vw;
+		-webkit-transform: rotate(-76deg);
+		transform: rotate(-76deg);
+		width: 109vw;
+		height: 109vw;
+	}
+	.deco-type-home .deco-object--burger {
+		visibility: hidden;
+	}
 }
 
 .deco-type-contribute .deco-object--blob-1 {
@@ -438,16 +477,14 @@ footer > * {
 	left: -25vw;
 	transform: rotate(-76deg);
 	width: 49vw;
-	height: 49vw;
 	fill: var(--color-yellow);
 }
 
 .deco-type-contribute .deco-object--blob-2 {
-	top: -40.4vw;
+	top: -24.4vw;
 	right: -11vw;
 	transform: rotate(-83deg) scaleX(-1);
 	width: 72vw;
-	height: 72vw;
 	fill: var(--color-light-green);
 }
 
@@ -456,7 +493,6 @@ footer > * {
 	right: -26vw;
 	transform: rotate(105deg);
 	width: 47vw;
-	height: 47vw;
 	fill: var(--color-dark-green);
 }
 
