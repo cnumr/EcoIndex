@@ -1,6 +1,7 @@
 +++
 title = "Nous rejoindre"
 slug = "nous-rejoindre"
+decoType = "contribute"
 
 [menu]
 	[menu.extra]

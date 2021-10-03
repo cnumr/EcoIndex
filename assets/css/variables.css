@@ -14,6 +14,12 @@
 	--color-focus-dark: hsl(165, 100%, 40%);
 	--color-focus-light: hsl(165, 100%, 80%);
 
+	/* Specific colors */
+	--color-yellow: #F5C548;
+	--color-light-yellow: #F7EDC0;
+	--color-light-green: #B6D295;
+	--color-dark-green: #2D665E;
+
 	/* Border sizes */
 	--border-focus: var(--border-medium);
 

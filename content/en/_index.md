@@ -1,6 +1,7 @@
 +++
 title = "Test a website"
 layout = "single"
+decoType = "home"
 
 [menu]
 	[menu.main]

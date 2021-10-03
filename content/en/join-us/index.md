@@ -1,5 +1,6 @@
 +++
 title = "Join us"
+decoType = "contribute"
 
 [menu]
 	[menu.extra]

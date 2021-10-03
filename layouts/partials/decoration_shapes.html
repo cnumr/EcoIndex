@@ -1,0 +1,31 @@
+{{/* 
+   * Add shape derations from given "decotype" param of page
+   * 
+   * Partial symbols need to be added on top of <body> before calling this : "{{ partial "svg/inline-svg" "symbols"}}"  
+   */}}
+
+{{ $decotype := . }}
+
+{{ $blobcount := 0 }}
+{{ $isDecoBurgerVisible := false }}
+{{ if (eq $decotype "home") }}
+  {{ $blobcount = 3 }}
+  {{ $isDecoBurgerVisible = true }}
+{{ else if (eq $decotype "contribute") }}
+    {{ $blobcount = 3 }}
+{{ end }}
+
+{{ if or ($blobcount) ($isDecoBurgerVisible) }}
+    <div class="deco-container deco-type-{{ $decotype }}" aria-hidden="true">
+        {{ range $num := (seq $blobcount) }}
+            <div class="deco-object deco-object--blob-{{ . }}">
+                {{ partial "svg/inline-svg-use" "deco-blob"}}
+            </div>
+        {{ end }}
+        {{ if ($isDecoBurgerVisible) }}
+            <div class="deco-object deco-object--burger">
+                {{ partial "svg/inline-svg-use" "deco-burger"}}
+            </div>
+        {{ end }}
+    </div>
+{{ end }}
