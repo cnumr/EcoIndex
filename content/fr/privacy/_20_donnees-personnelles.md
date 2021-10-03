@@ -3,7 +3,15 @@ id = "donnees-personnelles"
 weight = 20
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Données personnelles
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
 
 Aucune donnée personnelle des utilisateur·ices procédant à un test sur EcoIndex.fr n’est collectée. Ce site n’utilise
 pas de cookies.
@@ -17,3 +25,7 @@ membres du groupe. Frédéric Bordage est propriétaire de ce groupe. Vous pouve
 cette liste de diffusion à tout moment sur demande adressée à Google depuis votre interface en ligne. Les e-mails que
 vous aurez envoyés seront conservés dans les archives du groupe après votre départ, sauf suppression volontaire par vos
 soins depuis votre interface en ligne avant de quitter le groupe.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

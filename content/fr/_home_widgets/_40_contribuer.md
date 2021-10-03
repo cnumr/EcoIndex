@@ -15,7 +15,7 @@ Vous pouvez y contribuer
 
 {{% info_2_columns_col2 %}}
 
-Rejoignez la communauté des acteur·ices du numérique responsable et de l’écoconception et participez à nos actions.
+Rejoignez la communauté des acteur·ices du numérique responsable et de l’éco&shy;conception et participez à nos actions.
 
 [**Nous rejoindre**](/nous-rejoindre/)
 
