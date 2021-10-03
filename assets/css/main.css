@@ -42,6 +42,9 @@ h2 {
 hr {
 	border-color: var(--color-mid);
 }
+hr.small {
+	width: 30%;
+}
 
 .bold {
 	font-weight: bold;
@@ -500,9 +503,7 @@ footer > * {
 	flex-basis: calc(var(--measure) * 3 / 8);
 	hyphens: auto;
 }
-.info_2_columns_col1 hr {
-	width: 30%;
-}
+
 .info_2_columns_col2 {
 	padding-top: var(--s0);
 }
