@@ -298,6 +298,10 @@ footer > * {
 	border-radius: var(--border-radius-large);
 }
 
+.info-container a:not([class]) {
+	text-decoration-color: inherit;
+}
+
 .info-container > *:not(:first-child) > * {
 	padding-top: calc(var(--s3) + 2%);
 }
