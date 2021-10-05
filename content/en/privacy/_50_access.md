@@ -3,7 +3,15 @@ id = "access"
 weight = 50
 +++
 
-## Accès au site et à l’outil Ecoindex
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
+## Access to the site and the Ecoindex tool
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
 
 L’outil Ecoindex est un outil technique, dont l’algorithme est ouvert et expliqué sur le site en toute transparence. Il
 vise à donner une première indication de la performance et de l’empreinte environnementale d’une URL, sur la base des
@@ -15,3 +23,7 @@ ou de publicité comparative.
 Son utilisation est gratuite, mais soumise à conditions. Merci de les respecter. L’outil Ecoindex ne doit pas être
 utilisé de manière abusive, illicite ou illégitime. Il est notamment interdit de scripter EcoIndex.fr, c’est-à-dire
 d’automatiser l’enchaînement d’analyses.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

@@ -2,8 +2,6 @@
 id = "intro"
 +++
 
-[**WARNING !!! A passer en anglais**]
-
 EcoIndex permet de prendre conscience de l’impact environnemental d’internet et de proposer des solutions concrètes.
 
 L’analyse est gratuite, automatique et vous aide à identifier rapidement les sites web et services en ligne à revoir en

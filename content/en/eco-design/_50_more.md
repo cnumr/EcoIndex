@@ -3,11 +3,19 @@ id = "more"
 weight = 50
 +++
 
-## Au-delà de l’écoconception
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] L’écoconception des services numériques ne peut pas à elle seule réduire
-significativement l’empreinte du numérique mondial. D’autres mesures simples, à contre-courant de l’optique de
-croissance effrénée de notre société, doivent être mises en oeuvre pour changer le cours des choses.
+{{% info_2_columns_col1 %}}
+
+## Beyond eco-design
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+L’éco&shy;conception des services numériques ne peut pas à elle seule réduire significativement l’empreinte du numérique
+mondial. D’autres mesures simples, à contre-courant de l’optique de croissance effrénée de notre société, doivent être
+mises en oeuvre pour changer le cours des choses.
 
 - **Réduire le nombre d’objets connectés** en favorisant leur **mutualisation** et leur substitution, par exemple en
   faisant fonctionner les modems d’un immeuble via un dispositif centralisé. On peut aussi **ouvrir leurs APIs** pour
@@ -20,3 +28,7 @@ croissance effrénée de notre société, doivent être mises en oeuvre pour cha
 
 Source : Pour en savoir plus :
 [Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/)
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

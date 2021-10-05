@@ -3,7 +3,15 @@ id = "urls-usage"
 weight = 30
 +++
 
-## Utilisation des données des URL renseignées
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
+## Use of the data from the filled-in URLs
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
 
 Nous collectons des informations au sujet des URL renseignées dans notre barre de test et les stockons dans notre base
 de données. Les informations collectées sont les suivantes :
@@ -17,3 +25,7 @@ de données. Les informations collectées sont les suivantes :
   cette base de données ainsi constituée: uniquement rappeler les scores précédents en cas de nouvelle requête sur une
   même URL? ou potentiellement des analyses au sein de la base de données -- synthèses, extractions, analytics, etc. sur
   l’ensemble de la base consolidée? Dans ce dernier cas, il faut expliquer par qui, quel objet/but/finalité, etc.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

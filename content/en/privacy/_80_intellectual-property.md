@@ -3,7 +3,15 @@ id = "intellectual-property"
 weight = 80
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Intellectual property
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
 
 L’algorithme EcoIndex, le service EcoIndex.fr et les autres outils associés, sont en accès gratuit, mais sont soumis à
 des droits de propriété intellectuelle. Leur utilisation est encadrée par une licence d’utilisation.
@@ -18,3 +26,7 @@ contribuer au savoir-faire commun et l’enrichir. Vous pouvez trouvez les sourc
 versGitHub]
 
 Tous les autres droits de propriété intellectuelle sont réservés.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

@@ -3,10 +3,18 @@ id = "ecoindex"
 weight = 40
 +++
 
-## Le calcul de l’EcoIndex
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Les trois critères sont injectés dans notre algorithme pour calculer l’EcoIndex de
-la page testée. Nous les associons via une moyenne pondérée de :
+{{% info_2_columns_col1 %}}
+
+## The calculation of the EcoIndex
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Les trois critères sont injectés dans notre algorithme pour calculer l’EcoIndex de la page testée. Nous les associons
+via une moyenne pondérée de :
 
 - 3 pour le DOM
 - 2 pour les requêtes HTTP
@@ -22,3 +30,7 @@ Afin de prendre en compte la disparité dans les mesures des trois indicateurs, 
 pour chaque critère dans un quantile, en tenant compte de sa proximité avec les bornes inférieures/supérieures du
 quantile. Les bornes de l’échelle de l’EcoIndex (0 à 100) ont été mises au point et validées en analysant la base
 HTTParchive (500 000 URLs).
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

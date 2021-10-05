@@ -3,9 +3,17 @@ id = "good-practices-tips"
 weight = 30
 +++
 
-## Quelques bonnes pratiques
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Voici, pour commencer, quelques bonnes pratiques à mettre en application !
+{{% info_2_columns_col1 %}}
+
+## Some good practices
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Voici, pour commencer, quelques bonnes pratiques à mettre en application !
 
 ### Réduire le poids de la page
 
@@ -37,3 +45,7 @@ weight = 30
 - **Regroupez les images dans un sprite** et combinez certaines feuilles de styles CSS et librairies Javascript.
 - **Favorisez les pages statiques**, quand cela est possible, plutôt que d’utiliser un CMS. Vous pouvez utiliser des
   générateurs de sites statiques ou une architecture JAMstack.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}
