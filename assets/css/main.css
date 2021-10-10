@@ -393,6 +393,10 @@ footer > * {
 /* TODO: maybe move in separate file like decorations.css */
 /* Blob svg decos */
 
+:root {
+	--deco-resp-top-factor: 1;
+}
+
 .deco-container {
 	position: absolute;
 	top: 0;
@@ -408,6 +412,7 @@ footer > * {
 	position: absolute;
 	height: 0;
 	/* height = width */
+	max-width: 1000px;
 	padding-bottom: 50%;
 }
 
@@ -451,32 +456,8 @@ footer > * {
 	padding-bottom: 12%;
 }
 
-/* TODO */
-/* mobile home */
-@media (max-width: 60rem) {
-	.deco-type-home .deco-object--blob-3 {
-		top: -79vw;
-		right: -97vw;
-		-webkit-transform: rotate(15deg);
-		transform: rotate(-91deg) scaleY(-1);
-		width: 170vw;
-		height: 170vw;
-	}
-	.deco-type-home .deco-object--blob-1 {
-		top: -47vw;
-		right: 58vw;
-		-webkit-transform: rotate(-76deg);
-		transform: rotate(-76deg);
-		width: 109vw;
-		height: 109vw;
-	}
-	.deco-type-home .deco-object--burger {
-		visibility: hidden;
-	}
-}
-
 .deco-type-contribute .deco-object--blob-1 {
-	top: -21vw;
+	top: calc(-21vw  * var(--deco-resp-top-factor));
 	left: -25vw;
 	transform: rotate(-76deg);
 	width: 49vw;
@@ -484,21 +465,66 @@ footer > * {
 }
 
 .deco-type-contribute .deco-object--blob-2 {
-	top: -24.4vw;
-	right: -11vw;
+	top: calc(-24.4vw  * var(--deco-resp-top-factor));
+	right: -9vw;
 	transform: rotate(-83deg) scaleX(-1);
 	width: 72vw;
 	fill: var(--color-light-green);
 }
 
 .deco-type-contribute .deco-object--blob-3 {
-	top: 0vw;
+	top: calc(-1vw  * var(--deco-resp-top-factor));
 	right: -26vw;
 	transform: rotate(105deg);
 	width: 47vw;
 	fill: var(--color-dark-green);
 }
 
+@media (max-width: 60rem) {
+	/* mobile deco */
+	:root {
+		--deco-resp-top-factor: 1.3;
+	}
+	.deco-object {
+		max-width: initial;
+	}
+	/* mobile deco type home */
+	.deco-type-home .deco-object--blob-3 {
+		top: calc(-79vw * var(--deco-resp-top-factor));
+		right: -97vw;
+		-webkit-transform: rotate(15deg);
+		transform: rotate(-91deg) scaleY(-1);
+		width: 170vw;
+		height: 170vw;
+	}
+	.deco-type-home .deco-object--blob-1 {
+		top: calc(-44vw * var(--deco-resp-top-factor));
+		right: 57vw;
+		-webkit-transform: rotate(-76deg);
+		transform: rotate(-76deg);
+		width: 110vw;
+		height: 110vw;
+	}
+	.deco-type-home .deco-object--burger,
+	.deco-type-home .deco-object--blob-2 {
+		visibility: hidden;
+	}
+	/* mobile deco type contribute */
+	.deco-container.deco-type-contribute .deco-object {
+		padding-bottom: 79%;
+	}
+	.deco-type-contribute .deco-object--blob-1, .deco-type-contribute .deco-object--blob-2{
+		top: calc(-30vw  * var(--deco-resp-top-factor));
+	}
+}
+
+@media (max-width: 31rem) {
+	:root {
+		--deco-resp-top-factor: 1;
+	}
+}
+
+/* Infos columns */
 .info_2_columns_col1 {
 	flex-basis: calc(var(--measure) * 3 / 8);
 	hyphens: auto;
@@ -511,6 +537,8 @@ footer > * {
 .info_1_column {
 	flex-basis: calc(var(--measure) * 3 / 8 + var(--s4p1) / 2) !important;
 }
+
+
 
 /* DEBUG */
 /* .stack-l {

@@ -26,9 +26,6 @@ $RECYCLE.BIN/
 ## OSX
 .DS_Store
 
-# Editors Files
-dev.sh
-
 ## Illustrator
 .idea
 
