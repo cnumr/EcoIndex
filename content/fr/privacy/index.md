@@ -1,6 +1,7 @@
 +++
 title = "Politique de confidentialité"
 slug = "confidentialite"
+decoType = "generic"
 
 [menu]
 	[menu.footer]

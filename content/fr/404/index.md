@@ -1,5 +1,6 @@
 +++
 title = "Page non trouvée"
+decoType = "404"
 +++
 
 {{% hero %}}

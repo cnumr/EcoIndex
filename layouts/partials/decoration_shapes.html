@@ -11,8 +11,12 @@
 {{ if (eq $decotype "home") }}
   {{ $blobcount = 3 }}
   {{ $isDecoBurgerVisible = true }}
-{{ else if (eq $decotype "contribute") }}
+{{ else if or (eq $decotype "contribute") (eq $decotype "generic")  }}
     {{ $blobcount = 3 }}
+{{ else if (eq $decotype "loading")  }}
+    {{ $blobcount = 1 }}   
+{{ else if (eq $decotype "404")  }}
+    {{ $blobcount = 6 }}     
 {{ end }}
 
 {{ if or ($blobcount) ($isDecoBurgerVisible) }}

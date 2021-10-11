@@ -1,6 +1,7 @@
 +++
 title = "Mentions légales"
 slug = "mentions-legales"
+decoType = "generic"
 
 [menu]
 	[menu.footer]
