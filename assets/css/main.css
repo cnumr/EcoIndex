@@ -391,7 +391,9 @@ footer > * {
 }
 
 /* TODO: maybe move in separate file like decorations.css */
-/* Blob svg decos */
+/*
+ * Shapes pages decorations
+ */
 
 :root {
 	--deco-resp-top-factor: 1;
@@ -422,8 +424,8 @@ footer > * {
 	height: 100%;
 }
 
-/* TODO: mobile styles */
-.deco-type-home .deco-object--blob-1 {
+.deco-type-home .deco-object--blob-1,
+.deco-type-generic .deco-object--blob-1 {
 	top: -24vw;
 	right: -2vw;
 	transform: rotate(-76deg);
@@ -480,12 +482,8 @@ footer > * {
 	fill: var(--color-dark-green);
 }
 
-/* TODO: merge with type-home */
 .deco-type-generic .deco-object--blob-1 {
-	top: -24vw;
-	right: -1vw;
 	transform: rotate(74deg) scaleX(-1);
-	width: 53vw;
 	fill: var(--color-dark-green);
 }
 
