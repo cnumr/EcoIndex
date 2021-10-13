@@ -1,7 +1,6 @@
-:root {
-	line-height: var(--line-height);
-	font-size: calc(0.1vw + 1em);
-	font-family: var(--font-plain);
+/* Things outside body. */
+/* For ex: backround color on intense vertical scrolls (mobile) */
+html {
 	background-color: var(--color-darkish);
 	color: var(--color-dark);
 }
