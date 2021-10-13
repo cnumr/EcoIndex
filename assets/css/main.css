@@ -149,8 +149,8 @@ header {
 }
 
 header .logo {
-	margin-right: var(--s1);
-	padding-right: var(--s1);
+	padding-left: calc(var(--s4) / 2);
+	padding-right: calc(var(--s4) / 2);
 }
 
 .header-container {
@@ -175,6 +175,7 @@ header .menu-btn-container {
 }
 
 header .menu-btn-container {
+	padding-right: calc(var(--s4) / 2);
 	text-align: right;
 }
 
@@ -217,6 +218,11 @@ header .menu-btn-container {
 }
 .js-ok .menu-btn[aria-expanded="true"] path {
 	d: path("M3,3 27,27 M15,15 15,15 M3,27 27,3");
+}
+
+.main-nav-container {
+	padding-left: calc(var(--s4) / 2);
+	padding-right: calc(var(--s4) / 2);
 }
 
 .main-nav-container > * {
@@ -265,7 +271,6 @@ main {
 	min-height: 70vh;
 }
 
-header,
 footer {
 	padding-left: var(--s4);
 	padding-right: var(--s4);
