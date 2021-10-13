@@ -7,4 +7,6 @@ gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-202110032349
 gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211003234944-29b96cc18653/go.mod h1:oNdC2WKziXM9h2uA25HmURCpZQSOT9/2SAuM6wyt1gE=
 gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211013113921-064aea515151 h1:sB9BQy7aL656oJeG17uF4yzwTdt7wKSvI0UgvD1R9aA=
 gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211013113921-064aea515151/go.mod h1:oNdC2WKziXM9h2uA25HmURCpZQSOT9/2SAuM6wyt1gE=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211013164127-dd6d18aa955d h1:cXP8RbZ/FQSyXBnc62gYY58Q2iynxf40iKiiuxQon6Q=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20211013164127-dd6d18aa955d/go.mod h1:oNdC2WKziXM9h2uA25HmURCpZQSOT9/2SAuM6wyt1gE=
 gitlab.com/neotericdesign-tools/hugo-content-module-style-guides.git v0.0.0-20200513165827-e43fa80f0593/go.mod h1:p+A5GOjgLL7ajjbNwmRajJEhZ0ccEq+zLJAPkql0qs8=
