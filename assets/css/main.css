@@ -395,11 +395,8 @@ footer > * {
  * Shapes pages decorations
  */
 
-:root {
-	--deco-resp-top-factor: 1;
-}
-
 .deco-container {
+	--deco-resp-top-factor: 1;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -560,7 +557,7 @@ footer > * {
 
 @media (max-width: 60rem) {
 	/* mobile deco */
-	:root {
+	.deco-container {
 		--deco-resp-top-factor: 1.3;
 	}
 	.deco-object {
@@ -609,7 +606,7 @@ footer > * {
 }
 
 @media (max-width: 31rem) {
-	:root {
+	.deco-container {
 		--deco-resp-top-factor: 1;
 	}
 }
