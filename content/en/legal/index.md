@@ -1,5 +1,6 @@
 +++
 title = "Legal"
+decoType = "generic"
 
 [menu]
 	[menu.footer]

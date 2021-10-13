@@ -1,6 +1,7 @@
 +++
 title = "Chargement"
 slug = "chargement"
+decoType = "loading"
 +++
 
 {{% hero %}}

@@ -1,5 +1,6 @@
 +++
 title = "Loading"
+decoType = "loading"
 +++
 
 {{% hero %}}

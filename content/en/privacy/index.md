@@ -1,5 +1,6 @@
 +++
 title = "Privacy"
+decoType = "generic"
 
 [menu]
 	[menu.footer]
