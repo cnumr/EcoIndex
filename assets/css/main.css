@@ -335,8 +335,8 @@ footer > * {
 }
 
 .info-container {
-	padding-top: var(--s0p5);
-	padding-bottom: var(--s0p5);
+	padding-top: var(--p5);
+	padding-bottom: var(--p5);
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	border-radius: var(--border-radius-large);
@@ -618,7 +618,6 @@ footer > * {
 /* Infos columns */
 .info_2_columns_col1 {
 	flex-basis: calc(var(--measure) * 3 / 8);
-	hyphens: auto;
 }
 
 .info_2_columns_col2 {
@@ -626,7 +625,7 @@ footer > * {
 }
 
 .info_1_column {
-	flex-basis: calc(var(--measure) * 3 / 8 + var(--s4p1) / 2) !important;
+	flex-basis: calc(var(--measure) * 3 / 8 + var(--s3) / 2) !important;
 }
 
 /* DEBUG */
