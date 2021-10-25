@@ -9,21 +9,19 @@ weight = 10
 
 ## Why is it important?
 
-Le numérique, ce n’est pas que du vent
+Digital technologies are not just "clouds"
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-Aujourd’hui, l’empreinte environnementale des nouvelles technologies représente plus de gaz à effet de serre que
-l’aviation civile.
+Today, the environmental footprint of new technologies represent more greenhouse gas emissions than the civil aviation industry. 
 
-Et ce chiffre est en constante augmentation : de plus en plus de gens ont accès au numérique et les objets connectés ne
-cessent de se multiplier.
+And it is increasing by the day: more and more people have access to the Internet and the number of connected objects keeps on growing. 
 
 {{% highlight %}}
 
-**Le numérique mondial représente un 7ème continent de la taille de 2 à 3 fois celle de la France.**
+**Digital technologies represent a 7th continent of 2 to 3 times the size of France.**
 
 {{% /highlight %}}
 
