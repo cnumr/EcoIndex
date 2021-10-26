@@ -9,15 +9,15 @@ weight = 40
 
 ## You like this project? You can contribute
 
-Vous pouvez y contribuer
+You can contribute to this project and others.
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-Rejoignez la communauté des acteur·ices du numérique responsable et de l’éco&shy;conception et participez à nos actions.
+Join the community of experts in digital sustainability and eco-design and participate in our actions.
 
-[**Nous rejoindre**](/en/join-us/)
+[**Join us**](/en/join-us/)
 
 {{% /info_2_columns_col2 %}}
 
