@@ -7,7 +7,7 @@ weight = 40
 
 {{% info_2_columns_col1 %}}
 
-## You like this project? You can contribute
+## Contribute to this project!
 
 You can contribute to this project and others.
 
