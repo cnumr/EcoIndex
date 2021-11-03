@@ -3,7 +3,7 @@
 {{- /* Displays content of headless pages within the same folder, */ -}}
 {{- /* files starting with "_" or "_#1_", "_#2_", "_#intro_", etc. */ -}}
 
-{{- /* Retrieve widgets within the folder where this shortcode's page lives. */ -}}
+{{- /* Retrieve widgets within the folder where this shortcode page lives. */ -}}
 {{- /* Widgets are headless pages starting with: */ -}}
 {{- /* - "_" (no zone specified) */ -}}
 {{- /*   or */ -}}
@@ -65,9 +65,7 @@
 		{{- /* for each widget we add an 'id' attribute: */ -}}
 		{{- /* - specified in the front matter ('id') */ -}}
 		{{- /* - or computed by default with file name */ -}}
-		{{- $hash_id := replace $widget.File.ContentBaseName "index" (path.Base (path.Split .Path).Dir) -}}
-		{{- /* ^ Fix Hugo's ContentBaseName returning wrong file base name when page widget is within a bundle. */ -}}
-		{{- $hash_id := or $params.id $hash_id -}}
+		{{- $hash_id := $params.id -}}
 
 		{{- /* TODO verify that ids are unique in the page */ -}}
 
