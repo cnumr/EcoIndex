@@ -11,6 +11,7 @@ hugo_stats.json
 public/
 resources/
 _vendor
+.hugo_build.lock
 
 # Node
 node_modules/
