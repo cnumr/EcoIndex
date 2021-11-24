@@ -3,10 +3,6 @@ title = "Résultat"
 slug = "resultat"
 +++
 
-{{% hero %}}
-
-# Résultat
-
-{{% /hero %}}
+{{< widgets zone="first" type="intro" >}}
 
 {{< widgets type="info-container" >}}

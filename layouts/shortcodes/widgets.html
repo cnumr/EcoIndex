@@ -1,3 +1,5 @@
+{{/*  FIXME: hot reload doesn't work on widgets childs, need to change this page to get modification built  */}}
+
 {{- /* Shortcode "widgets" */ -}}
 {{- /* Usage: {{< widgets >}} or {{< widgets 1 >}} {{< widgets 2 >}} */ -}}
 {{- /* Displays content of headless pages within the same folder, */ -}}
@@ -40,6 +42,8 @@
 	{{- $widgets_folder_path = print "_home_widgets/" $widgets_folder_path -}}
 {{- end -}}
 {{- $resources := ($page.GetPage $widgets_folder_path).Resources -}}
+
+
 
 
 <div class="{{- $container_class | safeHTMLAttr -}}">

@@ -219,6 +219,11 @@ footer > * {
 	width: 100%;
 }
 
+.hero.hero--space-1 {
+	padding: calc(var(--s4) * 2) 0 var(--s4);
+	
+}
+
 /* Blocs */
 
 .em-card {
@@ -312,9 +317,36 @@ footer > * {
 	flex-basis: calc(var(--measure) * 3 / 8 + var(--s3) / 2) !important;
 }
 
-/* Default Button */
-.button {
-	text-decoration: none;		
+/* Default Button Link */
+.button-link {
+	text-decoration: none;
+}
+
+.button-link + .button-link {
+	margin-left: 1.5rem;
+}
+
+.button-link svg {
+	fill: currentColor;
+	height: 1em;
+	width: 1em;
+	position: relative;
+	top: 0.125em;
+}
+
+.icon-square-wrapper {
+	display: inline-block;
+	margin: 0 0.3em 0 0;
+	padding: 0.2em 0.3em;
+	border-radius: 5px;
+	position: relative;
+	top: 0.175em;
+}
+
+.icon-square-wrapper svg {
+	height: 1.5em;
+	width: 1.5em;
+	top: 0.2em;
 }
 
 /* DEBUG */
