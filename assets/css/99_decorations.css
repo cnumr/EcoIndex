@@ -1,0 +1,218 @@
+/*
+ * Shapes pages decorations
+ */
+ .deco-container {
+	--deco-resp-top-factor: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.deco-object {
+	position: absolute;
+	height: 0;
+	/* height = width */
+	max-width: 1000px;
+	padding-bottom: 50%;
+}
+
+.deco-object svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.deco-type-home .deco-object--blob-1,
+.deco-type-generic .deco-object--blob-1 {
+	top: -24vw;
+	right: -2vw;
+	transform: rotate(-76deg);
+	width: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-home .deco-object--blob-2 {
+	top: -33.5vw;
+	right: 8vw;
+	transform: rotate(206deg) scaleX(-1);
+	width: 49vw;
+	fill: var(--color-light-green);
+}
+
+.deco-type-home .deco-object--blob-3 {
+	top: 3vw;
+	right: -31vw;
+	transform: rotate(105deg);
+	width: 47vw;
+	fill: var(--color-dark-green);
+}
+
+.deco-type-home .deco-object--burger {
+	--db-color-1: var(--color-light-yellow);
+	--db-color-2: var(--color-yellow);
+	top: 15.5vw;
+	right: 10.2vw;
+	width: 11vw;
+	padding-bottom: 12%;
+}
+
+.deco-type-contribute .deco-object--blob-1 {
+	top: calc(-21vw * var(--deco-resp-top-factor));
+	left: -25vw;
+	transform: rotate(-76deg);
+	width: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-contribute .deco-object--blob-2 {
+	top: calc(-24.4vw * var(--deco-resp-top-factor));
+	right: -9vw;
+	transform: rotate(-83deg) scaleX(-1);
+	width: 72vw;
+	fill: var(--color-light-green);
+}
+
+.deco-type-contribute .deco-object--blob-3 {
+	top: calc(-1vw * var(--deco-resp-top-factor));
+	right: -26vw;
+	transform: rotate(105deg);
+	width: 47vw;
+	fill: var(--color-dark-green);
+}
+
+.deco-type-generic .deco-object--blob-1 {
+	transform: rotate(74deg) scaleX(-1);
+	fill: var(--color-dark-green);
+}
+
+.deco-type-generic .deco-object--blob-2 {
+	top: -24vw;
+	right: -9vw;
+	transform: rotate(0);
+	width: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-generic .deco-object--blob-3,
+.deco-type-404 .deco-object--blob-2 {
+	top: 0;
+	right: -39vw;
+	transform: rotate(-52deg) scaleX(-1);
+	width: 49vw;
+	fill: var(--color-light-green);
+	z-index: 1;
+}
+
+/* Deco type loading page */
+.deco-type-loading .deco-object--blob-1 {
+	top: -52.5vw;
+	right: 67vw;
+	transform: rotate(38deg) scaleX(1);
+	width: 70vw;
+	padding-bottom: 100%;
+	fill: var(--color-light-green);
+}
+
+/* Deco type 404 */
+.deco-type-404 .deco-object--blob-1 {
+	top: -26vw;
+	right: -9vw;
+	transform: rotate(0deg);
+	width: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-404 .deco-object--blob-3 {
+	top: -10vw;
+	right: -24vw;
+	transform: rotate(82deg);
+	width: 31vw;
+	fill: var(--color-dark-green);
+	padding-bottom: 100%;
+}
+
+.deco-type-404 .deco-object--blob-4 {
+	bottom: -31vw;
+	right: 42vw;
+	transform: rotate(160deg);
+	width: 49vw;
+	fill: var(--color-yellow);
+}
+
+.deco-type-404 .deco-object--blob-5 {
+	bottom: -39vw;
+	right: 68vw;
+	transform: rotate(-152deg) scaleX(-1);
+	width: 50vw;
+	fill: var(--color-light-green);
+}
+
+.deco-type-404 .deco-object--blob-6 {
+	bottom: -30vw;
+	left: -22vw;
+	transform: rotate(-128deg);
+	width: 33vw;
+	fill: var(--color-dark-green);
+	padding-bottom: 100%;
+}
+
+@media (max-width: 60rem) {
+	/* mobile deco */
+	.deco-container {
+		--deco-resp-top-factor: 1.3;
+	}
+	.deco-object {
+		max-width: initial;
+	}
+	/* mobile deco type home */
+	.deco-type-home .deco-object--blob-3 {
+		top: calc(-79vw * var(--deco-resp-top-factor));
+		right: -97vw;
+		-webkit-transform: rotate(15deg);
+		transform: rotate(-91deg) scaleY(-1);
+		width: 170vw;
+		height: 170vw;
+	}
+	.deco-type-home .deco-object--blob-1 {
+		top: calc(-44vw * var(--deco-resp-top-factor));
+		right: 57vw;
+		-webkit-transform: rotate(-76deg);
+		transform: rotate(-76deg);
+		width: 110vw;
+		height: 110vw;
+	}
+	.deco-type-home .deco-object--burger,
+	.deco-type-home .deco-object--blob-2 {
+		visibility: hidden;
+	}
+	/* mobile deco type contribute */
+	.deco-container.deco-type-contribute .deco-object {
+		padding-bottom: 79%;
+	}
+	.deco-type-contribute .deco-object--blob-1,
+	.deco-type-contribute .deco-object--blob-2 {
+		top: calc(-30vw * var(--deco-resp-top-factor));
+	}
+	.deco-type-generic .deco-object--blob-1 {
+		top: calc(-13vw * var(--deco-resp-top-factor));
+	}
+
+	.deco-type-generic .deco-object--blob-2 {
+		top: calc(-12vw * var(--deco-resp-top-factor));
+	}
+
+	.deco-type-generic .deco-object--blob-3 {
+		top: calc(4vw * var(--deco-resp-top-factor));
+	}
+}
+
+@media (max-width: 31rem) {
+	.deco-container {
+		--deco-resp-top-factor: 1;
+	}
+}
