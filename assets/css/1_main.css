@@ -220,8 +220,7 @@ footer > * {
 }
 
 .hero.hero--space-1 {
-	padding: calc(var(--s4) * 2) 0 var(--s4);
-	
+	padding: calc(var(--s4) * 2) var(--s4) var(--s4);
 }
 
 /* Blocs */
@@ -318,15 +317,15 @@ footer > * {
 }
 
 /* Default Button Link */
-.button-link {
+.button-default {
 	text-decoration: none;
 }
 
-.button-link + .button-link {
+.button-default + .button-default {
 	margin-left: 1.5rem;
 }
 
-.button-link svg {
+.button-default svg {
 	fill: currentColor;
 	height: 1em;
 	width: 1em;
@@ -334,19 +333,49 @@ footer > * {
 	top: 0.125em;
 }
 
-.icon-square-wrapper {
+.icon-square-wrapper,
+.info-tooltip .tooltip-button {
 	display: inline-block;
 	margin: 0 0.3em 0 0;
 	padding: 0.2em 0.3em;
 	border-radius: 5px;
 	position: relative;
 	top: 0.175em;
+	width: 2.3rem;
+	height: 2.5rem;
 }
 
-.icon-square-wrapper svg {
+.icon-square-wrapper svg,
+.info-tooltip svg {
 	height: 1.5em;
 	width: 1.5em;
 	top: 0.2em;
+}
+
+/* Section tooltip */
+.info-tooltip {
+	position: relative;
+}
+.info-tooltip .tooltip-button {
+	background-color: var(--color-mid);
+	border: none;
+}
+
+.info-tooltip .tooltip-button-label {
+	display: inline-block;
+	font-weight: 600;
+	color: var(--pine-green);
+	transform: rotate(14deg);
+}
+.info-tooltip .tooltip-content {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	z-index: 1;
+	padding: 0.5em;
+	border-radius: 5px;
+	width: auto;
+	background-color: var(--color-mid);
 }
 
 /* DEBUG */

@@ -1,6 +1,6 @@
 +++
 id = "appreciation"
-widget = "result"
+widget = "result-appreciation"
 weight = 20
 +++
 

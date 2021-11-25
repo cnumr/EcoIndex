@@ -1,0 +1,14 @@
+{{/*
+   * Partial for simple accessible tooltip 
+   * Example : {{ partial "components/tooltip" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}     
+   */}}
+
+{{ $seed := .content }}
+{{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
+
+<div class="js-tooltip">
+	<button class="tooltip-button js-tooltip-button" aria-label="{{ .ariaLabel }}" aria-expanded="false" aria-describedby="tooltip-{{ $randomId }}">
+		<span class="tooltip-button-label">{{ .label }}</span>
+	</button>
+	<div class="tooltip-content js-tooltip-content visually-hidden" id="tooltip-{{ $randomId }}" role="tooltip">{{ .content }}</div>
+</div>

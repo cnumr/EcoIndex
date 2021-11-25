@@ -90,6 +90,7 @@
 		{{- $widget_html_start := printf `<div id="%s" class="%s">` $hash_id $widget_class -}}
 		{{- $widget_html_end := printf `</div>` -}}
 
+
 		{{- $widget_html_start | safeHTML -}}
 		{{- /* Call the widget's partial with widget context */ -}}
 		{{ partial $widget_path $widget -}}
