@@ -21,8 +21,10 @@ weight = 10
   - [Léo Parpeix](https://www.linkedin.com/in/l%C3%A9o-parpeix-464832111/)
 - Development
   - [Yaacov Cohen](https://www.linkedin.com/in/yaacovcohen/)
-  - [Romuald Priol](https://www.linkedin.com/in/romuald-p/)
   - [Romain Dulieu](https://www.linkedin.com/in/romain-dulieu-53a354120/)
+  - [Bastien Cornier](https://www.linkedin.com/in/bastiencornier/) 
+  - [Vincent Vatelot](https://www.linkedin.com/in/vincent-vatelot-7a31149/)
+  - [Romuald Priol](https://www.linkedin.com/in/romuald-p/)
 
 Also, many thanks to:
 
@@ -33,3 +35,4 @@ Also, many thanks to:
 - [Raphaël Lemaire](https://www.linkedin.com/in/rapha%C3%ABl-lemaire-71b99910/)
 - [Lise Breteau](https://www.linkedin.com/in/lisebreteau/)
 - [Alexandre Patti](https://www.linkedin.com/in/alexandre-patti/)
+- [Sandra Belfils](https://www.linkedin.com/in/sandra-belfils-03268a1/)
