@@ -26,9 +26,9 @@
 						</div>
 						<div class="result-notation-content">
 							<div class="result-notation-levels">
-								<div class="display:flex justify-content:space-between">
-									<span class="font-size:small">max. 100</span>
-									<span class="font-size:small">min. 0</span>
+								<div class="display:flex justify-content:space-between font-style:italic font-size:small">
+									<span>max. 100</span>
+									<span>min. 0</span>
 								</div>
 								<div class="result-notation-levels-chart cluster-l --no-margin">
 									<div>
@@ -60,6 +60,28 @@
 								</div>
 							</div>
 						</div>
+						<ul class="stack-l --s0 result-notation-info-list">
+							<li class="font-weight:bold">
+								<span class="result-notation-info-label">Classement de la page :</span>
+								<span class="result-notation-info-number">30721 / 36483</span>
+							</li>
+							<li class="result-notation-info-item" data-int-item-score="5">
+								<span class="result-notation-info-label">Trop lourde</span>
+								<span class="result-notation-info-number">2,65 Mo</span>
+							</li>
+							<li class="result-notation-info-item" data-int-item-score="5">
+								<span class="result-notation-info-label">Trop complexe</span>
+								<span class="result-notation-info-number">1063 éléments</span>
+							</li>
+							<li class="result-notation-info-item" data-int-item-score="1">
+								<span class="result-notation-info-label">Peu de requêtes</span>
+								<span class="result-notation-info-number">19 requêtes</span>
+							</li>
+						</ul>
+						{{/*  TODO: On click go to detail section  */}}
+						<button href="/" class="button-default font-weight:bold result-button-see-score-detail">
+							Voir les détails du score&nbsp;<span>{{ partial "svg/inline-svg-use" "icon-anchor-down" }}</span>
+						</button>
 					</div>
 				</section>
 			</div>

@@ -318,7 +318,10 @@ footer > * {
 
 /* Default Button Link */
 .button-default {
+	cursor: pointer;
 	text-decoration: none;
+	background: none;
+    border: none;
 }
 
 .button-default + .button-default {
@@ -393,37 +396,44 @@ footer > * {
 }
 
 .result-badge[data-int-note="A"],
-.notation-level-chart:nth-child(1) > * {
+.notation-level-chart:nth-child(1) > *,
+.result-notation-info-item[data-int-item-score="1"] .result-notation-info-label::before {
 	background-color: var(--color-medium-green-2);
 }
 
 .result-badge[data-int-note="B"],
-.notation-level-chart:nth-child(2) > * {
+.notation-level-chart:nth-child(2) > *,
+.result-notation-info-item[data-int-item-score="2"] .result-notation-info-label::before {
 	background-color: var(--color-cool-green);
 }
 
 .result-badge[data-int-note="C"],
-.notation-level-chart:nth-child(3) > * {
+.notation-level-chart:nth-child(3) > *,
+.result-notation-info-item[data-int-item-score="3"] .result-notation-info-label::before {
 	background-color: var(--color-greenish-yellow);
 }
 
 .result-badge[data-int-note="D"],
-.notation-level-chart:nth-child(4) > * {
+.notation-level-chart:nth-child(4) > *,
+.result-notation-info-item[data-int-item-score="4"] .result-notation-info-label::before {
 	background-color: var(--color-bright-yellow);
 }
 
 .result-badge[data-int-note="E"],
-.notation-level-chart:nth-child(5) > * {
+.notation-level-chart:nth-child(5) > *,
+.result-notation-info-item[data-int-item-score="5"] .result-notation-info-label::before {
 	background-color: var(--color-saturated-yellow);
 }
 
 .result-badge[data-int-note="F"],
-.notation-level-chart:nth-child(6) > * {
+.notation-level-chart:nth-child(6) > *,
+.result-notation-info-item[data-int-item-score="6"] .result-notation-info-label::before {
 	background-color: var(--color-mango);
 }
 
 .result-badge[data-int-note="G"],
-.notation-level-chart:nth-child(7) > * {
+.notation-level-chart:nth-child(7) > *,
+.result-notation-info-item[data-int-item-score="7"] .result-notation-info-label::before {
 	background-color: var(--color-vermillon);
 }
 
@@ -462,6 +472,33 @@ footer > * {
 
 .notation-level-chart:not(.--active) .level-chart-label {
 	background: none;
+}
+
+.result-notation-info-list > li {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(var(--color-dark-rgb), 0.1);
+	padding-bottom: var(--s0);
+}
+
+.result-notation-info-label {
+	display: inline-block;
+}
+
+.result-notation-info-item .result-notation-info-label::before {
+	content: "";
+	width: 0.5rem;
+	display: inline-block;
+	height: 0.5rem;
+	background-color: var(--color-bright-yellow);
+	margin-right: var(--s1);
+	position: relative;
+	bottom: 0.12em;
+}
+
+.result-button-see-score-detail {
+	position: relative;
+	top: calc(var(--s0) * -0.5);
 }
 
 /* DEBUG */
