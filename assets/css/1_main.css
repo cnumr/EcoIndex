@@ -378,6 +378,92 @@ footer > * {
 	background-color: var(--color-mid);
 }
 
+/* RESULT SPECIFIC STYLES */
+
+.result-badge {
+	font-size: var(--s2);
+	font-weight: bold;
+	width: 3.875rem;
+	height: 3.875rem;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+}
+
+.result-badge[data-int-note="A"],
+.notation-level-chart:nth-child(1) > * {
+	background-color: var(--color-medium-green-2);
+}
+
+.result-badge[data-int-note="B"],
+.notation-level-chart:nth-child(2) > * {
+	background-color: var(--color-cool-green);
+}
+
+.result-badge[data-int-note="C"],
+.notation-level-chart:nth-child(3) > * {
+	background-color: var(--color-greenish-yellow);
+}
+
+.result-badge[data-int-note="D"],
+.notation-level-chart:nth-child(4) > * {
+	background-color: var(--color-bright-yellow);
+}
+
+.result-badge[data-int-note="E"],
+.notation-level-chart:nth-child(5) > * {
+	background-color: var(--color-saturated-yellow);
+}
+
+.result-badge[data-int-note="F"],
+.notation-level-chart:nth-child(6) > * {
+	background-color: var(--color-mango);
+}
+
+.result-badge[data-int-note="G"],
+.notation-level-chart:nth-child(7) > * {
+	background-color: var(--color-vermillon);
+}
+
+.result-notation-message {
+	padding-right: var(--p5);
+}
+
+.result-notation-levels-chart > * > * {
+	flex: 1 1 auto;
+}
+
+.notation-level-chart > .chart-part {
+	height: 1.17rem;
+}
+
+.notation-level-chart:first-child > .chart-part {
+	border-top-left-radius: 0.33rem;
+	border-bottom-left-radius: 0.33rem;
+}
+
+.notation-level-chart:last-child > .chart-part {
+	border-top-right-radius: 0.33rem;
+	border-bottom-right-radius: 0.33rem;
+}
+
+.level-chart-label {
+	font-size: var(--s2);
+	font-weight: bold;
+	text-align: center;
+	padding: 1.14rem 0 0.4rem;
+	position: relative;
+	top: -0.34rem;
+	border-bottom-left-radius: 0.33rem;
+	border-bottom-right-radius: 0.33rem;
+}
+
+.notation-level-chart:not(.--active) .level-chart-label {
+	background: none;
+}
+
 /* DEBUG */
 /* .stack-l {
 	border-color: #0000ffaa !important;

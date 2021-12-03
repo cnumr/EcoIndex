@@ -6,14 +6,60 @@
 					<div class="info_2_columns_col1 stack-l">
 						{{/*  TODO: interactive content  */}}
 						<div class="info-tooltip">
-							{{ partial "components/tooltip" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}     
+							{{ partial "components/tooltip" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}
 						</div>
 						<h2>Hum pas top</h2>
 						<p>Score : <span>25 / 100</span></p>
 						<hr class="small" />
 					</div>
-					<div class="info_2_columns_col2 stack-l center-l">
-						<p>La bonne nouvelle, vous pouvez faire beaucoup mieux !</p>
+					<div class="info_2_columns_col2 stack-l center-l --s3">
+						<div class="result-notation-header with-sidebar-l --right-side">
+							<div>
+								<div class="result-notation-message">
+									<p>La bonne nouvelle, vous pouvez faire beaucoup mieux !</p>
+								</div>
+								<div>
+									{{/*  TODO: @accessibility  */}}
+									<div class="result-badge" data-int-note="E">E</div>
+								</div>
+							</div>
+						</div>
+						<div class="result-notation-content">
+							<div class="result-notation-levels">
+								<div class="display:flex justify-content:space-between">
+									<span class="font-size:small">max. 100</span>
+									<span class="font-size:small">min. 0</span>
+								</div>
+								<div class="result-notation-levels-chart cluster-l --no-margin">
+									<div>
+										<div class="notation-level-chart">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">A</div>
+										</div>
+										<div class="notation-level-chart">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">B</div>
+										</div>
+										<div class="notation-level-chart">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">C</div>
+										</div>
+										<div class="notation-level-chart">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">D</div>
+										</div>
+										<div class="notation-level-chart --active">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">E</div>
+										</div>
+										<div class="notation-level-chart">
+											<div class="chart-part"></div>
+											<div class="level-chart-label">F</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</section>
 			</div>
