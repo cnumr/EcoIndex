@@ -109,6 +109,7 @@ input[type="submit"] {
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	font-weight: var(--font-weight-bold);
+	cursor: pointer;
 }
 
 input[type="text"] {
