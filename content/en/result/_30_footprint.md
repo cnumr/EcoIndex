@@ -1,7 +1,7 @@
 +++
 id = "footprint"
 widget = "empreinte"
-weight = 40
+weight = 30
 +++
 
 ## Environmental footprint

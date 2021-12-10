@@ -360,6 +360,7 @@ footer > * {
 	position: relative;
 }
 .info-tooltip .tooltip-button {
+	cursor: pointer;
 	background-color: var(--color-mid);
 	border: none;
 }

@@ -46,6 +46,7 @@
 
 
 
+
 <div class="{{- $container_class | safeHTMLAttr -}}">
 	{{- /* Load widgets */ -}}
 	{{- $widgets_crit1 := where ($resources.Match $widget_pattern) ".Params.active" "!=" false -}}

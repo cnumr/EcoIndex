@@ -1,5 +1,23 @@
-<div class="center-l">
-	<h3>{{- .Params.content.subtitle -}}</h3>
-	<div>{{ .Content }}</div>
-	<h2>{{- .Title -}}</h2>
+<div class="center-l box-l --s4p0">
+	<section class="stack-l">
+		<div>
+			<div class="with-sidebar-l --s3">
+				<section>
+					<div class="info_2_columns_col1 stack-l">
+						{{/*  TODO: interactive content  */}}
+						<div class="info-tooltip">
+							{{ partial "components/tooltip" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}
+						</div>
+						<h2>Empreinte environnementale</h2>
+						{{/*  TODO: select 1000 à faire  */}}
+						<p>Pour <span>1000</span> visites par mois, l’empreinte de cette page est de :</p>
+						<hr class="small" />
+					</div>
+					<div class="info_2_columns_col2 stack-l center-l --s3">
+						{{ .Content }}
+					</div>
+				</section>
+			</div>
+		</div>
+	</section>
 </div>
