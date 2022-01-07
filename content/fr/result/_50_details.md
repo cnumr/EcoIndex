@@ -1,7 +1,7 @@
 +++
 id = "details"
 widget = "details-score"
-weight = 50
+weight = 850
 +++
 
 ## Détails du score
