@@ -4,7 +4,6 @@ widget = "empreinte"
 weight = 30
 +++
 
-
 {{<grid min-cell-width="160">}} 
     {{<highlight_info_card
         icon="energy"

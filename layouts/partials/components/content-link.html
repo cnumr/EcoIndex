@@ -1,0 +1,14 @@
+{{/*
+   * Page content link styled component
+   * Example : 
+   * {{ partial "components/content-link" (dict 
+   *     "href" "/my-page"  
+   *     "label" "My page"
+   * )}}     
+   *     
+   */}}
+
+<a class="content-link" href="{{ .href }}">
+    {{ .label }}
+    <span>{{ partial "svg/inline-svg-use" "icon-anchor-down" }}</span>
+</a>

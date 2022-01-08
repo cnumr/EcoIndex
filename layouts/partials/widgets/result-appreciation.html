@@ -12,14 +12,13 @@
 						<p>Score : <span><span data-int-score="25">25</span> / 100</span></p>
 						<hr class="small" />
 						<div class="info-collapse">
-							{{ partial "components/collapse" (
-								dict 
-								"context" . 
-								"label" "?" 
-								"ariaLabel" "Help?" 
-								"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page.<br><br> <hr class='x-small'><br/> En savoir plus : <a href='/comment-ca-marche'>Comment Ça Marche</a>"
-								) 
-							}}
+							{{ partial "components/collapse" (dict 
+								"context" .
+								"label" "Que veut dire mon score" 
+								"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page."
+								"moreHref" "/comment-ca-marche"
+								"moreLabel" "Comment ça marche"
+							)}}
 						</div>
 					</div>
 					<div class="info_2_columns_col2 stack-l center-l --s3">
