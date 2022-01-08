@@ -4,24 +4,28 @@
 			<div class="with-sidebar-l --s3">
 				<section>
 					<div class="info_2_columns_col1 stack-l">
-						{{/*  TODO: interactive content  */}}
-						<div class="info-tooltip">
-							{{ partial "components/tooltip" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}
+						<div>
+							{{/*  TODO: @accessibility  */}}
+							<div class="result-badge" data-int-note="E">E</div>
 						</div>
 						<h2>Hum pas top</h2>
-						<p>Score : <span>25 / 100</span></p>
+						<p>Score : <span><span data-int-score="25">25</span> / 100</span></p>
 						<hr class="small" />
+						<div class="info-collapse">
+							{{ partial "components/collapse" (
+								dict 
+								"context" . 
+								"label" "?" 
+								"ariaLabel" "Help?" 
+								"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page.<br><br> <hr class='x-small'><br/> En savoir plus : <a href='/comment-ca-marche'>Comment Ça Marche</a>"
+								) 
+							}}
+						</div>
 					</div>
 					<div class="info_2_columns_col2 stack-l center-l --s3">
-						<div class="result-notation-header with-sidebar-l --right-side">
-							<div>
-								<div class="result-notation-message">
-									<p>La bonne nouvelle, vous pouvez faire beaucoup mieux !</p>
-								</div>
-								<div>
-									{{/*  TODO: @accessibility  */}}
-									<div class="result-badge" data-int-note="E">E</div>
-								</div>
+						<div class="result-notation-header ">
+							<div class="result-notation-message">
+								<p>La bonne nouvelle, vous pouvez faire beaucoup mieux !</p>
 							</div>
 						</div>
 						<div class="result-notation-content">
@@ -80,7 +84,7 @@
 						</ul>
 						{{/*  TODO: On click go to detail section  */}}
 						<button href="/" class="button-default font-weight:bold result-button-see-score-detail">
-							Voir les détails du score&nbsp;<span>{{ partial "svg/inline-svg-use" "icon-anchor-down" }}</span>
+							Voir les détails du score</span>
 						</button>
 					</div>
 				</section>

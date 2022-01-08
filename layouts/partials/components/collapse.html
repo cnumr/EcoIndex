@@ -1,0 +1,14 @@
+{{/*
+   * Partial for simple accessible collapse 
+   * Example : {{ partial "components/collapse" (dict "context" . "label" "?" "ariaLabel" "Help?" "content" "The tooltip content") }}     
+   */}}
+
+{{ $seed := .content }}
+{{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
+
+<div class="js-collapse stack-l --s0">
+	<button class="collapse-button js-collapse-button button-default font-weight:bold text-align:start" aria-label="{{ .ariaLabel }}" aria-expanded="false" aria-describedby="collapse-{{ $randomId }}">
+		<span class="text-decoration:underline">Que veut dire mon score ?</span>&nbsp;<span>{{ partial "svg/inline-svg-use" "icon-anchor-down" }}</span>
+	</button>
+	<div class="collapse-content js-collapse-content visually-hidden" id="collapse-{{ $randomId }}" role="collapse">{{ .content | markdownify }}</div>
+</div>

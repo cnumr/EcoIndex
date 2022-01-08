@@ -44,6 +44,9 @@ hr {
 hr.small {
 	width: 30%;
 }
+hr.x-small {
+	width: 15%;
+}
 
 .bold {
 	font-weight: bold;
@@ -336,8 +339,8 @@ footer > * {
 	top: 0.125em;
 }
 
-.icon-square-wrapper,
-.info-tooltip .tooltip-button {
+.icon-square-wrapper
+{
 	display: inline-block;
 	margin: 0 0.3em 0 0;
 	padding: 0.2em 0.3em;
@@ -348,38 +351,17 @@ footer > * {
 	height: 2.5rem;
 }
 
-.icon-square-wrapper svg,
-.info-tooltip svg {
+.icon-square-wrapper svg
+{
 	height: 1.5em;
 	width: 1.5em;
 	top: 0.2em;
 }
 
-/* Section tooltip */
-.info-tooltip {
-	position: relative;
-}
-.info-tooltip .tooltip-button {
-	cursor: pointer;
-	background-color: var(--color-mid);
-	border: none;
-}
-
-.info-tooltip .tooltip-button-label {
-	display: inline-block;
-	font-weight: 600;
-	color: var(--pine-green);
-	transform: rotate(14deg);
-}
-.info-tooltip .tooltip-content {
-	position: absolute;
-	bottom: 100%;
-	left: 0;
-	z-index: 1;
-	padding: 0.5em;
-	border-radius: 5px;
-	width: auto;
-	background-color: var(--color-mid);
+/* Section collapse */
+.info-collapse .collapse-button {
+	padding: 0;
+	outline: none;
 }
 
 /* RESULT SPECIFIC STYLES */

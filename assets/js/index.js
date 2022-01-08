@@ -1,10 +1,10 @@
-// TODO: split js like css
+import Collapse from "./components/Collapse";
 
 // ------------------------------------------------------------------------- INIT APP
 
 function initApp() {
 	initMenu();
-	initToolTips();
+	initCollapses();
 }
 
 // init app on dom loaded
@@ -25,48 +25,12 @@ function initMenu() {
 		});
 }
 
-// ------------------------------------------------------------------------- TOOLTIPS
+// ------------------------------------------------------------------------- COLLAPSES
 
 /*
- * Init all interactive tooltips on page
+ * Init all interactive collapses on page
  */
-function initToolTips() {
-	const toolTipElements = document.querySelectorAll(".js-tooltip");
-	toolTipElements.forEach((tooltipElement) => new Tooltip(tooltipElement));
-}
-
-class Tooltip {
-	constructor(tooltipElement) {
-		this.button = tooltipElement.querySelector(".js-tooltip-button");
-		this.content = tooltipElement.querySelector(".js-tooltip-content");
-
-		["mouseover", "focus"].forEach((eventName) =>
-			this.button.addEventListener(eventName, () => this.setToolTipVisibility(true))
-		);
-		["mouseout", "blur"].forEach((eventName) =>
-			this.button.addEventListener(eventName, () => this.setToolTipVisibility(false))
-		);
-		this.button.addEventListener("keydown", (e) => {
-			if (e.keyCode == 27) {
-				this.setToolTipVisibility(false);
-			}
-		});
-	}
-
-	/**
-	 * Toggle tooltip
-	 */
-	toggleToolTipVisibility() {
-		const isTooltipExpanded = this.button.getAttribute("aria-expanded") == "true";
-		this.setToolTipVisibility(this.button, this.content, !isTooltipExpanded);
-	}
-
-	/**
-	 * Set input tooltip visibility
-	 * @param  {boolean} value
-	 */
-	setToolTipVisibility(value) {
-		this.content.classList[value ? "remove" : "add"]("visually-hidden");
-		this.button.setAttribute("aria-expanded", value ? "true" : "false");
-	}
+function initCollapses() {
+	const toolTipElements = document.querySelectorAll(".js-collapse");
+	toolTipElements.forEach((collapseElement) => new Collapse(collapseElement));
 }
