@@ -267,6 +267,16 @@ footer > * {
 .svg-symbols {
 	display: none;
 }
+.svg-inline {
+	height: 1.1em;
+	width: 1.1em;
+	vertical-align: bottom;
+	margin: 0 0.5em;
+}
+.svg-inline:first-child {
+	margin-left: 0;
+}
+
 
 .hero h1 {
 	font-size: var(--s5);
@@ -406,6 +416,13 @@ footer > * {
 .info-collapse .collapse-button {
 	padding: 0;
 	outline: none;
+}
+.info-collapse p {
+	margin-top: 1em;
+}
+.info-collapse h3,
+.info-collapse h4 {
+	margin-top: 1.4em;
 }
 .info-collapse hr {
 	margin: 1.75em 0 1em 0;

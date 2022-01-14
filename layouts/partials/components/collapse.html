@@ -9,12 +9,12 @@
 {{ $optBlock := dict "display" "block" }}
 {{ $optOrg := dict "markup" "org" }}
 
-<div class="js-collapse stack-l --s2">
+<div class="js-collapse">
 	<button class="collapse-button js-collapse-button button-default font-weight:bold text-align:start" aria-label="{{ .label }}" aria-expanded="false" aria-describedby="collapse-{{ $randomId }}">
 		<span class="text-decoration:underline">{{ .label }}</span>&nbsp;<span>{{ partial "svg/inline-svg-use" "icon-anchor-down" }}</span>
 	</button>
 	<div class="collapse-content js-collapse-content visually-hidden" id="collapse-{{ $randomId }}" role="collapse">
-		<p>{{ .content | markdownify }}</p>
+		<div>{{ .content | printf "%s\n\n<p></p>" | markdownify | replaceRE "\n*<p></p>\n*$" "" | safeHTML }}</div>
 		{{if and (isset . "moreHref") (isset . "moreLabel") }}
 			<hr class="x-small">
 			En savoir plus :&nbsp;

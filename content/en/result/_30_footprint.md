@@ -1,6 +1,6 @@
 +++
 id = "footprint"
-widget = "empreinte"
+widget = "result-empreinte"
 weight = 30
 +++
 
