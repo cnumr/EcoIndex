@@ -1,0 +1,24 @@
+
+{{/*
+   * Content inline select styled component
+   * Example : 
+   * {{partial "components/highlight-info-card" (dict 
+   *      "icon" "my-icon-name" 
+   *      "title" "My title" 
+   *      "text" "My text?"
+   *      "moreInfo" "More info text"
+   * )}}   
+   * 
+   */}}
+
+<div class="box-l em-card">
+{{ with .icon }}{{ partial "svg/inline-svg-use" (printf "%s%s" "icon-" . ) }}{{ end }}
+{{ with .title }}<p class="h4 bold">{{- . | markdownify | chomp -}}</p>{{ end }}
+{{ with .text }}<p>{{- . | markdownify -}}</p>{{ end }}
+{{ with .moreInfo }}
+    <p class="em-card-more-info">
+        <span class="info-badge icon-square-wrapper bg-darkish"><span>?</span></span>
+        <span>{{- . | markdownify -}}</span>
+    </p>
+{{ end }}
+</div>

@@ -62,7 +62,7 @@ hr.x-small {
 	border-color: var(--color-lightish);
 	left: var(--border-thick);
 	top: var(--border-thick);
-}	
+}
 
 /* Block quotes */
 blockquote {
@@ -243,6 +243,26 @@ footer > * {
 	max-height: var(--s4);
 }
 
+.em-card hr {
+	border-color: rgba(0, 0, 0, 0.075);
+	margin: var(--s1) 0;
+	width: 2rem;
+}
+.em-card .em-card-more-info {
+	font-size: calc(var(--s0) * 0.8);
+	font-style: italic;
+	margin-top: var(--s3);
+	display: flex;
+	align-items: center;
+}
+.em-card .info-badge {
+	font-size:calc(var(--s0) * 1.15);
+	width: 2.9rem;
+    height: 2.9rem;
+	margin-right: var(--s2);
+	flex: 0 0 auto;
+}
+
 /* Svg */
 .svg-symbols {
 	display: none;
@@ -319,7 +339,6 @@ footer > * {
 	flex-basis: calc(var(--measure) * 3 / 8 + var(--s3) / 2) !important;
 }
 
-
 /* Default Content link */
 .content-link {
 	font-weight: bold;
@@ -369,13 +388,27 @@ footer > * {
 	top: 0.2em;
 }
 
+/* Info Badge */
+
+.info-badge {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.info-badge span {
+	transform: rotate(12deg);
+	font-family: Arial;
+	font-weight: bold;
+}
+
 /* Section collapse */
 .info-collapse .collapse-button {
 	padding: 0;
 	outline: none;
 }
 .info-collapse hr {
-	margin: 1.75em 0 1em 0 ;
+	margin: 1.75em 0 1em 0;
 }
 
 /* RESULT SPECIFIC STYLES */
@@ -496,6 +529,41 @@ footer > * {
 .result-button-see-score-detail {
 	position: relative;
 	top: calc(var(--s0) * -0.5);
+}
+
+/* CUSTOM INLINE SELECT */
+
+.select-inline-custom {
+	position: relative;
+	display: inline-block;
+	background-color: white;
+	color: white;
+}
+.select-inline-custom:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	right: 0.75em;
+	transform: translateY(-75%) rotateZ(45deg) scale(0.85);
+	padding: 0.1875em;
+	border-right: 0.125em solid currentColor;
+	border-bottom: 0.125em solid currentColor;
+}
+.select-inline-custom select {
+	position: relative;
+	z-index: 1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: 0.1em 0.5em;
+	padding-right: 1.5em;
+	border-radius: 1em;
+	background-color: var(--color-pastel-red);
+	cursor: pointer;
+}
+.select-inline-custom select::-ms-expand {
+	display: none;
 }
 
 /* DEBUG */
