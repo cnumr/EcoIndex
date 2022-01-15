@@ -1,16 +1,16 @@
 +++
 id = "details"
-widget = "details-score"
-weight = 850
+widget = "result-details-score"
+weight = 35
 +++
 
-## Détails du score
+## Score details
 
 [//]: # "infobulle"
 
 Pour calculer la performance environnementale d’une page, nous prenons en compte plusieurs éléments : le nombre
 d’éléments du DOM (Document Object Model), le poids des données transférées, et le nombre de requêtes HTTP. Pour en
-savoir plus sur notre méthode de calcul, c’est par [ici](/comment-ca-marche/).
+savoir plus sur notre méthode de calcul, c’est par [ici](/en/method/).
 
 [//]: # "texte"
 

@@ -81,11 +81,14 @@
 
 		{{- $widget_path := printf "widgets/%s.html" $widget_type -}}
 
+		{{- /* get widget custom class */ -}}
+		{{- $widget_custom_class := or $params.widget_class "" -}}
+
 		{{- /* define css class based on the widget type */ -}}
 		{{- /* wg-xxx     : widget type (e.g. "wg-text") */ -}}
 		{{- /* wgi-xxx-yyy: widget type (e.g. "wgi-text-introduction") */ -}}
 		{{- $wg_type_formatted := (replace (replace $widget_type "." "-") "_" "-") -}}
-		{{- $widget_class := printf "wg-%s wgi-%s-%s" $wg_type_formatted $wg_type_formatted $hash_id -}}
+		{{- $widget_class := printf "wg-%s wgi-%s-%s %s" $wg_type_formatted $wg_type_formatted $hash_id $widget_custom_class -}}
 
 		{{- $widget_html_start := printf `<div id="%s" class="%s">` $hash_id $widget_class -}}
 		{{- $widget_html_end := printf `</div>` -}}
