@@ -1,0 +1,66 @@
+{{/* 
+   * Component for showing loading score details 
+   * Example :
+   *	{{ partial "components/result-load-range" (dict
+   *		"title" "Poids de la page"
+   *		"icon" "weight"
+   *		"verdict" "Trop lourde"
+   *		"rangeValue" "2,67"
+   *		"rangeValueMin" "0"
+   *		"rangeValueMax" "5"
+   *		"rangeValueTarget" "0.9"
+   *		"units" "Mo"
+   *		"unitsLegend" "mégaoctet (Mo)"
+   *	)}}
+   */}}
+
+{{ $seed := .label }}
+{{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
+{{ $rangeMedian := (div (add (int .rangeValueMin) (int .rangeValueMax)) 2.1) }}
+{{ $rangeMedianRounded = div (math.Round (mul $rangeMedian 100)) 100}}
+
+<div class="result-load-range">
+	{{ with .verdict }}
+		<div class="rlr-verdict-badge" data-int-item-score="5"><span>{{ . | markdownify }}</span></div>
+	{{ end }}
+
+	<label id="rlr-label-{{ $randomId }}" class="rlr-label bold font-size:1">
+		{{ with .icon }}<span class="svg-inline">{{ partial "svg/inline-svg-use" (printf "%s%s" "icon-" . ) }}</span>{{ end }}
+		{{ .title | markdownify }}
+	</label>
+	<div class="rlr-slider-wrapper">
+		<div class="rlr-slider">
+			<div class="rlr-track"></div>
+			{{/*  TODO: from where do we take min and max ? */}}
+			<div
+				id="rlr-handle"
+				class="rlr-slider-handle"
+				role="slider"
+				data-int-item-score="5"
+				data-valuemin="{{ .rangeValueMin }}"
+				data-valuemax="{{ .rangeValueMax }}"
+				data-value=""
+				data-valuetarget=""
+				aria-labelledby="rlr-label-{{ $randomId }}"
+				aria-valuemin="{{ .rangeValueMin }}"
+				aria-valuemax="{{ .rangeValueMax }}"
+				aria-valuenow="{{ .rangeValue }}"
+			>
+				<span class="rlr-handle-value"><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
+				<div class="rlr-handle-tip"></div>
+			</div>
+			<div class="rlr-slider-handle-target"></div>
+		</div>
+		<div class="rlr-slider-labels">
+			{{/*  TODO: add to dictionary  */}}
+			<span>min</span>
+			{{/*  TODO: get medium from api ? */}}
+			<span>mediane: {{ $rangeMedianRounded }} {{ .units }}</span>
+			<span>max</span>
+		</div>
+	</div>
+	<div class="rlr-infos">
+		<span class="rlr-target-info">Cible : {{ .rangeValueTarget | markdownify }} {{ .units }}</span>
+		<span class="rlr-unit">Unité : {{ .unitsLegend | markdownify }}</span>
+	</div>
+</div>
