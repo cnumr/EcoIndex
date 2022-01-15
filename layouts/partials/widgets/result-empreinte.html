@@ -9,9 +9,15 @@
 				<div class="info-collapse">	
 					{{ $collapseInfoContent := `<p>L'empreinte environnementale de la page est 
 						exprimée par 2 indicateurs environnementaux.</p>
-						<h4><svg class="svg-inline" aria-hidden="true"><use xlink:href="#icon-cloud"></use></svg> Gaz à effet de serre (GES)</h4> 
+						<h4>
+							<span class="svg-inline"><svg aria-hidden="true"><use xlink:href="#icon-cloud"></use></svg></span> 
+							Gaz à effet de serre (GES)
+						</h4> 
 						<p>L'empreinte GES de la page est exprimée en gramme équivalent CO2 (g eCO2). </p>
-						<h4><svg class="svg-inline" aria-hidden="true"><use xlink:href="#icon-water-drop"></use></svg> Eau</h4> 
+						<h4>
+							<span class="svg-inline"><svg class="svg-inline" aria-hidden="true"><use xlink:href="#icon-water-drop"></use></svg></span> 
+							Eau
+						</h4> 
 						<p>L'empreinte en eau témoigne de la consommation d'eau nécessaire à l'affichage de cette page. La phase d'extraction des métaux nécessaires à la fabrication des équipements requiert une grande quantité d'eau.</p>
 						<p>Ces valeurs sont calculées à partir des émissionsd'une page moyenne et modulées en fonction de l'Ecolndex de la page analysée.</p>`
 					}}
@@ -37,12 +43,12 @@
 				<div class="grid-l " style="--min-cell-width:160px;">
 					{{partial "components/highlight-info-card" (dict 
 						"icon" "energy" 
-						"title" "<span data-int-id='water'>[2,7]</span>&nbsp;cl" 
+						"title" "<span data-int='water'>[2,7]</span>&nbsp;cl" 
 						"text" "consommation <br />d’energie primaire"
 					)}} 
 					{{partial "components/highlight-info-card" (dict 
 						"icon" "cloud" 
-						"title" "<span data-int-id='co2'>[2,49]</span>&nbsp;kgCO2e" 
+						"title" "<span data-int='co2'>[2,49]</span>&nbsp;kgCO2e" 
 						"text" "émission de gaz <br />à effet de serre"
 					)}}   
 				</div>
