@@ -457,43 +457,43 @@ footer > * {
 }
 
 /* TODO: set all to colors */
-.result-badge[data-int-note="A"],
+.result-badge[data-int-grade-value="A"],
 .notation-level-chart:nth-child(1) > *,
 .result-notation-info-item[data-int-item-score="1"] .result-notation-info-label::before {
 	background-color: var(--color-medium-green-2);
 }
 
-.result-badge[data-int-note="B"],
+.result-badge[data-int-grade-value="B"],
 .notation-level-chart:nth-child(2) > *,
 .result-notation-info-item[data-int-item-score="2"] .result-notation-info-label::before {
 	background-color: var(--color-cool-green);
 }
 
-.result-badge[data-int-note="C"],
+.result-badge[data-int-grade-value="C"],
 .notation-level-chart:nth-child(3) > *,
 .result-notation-info-item[data-int-item-score="3"] .result-notation-info-label::before {
 	background-color: var(--color-greenish-yellow);
 }
 
-.result-badge[data-int-note="D"],
+.result-badge[data-int-grade-value="D"],
 .notation-level-chart:nth-child(4) > *,
 .result-notation-info-item[data-int-item-score="4"] .result-notation-info-label::before {
 	background-color: var(--color-bright-yellow);
 }
 
-.result-badge[data-int-note="E"],
+.result-badge[data-int-grade-value="E"],
 .notation-level-chart:nth-child(5) > *,
 .result-notation-info-item[data-int-item-score="5"] .result-notation-info-label::before {
 	background-color: var(--color-saturated-yellow);
 }
 
-.result-badge[data-int-note="F"],
+.result-badge[data-int-grade-value="F"],
 .notation-level-chart:nth-child(6) > *,
 .result-notation-info-item[data-int-item-score="6"] .result-notation-info-label::before {
 	background-color: var(--color-mango);
 }
 
-.result-badge[data-int-note="G"],
+.result-badge[data-int-grade-value="G"],
 .notation-level-chart:nth-child(7) > *,
 .result-notation-info-item[data-int-item-score="7"] .result-notation-info-label::before {
 	background-color: var(--color-vermillon);
@@ -618,6 +618,11 @@ footer > * {
 }
 .select-inline-custom select::-ms-expand {
 	display: none;
+}
+
+.footprint-result::after {
+	content: attr(data-unit);
+	padding-left: 0.4em;
 }
 
 /* TODO: put in separate file */

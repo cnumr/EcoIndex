@@ -4,10 +4,10 @@
 			<div class="info_2_columns_col1 stack-l">
 				<div>
 					{{/*  TODO: @accessibility  */}}
-					<div class="result-badge" data-int-note="E">E</div>
+					<div class="result-badge" data-int-attr="grade" data-int="grade"></div>
 				</div>
 				<h2>Hum pas top</h2>
-				<p class="font-size:1">Score : <span><span data-int-score="25">25</span> / 100</span></p>
+				<p class="font-size:1">Score : <span><span data-int="score">25</span> / 100</span></p>
 				<hr class="small" />
 				<div class="info-collapse">
 					{{ partial "components/collapse" (dict 
@@ -33,27 +33,27 @@
 						</div>
 						<div class="result-notation-levels-chart cluster-l --no-margin">
 							<div>
-								<div class="notation-level-chart">
+								<div class="notation-level-chart" data-grade-result="A">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">A</div>
 								</div>
-								<div class="notation-level-chart">
+								<div class="notation-level-chart" data-grade-result="B">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">B</div>
 								</div>
-								<div class="notation-level-chart">
+								<div class="notation-level-chart" data-grade-result="C">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">C</div>
 								</div>
-								<div class="notation-level-chart">
+								<div class="notation-level-chart" data-grade-result="D">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">D</div>
 								</div>
-								<div class="notation-level-chart --active">
+								<div class="notation-level-chart" data-grade-result="E">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">E</div>
 								</div>
-								<div class="notation-level-chart">
+								<div class="notation-level-chart" data-grade-result="F">
 									<div class="chart-part"></div>
 									<div class="level-chart-label">F</div>
 								</div>
@@ -64,19 +64,20 @@
 				<ul class="stack-l --s0 result-notation-info-list">
 					<li class="font-weight:bold">
 						<span class="result-notation-info-label">Classement de la page :</span>
+						{{/*  TODO  */}}
 						<span class="result-notation-info-number">30721 / 36483</span>
 					</li>
 					<li class="result-notation-info-item" data-int-item-score="5">
 						<span class="result-notation-info-label">Trop lourde</span>
-						<span class="result-notation-info-number">2,65 Mo</span>
+						<span class="result-notation-info-number"><span data-int="size">0</span> Mo</span>
 					</li>
 					<li class="result-notation-info-item" data-int-item-score="5">
 						<span class="result-notation-info-label">Trop complexe</span>
-						<span class="result-notation-info-number">1063 éléments</span>
+						<span class="result-notation-info-number"><span data-int="nodes">0</span> éléments</span>
 					</li>
 					<li class="result-notation-info-item" data-int-item-score="1">
 						<span class="result-notation-info-label">Peu de requêtes</span>
-						<span class="result-notation-info-number">19 requêtes</span>
+						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
 					</li>
 				</ul>
 				{{/*  TODO: On click go to detail section  */}}

@@ -1,19 +1,15 @@
 import Collapse from "./components/Collapse";
-import ResultRangeSlider from "./components/ResultRangeSlider";
+import SiteAnalysisResult from "./components/SiteAnalysisResult";
+
+// TODO: set from .env ?
+const API_BASE_URL = "https://ecoindex.neutral.hosting:8001/v1/ecoindexes/";
 
 // ------------------------------------------------------------------------- INIT APP
-
-// TODO: TEMP data json
-const tempResultData = {
-	size: 2.67,
-	nodes: 1063,
-	requests: 19
-};
 
 function initApp() {
 	initMenu();
 	initCollapses();
-	initResultRangeSliders(tempResultData);
+	initPageResult();
 }
 
 // init app on dom loaded
@@ -44,9 +40,10 @@ function initCollapses() {
 	toolTipElements.forEach((collapseElement) => new Collapse(collapseElement));
 }
 
-// ------------------------------------------------------------------------- RESULT SLIDERS
+// ------------------------------------------------------------------------- RESULT PAGE
 
-function initResultRangeSliders(data) {
-	const sliderEls = document.querySelectorAll(".js-rlr-slider");
-	sliderEls.forEach((sliderEl) => new ResultRangeSlider({ sliderEl, data }));
+function initPageResult() {
+	const resultPageContentEl = document.querySelector(".js-result-container");
+	if (!resultPageContentEl) return;
+	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL });
 }

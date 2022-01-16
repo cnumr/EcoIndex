@@ -36,19 +36,19 @@
 				<p>
 					{{ $footPrintIntroTextSplited := split .Params.footprint_intro_text "<select-inline/>" }}
 					{{ index $footPrintIntroTextSplited 0 }}
-					{{ partial "components/select-inline-custom" (slice 1000 100 10) }}
+					<span class="js-footprint-factor-select">{{ partial "components/select-inline-custom" (slice 1000 100 10) }}</span>
 					{{ index $footPrintIntroTextSplited 1 }}
 				</p>
 				{{/* Footprint results from page */}}
 				<div class="grid-l " style="--min-cell-width:160px;">
 					{{partial "components/highlight-info-card" (dict 
 						"icon" "energy" 
-						"title" "<span data-int='water'>[2,7]</span>&nbsp;cl" 
+						"title" "<span class='footprint-result' data-int='water' data-unit='cl'>0</span>" 
 						"text" "consommation <br />d’energie primaire"
 					)}} 
 					{{partial "components/highlight-info-card" (dict 
 						"icon" "cloud" 
-						"title" "<span data-int='co2'>[2,49]</span>&nbsp;kgCO2e" 
+						"title" "<span class='footprint-result' data-int='ges' data-unit='gCO2e'>0</span>" 
 						"text" "émission de gaz <br />à effet de serre"
 					)}}   
 				</div>
