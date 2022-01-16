@@ -46,6 +46,7 @@
 
 
 
+
 <div class="{{- $container_class | safeHTMLAttr -}}">
 	{{- /* Load widgets */ -}}
 	{{- $widgets_crit1 := where ($resources.Match $widget_pattern) ".Params.active" "!=" false -}}
@@ -76,13 +77,16 @@
 		{{- /* text is the default widget type */ -}}
 		{{- $widget_type := or $params.widget "text" -}}
 
+		{{- /* get widget custom class */ -}}
+		{{- $widget_custom_class := or $params.widget_class "" -}}
+
+		{{- /* get widget custom class */ -}}
+		{{- $widget_isDraft := $params.draft -}}
+
 		{{- /* div is the default htmlElement */ -}}
 		<!-- {{- $html_element := or $params.htmlElement "div" -}} -->
 
 		{{- $widget_path := printf "widgets/%s.html" $widget_type -}}
-
-		{{- /* get widget custom class */ -}}
-		{{- $widget_custom_class := or $params.widget_class "" -}}
 
 		{{- /* define css class based on the widget type */ -}}
 		{{- /* wg-xxx     : widget type (e.g. "wg-text") */ -}}
@@ -93,10 +97,12 @@
 		{{- $widget_html_start := printf `<div id="%s" class="%s">` $hash_id $widget_class -}}
 		{{- $widget_html_end := printf `</div>` -}}
 
-
-		{{- $widget_html_start | safeHTML -}}
-		{{- /* Call the widget's partial with widget context */ -}}
-		{{ partial $widget_path $widget -}}
-		{{- $widget_html_end | safeHTML -}}
+		{{/*  Render widget only if not in drafts  */}}
+		{{ if not $widget_isDraft }}
+			{{- $widget_html_start | safeHTML -}}
+			{{- /* Call the widget's partial with widget context */ -}}
+			{{ partial $widget_path $widget -}}
+			{{- $widget_html_end | safeHTML -}}
+		{{ end }}
 	{{ end -}}
 </div>
