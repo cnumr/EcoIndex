@@ -11,22 +11,41 @@ Le numérique, ce n’est pas que du vent
 
 {{% /info_1_column %}}
 
-{{<grid min-cell-width="160">}} {{<highlight_info_card
-        icon="energy"
-        title="4,2 %"
-        text="consommation <br/> d'energie primaire"
-    >}} {{<highlight_info_card
-        icon="cloud"
-        title="3,2 %"
-        text="émission de gaz <br/> à effet de serre"
-    >}} {{<highlight_info_card
-        icon="water-drop"
-        title="0,2 %"
-        text="consommation <br/> d’eau"
-    >}} {{<highlight_info_card
-        icon="electricity"
-        title="5,6 %"
-        text="consommation <br/> d’électricité"
-    >}} {{</grid>}}
+{{<grid min-cell-width="160">}} 
+
+{{<highlight_info_card
+    icon="energy"
+    title="4,2 %"
+>}}
+consommation
+d'energie primaire
+{{</highlight_info_card>}} 
+
+{{<highlight_info_card
+    icon="cloud"
+    title="3,2 %"
+>}}
+émission de gaz
+à effet de serre
+{{</highlight_info_card>}} 
+
+{{<highlight_info_card
+    icon="water-drop"
+    title="0,2 %"
+>}}
+consommation
+d’eau
+{{</highlight_info_card>}} 
+
+{{<highlight_info_card
+    icon="electricity"
+    title="5,6 %"
+>}}
+consommation
+d’électricité
+{{</highlight_info_card>}} 
+
+{{</grid>}}
+
 
 <small>Source: Empreinte environnementale du numérique mondial - greenit.fr</small>
