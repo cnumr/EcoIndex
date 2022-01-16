@@ -668,11 +668,12 @@ footer > * {
 }
 
 .rlr-slider-handle {
+	--rlr-slider-handle-position: 0%;
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
 	/* TODO: dynamic */
-	left: 76%;
+	left: var(--rlr-slider-handle-position);
 }
 
 .rlr-handle-tip {
@@ -711,14 +712,14 @@ footer > * {
 	background-color: currentColor;
 }
 .rlr-slider-handle-target {
+	--rlr-slider-handle-target-position: 0%;
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	/* TODO: dynamic */
-	left: 33%;
 	height: 8px;
 	width: 14px;
 	background: #fff;
+	left: var(--rlr-slider-handle-target-position);
 }
 .rlr-slider-handle-target:after {
 	content: "";

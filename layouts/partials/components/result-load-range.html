@@ -17,7 +17,7 @@
 {{ $seed := .label }}
 {{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
 {{ $rangeMedian := (div (add (int .rangeValueMin) (int .rangeValueMax)) 2.1) }}
-{{ $rangeMedianRounded = div (math.Round (mul $rangeMedian 100)) 100}}
+{{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100}}
 
 <div class="result-load-range">
 	{{ with .verdict }}
@@ -29,27 +29,24 @@
 		{{ .title | markdownify }}
 	</label>
 	<div class="rlr-slider-wrapper">
-		<div class="rlr-slider">
+		<div class="rlr-slider js-rlr-slider">
 			<div class="rlr-track"></div>
 			{{/*  TODO: from where do we take min and max ? */}}
 			<div
-				id="rlr-handle"
-				class="rlr-slider-handle"
+				class="rlr-slider-handle js-rlr-slider-handle"
 				role="slider"
+				data-int-value-from="weight"
 				data-int-item-score="5"
-				data-valuemin="{{ .rangeValueMin }}"
-				data-valuemax="{{ .rangeValueMax }}"
-				data-value=""
-				data-valuetarget=""
 				aria-labelledby="rlr-label-{{ $randomId }}"
 				aria-valuemin="{{ .rangeValueMin }}"
 				aria-valuemax="{{ .rangeValueMax }}"
-				aria-valuenow="{{ .rangeValue }}"
+				aria-valuenow=""
+				aria-valuetext=""
 			>
 				<span class="rlr-handle-value"><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
 				<div class="rlr-handle-tip"></div>
 			</div>
-			<div class="rlr-slider-handle-target"></div>
+			<div class="rlr-slider-handle-target js-rlr-slider-handle-target" data-value="{{ .rangeValueTarget }}"></div>
 		</div>
 		<div class="rlr-slider-labels">
 			{{/*  TODO: add to dictionary  */}}

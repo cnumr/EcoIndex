@@ -1,10 +1,17 @@
 import Collapse from "./components/Collapse";
+import ResultRangeSlider from "./components/ResultRangeSlider";
 
 // ------------------------------------------------------------------------- INIT APP
+
+// TEMP data json
+const tempResultData = {
+	weight: "2.67",
+};
 
 function initApp() {
 	initMenu();
 	initCollapses();
+	initResultRangeSliders(tempResultData);
 }
 
 // init app on dom loaded
@@ -33,4 +40,11 @@ function initMenu() {
 function initCollapses() {
 	const toolTipElements = document.querySelectorAll(".js-collapse");
 	toolTipElements.forEach((collapseElement) => new Collapse(collapseElement));
+}
+
+// ------------------------------------------------------------------------- RESULT SLIDERS
+
+function initResultRangeSliders(data) {
+	const sliderEls = document.querySelectorAll(".js-rlr-slider");
+	sliderEls.forEach((sliderEl) => new ResultRangeSlider({ sliderEl, data }));
 }

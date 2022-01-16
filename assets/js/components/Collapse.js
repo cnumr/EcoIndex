@@ -1,3 +1,6 @@
+/**
+ * Simple collapse content component
+ */
 class Collapse {
 	constructor(collapseElement) {
 		this.button = collapseElement.querySelector(".js-collapse-button");
