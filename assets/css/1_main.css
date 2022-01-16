@@ -329,6 +329,10 @@ footer > * {
 	border-color: var(--color-mid);
 }
 
+.info-container ul {
+	padding-left: 0.34em;
+}
+
 :focus {
 	outline: var(--border-focus) var(--focus-style) var(--color-focus-light);
 }

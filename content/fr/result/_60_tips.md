@@ -14,18 +14,34 @@ weight = 60
 
 {{<highlight_info_card 
     title="La page est trop lourde" 
-    text="---<br/>- Optimisez les images en choisissant le bon format et réduisant la taille<br/><br/>- Evitez les vidéos et fonds vidéos<br/><br/>- Compresser les fichiers (HTML, CSS, JS)<br><br/>- Remplacez autant que possible les images d'interface par des styles CSS et des pictos<br/><br/>- Facilitez la mise en cache navigateur "
->}}
+>}} 
+---
+- Optimisez les images en choisissant le bon format et réduisant la taille
+- Evitez les vidéos et fonds vidéos
+- Compresser les fichiers (HTML, CSS, JS)
+- Remplacez autant que possible les images d'interface par des styles CSS et des pictos
+- Facilitez la mise en cache navigateur 
+{{</highlight_info_card>}}
 
 {{<highlight_info_card 
     title="La page est trop complexe" 
-    text="---<br/><br/>- Limitez le contenu et les fonctionnalités à l’essentiel<br/><br/>- Optez pour l’approche mobile first  <br/><br/>- Evitez les mécanismes comme l’infinite scroll "
 >}}
+---
+- Limitez le contenu et les fonctionnalités à l’essentiel
+- Optez pour l’approche mobile first  
+- Evitez les mécanismes comme l’infinite scroll
+{{</highlight_info_card>}}
 
 {{<highlight_info_card 
     title="Il y a trop de requêtes" 
-    text="---<br/><br/>- Limitez l’utilisation de widgets et plugins<br/><br/>- Utilisez des polices standards plutôt que des polices custom<br/><br/>- Regroupez les images dans un sprite<br/><br/>- Regroupez certaines feuilles de styles (CSS) et librairies Javascript (JS).<br/><br/>- Préférez les pages statiques"
 >}}
+---
+- Limitez l’utilisation de widgets et plugins
+- Utilisez des polices standards plutôt que des polices custom
+- Regroupez les images dans un sprite
+- Regroupez certaines feuilles de styles (CSS) et librairies Javascript (JS).
+- Préférez les pages statiques"
+{{</highlight_info_card>}}
 
 {{% /info_2_columns_col2 %}}
 

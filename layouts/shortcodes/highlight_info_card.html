@@ -1,5 +1,12 @@
 <div class="box-l em-card">
 {{ with .Get "icon" }}{{ partial "svg/inline-svg-use" (printf "%s%s" "icon-" . ) }}{{ end }}
 {{ with .Get "title" }}<p class="h4 bold">{{ . | markdownify }}</p>{{ end }}
-{{ with .Get "text" }}<p>{{ . | markdownify }}</p>{{ end }}
+{{ with .Get "text" }}
+    {{ . | printf "%s\n\n<p></p>" | markdownify | replaceRE "\n*<p></p>\n*$" "" | safeHTML  }}
+{{ end }}
+{{ with .Inner }}
+<div>
+    {{ . | printf "%s\n\n<p></p>" | markdownify | replaceRE "\n*<p></p>\n*$" "" | safeHTML }}
+</div>
+{{ end }}
 </div>

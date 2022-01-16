@@ -2,6 +2,7 @@
 id = "badge"
 widget = "badge"
 weight = 940
+draft = true
 +++
 
 ## Ajouter le badge à votre page
