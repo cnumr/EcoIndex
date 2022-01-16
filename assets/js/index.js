@@ -3,9 +3,11 @@ import ResultRangeSlider from "./components/ResultRangeSlider";
 
 // ------------------------------------------------------------------------- INIT APP
 
-// TEMP data json
+// TODO: TEMP data json
 const tempResultData = {
-	weight: "2.67",
+	size: 2.67,
+	nodes: 1063,
+	requests: 19
 };
 
 function initApp() {

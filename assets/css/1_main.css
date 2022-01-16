@@ -350,6 +350,10 @@ footer > * {
 	flex-basis: calc(var(--measure) * 3 / 8 + var(--s3) / 2) !important;
 }
 
+.info_2_columns_col1 .info-collapse {
+	padding-right: 2.1rem;
+}
+
 /* Section specific */
 .section-theme-dark {
 	background-color: var(--color-mid);
@@ -628,7 +632,7 @@ footer > * {
 	top: 0;
 	transform: translateY(-50%);
 	right: 1.875rem;
-	padding: 0.2em 0.6em 0.1em;
+	padding: 0.15em 0.6em 0.1em;
 	border-radius: 0.3125rem;
 	background-color: currentColor;
 }
@@ -694,12 +698,13 @@ footer > * {
 	transform: translate(-50%, -100%);
 	display: block;
 	min-width: 6.1rem;
-	padding: 0.2em 0.6em 0.1em;
+	padding: 0.15em 0.6em 0.1em;
 	border-radius: 2rem;
 	background-color: currentColor;
 }
 .rlr-handle-value > span {
 	color: var(--color-dark-blue);
+	white-space: nowrap;
 }
 .rlr-handle-value::after {
 	content: "";
@@ -732,7 +737,6 @@ footer > * {
 	border-radius: 100%;
 	background: #000;
 }
-
 .rlr-slider-labels {
 	font-size: 0.75rem;
 	font-style: italic;
@@ -741,7 +745,7 @@ footer > * {
 	margin-top: 0.625rem;
 }
 .rlr-infos {
-	font-size: 0.875rem;
+	font-size: 0.71875rem;
 	font-style: italic;
 	display: flex;
 	justify-content: space-between;

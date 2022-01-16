@@ -19,16 +19,46 @@
 			</div>
 			{{/* Right column section content */}}
 			<div class="info_2_columns_col2 stack-l center-l --s3">
+				{{/*  TODO: get notes colors from value with min and max  */}}
+				{{/*  TODO: interactive  */}}
+				{{/*  Weight result details  */}}
 				{{ partial "components/result-load-range" (dict
 					"title" "Poids de la page"
 					"icon" "weight"
 					"verdict" "<span data-int='pageWeightVerdict'>#Trop lourde</span>"
 					"rangeValue" "<span data-int='pageWeightValue'>#2,67</span>"
 					"rangeValueMin" "0"
-					"rangeValueMax" "5"
+					"rangeValueMax" "4.76"
 					"rangeValueTarget" "0.9"
 					"units" "Mo"
 					"unitsLegend" "mégaoctet (Mo)"
+					"dataValueKey" "size"
+				)}}
+				{{/*  Dom complexity result details  */}}
+				{{ partial "components/result-load-range" (dict
+					"title" "Complexité"
+					"icon" "complexity"
+					"verdict" "<span data-int='pageComplexityVerdict'>#Trop complexe</span>"
+					"rangeValue" "<span data-int='pageComplexityValue'>#1063</span>"
+					"rangeValueMin" "0"
+					"rangeValueMax" "1206"
+					"rangeValueTarget" "500"
+					"units" "éléments"
+					"unitsLegend" "Nombre d’éléments du DOM"
+					"dataValueKey" "nodes"
+				)}}
+				{{/*  Request number result details  */}}
+				{{ partial "components/result-load-range" (dict
+					"title" "Requêtes"
+					"icon" "request"
+					"verdict" "<span data-int='pageRequestVerdict'>#Peu de requêtes</span>"
+					"rangeValue" "<span data-int='pageRequestValue'>#19</span>"
+					"rangeValueMin" "0"
+					"rangeValueMax" "156"
+					"rangeValueTarget" "27"
+					"units" "requêtes"
+					"unitsLegend" "Nombre de requêtes serveur"
+					"dataValueKey" "requests"
 				)}}
 			</div>
 		</div>

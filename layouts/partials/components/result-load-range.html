@@ -16,11 +16,12 @@
 
 {{ $seed := .label }}
 {{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
-{{ $rangeMedian := (div (add (int .rangeValueMin) (int .rangeValueMax)) 2.1) }}
+{{ $rangeMedian := (div (add (float .rangeValueMin) (float .rangeValueMax)) 2) }}
 {{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100}}
 
 <div class="result-load-range">
 	{{ with .verdict }}
+		{{/*  TODO: interactive  */}}
 		<div class="rlr-verdict-badge" data-int-item-score="5"><span>{{ . | markdownify }}</span></div>
 	{{ end }}
 
@@ -31,11 +32,12 @@
 	<div class="rlr-slider-wrapper">
 		<div class="rlr-slider js-rlr-slider">
 			<div class="rlr-track"></div>
+			{{/*  TODO: interactive  */}}
 			{{/*  TODO: from where do we take min and max ? */}}
 			<div
 				class="rlr-slider-handle js-rlr-slider-handle"
 				role="slider"
-				data-int-value-from="weight"
+				data-int-value-from="{{ .dataValueKey }}"
 				data-int-item-score="5"
 				aria-labelledby="rlr-label-{{ $randomId }}"
 				aria-valuemin="{{ .rangeValueMin }}"
@@ -52,12 +54,12 @@
 			{{/*  TODO: add to dictionary  */}}
 			<span>min</span>
 			{{/*  TODO: get medium from api ? */}}
-			<span>mediane: {{ $rangeMedianRounded }} {{ .units }}</span>
+			<span>mediane: {{ $rangeMedianRounded }}</span>
 			<span>max</span>
 		</div>
 	</div>
 	<div class="rlr-infos">
-		<span class="rlr-target-info">Cible : {{ .rangeValueTarget | markdownify }} {{ .units }}</span>
+		<span class="rlr-target-info">Cible : {{ .rangeValueTarget | markdownify }}</span>
 		<span class="rlr-unit">Unité : {{ .unitsLegend | markdownify }}</span>
 	</div>
 </div>
