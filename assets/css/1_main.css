@@ -684,6 +684,7 @@ footer > * {
 	--rlr-slider-handle-position: 0%;
 	position: absolute;
 	top: 50%;
+	z-index: 1;
 	transform: translate(-50%, -50%);
 	/* TODO: dynamic */
 	left: var(--rlr-slider-handle-position);
