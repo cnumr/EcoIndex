@@ -365,10 +365,13 @@ footer > * {
 
 /* Default Content link */
 .content-link {
-	font-weight: bold;
-	text-decoration: none;
-	padding-bottom: 0.2em;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    padding-bottom: 0.05em;
 	background: linear-gradient(currentColor, currentColor) bottom / 100% 0.1em no-repeat;
+	white-space: nowrap;
+	margin: 0.35em 0;
 }
 .content-link svg {
 	transform: rotate(-90deg) scale(0.9) translate(-10%, 10%);
@@ -758,6 +761,20 @@ footer > * {
 	background-color: currentColor;
 	border-radius: 100%;
 	margin-right: 0.75em;
+}
+
+/* RESPONSIVE UTILS */
+
+@media (max-width: 60rem) {
+	.hide-mobile {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
 }
 
 /* DEBUG */
