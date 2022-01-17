@@ -456,7 +456,7 @@ footer > * {
 	border-radius: 100%;
 }
 
-/* TODO: set all to colors */
+/* TODO: set all dynamic colors in js for results */
 .result-badge[data-int-grade-value="A"],
 .notation-level-chart:nth-child(1) > *,
 .result-notation-info-item[data-int-item-score="1"] .result-notation-info-label::before {
@@ -502,23 +502,9 @@ footer > * {
 .result-load-range [data-int-item-score="1"] {
 	color: var(--color-medium-green-2);
 }
+.result-load-range [data-int-item-score=""],
 .result-load-range [data-int-item-score="2"] {
-	color: var(--color-cool-green);
-}
-.result-load-range [data-int-item-score="3"] {
-	color: var(--color-greenish-yellow);
-}
-.result-load-range [data-int-item-score="4"] {
-	color: var(--color-bright-yellow);
-}
-.result-load-range [data-int-item-score="5"] {
 	color: var(--color-saturated-yellow);
-}
-.result-load-range [data-int-item-score="6"] {
-	color: var(--color-mango);
-}
-.result-load-range [data-int-item-score="7"] {
-	color: var(--color-vermillon);
 }
 
 .result-notation-message {

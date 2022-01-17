@@ -1,4 +1,12 @@
-import {inverseLerp, clamp} from "../helpers/mathUtils"
+import { inverseLerp, clamp } from "../helpers/mathUtils";
+
+const SLIDER_MAX_SCORE = 2;
+// TODO : add to /data with trad
+const TEMP_RESULT_VERDICT = {
+	size: ["Si légère", "Trop lourde"],
+	nodes: ["Simple", "Trop complexe"],
+	requests: ["Peu de requêtes", "Trop de requêtes"],
+};
 
 /**
  * Result score range slider component
@@ -7,20 +15,21 @@ import {inverseLerp, clamp} from "../helpers/mathUtils"
 class ResultRangeSlider {
 	constructor({ sliderEl, data }) {
 		this.sliderEl = sliderEl;
-		// Update value handle
 		this.handleEl = sliderEl.querySelector(".js-rlr-slider-handle");
+		this.dataType = this.handleEl.dataset.intValueFrom;
 		// get value from corresponding data key
 		this.value = this._getValueFromDataKey(data);
 		// get min and max value
 		this.valueMin = +this.handleEl.ariaValueMin;
 		this.valueMax = +this.handleEl.ariaValueMax;
+		
+		this.dataTypeScore = this._getScoreFromRange(this.value, this.valueMin, this.valueMax);
+
 		// Set values to update dom
 		this.setSliderValue(this.value);
 		this.setSliderTargetValue();
-	}
-
-	_getValueFromDataKey(data) {
-		return +data[this.handleEl.dataset.intValueFrom];
+		this.setSliderScoreValueAttributes(this.dataTypeScore);
+		this.setSliderVerdict(TEMP_RESULT_VERDICT[this.dataType], this.dataTypeScore)
 	}
 
 	setSliderValue(value) {
@@ -42,6 +51,24 @@ class ResultRangeSlider {
 		const percentTargetValue = this._getPercentValueFromRange(targetValue, this.valueMin, this.valueMax);
 		// set value to css
 		handleTargetEl.style.setProperty("--rlr-slider-handle-target-position", percentTargetValue + "%");
+	}
+
+	setSliderScoreValueAttributes(score) {
+		const scoreEls = this.sliderEl.querySelectorAll("[data-int-item-score]");
+		scoreEls.forEach((el) => (el.dataset.intItemScore = score));
+	}
+
+	setSliderVerdict(verdicts, score) {
+		this.sliderEl.querySelector(".js-rlr-verdict-badge > span").textContent = verdicts[score - 1];
+	}
+
+	_getScoreFromRange(value, min, max) {
+		const percentValue = this._getPercentValueFromRange(value, min, max);
+		return clamp(Math.round((percentValue * SLIDER_MAX_SCORE) / 100), 1, SLIDER_MAX_SCORE);
+	}
+
+	_getValueFromDataKey(data) {
+		return +data[this.handleEl.dataset.intValueFrom];
 	}
 
 	_getPercentValueFromRange(value, valueMin, valueMax) {

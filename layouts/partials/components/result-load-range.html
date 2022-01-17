@@ -19,10 +19,9 @@
 {{ $rangeMedian := (div (add (float .rangeValueMin) (float .rangeValueMax)) 2) }}
 {{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100}}
 
-<div class="result-load-range">
+<div class="result-load-range js-rlr">
 	{{ with .verdict }}
-		{{/*  TODO: interactive  */}}
-		<div class="rlr-verdict-badge" data-int-item-score="5"><span>{{ . | markdownify }}</span></div>
+		<div class="rlr-verdict-badge js-rlr-verdict-badge" data-int-item-score=""><span>{{ . | markdownify }}</span></div>
 	{{ end }}
 
 	<label id="rlr-label-{{ $randomId }}" class="rlr-label bold font-size:1">
@@ -38,7 +37,7 @@
 				class="rlr-slider-handle js-rlr-slider-handle"
 				role="slider"
 				data-int-value-from="{{ .dataValueKey }}"
-				data-int-item-score="5"
+				data-int-item-score=""
 				aria-labelledby="rlr-label-{{ $randomId }}"
 				aria-valuemin="{{ .rangeValueMin }}"
 				aria-valuemax="{{ .rangeValueMax }}"

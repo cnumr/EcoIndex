@@ -133,7 +133,7 @@ class SiteAnalysisResult {
 	}
 
 	_updatetResultRangeSliders(data) {
-		const sliderEls = document.querySelectorAll(".js-rlr-slider");
+		const sliderEls = document.querySelectorAll(".js-rlr");
 		sliderEls.forEach((sliderEl) => new ResultRangeSlider({ sliderEl, data }));
 	}
 }
