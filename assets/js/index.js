@@ -36,12 +36,16 @@ function initMenu() {
  * Init all interactive collapses on page
  */
 function initCollapses() {
-	const toolTipElements = document.querySelectorAll(".js-collapse");
-	toolTipElements.forEach((collapseElement) => new Collapse(collapseElement));
+	const collapseElements = document.querySelectorAll(".js-collapse");
+	collapseElements.forEach((collapseElement) => new Collapse(collapseElement));
 }
 
 // ------------------------------------------------------------------------- RESULT PAGE
 
+/**
+ * Init page result interactive data from api or url params
+ * 
+ */
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;

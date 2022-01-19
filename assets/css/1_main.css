@@ -277,6 +277,7 @@ footer > * {
 }
 .svg-inline:first-child > svg {
 	margin-left: 0;
+	margin-top: -0.4em;
 }
 
 .hero h1 {
@@ -412,7 +413,7 @@ footer > * {
 .icon-square-wrapper svg {
 	height: 1.5em;
 	width: 1.5em;
-	top: 0.2em;
+	top: 0.25em;
 }
 
 /* Info Badge */
