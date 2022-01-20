@@ -2,7 +2,7 @@ import Collapse from "./components/Collapse";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
 
 // TODO: set from .env ?
-const API_BASE_URL = "https://ecoindex.neutral.hosting:8001/v1/ecoindexes/";
+const API_BASE_URL = "https://rapidapi.com/cnumr-cnumr-default/api/ecoindex/";
 
 // ------------------------------------------------------------------------- INIT APP
 

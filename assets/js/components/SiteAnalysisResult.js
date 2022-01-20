@@ -1,7 +1,7 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 
 // FIXME: temp workaround for cors for dev
-const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
+const API_PROXY_URL = "";
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
 	'A' : 'Bravo !',
@@ -47,6 +47,7 @@ class SiteAnalysisResult {
 			}
 
 			// else fetch analysis result from id
+		// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
 			pageResultData = await this._fetchApiResult(pageId);
@@ -102,7 +103,13 @@ class SiteAnalysisResult {
 	async _fetchApiResult(id) {
 		// FIXME: workaround adding temp proxy to fetch data
 		const proxyURl = API_PROXY_URL;
-		const response = await fetch(proxyURl + this.apiUrl + id);
+		const response = await fetch(proxyURl + this.apiUrl + id, {
+			headers: {
+				// NOTE : temp headers for rapidapi
+				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
+				'x-rapidapi-key': 'c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157'
+			  }
+		});
 		if (!response.ok) {
 			const message = `An error has occured: ${response.status}`;
 			throw new Error(message);
