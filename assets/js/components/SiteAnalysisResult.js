@@ -1,7 +1,7 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 
 // FIXME: temp workaround for cors for dev
-const API_PROXY_URL = "";
+const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
 	'A' : 'Bravo !',

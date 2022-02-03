@@ -432,8 +432,7 @@ footer > * {
 
 /* Section collapse */
 .info-collapse .collapse-button {
-	padding: 0;
-	outline: none;
+	margin-left: -6px;
 }
 .info-collapse p {
 	margin-top: 1em;

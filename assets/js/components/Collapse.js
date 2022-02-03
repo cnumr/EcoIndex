@@ -29,7 +29,7 @@ class Collapse {
 	 * @param  {boolean} value
 	 */
 	setCollapseVisibility(value) {
-		this.content.classList[value ? "remove" : "add"]("visually-hidden");
+		this.content.classList[value ? "remove" : "add"]("vh");
 		this.button.setAttribute("aria-expanded", value ? "true" : "false");
 	}
 }
