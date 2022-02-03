@@ -499,7 +499,7 @@ footer > * {
 .result-badge[data-int-grade-value="G"],
 .notation-level-chart:nth-child(7) > *,
 .result-notation-info-item[data-int-item-score="7"] .result-notation-info-label::before {
-	background-color: var(--color-vermillon);
+	background-color: var(--color-vermillion);
 }
 
 .result-load-range [data-int-item-score="1"] {
