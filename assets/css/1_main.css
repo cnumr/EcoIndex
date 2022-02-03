@@ -280,14 +280,14 @@ footer > * {
 	margin-top: -0.4em;
 }
 
-.hero h1 {
+.hero h1:not(.h2) {
 	font-size: var(--s5);
 	padding-top: calc(2 * var(--s5));
 	padding-right: 30%;
 }
 
 @media (max-width: 60rem) {
-	.hero h1 {
+	.hero h1:not(.h2) {
 		font-size: var(--s3);
 		padding-top: calc(2 * var(--s4));
 		padding-right: 0;

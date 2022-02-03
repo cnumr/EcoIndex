@@ -7,25 +7,25 @@ collapse_info = """
 <p>
 L'empreinte environnementale de la page est exprimée par 2 indicateurs environnementaux.
 </p>
-<h4>
+<h3 class="h4">
 <span class="svg-inline">
     <svg aria-hidden="true">
         <use xlink:href="#icon-cloud"></use>
     </svg>
 </span> 
 Gaz à effet de serre (GES)
-</h4> 
+</h3> 
 <p>
 L'empreinte GES de la page est exprimée en gramme équivalent CO2 (g eCO2).
 </p>
-<h4>
+<h3 class="h4">
 <span class="svg-inline">
     <svg class="svg-inline" aria-hidden="true">
         <use xlink:href="#icon-water-drop"></use>
     </svg>
 </span> 
 Eau
-</h4> 
+</h3> 
 <p>
 L'empreinte en eau témoigne de la consommation d'eau nécessaire à l'affichage de cette page. La phase d'extraction des métaux nécessaires à la fabrication des équipements requiert une grande quantité d'eau.
 </p>
