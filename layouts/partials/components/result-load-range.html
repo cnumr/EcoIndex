@@ -21,7 +21,7 @@
 
 <div class="result-load-range js-rlr">
 	{{ with .verdict }}
-		<div class="rlr-verdict-badge js-rlr-verdict-badge" data-int-item-score=""><span>{{ . | markdownify }}</span></div>
+		<div class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge" data-int-item-score=""><span>{{ . | markdownify }}</span></div>
 	{{ end }}
 
 	<label id="rlr-label-{{ $randomId }}" class="rlr-label bold font-size:1">
@@ -44,7 +44,7 @@
 				aria-valuenow=""
 				aria-valuetext=""
 			>
-				<span class="rlr-handle-value"><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
+				<span class="rlr-handle-value rlr-badge" data-int-item-score=""><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
 				<div class="rlr-handle-tip"></div>
 			</div>
 			<div class="rlr-slider-handle-target js-rlr-slider-handle-target" data-value="{{ .rangeValueTarget }}"></div>

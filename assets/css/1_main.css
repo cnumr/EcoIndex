@@ -366,10 +366,10 @@ footer > * {
 
 /* Default Content link */
 .content-link {
-    display: inline-block;
-    font-weight: bold;
-    text-decoration: none;
-    padding-bottom: 0.05em;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	padding-bottom: 0.05em;
 	background: linear-gradient(currentColor, currentColor) bottom / 100% 0.1em no-repeat;
 	white-space: nowrap;
 	margin: 0.35em 0;
@@ -634,8 +634,11 @@ footer > * {
 	border-radius: 0.3125rem;
 	background-color: currentColor;
 }
-.rlr-verdict-badge > span {
+.rlr-badge > span {
 	color: var(--color-dark);
+}
+.rlr-badge[data-int-item-score="1"] > span {
+	color: #fff;
 }
 
 .rlr-label svg {
