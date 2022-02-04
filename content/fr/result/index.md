@@ -1,12 +1,9 @@
 +++
 title = "Résultat"
 slug = "resultat"
+custom_class = "js-result-container"
 +++
 
-{{% hero %}}
-
-# Résultat
-
-{{% /hero %}}
+{{< widgets zone="first" type="intro" >}}
 
 {{< widgets type="info-container" >}}

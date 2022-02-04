@@ -1,7 +1,7 @@
 +++
 id = "details"
-widget = "details-score"
-weight = 50
+widget = "result-details-score"
+weight = 35
 +++
 
 ## Score details

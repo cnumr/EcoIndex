@@ -1,0 +1,93 @@
+<section class="center-l box-l --s2p0">
+	<div class="stack-l with-sidebar-l --s3">
+		<div>
+			<div class="info_2_columns_col1 stack-l">
+				<div>
+					<div class="result-badge" data-int-attr="grade" data-int="grade"></div>
+				</div>
+				<h2 data-int="grade_title"></h2>
+				<p class="font-size:1">Score : <span><span data-int="score">0</span> / 100</span></p>
+				<hr class="small" />
+				<div class="info-collapse">
+					{{ partial "components/collapse" (dict 
+						"context" .
+						"label" "Que veut dire mon score" 
+						"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page."
+						"moreHref" "/comment-ca-marche"
+						"moreLabel" "Comment ça marche"
+					)}}
+				</div>
+			</div>
+			<div class="info_2_columns_col2 stack-l center-l --s3">
+				<div class="result-notation-header ">
+					<div class="result-notation-message">
+						<p>La bonne nouvelle, vous pouvez faire beaucoup mieux !</p>
+					</div>
+				</div>
+				<div class="result-notation-content">
+					<div class="result-notation-levels">
+						<div class="display:flex justify-content:space-between font-style:italic font-size:small">
+							<span>max. 100</span>
+							<span>min. 0</span>
+						</div>
+						<div class="result-notation-levels-chart cluster-l --no-margin">
+							<div>
+								<div class="notation-level-chart" data-grade-result="A">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">A</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="B">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">B</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="C">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">C</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="D">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">D</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="E">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">E</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="F">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">F</div>
+								</div>
+								<div class="notation-level-chart" data-grade-result="G">
+									<div class="chart-part"></div>
+									<div class="level-chart-label">G</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="stack-l --s0 result-notation-info-list">
+					<li class="font-weight:bold">
+						<span class="result-notation-info-label">Classement de la page :</span>
+						{{/*  TODO  */}}
+						<span class="result-notation-info-number">30721 / 36483</span>
+					</li>
+					<li class="result-notation-info-item" data-int-item-score="5">
+						<span class="result-notation-info-label">Trop lourde</span>
+						<span class="result-notation-info-number"><span data-int="size">0</span> Mo</span>
+					</li>
+					<li class="result-notation-info-item" data-int-item-score="5">
+						<span class="result-notation-info-label">Trop complexe</span>
+						<span class="result-notation-info-number"><span data-int="nodes">0</span> éléments</span>
+					</li>
+					<li class="result-notation-info-item" data-int-item-score="1">
+						<span class="result-notation-info-label">Peu de requêtes</span>
+						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
+					</li>
+				</ul>
+				{{/*  TODO: On click go to detail section  */}}
+				<button href="/" class="button-default font-weight:bold result-button-see-score-detail">
+					Voir les détails du score</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</section>

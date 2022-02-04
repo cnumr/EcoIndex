@@ -1,0 +1,49 @@
+<section class="center-l box-l --s2p0">
+	<div class="stack-l with-sidebar-l --s3">
+		<div>
+			{{/* Left column section title & collapse */}}
+			<div class="info_2_columns_col1 stack-l">
+				<h2>Empreinte environnementale</h2>
+				<hr class="small" />
+				<div class="info-collapse">	
+					{{ partial "components/collapse" (dict 
+						"context" .
+						"label" "Quels sont les indicateurs ?" 
+						"content" .Params.collapse_info
+						"moreHref" "/comment-ca-marche"
+						"moreLabel" "Comment ça marche"
+					)}}
+				</div>
+			</div>
+			{{/* Right column section content */}}
+			<div class="info_2_columns_col2 stack-l center-l --s3">
+				{{/* Intro text with select custom */}}
+				<p>
+					{{ $footPrintIntroTextSplited := split .Params.footprint_intro_text "<select-inline/>" }}
+					{{ index $footPrintIntroTextSplited 0 }}
+					<span class="js-footprint-factor-select">{{ partial "components/select-inline-custom" (slice 1000 100 10) }}</span>
+					{{ index $footPrintIntroTextSplited 1 }}
+				</p>
+				{{/* Footprint results from page */}}
+				<div class="grid-l " style="--min-cell-width:160px;">
+					{{partial "components/highlight-info-card" (dict 
+						"icon" "energy" 
+						"title" "<span class='footprint-result' data-int='water' data-unit='cl'>0</span>" 
+						"text" "consommation <br />d’energie primaire"
+					)}} 
+					{{partial "components/highlight-info-card" (dict 
+						"icon" "cloud" 
+						"title" "<span class='footprint-result' data-int='ges' data-unit='gCO2e'>0</span>" 
+						"text" "émission de gaz <br />à effet de serre"
+					)}}   
+				</div>
+				{{/*  TODO: where #mise-en-perspective link goes ?  */}}
+				{{partial "components/highlight-info-card" (dict
+					"title" "Ça veut dire quoi ?<hr>" 
+					"text" "Pour vous donner une idée, 1 kg CO2e équivaut à un trajet d’environ **3 km en voiture**. Une douche consomme en moyenne 6 litres d’eau à la minute. <br><br>Si votre page émet **1,7g CO2e** et consomme **2,5cl d’eau**, cela signifie que pour 1000 visiteurs mensuels, l’empreinte est de **1,7kg de CO2e et 25 litres d’eau** par mois – soit un trajet de 5,5km en voiture et une douche de 4 minutes."
+					"moreInfo" "Pour aller plus loin : <a href='#mise-en-perspective'>Mise en perspective des impacts écologiques du numérique</a>"
+				)}} 
+			</div>
+		</div>
+	</div>
+</section>

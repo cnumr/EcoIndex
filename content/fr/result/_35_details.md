@@ -1,7 +1,8 @@
 +++
 id = "details"
-widget = "details-score"
-weight = 50
+widget = "result-details-score"
+widget_class = "section-theme-dark"
+weight = 35
 +++
 
 ## Détails du score

@@ -4,7 +4,7 @@
 
 	/* Colors */
 	--color-primary: hsl(165, 100%, 25%);
-	--color-dark: hsl(194, 62%, 14%);
+	--color-dark: hsl(192, 73%, 15%);
 	--color-darkish: hsl(165, 100%, 20%);
 	--color-lightish: hsl(165, 50%, 90%);
 	--color-light: hsl(0, 0%, 99%);
@@ -17,9 +17,30 @@
 	/* Specific colors */
 	--color-yellow: #f5c548;
 	--color-light-yellow: #f7edc0;
+	--color-greenish-yellow: #cadd00;
+	--color-bright-yellow: #f7ed00;
+	--color-saturated-yellow: #ffce00;
 	--color-light-green: #b6d295;
+	--color-medium-green: #b6d295;
+	--color-medium-green-2: #2e9b43;
+	--color-cool-green: #34bc6e;
 	--color-dark-green: #2d665e;
 	--color-very-light-pink: #eeeeee;
+	--color-dark-blue: #0d2e38;
+	--color-very-light-pink-two: #d8d8d8;
+	--color-pastel-red: #e3544c;
+	--color-vermillion: #f01c16;
+	--color-mango: #fb9929;
+	--color-dark-green-2: #007e5f;
+	--color-teal: #00a67d;
+	--color-very-light-pink: #eee;
+	
+	/* Colors rgb 
+	 * Note : register only rgb values to control opacity 
+	 * on output like rgba(var(--color), 0.8);
+	 */
+	 --color-dark-rgb: 10, 55, 66;
+	
 
 	/* Border sizes */
 	--border-focus: var(--border-medium);

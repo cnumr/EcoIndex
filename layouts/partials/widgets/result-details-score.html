@@ -1,0 +1,65 @@
+<section class="center-l box-l --s2p0">
+	<div class="stack-l with-sidebar-l --s3">
+		<div>
+			{{/* Left column section title & collapse */}}
+			<div class="info_2_columns_col1 stack-l">
+				<h2>Détails du score</h2>
+				<p class="font-size:1">Les détails de votre score indiquent la  score de votre page, la médiane, et la cible vers laquelle tendre.</p>
+				<hr class="small" />
+				<div class="info-collapse">	
+					{{ partial "components/collapse" (dict 
+						"context" .
+						"label" "Comment est calculé le score ?"
+						"content" "Pour calculer la performance environnementale d’une page, nous prenons en compte plusieurs éléments : le nombre d’éléments du DOM (Document Object Model), le poids des données transférées, et le nombre de requêtes HTTP. Pour en savoir plus sur notre méthode de calcul." 
+						"moreHref" "/comment-ca-marche"
+						"moreLabel" "Comment ça marche"
+					)}}
+				</div>
+			</div>
+			{{/* Right column section content */}}
+			<div class="info_2_columns_col2 stack-l center-l --s3">
+				{{/*  TODO: get notes colors from value with min and max  */}}
+				{{/*  TODO: interactive  */}}
+				{{/*  Weight result details  */}}
+				{{ partial "components/result-load-range" (dict
+					"title" "Poids de la page"
+					"icon" "weight"
+					"verdict" "<span >Trop lourde</span>"
+					"rangeValue" "<span data-int='size'></span>"
+					"rangeValueMin" "0"
+					"rangeValueMax" "4.82"
+					"rangeValueTarget" "0.9"
+					"units" "Mo"
+					"unitsLegend" "mégaoctet (Mo)"
+					"dataValueKey" "size"
+				)}}
+				{{/*  Dom complexity result details  */}}
+				{{ partial "components/result-load-range" (dict
+					"title" "Complexité"
+					"icon" "complexity"
+					"verdict" "<span >Trop complexe</span>"
+					"rangeValue" "<span data-int='nodes'></span>"
+					"rangeValueMin" "0"
+					"rangeValueMax" "1386"
+					"rangeValueTarget" "500"
+					"units" "éléments"
+					"unitsLegend" "Nombre d’éléments du DOM"
+					"dataValueKey" "nodes"
+				)}}
+				{{/*  Request number result details  */}}
+				{{ partial "components/result-load-range" (dict
+					"title" "Requêtes"
+					"icon" "request"
+					"verdict" "<span >Peu de requêtes</span>"
+					"rangeValue" "<span data-int='requests'></span>"
+					"rangeValueMin" "0"
+					"rangeValueMax" "156"
+					"rangeValueTarget" "27"
+					"units" "requêtes"
+					"unitsLegend" "Nombre de requêtes serveur"
+					"dataValueKey" "requests"
+				)}}
+			</div>
+		</div>
+	</div>
+</section>

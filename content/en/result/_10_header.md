@@ -1,6 +1,5 @@
 +++
 id = "header"
-widget = "result-header"
 weight = 10
 +++
 

@@ -1,3 +1,5 @@
+{{/*  FIXME: hot reload doesn't work on widgets childs, need to change this page to get modification built  */}}
+
 {{- /* Shortcode "widgets" */ -}}
 {{- /* Usage: {{< widgets >}} or {{< widgets 1 >}} {{< widgets 2 >}} */ -}}
 {{- /* Displays content of headless pages within the same folder, */ -}}
@@ -72,6 +74,12 @@
 		{{- /* text is the default widget type */ -}}
 		{{- $widget_type := or $params.widget "text" -}}
 
+		{{- /* get widget custom class */ -}}
+		{{- $widget_custom_class := or $params.widget_class "" -}}
+
+		{{- /* get if widget is in draft  */ -}}
+		{{- $widget_isDraft := $params.draft -}}
+
 		{{- /* div is the default htmlElement */ -}}
 		<!-- {{- $html_element := or $params.htmlElement "div" -}} -->
 
@@ -81,14 +89,17 @@
 		{{- /* wg-xxx     : widget type (e.g. "wg-text") */ -}}
 		{{- /* wgi-xxx-yyy: widget type (e.g. "wgi-text-introduction") */ -}}
 		{{- $wg_type_formatted := (replace (replace $widget_type "." "-") "_" "-") -}}
-		{{- $widget_class := printf "wg-%s wgi-%s-%s" $wg_type_formatted $wg_type_formatted $hash_id -}}
+		{{- $widget_class := printf "wg-%s wgi-%s-%s %s" $wg_type_formatted $wg_type_formatted $hash_id $widget_custom_class -}}
 
 		{{- $widget_html_start := printf `<div id="%s" class="%s">` $hash_id $widget_class -}}
 		{{- $widget_html_end := printf `</div>` -}}
 
-		{{- $widget_html_start | safeHTML -}}
-		{{- /* Call the widget's partial with widget context */ -}}
-		{{ partial $widget_path $widget -}}
-		{{- $widget_html_end | safeHTML -}}
+		{{/*  Render widget only if not in drafts  */}}
+		{{ if not $widget_isDraft }}
+			{{- $widget_html_start | safeHTML -}}
+			{{- /* Call the widget's partial with widget context */ -}}
+			{{ partial $widget_path $widget -}}
+			{{- $widget_html_end | safeHTML -}}
+		{{ end }}
 	{{ end -}}
 </div>
