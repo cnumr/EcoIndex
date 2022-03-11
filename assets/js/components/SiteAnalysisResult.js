@@ -1,17 +1,15 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 
-// FIXME: temp workaround for cors for dev
-const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
-	'A' : 'Bravo !',
-	'B' : 'Pas mal du tout !',
-	'C' : 'Encore un effort !',
-	'D' : 'Hum, pas top.',
-	'E' : 'Hum, pas top.',
-	'F' : 'Outch.',
-	'G' : 'Outch.',
-}
+	A: "Bravo !",
+	B: "Pas mal du tout !",
+	C: "Encore un effort !",
+	D: "Hum, pas top.",
+	E: "Hum, pas top.",
+	F: "Outch.",
+	G: "Outch.",
+};
 
 /**
  * Site analysis result for interactive dom content
@@ -47,7 +45,7 @@ class SiteAnalysisResult {
 			}
 
 			// else fetch analysis result from id
-		// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
+			// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
 			pageResultData = await this._fetchApiResult(pageId);
@@ -59,8 +57,8 @@ class SiteAnalysisResult {
 		// update page size from ko to mo
 		pageResultData.size = Math.round(pageResultData.size) / 1000;
 
-		// set page result title 
-		pageResultData.grade_title = RESULT_TITLE_DATA[pageResultData.grade]
+		// set page result title
+		pageResultData.grade_title = RESULT_TITLE_DATA[pageResultData.grade];
 
 		// set dom content with data-attributes from api data
 		this._setDomContent(pageResultData, "[data-int]", "[data-int-attr]");
@@ -84,6 +82,8 @@ class SiteAnalysisResult {
 
 		// replace content from data for all elements with data-int
 		dataIntEls.forEach((dataIntEl) => {
+			const elementDataValue = this._getDataValueFrom(data, dataIntEl.dataset.int);
+			if (!elementDataValue || elementDataValue.length === 0) return;
 			dataIntEl.textContent = this._getDataValueFrom(data, dataIntEl.dataset.int);
 		});
 
@@ -101,14 +101,12 @@ class SiteAnalysisResult {
 	 * @returns {Object} Data object with analysis infos
 	 */
 	async _fetchApiResult(id) {
-		// FIXME: workaround adding temp proxy to fetch data
-		const proxyURl = API_PROXY_URL;
-		const response = await fetch(proxyURl + this.apiUrl + id, {
+		const response = await fetch(this.apiUrl + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
-				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
-				'x-rapidapi-key': 'c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157'
-			  }
+				"x-rapidapi-host": "ecoindex.p.rapidapi.com",
+				"x-rapidapi-key": "c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157",
+			},
 		});
 		if (!response.ok) {
 			const message = `An error has occured: ${response.status}`;
@@ -138,7 +136,6 @@ class SiteAnalysisResult {
 	 */
 	_getValidUrlHostName(value) {
 		let url;
-
 		try {
 			url = new URL(value);
 		} catch (_) {
@@ -157,7 +154,9 @@ class SiteAnalysisResult {
 	_getDataValueFrom(data, key) {
 		let elementValue = data[key];
 		let formatedValue;
+		// Format date
 		formatedValue = this._getValidDateString(elementValue);
+		// Format hostname
 		formatedValue = formatedValue ? formatedValue : this._getValidUrlHostName(elementValue);
 		return formatedValue ? formatedValue : elementValue;
 	}

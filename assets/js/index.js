@@ -1,8 +1,9 @@
 import Collapse from "./components/Collapse";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
 
-// TODO: set from .env ?
-const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v0/ecoindexes/";
+// TODO: set from .env ? 
+// NOTE : if cors problem temp proxy use : "https://cors-anywhere.herokuapp.com/https://ecoindex.p.rapidapi.com/v1/ecoindexes/"
+const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes/";
 
 // ------------------------------------------------------------------------- INIT APP
 
