@@ -1,4 +1,8 @@
 import ResultRangeSlider from "./ResultRangeSlider";
+import { clamp, getPercentFromRange } from "../helpers/mathUtils";
+import { camelize } from "../helpers/stringUtils";
+// TODO:
+//import * as data from 'my/module/data.json';
 
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
@@ -9,6 +13,20 @@ const RESULT_TITLE_DATA = {
 	E: "Hum, pas top.",
 	F: "Outch.",
 	G: "Outch.",
+};
+
+const SLIDER_MAX_SCORE = 2;
+// TODO : add to /data with trad
+const TEMP_RESULT_VERDICT = {
+	size: ["Si légère", "Trop lourde"],
+	nodes: ["Simple", "Trop complexe"],
+	requests: ["Peu de requêtes", "Trop de requêtes"],
+};
+// TODO : add to static data or in live epic store ?
+const TEMP_RESULT_PARAMS_MIN_MAX = {
+	size: { min: 0, max: 4.82 },
+	nodes: { min: 0, max: 1386 },
+	requests: { min: 0, max: 156 },
 };
 
 /**
@@ -44,8 +62,8 @@ class SiteAnalysisResult {
 				pageResultData[key] = value;
 			}
 
-			// else fetch analysis result from id
-			// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
+		// else fetch analysis result from id
+		// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
 			pageResultData = await this._fetchApiResult(pageId);
@@ -60,13 +78,51 @@ class SiteAnalysisResult {
 		// set page result title
 		pageResultData.grade_title = RESULT_TITLE_DATA[pageResultData.grade];
 
+		// set page result params binary scores (0/1 : good/bad)
+		pageResultData = {
+			...pageResultData,
+			...this._getDataResultsParamsBinaryScores(pageResultData, TEMP_RESULT_VERDICT),
+		};
+
+		// set page result params verdicts
+		pageResultData = { ...pageResultData, ...this._getDataResultsVerdicts(pageResultData, TEMP_RESULT_VERDICT) };
+
 		// set dom content with data-attributes from api data
-		this._setDomContent(pageResultData, "[data-int]", "[data-int-attr]");
+		this._setDomContent(pageResultData, "data-int", "data-int-attr");
 
 		// specific components updates
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultFromSelect(pageResultData);
 		this._updatetResultRangeSliders(pageResultData);
+	}
+
+	// TODO: add inside data with results method (unique)
+	/**
+	 * Get array key for params verdicts list from score
+	 * @param {*} value
+	 * @param {*} min
+	 * @param {*} max
+	 * @param {*} arrayLength
+	 * @returns
+	 */
+	_getResultParamBinaryScore(value, min, max) {
+		const percentValue = getPercentFromRange(value, min, max);
+		return clamp(Math.round((percentValue * 2) / 100), 1, 2) - 1;
+	}
+
+	_getDataResultsParamsBinaryScores(resultData, resultParamsVerdicts) {
+		return Object.keys(resultParamsVerdicts).reduce((resultTypeScores, key) => {
+			const paramScoreMin = TEMP_RESULT_PARAMS_MIN_MAX[key].min;
+			const paramScoreMax = TEMP_RESULT_PARAMS_MIN_MAX[key].max;
+			const resultParamBinaryScore = this._getResultParamBinaryScore(resultData[key], paramScoreMin, paramScoreMax);
+			return { ...resultTypeScores, ...{ [`${key}_binary_score`]: resultParamBinaryScore } };
+		}, {});
+	}
+
+	_getDataResultsVerdicts(resultData, resultParamsVerdicts) {
+		return Object.entries(resultParamsVerdicts).reduce((verdictsFromScore, [key, verdicts]) => {
+			return { ...verdictsFromScore, ...{ [`${key}_verdict`]: verdicts[+resultData[`${key}_binary_score`]] } };
+		}, {});
 	}
 
 	/**
@@ -77,8 +133,8 @@ class SiteAnalysisResult {
 	 */
 	_setDomContent(data, contentAttrKey, attrValueKey) {
 		// get all interactive elements with attributes data-int
-		const dataIntEls = this.el.querySelectorAll(contentAttrKey);
-		const dataIntAttrEls = this.el.querySelectorAll(attrValueKey);
+		const dataIntEls = this.el.querySelectorAll(`[${contentAttrKey}]`);
+		const dataIntAttrEls = this.el.querySelectorAll(`[${attrValueKey}]`);
 
 		// replace content from data for all elements with data-int
 		dataIntEls.forEach((dataIntEl) => {
@@ -90,8 +146,9 @@ class SiteAnalysisResult {
 		// add attribute values for all elements with data-int-attr
 		dataIntAttrEls.forEach((dataIntEl) => {
 			const dataAttr = dataIntEl.dataset.intAttr;
-			const uppercaseAttr = dataAttr.charAt(0).toUpperCase() + dataAttr.slice(1);
-			dataIntEl.dataset["int" + uppercaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
+			const camelCaseDataAttr = camelize(dataAttr);
+			const updatedCaseAttr = camelCaseDataAttr.charAt(0).toUpperCase() + camelCaseDataAttr.slice(1);
+			dataIntEl.dataset["int" + updatedCaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
 		});
 	}
 

@@ -502,11 +502,17 @@ footer > * {
 	background-color: var(--color-vermillion);
 }
 
-.result-load-range [data-int-item-score="1"] {
+.result-load-range [data-int-item-score="0"],
+[data-int-size-binary-score-value="0"],
+[data-int-nodes-binary-score-value="0"],
+[data-int-requests-binary-score-value="0"] {
 	color: var(--color-medium-green-2);
 }
 .result-load-range [data-int-item-score=""],
-.result-load-range [data-int-item-score="2"] {
+.result-load-range [data-int-item-score="1"],
+[data-int-size-binary-score-value="1"],
+[data-int-nodes-binary-score-value="1"],
+[data-int-requests-binary-score-value="1"] {
 	color: var(--color-saturated-yellow);
 }
 
@@ -558,12 +564,16 @@ footer > * {
 	display: inline-block;
 }
 
+.result-notation-info-label > span {
+	color: var(--color-dark);
+}
+
 .result-notation-info-item .result-notation-info-label::before {
 	content: "";
 	width: 0.5rem;
 	display: inline-block;
 	height: 0.5rem;
-	background-color: var(--color-bright-yellow);
+	background-color: currentColor;
 	margin-right: var(--s1);
 	position: relative;
 	bottom: 0.12em;
@@ -637,7 +647,9 @@ footer > * {
 .rlr-badge > span {
 	color: var(--color-dark);
 }
-.rlr-badge[data-int-item-score="1"] > span {
+.rlr-badge[data-int-size-binary-score-value="0"] > span,
+.rlr-badge[data-int-nodes-binary-score-value="0"] > span,
+.rlr-badge[data-int-requests-binary-score-value="0"] > span {
 	color: #fff;
 }
 

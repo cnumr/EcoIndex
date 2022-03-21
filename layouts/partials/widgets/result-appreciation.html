@@ -67,19 +67,24 @@
 				<ul class="stack-l --s0 result-notation-info-list">
 					<li class="font-weight:bold">
 						<span class="result-notation-info-label">Classement de la page :</span>
-						{{/*  TODO  */}}
 						<span class="result-notation-info-number"><span data-int="initial_ranking">Non disponible</span> / <span data-int="initial_total_results">Non disponible</span></span>
 					</li>
-					<li class="result-notation-info-item" data-int-item-score="5">
-						<span class="result-notation-info-label">Trop lourde</span>
+					<li class="result-notation-info-item">
+						<span class="result-notation-info-label" data-int-attr="size_binary_score">
+							<span data-int="size_verdict"></span>
+						</span>
 						<span class="result-notation-info-number"><span data-int="size">0</span> Mo</span>
 					</li>
 					<li class="result-notation-info-item" data-int-item-score="5">
-						<span class="result-notation-info-label">Trop complexe</span>
+						<span class="result-notation-info-label" data-int-attr="nodes_binary_score">
+							<span data-int="nodes_verdict"></span>
+						</span>
 						<span class="result-notation-info-number"><span data-int="nodes">0</span> éléments</span>
 					</li>
 					<li class="result-notation-info-item" data-int-item-score="1">
-						<span class="result-notation-info-label">Peu de requêtes</span>
+						<span class="result-notation-info-label" data-int-attr="requests_binary_score">
+							<span data-int="requests_verdict"></span>
+						</span>
 						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
 					</li>
 				</ul>

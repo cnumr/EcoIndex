@@ -1,12 +1,5 @@
-import { inverseLerp, clamp } from "../helpers/mathUtils";
+import { inverseLerp, clamp, getPercentFromRange } from "../helpers/mathUtils";
 
-const SLIDER_MAX_SCORE = 2;
-// TODO : add to /data with trad
-const TEMP_RESULT_VERDICT = {
-	size: ["Si légère", "Trop lourde"],
-	nodes: ["Simple", "Trop complexe"],
-	requests: ["Peu de requêtes", "Trop de requêtes"],
-};
 
 /**
  * Result score range slider component
@@ -23,18 +16,20 @@ class ResultRangeSlider {
 		this.valueMin = +this.handleEl.ariaValueMin;
 		this.valueMax = +this.handleEl.ariaValueMax;
 		
-		this.dataTypeScore = this._getScoreFromRange(this.value, this.valueMin, this.valueMax);
+		// TODO: only used for range (1, 2)
+		this.dataTypeScore = this._getScoreFromRange(this.value, this.valueMin, this.valueMax, 2);
 
 		// Set values to update dom
 		this.setSliderValue(this.value);
 		this.setSliderTargetValue();
-		this.setSliderScoreValueAttributes(this.dataTypeScore);
-		this.setSliderVerdict(TEMP_RESULT_VERDICT[this.dataType], this.dataTypeScore)
+		// TODO: remove 
+		//this.setSliderScoreValueAttributes(this.dataTypeScore);
+		//this.setSliderVerdict(TEMP_RESULT_VERDICT[this.dataType], this.dataTypeScore)
 	}
 
 	setSliderValue(value) {
 		// get percent value
-		const percentValue = this._getPercentValueFromRange(value, this.valueMin, this.valueMax);
+		const percentValue = getPercentFromRange(value, this.valueMin, this.valueMax);
 		// set value to css
 		this.handleEl.style.setProperty("--rlr-slider-handle-position", percentValue + "%");
 
@@ -48,23 +43,20 @@ class ResultRangeSlider {
 		const handleTargetEl = this.sliderEl.querySelector(".js-rlr-slider-handle-target");
 		const targetValue = value ? value : +handleTargetEl.dataset.value;
 		// get percent value
-		const percentTargetValue = this._getPercentValueFromRange(targetValue, this.valueMin, this.valueMax);
+		const percentTargetValue = getPercentFromRange(targetValue, this.valueMin, this.valueMax);
 		// set value to css
 		handleTargetEl.style.setProperty("--rlr-slider-handle-target-position", percentTargetValue + "%");
 	}
 
+	// TODO: remove
 	setSliderScoreValueAttributes(score) {
 		const scoreEls = this.sliderEl.querySelectorAll("[data-int-item-score]");
 		scoreEls.forEach((el) => (el.dataset.intItemScore = score));
 	}
 
-	setSliderVerdict(verdicts, score) {
-		this.sliderEl.querySelector(".js-rlr-verdict-badge > span").textContent = verdicts[score - 1];
-	}
-
-	_getScoreFromRange(value, min, max) {
+	_getScoreFromRange(value, min, max, rangeLength) {
 		const percentValue = this._getPercentValueFromRange(value, min, max);
-		return clamp(Math.round((percentValue * SLIDER_MAX_SCORE) / 100), 1, SLIDER_MAX_SCORE);
+		return clamp(Math.round((percentValue * rangeLength) / 100), 1, rangeLength);
 	}
 
 	_getValueFromDataKey(data) {
