@@ -4,7 +4,8 @@
 
 	/* Colors */
 	--color-primary: hsl(165, 100%, 25%);
-	--color-dark: hsl(192, 73%, 15%);
+	--color-dark: hsl(188, 82%, 11%);
+	
 	--color-darkish: hsl(165, 100%, 20%);
 	--color-lightish: hsl(165, 50%, 90%);
 	--color-light: hsl(0, 0%, 99%);
