@@ -1,9 +1,12 @@
 import Collapse from "./components/Collapse";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
 
-// TODO: set from .env ? 
+// TODO: import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
+
+// TODO: set from .env ?
 // NOTE : if cors problem temp proxy use : "https://cors-anywhere.herokuapp.com/https://ecoindex.p.rapidapi.com/v1/ecoindexes/"
 const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes/";
+const SITE_DATA = window.__siteData;
 
 // ------------------------------------------------------------------------- INIT APP
 
@@ -45,10 +48,14 @@ function initCollapses() {
 
 /**
  * Init page result interactive data from api or url params
- * 
+ *
  */
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;
-	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL });
+	new SiteAnalysisResult({
+		el: resultPageContentEl,
+		apiUrl: API_BASE_URL,
+		resultRelativeTextData: SITE_DATA.resultRelativeTextData,
+	});
 }

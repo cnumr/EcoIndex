@@ -1,9 +1,9 @@
 import { inverseLerp, clamp, getPercentFromRange } from "../helpers/mathUtils";
 
-
 /**
- * Result score range slider component
- * Note : dom updated from corresponding data passed to instance
+ * Create a new result score range slider component
+ * Note : dom updated from corresponding data passed to instance$
+ * @class
  */
 class ResultRangeSlider {
 	constructor({ sliderEl, data }) {
@@ -15,16 +15,13 @@ class ResultRangeSlider {
 		// get min and max value
 		this.valueMin = +this.handleEl.ariaValueMin;
 		this.valueMax = +this.handleEl.ariaValueMax;
-		
+
 		// TODO: only used for range (1, 2)
 		this.dataTypeScore = this._getScoreFromRange(this.value, this.valueMin, this.valueMax, 2);
 
 		// Set values to update dom
 		this.setSliderValue(this.value);
 		this.setSliderTargetValue();
-		// TODO: remove 
-		//this.setSliderScoreValueAttributes(this.dataTypeScore);
-		//this.setSliderVerdict(TEMP_RESULT_VERDICT[this.dataType], this.dataTypeScore)
 	}
 
 	setSliderValue(value) {
@@ -46,12 +43,6 @@ class ResultRangeSlider {
 		const percentTargetValue = getPercentFromRange(targetValue, this.valueMin, this.valueMax);
 		// set value to css
 		handleTargetEl.style.setProperty("--rlr-slider-handle-target-position", percentTargetValue + "%");
-	}
-
-	// TODO: remove
-	setSliderScoreValueAttributes(score) {
-		const scoreEls = this.sliderEl.querySelectorAll("[data-int-item-score]");
-		scoreEls.forEach((el) => (el.dataset.intItemScore = score));
 	}
 
 	_getScoreFromRange(value, min, max, rangeLength) {

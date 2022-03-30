@@ -1,47 +1,33 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 import { clamp, getPercentFromRange } from "../helpers/mathUtils";
 import { camelize } from "../helpers/stringUtils";
-// TODO:
-//import * as data from 'my/module/data.json';
-
-// FIXME : temp data for result title
-const RESULT_TITLE_DATA = {
-	A: "Bravo !",
-	B: "Pas mal du tout !",
-	C: "Encore un effort !",
-	D: "Hum, pas top.",
-	E: "Hum, pas top.",
-	F: "Outch.",
-	G: "Outch.",
-};
-
-const SLIDER_MAX_SCORE = 2;
-// TODO : add to /data with trad
-const TEMP_RESULT_VERDICT = {
-	size: ["Si légère", "Trop lourde"],
-	nodes: ["Simple", "Trop complexe"],
-	requests: ["Peu de requêtes", "Trop de requêtes"],
-};
-// TODO : add to static data or in live epic store ?
-const TEMP_RESULT_PARAMS_MIN_MAX = {
-	size: { min: 0, max: 4.82 },
-	nodes: { min: 0, max: 1386 },
-	requests: { min: 0, max: 156 },
-};
 
 /**
- * Site analysis result for interactive dom content
+ * Creates a new Site analysis result for interactive dom content
+ * @class
  */
 class SiteAnalysisResult {
 	/**
-	 * Create a site analysis result page with updated dom from api data
-	 * @param {Object} params
-	 * @param {Element} el
-	 * @param {string} apiUrl
+	 * @typedef ResultRelativeTextData
+	 * @type {object}
+	 * @property {Object.<string, string>} verdictTitles - Verdict titles relative to grade
+	 * @property {Object.<string, string>} verdictMessages - Verdict messages relative to grade
+	 * @property {Array.<Array.<string>>} verdictParameters - Verdict parameters relative to good/bad score
 	 */
-	constructor({ el, apiUrl }) {
+
+	/**
+	 * Create a site analysis result page with updated dom from api data
+	 * @param {Object} params - Site analysis result page params
+	 * @param {Element} el - Dom container for result page
+	 * @param {string} apiUrl - Api Url to fetch data
+	 * @param {ResultRelativeTextData} resultRelativeTextData - Result relative text data objects
+	 */
+	constructor({ el, apiUrl, resultRelativeTextData }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
+
+		/** @type {ResultRelativeTextData} */
+		this.resultRelativeTextData = resultRelativeTextData;
 
 		this._init();
 	}
@@ -62,8 +48,8 @@ class SiteAnalysisResult {
 				pageResultData[key] = value;
 			}
 
-		// else fetch analysis result from id
-		// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
+			// else fetch analysis result from id
+			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
 			pageResultData = await this._fetchApiResult(pageId);
@@ -76,16 +62,21 @@ class SiteAnalysisResult {
 		pageResultData.size = Math.round(pageResultData.size) / 1000;
 
 		// set page result title
-		pageResultData.grade_title = RESULT_TITLE_DATA[pageResultData.grade];
+		pageResultData.grade_title = this.resultRelativeTextData.verdictTitles[pageResultData.grade];
+
+		pageResultData.grade_message = this.resultRelativeTextData.verdictMessages[pageResultData.grade];
 
 		// set page result params binary scores (0/1 : good/bad)
 		pageResultData = {
 			...pageResultData,
-			...this._getDataResultsParamsBinaryScores(pageResultData, TEMP_RESULT_VERDICT),
+			...this._getDataResultsParamsBinaryScores(pageResultData, this.resultRelativeTextData.verdictParameters),
 		};
 
 		// set page result params verdicts
-		pageResultData = { ...pageResultData, ...this._getDataResultsVerdicts(pageResultData, TEMP_RESULT_VERDICT) };
+		pageResultData = {
+			...pageResultData,
+			...this._getDataResultsVerdicts(pageResultData, this.resultRelativeTextData.verdictParameters),
+		};
 
 		// set dom content with data-attributes from api data
 		this._setDomContent(pageResultData, "data-int", "data-int-attr");
@@ -99,26 +90,38 @@ class SiteAnalysisResult {
 	// TODO: add inside data with results method (unique)
 	/**
 	 * Get array key for params verdicts list from score
-	 * @param {*} value
-	 * @param {*} min
-	 * @param {*} max
-	 * @param {*} arrayLength
-	 * @returns
+	 * @param {number} value
+	 * @param {number} min
+	 * @param {number} max
+	 * @param {number} arrayLength
+	 * @returns {number}
 	 */
 	_getResultParamBinaryScore(value, min, max) {
 		const percentValue = getPercentFromRange(value, min, max);
 		return clamp(Math.round((percentValue * 2) / 100), 1, 2) - 1;
 	}
 
+	/**
+	 * 
+	 * @param {Array} resultData 
+	 * @param {Object} resultParamsVerdicts 
+	 * @returns {Object}
+	 */
 	_getDataResultsParamsBinaryScores(resultData, resultParamsVerdicts) {
 		return Object.keys(resultParamsVerdicts).reduce((resultTypeScores, key) => {
-			const paramScoreMin = TEMP_RESULT_PARAMS_MIN_MAX[key].min;
-			const paramScoreMax = TEMP_RESULT_PARAMS_MIN_MAX[key].max;
+			const paramScoreMin = this.resultRelativeTextData.resultParametersMinMaxValues[key].min;
+			const paramScoreMax = this.resultRelativeTextData.resultParametersMinMaxValues[key].max;
 			const resultParamBinaryScore = this._getResultParamBinaryScore(resultData[key], paramScoreMin, paramScoreMax);
 			return { ...resultTypeScores, ...{ [`${key}_binary_score`]: resultParamBinaryScore } };
 		}, {});
 	}
 
+	/**
+	 * 
+	 * @param {Array} resultData 
+	 * @param {Object} resultParamsVerdicts 
+	 * @returns {Object}
+	 */
 	_getDataResultsVerdicts(resultData, resultParamsVerdicts) {
 		return Object.entries(resultParamsVerdicts).reduce((verdictsFromScore, [key, verdicts]) => {
 			return { ...verdictsFromScore, ...{ [`${key}_verdict`]: verdicts[+resultData[`${key}_binary_score`]] } };
