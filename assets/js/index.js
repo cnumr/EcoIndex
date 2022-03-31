@@ -10,6 +10,7 @@ function initApp() {
 	initMenu();
 	initCollapses();
 	initPageResult();
+	initSubmitUrlForm();
 }
 
 // init app on dom loaded
@@ -44,10 +45,23 @@ function initCollapses() {
 
 /**
  * Init page result interactive data from api or url params
- * 
+ *
  */
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;
 	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL });
+}
+
+// ------------------------------------------------------------------------- HOME SUBMIT URL FORM
+
+function initSubmitUrlForm() {
+	const submitSiteForm = document.querySelector(".js-analysis-submit-form");
+	if (!submitSiteForm) return;
+	submitSiteForm.addEventListener("submit", function (e) {
+		e.preventDefault();
+		const url = e.target.querySelector("input[name='siteurl']").value;
+		// TODO: get url relative to language
+		window.location = `${window.location.origin}/chargement/?url=${url}`;
+	});
 }
