@@ -1,4 +1,5 @@
 import ResultRangeSlider from "./ResultRangeSlider";
+import getUrlHostName from "../helpers/getUrlHostName";
 
 // FIXME: temp workaround for cors for dev
 const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
@@ -22,10 +23,12 @@ class SiteAnalysisResult {
 	 * @param {Object} params
 	 * @param {Element} el
 	 * @param {string} apiUrl
+	 * @param {string} apiKey
 	 */
-	constructor({ el, apiUrl }) {
+	constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
+		this.apiKey = apiKey;
 
 		this._init();
 	}
@@ -50,7 +53,7 @@ class SiteAnalysisResult {
 		// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
-			pageResultData = await this._fetchApiResult(pageId);
+			pageResultData = await this._fetchApiResult(pageId, this.apiKey);
 		} else {
 			// TODO: redirect to error page ?
 			return console.warn("No url params found for page, no data to show");
@@ -98,16 +101,17 @@ class SiteAnalysisResult {
 	/**
 	 * Fetch analysis api from page id
 	 * @param {string} id Site analysis id
+	 * @param {string} apiKey 
 	 * @returns {Object} Data object with analysis infos
 	 */
-	async _fetchApiResult(id) {
+	async _fetchApiResult(id, apiKey) {
 		// FIXME: workaround adding temp proxy to fetch data
 		const proxyURl = API_PROXY_URL;
-		const response = await fetch(proxyURl + this.apiUrl + id, {
+		const response = await fetch(proxyURl + this.apiUrl + '/' + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
 				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
-				'x-rapidapi-key': 'c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157'
+				'x-rapidapi-key': apiKey
 			  }
 		});
 		if (!response.ok) {
@@ -131,22 +135,6 @@ class SiteAnalysisResult {
 		return date.toLocaleString().split(",")[0];
 	}
 
-	/**
-	 * Get hostname from string if url
-	 * @param {string} value string input
-	 * @returns {string} hostname
-	 */
-	_getValidUrlHostName(value) {
-		let url;
-
-		try {
-			url = new URL(value);
-		} catch (_) {
-			return false;
-		}
-
-		return url.hostname;
-	}
 
 	/**
 	 *
@@ -158,7 +146,7 @@ class SiteAnalysisResult {
 		let elementValue = data[key];
 		let formatedValue;
 		formatedValue = this._getValidDateString(elementValue);
-		formatedValue = formatedValue ? formatedValue : this._getValidUrlHostName(elementValue);
+		formatedValue = formatedValue ? formatedValue : getUrlHostName(elementValue);
 		return formatedValue ? formatedValue : elementValue;
 	}
 
