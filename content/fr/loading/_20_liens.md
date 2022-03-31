@@ -1,5 +1,5 @@
 +++
-widget = "loading"
+widget = "loading-links"
 weight = 20
 +++
 
