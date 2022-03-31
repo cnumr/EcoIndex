@@ -1,7 +1,7 @@
 /*
  * Shapes pages decorations
  */
- .deco-container {
+.deco-container {
 	--deco-resp-top-factor: 1;
 	position: absolute;
 	top: 0;
@@ -112,11 +112,11 @@
 .deco-type-loading .deco-object--blob-1 {
 	top: -51.5vw;
 	right: 94vw;
-    -webkit-transform: rotate(38deg) scaleX(1);
-    transform: rotate(261deg) scaleX(1);
-    width: 100vw;
-    padding-bottom: 114%;
-    fill: var(--color-light-green);
+	-webkit-transform: rotate(38deg) scaleX(1);
+	transform: rotate(261deg) scaleX(1);
+	width: 100vw;
+	padding-bottom: 114%;
+	fill: var(--color-light-green);
 }
 
 /* Deco type 404 */

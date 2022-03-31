@@ -1,32 +1,16 @@
 import getUrlHostName from "../helpers/getUrlHostName";
 
-const IS_API_MOCKED = false;
-const MOCK_API_RESPONSE = {
-	width: 1920,
-	height: 1080,
-	url: "https://fr.yahoo.com/",
-	grade: "A",
-	score: 86,
-	ges: 1.28,
-	water: 1.92,
-	date: "2022-03-31T19:47:34",
-	page_type: null,
-	id: "36a14691-5c8b-458a-afcf-6bdf47396e63",
-	version: 1,
-	size: 206.629,
-	nodes: 63,
-	requests: 11,
-	host: "fr.yahoo.com",
-	initial_ranking: 12,
-	initial_total_results: 18,
-};
-
+/**
+ * Create a new site analysis
+ * @class
+ */
 class SiteAnalysis {
 	/**
 	 * Create a site analysis with post and fetch analysis result from api
 	 * @param {Object} params
-	 * @param {Element} el
-	 * @param {string} apiUrl
+	 * @param {Element} params.el
+	 * @param {string} params.apiUrl
+	 * @param {string} params.apiKey
 	 */
 	constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
@@ -36,11 +20,13 @@ class SiteAnalysis {
 	}
 
 	async _init() {
-		// Get url param
+		// Get "url" param from url
 		const urlParams = new URLSearchParams(window.location.search);
 		const analysisUrl = urlParams.get("url");
 		if (!analysisUrl) {
 			console.error("No url param found");
+			// TODO : redirect to error page
+			//window.location = `${window.location.origin}/`;
 		}
 
 		// Fill dom with url
@@ -91,22 +77,13 @@ class SiteAnalysis {
 			redirect: "follow",
 		};
 
-		if (!IS_API_MOCKED) {
-			const response = await fetch(apiUrl, options);
-			if (!response.ok) {
-				const message = `An error has occured: ${response.status}`;
-				throw new Error(message);
-			}
-
-			return await response.json();
-		} else {
-			// Simulate api response
-			return new Promise((resolve, reject) => {
-				setTimeout(() => {
-					resolve(MOCK_API_RESPONSE);
-				}, 3000);
-			});
+		const response = await fetch(apiUrl, options);
+		if (!response.ok) {
+			const message = `An error has occured: ${response.status}`;
+			throw new Error(message);
 		}
+
+		return await response.json();
 	}
 }
 export default SiteAnalysis;

@@ -4,8 +4,8 @@ import SiteAnalysis from "./components/SiteAnalysis";
 
 // TODO: set from .env ?
 const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes";
-// TODO: temp key need to create one for app
-const API_KEY = "51197e770dmsh4bb4d48dd9356f7p180b7ajsn3f92a9e6a2ce"; // c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157
+// TODO: temp key, need to create specific one for app
+const API_KEY = "51197e770dmsh4bb4d48dd9356f7p180b7ajsn3f92a9e6a2ce";
 
 // ------------------------------------------------------------------------- INIT APP
 
@@ -48,7 +48,6 @@ function initCollapses() {
 
 /**
  * Init page result interactive data from api or url params
- *
  */
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
@@ -58,6 +57,9 @@ function initPageResult() {
 
 // ------------------------------------------------------------------------- ANALYSIS PAGE
 
+/**
+ * Init page analysis post analysis url and get data for result page
+ */
 function initPageAnalysis() {
 	const analysisPageContentEl = document.querySelector(".js-analysis-container");
 	if (!analysisPageContentEl) return;
