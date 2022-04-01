@@ -106,6 +106,7 @@ input {
 input[type="submit"],
 input[type="button"] {
 	text-align: left;
+	cursor: pointer;
 }
 
 input[type="submit"] {
