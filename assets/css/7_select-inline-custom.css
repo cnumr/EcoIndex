@@ -1,0 +1,37 @@
+
+/* 
+ * SELECT INLINE CUSTOM
+ */
+
+.select-inline-custom {
+	position: relative;
+	display: inline-block;
+	background-color: white;
+	color: white;
+}
+.select-inline-custom:after {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	right: 0.75em;
+	transform: translateY(-75%) rotateZ(45deg) scale(0.85);
+	padding: 0.1875em;
+	border-right: 0.125em solid currentColor;
+	border-bottom: 0.125em solid currentColor;
+}
+.select-inline-custom select {
+	position: relative;
+	z-index: 1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	padding: 0.1em 0.5em;
+	padding-right: 1.5em;
+	border-radius: 1em;
+	background-color: var(--color-pastel-red);
+	cursor: pointer;
+}
+.select-inline-custom select::-ms-expand {
+	display: none;
+}

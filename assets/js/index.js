@@ -2,6 +2,8 @@ import Collapse from "./components/Collapse";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
 import SiteAnalysis from "./components/SiteAnalysis";
 
+// TODO: import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
+
 // TODO: set from .env ?
 const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes";
 // TODO: temp key, need to create specific one for app
