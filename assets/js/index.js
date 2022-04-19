@@ -15,7 +15,7 @@ function initApp() {
 	initMenu();
 	initCollapses();
 	initPageResult();
-	initPageAnalysis();
+	initSubmitUrlForm();
 }
 
 // init app on dom loaded
@@ -66,4 +66,17 @@ function initPageAnalysis() {
 	const analysisPageContentEl = document.querySelector(".js-analysis-container");
 	if (!analysisPageContentEl) return;
 	new SiteAnalysis({ el: analysisPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+}
+
+// ------------------------------------------------------------------------- HOME SUBMIT URL FORM
+
+function initSubmitUrlForm() {
+	const submitSiteForm = document.querySelector(".js-analysis-submit-form");
+	if (!submitSiteForm) return;
+	submitSiteForm.addEventListener("submit", function (e) {
+		e.preventDefault();
+		const url = e.target.querySelector("input[name='siteurl']").value;
+		// TODO: get url relative to language
+		window.location = `${window.location.origin}/chargement/?url=${url}`;
+	});
 }
