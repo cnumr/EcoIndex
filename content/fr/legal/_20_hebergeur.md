@@ -13,7 +13,7 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-Ce site est hébergé par [Neutral Hosting](https://neutral.hosting/).
+Ce site est hébergé par [Neutral IT](https://neutral-it.com/hebergement-web/).
 
 {{% /info_2_columns_col2 %}}
 
