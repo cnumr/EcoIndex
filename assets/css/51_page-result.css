@@ -1,0 +1,159 @@
+
+/* 
+ * RESULT PAGE SPECIFIC STYLES 
+ */
+
+
+.result-badge {
+	font-size: var(--s2);
+	font-weight: bold;
+	width: 3.875rem;
+	height: 3.875rem;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+}
+.result-badge[data-int-grade-value="A"] {
+	color: #fff;
+}
+
+.result-badge[data-int-grade-value="A"],
+.notation-level-chart:nth-child(1) > *,
+.result-notation-info-item[data-int-item-score="1"] .result-notation-info-label::before {
+	background-color: var(--color-medium-green-2);
+}
+
+.result-badge[data-int-grade-value="B"],
+.notation-level-chart:nth-child(2) > *,
+.result-notation-info-item[data-int-item-score="2"] .result-notation-info-label::before {
+	background-color: var(--color-cool-green);
+}
+
+.result-badge[data-int-grade-value="C"],
+.notation-level-chart:nth-child(3) > *,
+.result-notation-info-item[data-int-item-score="3"] .result-notation-info-label::before {
+	background-color: var(--color-greenish-yellow);
+}
+
+.result-badge[data-int-grade-value="D"],
+.notation-level-chart:nth-child(4) > *,
+.result-notation-info-item[data-int-item-score="4"] .result-notation-info-label::before {
+	background-color: var(--color-bright-yellow);
+}
+
+.result-badge[data-int-grade-value="E"],
+.notation-level-chart:nth-child(5) > *,
+.result-notation-info-item[data-int-item-score="5"] .result-notation-info-label::before {
+	background-color: var(--color-saturated-yellow);
+}
+
+.result-badge[data-int-grade-value="F"],
+.notation-level-chart:nth-child(6) > *,
+.result-notation-info-item[data-int-item-score="6"] .result-notation-info-label::before {
+	background-color: var(--color-mango);
+}
+
+.result-badge[data-int-grade-value="G"],
+.notation-level-chart:nth-child(7) > *,
+.result-notation-info-item[data-int-item-score="7"] .result-notation-info-label::before {
+	background-color: var(--color-vermillion);
+}
+
+/* White color on bg for contrasts */
+.result-badge[data-int-grade-value="A"],
+.result-badge[data-int-grade-value="G"],
+.notation-level-chart:nth-child(1).--active,
+.notation-level-chart:nth-child(7).--active {
+	color: #fff;
+}
+
+/* Binary scores (good/bad) result params colors  */
+.result-load-range [data-int-item-score="0"],
+[data-int-size-binary-score-value="0"],
+[data-int-nodes-binary-score-value="0"],
+[data-int-requests-binary-score-value="0"] {
+	color: var(--color-medium-green-2);
+}
+.result-load-range [data-int-item-score=""],
+.result-load-range [data-int-item-score="1"],
+[data-int-size-binary-score-value="1"],
+[data-int-nodes-binary-score-value="1"],
+[data-int-requests-binary-score-value="1"] {
+	color: var(--color-saturated-yellow);
+}
+
+.result-notation-message {
+	padding-right: var(--p5);
+}
+
+.result-notation-levels-chart > * > * {
+	flex: 1 1 auto;
+}
+
+.notation-level-chart > .chart-part {
+	height: 1.17rem;
+}
+
+.notation-level-chart:first-child > .chart-part {
+	border-top-left-radius: 0.33rem;
+	border-bottom-left-radius: 0.33rem;
+}
+
+.notation-level-chart:last-child > .chart-part {
+	border-top-right-radius: 0.33rem;
+	border-bottom-right-radius: 0.33rem;
+}
+
+.level-chart-label {
+	font-size: var(--s2);
+	font-weight: bold;
+	text-align: center;
+	padding: 1.14rem 0 0.4rem;
+	position: relative;
+	top: -0.34rem;
+	border-bottom-left-radius: 0.33rem;
+	border-bottom-right-radius: 0.33rem;
+}
+
+.notation-level-chart:not(.--active) .level-chart-label {
+	background: none;
+}
+
+.result-notation-info-list > li {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid rgba(var(--color-dark-rgb), 0.1);
+	padding-bottom: var(--s0);
+}
+
+.result-notation-info-label {
+	display: inline-block;
+}
+
+.result-notation-info-label > span {
+	color: var(--color-dark);
+}
+
+.result-notation-info-item .result-notation-info-label::before {
+	content: "";
+	width: 0.5rem;
+	display: inline-block;
+	height: 0.5rem;
+	background-color: currentColor;
+	margin-right: var(--s1);
+	position: relative;
+	bottom: 0.12em;
+}
+
+.result-button-see-score-detail {
+	position: relative;
+	top: calc(var(--s0) * -0.5);
+}
+
+.footprint-result::after {
+	content: attr(data-unit);
+	padding-left: 0.4em;
+}
+
