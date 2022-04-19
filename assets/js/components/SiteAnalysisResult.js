@@ -1,31 +1,33 @@
 import ResultRangeSlider from "./ResultRangeSlider";
-
-// FIXME: temp workaround for cors for dev
-const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
-// FIXME : temp data for result title
-const RESULT_TITLE_DATA = {
-	'A' : 'Bravo !',
-	'B' : 'Pas mal du tout !',
-	'C' : 'Encore un effort !',
-	'D' : 'Hum, pas top.',
-	'E' : 'Hum, pas top.',
-	'F' : 'Outch.',
-	'G' : 'Outch.',
-}
+import { clamp, getPercentFromRange } from "../helpers/mathUtils";
+import { camelize } from "../helpers/stringUtils";
 
 /**
- * Site analysis result for interactive dom content
+ * Creates a new Site analysis result for interactive dom content
+ * @class
  */
 class SiteAnalysisResult {
 	/**
-	 * Create a site analysis result page with updated dom from api data
-	 * @param {Object} params
-	 * @param {Element} el
-	 * @param {string} apiUrl
+	 * @typedef ResultRelativeTextData
+	 * @type {object}
+	 * @property {Object.<string, string>} verdictTitles - Verdict titles relative to grade
+	 * @property {Object.<string, string>} verdictMessages - Verdict messages relative to grade
+	 * @property {Array.<Array.<string>>} verdictParameters - Verdict parameters relative to good/bad score
 	 */
-	constructor({ el, apiUrl }) {
+
+	/**
+	 * Create a site analysis result page with updated dom from api data
+	 * @param {Object} params - Site analysis result page params
+	 * @param {Element} el - Dom container for result page
+	 * @param {string} apiUrl - Api Url to fetch data
+	 * @param {ResultRelativeTextData} resultRelativeTextData - Result relative text data objects
+	 */
+	constructor({ el, apiUrl, resultRelativeTextData }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
+
+		/** @type {ResultRelativeTextData} */
+		this.resultRelativeTextData = resultRelativeTextData;
 
 		this._init();
 	}
@@ -47,7 +49,7 @@ class SiteAnalysisResult {
 			}
 
 			// else fetch analysis result from id
-		// NOTE : url params example to test : "?id=b7f94702-1417-4f00-9711-11ca7eb2d612"
+			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
 			pageResultData = await this._fetchApiResult(pageId);
@@ -59,16 +61,71 @@ class SiteAnalysisResult {
 		// update page size from ko to mo
 		pageResultData.size = Math.round(pageResultData.size) / 1000;
 
-		// set page result title 
-		pageResultData.grade_title = RESULT_TITLE_DATA[pageResultData.grade]
+		// set page result title
+		pageResultData.grade_title = this.resultRelativeTextData.verdictTitles[pageResultData.grade];
+
+		pageResultData.grade_message = this.resultRelativeTextData.verdictMessages[pageResultData.grade];
+
+		// set page result params binary scores (0/1 : good/bad)
+		pageResultData = {
+			...pageResultData,
+			...this._getDataResultsParamsBinaryScores(pageResultData, this.resultRelativeTextData.verdictParameters),
+		};
+
+		// set page result params verdicts
+		pageResultData = {
+			...pageResultData,
+			...this._getDataResultsVerdicts(pageResultData, this.resultRelativeTextData.verdictParameters),
+		};
 
 		// set dom content with data-attributes from api data
-		this._setDomContent(pageResultData, "[data-int]", "[data-int-attr]");
+		this._setDomContent(pageResultData, "data-int", "data-int-attr");
 
 		// specific components updates
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultFromSelect(pageResultData);
 		this._updatetResultRangeSliders(pageResultData);
+	}
+
+	// TODO: add inside data with results method (unique)
+	/**
+	 * Get array key for params verdicts list from score
+	 * @param {number} value
+	 * @param {number} min
+	 * @param {number} max
+	 * @param {number} arrayLength
+	 * @returns {number}
+	 */
+	_getResultParamBinaryScore(value, min, max) {
+		const percentValue = getPercentFromRange(value, min, max);
+		return clamp(Math.round((percentValue * 2) / 100), 1, 2) - 1;
+	}
+
+	/**
+	 * 
+	 * @param {Array} resultData 
+	 * @param {Object} resultParamsVerdicts 
+	 * @returns {Object}
+	 */
+	_getDataResultsParamsBinaryScores(resultData, resultParamsVerdicts) {
+		return Object.keys(resultParamsVerdicts).reduce((resultTypeScores, key) => {
+			const paramScoreMin = this.resultRelativeTextData.resultParametersMinMaxValues[key].min;
+			const paramScoreMax = this.resultRelativeTextData.resultParametersMinMaxValues[key].max;
+			const resultParamBinaryScore = this._getResultParamBinaryScore(resultData[key], paramScoreMin, paramScoreMax);
+			return { ...resultTypeScores, ...{ [`${key}_binary_score`]: resultParamBinaryScore } };
+		}, {});
+	}
+
+	/**
+	 * 
+	 * @param {Array} resultData 
+	 * @param {Object} resultParamsVerdicts 
+	 * @returns {Object}
+	 */
+	_getDataResultsVerdicts(resultData, resultParamsVerdicts) {
+		return Object.entries(resultParamsVerdicts).reduce((verdictsFromScore, [key, verdicts]) => {
+			return { ...verdictsFromScore, ...{ [`${key}_verdict`]: verdicts[+resultData[`${key}_binary_score`]] } };
+		}, {});
 	}
 
 	/**
@@ -79,19 +136,22 @@ class SiteAnalysisResult {
 	 */
 	_setDomContent(data, contentAttrKey, attrValueKey) {
 		// get all interactive elements with attributes data-int
-		const dataIntEls = this.el.querySelectorAll(contentAttrKey);
-		const dataIntAttrEls = this.el.querySelectorAll(attrValueKey);
+		const dataIntEls = this.el.querySelectorAll(`[${contentAttrKey}]`);
+		const dataIntAttrEls = this.el.querySelectorAll(`[${attrValueKey}]`);
 
 		// replace content from data for all elements with data-int
 		dataIntEls.forEach((dataIntEl) => {
+			const elementDataValue = this._getDataValueFrom(data, dataIntEl.dataset.int);
+			if (!elementDataValue || elementDataValue.length === 0) return;
 			dataIntEl.textContent = this._getDataValueFrom(data, dataIntEl.dataset.int);
 		});
 
 		// add attribute values for all elements with data-int-attr
 		dataIntAttrEls.forEach((dataIntEl) => {
 			const dataAttr = dataIntEl.dataset.intAttr;
-			const uppercaseAttr = dataAttr.charAt(0).toUpperCase() + dataAttr.slice(1);
-			dataIntEl.dataset["int" + uppercaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
+			const camelCaseDataAttr = camelize(dataAttr);
+			const updatedCaseAttr = camelCaseDataAttr.charAt(0).toUpperCase() + camelCaseDataAttr.slice(1);
+			dataIntEl.dataset["int" + updatedCaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
 		});
 	}
 
@@ -101,14 +161,12 @@ class SiteAnalysisResult {
 	 * @returns {Object} Data object with analysis infos
 	 */
 	async _fetchApiResult(id) {
-		// FIXME: workaround adding temp proxy to fetch data
-		const proxyURl = API_PROXY_URL;
-		const response = await fetch(proxyURl + this.apiUrl + id, {
+		const response = await fetch(this.apiUrl + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
-				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
-				'x-rapidapi-key': 'c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157'
-			  }
+				"x-rapidapi-host": "ecoindex.p.rapidapi.com",
+				"x-rapidapi-key": "c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157",
+			},
 		});
 		if (!response.ok) {
 			const message = `An error has occured: ${response.status}`;
@@ -138,7 +196,6 @@ class SiteAnalysisResult {
 	 */
 	_getValidUrlHostName(value) {
 		let url;
-
 		try {
 			url = new URL(value);
 		} catch (_) {
@@ -157,7 +214,9 @@ class SiteAnalysisResult {
 	_getDataValueFrom(data, key) {
 		let elementValue = data[key];
 		let formatedValue;
+		// Format date
 		formatedValue = this._getValidDateString(elementValue);
+		// Format hostname
 		formatedValue = formatedValue ? formatedValue : this._getValidUrlHostName(elementValue);
 		return formatedValue ? formatedValue : elementValue;
 	}

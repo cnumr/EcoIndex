@@ -20,8 +20,10 @@
 {{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100}}
 
 <div class="result-load-range js-rlr">
-	{{ with .verdict }}
-		<div class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge" data-int-item-score=""><span>{{ . | markdownify }}</span></div>
+	{{ if .verdict }}
+		<div class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge" data-int-attr="{{ .dataValueKey }}_binary_score" >
+			<span data-int="{{ .dataValueKey }}_verdict"></span>
+		</div>
 	{{ end }}
 
 	<label id="rlr-label-{{ $randomId }}" class="rlr-label bold font-size:1">
@@ -37,14 +39,14 @@
 				class="rlr-slider-handle js-rlr-slider-handle"
 				role="slider"
 				data-int-value-from="{{ .dataValueKey }}"
-				data-int-item-score=""
+				data-int-attr="{{ .dataValueKey }}_binary_score"
 				aria-labelledby="rlr-label-{{ $randomId }}"
 				aria-valuemin="{{ .rangeValueMin }}"
 				aria-valuemax="{{ .rangeValueMax }}"
 				aria-valuenow=""
 				aria-valuetext=""
 			>
-				<span class="rlr-handle-value rlr-badge" data-int-item-score=""><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
+				<span class="rlr-handle-value rlr-badge" data-int-attr="{{ .dataValueKey }}_binary_score"><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
 				<div class="rlr-handle-tip"></div>
 			</div>
 			<div class="rlr-slider-handle-target js-rlr-slider-handle-target" data-value="{{ .rangeValueTarget }}"></div>
