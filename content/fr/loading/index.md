@@ -2,12 +2,7 @@
 title = "Chargement"
 slug = "chargement"
 decoType = "loading"
+custom_class = "js-analysis-container"
 +++
 
-{{% hero %}}
-
-# Chargement
-
-{{% /hero %}}
-
-{{< widgets type="info-container" >}}
+{{< widgets zone="first" type="content" >}}

@@ -1,4 +1,19 @@
 import ResultRangeSlider from "./ResultRangeSlider";
+import getUrlHostName from "../helpers/getUrlHostName";
+
+// FIXME: temp workaround for cors for dev
+const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
+// FIXME : temp data for result title
+const RESULT_TITLE_DATA = {
+	'A' : 'Bravo !',
+	'B' : 'Pas mal du tout !',
+	'C' : 'Encore un effort !',
+	'D' : 'Hum, pas top.',
+	'E' : 'Hum, pas top.',
+	'F' : 'Outch.',
+	'G' : 'Outch.',
+}
+
 import { clamp, getPercentFromRange } from "../helpers/mathUtils";
 import { camelize } from "../helpers/stringUtils";
 
@@ -17,14 +32,15 @@ class SiteAnalysisResult {
 
 	/**
 	 * Create a site analysis result page with updated dom from api data
-	 * @param {Object} params - Site analysis result page params
-	 * @param {Element} el - Dom container for result page
-	 * @param {string} apiUrl - Api Url to fetch data
-	 * @param {ResultRelativeTextData} resultRelativeTextData - Result relative text data objects
+	 * @param {Object} params
+	 * @param {Element} el
+	 * @param {string} apiUrl
+	 * @param {string} apiKey
 	 */
-	constructor({ el, apiUrl, resultRelativeTextData }) {
+	constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
+		this.apiKey = apiKey;
 
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
@@ -52,7 +68,7 @@ class SiteAnalysisResult {
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
-			pageResultData = await this._fetchApiResult(pageId);
+			pageResultData = await this._fetchApiResult(pageId, this.apiKey);
 		} else {
 			// TODO: redirect to error page ?
 			return console.warn("No url params found for page, no data to show");
@@ -158,15 +174,18 @@ class SiteAnalysisResult {
 	/**
 	 * Fetch analysis api from page id
 	 * @param {string} id Site analysis id
+	 * @param {string} apiKey 
 	 * @returns {Object} Data object with analysis infos
 	 */
-	async _fetchApiResult(id) {
-		const response = await fetch(this.apiUrl + id, {
+	async _fetchApiResult(id, apiKey) {
+		// FIXME: workaround adding temp proxy to fetch data
+		const proxyURl = API_PROXY_URL;
+		const response = await fetch(proxyURl + this.apiUrl + '/' + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
-				"x-rapidapi-host": "ecoindex.p.rapidapi.com",
-				"x-rapidapi-key": "c46ab2a50amshe7052bc24661a12p1d50a4jsn7db4d58a9157",
-			},
+				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
+				'x-rapidapi-key': apiKey
+			  }
 		});
 		if (!response.ok) {
 			const message = `An error has occured: ${response.status}`;
@@ -190,22 +209,6 @@ class SiteAnalysisResult {
 	}
 
 	/**
-	 * Get hostname from string if url
-	 * @param {string} value string input
-	 * @returns {string} hostname
-	 */
-	_getValidUrlHostName(value) {
-		let url;
-		try {
-			url = new URL(value);
-		} catch (_) {
-			return false;
-		}
-
-		return url.hostname;
-	}
-
-	/**
 	 *
 	 * @param {Object} data Page analysis data
 	 * @param {string} key Corresponding analysis data to extract
@@ -216,8 +219,7 @@ class SiteAnalysisResult {
 		let formatedValue;
 		// Format date
 		formatedValue = this._getValidDateString(elementValue);
-		// Format hostname
-		formatedValue = formatedValue ? formatedValue : this._getValidUrlHostName(elementValue);
+		formatedValue = formatedValue ? formatedValue : getUrlHostName(elementValue);
 		return formatedValue ? formatedValue : elementValue;
 	}
 
