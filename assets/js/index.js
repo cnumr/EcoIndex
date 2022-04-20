@@ -15,6 +15,7 @@ function initApp() {
 	initMenu();
 	initCollapses();
 	initPageResult();
+	initPageAnalysis();
 	initSubmitUrlForm();
 }
 
