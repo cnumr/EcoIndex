@@ -7,7 +7,7 @@ import SiteAnalysis from "./components/SiteAnalysis";
 // TODO: set from .env ?
 const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes";
 // TODO: temp key, need to create specific one for app
-const API_KEY = "51197e770dmsh4bb4d48dd9356f7p180b7ajsn3f92a9e6a2ce";
+const API_KEY = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 
 // ------------------------------------------------------------------------- INIT APP
 
