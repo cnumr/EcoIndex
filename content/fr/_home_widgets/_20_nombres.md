@@ -47,5 +47,6 @@ d’électricité
 
 {{</grid>}}
 
-
 <small>Source: Empreinte environnementale du numérique mondial - greenit.fr</small>
+
+A votre échelle, le numérique c’est 40 % de votre forfait GES soutenable (ce que vous avez le droit d’émettre pendant 1 an pour rester à 1,5 °C de réchauffement global).
