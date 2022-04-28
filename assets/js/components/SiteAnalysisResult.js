@@ -1,8 +1,6 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 import getUrlHostName from "../helpers/getUrlHostName";
 
-// FIXME: temp workaround for cors for dev
-const API_PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
 	'A' : 'Bravo !',
@@ -178,7 +176,6 @@ class SiteAnalysisResult {
 	 * @returns {Object} Data object with analysis infos
 	 */
 	async _fetchApiResult(id, apiKey) {
-		// FIXME: workaround adding temp proxy to fetch data
 		const response = await fetch(this.apiUrl + '/' + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
