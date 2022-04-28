@@ -179,8 +179,7 @@ class SiteAnalysisResult {
 	 */
 	async _fetchApiResult(id, apiKey) {
 		// FIXME: workaround adding temp proxy to fetch data
-		const proxyURl = API_PROXY_URL;
-		const response = await fetch(proxyURl + this.apiUrl + '/' + id, {
+		const response = await fetch(this.apiUrl + '/' + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
 				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
