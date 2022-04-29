@@ -35,7 +35,7 @@ class SiteAnalysisResult {
 	 * @param {string} apiUrl
 	 * @param {string} apiKey
 	 */
-	constructor({ el, apiUrl, apiKey }) {
+	async constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
 		this.apiKey = apiKey;
@@ -43,7 +43,7 @@ class SiteAnalysisResult {
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
 
-		this._init();
+		await this._init();
 	}
 
 	/**
@@ -183,12 +183,13 @@ class SiteAnalysisResult {
 				'x-rapidapi-key': apiKey
 			  }
 		});
+
 		if (!response.ok) {
 			const message = `An error has occured: ${response.status}`;
 			throw new Error(message);
 		}
-		const apiResult = await response.json();
-		return apiResult;
+
+		return await response.json();
 	}
 
 	/**

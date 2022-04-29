@@ -41,3 +41,6 @@ $RECYCLE.BIN/
 
 # Netlify
 .netlify
+
+# yarn .lock File (using NPM)
+yarn.lock

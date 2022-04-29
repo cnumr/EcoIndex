@@ -1,7 +1,7 @@
 /**
  * Get hostname from string if url
  * @param {string} url string input
- * @returns {string} hostname
+ * @returns {string|boolean} hostname
  */
 export default function getUrlHostName(url) {
 	let urlObject;

@@ -12,11 +12,11 @@ class SiteAnalysis {
 	 * @param {string} params.apiUrl
 	 * @param {string} params.apiKey
 	 */
-	constructor({ el, apiUrl, apiKey }) {
+	async constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
 		this.apiKey = apiKey;
-		this._init();
+		await this._init();
 	}
 
 	async _init() {
@@ -48,17 +48,18 @@ class SiteAnalysis {
 	 */
 	_redirectToResultPage(analysisResultData) {
 		// - get post request and pass it to url params
-		var resultUrlparams = new URLSearchParams();
+		const resultUrlParams = new URLSearchParams();
 		Object.keys(analysisResultData).forEach((key) => {
-			resultUrlparams.append(key, analysisResultData[key]);
+			resultUrlParams.append(key, analysisResultData[key]);
 		});
+
 		// TODO: get lang relative url
-		window.location = `${window.location.origin}/resultat/?${resultUrlparams}`;
+		window.location = `${window.location.origin}/resultat/?${resultUrlParams}`;
 	}
 
 	/**
 	 * Fetch api post request
-	 * @param {Object} postData - post data to send to api
+	 * @param {{width: number, url: string, height: number}} postData - post data to send to api
 	 * @param {string} postData.url - url to analyze
 	 * @param {string} postData.width - page width
 	 * @param {string} postData.height - page height
