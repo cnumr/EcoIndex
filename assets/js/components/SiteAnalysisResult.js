@@ -3,14 +3,14 @@ import getUrlHostName from "../helpers/getUrlHostName";
 
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
-	'A' : 'Bravo !',
-	'B' : 'Pas mal du tout !',
-	'C' : 'Encore un effort !',
-	'D' : 'Hum, pas top.',
-	'E' : 'Hum, pas top.',
-	'F' : 'Outch.',
-	'G' : 'Outch.',
-}
+	A: "Bravo !",
+	B: "Pas mal du tout !",
+	C: "Encore un effort !",
+	D: "Hum, pas top.",
+	E: "Hum, pas top.",
+	F: "Outch.",
+	G: "Outch.",
+};
 
 import { clamp, getPercentFromRange } from "../helpers/mathUtils";
 import { camelize } from "../helpers/stringUtils";
@@ -35,7 +35,7 @@ class SiteAnalysisResult {
 	 * @param {string} apiUrl
 	 * @param {string} apiKey
 	 */
-	async constructor({ el, apiUrl, apiKey }) {
+	constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
 		this.apiKey = apiKey;
@@ -43,7 +43,7 @@ class SiteAnalysisResult {
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
 
-		await this._init();
+		this._init();
 	}
 
 	/**
@@ -116,9 +116,9 @@ class SiteAnalysisResult {
 	}
 
 	/**
-	 * 
-	 * @param {Array} resultData 
-	 * @param {Object} resultParamsVerdicts 
+	 *
+	 * @param {Array} resultData
+	 * @param {Object} resultParamsVerdicts
 	 * @returns {Object}
 	 */
 	_getDataResultsParamsBinaryScores(resultData, resultParamsVerdicts) {
@@ -131,9 +131,9 @@ class SiteAnalysisResult {
 	}
 
 	/**
-	 * 
-	 * @param {Array} resultData 
-	 * @param {Object} resultParamsVerdicts 
+	 *
+	 * @param {Array} resultData
+	 * @param {Object} resultParamsVerdicts
 	 * @returns {Object}
 	 */
 	_getDataResultsVerdicts(resultData, resultParamsVerdicts) {
@@ -172,16 +172,16 @@ class SiteAnalysisResult {
 	/**
 	 * Fetch analysis api from page id
 	 * @param {string} id Site analysis id
-	 * @param {string} apiKey 
+	 * @param {string} apiKey
 	 * @returns {Object} Data object with analysis infos
 	 */
 	async _fetchApiResult(id, apiKey) {
-		const response = await fetch(this.apiUrl + '/' + id, {
+		const response = await fetch(this.apiUrl + "/" + id, {
 			headers: {
 				// NOTE : temp headers for rapidapi
-				'x-rapidapi-host': 'ecoindex.p.rapidapi.com',
-				'x-rapidapi-key': apiKey
-			  }
+				"x-rapidapi-host": "ecoindex.p.rapidapi.com",
+				"x-rapidapi-key": apiKey,
+			},
 		});
 
 		if (!response.ok) {

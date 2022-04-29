@@ -12,11 +12,11 @@ class SiteAnalysis {
 	 * @param {string} params.apiUrl
 	 * @param {string} params.apiKey
 	 */
-	async constructor({ el, apiUrl, apiKey }) {
+	constructor({ el, apiUrl, apiKey }) {
 		this.el = el;
 		this.apiUrl = apiUrl;
 		this.apiKey = apiKey;
-		await this._init();
+		this._init();
 	}
 
 	async _init() {
