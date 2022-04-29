@@ -2,7 +2,7 @@
  * Camelize a string, cutting the string by multiple separators like
  * hyphens, underscores and spaces.
  * 
- * @param {text} string Text to camelize
+ * @param {string} str Text to camelize
  * @return string Camelized text
  */
  export function camelize(str) {

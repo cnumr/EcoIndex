@@ -9,15 +9,11 @@ class ResultRangeSlider {
 	constructor({ sliderEl, data }) {
 		this.sliderEl = sliderEl;
 		this.handleEl = sliderEl.querySelector(".js-rlr-slider-handle");
-		this.dataType = this.handleEl.dataset.intValueFrom;
 		// get value from corresponding data key
 		this.value = this._getValueFromDataKey(data);
 		// get min and max value
 		this.valueMin = +this.handleEl.ariaValueMin;
 		this.valueMax = +this.handleEl.ariaValueMax;
-
-		// TODO: only used for range (1, 2)
-		this.dataTypeScore = this._getScoreFromRange(this.value, this.valueMin, this.valueMax, 2);
 
 		// Set values to update dom
 		this.setSliderValue(this.value);
@@ -29,7 +25,6 @@ class ResultRangeSlider {
 		const percentValue = getPercentFromRange(value, this.valueMin, this.valueMax);
 		// set value to css
 		this.handleEl.style.setProperty("--rlr-slider-handle-position", percentValue + "%");
-
 		// update elements params
 		this.handleEl.setAttribute("aria-valuenow", value.toString());
 		this.handleEl.setAttribute("aria-valuetext", value.toString());

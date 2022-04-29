@@ -4,5 +4,5 @@
 */}}
 {{ $svg := resources.Get (print "svg/" . ".svg") }}
 <div aria-hidden="true">
-    <span class="inline-svg" >{{ $svg.Content | safeHTML }}</i>
+    <span class="inline-svg" >{{ $svg.Content | safeHTML }}</span>
 </div>
