@@ -1,4 +1,5 @@
 +++
+draft = true
 title = "Test a website"
 layout = "single"
 decoType = "home"

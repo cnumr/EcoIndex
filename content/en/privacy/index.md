@@ -1,4 +1,5 @@
 +++
+draft = true
 title = "Privacy"
 decoType = "generic"
 
