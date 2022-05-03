@@ -1,10 +1,21 @@
-<nav role="navigation" class="language-switcher">
-	{{- range $i, $v := .AllTranslations -}}
-		{{- if eq .Language $.Language -}}
-			<span class="lang" aria-current="true">{{- .Language -}}</span>
-			{{- else -}}
-			<a href="{{ .RelPermalink }}" hreflang="{{- .Language -}}" class="lang">{{- .Language -}}</a>
-		{{- end -}}
-		{{- if gt (len .AllTranslations) (add $i 1) }} &nbsp;|&nbsp; {{- end -}}
+{{/* Check available translations */}}
+{{- $availableTranslations := slice -}}
+{{- range .AllTranslations -}}
+	{{- if .RelPermalink -}}
+		{{- $availableTranslations = $availableTranslations | append . -}}
 	{{- end -}}
-</nav>
+{{- end -}}
+
+{{/* Display the language switcher only if at least one translation is available */}}
+{{- if gt (len $availableTranslations) 1 }}
+	<nav role="navigation" class="language-switcher">
+		{{- range $i, $v := $availableTranslations -}}
+			{{- if eq .Language $.Language -}}
+				<span class="lang" aria-current="true">{{- .Language -}}</span>
+			{{- else -}}
+				<a href="{{ .RelPermalink }}" hreflang="{{- .Language -}}" class="lang">{{- .Language -}}</a>
+			{{- end -}}
+			{{- if gt (len $availableTranslations) (add $i 1) }}&nbsp;|&nbsp;{{- end -}}
+		{{- end -}}
+	</nav>
+{{- end -}}
