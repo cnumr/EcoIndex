@@ -39,7 +39,7 @@ Voici, pour commencer, quelques bonnes pratiques à mettre en application !
 ### Limiter le nombre de requêtes
 
 - **Utilisez des polices standards** (Arial, Tahoma, Times New Roman, Verdana, etc.), qui n’ont pas besoin d’être
-  téléchargées, plutôt que des polices custom.
+  téléchargées, plutôt que des polices spécifiques.
 - **Limitez l’utilisation de widgets et plugins.** Par exemple, remplacez les boutons de réseaux sociaux ou widget
   Googlemaps par une image et un lien.
 - **Regroupez les images dans un sprite** et combinez certaines feuilles de styles CSS et librairies Javascript.
