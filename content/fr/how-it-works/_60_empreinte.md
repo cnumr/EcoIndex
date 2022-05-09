@@ -19,7 +19,7 @@ weight = 60
 
 L’empreinte physique du site se caractérise, notamment, par la quantité de mémoire vive (RAM) et le nombre de cycles
 processeur (CPU) consommés par le processus navigateur affichant l’URL analysée. L’analyse de l’empreinte physique dans
-le temps – évolution de la consommation mémoire et charge CPU – permet d’identifier des corrélations et effet de seuil :
+le temps – évolution de la consommation mémoire et charge CPU – permet d’identifier des corrélations et effets de seuil :
 blocage CPU, surconsommation mémoire, etc.
 
 {{% /highlight %}}
