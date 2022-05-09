@@ -19,9 +19,9 @@ Destiné aux concepteurs et aux développeurs de sites web, le livre
 l’exploitation en passant par la réalisation (vous pourrez d’ailleurs les retrouver un peu partout sur ce site). A la
 clé : une empreinte ressources divisée au minimum par deux !
 
-- Le livre : Ecoconception web, les 115 bonnes pratiques
-- La liste des bonnes pratiques en français : Checklist des bonnes pratiques
-- La liste des bonnes pratiques en anglais : Ecometer best practices
+- Le livre : [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/)
+- La liste des [bonnes pratiques en français (V4) : Checklist des bonnes pratiques] (https://collectif.greenit.fr/ecoconception-web/)
+- La liste des [bonnes pratiques en anglais (V3) : Ecometer best practices] (http://www.ecometer.org/rules/)
 
 {{% /info_2_columns_col2 %}}
 
