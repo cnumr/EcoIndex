@@ -13,11 +13,6 @@ weight = 40
 
 {{% info_2_columns_col2 %}}
 
-### ECOMETER | Evaluez l’application des bonnes pratiques
-
-Si EcoIndex teste la performance et l’empreinte environnementale d’une page web, Ecometer évalue votre niveau de
-maturité au regard des bonnes pratiques d’éco&shy;conception. Vous connaîtrez les critères atteints... et ceux qui
-restent à travailler 🔨 [Ecometer](http://www.ecometer.org/)
 
 ### EXTENSIONS | EcoIndex et Ecometer dans la poche
 
