@@ -20,7 +20,7 @@ via une moyenne pondérée de :
 - 2 pour les requêtes HTTP
 - 1 pour le poids des données transférées
 
-Différentes analyses micro et macro soulignent le poids prépondérant du tiers « internaute » en terme d’impacts
+Différentes analyses micro et macro soulignent le poids prépondérant du tiers « internaute » en termes d’impacts
 environnementaux, surtout lors de la fabrication des équipements. C’est pour cette raison qu’il est surpondéré par
 rapport aux autres.
 
