@@ -10,3 +10,9 @@
 	other = "An error occured during analysis"
 [StopAnalysis]
 	other = "Stop analysis"
+[Back]
+	other = "Back"
+[ReTest]
+	other = "Retest"
+[Share]
+	other = "Share"

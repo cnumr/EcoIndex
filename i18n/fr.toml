@@ -8,3 +8,9 @@
 	other = "Erreur lors de l'analyse"
 [StopAnalysis]
 	other = "Arrêter l'analyse"
+[Back]
+	other = "Retour"
+[ReTest]
+	other = "Retester"
+[Share]
+	other = "Partager"
