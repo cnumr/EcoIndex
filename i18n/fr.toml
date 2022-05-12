@@ -16,3 +16,9 @@
 	other = "Partager"
 [Loading]
 	other = "Chargement"
+[NotAvailable]
+	other = "Non disponible"
+[SeeScoreDetails]
+	other = "Voir les détails du score"
+[PageRank]
+	other = "Classement de la page :"

@@ -18,3 +18,9 @@
 	other = "Share"
 [Loading]
 	other = "Loading"
+[NotAvailable]
+	other = "Not available"
+[SeeScoreDetails]
+	other = "See score details"
+[PageRank]
+	other = "Page rank:"
