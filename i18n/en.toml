@@ -10,3 +10,17 @@
 	other = "An error occured during analysis"
 [StopAnalysis]
 	other = "Stop analysis"
+[Back]
+	other = "Back"
+[ReTest]
+	other = "Retest"
+[Share]
+	other = "Share"
+[Loading]
+	other = "Loading"
+[NotAvailable]
+	other = "Not available"
+[SeeScoreDetails]
+	other = "See score details"
+[PageRank]
+	other = "Page rank:"

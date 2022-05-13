@@ -8,3 +8,17 @@
 	other = "Erreur lors de l'analyse"
 [StopAnalysis]
 	other = "Arrêter l'analyse"
+[Back]
+	other = "Retour"
+[ReTest]
+	other = "Retester"
+[Share]
+	other = "Partager"
+[Loading]
+	other = "Chargement"
+[NotAvailable]
+	other = "Non disponible"
+[SeeScoreDetails]
+	other = "Voir les détails du score"
+[PageRank]
+	other = "Classement de la page :"
