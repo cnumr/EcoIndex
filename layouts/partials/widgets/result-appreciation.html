@@ -6,7 +6,9 @@
 					<div class="result-badge" data-int-attr="grade" data-int="grade"></div>
 				</div>
 				<h2 data-int="grade_title"></h2>
-				<p class="font-size:1">Score : <span><span data-int="score">0</span> / 100</span></p>
+				<p class="font-size:1">
+					Score : <span><span data-int="score">0</span> / 100</span>
+				</p>
 				<hr class="small" />
 				<div class="info-collapse">
 					{{ partial "components/collapse" (dict
@@ -15,13 +17,14 @@
 						"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page."
 						"moreHref" "/comment-ca-marche"
 						"moreLabel" "Comment ça marche"
-					)}}
+						)
+					}}
 				</div>
 			</div>
 			<div class="info_2_columns_col2 stack-l center-l --s3">
 				<div class="result-notation-header ">
 					<div class="result-notation-message">
-						{{/* TODO: dynamic result from page  */}}
+						{{/* TODO: dynamic result from page */}}
 						<p data-int="grade_message"></p>
 					</div>
 				</div>
@@ -68,7 +71,10 @@
 				<ul class="stack-l --s0 result-notation-info-list">
 					<li class="font-weight:bold">
 						<span class="result-notation-info-label">{{ i18n `PageRank` }}</span>
-						<span class="result-notation-info-number"><span data-int="initial_ranking">{{ i18n `NotAvailable` }}</span> / <span data-int="initial_total_results">{{ i18n `NotAvailable` }}</span></span>
+						<span class="result-notation-info-number"
+							><span data-int="initial_ranking">{{ i18n `NotAvailable` }}</span> /
+							<span data-int="initial_total_results">{{ i18n `NotAvailable` }}</span></span
+						>
 					</li>
 					<li class="result-notation-info-item">
 						<span class="result-notation-info-label" data-int-attr="size_binary_score">
@@ -76,26 +82,28 @@
 						</span>
 						<span class="result-notation-info-number"><span data-int="size">0</span> Mo</span>
 					</li>
-					<li class="result-notation-info-item" >
+					<li class="result-notation-info-item">
 						<span class="result-notation-info-label" data-int-attr="nodes_binary_score">
 							<span data-int="nodes_verdict"></span>
 						</span>
 						<span class="result-notation-info-number"><span data-int="nodes">0</span> éléments</span>
 					</li>
-					<li class="result-notation-info-item" >
+					<li class="result-notation-info-item">
 						<span class="result-notation-info-label" data-int-attr="requests_binary_score">
 							<span data-int="requests_verdict"></span>
 						</span>
 						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
 					</li>
 				</ul>
-				{{/* TODO: On click go to detail section  */}}
+				{{/* TODO: On click go to detail section */}}
 				<div>
 					<a class="content-link" href="#détails-du-score">
 						{{ i18n `SeeScoreDetails` }}
-						<span><svg aria-hidden="true"><use xlink:href="#icon-anchor-down"></use></svg></span>
+						<span
+							><svg aria-hidden="true"><use xlink:href="#icon-anchor-down"></use></svg
+						></span>
 					</a>
-				<div>
+				</div>
 			</div>
 		</div>
 	</div>
