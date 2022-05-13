@@ -21,13 +21,16 @@ La nouvelle version d’EcoIndex (V3) est réalisée avec [Hugo](https://gohugo.
 
 #### Installation
 
-1. Téléchargez et installez la dernière version *extented* disponible de Hugo ([procédure d'installation de Hugo, en anglais](https://gohugo.io/getting-started/installing/)).
-2. Téléchargez et installez la dernière version de NodeJS ([page de téléchargement de NodeJS](https://nodejs.org/fr/download/)).
+1. Téléchargez et installez la dernière version _extented_ disponible de Hugo
+   ([procédure d'installation de Hugo, en anglais](https://gohugo.io/getting-started/installing/)).
+2. Téléchargez et installez la dernière version de NodeJS
+   ([page de téléchargement de NodeJS](https://nodejs.org/fr/download/)).
 3. Depuis un terminal :
-    1. Clonez ce dépôt avec la commande `git clone https://github.com/cnumr/EcoIndex.git` ou avec `git clone git@github.com:cnumr/EcoIndex.git` si vous utilisez SSH.
-    2. Installez les dernières dépendances avec la commmande `npm install`.
-    3. Démarrez le serveur Hugo avec la commande `hugo server -D`.
-4. Rendez-vous à l'adresse http://localhost:1313 avec votre navigateur web. 
+   1. Clonez ce dépôt avec la commande `git clone https://github.com/cnumr/EcoIndex.git` ou avec
+      `git clone git@github.com:cnumr/EcoIndex.git` si vous utilisez SSH.
+   2. Installez les dernières dépendances avec la commmande `npm install`.
+   3. Démarrez le serveur Hugo avec la commande `hugo server -D`.
+4. Rendez-vous à l'adresse <http://localhost:1313> avec votre navigateur web.
 
 ![Image of CnumR](./collectif-conception-numerique-responsable-logo.png)
 
@@ -48,12 +51,14 @@ There’s a dedicated [slack channel](https://cnumr.slack.com) for the project.
 
 The new version of EcoIndex is built with [Hugo](https://gohugo.io/).
 
-#### Installation
+#### Setup
 
-1. Download and install the latest *extented* version available of Hugo ([Hugo installation procedure](https://gohugo.io/getting-started/installing/)).
+1. Download and install the latest _extented_ version available of Hugo
+   ([Hugo installation procedure](https://gohugo.io/getting-started/installing/)).
 2. Download and install the latest version of NodeJS ([NodeJS download page](https://nodejs.org/en/download/)).
 3. From a terminal :
-    1. Clone this repository with the command `git clone https://github.com/cnumr/EcoIndex.git` or with `git clone git@github.com:cnumr/EcoIndex.git` if you prefer to use SSH.
-    2. Install the latest dependencies with the command `npm install`.
-    3. Start the Hugo server with the command `hugo server -D`.
-4. Go to http://localhost:1313 with your web browser. 
+   1. Clone this repository with the command `git clone https://github.com/cnumr/EcoIndex.git` or with
+      `git clone git@github.com:cnumr/EcoIndex.git` if you prefer to use SSH.
+   2. Install the latest dependencies with the command `npm install`.
+   3. Start the Hugo server with the command `hugo server -D`.
+4. Go to <http://localhost:1313> with your web browser.

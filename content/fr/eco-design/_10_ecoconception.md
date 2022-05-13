@@ -13,9 +13,9 @@ weight = 10
 
 {{% info_2_columns_col2 %}}
 
-Ecoconcevoir un site web, par exemple, ça signifie prendre en compte ses impacts environnementaux à chaque étape de
-son cycle de vie : des spécifications, à la conception fonctionnelle et graphique, jusqu’à l’utilisation finale, en
-passant par le développement et la maintenance. C’est donc une manière de penser (et de travailler !) à part entière.
+Ecoconcevoir un site web, par exemple, ça signifie prendre en compte ses impacts environnementaux à chaque étape de son
+cycle de vie : des spécifications, à la conception fonctionnelle et graphique, jusqu’à l’utilisation finale, en passant
+par le développement et la maintenance. C’est donc une manière de penser (et de travailler !) à part entière.
 
 L’éco&shy;conception a vocation à remettre en question tous les corps de métier du numérique, pour le meilleur, car en
 plus de son impact positif sur l’environnement, elle permet d’améliorer l’efficience d’un service numérique. Pour vous

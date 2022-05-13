@@ -13,7 +13,6 @@ weight = 40
 
 {{% info_2_columns_col2 %}}
 
-
 ### EXTENSIONS | EcoIndex et Ecometer dans la poche
 
 EcoIndex et Ecometer sont unis dans une même extension ! Sur Chrome et Firefox, vous pouvez tester la performance et

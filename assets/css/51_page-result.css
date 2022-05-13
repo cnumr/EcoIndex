@@ -1,8 +1,6 @@
-
 /* 
  * RESULT PAGE SPECIFIC STYLES 
  */
-
 
 .result-badge {
 	font-size: var(--s2);
@@ -156,4 +154,3 @@
 	content: attr(data-unit);
 	padding-left: 0.4em;
 }
-

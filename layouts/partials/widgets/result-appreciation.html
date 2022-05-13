@@ -9,9 +9,9 @@
 				<p class="font-size:1">Score : <span><span data-int="score">0</span> / 100</span></p>
 				<hr class="small" />
 				<div class="info-collapse">
-					{{ partial "components/collapse" (dict 
+					{{ partial "components/collapse" (dict
 						"context" .
-						"label" "Que veut dire mon score" 
+						"label" "Que veut dire mon score"
 						"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la complexité, et le nombre de requêtes de la page."
 						"moreHref" "/comment-ca-marche"
 						"moreLabel" "Comment ça marche"
@@ -21,7 +21,7 @@
 			<div class="info_2_columns_col2 stack-l center-l --s3">
 				<div class="result-notation-header ">
 					<div class="result-notation-message">
-						{{/*  TODO: dynamic result from page  */}}
+						{{/* TODO: dynamic result from page  */}}
 						<p data-int="grade_message"></p>
 					</div>
 				</div>
@@ -89,7 +89,7 @@
 						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
 					</li>
 				</ul>
-				{{/*  TODO: On click go to detail section  */}}
+				{{/* TODO: On click go to detail section  */}}
 				<div>
 					<a class="content-link" href="#détails-du-score">
 						{{ i18n `SeeScoreDetails` }}

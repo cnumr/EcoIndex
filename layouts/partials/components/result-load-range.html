@@ -1,40 +1,42 @@
-{{/* 
-   * Component for showing loading score details 
-   * Example :
-   *	{{ partial "components/result-load-range" (dict
-   *		"title" "Poids de la page"
-   *		"icon" "weight"
-   *		"verdict" "Trop lourde"
-   *		"rangeValue" "2,67"
-   *		"rangeValueMin" "0"
-   *		"rangeValueMax" "5"
-   *		"rangeValueTarget" "0.9"
-   *		"units" "Mo"
-   *		"unitsLegend" "mégaoctet (Mo)"
-   *	)}}
-   */}}
+{{/* Component for showing loading score details
+	* Example :
+	* 	partial "components/result-load-range" (dict
+	* 		"title" "Poids de la page"
+	* 		"icon" "weight"
+	* 		"verdict" "Trop lourde"
+	* 		"rangeValue" "2,67"
+	* 		"rangeValueMin" "0"
+	* 		"rangeValueMax" "5"
+	* 		"rangeValueTarget" "0.9"
+	* 		"units" "Mo"
+	* 		"unitsLegend" "mégaoctet (Mo)")
+*/}}
 
 {{ $seed := .label }}
 {{ $randomId := slicestr (delimit (shuffle (split (md5 $seed) "" )) "") 0 6 }}
 {{ $rangeMedian := (div (add (float .rangeValueMin) (float .rangeValueMax)) 2) }}
-{{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100}}
+{{ $rangeMedianRounded := div (math.Round (mul $rangeMedian 100)) 100 }}
+
 
 <div class="result-load-range js-rlr">
 	{{ if .verdict }}
-		<div class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge" data-int-attr="{{ .dataValueKey }}_binary_score" >
+		<div class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge" data-int-attr="{{ .dataValueKey }}_binary_score">
 			<span data-int="{{ .dataValueKey }}_verdict"></span>
 		</div>
 	{{ end }}
 
+
 	<label id="rlr-label-{{ $randomId }}" class="rlr-label bold font-size:1">
-		{{ with .icon }}<span class="svg-inline">{{ partial "svg/inline-svg-use" (printf "%s%s" "icon-" . ) }}</span>{{ end }}
+		{{ with .icon }}
+			<span class="svg-inline">{{ partial "svg/inline-svg-use" (printf "%s%s" "icon-" . ) }}</span>
+		{{ end }}
 		{{ .title | markdownify }}
 	</label>
 	<div class="rlr-slider-wrapper">
 		<div class="rlr-slider js-rlr-slider">
 			<div class="rlr-track"></div>
-			{{/*  TODO: interactive  */}}
-			{{/*  TODO: from where do we take min and max ? */}}
+			{{/* TODO: interactive */}}
+			{{/* TODO: from where do we take min and max ? */}}
 			<div
 				class="rlr-slider-handle js-rlr-slider-handle"
 				role="slider"
@@ -46,15 +48,17 @@
 				aria-valuenow=""
 				aria-valuetext=""
 			>
-				<span class="rlr-handle-value rlr-badge" data-int-attr="{{ .dataValueKey }}_binary_score"><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span>
+				<span class="rlr-handle-value rlr-badge" data-int-attr="{{ .dataValueKey }}_binary_score"
+					><span>{{ .rangeValue | markdownify }} {{ .units }}</span></span
+				>
 				<div class="rlr-handle-tip"></div>
 			</div>
 			<div class="rlr-slider-handle-target js-rlr-slider-handle-target" data-value="{{ .rangeValueTarget }}"></div>
 		</div>
 		<div class="rlr-slider-labels">
-			{{/*  TODO: add to dictionary  */}}
+			{{/* TODO: add to dictionary */}}
 			<span>min</span>
-			{{/*  TODO: get medium from api ? */}}
+			{{/* TODO: get medium from api ? */}}
 			<span>mediane: {{ $rangeMedianRounded }}</span>
 			<span>max</span>
 		</div>

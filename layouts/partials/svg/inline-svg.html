@@ -1,8 +1,9 @@
-{{/*
- * Print svg inline from ./assets/svg folder by passing file name
- * @exampe : {{ partial "inline-svg" "svg-filenmae"}}
+{{/* Print svg inline from ./assets/svg folder by passing file name
+	* Example:
+	* 	partial "inline-svg" "svg-filenmae"
 */}}
+
 {{ $svg := resources.Get (print "svg/" . ".svg") }}
 <div aria-hidden="true">
-    <span class="inline-svg" >{{ $svg.Content | safeHTML }}</span>
+	<span class="inline-svg">{{ $svg.Content | safeHTML }}</span>
 </div>

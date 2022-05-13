@@ -22,7 +22,8 @@ mises en oeuvre pour changer le cours des choses.
   allonger leur durée de vie – les APIs sont des interfaces de programmation qui servent notamment à échanger des
   données entre l’objet connecté et les serveurs du fabricant ou de ses partenaires.
 - **Réduire le nombre d’écrans plats** en les remplaçant par d’autres dispositifs d’affichage : lunettes de réalité
-  virtuelle, vidéo projecteurs LED et surtout de bons livres et des soirées entre amis ou en famille loin des écrans ;-).
+  virtuelle, vidéo projecteurs LED et surtout de bons livres et des soirées entre amis ou en famille loin des écrans
+  ;-).
 - **Augmenter la durée de vie des équipements** en allongeant la durée de garantie légale, en favorisant le réemploi, et
   en luttant contre certains modèles économiques (opérateurs téléphoniques notamment).
 

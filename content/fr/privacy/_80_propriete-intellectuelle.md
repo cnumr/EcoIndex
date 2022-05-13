@@ -22,7 +22,8 @@ peut l’utiliser, à condition de citer la source des chiffres obtenus – EcoI
 [http://ecoindex.fr](http://ecoindex.fr). Il n’est pas possible d’en faire un usage commercial ni de le modifier.
 
 Cependant, vous pouvez proposer vos modifications à GreenIt et au Collectif Conception Numérique Responsable pour
-contribuer au savoir-faire commun et l’enrichir. Vous pouvez trouvez les sources et contribuer sur [Github](https://github.com/cnumr/EcoIndex)
+contribuer au savoir-faire commun et l’enrichir. Vous pouvez trouvez les sources et contribuer sur
+[Github](https://github.com/cnumr/EcoIndex)
 
 Tous les autres droits de propriété intellectuelle sont réservés.
 

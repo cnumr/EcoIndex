@@ -1,17 +1,14 @@
-
-{{/*
-   * Content inline select styled component
-   * Example : 
-   * {{ partial "components/select-inline-custom" (slice "first" "second" "third")}}     
-   *     
-   */}}
+{{/* Content inline select styled component
+	* Example :
+	* 	partial "components/select-inline-custom" (slice "first" "second" "third")
+*/}}
 
 {{ $default :=  first 1 . }}
 {{ $options :=  . }}
 <span class="select-inline-custom">
-    <select>
-        {{range $options}}
-            <option>{{.}}</option>
-        {{end}}
-    </select>    
+	<select>
+		{{ range $options }}
+			<option>{{ . }}</option>
+		{{ end }}
+	</select>
 </span>

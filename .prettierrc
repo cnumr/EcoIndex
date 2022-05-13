@@ -2,6 +2,7 @@
 	"printWidth": 120,
 	"singleQuote": false,
 	"useTabs": true,
+	"tabWidth": 2,
 	"quoteProps": "as-needed",
 	"trailingComma": "es5",
 	"proseWrap": "always",
@@ -9,7 +10,15 @@
 		{
 			"files": "*.html",
 			"options": {
-				"parser": "go-template"
+				"parser": "go-template",
+				"goTemplateBracketSpacing": true,
+				"bracketSameLine": true
+			}
+		},
+		{
+			"files": ["*.js", "*.ts"],
+			"options": {
+				"useTabs": true
 			}
 		}
 	]

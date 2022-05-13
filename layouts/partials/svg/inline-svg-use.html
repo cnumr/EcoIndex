@@ -1,6 +1,7 @@
-{{/*
- * Add use svg reference from a symbol already in html
- * @example : {{ partial "inline-svg-use" "my-svg-id"}}
- * @note Need to import svg as symbol in html before (inline-svg.html)
-*/}}
-<svg aria-hidden="true"><use xlink:href="#{{ . | safeHTML }}"/></svg> 
+{{/* Add use svg reference from a symbol already in html
+	* Example:
+	* 	partial "inline-svg-use" "my-svg-id"
+	* Note:
+	* 	Need to import svg as symbol in html before (inline-svg.html)
+	*/
+-}}<svg aria-hidden="true"><use xlink:href="#{{ . | safeHTML }}" /></svg>
