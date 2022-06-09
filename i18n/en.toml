@@ -20,7 +20,13 @@
 	other = "Loading"
 [NotAvailable]
 	other = "Not available"
+[ScoreDetails]
+	other = "Score details"
+[AboutScoreDetails]
+	other = "Your score details show your page score, median, and target to aim for."
 [SeeScoreDetails]
 	other = "See score details"
 [PageRank]
 	other = "Page rank:"
+[EnvironmentalFootprint]
+	other = "Environmental footprint"
