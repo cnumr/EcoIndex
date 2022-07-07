@@ -18,6 +18,8 @@
 	other = "Share"
 [Loading]
 	other = "Loading"
+[AnalysisInProgressFor]
+	other = "Analysis in progress for"
 [NotAvailable]
 	other = "Not available"
 [ScoreDetails]

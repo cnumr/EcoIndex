@@ -1,5 +1,6 @@
 import ResultRangeSlider from "./ResultRangeSlider";
 import getUrlHostName from "../helpers/getUrlHostName";
+import { RESULTS_LOCAL_STORAGE_KEY } from "./SiteAnalysis";
 
 // FIXME : temp data for result title
 const RESULT_TITLE_DATA = {
@@ -66,7 +67,9 @@ class SiteAnalysisResult {
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
-			pageResultData = await this._fetchApiResult(pageId, this.apiKey);
+
+			//pageResultData = await this._fetchApiResult(pageId, this.apiKey);
+			pageResultData = await this._getResultFrom(pageId);
 		} else {
 			// TODO: redirect to error page ?
 			return console.warn("No url params found for page, no data to show");
@@ -166,6 +169,42 @@ class SiteAnalysisResult {
 			const camelCaseDataAttr = camelize(dataAttr);
 			const updatedCaseAttr = camelCaseDataAttr.charAt(0).toUpperCase() + camelCaseDataAttr.slice(1);
 			dataIntEl.dataset["int" + updatedCaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
+		});
+	}
+
+	/**
+	 * Get result data from page id with cache (if exists) or fetch from api
+	 * @param {string} pageId
+	 * @returns Result data
+	 */
+	async _getResultFrom(pageId) {
+		// get result in local storage if exists from page id (if not, fetch from api)
+		let result = await this._getResultFromLocalStorage(pageId);
+		if (!result) {
+			result = await this._fetchApiResult(pageId, this.apiKey);
+		}
+		return result;
+	}
+
+	/**
+	 * Get result from local storage wuth page id
+	 * @param {string} pageId
+	 * @returns
+	 */
+	async _getResultFromLocalStorage(pageId) {
+		return new Promise((resolve, reject) => {
+			// get results list from local storage RESULTS_LOCAL_STORAGE_KEY
+			const results = localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY);
+			if (!results) return reject("No results found in local storage");
+			const resultsList = JSON.parse(results);
+			// find result from results list with id
+			const result = resultsList.find((result) => result.id === pageId);
+
+			if (result) {
+				resolve(result);
+			} else {
+				reject("No result found in local storage");
+			}
 		});
 	}
 
