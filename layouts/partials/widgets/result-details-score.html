@@ -3,10 +3,8 @@
 		<div>
 			{{/* Left column section title & collapse */}}
 			<div class="info_2_columns_col1 stack-l">
-				<h2 id="détails-du-score">Détails du score</h2>
-				<p class="font-size:1">
-					Les détails de votre score indiquent la score de votre page, la médiane, et la cible vers laquelle tendre.
-				</p>
+				<h2 id="score-details">{{ i18n `ScoreDetails` }}</h2>
+				<p class="font-size:1">{{ i18n `AboutScoreDetails` }}</p>
 				<hr class="small" />
 				<div class="info-collapse">
 					{{ partial "components/collapse" (dict

@@ -1,5 +1,7 @@
 [EcoIndexFormIntro]
 	other = "Entrez l’adresse d’une page web pour le découvrir !"
+[EcoIndexFormPlaceholder]
+	other = "https://exemple.org"
 [EcoIndexFormSubmitText]
 	other = "Tester le site"
 [GoToResults]
@@ -18,7 +20,13 @@
 	other = "Chargement"
 [NotAvailable]
 	other = "Non disponible"
+[ScoreDetails]
+	other = "Détails du score"
+[AboutScoreDetails]
+	other = "Les détails de votre score indiquent le score de votre page, la médiane, et la cible vers laquelle tendre."
 [SeeScoreDetails]
 	other = "Voir les détails du score"
 [PageRank]
 	other = "Classement de la page :"
+[EnvironmentalFootprint]
+	other = "Empreinte environnementale"
