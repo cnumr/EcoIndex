@@ -39,7 +39,7 @@ weight = 60
 - Utilisez des polices standards plutôt que des polices custom
 - Regroupez les images dans un sprite
 - Regroupez certaines feuilles de styles (CSS) et bibliothèques Javascript (JS).
-- Préférez les pages statiques" {{</highlight_info_card>}}
+- Préférez les pages statiques {{</highlight_info_card>}}
 
 {{% /info_2_columns_col2 %}}
 
