@@ -14,7 +14,7 @@ weight = 30
 {{% info_2_columns_col2 %}}
 
 Pour obtenir des informations à ce sujet, veuillez consulter notre page relatives aux conditions d’utilisation et
-données personnelles [lien vers la page](/confidentialite/)
+données personnelles [Politique de confidentialité](/confidentialite/)
 
 {{% /info_2_columns_col2 %}}
 
