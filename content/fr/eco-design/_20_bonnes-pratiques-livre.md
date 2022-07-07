@@ -20,6 +20,7 @@ l’exploitation en passant par la réalisation (vous pourrez d’ailleurs les r
 clé : une empreinte ressources divisée au minimum par deux !
 
 - Le livre : [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/)
+- Les bonnes pratiques en ligne : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
 - La liste des
   [bonnes pratiques en français (V4) : Checklist des bonnes pratiques](https://collectif.greenit.fr/ecoconception-web/)
 - La liste des [bonnes pratiques en anglais (V3) : Ecometer best practices](http://www.ecometer.org/rules/)
