@@ -28,7 +28,7 @@ Eau
 </h3> 
 <p>
 L'empreinte eau de la page est exprimée en centilitres d’eau bleue (cl).
-L'empreinte en eau témoigne de la consommation d'eau nécessaire à l'affichage de cette page. La phase d'extraction des métaux nécessaires à la fabrication des équipements requiert une grande quantité d'eau.
+L'empreinte en eau témoigne de la consommation d'eau nécessaire à l'affichage de cette page. La phase d'extraction et de raffinage des métaux nécessaires à la fabrication des équipements requiert une grande quantité d'eau.
 </p>
 <p>
 Ces valeurs sont calculées à partir des émissions d'une page moyenne et modulées en fonction de l'Ecolndex de la page analysée.
