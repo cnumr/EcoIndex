@@ -66,18 +66,61 @@ function initPageResult() {
 function initPageAnalysis() {
 	const analysisPageContentEl = document.querySelector(".js-analysis-container");
 	if (!analysisPageContentEl) return;
-	new SiteAnalysis({ el: analysisPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+	new SiteAnalysis({ loaderContainer: analysisPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
 }
 
 // ------------------------------------------------------------------------- HOME SUBMIT URL FORM
 
 function initSubmitUrlForm() {
 	const submitSiteForm = document.querySelector(".js-analysis-submit-form");
-	if (!submitSiteForm) return;
+	const loadingOverlayContainer = document.querySelector(".js-loading-overlay");
+
+	if (!submitSiteForm || !loadingOverlayContainer) return;
+	// TODO: add to separate file
 	submitSiteForm.addEventListener("submit", function (e) {
 		e.preventDefault();
-		const url = e.target.querySelector("input[name='siteurl']").value;
+		let url = e.target.querySelector("input[name='siteurl']").value;
+
+		const domainNameRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/;
+
+		// check if is only domain name create url
+		if (!url.match(/^(http|https):\/\//) && domainNameRegex.test(url)) {
+			url = `https://${url}`;
+		}
+
+		// check if is valid url
+		if (!isValidHttpUrl(url)) {
+			alert("Please enter a valid url");
+			return;
+		}
+
+		// check if url is valid
+		// if (!url || !url.match(/^(http|https):\/\//)) {
+		// 	alert("Please enter a valid url");
+		// 	return;
+		// }
+
+		new SiteAnalysis({
+			analysisUrl: url,
+			loadingContainer: loadingOverlayContainer,
+			apiUrl: API_BASE_URL,
+			apiKey: API_KEY,
+		});
+
 		// TODO: get url relative to language
-		window.location = `${window.location.origin}/chargement/?url=${url}`;
+		//window.location = `${window.location.origin}/chargement/?url=${url}`;
 	});
+}
+
+// TODO: add to helpers
+function isValidHttpUrl(string) {
+	let url;
+
+	try {
+		url = new URL(string);
+	} catch (_) {
+		return false;
+	}
+
+	return url.protocol === "http:" || url.protocol === "https:";
 }
