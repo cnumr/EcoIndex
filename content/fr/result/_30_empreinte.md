@@ -27,6 +27,7 @@ L'empreinte GES de la page est exprimée en gramme équivalent CO2 (g eCO2).
 Eau
 </h3> 
 <p>
+L'empreinte eau de la page est exprimée en centilitres d’eau bleue (cl).
 L'empreinte en eau témoigne de la consommation d'eau nécessaire à l'affichage de cette page. La phase d'extraction des métaux nécessaires à la fabrication des équipements requiert une grande quantité d'eau.
 </p>
 <p>
