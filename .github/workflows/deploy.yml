@@ -1,0 +1,27 @@
+name: Deploy rsync
+
+on:
+  push:
+    branches:
+      - master
+      - feat/github-action-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v2
+      - name: ✨ Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.91.2"
+      - name: 🛠️ Build
+        run: hugo --minify
+      - name: 🔑 Install SSH Key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: 🚀 Deploy
+        run: rsync -rpzv -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' 'website/public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}
