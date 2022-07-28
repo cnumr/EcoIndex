@@ -16,6 +16,8 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.91.2"
+      - name: ✨ Setup NPM
+        uses: bahmutov/npm-install@v1
       - name: 🛠️ Build
         run: hugo --minify
       - name: 🔑 Install SSH Key
