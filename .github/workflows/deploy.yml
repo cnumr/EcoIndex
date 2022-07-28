@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feat/github-action-deploy
 
 jobs:
   deploy:
