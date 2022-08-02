@@ -35,6 +35,7 @@ Voici, pour commencer, quelques bonnes pratiques à mettre en application !
   fonctionnement sur mobile.
 - **Evitez les mécanismes comme l’infinite scroll.** Préférez une action de l’utilisateur pour afficher plus
   d’informations.
+- **Evitez les animations JavaScripts coûteuses, comme les carrousels.** Préférez une mise à jour régulière du contenu.
 
 ### Limiter le nombre de requêtes
 
