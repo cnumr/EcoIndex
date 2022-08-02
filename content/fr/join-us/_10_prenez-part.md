@@ -20,11 +20,14 @@ la low tech, etc. nous vous proposons de nous retrouver sur :
 - [Facebook](https://www.facebook.com/greenitfr)
 
 Pour l’éco&shy;conception et la conception responsable de service numérique, préférez le groupe de discussion dédié ici
-: [Ecoconception web](https://groups.google.com/forum/#%21forum/ecoconceptionweb). Vous pouvez vous y inscrire en
+: 
+- [Ecoconception web](https://groups.google.com/forum/#%21forum/ecoconceptionweb). Vous pouvez vous y inscrire en
 envoyant un mail vide à ecoconceptionweb+subscribe@googlegroups.com.
+-  [Slack Cnumr](https://cnumr.slack.com/)
 
 Nous vous proposons en plus une liste de discussion généraliste, dédiée à ces sujets : greenit@simplelists.com. Elle
-vous permet de poser des questions et d’échanger sur tous les sujets du numérique responsable.
+vous permet de poser des questions et d’échanger sur tous les sujets du numérique responsable. 
+Vous pouvez vous y inscrire ici : [Echanger avec le collectif](https://www.greenit.fr/echanger/)
 
 {{% /info_2_columns_col2 %}}
 
