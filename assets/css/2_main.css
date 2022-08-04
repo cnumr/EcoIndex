@@ -284,7 +284,6 @@ footer > * {
 .hero h1:not(.h2) {
 	font-size: var(--s5);
 	padding-top: calc(2 * var(--s5));
-	padding-right: 30%;
 }
 
 @media (max-width: 60rem) {
