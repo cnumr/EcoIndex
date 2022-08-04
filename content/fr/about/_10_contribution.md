@@ -25,13 +25,13 @@ weight = 10
   - [Romain Dulieu](https://www.linkedin.com/in/romain-dulieu-53a354120/)
   - [Vincent Vatelot](https://www.linkedin.com/in/vincent-vatelot-7a31149/)
   - [Bastien Cornier](https://www.linkedin.com/in/bastiencornier/)
+  - [Julien Wilhelm](https://www.linkedin.com/in/julien-wilhelm/)
 
 Nous remercions également :
 
 - [Jade Vincent](https://www.linkedin.com/in/jadevincent/)
 - [Richard Hanna](https://www.linkedin.com/in/%F0%9F%8C%B1-richard-hanna-76a18115/)
 - [Ninda Sitthiso](https://www.linkedin.com/in/ninda-lejeune-sitthiso-76545817/)
-- [Julien Wilhelm](https://www.linkedin.com/in/julien-wilhelm/)
 - [Raphaël Lemaire](https://www.linkedin.com/in/rapha%C3%ABl-lemaire-71b99910/)
 - [Lise Breteau](https://www.linkedin.com/in/lisebreteau/)
 - [Alexandre Patti](https://www.linkedin.com/in/alexandre-patti/)

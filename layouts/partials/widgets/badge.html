@@ -2,6 +2,6 @@
 	<section class="stack-l">
 		<h2>{{- .Title -}}</h2>
 		<h3>{{- .Params.content.subtitle -}}</h3>
-		<div>{{ .Content }}</div>
+		<div>{{ partial "content.html" .Content }}</div>
 	</section>
 </div>

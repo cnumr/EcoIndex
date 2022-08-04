@@ -13,9 +13,9 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Le poids d’une page web a été multiplié par 115 entre 1995 et 2015 et n’a pas cessé d’augmenter depuis !
+Le poids d’une page web a été multiplié par 155 entre 1995 et 2022 et augmente sans cesse depuis !
 
-[**En savoir plus sur l’empreinte environnementale du numérique**](https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/)
+[**En savoir plus sur l’empreinte environnementale du numérique**](https://www.greenit.fr/le-numerique-en-europe-une-approche-des-impacts-environnementaux-par-lanalyse-du-cycle-de-vie/)
 
 {{% /info_2_columns_col2 %}}
 
