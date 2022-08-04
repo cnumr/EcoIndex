@@ -9,7 +9,7 @@ weight = 20
 
 ## Ce projet vous intéresse ?
 
-Vous pouvez y contribuer
+Vous pouvez y contribuer.
 
 {{% /info_2_columns_col1 %}}
 
