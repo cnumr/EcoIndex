@@ -4,4 +4,7 @@ gitlab.com/goodimpact/every-layout-wc v0.0.0-20210715225714-a9629e5e8f4a h1:gMph
 gitlab.com/goodimpact/every-layout-wc v0.0.0-20210715225714-a9629e5e8f4a/go.mod h1:JI47MJnTDNgIXwh0bRHdTtRW44zurYCeiOE3GVExCz4=
 gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20220503140939-50508b12df3d h1:8Du32BF7Ek0Q+7YpZZsYrnJ9e8SRI0vKDzofccxLdlY=
 gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20220503140939-50508b12df3d/go.mod h1:hqrIWyekXmzgZhMpZ24BA8k5RMuxdxCjmBp+YIqMK9k=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20220804090535-c17f15144056 h1:FCT0GTDZPOTvBYxatjgjbEmtWUWx9aMSsQt1ajxM4eQ=
+gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure v0.0.0-20220804090535-c17f15144056/go.mod h1:HpulOjqbz2NfLYhZgerYmLrPo/bacUEnecFeBE+nKlI=
+gitlab.com/neotericdesign-tools/hugo-content-module-style-guides.git v0.0.0-20200513165827-e43fa80f0593 h1:wEtKbagCP4B6/xs8K+bQSI2r7Z6fIMEr2VApOgUqUXE=
 gitlab.com/neotericdesign-tools/hugo-content-module-style-guides.git v0.0.0-20200513165827-e43fa80f0593/go.mod h1:p+A5GOjgLL7ajjbNwmRajJEhZ0ccEq+zLJAPkql0qs8=
