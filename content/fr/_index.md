@@ -2,6 +2,7 @@
 title = "Testez un site"
 layout = "single"
 decoType = "home"
+has_loader_layout = true
 
 [menu]
 	[menu.main]

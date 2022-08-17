@@ -1,6 +1,6 @@
-import getUrlHostName from "../helpers/getUrlHostName";
-
-export const RESULTS_LOCAL_STORAGE_KEY = "analysisResults";
+import { getUrlHostName } from "../helpers/urlUtils";
+import resultCacheService from "../services/resultCacheService";
+import loaderLayoutService from "../services/loaderLayoutService";
 
 /**
  * Create a new site analysis
@@ -34,9 +34,8 @@ class SiteAnalysis {
 		}
 
 		// Fill dom with url
-		this.loadingContainer.querySelector("[data-int='url']").textContent = getUrlHostName(this.analysisUrl);
-
-		this.isLoaderVisible = true;
+		loaderLayoutService.url = this.analysisUrl;
+		loaderLayoutService.visible = true;
 
 		// Fetch api to analyze url and get result
 		const analysisResultData = await this._fetchPost(
@@ -45,7 +44,8 @@ class SiteAnalysis {
 			this.apiKey
 		);
 
-		this._registerResultLocalStorage(analysisResultData);
+		//this._registerResultLocalStorage(analysisResultData);
+		resultCacheService.add(analysisResultData);
 
 		this._redirectToResultPage(analysisResultData.id);
 	}
@@ -93,32 +93,12 @@ class SiteAnalysis {
 			// TODO: redirect to error page
 
 			// redirect to error page with response status
-			window.location = `${window.location.origin}/erreur/?status=${response.status}`;
+			//window.location = `${window.location.origin}/erreur/?status=${response.status}`;
 
 			throw new Error(message);
 		}
 
 		return await response.json();
-	}
-
-	// TODO: make result cache service
-	_registerResultLocalStorage(analysisResultData) {
-		// get item analysisResults from localStorage
-		const analysisResults = JSON.parse(localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY));
-		if (!analysisResults) {
-			// if no item analysisResults in localStorage, create it
-			localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, JSON.stringify([analysisResultData]));
-		} else {
-			// if item analysisResults in localStorage, add new analysisResultData to it
-			// check if analysisResultData already exist in localStorage with id
-			const analysisResultDataExist = analysisResults.find((analysisResult) => {
-				return analysisResult.id === analysisResultData.id;
-			});
-			if (!analysisResultDataExist) {
-				analysisResults.push(analysisResultData);
-				localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, JSON.stringify(analysisResults));
-			}
-		}
 	}
 
 	set isLoaderVisible(value) {
