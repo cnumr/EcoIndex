@@ -1,34 +1,24 @@
 import ResultRangeSlider from "./ResultRangeSlider";
-import getUrlHostName from "../helpers/getUrlHostName";
-import { RESULTS_LOCAL_STORAGE_KEY } from "./SiteAnalysis";
-
-// FIXME : temp data for result title
-const RESULT_TITLE_DATA = {
-	A: "Bravo !",
-	B: "Pas mal du tout !",
-	C: "Encore un effort !",
-	D: "Hum, pas top.",
-	E: "Hum, pas top.",
-	F: "Outch.",
-	G: "Outch.",
-};
+import resultCacheService from "../services/resultCacheService";
+import { getUrlHostName } from "../helpers/urlUtils";
 
 import { clamp, getPercentFromRange } from "../helpers/mathUtils";
 import { camelize } from "../helpers/stringUtils";
+import loaderLayoutService from "../services/loaderLayoutService";
+
+/**
+ * @typedef ResultRelativeTextData
+ * @type {object}
+ * @property {Object.<string, string>} verdictTitles - Verdict titles relative to grade
+ * @property {Object.<string, string>} verdictMessages - Verdict messages relative to grade
+ * @property {Array.<Array.<string>>} verdictParameters - Verdict parameters relative to good/bad score
+ */
 
 /**
  * Creates a new Site analysis result for interactive dom content
  * @class
  */
 class SiteAnalysisResult {
-	/**
-	 * @typedef ResultRelativeTextData
-	 * @type {object}
-	 * @property {Object.<string, string>} verdictTitles - Verdict titles relative to grade
-	 * @property {Object.<string, string>} verdictMessages - Verdict messages relative to grade
-	 * @property {Array.<Array.<string>>} verdictParameters - Verdict parameters relative to good/bad score
-	 */
-
 	/**
 	 * Create a site analysis result page with updated dom from api data
 	 * @param {Object} params
@@ -102,6 +92,8 @@ class SiteAnalysisResult {
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultFromSelect(pageResultData);
 		this._updatetResultRangeSliders(pageResultData);
+
+		loaderLayoutService.visible = false;
 	}
 
 	// TODO: add inside data with results method (unique)
@@ -179,33 +171,15 @@ class SiteAnalysisResult {
 	 */
 	async _getResultFrom(pageId) {
 		// get result in local storage if exists from page id (if not, fetch from api)
-		let result = await this._getResultFromLocalStorage(pageId);
+		let result = resultCacheService.get(pageId);
 		if (!result) {
+			// when no result in cache, fetch from api, save in cache and show loader
+			loaderLayoutService.url = pageId;
+			loaderLayoutService.visible = true;
 			result = await this._fetchApiResult(pageId, this.apiKey);
+			resultCacheService.add(result);
 		}
 		return result;
-	}
-
-	/**
-	 * Get result from local storage wuth page id
-	 * @param {string} pageId
-	 * @returns
-	 */
-	async _getResultFromLocalStorage(pageId) {
-		return new Promise((resolve, reject) => {
-			// get results list from local storage RESULTS_LOCAL_STORAGE_KEY
-			const results = localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY);
-			if (!results) return reject("No results found in local storage");
-			const resultsList = JSON.parse(results);
-			// find result from results list with id
-			const result = resultsList.find((result) => result.id === pageId);
-
-			if (result) {
-				resolve(result);
-			} else {
-				reject("No result found in local storage");
-			}
-		});
 	}
 
 	/**

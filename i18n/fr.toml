@@ -19,7 +19,7 @@
 [Loading]
 	other = "Chargement"
 [AnalysisInProgressFor]
-	other = "L’analyse est en cours pour"
+	other = "L’analyse est en cours <br/> pour"
 [NotAvailable]
 	other = "Non disponible"
 [ScoreDetails]

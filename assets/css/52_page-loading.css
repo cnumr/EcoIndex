@@ -8,6 +8,7 @@
 	z-index: 999;
 	opacity: 1;
 	visibility: hidden;
+	transform: translateX(999%);
 	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 	background-color: var(--color-primary);
 	color: var(--color-light);
@@ -16,6 +17,7 @@
 .page-loading-content-container,
 .page-loading-content-section {
 	min-height: 60vh;
+	height: 100%;
 }
 
 .page-loading-content-section {
