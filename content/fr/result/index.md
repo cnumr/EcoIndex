@@ -2,6 +2,7 @@
 title = "Résultat"
 slug = "resultat"
 custom_class = "js-result-container"
+has_loader_layout = true
 +++
 
 {{< widgets zone="first" type="intro" >}}

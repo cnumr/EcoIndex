@@ -3,6 +3,7 @@ draft = true
 title = "Test a website"
 layout = "single"
 decoType = "home"
+has_loader_layout = true
 
 [menu]
 	[menu.main]
