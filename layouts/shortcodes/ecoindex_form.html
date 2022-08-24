@@ -1,6 +1,6 @@
 <div class="with-sidebar-l --right-side --p75">
 	<form action="{{- ($.Page.GetPage `/loading`).RelPermalink -}}" method="post" class="js-analysis-submit-form">
 		<input type="text" name="siteurl" placeholder="{{ i18n `EcoIndexFormPlaceholder` }}" size="40" required />
-		<input type="submit" value="{{ i18n `EcoIndexFormSubmitText` }}" />
+		<div><input type="submit" value="{{ i18n `EcoIndexFormSubmitText` }}" /></div>
 	</form>
 </div>

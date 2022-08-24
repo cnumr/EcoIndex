@@ -1,4 +1,5 @@
 import Collapse from "./components/Collapse";
+import A11yDialog from "a11y-dialog";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
 import SiteAnalysis from "./components/SiteAnalysis";
 
@@ -14,6 +15,7 @@ const API_KEY = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 function initApp() {
 	initMenu();
 	initCollapses();
+	initDialog();
 	initPageResult();
 	initPageAnalysis();
 	initSubmitUrlForm();
@@ -45,6 +47,25 @@ function initMenu() {
 function initCollapses() {
 	const collapseElements = document.querySelectorAll(".js-collapse");
 	collapseElements.forEach((collapseElement) => new Collapse(collapseElement));
+}
+
+// ------------------------------------------------------------------------- DIALOG TODO
+
+/**
+ * TODO
+ */
+function initDialog() {
+	const dialogEl = document.getElementById("analysis-dialog");
+	if (!dialogEl) return;
+
+	const dialog = new A11yDialog(dialogEl);
+	const html = document.documentElement;
+
+	dialog
+		.on("show", function (dialogEl2, triggerEl) {
+			html.style.overflowY = "hidden";
+		})
+		.on("hide", () => (html.style.overflowY = ""));
 }
 
 // ------------------------------------------------------------------------- RESULT PAGE
