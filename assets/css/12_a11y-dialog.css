@@ -5,7 +5,6 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 2;
 }
 
 .dialog-container[aria-hidden="true"] {
@@ -25,7 +24,6 @@
 .dialog-content {
 	background-color: var(--color-primary);
 	margin: auto;
-	z-index: 2;
 	position: relative;
 	animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
 	max-width: calc(100% - 2 * var(--s1));
