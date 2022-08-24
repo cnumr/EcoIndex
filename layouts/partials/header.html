@@ -34,8 +34,7 @@
 				role="navigation"
 				class="main-nav-container"
 				data-open="false"
-				aria-labelledby="main-nav-label"
-			>
+				aria-labelledby="main-nav-label">
 				<div>
 					<span id="main-nav-label" hidden>Navigation principale</span>
 					<div class="cluster-l">
@@ -65,4 +64,26 @@
 			</nav>
 		</div>
 	</header>
+</div>
+
+<div
+	class="dialog-container"
+	id="analysis-dialog"
+	aria-hidden="true"
+	aria-labelledby="analysis-dialog-title"
+	role="alertdialog">
+	<div class="dialog-overlay"></div>
+	<div class="dialog-content box-l --s2p0" role="document">
+		<div class="center-l box-l --s2p0">
+			<section class="stack-l">
+				<div>
+					<div class="page-loading-spinner"><span class="vh">{{ i18n `Loading` }}…</span></div>
+				</div>
+				<h1 id="analysis-dialog-title" class="h1 text-align:center">
+					{{ i18n `AnalysisInProgressFor` }}
+					{{ partial "components/result-url" }}
+				</h1>
+			</section>
+		</div>
+	</div>
 </div>

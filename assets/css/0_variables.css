@@ -15,6 +15,8 @@
 	--color-focus-dark: hsl(165, 100%, 40%);
 	--color-focus-light: hsl(165, 100%, 80%);
 
+	--color-overlay-bg: rgba(43, 46, 56, 0.9);
+
 	/* Specific colors */
 	--color-yellow: #f5c548;
 	--color-light-yellow: #f7edc0;
