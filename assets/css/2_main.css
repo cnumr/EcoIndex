@@ -97,22 +97,22 @@ noscript {
 
 /* Forms */
 
-input {
+input,
+button {
 	padding: var(--s1);
 	border-width: 0;
 	border-radius: var(--border-radius-small);
 }
 
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+button {
 	text-align: left;
 	cursor: pointer;
-}
-
-input[type="submit"] {
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	font-weight: var(--font-weight-bold);
+	width: fit-content;
 }
 
 input[type="text"] {
