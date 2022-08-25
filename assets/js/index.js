@@ -1,7 +1,9 @@
 import Collapse from "./components/Collapse";
 import A11yDialog from "a11y-dialog";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
+import SiteAnalysisFormSubmit from "./components/SiteAnalysisFormSubmit";
 import SiteAnalysis from "./components/SiteAnalysis";
+import resultCacheService from "./services/resultCacheService";
 
 // TODO: import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
 
@@ -19,6 +21,7 @@ function initApp() {
 	initPageResult();
 	initPageAnalysis();
 	initSubmitUrlForm();
+	initButtonRemakeAnalysis();
 }
 
 // init app on dom loaded
@@ -79,15 +82,40 @@ function initPageResult() {
 	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
 }
 
+/**
+ * Remake analysis button
+ * Takes last analysis done and run an update to analysis
+ */
+function initButtonRemakeAnalysis() {
+	const buttonRemakeEl = document.querySelector(".js-button-retest");
+	const loadingOverlayContainer = document.querySelector(".js-loading-overlay");
+
+	if (!buttonRemakeEl || !loadingOverlayContainer) return;
+	buttonRemakeEl.addEventListener("click", (e) => {
+		e.preventDefault();
+		new SiteAnalysis({
+			analysisUrl: resultCacheService.getLast().url,
+			loadingContainer: loadingOverlayContainer,
+			apiUrl: API_BASE_URL,
+			apiKey: API_KEY,
+		});
+	});
+}
+
 // ------------------------------------------------------------------------- ANALYSIS PAGE
 
+//TODO: remove
 /**
  * Init page analysis post analysis url and get data for result page
  */
 function initPageAnalysis() {
 	const analysisPageContentEl = document.querySelector(".js-analysis-container");
 	if (!analysisPageContentEl) return;
-	new SiteAnalysis({ loaderContainer: analysisPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+	new SiteAnalysis({
+		loaderContainer: analysisPageContentEl,
+		apiUrl: API_BASE_URL,
+		apiKey: API_KEY,
+	});
 }
 
 // ------------------------------------------------------------------------- HOME SUBMIT URL FORM
@@ -97,51 +125,12 @@ function initSubmitUrlForm() {
 	const loadingOverlayContainer = document.querySelector(".js-loading-overlay");
 
 	if (!submitSiteForm || !loadingOverlayContainer) return;
-	// TODO: add to separate file
-	submitSiteForm.addEventListener("submit", function (e) {
-		e.preventDefault();
-		let url = e.target.querySelector("input[name='siteurl']").value;
-
-		const domainNameRegex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/;
-
-		// check if is only domain name create url
-		if (!url.match(/^(http|https):\/\//) && domainNameRegex.test(url)) {
-			url = `https://${url}`;
-		}
-
-		// check if is valid url
-		if (!isValidHttpUrl(url)) {
-			alert("Please enter a valid url");
-			return;
-		}
-
-		// check if url is valid
-		// if (!url || !url.match(/^(http|https):\/\//)) {
-		// 	alert("Please enter a valid url");
-		// 	return;
-		// }
-
+	new SiteAnalysisFormSubmit(submitSiteForm, (url) => {
 		new SiteAnalysis({
 			analysisUrl: url,
 			loadingContainer: loadingOverlayContainer,
 			apiUrl: API_BASE_URL,
 			apiKey: API_KEY,
 		});
-
-		// TODO: get url relative to language
-		//window.location = `${window.location.origin}/chargement/?url=${url}`;
 	});
-}
-
-// TODO: add to helpers
-function isValidHttpUrl(string) {
-	let url;
-
-	try {
-		url = new URL(string);
-	} catch (_) {
-		return false;
-	}
-
-	return url.protocol === "http:" || url.protocol === "https:";
 }
