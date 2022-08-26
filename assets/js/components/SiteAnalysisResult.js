@@ -61,7 +61,8 @@ class SiteAnalysisResult {
 			//pageResultData = await this._fetchApiResult(pageId, this.apiKey);
 			pageResultData = await this._getResultFrom(pageId);
 		} else {
-			// TODO: redirect to error page ?
+			// TODO: redirect to error page or show dialog ?
+			window.location = `${window.location.origin}/erreur/?status=404`;
 			return console.warn("No url params found for page, no data to show");
 		}
 

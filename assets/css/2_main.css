@@ -119,6 +119,14 @@ input[type="text"] {
 	background-color: var(--color-darkish);
 }
 
+form > .form-error {
+	color: #fff;
+	background-color: var(--color-pastel-red);
+	padding: var(--s0);
+	border-width: 0;
+	border-radius: var(--border-radius-small);
+}
+
 /* Shadow container */
 .shadow-container {
 	box-shadow: 0 10px 40px 10px rgba(0, 0, 0, 0.13);
