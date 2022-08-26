@@ -4,6 +4,8 @@
 	other = "https://example.org"
 [EcoIndexFormSubmitText]
 	other = "Test website"
+[EcoIndexFormInputInvalid]
+	other = "Url or domain name is not valid"	
 [GoToResults]
 	other = "Go to results"
 [AnalysisError]
