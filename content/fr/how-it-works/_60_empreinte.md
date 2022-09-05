@@ -19,8 +19,7 @@ weight = 60
 
 L’empreinte physique du site se caractérise, notamment, par la quantité de mémoire vive (RAM) et le nombre de cycles
 processeur (CPU) consommés par le processus navigateur affichant l’URL analysée. L’analyse de l’empreinte physique dans
-le temps – évolution de la consommation mémoire et charge CPU – permet d’identifier des corrélations et effets de seuil
-: blocage CPU, surconsommation mémoire, etc.
+le temps (évolution de la consommation mémoire et charge CPU) permet d’identifier des corrélations et effets de seuil : blocage CPU, surconsommation mémoire, etc.
 
 {{% /highlight %}}
 
@@ -31,7 +30,7 @@ consommation d’eau douce, issu de plusieurs modélisations réalisées par Gre
 CO2 et 3 cl. d’eau bleue par page web.** Le calcul de cette valeur est basé sur les résultats d’une ACV (analyse de
 cycle de vie) de bout en bout (du terminal au serveur) en cycle de vie complet (fabrication et utilisation) du calcul,
 transport et affichage d’une page web. Cette valeur moyenne est nuancée en fonction du niveau d’éco&shy;conception de la
-page testée — **cela signifie que, selon l’EcoIndex obtenu, nous sur-pondérons ou sous-pondérons les valeurs moyennes.**
+page testée, **cela signifie que, selon l’EcoIndex obtenu, nous sur-pondérons ou sous-pondérons les valeurs moyennes.**
 Ces résultats ont été vérifiés par des tiers et sont cohérents avec les résultats obtenus par d’autres modélisations
 totalement indépendantes. Dans cette première version, l’analyse s’entend depuis un **poste fixe avec une connexion
 ADSL.**
