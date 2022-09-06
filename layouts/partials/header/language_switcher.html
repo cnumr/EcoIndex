@@ -11,9 +11,18 @@
 	<nav role="navigation" class="language-switcher">
 		{{- range $i, $v := $availableTranslations -}}
 			{{- if eq .Language $.Language -}}
-				<span class="lang" aria-current="true">{{- .Language -}}</span>
+				<span lang="{{- .Language -}}" title="{{ i18n .Language }}" class="lang" aria-current="true"
+					><span aria-hidden="true">{{- .Language -}}</span></span
+				>
 			{{- else -}}
-				<a href="{{ .RelPermalink }}" hreflang="{{- .Language -}}" class="lang">{{- .Language -}}</a>
+				<a
+					lang="{{- .Language -}}"
+					title="{{ i18n (print `SwitchTo_` .Language) (i18n .Language) }}"
+					href="{{ .RelPermalink }}"
+					hreflang="{{- .Language -}}"
+					class="lang"
+					><span aria-hidden="true">{{- .Language -}}</span></a
+				>
 			{{- end -}}
 			{{- if gt (len $availableTranslations) (add $i 1) }}&nbsp;|&nbsp;{{- end -}}
 		{{- end -}}

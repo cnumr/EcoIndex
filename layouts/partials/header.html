@@ -13,11 +13,7 @@
 		<div>
 			<a href="{{ `/` | relLangURL }}" class="logo" title="Retour à la page d'accueil"
 				>{{- $logoResource := resources.Get "images/logo.svg" -}}
-				<img
-					src="{{- $logoResource.RelPermalink -}}"
-					width="132"
-					height="36"
-					alt="Logo ecoIndex, retour à la page d'accueil"
+				<img src="{{- $logoResource.RelPermalink -}}" width="132" height="36" alt="ecoIndex, {{ i18n `BackHome` -}}"
 			/></a>
 			<div class="menu-btn-container" hidden>
 				<div class="with-icon-l">
@@ -34,10 +30,9 @@
 				role="navigation"
 				class="main-nav-container"
 				data-open="false"
-				aria-labelledby="main-nav-label"
-			>
+				aria-labelledby="main-nav-label">
 				<div>
-					<span id="main-nav-label" hidden>Navigation principale</span>
+					<span id="main-nav-label" hidden>{{ i18n `MainNav` -}}</span>
 					<div class="cluster-l">
 						<ul class>
 							{{ range .Site.Menus.main }}

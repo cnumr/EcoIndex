@@ -32,3 +32,13 @@
 	other = "Environmental footprint"
 [EquationEcoIndex]
 	other = "x = one hundred minus one sixth of (three times the DOM quantile + two times the Http quantile + one time the data quantile, in kilobytes}"
+[BackHome]
+ other = "back to home page"
+[MainNav]
+ other = "Main navigation"
+[SwitchTo_fr]
+	other = "Passer en français"
+[fr]
+	other = "Français"
+[en]
+	other = "English"

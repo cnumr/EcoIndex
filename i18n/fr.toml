@@ -32,3 +32,13 @@
 	other = "Empreinte environnementale"
 [EquationEcoIndex]
 	other = "x = cent moins un sixième de (trois fois le quantile DOM + deux fois le quantile Http + une fois le quantile données, en kilo-octets}"
+[BackHome]
+ other = "retour à la page d'accueil"
+[MainNav]
+ other = "Navigation principale"
+[SwitchTo_en]
+	other = "Switch to English"
+[fr]
+	other = "Français"
+[en]
+	other = "English"
