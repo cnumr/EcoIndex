@@ -37,3 +37,10 @@
 		</nav>
 	</div>
 </footer>
+
+{{/* Add loader layout at page bottom */}}
+{{- if $currentPage.Params.has_loader_layout -}}
+	<div class="page-loading-overlay js-loading-overlay ">
+		{{ partial "widgets/loading-content" }}
+	</div>
+{{- end }}
