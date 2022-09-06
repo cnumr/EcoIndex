@@ -16,7 +16,7 @@ Différentes analyses micro et macro soulignent le poids prépondérant du tiers
 environnementaux, surtout lors de la fabrication des équipements. C’est pour cette raison qu’il est surpondéré par
 rapport aux autres.
 
-IMAGE CALCUL
+{{% equation %}}
 
 Afin de prendre en compte la disparité dans les mesures des trois indicateurs, nous positionnons la valeur constatée
 pour chaque critère dans un quantile, en tenant compte de sa proximité avec les bornes inférieures/supérieures du

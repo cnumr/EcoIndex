@@ -30,3 +30,5 @@
 	other = "Page rank:"
 [EnvironmentalFootprint]
 	other = "Environmental footprint"
+[EquationEcoIndex]
+	other = "x = one hundred minus one sixth of (three times the DOM quantile + two times the Http quantile + one time the data quantile, in kilobytes}"

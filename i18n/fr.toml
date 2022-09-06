@@ -30,3 +30,5 @@
 	other = "Classement de la page :"
 [EnvironmentalFootprint]
 	other = "Empreinte environnementale"
+[EquationEcoIndex]
+	other = "x = cent moins un sixième de (trois fois le quantile DOM + deux fois le quantile Http + une fois le quantile données, en kilo-octets}"
