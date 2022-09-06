@@ -207,16 +207,21 @@ main {
 }
 
 footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: var(--s5);
+	padding-bottom: var(--s5);
 	padding-left: var(--s4);
 	padding-right: var(--s4);
 }
 
-footer {
-	padding-top: var(--s5);
-}
 footer > * {
-	padding-top: var(--s4);
-	padding-bottom: var(--s4);
+	width: 100%;
+}
+
+footer nav {
+	justify-content: space-between;
 }
 
 .hero {

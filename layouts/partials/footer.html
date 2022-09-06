@@ -1,28 +1,39 @@
 {{ $currentPage := . }}
 <footer role="contentinfo" class="wrapper">
-	<nav role="navigation">
-		<div class="cluster-l">
-			<ul class>
-				{{- range .Site.Menus.footer }}
-					{{- $ariaCurrent := "" -}}
-					{{- if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) -}}
-						{{- $ariaCurrent = `aria-current="page"` -}}
-					{{- end -}}
-					<li>
-						<a
-							href="{{- .URL | safeHTMLAttr -}}"
-							{{ if .Params.Newtab -}}target="_blank"{{- end -}}
-							{{ $ariaCurrent | safeHTMLAttr -}}
-							>{{ .Title }}</a
-						>
-					</li>
-				{{- end }}
-				{{- if eq hugo.Environment "development" -}}
-					<li>
-						<a href="/style-guides/type/">[DEV]&nbsp;{{- i18n "StyleGuide" -}}</a>
-					</li>
-				{{- end }}
-			</ul>
-		</div>
-	</nav>
+	<div class="cluster-l">
+		<nav role="navigation">
+			<div class="cluster-l">
+				<ul class>
+					{{- range .Site.Menus.footer }}
+						{{- $ariaCurrent := "" -}}
+						{{- if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) -}}
+							{{- $ariaCurrent = `aria-current="page"` -}}
+						{{- end -}}
+						<li>
+							<a
+								href="{{- .URL | safeHTMLAttr -}}"
+								{{ if .Params.Newtab -}}target="_blank"{{- end -}}
+								{{ $ariaCurrent | safeHTMLAttr -}}
+								>{{ .Title }}</a
+							>
+						</li>
+					{{- end }}
+					{{- if eq hugo.Environment "development" -}}
+						<li>
+							<a href="/style-guides/type/">[DEV]&nbsp;{{- i18n "StyleGuide" -}}</a>
+						</li>
+					{{- end }}
+				</ul>
+			</div>
+			<div>
+				<a
+					href="https://www.greenit.fr/"
+					target="_blank"
+					title="Association GreenIT (prononcer grine • aïe • ti – nouvelle fenêtre"
+					>{{- $logoResource := resources.Get "images/logo-greenit.png" -}}
+					<img src="{{- $logoResource.RelPermalink -}}" width="126" height="50" alt=""
+				/></a>
+			</div>
+		</nav>
+	</div>
 </footer>
