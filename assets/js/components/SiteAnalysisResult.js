@@ -1,10 +1,10 @@
 import ResultRangeSlider from "./ResultRangeSlider";
-import resultCacheService from "../services/resultCacheService";
+import AnalysisService from "../services/AnalysisService";
+import ResultCacheService from "../services/ResultCacheService";
 import { getUrlHostName } from "../helpers/urlUtils";
 
 import { clamp, getPercentFromRange } from "../helpers/mathUtils";
 import { camelize } from "../helpers/stringUtils";
-import loaderLayoutService from "../services/loaderLayoutService";
 
 /**
  * @typedef ResultRelativeTextData
@@ -21,15 +21,10 @@ import loaderLayoutService from "../services/loaderLayoutService";
 class SiteAnalysisResult {
 	/**
 	 * Create a site analysis result page with updated dom from api data
-	 * @param {Object} params
 	 * @param {Element} el
-	 * @param {string} apiUrl
-	 * @param {string} apiKey
 	 */
-	constructor({ el, apiUrl, apiKey }) {
+	constructor(el) {
 		this.el = el;
-		this.apiUrl = apiUrl;
-		this.apiKey = apiKey;
 
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
@@ -57,8 +52,6 @@ class SiteAnalysisResult {
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const pageId = urlParams.get("id");
-
-			//pageResultData = await this._fetchApiResult(pageId, this.apiKey);
 			pageResultData = await this._getResultFrom(pageId);
 		} else {
 			// TODO: redirect to error page or show dialog ?
@@ -93,8 +86,6 @@ class SiteAnalysisResult {
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultFromSelect(pageResultData);
 		this._updatetResultRangeSliders(pageResultData);
-
-		loaderLayoutService.visible = false;
 	}
 
 	// TODO: add inside data with results method (unique)
@@ -172,13 +163,13 @@ class SiteAnalysisResult {
 	 */
 	async _getResultFrom(pageId) {
 		// get result in local storage if exists from page id (if not, fetch from api)
-		let result = resultCacheService.get(pageId);
+		let result = ResultCacheService.get(pageId);
 		if (!result) {
 			// when no result in cache, fetch from api, save in cache and show loader
-			loaderLayoutService.url = pageId;
-			loaderLayoutService.visible = true;
-			result = await this._fetchApiResult(pageId, this.apiKey);
-			resultCacheService.add(result);
+			//loaderLayoutService.url = pageId;
+			//loaderLayoutService.visible = true;
+			result = await this._fetchApiResult(pageId);
+			ResultCacheService.add(result);
 		}
 		return result;
 	}
@@ -186,24 +177,10 @@ class SiteAnalysisResult {
 	/**
 	 * Fetch analysis api from page id
 	 * @param {string} id Site analysis id
-	 * @param {string} apiKey
 	 * @returns {Object} Data object with analysis infos
 	 */
-	async _fetchApiResult(id, apiKey) {
-		const response = await fetch(this.apiUrl + "/" + id, {
-			headers: {
-				// NOTE : temp headers for rapidapi
-				"x-rapidapi-host": "ecoindex.p.rapidapi.com",
-				"x-rapidapi-key": apiKey,
-			},
-		});
-
-		if (!response.ok) {
-			const message = `An error has occured: ${response.status}`;
-			throw new Error(message);
-		}
-
-		return await response.json();
+	async _fetchApiResult(id) {
+		AnalysisService.launchAnalysisById(id);
 	}
 
 	/**

@@ -3,7 +3,6 @@ draft = true
 title = "Test a website"
 layout = "single"
 decoType = "home"
-has_loader_layout = true
 
 [menu]
 	[menu.main]
@@ -16,6 +15,6 @@ has_loader_layout = true
 
 {{% /hero %}}
 
-{{< widgets zone="first" type= "intro" >}}
+{{< widgets zone="first" type="intro" >}}
 
 {{< widgets type="info-container" >}}

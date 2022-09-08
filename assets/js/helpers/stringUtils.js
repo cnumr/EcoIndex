@@ -11,3 +11,16 @@ export function camelize(str) {
 		return p1.toLowerCase();
 	});
 }
+
+/**
+ * Replaces "##KEY##" patern with the given element and string
+ *
+ * @param {string} key Key to be replaced. This string must be surrounded by "##", e.g. "##KEY##"
+ * @param {string} text Text to insert in place of {{ key }}
+ *
+ * @returns {string} the result text
+ */
+export function replaceKeyIn(text, key, value) {
+	const re = new RegExp("##" + key + "##", "g");
+	return text.replace(re, value);
+}

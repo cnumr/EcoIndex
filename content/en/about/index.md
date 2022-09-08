@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "About"
 
 [menu]

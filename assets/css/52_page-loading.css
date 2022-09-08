@@ -14,20 +14,6 @@
 	color: var(--color-light);
 }
 
-.page-loading-content-container,
-.page-loading-content-section {
-	min-height: 60vh;
-	height: 100%;
-}
-
-.page-loading-content-section {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	overflow: hidden;
-}
-
 .page-loading-spinner,
 .page-loading-spinner:after {
 	--spinner-size: 3.28rem;
@@ -39,7 +25,7 @@
 .page-loading-spinner {
 	--spinner-color: var(--color-teal);
 	--spinner-stroke-width: 0.075em;
-	margin: var(--s2) auto;
+	margin: auto;
 	position: relative;
 	border-top: var(--spinner-stroke-width) solid var(--spinner-color);
 	border-right: var(--spinner-stroke-width) solid var(--spinner-color);

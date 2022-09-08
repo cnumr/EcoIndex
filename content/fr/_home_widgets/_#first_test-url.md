@@ -3,8 +3,6 @@ id = "test-url"
 no_padding = true
 +++
 
-{{< analysis_dialog >}}
-
 Entrez l'adresse d'une page web pour découvrir le score :
 
 {{< ecoindex_form >}}

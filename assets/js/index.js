@@ -1,16 +1,8 @@
+import AnalysisService from "./services/AnalysisService";
 import Collapse from "./components/Collapse";
-import A11yDialog from "a11y-dialog";
+import EcoIndexDialog from "./components/EcoIndexDialog";
+import ResultCacheService from "./services/ResultCacheService";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
-import SiteAnalysisFormSubmit from "./components/SiteAnalysisFormSubmit";
-import SiteAnalysis from "./components/SiteAnalysis";
-import resultCacheService from "./services/resultCacheService";
-
-// TODO: import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
-
-// TODO: set from .env ?
-const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes";
-// TODO: temp key, need to create specific one for app
-const API_KEY = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 
 // ------------------------------------------------------------------------- INIT APP
 
@@ -19,7 +11,6 @@ function initApp() {
 	initCollapses();
 	initDialog();
 	initPageResult();
-	initPageAnalysis();
 	initSubmitUrlForm();
 	initButtonRemakeAnalysis();
 }
@@ -55,20 +46,10 @@ function initCollapses() {
 // ------------------------------------------------------------------------- DIALOG TODO
 
 /**
- * TODO
+ * Init unique modal dialog
  */
 function initDialog() {
-	const dialogEl = document.getElementById("analysis-dialog");
-	if (!dialogEl) return;
-
-	const dialog = new A11yDialog(dialogEl);
-	const html = document.documentElement;
-
-	dialog
-		.on("show", function (dialogEl2, triggerEl) {
-			html.style.overflowY = "hidden";
-		})
-		.on("hide", () => (html.style.overflowY = ""));
+	EcoIndexDialog.init("dialog");
 }
 
 // ------------------------------------------------------------------------- RESULT PAGE
@@ -79,7 +60,7 @@ function initDialog() {
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;
-	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+	new SiteAnalysisResult(resultPageContentEl);
 }
 
 /**
@@ -88,49 +69,48 @@ function initPageResult() {
  */
 function initButtonRemakeAnalysis() {
 	const buttonRemakeEl = document.querySelector(".js-button-retest");
-	const loadingOverlayContainer = document.querySelector(".js-loading-overlay");
-
-	if (!buttonRemakeEl || !loadingOverlayContainer) return;
+	if (!buttonRemakeEl) return;
 	buttonRemakeEl.addEventListener("click", (e) => {
 		e.preventDefault();
-		new SiteAnalysis({
-			analysisUrl: resultCacheService.getLast().url,
-			loadingContainer: loadingOverlayContainer,
-			apiUrl: API_BASE_URL,
-			apiKey: API_KEY,
-		});
-	});
-}
 
-// ------------------------------------------------------------------------- ANALYSIS PAGE
-
-//TODO: remove
-/**
- * Init page analysis post analysis url and get data for result page
- */
-function initPageAnalysis() {
-	const analysisPageContentEl = document.querySelector(".js-analysis-container");
-	if (!analysisPageContentEl) return;
-	new SiteAnalysis({
-		loaderContainer: analysisPageContentEl,
-		apiUrl: API_BASE_URL,
-		apiKey: API_KEY,
+		const url = ResultCacheService.getLast().url;
+		launchAnalysisByURL(url);
 	});
 }
 
 // ------------------------------------------------------------------------- HOME SUBMIT URL FORM
 
 function initSubmitUrlForm() {
-	const submitSiteForm = document.querySelector(".js-analysis-submit-form");
-	const loadingOverlayContainer = document.querySelector(".js-loading-overlay");
+	const form = document.querySelector(".js-analysis-submit-form");
+	if (!form) return;
 
-	if (!submitSiteForm || !loadingOverlayContainer) return;
-	new SiteAnalysisFormSubmit(submitSiteForm, (url) => {
-		new SiteAnalysis({
-			analysisUrl: url,
-			loadingContainer: loadingOverlayContainer,
-			apiUrl: API_BASE_URL,
-			apiKey: API_KEY,
-		});
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+
+		const url = e.target.querySelector("input[name='siteurl']").value;
+		launchAnalysisByURL(url);
 	});
+}
+
+function launchAnalysisByURL(url) {
+	try {
+		AnalysisService.launchAnalysisByURL(url);
+		updateFormMessages({ success: true });
+	} catch (error) {
+		updateFormMessages({ success: false, error });
+	}
+}
+
+// TODO improve error handling
+function updateFormMessages(options) {
+	const form = document.querySelector(".js-analysis-submit-form");
+	if (options.success) {
+		form.setAttribute("aria-invalid", "false");
+	} else {
+		const errorMessage = "{{ i18n `EcoIndexFormInputInvalid` }}";
+		if (!form.querySelector(".form-error")) {
+			form.insertAdjacentHTML("beforeend", `<p class="form-error">${errorMessage}</p>`);
+		}
+		form.setAttribute("aria-invalid", "true");
+	}
 }

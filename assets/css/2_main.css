@@ -185,8 +185,14 @@ header .menu-btn-container {
 }
 
 header .menu-btn-container {
-	padding-right: calc(var(--s4) / 2);
 	text-align: right;
+}
+
+.top-warning {
+	width: 100%;
+	background-color: var(--color-pastel-red);
+	padding: var(--s-1);
+	text-align: center;
 }
 
 @media (max-width: 60rem) {

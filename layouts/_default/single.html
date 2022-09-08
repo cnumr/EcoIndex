@@ -1,4 +1,9 @@
 {{ define "main" }}
+
+	<div class="top-warning">
+		<p><small>{{- i18n `BetaMessage` | markdownify -}}</small></p>
+	</div>
+
 	<div class="stack-l --s3 {{ .Params.custom_class }}">
 		{{ partial "content.html" .Content }}
 	</div>

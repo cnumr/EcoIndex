@@ -52,4 +52,5 @@ class ResultCacheService {
 	}
 }
 
-export default new ResultCacheService();
+const ResultCacheServiceObj = new ResultCacheService();
+export default ResultCacheServiceObj;
