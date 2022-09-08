@@ -2,7 +2,7 @@ import { inverseLerp, clamp, getPercentFromRange } from "../helpers/mathUtils";
 
 /**
  * Create a new result score range slider component
- * Note : dom updated from corresponding data passed to instance$
+ * Note : dom updated from corresponding data passed to instance
  * @class
  */
 class ResultRangeSlider {

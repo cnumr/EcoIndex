@@ -97,26 +97,34 @@ noscript {
 
 /* Forms */
 
-input {
+input,
+button {
 	padding: var(--s1);
 	border-width: 0;
 	border-radius: var(--border-radius-small);
 }
 
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+button {
 	text-align: left;
 	cursor: pointer;
-}
-
-input[type="submit"] {
 	background-color: var(--color-light);
 	color: var(--color-dark);
 	font-weight: var(--font-weight-bold);
+	width: fit-content;
 }
 
 input[type="text"] {
 	background-color: var(--color-darkish);
+}
+
+form > .form-error {
+	color: #fff;
+	background-color: var(--color-pastel-red);
+	padding: var(--s0);
+	border-width: 0;
+	border-radius: var(--border-radius-small);
 }
 
 /* Shadow container */
@@ -158,7 +166,6 @@ header .logo {
 
 .header-container {
 	position: relative;
-	z-index: 2;
 	background-color: var(--color-darkish);
 }
 
@@ -178,8 +185,14 @@ header .menu-btn-container {
 }
 
 header .menu-btn-container {
-	padding-right: calc(var(--s4) / 2);
 	text-align: right;
+}
+
+.top-warning {
+	width: 100%;
+	background-color: var(--color-pastel-red);
+	padding: var(--s-1);
+	text-align: center;
 }
 
 @media (max-width: 60rem) {
@@ -202,7 +215,6 @@ body {
 
 main {
 	position: relative;
-	z-index: 1;
 	min-height: 70vh;
 }
 

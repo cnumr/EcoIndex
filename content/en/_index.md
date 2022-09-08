@@ -15,6 +15,6 @@ decoType = "home"
 
 {{% /hero %}}
 
-{{< widgets zone="first" type= "intro" >}}
+{{< widgets zone="first" type="intro" >}}
 
 {{< widgets type="info-container" >}}

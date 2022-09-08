@@ -4,11 +4,13 @@
 	other = "https://example.org"
 [EcoIndexFormSubmitText]
 	other = "Test website"
+[EcoIndexFormInputInvalid]
+	other = 'Please enter a complete web page address, for example “https://example.org”'
 [GoToResults]
 	other = "Go to results"
 [AnalysisError]
 	other = "An error occured during analysis"
-[StopAnalysis]
+[AbortAnalysis]
 	other = "Stop analysis"
 [Back]
 	other = "Back"
@@ -18,6 +20,10 @@
 	other = "Share"
 [Loading]
 	other = "Loading"
+[AnalysisInProgressFor]
+	other = """
+Analysis in progress  
+for “##URL##”"""
 [NotAvailable]
 	other = "Not available"
 [ScoreDetails]
@@ -46,3 +52,27 @@
 	other = "Association Green IT"
 [NewWindow]
 	other = "new window"
+[CancelAnalysis]
+	other = "Cancel"
+[AnalysisErrorTitle]
+	other = "Oh oh, too bad..."
+[AnalysisErrorIntro]
+	other = "The analysis could not be completed."
+[AnalysisErrorDefaultMessage]
+	other = "Please retry later."
+[Close]
+	other = "Close"
+[Error422]
+	other = "There is an invalid parameter, check your request."
+[Error429]
+	other = """
+You have reached the limit of ##daily_limit_per_host## calls per day for the domain name ##host##.  
+More information on page [How it works](/how-it-works/)."""
+[Error500]
+	other = "An error occurred on the server. You can try again later."
+[Error502]
+	other = "The URL you provided is not valid. Please check the URL and try again."
+[Error504]
+	other = "The page you want to test does not respond. Please try again later."
+[BetaMessage]
+	other = "This site is in **beta** version. Feel free to give us feedback on [Github discussions](https://github.com/cnumr/EcoIndex/discussions/)"

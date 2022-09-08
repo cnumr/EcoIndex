@@ -1,22 +1,18 @@
+import AnalysisService from "./services/AnalysisService";
 import Collapse from "./components/Collapse";
+import EcoIndexDialog from "./components/EcoIndexDialog";
+import ResultCacheService from "./services/ResultCacheService";
 import SiteAnalysisResult from "./components/SiteAnalysisResult";
-import SiteAnalysis from "./components/SiteAnalysis";
-
-// TODO: import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
-
-// TODO: set from .env ?
-const API_BASE_URL = "https://ecoindex.p.rapidapi.com/v1/ecoindexes";
-// TODO: temp key, need to create specific one for app
-const API_KEY = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 
 // ------------------------------------------------------------------------- INIT APP
 
 function initApp() {
 	initMenu();
 	initCollapses();
+	initDialog();
 	initPageResult();
-	initPageAnalysis();
 	initSubmitUrlForm();
+	initButtonRemakeAnalysis();
 }
 
 // init app on dom loaded
@@ -47,6 +43,15 @@ function initCollapses() {
 	collapseElements.forEach((collapseElement) => new Collapse(collapseElement));
 }
 
+// ------------------------------------------------------------------------- DIALOG TODO
+
+/**
+ * Init unique modal dialog
+ */
+function initDialog() {
+	EcoIndexDialog.init("dialog");
+}
+
 // ------------------------------------------------------------------------- RESULT PAGE
 
 /**
@@ -55,29 +60,57 @@ function initCollapses() {
 function initPageResult() {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;
-	new SiteAnalysisResult({ el: resultPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+	new SiteAnalysisResult(resultPageContentEl);
 }
 
-// ------------------------------------------------------------------------- ANALYSIS PAGE
-
 /**
- * Init page analysis post analysis url and get data for result page
+ * Remake analysis button
+ * Takes last analysis done and run an update to analysis
  */
-function initPageAnalysis() {
-	const analysisPageContentEl = document.querySelector(".js-analysis-container");
-	if (!analysisPageContentEl) return;
-	new SiteAnalysis({ el: analysisPageContentEl, apiUrl: API_BASE_URL, apiKey: API_KEY });
+function initButtonRemakeAnalysis() {
+	const buttonRemakeEl = document.querySelector(".js-button-retest");
+	if (!buttonRemakeEl) return;
+	buttonRemakeEl.addEventListener("click", (e) => {
+		e.preventDefault();
+
+		const url = ResultCacheService.getLast().url;
+		launchAnalysisByURL(url);
+	});
 }
 
 // ------------------------------------------------------------------------- HOME SUBMIT URL FORM
 
 function initSubmitUrlForm() {
-	const submitSiteForm = document.querySelector(".js-analysis-submit-form");
-	if (!submitSiteForm) return;
-	submitSiteForm.addEventListener("submit", function (e) {
+	const form = document.querySelector(".js-analysis-submit-form");
+	if (!form) return;
+
+	form.addEventListener("submit", function (e) {
 		e.preventDefault();
+
 		const url = e.target.querySelector("input[name='siteurl']").value;
-		// TODO: get url relative to language
-		window.location = `${window.location.origin}/chargement/?url=${url}`;
+		launchAnalysisByURL(url);
 	});
+}
+
+function launchAnalysisByURL(url) {
+	try {
+		AnalysisService.launchAnalysisByURL(url);
+		updateFormMessages({ success: true });
+	} catch (error) {
+		updateFormMessages({ success: false, error });
+	}
+}
+
+// TODO improve error handling
+function updateFormMessages(options) {
+	const form = document.querySelector(".js-analysis-submit-form");
+	if (options.success) {
+		form.setAttribute("aria-invalid", "false");
+	} else {
+		const errorMessage = "{{ i18n `EcoIndexFormInputInvalid` }}";
+		if (!form.querySelector(".form-error")) {
+			form.insertAdjacentHTML("beforeend", `<p class="form-error">${errorMessage}</p>`);
+		}
+		form.setAttribute("aria-invalid", "true");
+	}
 }

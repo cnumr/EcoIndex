@@ -1,15 +1,17 @@
 [EcoIndexFormIntro]
-	other = "Entrez l’adresse d’une page web pour le découvrir !"
+	other = "Entrez l’adresse d’une page web pour le découvrir !"
 [EcoIndexFormPlaceholder]
 	other = "https://exemple.org"
 [EcoIndexFormSubmitText]
 	other = "Tester le site"
+[EcoIndexFormInputInvalid]
+	other = "Veuillez renseigner une adresse de page web complète, par exemple « https://exemple.org »"
 [GoToResults]
 	other = "Accéder aux résultats"
 [AnalysisError]
-	other = "Erreur lors de l'analyse"
-[StopAnalysis]
-	other = "Arrêter l'analyse"
+	other = "Erreur lors de l’analyse"
+[AbortAnalysis]
+	other = "Arrêter l’analyse"
 [Back]
 	other = "Retour"
 [ReTest]
@@ -18,6 +20,10 @@
 	other = "Partager"
 [Loading]
 	other = "Chargement"
+[AnalysisInProgressFor]
+	other = """
+L’analyse est en cours  
+pour « ##URL## »"""
 [NotAvailable]
 	other = "Non disponible"
 [ScoreDetails]
@@ -33,7 +39,7 @@
 [EquationEcoIndex]
 	other = "x = cent moins un sixième de (trois fois le quantile DOM + deux fois le quantile Http + une fois le quantile données, en kilo-octets}"
 [BackHome]
- other = "retour à la page d'accueil"
+ other = "retour à la page d’accueil"
 [MainNav]
  other = "Navigation principale"
 [SwitchTo_en]
@@ -46,3 +52,27 @@
 	other = "Association Green IT  (prononcer grine • aïe • ti)"
 [NewWindow]
 	other = "nouvelle fenêtre"
+[CancelAnalysis]
+	other = "Annuler"
+[AnalysisErrorTitle]
+	other = "Oh oh, dommage…"
+[AnalysisErrorIntro]
+	other = "L'analyse n'a pas pu aboutir."
+[AnalysisErrorDefaultMessage]
+	other = "Veuillez réessayer plus tard"
+[Close]
+	other = "Fermer"
+[Error422]
+	other = "Un paramètre n’est pas valide, pouvez-vous vérifier votre requête ?"
+[Error429]
+	other = """
+Vous avez atteint la limite de ##daily_limit_per_host## appels par jour pour le nom de domaine ##host##.  
+Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/comment-ca-marche/)"""
+[Error500]
+	other = "Une erreur est survenue sur le serveur, veuillez réessayer plus tard."
+[Error502]
+	other = "L’url demandée n’est pas valide. Veuillez vérifier l’URL et réessayer."
+[Error504]
+	other = "La page web indiquée ne semble pas répondre. Pouvez vous réessayer plus tard ?"
+[BetaMessage]
+	other = "Ce site est en version **beta**. N’hésitez pas à nous faire part de vos commentaires sur [les discussions Github](https://github.com/cnumr/EcoIndex/discussions/)"
