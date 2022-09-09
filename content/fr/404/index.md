@@ -1,10 +1,16 @@
 +++
 title = "Page non trouvée"
 decoType = "404"
+widget="404"
+message="Page non trouvée (404)"
 +++
 
-{{% hero %}}
+{{<hero class="text-align:center">}}
 
-# Page non trouvée (404)
+# &nbsp;&nbsp;&nbsp;Page non trouvée (404)
 
-{{% /hero %}}
+&nbsp;
+
+{{% content_link href="/nous-rejoindre/" %}}Nous rejoindre{{% /content_link %}}
+
+{{</hero>}}
