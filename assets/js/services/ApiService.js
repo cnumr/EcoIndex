@@ -37,40 +37,45 @@ class ApiService {
 
 		const { signal } = controller;
 
-		const json = {
-			width: this.#browserWidth,
-			height: this.#browserHeight,
-		};
+		let json = undefined;
 
-		let slug = "";
+		let slug;
+		let method;
 		switch (type) {
 			case this.ANALYSIS_BY_URL:
 				slug = "ecoindexes";
-				json.url = options.url;
+				method = "post";
+				json = {
+					width: this.#browserWidth,
+					height: this.#browserHeight,
+					url,
+				};
 				break;
 
 			case this.ANALYSIS_BY_ID:
-				slug = "id";
+				slug = "ecoindexes/" + options.id;
+				method = "get";
 				break;
 
 			default:
-				break;
+				console.error("Analysis type not supported. Please use ANALYSIS_BY_URL or ANALYSIS_BY_ID");
+				return null;
 		}
 
-		const response = await ky
-			.post(slug, {
-				timeout: 60000, // 60s instead of 10s default
-				signal,
-				prefixUrl: this.#baseURL,
-				json,
-				headers: {
-					"content-type": "application/json",
-					"X-RapidAPI-Host": this.#host,
-					"X-RapidAPI-Key": this.#apiKey,
-				},
-				redirect: "follow",
-			})
-			.json();
+		const response = await ky(slug, {
+			timeout: 60000, // 60s instead of 10s default
+			method,
+			signal,
+			prefixUrl: this.#baseURL,
+			json,
+			headers: {
+				"content-type": "application/json",
+				"X-RapidAPI-Host": this.#host,
+				"X-RapidAPI-Key": this.#apiKey,
+			},
+			redirect: "follow",
+		}).json();
+
 		return response;
 	}
 
