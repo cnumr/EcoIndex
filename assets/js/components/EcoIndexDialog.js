@@ -3,11 +3,21 @@ import A11yDialog from "a11y-dialog";
 import { replaceKeyIn } from "../helpers/stringUtils";
 
 const ERROR_MESSAGES = {
-	422: `{{- i18n "Error422" | markdownify -}}`,
-	429: `{{- i18n "Error429" | markdownify -}}`,
-	500: `{{- i18n "Error500" | markdownify  -}}`,
-	502: `{{- i18n "Error502" | markdownify  -}}`,
-	504: `{{- i18n "Error504" | markdownify  -}}`,
+	422: `
+{{- i18n "Error422" | markdownify -}}
+`,
+	429: `
+{{- i18n "Error429" | markdownify -}}
+`,
+	500: `
+{{- i18n "Error500" | markdownify  -}}
+`,
+	502: `
+{{- i18n "Error502" | markdownify  -}}
+`,
+	504: `
+{{- i18n "Error504" | markdownify  -}}
+`,
 };
 
 /**
