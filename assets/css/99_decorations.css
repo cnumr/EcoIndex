@@ -125,7 +125,11 @@
 	right: -9vw;
 	transform: rotate(0deg);
 	width: 49vw;
-	fill: var(--color-yellow);
+	fill: var(--color-dark-green);
+}
+
+.deco-type-404 .deco-object--blob-2 {
+	fill: var(--color-medium-green-2);
 }
 
 .deco-type-404 .deco-object--blob-3 {
@@ -133,7 +137,7 @@
 	right: -24vw;
 	transform: rotate(82deg);
 	width: 31vw;
-	fill: var(--color-dark-green);
+	fill: var(--color-yellow);
 	padding-bottom: 100%;
 }
 
@@ -142,7 +146,7 @@
 	right: 42vw;
 	transform: rotate(160deg);
 	width: 49vw;
-	fill: var(--color-yellow);
+	fill: var(--color-dark-green);
 }
 
 .deco-type-404 .deco-object--blob-5 {
@@ -150,7 +154,7 @@
 	right: 68vw;
 	transform: rotate(-152deg) scaleX(-1);
 	width: 50vw;
-	fill: var(--color-light-green);
+	fill: var(--color-medium-green-2);
 }
 
 .deco-type-404 .deco-object--blob-6 {
@@ -158,7 +162,7 @@
 	left: -22vw;
 	transform: rotate(-128deg);
 	width: 33vw;
-	fill: var(--color-dark-green);
+	fill: var(--color-yellow);
 	padding-bottom: 100%;
 }
 
