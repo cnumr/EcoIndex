@@ -37,8 +37,10 @@ class AnalysisService {
 	 */
 	async #launchAnalysis(type, options) {
 		EcoIndexDialog.openPendingAnalysis(options.url);
+		let apiResult;
 		try {
 			await ApiService.newAnalysis(type, options).then((result) => {
+				apiResult = result;
 				ResultCacheService.add(result);
 				redirectToResults(result.id);
 			});
@@ -54,6 +56,7 @@ class AnalysisService {
 				EcoIndexDialog.openErrorMessage();
 			}
 		}
+		return apiResult;
 	}
 }
 

@@ -180,7 +180,7 @@ class SiteAnalysisResult {
 	 * @returns {Object} Data object with analysis infos
 	 */
 	async _fetchApiResult(id) {
-		AnalysisService.launchAnalysisById(id);
+		return AnalysisService.launchAnalysisById(id);
 	}
 
 	/**

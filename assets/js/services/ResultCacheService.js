@@ -9,7 +9,7 @@ class ResultCacheService {
 		if (this.results[id]) return this.results[id];
 		// get results list from local storage RESULTS_LOCAL_STORAGE_KEY
 		const results = this.getLocalStorage();
-		if (!results) {
+		if (!(results && results[0])) {
 			console.warn("No results in local storage");
 			return;
 		}
@@ -28,6 +28,10 @@ class ResultCacheService {
 	}
 
 	add(analysisResultData) {
+		if (!analysisResultData) {
+			console.warn("Result data is empty");
+			return;
+		}
 		// get item analysisResults from localStorage
 		const analysisResults = JSON.parse(localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY));
 		if (!analysisResults) {

@@ -50,7 +50,7 @@ class ApiService {
 				break;
 
 			case this.ANALYSIS_BY_ID:
-				slug = "id";
+				slug = "ecoindexes/" + options.id;
 				break;
 
 			default:
@@ -71,6 +71,7 @@ class ApiService {
 				redirect: "follow",
 			})
 			.json();
+
 		return response;
 	}
 
