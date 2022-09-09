@@ -179,8 +179,8 @@ class SiteAnalysisResult {
 	 * @param {string} id Site analysis id
 	 * @returns {Object} Data object with analysis infos
 	 */
-	async _fetchApiResult(id) {
-		return AnalysisService.launchAnalysisById(id);
+	async _fetchApiResult(id, options) {
+		AnalysisService.launchAnalysisById(id, { silent: true });
 	}
 
 	/**

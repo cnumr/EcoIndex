@@ -23,8 +23,11 @@ class AnalysisService {
 		this.#launchAnalysis(ApiService.ANALYSIS_BY_URL, { url });
 	}
 
-	async launchAnalysisById(id) {
-		this.#launchAnalysis(ApiService.ANALYSIS_BY_ID, { id });
+	async launchAnalysisById(id, options) {
+		this.#launchAnalysis(ApiService.ANALYSIS_BY_ID, {
+			...options,
+			id,
+		});
 	}
 
 	/**
@@ -34,9 +37,12 @@ class AnalysisService {
 	 * @param {Object} options object (with url or id)
 	 * @param {string} [options.url] URL The URL to analyse
 	 * @param {string} [options.id] Id of a previous analysis
+	 * @param {boolean} [options.silent] if true, prevents loading modal dialog to show up
 	 */
 	async #launchAnalysis(type, options) {
-		EcoIndexDialog.openPendingAnalysis(options.url);
+		if (!options.silent) {
+			EcoIndexDialog.openPendingAnalysis(options.url);
+		}
 		let apiResult;
 		try {
 			await ApiService.newAnalysis(type, options).then((result) => {
