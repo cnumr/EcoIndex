@@ -48,7 +48,7 @@ class ApiService {
 				json = {
 					width: this.#browserWidth,
 					height: this.#browserHeight,
-					url,
+					url: options.url,
 				};
 				break;
 
