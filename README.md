@@ -19,7 +19,9 @@ Pour faciliter les échanges, un channel #ecoIndex est dédié au projet sur le 
 
 La nouvelle version d’EcoIndex (V3) est réalisée avec [Hugo](https://gohugo.io/).
 
-#### Installation
+Le projet se base sur le module Hugo [base-structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure).
+
+### Installation
 
 1. Téléchargez et installez la dernière version _extented_ disponible de Hugo
    ([procédure d'installation de Hugo, en anglais](https://gohugo.io/getting-started/installing/)).
@@ -29,8 +31,62 @@ La nouvelle version d’EcoIndex (V3) est réalisée avec [Hugo](https://gohugo.
    1. Clonez ce dépôt avec la commande `git clone https://github.com/cnumr/EcoIndex.git` ou avec
       `git clone git@github.com:cnumr/EcoIndex.git` si vous utilisez SSH.
    2. Installez les dernières dépendances avec la commmande `npm install`.
-   3. Démarrez le serveur Hugo avec la commande `hugo server -D`.
+   3. Démarrez le serveur Hugo avec la commande `hugo server`.
 4. Rendez-vous à l'adresse <http://localhost:1313> avec votre navigateur web.
+
+### Astuces pour les développeurs
+
+#### Tester le build de prod en local
+
+```sh
+$ hugo serve --environment production
+```
+
+#### Tester le projet en local avec des clones locaux de modules utilisés dans le projet (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css)
+
+```sh
+$ env HUGO_MODULE_REPLACEMENTS="gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css" hugo serve
+```
+
+(Cet exemple suppose que le code des modules se trouve dans ~/workspace)
+
+Pour plus de praticité, on peut écrire un script :
+
+`~/dev.sh`
+```sh
+#!/bin/bash
+cmd="";
+for cmdPart in "$@"
+do
+    cmd+=$cmdPart;
+		cmd+=" "
+done
+
+res="env HUGO_MODULE_REPLACEMENTS=\"gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css"\" "
+
+res+=$cmd
+
+echo $res
+
+bash -c "$res"
+```
+
+et l'utiliser ainsi :
+
+```sh
+$ ~/dev.sh hugo serve
+```
+ou par exemple :
+
+```sh
+$ ~/dev.sh hugo serve --environment production
+```
+
+### Déploiement
+
+Déploiement automatique grace aux Github Actions (WIP)
+
+---
 
 ![Image of CnumR](./collectif-conception-numerique-responsable-logo.png)
 
@@ -51,7 +107,9 @@ There’s a dedicated [slack channel](https://cnumr.slack.com) for the project.
 
 The new version of EcoIndex is built with [Hugo](https://gohugo.io/).
 
-#### Setup
+The project is based on the Hugo module [base-structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure).
+
+### Setup
 
 1. Download and install the latest _extented_ version available of Hugo
    ([Hugo installation procedure](https://gohugo.io/getting-started/installing/)).
@@ -60,5 +118,57 @@ The new version of EcoIndex is built with [Hugo](https://gohugo.io/).
    1. Clone this repository with the command `git clone https://github.com/cnumr/EcoIndex.git` or with
       `git clone git@github.com:cnumr/EcoIndex.git` if you prefer to use SSH.
    2. Install the latest dependencies with the command `npm install`.
-   3. Start the Hugo server with the command `hugo server -D`.
+   3. Start the Hugo server with the command `hugo server`.
 4. Go to <http://localhost:1313> with your web browser.
+
+### Tips for developers
+
+#### Testing production build on dev environment
+
+```sh
+$ hugo serve --environment production
+```
+
+#### Testing on dev environment with local checkouts of the modules used in the project (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css)
+
+```
+$ env HUGO_MODULE_REPLACEMENTS="gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css" hugo serve
+```
+(this example assumes you have cloned the modules in ~/workspace)
+
+For more convenience, you can write a script:
+
+`~/dev.sh`
+```sh
+#!/bin/bash
+cmd="";
+for cmdPart in "$@"
+do
+    cmd+=$cmdPart;
+		cmd+=" "
+done
+
+res="env HUGO_MODULE_REPLACEMENTS=\"gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css"\" "
+
+res+=$cmd
+
+echo $res
+
+bash -c "$res"
+```
+
+and use it like this:
+
+```sh
+$ ~/dev.sh hugo serve
+```
+ou for example:
+
+```sh
+$ ~/dev.sh hugo serve --environment production
+```
+
+### Deployment
+
+Automatic deploys thanks to Github Actions (WIP)
+
