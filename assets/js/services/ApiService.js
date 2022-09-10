@@ -14,71 +14,6 @@ class ApiService {
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
-	get ANALYSIS_BY_URL() {
-		return 0;
-	}
-
-	get ANALYSIS_BY_ID() {
-		return 1;
-	}
-
-	/**
-	 * New analysis, by URL or by ID
-	 *
-	 * @param {int} type ANALYSIS_BY_URL or ANALYSIS_BY_ID
-	 * @param {Object} options object (with url or id)
-	 * @param {string} [options.url] URL The URL to analyse
-	 * @param {string} [options.id] Id of a previous analysis
-	 * @returns {Response} response object
-	 */
-	async newAnalysis(type, options) {
-		this.abortAnalysis();
-		const controller = (this.#controller = new AbortController());
-
-		const { signal } = controller;
-
-		let json = undefined;
-
-		let slug;
-		let method;
-		switch (type) {
-			case this.ANALYSIS_BY_URL:
-				slug = "ecoindexes";
-				method = "post";
-				json = {
-					width: this.#browserWidth,
-					height: this.#browserHeight,
-					url: options.url,
-				};
-				break;
-
-			case this.ANALYSIS_BY_ID:
-				slug = "ecoindexes/" + options.id;
-				method = "get";
-				break;
-
-			default:
-				console.error("Analysis type not supported. Please use ANALYSIS_BY_URL or ANALYSIS_BY_ID");
-				return null;
-		}
-
-		const response = await ky(slug, {
-			timeout: 60000, // 60s instead of 10s default
-			method,
-			signal,
-			prefixUrl: this.#baseURL,
-			json,
-			headers: {
-				"content-type": "application/json",
-				"X-RapidAPI-Host": this.#host,
-				"X-RapidAPI-Key": this.#apiKey,
-			},
-			redirect: "follow",
-		}).json();
-
-		return response;
-	}
-
 	/**
 	 * Request a new analysis by URL
 	 *
@@ -86,7 +21,15 @@ class ApiService {
 	 * @returns {Response} response object
 	 */
 	async newAnalysisByURL(url) {
-		return this.newAnalysis(this.ANALYSIS_BY_URL, { url });
+		const options = {
+			method: "post",
+			json: {
+				width: this.#browserWidth,
+				height: this.#browserHeight,
+				url,
+			},
+		};
+		return this.#fetchApi("ecoindexes/", options);
 	}
 
 	/**
@@ -95,8 +38,11 @@ class ApiService {
 	 * @param {string} id Id
 	 * @returns {Response} response object
 	 */
-	async newAnalysisById(id) {
-		return this.newAnalysis(this.ANALYSIS_BY_ID, { id });
+	async fetchAnalysisById(id) {
+		const options = {
+			method: "get",
+		};
+		return this.#fetchApi("ecoindexes/" + id, options);
 	}
 
 	/**
@@ -109,6 +55,37 @@ class ApiService {
 			return false;
 		}
 		this.#controller.abort();
+	}
+
+	/**
+	 * New analysis, by URL or by ID
+	 *
+	 * @param {string} slug Request URL slug
+	 * @param {Object} options object (with url or id)
+	 * @param {string} [options.method] Method: 'post' or 'get'
+	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
+	 * @returns {Response} response object
+	 */
+	async #fetchApi(slug, options) {
+		this.abortAnalysis();
+		const controller = (this.#controller = new AbortController());
+
+		const { signal } = controller;
+
+		const response = await ky(slug, {
+			...options,
+			prefixUrl: this.#baseURL,
+			timeout: 60000, // 60s instead of 10s default
+			signal,
+			headers: {
+				"content-type": "application/json",
+				"X-RapidAPI-Host": this.#host,
+				"X-RapidAPI-Key": this.#apiKey,
+			},
+			redirect: "follow",
+		}).json();
+
+		return response;
 	}
 }
 

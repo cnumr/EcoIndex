@@ -33,7 +33,10 @@ class SiteAnalysisResult {
 	}
 
 	/**
-	 * Init site analysis from api id fetch or url param
+	 * Init
+	 *
+	 * Checks if an analysis results object exists. If yes, use it.
+	 * Otherwise, fetches data from server.
 	 *
 	 */
 	async _init() {
@@ -51,8 +54,8 @@ class SiteAnalysisResult {
 			// else fetch analysis result from id
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
-			const pageId = urlParams.get("id");
-			pageResultData = await this._getResultFrom(pageId);
+			const id = urlParams.get("id");
+			pageResultData = await AnalysisService.fetchAnalysisById(id);
 		} else {
 			// TODO: redirect to error page or show dialog ?
 			window.location = `${window.location.origin}/erreur/?status=404`;
@@ -154,33 +157,6 @@ class SiteAnalysisResult {
 			const updatedCaseAttr = camelCaseDataAttr.charAt(0).toUpperCase() + camelCaseDataAttr.slice(1);
 			dataIntEl.dataset["int" + updatedCaseAttr + "Value"] = this._getDataValueFrom(data, dataAttr);
 		});
-	}
-
-	/**
-	 * Get result data from page id with cache (if exists) or fetch from api
-	 * @param {string} pageId
-	 * @returns Result data
-	 */
-	async _getResultFrom(pageId) {
-		// get result in local storage if exists from page id (if not, fetch from api)
-		let result = ResultCacheService.get(pageId);
-		if (!result) {
-			// when no result in cache, fetch from api, save in cache and show loader
-			//loaderLayoutService.url = pageId;
-			//loaderLayoutService.visible = true;
-			result = await this._fetchApiResult(pageId);
-			ResultCacheService.add(result);
-		}
-		return result;
-	}
-
-	/**
-	 * Fetch analysis api from page id
-	 * @param {string} id Site analysis id
-	 * @returns {Object} Data object with analysis infos
-	 */
-	async _fetchApiResult(id, options) {
-		AnalysisService.launchAnalysisById(id, { silent: true });
 	}
 
 	/**

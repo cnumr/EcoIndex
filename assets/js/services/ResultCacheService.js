@@ -10,13 +10,13 @@ class ResultCacheService {
 		// get results list from local storage RESULTS_LOCAL_STORAGE_KEY
 		const results = this.getLocalStorage();
 		if (!(results && results[0])) {
-			console.warn("No results in local storage");
+			console.info("No results in local storage");
 			return;
 		}
 		// find result from results list with id
 		const result = results.find((result) => result.id === id);
 		if (!result) {
-			console.warn("No result found in local storage from id");
+			console.info("No result found in local storage from id");
 			return;
 		}
 

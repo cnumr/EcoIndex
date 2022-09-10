@@ -24,6 +24,8 @@
 	other = """
 Analysis in progress  
 for “##URL##”"""
+[AnalysisRetrieval]
+	other = "Récupération de l'analyse"
 [NotAvailable]
 	other = "Not available"
 [ScoreDetails]
@@ -52,7 +54,7 @@ for “##URL##”"""
 	other = "Association Green IT"
 [NewWindow]
 	other = "new window"
-[CancelAnalysis]
+[Cancel]
 	other = "Cancel"
 [AnalysisErrorTitle]
 	other = "Oh oh, too bad..."

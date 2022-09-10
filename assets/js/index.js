@@ -74,7 +74,7 @@ function initButtonRemakeAnalysis() {
 		e.preventDefault();
 
 		const url = ResultCacheService.getLast().url;
-		launchAnalysisByURL(url);
+		AnalysisService.launchAnalysisByURL(url);
 	});
 }
 

@@ -52,7 +52,8 @@ class EcoIndexDialog {
 	}
 
 	/**
-	 * Open the modal dialog to show a loading spinner (abort possible)
+	 * Open the modal dialog for a pending analysis
+	 * with a loading spinner (abort possible)
 	 *
 	 * @param {string} url URL being analysed
 	 *
@@ -60,14 +61,29 @@ class EcoIndexDialog {
 	 */
 	openPendingAnalysis(url) {
 		const a11yDialog = this.#a11yDialog;
-		if (!a11yDialog) {
-			console.error("EcoIndexDialog not initialized.");
-			return false;
-		}
-		this.#setAsPendingAnalsis(url);
+		let title = `
+{{- (i18n "AnalysisInProgressFor") -}}`;
+		title = replaceKeyIn(title, "URL", url);
+
+		this.#setAsLoadingRequest({ title });
 
 		a11yDialog.show();
-		return true;
+	}
+
+	/**
+	 * Open the modal dialog for an analysis retrieval
+	 * with a loading spinner (abort possible)
+	 *
+	 * @returns {boolean} true if success, otherwise true
+	 */
+	openAnalysisRetrieval() {
+		const a11yDialog = this.#a11yDialog;
+		const title = `
+{{- (i18n "AnalysisRetrieval") -}}`;
+
+		this.#setAsLoadingRequest({ title });
+
+		a11yDialog.show();
 	}
 
 	/**
@@ -106,19 +122,17 @@ class EcoIndexDialog {
 		return true;
 	}
 
-	#setAsPendingAnalsis(url) {
+	#setAsLoadingRequest(options) {
 		// Title
 		const title = this.#titleEl;
-		title.textContent = `
-{{- (i18n "AnalysisInProgressFor") -}}`;
-		title.textContent = replaceKeyIn(title.textContent, "URL", url);
+		title.textContent = options.title;
 
 		// Body (spinner)
 		this.#bodyAreaEl.innerHTML = '<div class="page-loading-spinner"></div>';
 
 		// Button
 		const btn = this.#actionButtonEl;
-		btn.textContent = "{{- i18n `CancelAnalysis` -}}";
+		btn.textContent = "{{- i18n `Cancel` -}}";
 		removeEventListener("click", this.#btnEventListener);
 		this.#btnEventListener = btn.addEventListener("click", (e) => {
 			ApiService.abortAnalysis();

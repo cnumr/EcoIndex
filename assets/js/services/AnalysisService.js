@@ -20,49 +20,60 @@ class AnalysisService {
 		}
 
 		// If URL is valid, launch the EcoIndex anylysis
-		this.#launchAnalysis(ApiService.ANALYSIS_BY_URL, { url });
-	}
-
-	async launchAnalysisById(id, options) {
-		this.#launchAnalysis(ApiService.ANALYSIS_BY_ID, {
-			...options,
-			id,
-		});
-	}
-
-	/**
-	 * Launch an analysis of a URL
-	 *
-	 * @param {type} type e.g. ApiService.ANALYSIS_BY_URL or ApiService.ANALYSIS_BY_ID
-	 * @param {Object} options object (with url or id)
-	 * @param {string} [options.url] URL The URL to analyse
-	 * @param {string} [options.id] Id of a previous analysis
-	 * @param {boolean} [options.silent] if true, prevents loading modal dialog to show up
-	 */
-	async #launchAnalysis(type, options) {
-		if (!options.silent) {
-			EcoIndexDialog.openPendingAnalysis(options.url);
-		}
 		let apiResult;
 		try {
-			await ApiService.newAnalysis(type, options).then((result) => {
+			EcoIndexDialog.openPendingAnalysis(url);
+			await ApiService.newAnalysisByURL(url).then((result) => {
 				apiResult = result;
 				ResultCacheService.add(result);
 				redirectToResults(result.id);
+				EcoIndexDialog.close();
 			});
 		} catch (e) {
-			if (e.code == DOMException.ABORT_ERR) {
-				return;
-			}
-			const response = e.response;
-			if (response) {
-				const json = await response.json();
-				EcoIndexDialog.openErrorMessage(response.status, json.detail);
-			} else {
-				EcoIndexDialog.openErrorMessage();
-			}
+			this.#handleError(e);
 		}
 		return apiResult;
+	}
+
+	async fetchAnalysisById(id) {
+		// Check local storage: if analysis results object exist returns it
+		let apiResult = ResultCacheService.get(id);
+		if (apiResult) {
+			return apiResult;
+		}
+
+		// Otherwise fetch from api
+		try {
+			EcoIndexDialog.openAnalysisRetrieval();
+			await ApiService.fetchAnalysisById(id).then((result) => {
+				apiResult = result;
+				ResultCacheService.add(result);
+				redirectToResults(result.id);
+				EcoIndexDialog.close();
+			});
+		} catch (e) {
+			this.#handleError(e);
+			return null;
+		}
+		return apiResult;
+	}
+
+	async #handleError(e) {
+		// Non HTTP errors (TODO improve test)
+		/*if (!e.code) {
+			throw e;
+		}*/
+		if (e.code == DOMException.ABORT_ERR) {
+			return;
+		}
+
+		const response = e.response;
+		if (response) {
+			const json = await response.json();
+			EcoIndexDialog.openErrorMessage(response.status, json.detail);
+		} else {
+			EcoIndexDialog.openErrorMessage();
+		}
 	}
 }
 
