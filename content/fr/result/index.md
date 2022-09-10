@@ -29,8 +29,8 @@ const resultRelativeTextData = {
   C: "Vous y êtes presque ! Encore quelques efforts et ce sera bon.",
   D: "La bonne nouvelle, c’est que vous pouvez faire beaucoup mieux !",
   E: "La bonne nouvelle, c’est que vous pouvez faire beaucoup mieux !",
-  F: "On ne va pas se le cacher : ça fait mal. Il est temps d’agir !",
-  G: "On ne va pas se le cacher : ça fait mal. Il est temps d’agir !",
+  F: "On ne va pas se le cacher : ça fait mal. Il est temps d’agir !",
+  G: "On ne va pas se le cacher : ça fait mal. Il est temps d’agir !",
  },
  // "[Left: 'bad result', Right : 'good result']"
  verdictParameters: {
