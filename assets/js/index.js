@@ -67,14 +67,14 @@ function initPageResult() {
  * Remake analysis button
  * Takes last analysis done and run an update to analysis
  */
-function initButtonRemakeAnalysis() {
+async function initButtonRemakeAnalysis() {
 	const buttonRemakeEl = document.querySelector(".js-button-retest");
 	if (!buttonRemakeEl) return;
-	buttonRemakeEl.addEventListener("click", (e) => {
+	buttonRemakeEl.addEventListener("click", async (e) => {
 		e.preventDefault();
 
 		const url = ResultCacheService.getLast().url;
-		AnalysisService.launchAnalysisByURL(url);
+		await AnalysisService.launchAnalysisByURL(url);
 	});
 }
 
@@ -92,9 +92,9 @@ function initSubmitUrlForm() {
 	});
 }
 
-function launchAnalysisByURL(url) {
+async function launchAnalysisByURL(url) {
 	try {
-		AnalysisService.launchAnalysisByURL(url);
+		await AnalysisService.launchAnalysisByURL(url);
 		updateFormMessages({ success: true });
 	} catch (error) {
 		updateFormMessages({ success: false, error });
