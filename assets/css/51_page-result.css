@@ -1,7 +1,8 @@
-/* 
- * RESULT PAGE SPECIFIC STYLES 
+/**
+ * RESULT PAGE SPECIFIC STYLES
  */
 
+/*! purgecss start ignore */
 .result-badge {
 	font-size: var(--s2);
 	font-weight: bold;
@@ -154,3 +155,4 @@
 	content: attr(data-unit);
 	padding-left: 0.4em;
 }
+/*! purgecss end ignore */
