@@ -27,7 +27,8 @@ class EcoIndexDialog {
 	#a11yDialog = null;
 	#dialogEl = null;
 	#titleEl = null;
-	#bodyAreaEl = null;
+	#bodyEl = null;
+	#spinnerEl = null;
 	#actionButtonEl = null;
 	#btnEventListener = null;
 
@@ -38,7 +39,8 @@ class EcoIndexDialog {
 	init(dialogId) {
 		const dialogEl = (this.#dialogEl = document.getElementById(dialogId));
 		this.#titleEl = dialogEl.querySelector("h1");
-		this.#bodyAreaEl = dialogEl.querySelector("#body-area");
+		this.#bodyEl = dialogEl.querySelector("#dialog-body");
+		this.#spinnerEl = dialogEl.querySelector("#dialog-spinner");
 		this.#actionButtonEl = dialogEl.querySelector("#action");
 		const a11yDialog = (this.#a11yDialog = new A11yDialog(dialogEl));
 		const html = document.documentElement;
@@ -127,8 +129,11 @@ class EcoIndexDialog {
 		const title = this.#titleEl;
 		title.textContent = options.title;
 
-		// Body (spinner)
-		this.#bodyAreaEl.innerHTML = '<div class="page-loading-spinner"></div>';
+		// Spinner
+		const spinnerClassList = this.#spinnerEl.classList;
+		if (spinnerClassList.contains("display:none")) {
+			spinnerClassList.remove("display:none");
+		}
 
 		// Button
 		const btn = this.#actionButtonEl;
@@ -150,6 +155,12 @@ class EcoIndexDialog {
 		this.#titleEl.textContent = `
 {{- (i18n "AnalysisErrorTitle") -}}`;
 
+		// Spinner
+		const spinnerClassList = this.#spinnerEl.classList;
+		if (!spinnerClassList.contains("display:none")) {
+			spinnerClassList.add("display:none");
+		}
+
 		// Body (message)
 		let errorMessage = errorCode ? ERROR_MESSAGES[errorCode] : `{{- (i18n "AnalysisErrorDefaultMessage") -}}`;
 
@@ -159,7 +170,7 @@ class EcoIndexDialog {
 				errorMessage = replaceKeyIn(errorMessage, key, value);
 			}
 		}
-		this.#bodyAreaEl.innerHTML = `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`;
+		this.#bodyEl.innerHTML = `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`;
 
 		// Button
 		const btn = this.#actionButtonEl;
