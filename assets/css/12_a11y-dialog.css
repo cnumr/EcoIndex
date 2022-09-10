@@ -1,4 +1,5 @@
 .dialog-container {
+	overflow: auto;
 	display: flex;
 	position: fixed;
 	top: 0;
