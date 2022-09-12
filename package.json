@@ -30,7 +30,7 @@
 		"@fullhuman/postcss-purgecss": "^4.0.3",
 		"@webcomponents/webcomponentsjs": "^2.5.0",
 		"a11y-dialog": "^7.5.1",
-		"autoprefixer": "^10.2.5",
+		"autoprefixer": "^10.4.9",
 		"babel-plugin-array-includes": "^2.0.3",
 		"core-js": "^3.25.1",
 		"css-vars-ponyfill": "^2.3.2",
