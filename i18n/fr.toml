@@ -78,3 +78,5 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "La page web indiquée ne semble pas répondre. Pouvez vous réessayer plus tard ?"
 [BetaMessage]
 	other = "Ce site est en version **beta**. N’hésitez pas à nous faire part de vos commentaires sur [les discussions Github](https://github.com/cnumr/EcoIndex/discussions/)"
+[NoJSMessage]
+	other = "**Attention** : Javascript est actuellement requis pour le fonctionnement de la nouvelle version d'ecoIndex ([activer JavaScript dans votre navigateur](https://www.enable-javascript.com/fr/))."

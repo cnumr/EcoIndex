@@ -4,6 +4,12 @@
 		<p><small>{{- i18n `BetaMessage` | markdownify -}}</small></p>
 	</div>
 
+	<noscript>
+		<div class="top-warning">
+			{{ i18n `NoJSMessage` | markdownify }}
+		</div>
+	</noscript>
+
 	<div class="stack-l --s3 {{ .Params.custom_class }}">
 		{{ partial "content.html" .Content }}
 	</div>

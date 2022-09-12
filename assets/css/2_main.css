@@ -92,7 +92,6 @@ dd {
 /* If no JS available, some text can be displayed */
 noscript {
 	padding: var(--s-1);
-	background-color: var(--color-lightish);
 }
 
 /* Forms */
