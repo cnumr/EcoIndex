@@ -91,20 +91,6 @@ class SiteAnalysisResult {
 		this._updatetResultRangeSliders(pageResultData);
 	}
 
-	// TODO: add inside data with results method (unique)
-	/**
-	 * Get array key for params verdicts list from score
-	 * @param {number} value
-	 * @param {number} min
-	 * @param {number} max
-	 * @param {number} arrayLength
-	 * @returns {number}
-	 */
-	_getResultParamBinaryScore(value, min, max) {
-		const percentValue = getPercentFromRange(value, min, max);
-		return clamp(Math.round((percentValue * 2) / 100), 1, 2) - 1;
-	}
-
 	/**
 	 *
 	 * @param {Array} resultData
@@ -113,9 +99,8 @@ class SiteAnalysisResult {
 	 */
 	_getDataResultsParamsBinaryScores(resultData, resultParamsVerdicts) {
 		return Object.keys(resultParamsVerdicts).reduce((resultTypeScores, key) => {
-			const paramScoreMin = this.resultRelativeTextData.resultParametersMinMaxValues[key].min;
-			const paramScoreMax = this.resultRelativeTextData.resultParametersMinMaxValues[key].max;
-			const resultParamBinaryScore = this._getResultParamBinaryScore(resultData[key], paramScoreMin, paramScoreMax);
+			const paramsScoreTarget = this.resultRelativeTextData.resultParametersMinMaxValues[key].target;
+			const resultParamBinaryScore = resultData[key] > paramsScoreTarget ? 1 : 0;
 			return { ...resultTypeScores, ...{ [`${key}_binary_score`]: resultParamBinaryScore } };
 		}, {});
 	}
