@@ -135,6 +135,9 @@ class EcoIndexDialog {
 			spinnerClassList.remove("display:none");
 		}
 
+		// Body (message)
+		this.#bodyEl.innerHTML = "";
+
 		// Button
 		const btn = this.#actionButtonEl;
 		btn.textContent = "{{- i18n `Cancel` -}}";

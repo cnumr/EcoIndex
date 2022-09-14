@@ -1,10 +1,11 @@
 +++
 title = "Erreur d'analyse"
 slug = "erreur"
+decoType = "404"
 +++
 
-{{% hero %}}
+{{<error-section class="text-align:center" message="Houston, nous avons un problème">}}
 
-# Houston, nous avons un problème
+{{% content_link href="/nous-rejoindre/" %}}Nous rejoindre{{% /content_link %}}
 
-{{% /hero %}}
+{{</error-section>}}

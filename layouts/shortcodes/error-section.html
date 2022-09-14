@@ -1,0 +1,6 @@
+<div class="center-l box-l --s2p0 hero error-section text-align:center {{ with .Get "class" }}{{ . }}{{ end }}">
+	<h1 class="error-section-message h1">{{ with .Get "message" }}{{ . }}{{ end }}</h1>
+	<div class="content --s2p0">
+		{{- .Inner | markdownify -}}
+	</div>
+</div>

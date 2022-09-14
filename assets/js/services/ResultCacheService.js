@@ -33,20 +33,29 @@ class ResultCacheService {
 			return;
 		}
 		// get item analysisResults from localStorage
-		const analysisResults = JSON.parse(localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY));
+		let analysisResults = JSON.parse(localStorage.getItem(RESULTS_LOCAL_STORAGE_KEY));
 		if (!analysisResults) {
 			// if no item analysisResults in localStorage, create it
 			localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, JSON.stringify([analysisResultData]));
 		} else {
 			// if item analysisResults in localStorage, add new analysisResultData to it
 			// check if analysisResultData already exist in localStorage with id
-			const analysisResultDataExist = analysisResults.find((analysisResult) => {
-				return analysisResult.id === analysisResultData.id;
-			});
-			if (!analysisResultDataExist) {
-				analysisResults.push(analysisResultData);
-				localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, JSON.stringify(analysisResults));
-				this.results[analysisResultData.id] = analysisResultData;
+			let analysisResultDataExist = false;
+			try {
+				analysisResultDataExist = analysisResults.find((analysisResult) => {
+					return analysisResult.id === analysisResultData.id;
+				});
+			} catch (error) {
+				// if local storage is corrupted, clean it
+				console.warn("Local storage is corrupted, reset it");
+				localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, null);
+				analysisResults = [];
+			} finally {
+				if (!analysisResultDataExist) {
+					analysisResults.push(analysisResultData);
+					localStorage.setItem(RESULTS_LOCAL_STORAGE_KEY, JSON.stringify(analysisResults));
+					this.results[analysisResultData.id] = analysisResultData;
+				}
 			}
 		}
 	}

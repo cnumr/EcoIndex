@@ -12,8 +12,8 @@ class ResultRangeSlider {
 		// get value from corresponding data key
 		this.value = this._getValueFromDataKey(data);
 		// get min and max value
-		this.valueMin = +this.handleEl.ariaValueMin;
-		this.valueMax = +this.handleEl.ariaValueMax;
+		this.valueMin = +this.handleEl.getAttribute("aria-valuemin");
+		this.valueMax = +this.handleEl.getAttribute("aria-valuemax");
 
 		// Set values to update dom
 		this.setSliderValue(this.value);

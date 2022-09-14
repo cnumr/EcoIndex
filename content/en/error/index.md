@@ -1,10 +1,11 @@
 +++
 draft = true
 title = "Analysis error"
+decoType = "404"
 +++
 
-{{% hero %}}
+{{<error-section class="text-align:center" message="Houston, we have a problem">}}
 
-# Houston, we have a problem
+{{% content_link href="/join-us" %}}Join us{{% /content_link %}}
 
-{{% /hero %}}
+{{</error-section>}}

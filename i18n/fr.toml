@@ -25,7 +25,7 @@
 L’analyse est en cours  
 pour « ##URL## »"""
 [AnalysisRetrieval]
-	other = "Récupération de l'analyse"
+	other = "Récupération de l’analyse"
 [NotAvailable]
 	other = "Non disponible"
 [ScoreDetails]
@@ -59,7 +59,7 @@ pour « ##URL## »"""
 [AnalysisErrorTitle]
 	other = "Oh oh, dommage…"
 [AnalysisErrorIntro]
-	other = "L'analyse n'a pas pu aboutir."
+	other = "L’analyse n’a pas pu aboutir."
 [AnalysisErrorDefaultMessage]
 	other = "Veuillez réessayer plus tard"
 [Close]
@@ -80,3 +80,5 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "Ce site est en version **beta**. N’hésitez pas à nous faire part de vos commentaires sur [les discussions Github](https://github.com/cnumr/EcoIndex/discussions/)"
 [NoJSMessage]
 	other = "**Attention** : Javascript est actuellement requis pour le fonctionnement de la nouvelle version d'ecoIndex ([activer JavaScript dans votre navigateur](https://www.enable-javascript.com/fr/))."
+[Error404]
+	other = "Erreur 404"

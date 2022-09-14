@@ -29,7 +29,7 @@ class ApiService {
 				url,
 			},
 		};
-		return this.#fetchApi("ecoindexes/", options);
+		return this.#fetchApi("ecoindexes", options);
 	}
 
 	/**
