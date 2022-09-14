@@ -18,7 +18,7 @@ jobs:
       - name: ✨ Setup NPM
         uses: bahmutov/npm-install@v1
       - name: 🛠️ Build
-        run: hugo --minify
+        run: hugo
       - name: 🔑 Install SSH Key
         run: |
           install -m 600 -D /dev/null ~/.ssh/id_rsa
