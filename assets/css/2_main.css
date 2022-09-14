@@ -209,6 +209,7 @@ header .menu-btn-container {
 }
 
 body {
+	position: relative;
 	background-color: var(--color-primary);
 	color: var(--color-light);
 }
@@ -222,10 +223,20 @@ footer {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding-top: var(--s5);
-	padding-bottom: var(--s5);
+	border-radius: var(--border-radius-small);
+	padding-top: var(--s0);
+	padding-bottom: var(--s4);
 	padding-left: var(--s4);
 	padding-right: var(--s4);
+}
+
+.footer-container {
+	position: relative;
+	padding-top: var(--s4);
+}
+
+.footer-container > div {
+	background-color: var(--color-primary);
 }
 
 footer > * {
@@ -476,3 +487,12 @@ footer nav {
 	border-color: #ff0000aa !important;
 	border-width: 3px !important;
 } */
+
+/* ERROR SECTION */
+.error-section .error-section-message.h1 {
+	padding-right: 0;
+	padding-top: 30vh;
+}
+.error-section .content {
+	margin-top: var(--s2);
+}
