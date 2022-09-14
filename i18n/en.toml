@@ -78,5 +78,7 @@ More information on page [How it works](/how-it-works/)."""
 	other = "The page you want to test does not respond. Please try again later."
 [BetaMessage]
 	other = "This site is in **beta** version. Feel free to give us feedback on [Github discussions](https://github.com/cnumr/EcoIndex/discussions/)"
+[NoJSMessage]
+	other = "**Warning** : JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
 [Error404]
 	other = "404 error"
