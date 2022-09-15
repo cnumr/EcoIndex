@@ -22,6 +22,7 @@ La nouvelle version d’EcoIndex (V3) est réalisée avec [Hugo](https://gohugo.
 Le projet se base sur le module Hugo [base-structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure).
 
 ### Installation
+Pour installer le projet avec Docker, référez vous au chapitre [installation avec Docker](#installation-docker)
 
 1. Téléchargez et installez la dernière version _extented_ disponible de Hugo
    ([procédure d'installation de Hugo, en anglais](https://gohugo.io/getting-started/installing/)).
@@ -33,6 +34,13 @@ Le projet se base sur le module Hugo [base-structure](https://gitlab.com/goodimp
    2. Installez les dernières dépendances avec la commmande `npm install`.
    3. Démarrez le serveur Hugo avec la commande `hugo server`.
 4. Rendez-vous à l'adresse <http://localhost:1313> avec votre navigateur web.
+
+### Installation avec Docker
+Le projet dispose d'un fichier `makefile` possédant les commandes suifisantes pour 
+builder et installer le projet avec Docker.
+
+Une fois Docker installé sur votre machine, il vous suffit d'executer la commande suivante : 
+`make start`. 
 
 ### Astuces pour les développeurs
 

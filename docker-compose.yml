@@ -22,4 +22,4 @@ services:
             - "8000:8000"
         volumes:
             - '.:/src'
-        command: bash -c "npm run"
+        command: bash -c "npm install"
