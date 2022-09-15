@@ -118,6 +118,7 @@ input[type="text"] {
 	background-color: var(--color-darkish);
 }
 
+/* purgecss ignore */
 form > .form-error {
 	color: #fff;
 	background-color: var(--color-pastel-red);
