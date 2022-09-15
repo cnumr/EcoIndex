@@ -1,0 +1,25 @@
+version: "3.3"
+
+services:
+    hugo:
+        image: klakegg/hugo:latest-ext
+        command: serve
+        volumes:
+            - ".:/src"
+        ports:
+            - "1313:1313"
+
+    nodejs:
+        build: .
+        working_dir: /src
+        environment:
+            - NODE_ENV=development
+            - NODE_PORT=8000
+        dns:
+            - 10.2.61.10
+            - 10.2.61.11
+        ports:
+            - "8000:8000"
+        volumes:
+            - '.:/src'
+        command: bash -c "yarn && yarn dev"

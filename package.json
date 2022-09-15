@@ -46,6 +46,6 @@
 		"prettier": "*",
 		"prettier-plugin-go-template": "*"
 	},
-	"name": "EcoIndex",
-	"version": "0.2.0"
+	"name": "ecoindex",
+	"version": "0.1.0"
 }
