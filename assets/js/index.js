@@ -109,7 +109,7 @@ function updateFormMessages(options) {
 	} else {
 		const errorMessage = "{{ i18n `EcoIndexFormInputInvalid` }}";
 		if (!form.querySelector(".form-error")) {
-			form.insertAdjacentHTML("beforeend", `<p class="form-error">${errorMessage}</p>`);
+			form.insertAdjacentHTML("afterbegin", `<p class="form-error">${errorMessage}</p>`);
 		}
 		form.setAttribute("aria-invalid", "true");
 	}
