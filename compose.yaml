@@ -1,5 +1,3 @@
-version: "3.3"
-
 services:
     hugo:
         image: klakegg/hugo:latest-ext
@@ -15,11 +13,6 @@ services:
         environment:
             - NODE_ENV=development
             - NODE_PORT=8000
-        dns:
-            - 10.2.61.10
-            - 10.2.61.11
-        ports:
-            - "8000:8000"
         volumes:
             - '.:/src'
         command: ["npm", "ci"]
