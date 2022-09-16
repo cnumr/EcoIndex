@@ -1,4 +1,4 @@
-COMPOSE = docker-compose -f docker-compose.yml
+COMPOSE = docker compose
 EXEC?= $(COMPOSE) exec nodejs
 
 install: pull build start
