@@ -25,9 +25,7 @@ clean: ## Clean docker container with "exited" status
 	$(COMPOSE) rm -v
 
 clean-all: ## Remove all unused Docker objetcs
-	docker stop $$(docker ps -a -q --filter "name=ecoindex_*")
-	docker system prune
-	docker volume prune
+	$(COMPOSE) down -v --remove-orphans --rmi local
 
 stop-all: ## Stop all docker container
 	docker stop $$(docker ps -a -q)
