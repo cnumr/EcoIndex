@@ -2,8 +2,8 @@ name: Deploy rsync
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - "v*.*.*"
 
 jobs:
   deploy:
