@@ -22,7 +22,7 @@ stop: ## stop docker containers
 	$(COMPOSE) stop
 
 clean: ## Clean docker container with "exited" status
-	docker rm $$(docker ps -qa --no-trunc --filter "status=exited" --filter "name=ecoindex_*")
+	$(COMPOSE) rm -v
 
 clean-all: ## Remove all unused Docker objetcs
 	docker stop $$(docker ps -a -q --filter "name=ecoindex_*")
