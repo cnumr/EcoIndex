@@ -5,9 +5,7 @@ weight = 20
 
 {{% info_1_column %}}
 
-### Sa contribution à l’empreinte de l’humanité est loin d’être négligeable
-
-Le numérique, ce n’est pas que du vent
+Sa contribution à l’empreinte de l’humanité est loin d’être négligeable
 
 {{% /info_1_column %}}
 
