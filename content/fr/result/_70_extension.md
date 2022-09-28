@@ -15,7 +15,7 @@ EcoIndex existe également en extension, qui fonctionne même derrière un firew
 
 {{% info_2_columns_col2 %}}
 
-Sur Chrome et Firefox, vous pouvez quantifier les impacts environnementaux de n'importe quelle page web.
+Sur Chrome et Firefox, vous pouvez quantifier les impacts environnementaux de n’importe quelle page web.
 
 GreenIT Analysis permet notamment de :
 
@@ -27,7 +27,7 @@ GreenIT Analysis permet notamment de :
 {{% content_link href="https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad?hl=fr" %}}Extension Chrome{{% /content_link %}}
 <br>
 {{% content_link href="https://addons.mozilla.org/fr/firefox/addon/greenit-analysis/" %}}Extension Firefox{{% /content_link %}}
-<br> 
+<br>
 {{% content_link href="https://github.com/cnumr/" %}}En ligne de commande{{% /content_link %}}
 </p>
 

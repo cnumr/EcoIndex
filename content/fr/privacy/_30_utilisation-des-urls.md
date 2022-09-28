@@ -22,9 +22,9 @@ de données. Les informations collectées sont les suivantes :
 - Ces informations sont hébergées auprès du prestataire décrit dans les [Mentions légales](/mentions-legales/).
 - Les informations collectées servent uniquement au calcul de la performance environnementale de la page testée et à la
   constitution d’une base de données sur l’état actuel des URL testées par les utilisateurs. Le stockage des URL et des
-  données est destiné à : - afficher les fiches d'analyse déjà réalisées via un URI - réaliser ultérieurement et de
-  façon anonyme des analyses statistiques pour améliorer l'EcoIndex et le recalibrer (bornes min max médiane) en
-  fonction de l'évolution des ULR analysées. - Dans tous les cas, les analyses sont anonymes (au sens où nous ne
+  données est destiné à : - afficher les fiches d’analyse déjà réalisées via un URI - réaliser ultérieurement et de
+  façon anonyme des analyses statistiques pour améliorer l’EcoIndex et le recalibrer (bornes min max médiane) en
+  fonction de l’évolution des ULR analysées. - Dans tous les cas, les analyses sont anonymes (au sens où nous ne
   réaliserons que des analyses statistiques).
 
 {{% /info_2_columns_col2 %}}

@@ -1,5 +1,5 @@
 +++
-title = "Erreur d'analyse"
+title = "Erreur d’analyse"
 slug = "erreur"
 decoType = "404"
 +++

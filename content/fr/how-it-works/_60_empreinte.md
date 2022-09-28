@@ -23,7 +23,7 @@ le temps (évolution de la consommation mémoire et charge CPU) permet d’ident
 
 {{% /highlight %}}
 
-L’empreinte environnementale d’une page est représentée par son équivalence en matière d'**émissions de gaz à effet de
+L’empreinte environnementale d’une page est représentée par son équivalence en matière d’**émissions de gaz à effet de
 serre et de consommation d’eau pour un nombre donné de visiteurs.** Elle est calculée en fonction du niveau
 d’éco&shy;conception du site. Nous partons d’un impact moyen en termes d’émission de gaz à effet de serre et de
 consommation d’eau douce, issu de plusieurs modélisations réalisées par GreenIT.fr : cet impact moyen est de **2g. eq.

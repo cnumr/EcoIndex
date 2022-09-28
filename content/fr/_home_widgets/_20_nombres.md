@@ -11,7 +11,7 @@ Sa contribution à l’empreinte de l’humanité est loin d’être négligeabl
 
 {{<grid min-cell-width="160">}}
 
-{{<highlight_info_card icon="energy" title="4,2 %">}} consommation d'energie primaire {{</highlight_info_card>}}
+{{<highlight_info_card icon="energy" title="4,2 %">}} consommation d’energie primaire {{</highlight_info_card>}}
 
 {{<highlight_info_card icon="cloud" title="3,2 %">}} émission de gaz à effet de serre {{</highlight_info_card>}}
 

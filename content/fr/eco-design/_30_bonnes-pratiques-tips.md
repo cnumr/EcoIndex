@@ -46,8 +46,8 @@ Voici, pour commencer, quelques bonnes pratiques à mettre en application !
 - **Regroupez les images dans un sprite** et combinez certaines feuilles de styles CSS et librairies Javascript.
 - **Favorisez les pages statiques**, quand cela est possible, plutôt que d’utiliser un CMS. Vous pouvez utiliser des
   générateurs de sites statiques ou une architecture JAMstack.
-	
-Plus d'infos sur les bonnes pratiques : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
+
+Plus d’infos sur les bonnes pratiques : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
 
 {{% /info_2_columns_col2 %}}
 

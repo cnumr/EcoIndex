@@ -20,7 +20,7 @@ weight = 60
 - Optimisez les images en choisissant le bon format et réduisant la taille
 - Evitez les vidéos et fonds vidéos
 - Compresser les fichiers (HTML, CSS, JS, SVG)
-- Remplacez autant que possible les images d'interface par des styles CSS et des pictos
+- Remplacez autant que possible les images d’interface par des styles CSS et des pictos
 - Facilitez la mise en cache navigateur {{</highlight_info_card>}}
 
 {{<highlight_info_card title="La page est trop complexe">}}

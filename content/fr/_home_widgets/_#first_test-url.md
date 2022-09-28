@@ -3,7 +3,7 @@ id = "test-url"
 no_padding = true
 +++
 
-Entrez l'adresse d'une page web pour découvrir le score :
+Entrez l’adresse d’une page web pour découvrir le score :
 
 {{< ecoindex_form >}}
 
