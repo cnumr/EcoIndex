@@ -87,7 +87,7 @@ class SiteAnalysisResult {
 
 		// specific components updates
 		this._updateNoteChart(pageResultData.grade);
-		this._updateFootprintResultFromSelect(pageResultData);
+		this._updateFootprintResultsFromSelect();
 		this._updatetResultRangeSliders(pageResultData);
 	}
 
@@ -184,15 +184,7 @@ class SiteAnalysisResult {
 	 * Update footprint impact infos from factor select (from 10 to 1000)
 	 *
 	 */
-	_updateFootprintResultFromSelect() {
-		// TODO: move outside
-		const unitsData = {
-			water: { order: ["cl", "l"], factor: 100 },
-			ges: {
-				order: ["gCO2e", "kgCO2e"],
-				factor: 1000,
-			},
-		};
+	_updateFootprintResultsFromSelect() {
 		const selectFactorEl = this.el.querySelector(".js-footprint-factor-select select");
 		const footprintResultEls = this.el.querySelectorAll(".footprint-result");
 
@@ -200,18 +192,35 @@ class SiteAnalysisResult {
 		const footprintResultsBaseValues = [...footprintResultEls].map((el) => +el.textContent);
 		const factor = +selectFactorEl.value;
 
-		function updateFootprintResultsFrom(factor) {
-			footprintResultEls.forEach((el, index) => {
-				const footprintType = el.dataset.int;
-				const roundedValue = Math.round(footprintResultsBaseValues[index] * factor * 100) / 100;
-				// update value
-				el.textContent = roundedValue / (factor >= 1000 ? unitsData[footprintType].factor : 1);
-				// update unit
-				el.dataset.unit = factor >= 1000 ? unitsData[footprintType].order[1] : unitsData[footprintType].order[0];
-			});
-		}
-		updateFootprintResultsFrom(factor);
-		selectFactorEl.addEventListener("change", (e) => updateFootprintResultsFrom(+e.target.value));
+		this._updateFootprintResultsFrom(footprintResultEls, footprintResultsBaseValues, factor);
+		selectFactorEl.addEventListener("change", (e) =>
+			this._updateFootprintResultsFrom(footprintResultEls, footprintResultsBaseValues, +e.target.value)
+		);
+	}
+
+	/**
+	 * Update footprint results (water, gCo2e) from factor selected
+	 * @param {HTMLElement[]} resultElements - Array of dom elements to update
+	 * @param {number} footprintResultsBaseValues - Base result values
+	 * @param {number} inputFactor - Factor selected for unit display change
+	 */
+	_updateFootprintResultsFrom(resultElements, footprintResultsBaseValues, inputFactor) {
+		const unitsData = this.resultRelativeTextData.footprintUnitsData;
+		resultElements.forEach((el, index) => {
+			// Get footprint unit from data attribute
+			const footprintType = el.dataset.int;
+			// Update result calculated value from selected factor
+			let rawValue = +footprintResultsBaseValues[index];
+			let factorisedValue = rawValue * inputFactor;
+			const unitConvertedValue =
+				factorisedValue / (factorisedValue >= unitsData[footprintType].factor ? unitsData[footprintType].factor : 1);
+			el.textContent = (Math.round(unitConvertedValue * 100) / 100).toString();
+			// Update unit from result value
+			el.dataset.unit =
+				factorisedValue >= unitsData[footprintType].factor
+					? unitsData[footprintType].order[1]
+					: unitsData[footprintType].order[0];
+		});
 	}
 
 	/**
