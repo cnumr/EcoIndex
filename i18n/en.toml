@@ -76,6 +76,10 @@ More information on page [How it works](/how-it-works/)."""
 	other = "The URL you provided is not valid. Please check the URL and try again."
 [Error504]
 	other = "The page you want to test does not respond. Please try again later."
+[Error520]
+	other = "This resource you want to test is not a standard HTML page with mimeType 'text/html'"
+[Error521]
+	other = "The page you want to test can not be analyzed because its response status code is not 200"
 [BetaMessage]
 	other = "This site is in **beta** version. Feel free to give us feedback on [Github discussions](https://github.com/cnumr/EcoIndex/discussions/)"
 [NoJSMessage]

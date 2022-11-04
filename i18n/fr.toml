@@ -76,6 +76,10 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "L’url demandée n’est pas valide. Veuillez vérifier l’URL et réessayer."
 [Error504]
 	other = "La page web indiquée ne semble pas répondre. Pouvez vous réessayer plus tard ?"
+[Error520]
+	other = "La ressource que vous essayez d'analyser n'est pas une page HTML standard avec un mimetype 'text/html'"
+[Error521]
+	other = "La page que vous essayez de tester ne peut pas être analysée car elle est en erreur (son code réponse n'est pas 200)"
 [BetaMessage]
 	other = "Ce site est en version **beta**. N’hésitez pas à nous faire part de vos commentaires sur [les discussions Github](https://github.com/cnumr/EcoIndex/discussions/)"
 [NoJSMessage]
