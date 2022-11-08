@@ -43,6 +43,14 @@ const resultRelativeTextData = {
   size: { min: 0, max: 4.82, target: 0.9 },
   nodes: { min: 0, max: 1386, target: 500 },
   requests: { min: 0, max: 156, target: 27 },
+ },
+ // Paramètres du résultats de l'empreinte environnementale pour les unitées de mesure
+ footprintUnitsData: {
+     water: { order: ["cl", "l"], factor: 100 },
+     ges: {
+         order: ["gCO2e", "kgCO2e"],
+         factor: 1000,
+     },
  }
 }
 window.__siteData = {...window.__siteData, ...{resultRelativeTextData}}
