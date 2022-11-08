@@ -18,6 +18,12 @@ const ERROR_MESSAGES = {
 	504: `
 {{- i18n "Error504" | markdownify  -}}
 `,
+	520: `
+{{- i18n "Error520" | markdownify  -}}
+`,
+	521: `
+{{- i18n "Error521" | markdownify  -}}
+`,
 };
 
 /**
@@ -47,8 +53,8 @@ class EcoIndexDialog {
 
 		// prettier-ignore
 		a11yDialog
-		.on("show", () => (html.style.overflowY = "hidden"))
-		.on("hide", () => (html.style.overflowY = ""));
+			.on("show", () => (html.style.overflowY = "hidden"))
+			.on("hide", () => (html.style.overflowY = ""));
 
 		return this;
 	}
