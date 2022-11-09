@@ -3,7 +3,7 @@ name: Validation des dépendances
 on: [pull_request]
 
 jobs:
-  deploy:
+  dependencies:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
