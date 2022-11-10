@@ -3,7 +3,7 @@
  * @param {string} urlString
  * @returns {boolean} - return true if valid
  */
- export function isValidHttpUrl(urlString) {
+export function isValidHttpUrl(urlString) {
 	let url;
 
 	try {
