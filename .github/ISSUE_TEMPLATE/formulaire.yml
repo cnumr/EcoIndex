@@ -1,0 +1,45 @@
+name: 🐛 Rapport de bug
+description: Vous rencontrez un problème sur le site ecoindex
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci pour votre contribution en remplissant ce rapport d'incident !
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Que s'est il passé ?
+      description: Pouvez vous également détailler le comportement attendu ? N'hésitez pas à faire une copie d'écran également
+      placeholder: C'est à vous ...
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: Sur quel navigateur avez vous rencontré ce problème ?
+      multiple: true
+      options:
+        - Firefox
+        - Chrome
+        - Safari
+        - Microsoft Edge
+        - Autre
+  - type: dropdown
+    id: devices
+    attributes:
+      label: Sur quel device rencontrez vous le problème ?
+      multiple: true
+      options:
+        - Smartphone
+        - Tablette
+        - PC
+        - Autre
+  - type: textarea
+    id: logs
+    attributes:
+      label: Un message d'erreur est il apparu ?
+      description: Si un message d'erreur est apparu, pouvez vous le copier / coller ici ?
+      render: shell
