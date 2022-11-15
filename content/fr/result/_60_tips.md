@@ -13,7 +13,7 @@ weight = 60
 
 {{% info_2_columns_col2 %}}
 
-{{<highlight_info_card title="La page est trop lourde">}}
+{{<highlight_info_card title="Si la page est trop lourde">}}
 
 ---
 
@@ -23,7 +23,7 @@ weight = 60
 - Remplacez autant que possible les images d’interface par des styles CSS et des pictos
 - Facilitez la mise en cache navigateur {{</highlight_info_card>}}
 
-{{<highlight_info_card title="La page est trop complexe">}}
+{{<highlight_info_card title="Si la page est trop complexe">}}
 
 ---
 
@@ -31,7 +31,7 @@ weight = 60
 - Optez pour l’approche "mobile first"
 - Evitez les mécanismes comme le "scroll" infini et les carroussels {{</highlight_info_card>}}
 
-{{<highlight_info_card title="Il y a trop de requêtes">}}
+{{<highlight_info_card title="S'il y a trop de requêtes">}}
 
 ---
 
