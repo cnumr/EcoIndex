@@ -40,9 +40,9 @@ const resultRelativeTextData = {
  },
  // Paramètres du résultats valeurs min et max pour les plages
  resultParametersMinMaxValues: {
-  size: { min: 0, max: 4.82, target: 0.9 },
-  nodes: { min: 0, max: 1386, target: 500 },
-  requests: { min: 0, max: 156, target: 27 },
+  size: { min: 0, max: 4.82, target: 1.024 },
+  nodes: { min: 0, max: 1386, target: 600 },
+  requests: { min: 0, max: 156, target: 40 },
  },
  // Paramètres du résultats de l'empreinte environnementale pour les unitées de mesure
  footprintUnitsData: {
