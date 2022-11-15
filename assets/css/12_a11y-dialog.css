@@ -26,12 +26,16 @@
 .dialog-content {
 	background-color: var(--color-primary);
 	margin: auto;
-	padding: var(--s5);
+	padding: var(--s1);
 	position: relative;
 	animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
 	max-width: calc(100% - 2 * var(--s1));
 	width: var(--measure);
 	border-radius: 2px;
+}
+
+#dialog-title {
+	font-size: var(--s1);
 }
 
 .dialog-buttons {
@@ -51,5 +55,14 @@
 @keyframes slide-up {
 	from {
 		transform: translateY(10%);
+	}
+}
+
+@media (min-width: 30rem) {
+	.dialog-content {
+		padding: var(--s4);
+	}
+	#dialog-title {
+		font-size: var(--s3);
 	}
 }
