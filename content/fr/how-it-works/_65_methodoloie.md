@@ -15,7 +15,7 @@ weight = 65
 
 Le site internet ecoindex.fr utilise l'API [ecoindex_api](https://github.com/cnumr/ecoindex_api) pour faire tourner les analyses de page. Le projet ecoindex_api embarque un [driver chrome pour selenium](https://github.com/ultrafunkamsterdam/undetected-chromedriver).
 
-Lorsqu'on lance une analyse, on va donc charger la page demandée dans un vrai navigateur Chrome et jouer le scenario suivant :
+Lorsqu'on lance une analyse, on va donc charger la page demandée dans un vrai navigateur Chrome et jouer le scénario suivant :
 
 1. Lancer un navigateur Chrome headless avec les options `no-sandbox`, `disable-dev-shm-usage` et les capacités `goog:loggingPrefs` à `{"performance": "ALL"}`
 2. Ouvrir la page sans données locales (cache, cookies, localstorage...) avec une résolution 1920x1080px
