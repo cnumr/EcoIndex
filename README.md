@@ -13,7 +13,7 @@ La contribution à l’ensemble de nos outils est ouvert à tout le monde, aprè
 
 Nous recherchons des personnes ayant des connaissances dans la tech, et dans le domaine de la traduction.
 
-Pour faciliter les échanges, un channel #ecoIndex est dédié au projet sur le [Slack du cNumR](https://cnumr.slack.com)
+Pour faciliter les échanges, un channel #ecoIndex est dédié au projet sur le [Mattermost de l'association GreenIt](https://chat.greenit.eco/)
 
 ## Le Projet
 
@@ -101,7 +101,7 @@ All of our tools are open to contributions from everybody, after having contacte
 
 We seek people with technical skills, and people able to make translations and localizations.
 
-There’s a dedicated [slack channel](https://cnumr.slack.com) for the project.
+There’s a dedicated [Mattermost channel](https://chat.greenit.eco/) for the project.
 
 ## The project
 

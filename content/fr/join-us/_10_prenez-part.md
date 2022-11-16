@@ -20,7 +20,7 @@ Pour échanger sur les sujets du numérique responsable, de la sobriété numér
 
 Pour l’éco&shy;conception et la conception responsable de service numérique, préférez le groupe de discussion dédié ici :
 - [Ecoconception web](https://groups.google.com/forum/#%21forum/ecoconceptionweb). Vous pouvez vous y inscrire en envoyant un mail vide à ecoconceptionweb+subscribe@googlegroups.com.
-- [Slack Cnumr](https://cnumr.slack.com/)
+- [Mattermost de l'association GreenIt](https://chat.greenit.eco/)
 
 Nous vous proposons en plus une liste de discussion généraliste, dédiée à ces sujets : greenit@simplelists.com. Elle vous permet de poser des questions et d’échanger sur tous les sujets du numérique responsable.
 Vous pouvez vous y inscrire ici : [Echanger avec le collectif](https://www.greenit.fr/echanger/)
