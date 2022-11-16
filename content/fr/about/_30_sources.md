@@ -12,6 +12,7 @@ weight = 30
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
+
 Vous pouvez trouvez les sources et contribuer sur nos répertoires Github: [le site](https://github.com/cnumr/EcoIndex) et le [back-end](https://github.com/cnumr/ecoindex_api).
 L’algorithme et le service EcoIndex, ainsi que les outils
 associés, et les résultats fournis sont proposés sous licence
