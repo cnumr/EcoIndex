@@ -18,7 +18,7 @@ testée :
 
 - **La performance environnementale** est représentée par un score sur 100 et une note de A à G (plus la note est
   élevée, mieux c’est !).
-- **L’empreinte environnementale** est maétrialisée par les émissions de gaz à effet de serre et la consommation d’eau
+- **L’empreinte environnementale** est matérialisée par les émissions de gaz à effet de serre et la consommation d’eau
   générées par la page.
 
 Plusieurs critères sont pris en compte par notre méthode de calcul :

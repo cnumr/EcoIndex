@@ -18,7 +18,7 @@ weight = 60
 ---
 
 - Optimisez les images en choisissant le bon format et réduisant la taille
-- Evitez les vidéos et fonds vidéos
+- Évitez les vidéos et fonds vidéos
 - Compresser les fichiers (HTML, CSS, JS, SVG)
 - Remplacez autant que possible les images d’interface par des styles CSS et des pictos
 - Facilitez la mise en cache navigateur {{</highlight_info_card>}}
@@ -29,7 +29,7 @@ weight = 60
 
 - Limitez le contenu et les fonctionnalités à l’essentiel
 - Optez pour l’approche "mobile first"
-- Evitez les mécanismes comme le "scroll" infini et les carroussels {{</highlight_info_card>}}
+- Évitez les mécanismes comme le "scroll" infini et les carroussels {{</highlight_info_card>}}
 
 {{<highlight_info_card title="S'il y a trop de requêtes">}}
 
