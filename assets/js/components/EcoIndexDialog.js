@@ -114,6 +114,25 @@ class EcoIndexDialog {
 		a11yDialog.show();
 		return true;
 	}
+
+	/**
+	 * Open the modal dialog to share results with
+	 * a text and a "copy to clipboard" button
+	 *
+	 * @param {string} url Results URL to be shared
+	 *
+	 * @returns {boolean} true if success, otherwise true
+	 */
+	openResultSharing(url) {
+		const a11yDialog = this.#a11yDialog;
+		let title = `
+{{- (i18n "ShareTheResult") -}}`;
+
+		this.#setAsResultSharing({ title, url });
+
+		a11yDialog.show();
+	}
+
 	/**
 	 * Close the modal dialog
 	 *
@@ -186,6 +205,40 @@ class EcoIndexDialog {
 		btn.textContent = "{{- i18n `Close` -}}";
 		removeEventListener("click", this.#btnEventListener);
 		this.#btnEventListener = btn.addEventListener("click", (e) => {
+			this.close();
+		});
+	}
+
+	#setAsResultSharing(options) {
+		// Title
+		const title = this.#titleEl;
+		title.textContent = options.title;
+
+		// Spinner
+		const spinnerClassList = this.#spinnerEl.classList;
+		if (!spinnerClassList.contains("display:none")) {
+			spinnerClassList.add("display:none");
+		}
+
+		// Body (message)
+		this.#bodyEl.innerHTML =
+			`
+<div class="with-sidebar-l --right-side --p75">
+	<div>
+		<input id="url-to-copy" type="text" readonly size="40" value="` +
+			options.url +
+			`">
+		<div><button id="copy-to-clipboard">{{- i18n "CopyURL" -}}</button></div>
+	</div>
+</div>
+`;
+
+		// Button
+		const btn = this.#actionButtonEl;
+		btn.textContent = "{{- i18n `Close` -}}";
+		removeEventListener("click", this.#btnEventListener);
+		this.#btnEventListener = btn.addEventListener("click", (e) => {
+			ApiService.abortAnalysis();
 			this.close();
 		});
 	}

@@ -13,6 +13,7 @@ function initApp() {
 	initPageResult();
 	initSubmitUrlForm();
 	initButtonRemakeAnalysis();
+	initButtonShareURL();
 }
 
 // init app on dom loaded
@@ -75,6 +76,41 @@ async function initButtonRemakeAnalysis() {
 
 		const url = ResultCacheService.getLast().url;
 		await AnalysisService.launchAnalysisByURL(url);
+	});
+}
+
+/**
+ * Share results URL button
+ * Opens a modal with the URL and a "copy to clipboard button"
+ */
+async function initButtonShareURL() {
+	const shareBtnEl = document.querySelector("#share-btn");
+	if (!shareBtnEl) return;
+	shareBtnEl.addEventListener("click", async (e) => {
+		e.preventDefault();
+
+		EcoIndexDialog.openResultSharing(window.location.href);
+		initButtonCopyToClipboard();
+	});
+}
+
+/**
+ * "Copy to clipboard" button
+ * Copies the content of the input value close to it
+ */
+function initButtonCopyToClipboard() {
+	const copyBtnEl = document.querySelector("#copy-to-clipboard");
+	if (!copyBtnEl) return;
+	copyBtnEl.addEventListener("click", async (e) => {
+		e.preventDefault();
+		const copyText = document.getElementById("url-to-copy");
+
+		// Select the text field
+		copyText.select();
+		copyText.setSelectionRange(0, 99999); // For mobile devices
+
+		// Copy the text inside the text field
+		navigator.clipboard.writeText(copyText.value);
 	});
 }
 

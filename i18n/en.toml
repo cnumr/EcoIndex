@@ -86,3 +86,7 @@ More information on page [How it works](/how-it-works/)."""
 	other = "**Warning** : JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
 [Error404]
 	other = "404 error"
+[ShareTheResult]
+	other = "Share my result"
+[CopyURL]
+	other = "Copy the address"

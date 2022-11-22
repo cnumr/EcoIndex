@@ -86,3 +86,7 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "**Attention** : Javascript est actuellement requis pour le fonctionnement de la nouvelle version d'ecoIndex ([activer JavaScript dans votre navigateur](https://www.enable-javascript.com/fr/))."
 [Error404]
 	other = "Erreur 404"
+[ShareTheResult]
+	other = "Partager mon résultat"
+[CopyURL]
+	other = "Copier l’adresse"
