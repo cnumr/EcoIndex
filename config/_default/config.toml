@@ -1,6 +1,6 @@
 _merge = "deep"
 
-baseURL = "https://beta.ecoindex.fr/"
+baseURL = "https://www.ecoindex.fr/"
 
 title = "EcoIndex.fr"
 
