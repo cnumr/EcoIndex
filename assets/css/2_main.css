@@ -114,7 +114,7 @@ button {
 	width: fit-content;
 }
 
-input[type="text"] {
+input[type="url"] {
 	background-color: var(--color-darkish);
 }
 
