@@ -4,7 +4,7 @@
 	languageName = "Français"
 	weight = 1
 	[fr.params]
-		description = "Evaluez gratuitement la performance et l'empreinte environnementale de votre site web"
+		description = "Évaluez gratuitement la performance et l'empreinte environnementale de votre site web"
 
 [en]
 	languageCode = "en"
