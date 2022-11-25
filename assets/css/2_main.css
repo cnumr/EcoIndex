@@ -17,7 +17,7 @@ html {
 }
 
 ::placeholder {
-	color: var(--color-lightest);
+	color: var(--color-mid);
 	padding: var(--s-5) var(--s-5) var(--s-5) 0;
 }
 
@@ -105,6 +105,15 @@ button {
 
 input {
 	background-color: var(--color-darkish);
+}
+
+/* Remove default style when autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+	background-color: transparent !important;
 }
 
 input[type="submit"],
