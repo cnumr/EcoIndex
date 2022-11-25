@@ -103,6 +103,10 @@ button {
 	border-radius: var(--border-radius-small);
 }
 
+input {
+	background-color: var(--color-darkish);
+}
+
 input[type="submit"],
 input[type="button"],
 button {
@@ -112,10 +116,6 @@ button {
 	color: var(--color-dark);
 	font-weight: var(--font-weight-bold);
 	width: fit-content;
-}
-
-input[type="url"] {
-	background-color: var(--color-darkish);
 }
 
 /* purgecss ignore */
