@@ -24,21 +24,7 @@ class AnalysisService {
 
 			ApiService.newAnalysisTaskByURL(url).then((taskId) => {
 
-				let fetchTaskResult = async function (id) {
-					console.log("Analysis " + id)
-
-					return ApiService.fetchAnalysisTaskById(id).then(async (taskResult) => {
-						console.log(taskResult)
-						if (taskResult.status === "PENDING") {
-							await sleep(2000);
-							return await fetchTaskResult(id);
-						}
-
-						return taskResult
-					})
-				}
-
-				fetchTaskResult(taskId).then((taskResult) => {
+				ApiService.fetchAnalysisTaskById(taskId).then((taskResult) => {
 					const ecoindex = taskResult.ecoindex_result
 
 					if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {

@@ -41,6 +41,10 @@ class ApiService {
 	async fetchAnalysisTaskById(id) {
 		const options = {
 			method: "get",
+			retry: {
+				limit: 12,
+				statusCodes: [425]
+			}
 		}
 
 		return this.#fetchApi("tasks/ecoindexes/" + id, options)
@@ -78,6 +82,7 @@ class ApiService {
 	 * @param {Object} options object (with url or id)
 	 * @param {string} [options.method] Method: 'post' or 'get'
 	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
+	 * @param {Object} [Options.retry] Retry object to override default Ky retry request property
 	 * @returns {Response} response object
 	 */
 	async #fetchApi(slug, options) {
