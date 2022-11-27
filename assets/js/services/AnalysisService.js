@@ -19,20 +19,47 @@ class AnalysisService {
 			throw new Error("INVALID_URL");
 		}
 
-		// If URL is valid, launch the EcoIndex anylysis
-		let apiResult;
 		try {
 			EcoIndexDialog.openPendingAnalysis(url);
-			await ApiService.newAnalysisByURL(url).then((result) => {
-				apiResult = result;
-				ResultCacheService.add(result);
-				redirectToResults(result.id);
-				EcoIndexDialog.close();
+
+			ApiService.newAnalysisTaskByURL(url).then((taskId) => {
+
+				let fetchTaskResult = async function (id) {
+					console.log("Analysis " + id)
+
+					return ApiService.fetchAnalysisTaskById(id).then(async (taskResult) => {
+						console.log(taskResult)
+						if (taskResult.status === "PENDING") {
+							await sleep(2000);
+							return await fetchTaskResult(id);
+						}
+
+						return taskResult
+					})
+				}
+
+				fetchTaskResult(taskId).then((taskResult) => {
+					const ecoindex = taskResult.ecoindex_result
+
+					if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
+						ResultCacheService.add(ecoindex.detail);
+						redirectToResults(taskId);
+						EcoIndexDialog.close();
+					}
+
+					if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
+						const e = taskResult.ecoindex_result.error
+						EcoIndexDialog.openErrorMessage(e.status_code, e);
+					}
+
+					if (taskResult.status === "FAILURE") {
+						EcoIndexDialog.openErrorMessage(599, taskResult.task_error);
+					}
+				})
 			});
 		} catch (e) {
 			this.#handleError(e);
 		}
-		return apiResult;
 	}
 
 	async fetchAnalysisById(id) {
@@ -75,6 +102,10 @@ class AnalysisService {
 			EcoIndexDialog.openErrorMessage();
 		}
 	}
+}
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 const AnalysisServiceObj = new AnalysisService();

@@ -9,18 +9,18 @@ class ApiService {
 	#apiKey = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 
 	// TODO set from .env ?
-	#baseURL = "https://ecoindex.p.rapidapi.com/v1/";
-	#host = "ecoindex.p.rapidapi.com";
+	#baseURL = "https://ecoindex-api.lebondeveloppeur.fr/v1/";
+	#host = "ecoindex-api.lebondeveloppeur.fr";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
 	/**
-	 * Request a new analysis by URL
+	 * Create a new analysis task by URL
 	 *
 	 * @param {string} url URL
 	 * @returns {Response} response object
 	 */
-	async newAnalysisByURL(url) {
+	async newAnalysisTaskByURL(url) {
 		const options = {
 			method: "post",
 			json: {
@@ -29,11 +29,25 @@ class ApiService {
 				url,
 			},
 		};
-		return this.#fetchApi("ecoindexes", options);
+		return this.#fetchApi("tasks/ecoindexes", options);
 	}
 
 	/**
-	 * Request a new analysis by id
+	 * Request a task analysis by its id
+	 *
+	 * @param {string} id Id
+	 * @returns {Response} response object
+	 */
+	async fetchAnalysisTaskById(id) {
+		const options = {
+			method: "get",
+		}
+
+		return this.#fetchApi("tasks/ecoindexes/" + id, options)
+	}
+
+	/**
+	 * Request an analysis by its id
 	 *
 	 * @param {string} id Id
 	 * @returns {Response} response object
@@ -58,7 +72,7 @@ class ApiService {
 	}
 
 	/**
-	 * New analysis, by URL or by ID
+	 * New ecoindex API Wrapper
 	 *
 	 * @param {string} slug Request URL slug
 	 * @param {Object} options object (with url or id)
