@@ -60,9 +60,10 @@ class AnalysisService {
 
 	async #handleError(e) {
 		// Non HTTP errors (TODO improve test)
-		if (e.name !== "HTTPError") {
+		if (e.name !== "HTTPError" && e.name !== "TypeError" && e.name !== "TimeoutError") {
 			throw e;
 		}
+
 		if (e.code == DOMException.ABORT_ERR) {
 			return;
 		}
