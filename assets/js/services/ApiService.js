@@ -41,13 +41,9 @@ class ApiService {
 	async fetchAnalysisTaskById(id) {
 		const options = {
 			method: "get",
-			retry: {
-				limit: 12,
-				statusCodes: [425]
-			}
-		}
+		};
 
-		return this.#fetchApi("tasks/ecoindexes/" + id, options)
+		return this.#fetchApi("tasks/ecoindexes/" + id, options);
 	}
 
 	/**
@@ -93,6 +89,11 @@ class ApiService {
 
 		const response = await ky(slug, {
 			...options,
+			retry: {
+				limit: 12,
+				afterStatusCodes: [425],
+				statusCodes: [425],
+			},
 			prefixUrl: this.#baseURL,
 			timeout: 60000, // 60s instead of 10s default
 			signal,
