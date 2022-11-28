@@ -9,10 +9,6 @@
 	z-index: 1;
 }
 
-.dialog-container[aria-hidden="true"] {
-	display: none;
-}
-
 .dialog-overlay {
 	position: fixed;
 	top: 0;
