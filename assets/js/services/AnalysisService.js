@@ -90,9 +90,5 @@ class AnalysisService {
 	}
 }
 
-function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 const AnalysisServiceObj = new AnalysisService();
 export default AnalysisServiceObj;
