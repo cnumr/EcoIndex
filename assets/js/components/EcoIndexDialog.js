@@ -2,62 +2,38 @@ import ApiService from "../services/ApiService";
 import A11yDialog from "a11y-dialog";
 import { replaceKeyIn } from "../helpers/stringUtils";
 
-const ERROR_MESSAGES = {
-	422: `
-{{- i18n "Error422" | markdownify -}}
-`,
-	429: `
-{{- i18n "Error429" | markdownify -}}
-`,
-	500: `
-{{- i18n "Error500" | markdownify  -}}
-`,
-	502: `
-{{- i18n "Error502" | markdownify  -}}
-`,
-	504: `
-{{- i18n "Error504" | markdownify  -}}
-`,
-	520: `
-{{- i18n "Error520" | markdownify  -}}
-`,
-	521: `
-{{- i18n "Error521" | markdownify  -}}
-`,
-};
-
 /**
  * Simple collapse content component
  */
 class EcoIndexDialog {
-	#a11yDialog = null;
-	#dialogEl = null;
-	#titleEl = null;
-	#bodyEl = null;
-	#spinnerEl = null;
-	#actionButtonEl = null;
-	#btnEventListener = null;
+	static #a11yDialog = null;
 
-	get ERROR_MESSAGES() {
-		return ERROR_MESSAGES;
-	}
-
-	init(dialogId) {
-		const dialogEl = (this.#dialogEl = document.getElementById(dialogId));
-		this.#titleEl = dialogEl.querySelector("h1");
-		this.#bodyEl = dialogEl.querySelector("#dialog-body");
-		this.#spinnerEl = dialogEl.querySelector("#dialog-spinner");
-		this.#actionButtonEl = dialogEl.querySelector("#action");
-		const a11yDialog = (this.#a11yDialog = new A11yDialog(dialogEl));
-		const html = document.documentElement;
-
-		// prettier-ignore
-		a11yDialog
-			.on("show", () => (html.style.overflowY = "hidden"))
-			.on("hide", () => (html.style.overflowY = ""));
-
-		return this;
-	}
+	static ERROR_MESSAGES = {
+		404: `
+	{{- i18n "Error404" | markdownify -}}
+	`,
+		422: `
+	{{- i18n "Error422" | markdownify -}}
+	`,
+		429: `
+	{{- i18n "Error429" | markdownify -}}
+	`,
+		500: `
+	{{- i18n "Error500" | markdownify  -}}
+	`,
+		502: `
+	{{- i18n "Error502" | markdownify  -}}
+	`,
+		504: `
+	{{- i18n "Error504" | markdownify  -}}
+	`,
+		520: `
+	{{- i18n "Error520" | markdownify  -}}
+	`,
+		521: `
+	{{- i18n "Error521" | markdownify  -}}
+	`,
+	};
 
 	/**
 	 * Open the modal dialog for a pending analysis
@@ -67,31 +43,23 @@ class EcoIndexDialog {
 	 *
 	 * @returns {boolean} true if success, otherwise true
 	 */
-	openPendingAnalysis(url) {
-		const a11yDialog = this.#a11yDialog;
+	static openPendingAnalysis(url) {
 		let title = `
 {{- (i18n "AnalysisInProgressFor") -}}`;
 		title = replaceKeyIn(title, "URL", url);
 
-		this.#setAsLoadingRequest({ title });
-
-		a11yDialog.show();
+		EcoIndexDialog.#openLoadingRequest(title);
 	}
 
 	/**
 	 * Open the modal dialog for an analysis retrieval
 	 * with a loading spinner (abort possible)
-	 *
-	 * @returns {boolean} true if success, otherwise true
 	 */
-	openAnalysisRetrieval() {
-		const a11yDialog = this.#a11yDialog;
+	static openAnalysisRetrieval() {
 		const title = `
 {{- (i18n "AnalysisRetrieval") -}}`;
 
-		this.#setAsLoadingRequest({ title });
-
-		a11yDialog.show();
+		EcoIndexDialog.#openLoadingRequest(title);
 	}
 
 	/**
@@ -100,19 +68,26 @@ class EcoIndexDialog {
 	 * @param {string} errorCode Error code, e.g. 429
 	 * @param {Object} details Details object given by request error response,
 	 *                         e.g. {daily_limit_per_host, host, message}
-	 *
-	 * @returns {boolean} true if success, otherwise true
 	 */
-	openErrorMessage(errorCode, details) {
-		const a11yDialog = this.#a11yDialog;
-		if (!a11yDialog) {
-			console.error("EcoIndexDialog not initialized.");
-			return false;
-		}
-		this.#setAsErrorMessage(errorCode, details);
+	static openErrorMessage(errorCode, details) {
+		// Title
+		const title = `
+{{- (i18n "AnalysisErrorTitle") -}}`;
 
-		a11yDialog.show();
-		return true;
+		// Body (message)
+		let errorMessage = errorCode
+			? EcoIndexDialog.ERROR_MESSAGES[errorCode]
+			: `{{- (i18n "AnalysisErrorDefaultMessage") -}}`;
+		// Replace variables given in details object
+		if (details instanceof Object) {
+			for (const [key, value] of Object.entries(details)) {
+				errorMessage = replaceKeyIn(errorMessage, key, value);
+			}
+		}
+
+		EcoIndexDialog.#createAndShowDialog(title, {
+			body: `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`,
+		});
 	}
 
 	/**
@@ -120,17 +95,23 @@ class EcoIndexDialog {
 	 * a text and a "copy to clipboard" button
 	 *
 	 * @param {string} url Results URL to be shared
-	 *
-	 * @returns {boolean} true if success, otherwise true
 	 */
-	openResultSharing(url) {
-		const a11yDialog = this.#a11yDialog;
-		let title = `
+	static openResultSharing(url) {
+		// Title
+		const title = `
 {{- (i18n "ShareTheResult") -}}`;
 
-		this.#setAsResultSharing({ title, url });
+		// Body (message)
+		const body = `
+<div class="with-sidebar-l --right-side --p75">
+<div>
+<input id="url-to-copy" type="text" readonly size="40" value="${url}"">
+<div><button id="copy-to-clipboard">{{- i18n "CopyURL" -}}</button></div>
+</div>
+</div>
+`;
 
-		a11yDialog.show();
+		EcoIndexDialog.#createAndShowDialog(title, { body });
 	}
 
 	/**
@@ -138,8 +119,8 @@ class EcoIndexDialog {
 	 *
 	 * @returns {boolean} true if success, otherwise true
 	 */
-	close() {
-		const a11yDialog = this.#a11yDialog;
+	static close() {
+		const a11yDialog = EcoIndexDialog.#a11yDialog;
 		if (!a11yDialog) {
 			console.error("EcoIndexDialog not initialized.");
 			return false;
@@ -149,100 +130,104 @@ class EcoIndexDialog {
 		return true;
 	}
 
-	#setAsLoadingRequest(options) {
-		// Title
-		const title = this.#titleEl;
-		title.textContent = options.title;
-
-		// Spinner
-		const spinnerClassList = this.#spinnerEl.classList;
-		if (spinnerClassList.contains("display:none")) {
-			spinnerClassList.remove("display:none");
-		}
-
-		// Body (message)
-		this.#bodyEl.innerHTML = "";
-
-		// Button
-		const btn = this.#actionButtonEl;
-		btn.textContent = "{{- i18n `Cancel` -}}";
-		removeEventListener("click", this.#btnEventListener);
-		this.#btnEventListener = btn.addEventListener("click", (e) => {
-			ApiService.abortAnalysis();
-			this.close();
+	/**
+	 * Opens the modal dialog to display a "loading in progress" message
+	 * with a spinner animation
+	 * @param title Title to be displayed on the modal
+	 */
+	static #openLoadingRequest(title) {
+		EcoIndexDialog.#createAndShowDialog(title, {
+			actions: [
+				{
+					cb: function (e) {
+						ApiService.abortAnalysis();
+						EcoIndexDialog.close();
+					},
+					label: "{{- i18n `Cancel` -}}",
+				},
+			],
+			hasSpinner: true,
+			keepOpen: true,
 		});
 	}
 
 	/**
+	 * Builds HTML content for a modal dialog and attaches it to the DOM
 	 *
-	 * @param {int} [errorCode] Error code
-	 * @param {Object} [details] Details object
+	 * @param {string}    title - Modal dialog title (mandatory)
+	 * @param {Object}    options - The options for the modal dialog
+	 * @param {string[]}  [options.actions=[{cb, label}]] - An array of action objects
+	 * @param {function}  [options.actions[].cb=close] - The action callback function
+	 * @param {string}    [options.actions[].label="{{- i18n `Close` -}}"] - The action label
+	 * @param {string}    [options.body=""] - The modal dialog body content (HTML)
+	 * @param {boolean}   [options.hasSpinner=false] - Tells if the modal dialog needs a spinner
+	 * @param {boolean}   [options.keepOpen=false] - Tells if the modal dialog needs to be kept open
+	 *                                               until a button is explicitly activated.
+	 *                                               If set to true, [ESC] key and clic on the
+	 *                                               overlay panel won't close the modal dialog.
 	 */
-	#setAsErrorMessage(errorCode, details) {
-		// Title
-		this.#titleEl.textContent = `
-{{- (i18n "AnalysisErrorTitle") -}}`;
+	static #createAndShowDialog(
+		title,
+		{
+			actions = [{ cb: EcoIndexDialog.close, label: "{{- i18n `Close` -}}" }],
+			body = "",
+			hasSpinner = false,
+			keepOpen = false,
+		} = {}
+	) {
+		const role = keepOpen ? "alertdialog" : "dialog";
+		const overlayAttr = keepOpen ? "" : "data-a11y-dialog-hide";
+		const modalContainer = document.querySelector("#dialog-here");
+		const dialogEl = document.querySelector("#dialog");
+		const modal = document.createElement("div");
 
-		// Spinner
-		const spinnerClassList = this.#spinnerEl.classList;
-		if (!spinnerClassList.contains("display:none")) {
-			spinnerClassList.add("display:none");
-		}
-
-		// Body (message)
-		let errorMessage = errorCode ? ERROR_MESSAGES[errorCode] : `{{- (i18n "AnalysisErrorDefaultMessage") -}}`;
-
-		// Replace variables given in details object
-		if (details instanceof Object) {
-			for (const [key, value] of Object.entries(details)) {
-				errorMessage = replaceKeyIn(errorMessage, key, value);
-			}
-		}
-		this.#bodyEl.innerHTML = `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`;
-
-		// Button
-		const btn = this.#actionButtonEl;
-		btn.textContent = "{{- i18n `Close` -}}";
-		removeEventListener("click", this.#btnEventListener);
-		this.#btnEventListener = btn.addEventListener("click", (e) => {
-			this.close();
-		});
-	}
-
-	#setAsResultSharing(options) {
-		// Title
-		const title = this.#titleEl;
-		title.textContent = options.title;
-
-		// Spinner
-		const spinnerClassList = this.#spinnerEl.classList;
-		if (!spinnerClassList.contains("display:none")) {
-			spinnerClassList.add("display:none");
-		}
-
-		// Body (message)
-		this.#bodyEl.innerHTML =
-			`
-<div class="with-sidebar-l --right-side --p75">
-	<div>
-		<input id="url-to-copy" type="text" readonly size="40" value="` +
-			options.url +
-			`">
-		<div><button id="copy-to-clipboard">{{- i18n "CopyURL" -}}</button></div>
+		modal.classList.add("dialog-container");
+		modal.id = "dialog";
+		modal.setAttribute("aria-labelledby", "dialog-title");
+		modal.setAttribute("role", role);
+		modal.innerHTML = `
+<div class="dialog-overlay" ${overlayAttr}></div>
+<div class="dialog-content stack-l --s3" role="document">
+	<h1 id="dialog-title" class="cover-l__middle text-align:center" role="document" tabindex="0">${title}</h1>
+	<div id="dialog-body">
+		${body}
 	</div>
+	${hasSpinner ? '<div id="dialog-spinner" class="page-loading-spinner"></div>' : ""}
+	<div class="dialog-buttons"></div>
 </div>
 `;
 
-		// Button
-		const btn = this.#actionButtonEl;
-		btn.textContent = "{{- i18n `Close` -}}";
-		removeEventListener("click", this.#btnEventListener);
-		this.#btnEventListener = btn.addEventListener("click", (e) => {
-			ApiService.abortAnalysis();
-			this.close();
+		if (dialogEl) {
+			dialogEl.replaceWith(modal);
+		} else {
+			modalContainer.appendChild(modal);
+		}
+
+		const a11yDialog = (EcoIndexDialog.#a11yDialog = new A11yDialog(modal));
+
+		// buttons
+		const buttonsEl = modal.querySelector(".dialog-buttons");
+		actions.forEach(function (action) {
+			const btn = document.createElement("button");
+			btn.name = "action";
+			btn.innerHTML = action.label;
+			buttonsEl.appendChild(btn);
+			btn.addEventListener("click", action.cb);
 		});
+
+		// Prevent scroll behind the modal
+		const html = document.documentElement;
+		// prettier-ignore
+		a11yDialog
+			.on("show", () => (html.style.overflowY = "hidden"))
+			.on("hide", function(e) {
+				html.style.overflowY = "";
+				const dialogEl = document.querySelector("#dialog");
+				dialogEl.remove();
+			});
+
+		a11yDialog.show();
 	}
 }
 
-const EcoIndexDialogObj = new EcoIndexDialog();
-export default EcoIndexDialogObj;
+export default EcoIndexDialog;
