@@ -188,7 +188,7 @@ class EcoIndexDialog {
 		modal.innerHTML = `
 <div class="dialog-overlay" ${overlayAttr}></div>
 <div class="dialog-content stack-l --s3" role="document">
-	<h1 id="dialog-title" class="cover-l__middle text-align:center" role="document" tabindex="0">${title}</h1>
+	<h1 id="dialog-title" class="cover-l__middle text-align:center" tabindex="0">${title}</h1>
 	<div id="dialog-body">
 		${body}
 	</div>
