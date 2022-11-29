@@ -9,8 +9,8 @@ class ApiService {
 	#apiKey = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
 
 	// TODO set from .env ?
-	#baseURL = "https://ecoindex-api.lebondeveloppeur.fr/v1/";
-	#host = "ecoindex-api.lebondeveloppeur.fr";
+	#baseURL = "https://ecoindex.p.rapidapi.com/v1/";
+	#host = "ecoindex.p.rapidapi.com";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
