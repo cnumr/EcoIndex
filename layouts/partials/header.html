@@ -3,7 +3,7 @@
 {{ $currentPage := . }}
 
 {{/* Unique modal dialog */}}
-<div id="dialog-here"></div>
+{{ partial "components/dialog" . -}}
 
 {{/* Svg symbols that can be calls through html with <use> */}}
 <div class="svg-symbols">

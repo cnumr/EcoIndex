@@ -9,6 +9,7 @@ import SiteAnalysisResult from "./components/SiteAnalysisResult";
 function initApp() {
 	initMenu();
 	initCollapses();
+	initDialog();
 	initPageResult();
 	initSubmitUrlForm();
 	initButtonRemakeAnalysis();
@@ -41,6 +42,15 @@ function initMenu() {
 function initCollapses() {
 	const collapseElements = document.querySelectorAll(".js-collapse");
 	collapseElements.forEach((collapseElement) => new Collapse(collapseElement));
+}
+
+// ------------------------------------------------------------------------- DIALOG TODO
+
+/**
+ * Init unique modal dialog
+ */
+function initDialog() {
+	EcoIndexDialog.init("dialog");
 }
 
 // ------------------------------------------------------------------------- RESULT PAGE
