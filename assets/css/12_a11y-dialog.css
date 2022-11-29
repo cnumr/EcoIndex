@@ -1,3 +1,4 @@
+/*! purgecss start ignore */
 .dialog-container {
 	overflow: auto;
 	display: flex;
@@ -62,3 +63,4 @@
 		font-size: var(--s3);
 	}
 }
+/*! purgecss end ignore */
