@@ -30,7 +30,6 @@ class AnalysisService {
 					if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
 						ResultCacheService.add(ecoindex.detail);
 						redirectToResults(taskId);
-						EcoIndexDialog.close();
 					}
 
 					if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
