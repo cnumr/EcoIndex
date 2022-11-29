@@ -19,20 +19,32 @@ class AnalysisService {
 			throw new Error("INVALID_URL");
 		}
 
-		// If URL is valid, launch the EcoIndex anylysis
-		let apiResult;
 		try {
 			EcoIndexDialog.openPendingAnalysis(url);
-			await ApiService.newAnalysisByURL(url).then((result) => {
-				apiResult = result;
-				ResultCacheService.add(result);
-				redirectToResults(result.id);
-				EcoIndexDialog.close();
+
+			ApiService.newAnalysisTaskByURL(url).then((taskId) => {
+
+				ApiService.fetchAnalysisTaskById(taskId).then((taskResult) => {
+					const ecoindex = taskResult.ecoindex_result
+
+					if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
+						ResultCacheService.add(ecoindex.detail);
+						redirectToResults(taskId);
+					}
+
+					if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
+						const e = taskResult.ecoindex_result.error
+						EcoIndexDialog.openErrorMessage(e.status_code, e);
+					}
+
+					if (taskResult.status === "FAILURE") {
+						EcoIndexDialog.openErrorMessage(599, taskResult.task_error);
+					}
+				})
 			});
 		} catch (e) {
 			this.#handleError(e);
 		}
-		return apiResult;
 	}
 
 	async fetchAnalysisById(id) {

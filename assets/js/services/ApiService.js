@@ -15,12 +15,12 @@ class ApiService {
 	#browserHeight = 1080;
 
 	/**
-	 * Request a new analysis by URL
+	 * Create a new analysis task by URL
 	 *
 	 * @param {string} url URL
 	 * @returns {Response} response object
 	 */
-	async newAnalysisByURL(url) {
+	async newAnalysisTaskByURL(url) {
 		const options = {
 			method: "post",
 			json: {
@@ -29,11 +29,29 @@ class ApiService {
 				url,
 			},
 		};
-		return this.#fetchApi("ecoindexes", options);
+		return this.#fetchApi("tasks/ecoindexes", options);
 	}
 
 	/**
-	 * Request a new analysis by id
+	 * Request a task analysis by its id
+	 *
+	 * @param {string} id Id
+	 * @returns {Response} response object
+	 */
+	async fetchAnalysisTaskById(id) {
+		const options = {
+			method: "get",
+			retry: {
+				limit: 12,
+				statusCodes: [425],
+			},
+		};
+
+		return this.#fetchApi("tasks/ecoindexes/" + id, options);
+	}
+
+	/**
+	 * Request an analysis by its id
 	 *
 	 * @param {string} id Id
 	 * @returns {Response} response object
@@ -58,12 +76,13 @@ class ApiService {
 	}
 
 	/**
-	 * New analysis, by URL or by ID
+	 * New ecoindex API Wrapper
 	 *
 	 * @param {string} slug Request URL slug
 	 * @param {Object} options object (with url or id)
 	 * @param {string} [options.method] Method: 'post' or 'get'
 	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
+	 * @param {Object} [Options.retry] Retry object to override default Ky retry request property
 	 * @returns {Response} response object
 	 */
 	async #fetchApi(slug, options) {
