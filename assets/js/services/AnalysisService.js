@@ -22,26 +22,35 @@ class AnalysisService {
 		try {
 			EcoIndexDialog.openPendingAnalysis(url);
 
-			ApiService.newAnalysisTaskByURL(url).then((taskId) => {
+			ApiService.newAnalysisTaskByURL(url).then(
+				(taskId) => {
+					ApiService.fetchAnalysisTaskById(taskId).then(
+						(taskResult) => {
+							const ecoindex = taskResult.ecoindex_result;
 
-				ApiService.fetchAnalysisTaskById(taskId).then((taskResult) => {
-					const ecoindex = taskResult.ecoindex_result
+							if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
+								ResultCacheService.add(ecoindex.detail);
+								redirectToResults(taskId);
+							}
 
-					if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
-						ResultCacheService.add(ecoindex.detail);
-						redirectToResults(taskId);
-					}
+							if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
+								const e = taskResult.ecoindex_result.error;
+								EcoIndexDialog.openErrorMessage(e.status_code, e);
+							}
 
-					if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
-						const e = taskResult.ecoindex_result.error
-						EcoIndexDialog.openErrorMessage(e.status_code, e);
-					}
-
-					if (taskResult.status === "FAILURE") {
-						EcoIndexDialog.openErrorMessage(599, taskResult.task_error);
-					}
-				})
-			});
+							if (taskResult.status === "FAILURE") {
+								EcoIndexDialog.openErrorMessage(599, taskResult.task_error);
+							}
+						},
+						(e) => {
+							this.#handleError(e);
+						}
+					);
+				},
+				(e) => {
+					this.#handleError(e);
+				}
+			);
 		} catch (e) {
 			this.#handleError(e);
 		}
@@ -57,12 +66,17 @@ class AnalysisService {
 		// Otherwise fetch from api
 		try {
 			EcoIndexDialog.openAnalysisRetrieval();
-			await ApiService.fetchAnalysisById(id).then((result) => {
-				apiResult = result;
-				ResultCacheService.add(result);
-				redirectToResults(result.id);
-				EcoIndexDialog.close();
-			});
+			await ApiService.fetchAnalysisById(id).then(
+				(result) => {
+					apiResult = result;
+					ResultCacheService.add(result);
+					redirectToResults(result.id);
+					EcoIndexDialog.close();
+				},
+				(e) => {
+					this.#handleError(e);
+				}
+			);
 		} catch (e) {
 			this.#handleError(e);
 			return null;
