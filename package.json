@@ -37,7 +37,7 @@
 		"ky": "^0.32.2",
 		"postcss": "^8.4.19",
 		"postcss-calc": "^8.0",
-		"postcss-cli": "^10.0.0",
+		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^8.0.0-alpha.1",
 		"postcss-simple-vars": "^7.0",
 		"purgecss": "^5.0"
@@ -47,5 +47,5 @@
 		"prettier-plugin-go-template": "*"
 	},
 	"name": "EcoIndex",
-	"version": "0.8.2"
+	"version": "0.9.0"
 }
