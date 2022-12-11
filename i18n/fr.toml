@@ -52,6 +52,8 @@ pour « ##URL## »"""
 	other = "English"
 [GreenITAssociation]
 	other = "Association Green IT  (prononcer grine • aïe • ti)"
+[NeutralIT]
+	other = "Neutral IT"
 [NewWindow]
 	other = "nouvelle fenêtre"
 [Cancel]

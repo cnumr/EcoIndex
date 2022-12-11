@@ -52,6 +52,8 @@ for “##URL##”"""
 	other = "English"
 [GreenITAssociation]
 	other = "Association Green IT"
+[NeutralIT]
+	other = "Neutral IT"
 [NewWindow]
 	other = "new window"
 [Cancel]
