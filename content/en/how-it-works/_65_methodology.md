@@ -7,7 +7,7 @@ weight = 65
 
 {{% info_2_columns_col1 %}}
 
-## Méthodologie d'analyse
+## Analysis methodology
 
 {{% /info_2_columns_col1 %}}
 
