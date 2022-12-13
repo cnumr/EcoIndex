@@ -6,6 +6,8 @@ enableRobotsTXT = true
 
 title = "EcoIndex.fr"
 
+image = "images/logo-ecoindex.jpg"
+
 defaultContentLanguage = "fr"
 
 disableKinds = ["section", "taxonomy", "term"]
