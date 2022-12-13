@@ -44,6 +44,7 @@ class ApiService {
 			retry: {
 				limit: 12,
 				statusCodes: [425],
+				backoffLimit: 2000,
 			},
 		};
 
