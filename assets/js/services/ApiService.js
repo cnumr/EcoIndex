@@ -42,7 +42,7 @@ class ApiService {
 		const options = {
 			method: "get",
 			retry: {
-				limit: 12,
+				limit: 30,
 				statusCodes: [425],
 				backoffLimit: 2000,
 			},
