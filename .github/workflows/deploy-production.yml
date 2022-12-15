@@ -1,0 +1,29 @@
+name: Déploiement RSYNC en production
+
+on:
+  push:
+    tags:
+      - "v*.*.*-production"
+
+jobs:
+  deploy:
+    environment: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
+      - name: ✨ Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+      - name: ✨ Setup NPM
+        uses: bahmutov/npm-install@v1
+      - name: 🛠️ Build
+        run: hugo
+      - name: 🔑 Install SSH Key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: 🚀 Deploy
+        run: rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}

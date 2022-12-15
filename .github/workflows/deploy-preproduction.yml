@@ -1,12 +1,13 @@
-name: Deploy rsync
+name: Déploiement RSYNC en preproduction
 
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*.*-preproduction"
 
 jobs:
   deploy:
+    environment: preproduction
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
