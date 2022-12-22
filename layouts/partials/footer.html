@@ -14,7 +14,7 @@
 								<li>
 									<a
 										href="{{- .URL | safeHTMLAttr -}}"
-										{{ if .Params.Newtab -}}target="_blank"{{- end -}}
+										{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
 										{{ $ariaCurrent | safeHTMLAttr -}}
 										>{{ .Title }}</a
 									>
