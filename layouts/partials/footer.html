@@ -14,7 +14,7 @@
 								<li>
 									<a
 										href="{{- .URL | safeHTMLAttr -}}"
-										{{ if .Params.Newtab -}}target="_blank"{{- end -}}
+										{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
 										{{ $ariaCurrent | safeHTMLAttr -}}
 										>{{ .Title }}</a
 									>
@@ -31,6 +31,7 @@
 						<a
 							href="https://neutral-it.com/"
 							target="_blank"
+							rel="noopener"
 							title="{{ i18n `NeutralIT` }} – {{ i18n `NewWindow` }}"
 							>{{- $logoResource := resources.Get "images/logo-neutral-it.webp" -}}
 							<img
@@ -44,6 +45,7 @@
 						<a
 							href="https://www.greenit.fr/"
 							target="_blank"
+							rel="noopener"
 							title="{{ i18n `GreenITAssociation` }} – {{ i18n `NewWindow` }}"
 							>{{- $logoResource := resources.Get "images/logo-greenit.svg" -}}
 							<img
