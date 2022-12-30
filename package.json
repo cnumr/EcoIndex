@@ -34,7 +34,7 @@
 		"babel-plugin-array-includes": "^2.0.3",
 		"core-js": "^3.26.1",
 		"css-vars-ponyfill": "^2.3.2",
-		"ky": "^0.33.0",
+		"ky": "^0.33.1",
 		"postcss": "^8.4.20",
 		"postcss-calc": "^8.0",
 		"postcss-cli": "^10.1.0",
