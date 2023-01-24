@@ -1,16 +1,15 @@
 import ky from "ky";
+import params from "@params";
 
 class ApiService {
 	#controller = null;
 
-	// TODO import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
+	// Params imported from Hugo config params
+	// (they can be defined through environment variables)
+	#apiKey = params.api.key;
+	#baseURL = params.api.baseurl;
+	#host = params.api.host;
 
-	// TODO: temp key, need to create specific one for app
-	#apiKey = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
-
-	// TODO set from .env ?
-	#baseURL = "https://ecoindex.p.rapidapi.com/v1/";
-	#host = "ecoindex.p.rapidapi.com";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
@@ -91,7 +90,7 @@ class ApiService {
 		const controller = (this.#controller = new AbortController());
 
 		const { signal } = controller;
-
+		debugger;
 		const response = await ky(slug, {
 			...options,
 			prefixUrl: this.#baseURL,

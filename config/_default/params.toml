@@ -1,1 +1,6 @@
 themeColor = "#007e5f"
+
+[api]
+	key = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda"
+	baseurl = "https://ecoindex.p.rapidapi.com/v1/"
+	host = "ecoindex.p.rapidapi.com"
