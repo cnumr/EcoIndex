@@ -47,5 +47,8 @@
 		"prettier-plugin-go-template": "*"
 	},
 	"name": "EcoIndex",
-	"version": "0.10.1"
+	"version": "0.10.1",
+	"scripts": {
+		"version": "node ./bin/update-package-hugo.mjs"
+	}
 }
