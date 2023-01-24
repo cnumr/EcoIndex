@@ -88,7 +88,6 @@ class ApiService {
 	async #fetchApi(slug, options) {
 		this.abortAnalysis();
 		const controller = (this.#controller = new AbortController());
-
 		const { signal } = controller;
 		const response = await ky(slug, {
 			...options,
