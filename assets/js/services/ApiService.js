@@ -90,7 +90,6 @@ class ApiService {
 		const controller = (this.#controller = new AbortController());
 
 		const { signal } = controller;
-		debugger;
 		const response = await ky(slug, {
 			...options,
 			prefixUrl: this.#baseURL,
