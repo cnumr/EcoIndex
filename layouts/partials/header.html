@@ -14,10 +14,9 @@
 <div class="header-container shadow-container">
 	<header role="banner" class="wrapper">
 		<div>
-			<a href="{{ `/` | relLangURL }}" class="logo" title="Retour à la page d'accueil"
-				>{{- $logoResource := resources.Get "images/logo.svg" -}}
-				<img src="{{- $logoResource.RelPermalink -}}" width="132" height="36" alt="ecoIndex, {{ i18n `BackHome` -}}"
-			/></a>
+			<a href="{{ `/` | relLangURL }}" class="logo-ecoindex" title="EcoIndex, {{ i18n `BackHome` -}}">
+				<span class="logo-ecoindex__eco">eco</span><span class="logo-ecoindex__index">Index</span>
+			</a>
 			<div class="menu-btn-container" hidden>
 				<div class="with-icon-l">
 					<button class="menu-btn" aria-expanded="false" aria-controls="main-nav">

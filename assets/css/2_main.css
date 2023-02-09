@@ -168,9 +168,26 @@ header {
 	padding-bottom: var(--s-3);
 }
 
-header .logo {
+.logo-ecoindex {
+	font-size: 1.7rem;
+	font-weight: 500;
+	line-height: 2rem;
 	padding-left: calc(var(--s4) / 2);
 	padding-right: calc(var(--s4) / 2);
+	text-decoration: none;
+	text-rendering: geometricPrecision;
+	white-space: nowrap;
+}
+.logo-ecoindex__eco,
+.logo-ecoindex__index {
+	padding: 0.1rem 0.5rem;
+}
+.logo-ecoindex__eco {
+	padding-left: 0;
+}
+.logo-ecoindex__index {
+	background-color: var(--color-light);
+	color: var(--color-primary);
 }
 
 .header-container {
