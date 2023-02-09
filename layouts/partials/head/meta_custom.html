@@ -1,0 +1,4 @@
+{{ template "_internal/opengraph.html" . }}
+{{ $image := resources.Get "images/logo.png" }}
+{{ $image = $image.Resize "1200x jpg q40" }}
+<meta property="og:image" content="{{ $image.Permalink }}" />
