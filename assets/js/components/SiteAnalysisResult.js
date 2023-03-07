@@ -197,7 +197,7 @@ class SiteAnalysisResult {
 		let formatedValue;
 		// Format date
 		formatedValue = this._getValidDateString(elementValue);
-		formatedValue = formatedValue ? formatedValue : getUrlHostName(elementValue);
+		formatedValue = formatedValue ? formatedValue : elementValue;
 		return formatedValue ? formatedValue : elementValue;
 	}
 
