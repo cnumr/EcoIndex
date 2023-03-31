@@ -99,8 +99,8 @@ noscript {
 
 input,
 button {
-	padding: var(--s1);
-	border-width: 0;
+	padding: var(--s0);
+	border-color: transparent;
 	border-radius: var(--border-radius-small);
 }
 
