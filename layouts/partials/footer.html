@@ -7,18 +7,17 @@
 					<div class="cluster-l">
 						<ul class>
 							{{- range .Site.Menus.footer }}
-								{{- $ariaCurrent := "" -}}
 								{{- if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) -}}
-									{{- $ariaCurrent = `aria-current="page"` -}}
+									<li><span aria-current="page">{{ .Title }}</span></li>
+								{{- else -}}
+									<li>
+										<a
+											href="{{- .URL | safeHTMLAttr -}}"
+											{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
+											>{{ .Title }}</a
+										>
+									</li>
 								{{- end -}}
-								<li>
-									<a
-										href="{{- .URL | safeHTMLAttr -}}"
-										{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
-										{{ $ariaCurrent | safeHTMLAttr -}}
-										>{{ .Title }}</a
-									>
-								</li>
 							{{- end }}
 							{{- if eq hugo.Environment "development" -}}
 								<li>
