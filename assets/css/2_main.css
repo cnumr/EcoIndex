@@ -22,8 +22,9 @@ html {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-color: var(--color-lightest);
+a:not([class]):hover {
+	text-decoration: underline;
+	text-decoration-color: var(--color-light);
 }
 
 /* Headings */
@@ -368,7 +369,7 @@ footer nav {
 	border-radius: var(--border-radius-large);
 }
 
-.info-container a:not([class]) {
+.info-container a:not([class]):hover {
 	text-decoration-color: inherit;
 }
 
