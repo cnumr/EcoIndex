@@ -201,8 +201,7 @@ nav span[data-state="active"] {
 
 /* Header */
 header {
-	padding-top: var(--s-3);
-	padding-bottom: var(--s-3);
+	padding: var(--s-3);
 }
 
 .logo-ecoindex {
