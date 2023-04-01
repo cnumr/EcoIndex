@@ -37,6 +37,7 @@ html {
 	outline-color: inherit;
 	outline-style: inherit;
 	outline-width: var(--border-focus);
+	outline-offset: var(--s-5);
 	transition-property: outline-width;
 	transition-duration: 0.3s;
 	position: absolute;
@@ -47,9 +48,27 @@ html {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]):hover {
+:not(figure) > [target="_blank"]::after,
+figure > [target="_blank"] + figcaption::after {
+	background-color: currentcolor;
+	content: "";
+	display: inline-block;
+	flex: 0 0 auto;
+	height: 1rem;
+	margin-left: 0.25rem;
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6Zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8Z'/%3E%3C/svg%3E");
+	mask-size: 100% 100%;
+	vertical-align: calc(-0.125em);
+	width: 1rem;
+}
+
+a:not([class]):hover,
+figure > [target="_blank"]:hover + figcaption {
 	text-decoration: underline;
 	text-decoration-color: var(--color-light);
+}
+figure > a + figcaption {
+	text-align: center;
 }
 
 /* Headings */
@@ -171,21 +190,13 @@ button {
 nav a,
 span[aria-current="page"],
 span[data-state="active"] {
-	position: relative;
 	text-decoration: none;
 }
-nav span[aria-current="page"]::before,
-nav span[data-state="active"]::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: var(--border-thin);
-	position: absolute;
-	top: 100%;
-	left: 0;
-	padding-top: 0.25rem;
-	border-bottom-width: var(--border-thin);
+nav span[aria-current="page"],
+nav span[data-state="active"] {
+	border-bottom-width: var(--border-thick);
 	border-color: var(--color-highlight-light);
+	padding-bottom: var(--s-5);
 }
 
 /* Header */
@@ -297,6 +308,7 @@ footer > * {
 
 footer nav {
 	justify-content: space-between;
+	row-gap: var(--s1);
 }
 
 .hero {
@@ -417,6 +429,7 @@ footer nav {
 
 :focus {
 	outline: var(--border-focus) var(--focus-style) var(--color-focus-light);
+	outline-offset: var(--s-5);
 }
 
 .info-container :focus {
