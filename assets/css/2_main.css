@@ -21,9 +21,49 @@ html {
 	padding: var(--s-5) var(--s-5) var(--s-5) 0;
 }
 
+.enlarge-link {
+	position: relative;
+}
+.enlarge-link a {
+	background-image: none;
+	outline-width: 0;
+}
+.enlarge-link a:before {
+	content: "";
+	display: block;
+	height: 100%;
+	inset: 0;
+	outline-color: inherit;
+	outline-style: inherit;
+	outline-width: var(--border-focus);
+	outline-offset: var(--s-5);
+	transition: outline-width 0.3s;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+}
+
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-color: var(--color-lightest);
+:not(figure) > [target="_blank"]::after,
+figure > [target="_blank"] + figcaption::after {
+	background-color: currentcolor;
+	content: "";
+	display: inline-block;
+	height: 1rem;
+	margin-left: 0.25rem;
+	mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath d='M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6Zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8Z'/%3E%3C/svg%3E");
+	mask-size: 100% 100%;
+	vertical-align: -0.125em;
+	width: 1rem;
+}
+
+a:not([class]):hover,
+figure > [target="_blank"]:hover + figcaption {
+	text-decoration: underline;
+	text-decoration-color: var(--color-light);
+}
+figure > a + figcaption {
+	text-align: center;
 }
 
 /* Headings */
@@ -98,8 +138,8 @@ noscript {
 
 input,
 button {
-	padding: var(--s1);
-	border-width: 0;
+	padding: var(--s0);
+	border-color: transparent;
 	border-radius: var(--border-radius-small);
 }
 
@@ -145,27 +185,18 @@ button {
 nav a,
 span[aria-current="page"],
 span[data-state="active"] {
-	position: relative;
 	text-decoration: none;
 }
-nav span[aria-current="page"]::before,
-nav span[data-state="active"]::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: var(--border-thin);
-	position: absolute;
-	top: 100%;
-	left: 0;
-	padding-top: 0.25rem;
-	border-bottom-width: var(--border-thin);
+nav span[aria-current="page"],
+nav span[data-state="active"] {
+	border-bottom-width: var(--border-thick);
 	border-color: var(--color-highlight-light);
+	padding-bottom: var(--s-5);
 }
 
 /* Header */
 header {
-	padding-top: var(--s-3);
-	padding-bottom: var(--s-3);
+	padding: var(--s-3);
 }
 
 .logo-ecoindex {
@@ -271,6 +302,7 @@ footer > * {
 
 footer nav {
 	justify-content: space-between;
+	row-gap: var(--s1);
 }
 
 .hero {
@@ -368,7 +400,7 @@ footer nav {
 	border-radius: var(--border-radius-large);
 }
 
-.info-container a:not([class]) {
+.info-container a:not([class]):hover {
 	text-decoration-color: inherit;
 }
 
@@ -391,6 +423,7 @@ footer nav {
 
 :focus {
 	outline: var(--border-focus) var(--focus-style) var(--color-focus-light);
+	outline-offset: var(--s-5);
 }
 
 .info-container :focus {
