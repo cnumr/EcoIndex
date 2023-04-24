@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Analysis error"
 decoType = "404"
 +++

@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Join us"
 decoType = "contribute"
 

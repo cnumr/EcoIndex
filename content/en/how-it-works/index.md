@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "How it works"
 
 [menu]
