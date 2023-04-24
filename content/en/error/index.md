@@ -1,5 +1,6 @@
 +++
 title = "Analysis error"
+slug = "error"
 decoType = "404"
 +++
 

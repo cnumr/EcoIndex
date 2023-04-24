@@ -1,5 +1,6 @@
 +++
 title = "Legal"
+slug = "legal"
 decoType = "generic"
 
 [menu]

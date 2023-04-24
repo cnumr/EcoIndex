@@ -1,5 +1,6 @@
 +++
 title = "Join us"
+slug = "join-us"
 decoType = "contribute"
 
 [menu]

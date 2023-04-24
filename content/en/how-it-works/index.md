@@ -1,5 +1,6 @@
 +++
 title = "How it works"
+slug = "how-it-works"
 
 [menu]
 	[menu.main]

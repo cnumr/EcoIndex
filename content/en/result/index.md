@@ -1,5 +1,7 @@
 +++
 title = "Result"
+slug = "result"
+custom_class = "js-result-container"
 +++
 
 {{% hero %}}

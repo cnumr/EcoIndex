@@ -1,5 +1,6 @@
 +++
 title = "Privacy"
+slug = "privacy"
 decoType = "generic"
 
 [menu]

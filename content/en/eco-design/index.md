@@ -1,5 +1,6 @@
 +++
 title = "Ecodesign"
+slug = "ecodesign"
 
 [menu]
 	[menu.main]
