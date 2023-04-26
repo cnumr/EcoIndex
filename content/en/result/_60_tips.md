@@ -7,7 +7,7 @@ weight = 60
 
 {{% info_2_columns_col1 %}}
 
-## Comment améliorer mon score ?
+## How can I improve my score ?
 
 {{% /info_2_columns_col1 %}}
 
