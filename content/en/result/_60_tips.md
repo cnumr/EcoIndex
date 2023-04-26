@@ -1,23 +1,46 @@
 +++
-id = "tips"
+id = "comment-ameliorer"
 weight = 60
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Comment améliorer mon score ?
 
-- Si la page est trop lourde
-  - Optimisez les images en choisissant le bon format et réduisant la taille
-  - Evitez les vidéos, compressez les, et réduisez leur durée
-  - Compresser les fichiers (HTML, CSS, JS)
-  - Remplacez autant que possible les images d’interface par des styles CSS et des pictos
-- Si la page est trop complexe
-  - Limitez le contenu et les fonctionnalités à l’essentiel
-  - Optez pour l’approche mobile first
-  - Evitez les mécanismes comme le “scroll” infini
-- S'il y a trop de requêtes
-  - Limitez l’utilisation de widgets et plugins (Google maps, icones de réseaux sociaux, vidéos incrustées)
-  - Utilisez des polices standards (Arial, Tahoma, Verdana, etc.) plutôt que des polices custom
-  - Regroupez les images d’interface dans un sprite
-  - Regroupez certaines feuilles de styles (CSS) et librairies Javascript (JS).
+{{% /info_2_columns_col1 %}}
 
-Pour aller plus loin : [L’écoconception et les bonnes pratiques](/en/eco-design/)
+{{% info_2_columns_col2 %}}
+
+{{<highlight_info_card title="If the web page is too heavy">}}
+
+---
+
+- Optimize images by choosing the right format and reducing the size
+- Avoid videos and video backgrounds
+- Compress your files (HTML, CSS, JS, SVG)
+- When possible : switch interface pictures with CSS styles or icons
+- Facilitate browser caching {{</highlight_info_card>}}
+
+{{<highlight_info_card title="If the web page is too complex">}}
+
+---
+
+- Limit content and features to the essential
+- Opt for "mobile first" design
+- Avoid mechanics like "infinite scroll" and carousels {{</highlight_info_card>}}
+
+{{<highlight_info_card title="If there are too many requests">}}
+
+---
+
+- Limit widgets and plugins usage
+- Use system fonts instead of custom ones
+- Group images into a CSS sprite
+- Group certain stylesheets (CSS) and Javascript libraries (JS)
+- Prefer static web pages {{</highlight_info_card>}}
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}
