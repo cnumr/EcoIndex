@@ -4,11 +4,12 @@ widget = "result-appreciation"
 weight = 20
 +++
 
-## Appréciation sur la note
+## What does my score mean?
 
 [//]: # "TODO: Le texte change en fonction du résultat"
 
-[**WARNING !!! A passer en anglais**] La performance environnementale est représentée par un score sur 100 et une note
-de A à G (plus la note est élevée, mieux c’est !). Elle est calculée en fonction de 3 critères : le poids, la
-complexité, et le nombre de requêtes de la page. Pour en savoir plus sur notre méthode de calcul, c’est par
-[ici](/en/how-it-works/).
+Environmental performance is represented by a score out of 100 and a grade from A to G (the closer your grade is to A, the higher the score, the better !)
+Estimation of the web page's environmental impact is based on 3 technical indicators : page weight, DOM complexity and number of requests.
+
+Learn more :
+[How does it work >](/en/how-it-works/).
