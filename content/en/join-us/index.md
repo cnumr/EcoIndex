@@ -12,7 +12,7 @@ decoType = "contribute"
 
 {{% hero %}}
 
-# Nous rejoindre
+# Join us
 
 {{% /hero %}}
 
