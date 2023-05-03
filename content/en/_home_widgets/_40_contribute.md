@@ -7,15 +7,15 @@ weight = 40
 
 {{% info_2_columns_col1 %}}
 
-## Contribute to this project!
+## Are you interested ?
 
-You can contribute to this project and others.
+You can contribute to this project
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-Join the community of experts in digital sustainability and eco-design and participate in our actions.
+Join our community of digital sustainability and eco-design experts and take part in our actions.
 
 [**Join us**](/en/join-us/)
 
