@@ -2,4 +2,5 @@
 id = "intro"
 +++
 
-Initially, EcoIndex.fr was created by Frédéric Bordage (GreenIT.fr) and built by Gwenael Chailleu and Thomas Samain of Nxtweb. After the first version, many volunteers contributed to the evolutions and improvements of the service that became a collective project opened to all. 
+EcoIndex.fr is an online service initially designed by Frédéric Bordage (GreenIT.fr) and produced by Gwenael Chailleu and Thomas Samain (Nxtweb).
+After the first version, many volunteers contributed to the evolutions and improvements of this tool that became a collective project open to all. 
