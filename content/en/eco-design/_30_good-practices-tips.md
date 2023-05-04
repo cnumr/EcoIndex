@@ -13,38 +13,28 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Voici, pour commencer, quelques bonnes pratiques à mettre en application !
+Here are some good practices to start with !
 
-### Réduire le poids de la page
+### Reduce page weight
 
-- **Optimisez les images en choisissant le bon format et réduisant la taille.** Pour les logos et illustrations,
-  utilisez le format SVG. Pour les photos préférez le format WebP ou optimisez les jpeg. Pour les icônes, préférez les
-  glyphes ou styles CSS.
-- **Evitez les vidéos** ou réduisez au maximum leur durée. Prévoyez plusieurs formats adaptés aux contextes de
-  visualisation, ou utilisez des services proposant des formats optimisés. Pensez aussi à désactiver l’autoplay.
-- **Compresser les fichiers** HTML, CSS, JS, etc.
-- **Facilitez la mise en cache navigateur** lors du développement, pour éviter le rechargement des éléments à chaque
-  visite.
+- **Optimize images: choose the right format and reduce the size.** For logos and illustrations: Use SVG format. For photos: prefer WebP format or optimized jpeg. For icons: pick glyphs or CSS styles.
+- **Avoid videos** or minimize their lenght. Provide several formats suitable for viewing contexts, or use services offering optimized formats. Disable autoplay.
+- **Compress files**: HTML, CSS, JS...
+- **Enable browser caching** during development to avoid reloading the same data when revisiting  
 
-### Réduire la complexité de la page
+### Reduce page complexity
 
-- **Limitez le contenu et les fonctionnalités à l’essentiel.** 45% des fonctionnalités ne sont jamais utilisées,
-  interrogez le réel besoin.
-- **Optez pour l’approche “mobile first”** avant de passer à la version “desktop”. Cela permet de limiter la couverture
-  fonctionnelle à l’essentiel, d’éviter de consommer inutilement de la bande passante, et de s’assurer du bon
-  fonctionnement sur mobile.
-- **Evitez les mécanismes comme l’infinite scroll.** Préférez une action de l’utilisateur pour afficher plus
-  d’informations.
+- **Limit content and features to the essential.** 45% of features are never used: question the reel need.
+- **Opt for mobile-first approach** before designing for desktop. This allows a functional coverage limited to the essential,  avoids unnecessary consumption of bandwidth and ensure smooth running on mobile devices.
+- **Avoid infinite scroll.** Prefer user action to display more information.
+- **Avoid costly Javascript animations, like carousels.** Prefer regular content updates.
 
-### Limiter le nombre de requêtes
+### Limit requests number
 
-- **Utilisez des polices standards** (Arial, Tahoma, Times New Roman, Verdana, etc.), qui n’ont pas besoin d’être
-  téléchargées, plutôt que des polices custom.
-- **Limitez l’utilisation de widgets et plugins.** Par exemple, remplacez les boutons de réseaux sociaux ou widget
-  Googlemaps par une image et un lien.
-- **Regroupez les images dans un sprite** et combinez certaines feuilles de styles CSS et librairies Javascript.
-- **Favorisez les pages statiques**, quand cela est possible, plutôt que d’utiliser un CMS. Vous pouvez utiliser des
-  générateurs de sites statiques ou une architecture JAMstack.
+- **Use system fonts** (Arial, Tahoma, Times New Roman, Verdana...), which don't need to be downloaded, unlike custom fonts.
+- **Limit widgets and plugins.** For example: switch from social media buttons or Googlemaps widget to an image with a link.
+- **Group images into a sprite** and combine certain CSS stylesheets and JavaScript libraries.
+- **Prefer static webpages** when possible, rather than using a CMS. You can use static site generators or Jamstack architecture.
 
 {{% /info_2_columns_col2 %}}
 
