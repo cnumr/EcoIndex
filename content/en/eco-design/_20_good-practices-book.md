@@ -13,15 +13,13 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-Destiné aux concepteurs et aux développeurs de sites web, le livre
-[Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/) explique de manière très concrète comment
-écoconcevoir son site ou son service en ligne. Les bonnes pratiques qui y sont expliquées vont de la conception à
-l’exploitation en passant par la réalisation (vous pourrez d’ailleurs les retrouver un peu partout sur ce site). A la
-clé : une empreinte ressources divisée au minimum par deux !
+For websites designers and developers, the book [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/) explains very concretely how to ecodesign websites and online services. These good practices are covering every steps, from design to exploitation through realisation (also, you can find them everywhere on this website !) The goal: decreasing the resource footprint at least by half!
 
-- Le livre : Ecoconception web, les 115 bonnes pratiques
-- La liste des bonnes pratiques en français : Checklist des bonnes pratiques
-- La liste des bonnes pratiques en anglais : Ecometer best practices
+- Book : [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/)
+- Good practices online : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
+- Checklist good practices in french (V4): [Checklist des bonnes pratiques](https://collectif.greenit.fr/ecoconception-web/)
+- Checklist good practices in english (V3): [Ecometer best practices](http://www.ecometer.org/rules/)
+
 
 {{% /info_2_columns_col2 %}}
 
