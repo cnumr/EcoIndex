@@ -9,7 +9,7 @@ slug = "how-it-works"
 
 {{% hero %}}
 
-# How it works
+# How does it work?
 
 {{% /hero %}}
 
