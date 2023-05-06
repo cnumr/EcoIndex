@@ -10,7 +10,7 @@ decoType = "generic"
 
 {{% hero %}}
 
-# Privacy
+# Privacy policy
 
 {{% /hero %}}
 
