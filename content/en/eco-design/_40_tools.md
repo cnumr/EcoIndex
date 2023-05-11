@@ -79,7 +79,7 @@ You can consult this project on GitHub anytime for better understanding and, why
 
 [**GitHub / EcoIndex badge >**](https://github.com/cnumr/ecoindex_badge)
 
-[**GitHub / EcoIndex CLI**](https://github.com/cnumr/ecoindex_cli)
+[**GitHub / EcoIndex CLI >**](https://github.com/cnumr/ecoindex_cli)
 
 {{% /info_2_columns_col2 %}}
 
