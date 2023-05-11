@@ -7,18 +7,17 @@ weight = 30
 
 {{% info_2_columns_col1 %}}
 
-## The choice of criteria
+## Criteria's choice
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-Chacun des critères décrits ci-dessus (taille du DOM, poids des données et requêtes HTTP) a été choisi pour représenter
-chaque tiers de l’architecture d’un service numérique :
+Each criteria described above (DOM complexity, data size and HTTP requests number) was chosen to represent each third of a digital service architecture:
 
-- l’internaute et ses équipements pour le nombre d’éléments du DOM ;
-- le réseau pour les données transférées ;
-- le serveur pour le nombre de requêtes HTTP.
+- the Internet user and their equipment => number of DOM elements;
+- the network => transferred data;
+- the server => number of HTTP requests.
 
 {{% /info_2_columns_col2 %}}
 
