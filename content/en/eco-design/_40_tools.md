@@ -67,17 +67,17 @@ EcoIndex CLI allows you to launch a webpage analysis in command line. Developed 
 EcoIndex is a community and open source project : ready to be enhanced through experts and enthusiasts contributions !
 You can consult this project on GitHub anytime for better understanding and, why not, participate!
 
-[**Github / Cnumr**](https://github.com/cnumr)
+[**Github / Cnumr >**](https://github.com/cnumr)
 
-[**GitHub / EcoIndex website / frontend**](https://github.com/cnumr/EcoIndex)
+[**GitHub / EcoIndex website / frontend >**](https://github.com/cnumr/EcoIndex)
 
-[**GitHub / EcoIndex website / backend**](https://github.com/cnumr/ecoindex_api)
+[**GitHub / EcoIndex website / backend >**](https://github.com/cnumr/ecoindex_api)
 
 [**GitHub / GreenIT Analysis plugin >**](https://github.com/cnumr/GreenIT-Analysis)
 
-[**GitHub / Ecoindex plugin**](https://github.com/cnumr/ecoindex-browser-plugin)
+[**GitHub / Ecoindex plugin >**](https://github.com/cnumr/ecoindex-browser-plugin)
 
-[**GitHub / EcoIndex badge**](https://github.com/cnumr/ecoindex_badge)
+[**GitHub / EcoIndex badge >**](https://github.com/cnumr/ecoindex_badge)
 
 [**GitHub / EcoIndex CLI**](https://github.com/cnumr/ecoindex_cli)
 
