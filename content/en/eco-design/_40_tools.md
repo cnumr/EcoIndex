@@ -20,6 +20,7 @@ weight = 40
 EcoIndex and some of the good practices brought together in the same extension ! Available on Chrome and Firefox. You can test any webpage environmental footprint and establish history to reproduce user journey. Very practical!
 
 [**Chrome Extension >**](https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad)
+
 [**Firefox Extension >**](https://addons.mozilla.org/fr/firefox/addon/greenit-analysis/)
 
 Contribute to source code on [GitHub](https://github.com/cnumr/GreenIT-Analysis)
@@ -29,8 +30,11 @@ Contribute to source code on [GitHub](https://github.com/cnumr/GreenIT-Analysis)
 EcoIndex plugin allows you to display the existing EcoIndex score of a webpage (from EcoIndex.fr webstite's database) directly in browser. Available for Firefox, Chrome, Edge and Opera. It'll display the latest grade for the page you're on, but also existing grades for other pages of the same website. Lastly it simplifies page analysis:
 
 [**Chrome extension >**](https://chrome.google.com/webstore/detail/ecoindexfr/apeadjelacokohnkfclnhjlihklpclmp)
+
 [**Firefox extension >**](https://addons.mozilla.org/fr/firefox/addon/ecoindex-fr/)
+
 [**Edge extension >**](https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah)
+
 [**Opera extension >**](https://addons.opera.com/fr/extensions/details/ecoindexfr/)
 
 Contribute to source code on [GitHub](https://github.com/cnumr/ecoindex-browser-plugin)
@@ -64,11 +68,17 @@ EcoIndex is a community and open source project : ready to be enhanced through e
 You can consult this project on GitHub anytime for better understanding and, why not, participate!
 
 [**Github / Cnumr**](https://github.com/cnumr)
+
 [**GitHub / EcoIndex website / frontend**](https://github.com/cnumr/EcoIndex)
+
 [**GitHub / EcoIndex website / backend**](https://github.com/cnumr/ecoindex_api)
+
 [**GitHub / GreenIT Analysis plugin >**](https://github.com/cnumr/GreenIT-Analysis)
+
 [**GitHub / Ecoindex plugin**](https://github.com/cnumr/ecoindex-browser-plugin)
+
 [**GitHub / EcoIndex badge**](https://github.com/cnumr/ecoindex_badge)
+
 [**GitHub / EcoIndex CLI**](https://github.com/cnumr/ecoindex_cli)
 
 {{% /info_2_columns_col2 %}}
