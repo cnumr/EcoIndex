@@ -7,18 +7,17 @@ weight = 40
 
 {{% info_2_columns_col1 %}}
 
-## The calculation of the EcoIndex
+## EcoIndex calculation
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-Les trois critères sont injectés dans notre algorithme pour calculer l’EcoIndex de la page testée. Nous les associons
-via une moyenne pondérée de :
+These three criteria are injected into our algorithm to calculate the tested page EcoIndex. We associate them via a weighted average of:
 
-- 3 pour le DOM
-- 2 pour les requêtes HTTP
-- 1 pour le poids des données transférées
+- 3 for DOM complexity
+- 2 for HTTP requests
+- 1 for data transferred size
 
 Différentes analyses micro et macro soulignent le poids prépondérant du tiers « internaute » en terme d’impacts
 environnementaux, surtout lors de la fabrication des équipements. C’est pour cette raison qu’il est surpondéré par
