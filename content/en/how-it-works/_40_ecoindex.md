@@ -19,9 +19,7 @@ These three criteria are injected into our algorithm to calculate the tested pag
 - 2 for HTTP requests
 - 1 for data transferred size
 
-Différentes analyses micro et macro soulignent le poids prépondérant du tiers « internaute » en terme d’impacts
-environnementaux, surtout lors de la fabrication des équipements. C’est pour cette raison qu’il est surpondéré par
-rapport aux autres.
+Various micro and macro analyzes underline the overriding importance of the "Internet user" regarding environmental impacts, especially during the manufacture of connected devices. This is why the "DOM complexity" criteria is "overweighted" compared to the others.
 
 {{% equation %}}
 
