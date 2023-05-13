@@ -23,10 +23,7 @@ Various micro and macro analyzes underline the overriding importance of the "Int
 
 {{% equation %}}
 
-Afin de prendre en compte la disparité dans les mesures des trois indicateurs, nous positionnons la valeur constatée
-pour chaque critère dans un quantile, en tenant compte de sa proximité avec les bornes inférieures/supérieures du
-quantile. Les bornes de l’échelle de l’EcoIndex (0 à 100) ont été mises au point et validées en analysant la base
-HTTParchive (500 000 URLs).
+In order to consider the disparity in these 3 indicators measure, we place the value observed for each criterion in a quantile, taking into account its proximity to lower/upper limits of the quantile. Limits of EcoIndex scale (0 to 100) were determined and validated analyzing The HTTP Archive database (500 000 URLs).
 
 {{% /info_2_columns_col2 %}}
 
