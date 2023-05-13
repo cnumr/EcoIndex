@@ -13,7 +13,7 @@ weight = 40
 
 {{% info_2_columns_col2 %}}
 
-These three criteria are injected into our algorithm to calculate the tested page EcoIndex. We associate them via a weighted average of:
+These three criteria are injected into our algorithm to calculate the EcoIndex of the tested page. We associate them via a weighted average of:
 
 - 3 for DOM complexity
 - 2 for HTTP requests
