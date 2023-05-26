@@ -13,7 +13,9 @@ weight = 10
 
 {{% info_2_columns_col2 %}}
 
-Frédéric Bordage, on behalf of GreenIT.fr and Collectif Conception Numérique Responsable Email address: info@greenit.fr
+Collectif Green IT (Green IT association and GreenIT.fr)
+
+The ecoindex.fr website edition and publication direction are managed by Frédéric Bordage: info@greenit.fr
 
 {{% /info_2_columns_col2 %}}
 
