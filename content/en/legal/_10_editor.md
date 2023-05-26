@@ -13,7 +13,7 @@ weight = 10
 
 {{% info_2_columns_col2 %}}
 
-Frédéric Bordage, au nom de GreenIT.fr et du Collectif Conception Numérique Responsable Adresse email : info@greenit.fr
+Frédéric Bordage, on behalf of GreenIT.fr and Collectif Conception Numérique Responsable Email address: info@greenit.fr
 
 {{% /info_2_columns_col2 %}}
 
