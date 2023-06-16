@@ -13,18 +13,12 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Nous collectons des informations au sujet des URL renseignées dans notre barre de test et les stockons dans notre base
-de données. Les informations collectées sont les suivantes :
+We collect information about the URL written in our test bar and we store them in our database. The information collected is as follows:
 
-- URL, poids de la page testée, nombre de requêtes de la page testée, nombre d’éléments du DOM de la page testée.
-- Ces informations sont stockées sans limite de temps afin de permettre des comparatifs dans le temps en cas de requête
-  postérieure sur la même URL, ce qui nous semble être une donnée pertinente d’analyse et de suivi.
-- Ces informations sont hébergées auprès du prestataire décrit dans les [legal](/en/legal/).
-- Les informations collectées servent uniquement au calcul de la performance environnementale de la page testée et à la
-  constitution d’une base de données sur l’état actuel des URL testées par les utilisateurs. Question LB: A quoi sert
-  cette base de données ainsi constituée: uniquement rappeler les scores précédents en cas de nouvelle requête sur une
-  même URL? ou potentiellement des analyses au sein de la base de données -- synthèses, extractions, analytics, etc. sur
-  l’ensemble de la base consolidée? Dans ce dernier cas, il faut expliquer par qui, quel objet/but/finalité, etc.
+- URL, weight of the page tested, number of requests of the page tested, number of the DOM elements in the page tested.
+- This information is stored with no time limit in order to enable comparisons over time in case of subsequent request on the same URL, which seems to us to be relevant data for analysis and follow-up.
+- This information is hosted by the service provider described in [legal](/en/legal/).
+- The information collected are only used to calculate the environmental performance of the page tested and to populate a database on the current state of the URL tested by the users.
 
 {{% /info_2_columns_col2 %}}
 
