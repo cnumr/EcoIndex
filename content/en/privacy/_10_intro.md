@@ -13,9 +13,7 @@ weight = 10
 
 {{% info_2_columns_col2 %}}
 
-**[WARNING !!! Revoir le texte ici]** EcoIndex est un service proposé par GreenIT.fr et le Collectif Conception
-Numérique Responsable. Nous produisons des outils et réflexions pour aider les individus, les organisations et les
-pouvoirs publics pour construire un avenir numérique soutenable et plus enviable pour nos enfants.
+EcoIndex is a service offered by GreenIT.fr and the Collectif Conception Numérique Responsable. We provide tools and thoughts to help individuals, organizations and public authorities to build a sustainable and more enviable digital future for our children.
 
 {{% /info_2_columns_col2 %}}
 
