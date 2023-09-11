@@ -5,12 +5,8 @@ class ApiService {
 
 	// TODO import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
 
-	// TODO: temp key, need to create specific one for app
-	#apiKey = "3037e7e96fmsh12bedced9f019f8p1cd804jsn4967070f8bda";
-
 	// TODO set from .env ?
-	#baseURL = "https://ecoindex.p.rapidapi.com/v1/";
-	#host = "ecoindex.p.rapidapi.com";
+	#baseURL = "https://api.ecoindex.fr/v1/";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
@@ -99,8 +95,6 @@ class ApiService {
 			signal,
 			headers: {
 				"content-type": "application/json",
-				"X-RapidAPI-Host": this.#host,
-				"X-RapidAPI-Key": this.#apiKey,
 			},
 			redirect: "follow",
 		}).json();
