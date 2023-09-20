@@ -38,7 +38,6 @@
 	"postCreateCommand": {
 		"chown-folders": "sh /workspace/.devcontainer/postCreateCommand/_chown-folders.sh",
 		"add-ssh-keys": "sh /workspace/.devcontainer/postCreateCommand/_add-ssh-keys.sh",
-		"pnpm install": "npm install -g pnpm",
 		"custom-cmd": "sh /workspace/.devcontainer/postCreateCommand/custom.sh"
 	},
 
