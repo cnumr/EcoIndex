@@ -1,0 +1,74 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
+{
+	"name": "EcoIndex site web (Hugo)",
+	"dockerComposeFile": ["docker-compose.yml"],
+	"service": "node",
+	"workspaceFolder": "/workspace",
+
+	"mounts": [
+		"source=project-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+		"source=project-pnpm-store,target=${containerWorkspaceFolder}/.pnpm-store,type=volume",
+		// Persisting user profile https://code.visualstudio.com/docs/devcontainers/tips-and-tricks#_persisting-user-profile
+		"source=profile,target=/root,type=volume",
+		"target=/root/.vscode-server,type=volume"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [1313],
+	"portsAttributes": {
+		"1313": {
+			"label": "Hugo server",
+			"onAutoForward": "notify"
+		}
+	},
+
+	// Use 'postStartCommand' to run commands each time the container is successfully started..
+	// https://www.kenmuse.com/blog/avoiding-dubious-ownership-in-dev-containers/
+	"postStartCommand": {
+		"git.config.safe.directory": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+		"git.config.pull.rebase": "git config pull.rebase false",
+		"custom-cmd": "sh /workspace/.devcontainer/postStartCommand/custom.sh"
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": {
+		"chown-folders": "sh /workspace/.devcontainer/postCreateCommand/_chown-folders.sh",
+		"add-ssh-keys": "sh /workspace/.devcontainer/postCreateCommand/_add-ssh-keys.sh",
+		"pnpm install": "npm install -g pnpm",
+		"custom-cmd": "sh /workspace/.devcontainer/postCreateCommand/custom.sh"
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": ["esbenp.prettier-vscode"],
+			"settings": {
+				"dotfiles.targetPath": "~/dotfiles",
+				"terminal.integrated.profiles.linux": {
+					"bash": {
+						"path": "bash",
+						"icon": "terminal-bash"
+					},
+					"zsh": {
+						"path": "/bin/zsh",
+						"icon": "terminal-powershell"
+					}
+				},
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"editor.formatOnSave": true,
+				"prettier.prettierPath": "./node_modules/prettier"
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/go:1": {},
+		"ghcr.io/devcontainers/features/hugo:1": {}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

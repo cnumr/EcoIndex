@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  node:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # image: klakegg/hugo
+    image: mcr.microsoft.com/devcontainers/javascript-node:0-18
+    # I want to use the same
+    volumes:
+      - ..:/workspace:cached
+      # Docker
+      - ~/.docker:/node/.docker
+      # Docker socket to access Docker server
+      - /var/run/docker.sock:/var/run/docker.sock
+      # SSH directory for Linux, OSX and WSL
+      # On Linux and OSX, a symlink /mnt/ssh <-> ~/.ssh is
+      # created in the container. On Windows, files are copied
+      # from /mnt/ssh to ~/.ssh to fix permissions.
+      - ~/.ssh:/mnt/ssh
+      # Shell history persistence
+      - ~/.zsh_history:/node/.zsh_history
+      # Git config
+      - ~/.gitconfig:/node/.gitconfig
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+    networks:
+      - ecoindex_hugo_net
+
+networks:
+  ecoindex_hugo_net:

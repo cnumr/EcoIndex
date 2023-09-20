@@ -16,6 +16,7 @@ _vendor
 
 # Node
 node_modules/
+.pnpm-store
 
 # OS Files
 
