@@ -19,7 +19,7 @@ Eco-design of digital services alone cannot significantly reduce global digital 
 - **Reducing flat screens number** by switching them with other display devices : VR headset, LED video projectors... And above all good books and quality time with family and friends, away from screens ;-)
 - **Increasing devices lifespan** by extending legal warranty period, promoting reuse and fighting against some economic models (particularly mobile phones operators).
 
-Learn more : [Global digital environmental footprint](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/)
+Learn more: [Global digital environmental footprint](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/)
 
 {{% /info_2_columns_col2 %}}
 
