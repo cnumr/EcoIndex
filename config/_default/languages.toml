@@ -1,15 +1,17 @@
 [fr]
 	languageCode = "fr"
-	contentDir = "content/fr"
+	languageDirection = "ltr"
 	languageName = "Français"
+	contentDir = "content/fr"
 	weight = 1
 	[fr.params]
 		description = "Évaluez gratuitement la performance et l'empreinte environnementale de votre site web"
 
 [en]
 	languageCode = "en"
-	contentDir = "content/en"
+	languageDirection = "ltr"
 	languageName = "English"
+	contentDir = "content/en"
 	weight = 2
 	[en.params]
 		description = "Evaluate the performance and environmental footprint of your website for free"

@@ -42,20 +42,8 @@
 	path = "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure"
 
 	[[imports.mounts]]
-		source = "archetypes"
-		target = "archetypes"
-
-	[[imports.mounts]]
 		source = "assets"
 		target = "assets"
-
-	[[imports.mounts]]
-		source = "content"
-		target = "content"
-
-	[[imports.mounts]]
-		source = "data"
-		target = "data"
 
 	[[imports.mounts]]
 		source = "i18n"
@@ -64,7 +52,3 @@
 	[[imports.mounts]]
 		source = "layouts"
 		target = "layouts"
-
-	[[imports.mounts]]
-		source = "static"
-		target = "static"

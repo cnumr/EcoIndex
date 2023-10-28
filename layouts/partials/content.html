@@ -1,0 +1,89 @@
+{{ $currentLang := site.Language.Lang }}
+
+{{ $content := . }}
+
+{{ if eq $currentLang "fr" }}
+
+    <!-- # Ordinals -->
+    {{ $content = $content | replaceRE "(\\s)(\\d+)(e|è)(r|me)?([\\s.,])" "$1$2<sup>$3$4</sup>$5" }}
+
+    <!-- # Num -->
+    <!-- input.gsub!(%r!n°\s*(\d)!, 'n<sup>o</sup>&#8239;\1') -->
+    {{ $content = $content | replaceRE "n°\\s*(\\d)" "n<sup>o</sup>&#8239;$1" }}
+
+    <!-- # French Guillemets -->        <!-- input.gsub!(%r!(&rdquo;|”|»)<a !, "«&#8239;<a ") -->
+    <!-- input.gsub!(%r/(&ldquo;|“|«)(?!&#8239;)(\s|&nbsp;| )*/, "«&#8239;") -->
+    <!-- input.gsub!(%r/(\s|&nbsp;| )*(?!&#8239;)(&rdquo;|”|»)/, "&#8239;»") -->
+    {{ $content = $content | replaceRE "(&ldquo;|“|«)(\\s|&nbsp;| |)" "«&#8239;"}}
+    {{ $content = $content | replaceRE "(\\s|&nbsp;| |)(&rdquo;|”|»)" "&#8239;»" }}
+
+    <!-- # Point median -->
+    {{ if eq site.Params.pointMedian true }}
+    <!-- input.gsub!(%r!(\p{L}+)(·\p{L}+)((·)(\p{L}+))?!, '\1<span aria-hidden="true">\2\4</span>\5') -->
+    {{ $content = $content | replaceRE "(\\p{L}+)(·\\p{L}+)((·)(\\p{L}+))?" "$1<span aria-hidden=\"true\">$2$4</span>$5" }}
+    <!-- end -->
+    {{ end }}
+
+    <!-- # Special punctuation -->
+    <!-- input.gsub!(%r!(\s)+\?\!([^\w]|$)!, '&#8239;&#8264;\2') -->
+    <!-- input.gsub!(%r!(\s)+\!\?([^\w]|$)!, '&#8239;&#8265;\2') -->
+    <!-- input.gsub!(%r!(\s)+\!\!\!([^\w]|$)!, '&#8239;&#8252;\2') -->
+    <!-- input.gsub!(%r!(\s)+\!\!([^\w]|$)!, '&#8239;&#8252;\2') -->
+
+    <!-- # Times -->
+    <!-- input.gsub!(%r!(\s)+(\d+)(\s)*x(\s)*(?=\d)!, '\1\2&nbsp;&times;&nbsp;\5') -->
+    {{ $content = $content | replaceRE "(\\d+)(\\s)*x(\\s)*(\\d)" "$1&nbsp;&times;&nbsp;$4" }}
+
+    <!-- # Non-breaking space before '%' and units (< 4 letters) -->
+    {{ $content = $content | replaceRE "(\\s)+(\\d+)(\\s)+([a-zA-Z]|%)" "$1$2&nbsp;$4$5" }}
+
+    <!-- # Thin non-breaking space before ;', '!', '?' -->
+    {{ $content = $content | replaceRE "( )([;?!])" "&#8239;$2" }}
+    
+    <!-- # non-breaking space -->
+    {{ $content = $content | replaceRE "( )([:])" "&nbsp;$2" }}
+
+    <!-- # Currencies -->
+    {{ $content = $content | replaceRE "(\\d+)\\s*(\\$|€)" "$1&nbsp;$2" }}
+
+    <!-- # nbsp after middle dash (dialogs) -->
+    <!-- input.gsub!(%r!(—|&mdash;)(\s)!, '\1&nbsp;') -->
+    {{ $content = $content | replaceRE "(—|&mdash;)(\\s?)" "$1&nbsp;" }}
+{{/*  Temporary fix as https://github.com/jygastaud/hugo-microtypo/blob/master/microtypo/layouts/partials/content.html dependency is buggy for non-fr content
+{{ else }}
+    {{ . }}  */}}
+{{ end }}
+
+
+
+
+<!-- US
+# semove useless spaces
+input.gsub!(%r/ (:|%|;|\!|\?)([^\w!]|$)/, '\1\2')
+
+# Currencies
+input.gsub!(%r!($|€)\s*(\d+)!, '\1\2')
+
+ALL
+# single quotes
+input.gsub!(%r!(\s)'([[:alpha:]])!, '\1‘\2')
+input.gsub!(%r!([[:alpha:]])'(\s)!, '\1’\2')
+input.gsub!(%r!(\d)''!, '\1’’')
+input.gsub!(%r!(\d)'!, '\1’')
+
+# Apostrophe
+input.gsub!(%r!([[:alpha:]])'([[:alpha:]])!, '\1’\2')
+
+# Elipsis
+input.gsub!("...", "&#8230;")
+
+# Special characters
+input.gsub!(%r!\([cC]\)!, "©")
+input.gsub!(%r!\([pP]\)!, "℗")
+input.gsub!(%r!\([rR]\)!, "®")
+input.gsub!(%r!\((tm|TM)\)!, "™")
+input.gsub!(%r!\+-!, "±") -->
+
+
+<!-- Render Content -->
+{{ $content | safeHTML }}
