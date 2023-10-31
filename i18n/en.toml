@@ -51,6 +51,8 @@ for “##URL##”"""
 [en]
 	other = "English"
 [GreenITAssociation]
+	other = "Green IT"
+[GreenITAssociationLong]
 	other = "Association Green IT"
 [NeutralIT]
 	other = "Neutral IT"

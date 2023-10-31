@@ -7,18 +7,17 @@
 					<div class="cluster-l">
 						<ul class>
 							{{- range .Site.Menus.footer }}
-								{{- $ariaCurrent := "" -}}
 								{{- if or ($currentPage.IsMenuCurrent "footer" .) ($currentPage.HasMenuCurrent "footer" .) -}}
-									{{- $ariaCurrent = `aria-current="page"` -}}
+									<li><span aria-current="page">{{ .Title }}</span></li>
+								{{- else -}}
+									<li>
+										<a
+											href="{{- .URL | safeHTMLAttr -}}"
+											{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
+											>{{ .Title }}</a
+										>
+									</li>
 								{{- end -}}
-								<li>
-									<a
-										href="{{- .URL | safeHTMLAttr -}}"
-										{{ if .Params.Newtab -}}target="_blank" rel="noopener"{{- end -}}
-										{{ $ariaCurrent | safeHTMLAttr -}}
-										>{{ .Title }}</a
-									>
-								</li>
 							{{- end }}
 							{{- if eq hugo.Environment "development" -}}
 								<li>
@@ -27,22 +26,32 @@
 							{{- end }}
 						</ul>
 					</div>
-					<a
-						href="https://neutral-it.com/"
-						target="_blank"
-						rel="noopener"
-						title="{{ i18n `NeutralIT` }} – {{ i18n `NewWindow` }}"
-						>{{- $logoResource := resources.Get "images/logo-neutral-it.webp" -}}
-						<img src="{{- $logoResource.RelPermalink -}}" width="50" height="50" alt="{{ i18n `NeutralIT` }}"
-					/></a>
-					<a
-						href="https://www.greenit.fr/"
-						target="_blank"
-						rel="noopener"
-						title="{{ i18n `GreenITAssociation` }} – {{ i18n `NewWindow` }}"
-						>{{- $logoResource := resources.Get "images/logo-greenit.svg" -}}
-						<img src="{{- $logoResource.RelPermalink -}}" width="126" height="50" alt="{{ i18n `GreenITAssociation` }}"
-					/></a>
+					<figure class="enlarge-link">
+						<a
+							href="https://neutral-it.com/"
+							target="_blank"
+							rel="noopener"
+							title="{{ i18n `NeutralIT` }} – {{ i18n `NewWindow` }}"
+							>{{- $logoResource := resources.Get "images/logo-neutral-it.webp" -}}
+							<img src="{{- $logoResource.RelPermalink -}}" width="50" height="50" alt="{{ i18n `NeutralIT` }}"
+						/></a>
+						<figcaption>{{ i18n `NeutralIT` }}</figcaption>
+					</figure>
+					<figure class="enlarge-link">
+						<a
+							href="https://www.greenit.fr/"
+							target="_blank"
+							rel="noopener"
+							title="{{ i18n `GreenITAssociationLong` }} – {{ i18n `NewWindow` }}"
+							>{{- $logoResource := resources.Get "images/logo-greenit.svg" -}}
+							<img
+								src="{{- $logoResource.RelPermalink -}}"
+								width="126"
+								height="50"
+								alt="{{ i18n `GreenITAssociationLong` }}"
+						/></a>
+						<figcaption>{{ i18n `GreenITAssociation` }}</figcaption>
+					</figure>
 				</nav>
 			</div>
 		</footer>

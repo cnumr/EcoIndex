@@ -51,6 +51,8 @@ pour « ##URL## »"""
 [en]
 	other = "English"
 [GreenITAssociation]
+	other = "Green IT"
+[GreenITAssociationLong]
 	other = "Association Green IT  (prononcer grine • aïe • ti)"
 [NeutralIT]
 	other = "Neutral IT"
