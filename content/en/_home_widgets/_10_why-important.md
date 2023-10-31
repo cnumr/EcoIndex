@@ -15,13 +15,13 @@ Digital technologies are not just "clouds"
 
 {{% info_2_columns_col2 %}}
 
-Today, the environmental footprint of new technologies represent more greenhouse gas emissions than the civil aviation industry. 
+Today, the environmental footprint of digital technologies emits more greenhouse gases than civil aviation. 
 
-And it is increasing by the day: more and more people have access to the Internet and the number of connected objects keeps on growing. 
+And it's constantly increasing: more and more people have access to Internet and connected devices are multiplying. 
 
 {{% highlight %}}
 
-**Digital technologies represent a 7th continent of 2 to 3 times the size of France.**
+**Digital technologies could be considered as a 7th continent, 2 to 3 times the size of France.**
 
 {{% /highlight %}}
 

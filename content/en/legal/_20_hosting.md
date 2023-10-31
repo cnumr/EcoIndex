@@ -13,7 +13,7 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-Ce site est hébergé par [Neutral Hosting](https://neutral.hosting/).
+This site is hosted by [Neutral Hosting](https://neutral-it.com/hebergement-web/) whose head office is located 114 rue de Maubeuge – 75010 PARIS
 
 {{% /info_2_columns_col2 %}}
 

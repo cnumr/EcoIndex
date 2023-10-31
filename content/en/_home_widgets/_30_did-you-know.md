@@ -13,9 +13,9 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-The average weight of a web page has been multiplied by 115 between 1995 and 2015 (from de 14 KB to 1 600 KB) and it hasn't stopped increasing since!
+An average web page weight has been multiplied by 155 between 1995 and 2022 and it doesn't stop increasing !
 
-[**Learn more about the environmental footprint of digital technologies**](https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/)
+[**Learn more about digital environmental footprint**](https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/)
 
 {{% /info_2_columns_col2 %}}
 

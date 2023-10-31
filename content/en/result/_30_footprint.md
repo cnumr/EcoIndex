@@ -2,29 +2,37 @@
 id = "footprint"
 widget = "result-empreinte"
 weight = 30
+footprint_intro_text = "For <select-inline/> monthly page views, this web page's footprint is :"
+collapse_info = """
+<p>
+The web page's environmental footprint is expressed by 2 environmental indicators.
+</p>
+<h3 class="h4">
+<span class="svg-inline">
+    <svg aria-hidden="true">
+        <use xlink:href="#icon-cloud"></use>
+    </svg>
+</span> 
+Greenhouse gases (GHG)
+</h3> 
+<p>
+The web page's GHG footprint is expressed in grams of CO2 equivalent (g CO2e).
+</p>
+<h3 class="h4">
+<span class="svg-inline">
+    <svg class="svg-inline" aria-hidden="true">
+        <use xlink:href="#icon-water-drop"></use>
+    </svg>
+</span> 
+Water
+</h3> 
+<p>
+The web page's water footprint is expressed in centiliters of blue water (cl).
+The water footprint reflects the water consumption required to display this web page.
+Extracting and refining the metals used to manufacture tech equipments requires a large amount of water.
+</p>
+<p>
+These values are calculated from an average web page's emissions and modulated according to the EcoIndex of the analyzed web page.
+</p>
+"""
 +++
-
-## Environmental footprint
-
-L’empreinte environnementale de la page est exprimée par 2 indicateurs environnementaux.
-
-[//]: # "TODO: ajouter un picto de nuage"
-
-**Gaz à effet de serre (GES) :**
-
-L’empreinte GES de la page est exprimée en gramme équivalent CO2 (g eCO2).
-
-[//]: # "TODO: ajouter un picto d’eau"
-
-**Eau :**
-
-L’empreinte en eau témoigne de la consommation d’eau nécessaire à l’affichage de cette page. La phase d’extraction des
-métaux nécessaires à la fabrication des équipements requiert une grande quantité d’eau.
-
-Ces valeurs sont calculées à partir des émissions d’une page moyenne et modulées en fonction de l’EcoIndex de la page
-analysée. Pour en savoir plus sur notre méthode de calcul, c’est par [ici](/en/how-it-works/)
-
-Pour [dropdown : 1 ; 1000 ; 10 000; 100 000] visites, l’empreinte de cette page est de :
-
-[//]: # "TODO: en fonction de la dropdown les données changent"
-[//]: # "(Il faudrait convertir en kg eCO2 quand c’est au delà de 1000 g eCO2)"

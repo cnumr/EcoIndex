@@ -13,8 +13,7 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Pour obtenir des informations à ce sujet, veuillez consulter notre page relatives aux conditions d’utilisation et
-données personnelles [lien vers la page](/en/privacy/)
+For further information about this topic, please consult our page related to the [terms of use and personal data](/en/privacy/)
 
 {{% /info_2_columns_col2 %}}
 

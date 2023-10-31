@@ -10,7 +10,7 @@ decoType = "generic"
 
 {{% hero %}}
 
-# Legal
+# Legal terms
 
 {{% /hero %}}
 
