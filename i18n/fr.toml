@@ -1,5 +1,7 @@
 [EcoIndexFormIntro]
 	other = "Entrez l’adresse d’une page web pour le découvrir !"
+[EcoIndexFormInputLabel]
+	other = "Entrez l’adresse d’une page web pour découvrir le score :"
 [EcoIndexFormPlaceholder]
 	other = "https://exemple.org"
 [EcoIndexFormSubmitText]

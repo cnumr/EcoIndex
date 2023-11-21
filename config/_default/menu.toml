@@ -1,6 +1,6 @@
 [[footer]]
 	identifier = "github"
-	title = "Github"
+	title = "GitHub"
 	url = "https://github.com/cnumr/Ecoindex/"
 	weight = 10
 	[footer.params]

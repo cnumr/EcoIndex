@@ -5,7 +5,7 @@ import ResultCacheService from "./ResultCacheService";
 import { redirectToResults } from "../helpers/routing";
 
 class AnalysisService {
-	async launchAnalysisByURL(url) {
+	async launchAnalysisByURL(url, resultUrlPrefix) {
 		// If the given url parameter is only a domain name,
 		// let's transform it to a full URL by prepending "https://" to it
 		const domainNameRegex =
@@ -30,7 +30,7 @@ class AnalysisService {
 
 							if (taskResult.status === "SUCCESS" && ecoindex.status === "SUCCESS") {
 								ResultCacheService.add(ecoindex.detail);
-								redirectToResults(taskId);
+								redirectToResults(taskId, resultUrlPrefix);
 							}
 
 							if (taskResult.status === "SUCCESS" && ecoindex.status === "FAILURE") {
@@ -56,7 +56,7 @@ class AnalysisService {
 		}
 	}
 
-	async fetchAnalysisById(id) {
+	async fetchAnalysisById(id, pathname) {
 		// Check local storage: if analysis results object exist returns it
 		let apiResult = ResultCacheService.get(id);
 		if (apiResult) {
@@ -70,7 +70,7 @@ class AnalysisService {
 				(result) => {
 					apiResult = result;
 					ResultCacheService.add(result);
-					redirectToResults(result.id);
+					redirectToResults(result.id, pathname);
 					EcoIndexDialog.close();
 				},
 				(e) => {
