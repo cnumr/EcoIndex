@@ -13,14 +13,7 @@ weight = 80
 
 {{% info_2_columns_col2 %}}
 
-EcoIndex ne donne aucune information sur les efforts faits en terme d’éco&shy;conception. A l’instar d’un radar qui
-mesure une vitesse instantanée, EcoIndex mesure la performance environnementale instantanée. Une analyse complémentaire
-est nécessaire pour évaluer la maturité / le niveau d’éco&shy;conception de l’URL étudiée. Les chiffres fournis par
-EcoIndex sont des ordres de grandeurs. Ils vous indiquent si votre site est plutôt efficient ou pas, et si son empreinte
-environnementale est plutôt faible ou élevée. De manière générale, une analyse poussée de la performance et de
-l’empreinte environnementale de votre site nécessite l’intervention d’un·e expert·e. Cette version d’EcoIndex est
-imparfaite. Nous en sommes conscients. Nous travaillons déjà à une prochaine version. Aidez-nous à améliorer ce service
-en y contribuant !
+EcoIndex does not provide any information on the efforts made in terms of eco-design. Like radar, which measures instantaneous speed, EcoIndex measures instantaneous environmental performance. Further analysis is required to assess the maturity/level of eco-design of the URL studied. The figures provided by EcoIndex are orders of magnitude. They tell you whether your site is efficient or not, and whether its environmental footprint is low or high. Generally speaking, an in-depth analysis of your site's performance and environmental footprint requires the intervention of an expert. This version of EcoIndex is imperfect. We are aware of this. We're already working on the next version. Help us improve this service by contributing to it!
 
 {{% /info_2_columns_col2 %}}
 

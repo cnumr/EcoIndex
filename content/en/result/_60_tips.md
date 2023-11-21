@@ -20,7 +20,7 @@ weight = 60
 - Optimize images by choosing the right format and reducing the size
 - Avoid videos and video backgrounds
 - Compress your files (HTML, CSS, JS, SVG)
-- When possible : switch interface pictures with CSS styles or icons
+- When possible: switch interface pictures with CSS styles or icons
 - Facilitate browser caching {{</highlight_info_card>}}
 
 {{<highlight_info_card title="If the web page is too complex">}}
@@ -38,7 +38,7 @@ weight = 60
 - Limit widgets and plugins usage
 - Use system fonts instead of custom ones
 - Group images into a CSS sprite
-- Group certain stylesheets (CSS) and Javascript libraries (JS)
+- Group certain stylesheets (CSS) and JavaScript libraries (JS)
 - Prefer static web pages {{</highlight_info_card>}}
 
 {{% /info_2_columns_col2 %}}

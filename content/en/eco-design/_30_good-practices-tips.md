@@ -13,12 +13,12 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Here are some good practices to start with !
+Here are some good practices to start with!
 
 ### Reduce page weight
 
 - **Optimize images: choose the right format and reduce the size.** For logos and illustrations: Use SVG format. For photos: prefer WebP format or optimized jpeg. For icons: pick glyphs or CSS styles.
-- **Avoid videos** or minimize their lenght. Provide several formats suitable for viewing contexts, or use services offering optimized formats. Disable autoplay.
+- **Avoid videos** or minimize their length. Provide several formats suitable for viewing contexts, or use services offering optimized formats. Disable autoplay.
 - **Compress files**: HTML, CSS, JS...
 - **Enable browser caching** during development to avoid reloading the same data when revisiting  
 
@@ -27,7 +27,7 @@ Here are some good practices to start with !
 - **Limit content and features to the essential.** 45% of features are never used: question the reel need.
 - **Opt for mobile-first approach** before designing for desktop. This allows a functional coverage limited to the essential,  avoids unnecessary consumption of bandwidth and ensure smooth running on mobile devices.
 - **Avoid infinite scroll.** Prefer user action to display more information.
-- **Avoid costly Javascript animations, like carousels.** Prefer regular content updates.
+- **Avoid costly JavaScript animations, like carousels.** Prefer regular content updates.
 
 ### Limit requests number
 

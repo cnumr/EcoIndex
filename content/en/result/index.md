@@ -14,9 +14,9 @@ custom_class = "js-result-container"
 const resultRelativeTextData = {
  // Titre en fonction de la note du site (en haut à gauche de la page)
  verdictTitles: {
-  A: "Well done !",
-  B: "Not bad at all !",
-  C: "Almost there !",
+  A: "Well done!",
+  B: "Not bad at all!",
+  C: "Almost there!",
   D: "Hmm, not great.",
   E: "Hmm, not great.",
   F: "Ouch.",
@@ -24,15 +24,15 @@ const resultRelativeTextData = {
  },
  // Message verdict en fonction de la note du site (affiché en haut à droite de la page)
  verdictMessages: {
-  A: "Excellent ! We're getting dangerously close to perfection !. ",
+  A: "Excellent! We're getting dangerously close to perfection!.",
   B: "If all web pages could be as light as this one, internet would be greener",
-  C: "You're almost there ! Just a little more effort and it's all good.",
-  D: "The good news is that you can do much better !",
-  E: "The good news is that you can do much better !",
-  F: "Let's not hide it : it hurts. Time to act !",
-  G: "Let's not hide it : it hurts. Time to act !",
+  C: "You're almost there! Just a little more effort and it's all good.",
+  D: "The good news is that you can do much better!",
+  E: "The good news is that you can do much better!",
+  F: "Let's not hide it: it hurts. Time to act!",
+  G: "Let's not hide it: it hurts. Time to act!",
  },
- // "[Left: 'bad result', Right : 'good result']"
+ // "[Left: 'bad result', Right: 'good result']"
  verdictParameters: {
   size: ["So light", "Too heavy"],
   nodes: ["Simple", "Too complex"],

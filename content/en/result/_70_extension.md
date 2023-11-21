@@ -17,7 +17,7 @@ EcoIndex is also available as a plugin, which works even behind a firewall.
 
 You can quantify the environmental impact of any web page, on Chrome and Firefox.
 
-GreenIT Analysis allows you to :
+GreenIT Analysis allows you to:
 
 - Test the complete user journey.
 - Keep history so you can compare the page before and after optimisations.

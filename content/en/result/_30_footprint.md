@@ -2,7 +2,7 @@
 id = "footprint"
 widget = "result-empreinte"
 weight = 30
-footprint_intro_text = "For <select-inline/> monthly page views, this web page's footprint is :"
+footprint_intro_text = "For <select-inline/> monthly page views, this web page's footprint is:"
 collapse_info = """
 <p>
 The web page's environmental footprint is expressed by 2 environmental indicators.

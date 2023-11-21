@@ -13,13 +13,9 @@ weight = 60
 
 {{% info_2_columns_col2 %}}
 
-Les informations fournies sur ecoindex.fr le sont à titre purement informatif et non opposables. Greenit.fr et le
-Collectif Conception Numérique Responsable ne sauraient garantir l’exactitude, la complétude, l’actualité des résultats
-diffusées sur le site. L’analyse fournie ne remplace en aucun cas le travail d’un·e expert·e.
+The information provided on ecoindex.fr is for information purposes only and is not binding. Greenit.fr and the <span lang="fr">Collectif Conception Numérique Responsable</span> cannot guarantee the accuracy, completeness or topicality of the results published on the site. The analysis provided in no way replaces the work of an expert.
 
-Nous mettons tout en œuvre pour offrir aux utilisateur·ices des informations et/ou outils disponibles et vérifiés, mais
-ne saurions être tenu·es pour responsables des erreurs ou omissions et d’une absence de disponibilité des informations
-et des services. En conséquence, l’utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.
+We make every effort to provide users with available and verified information and/or tools, but cannot be held responsible for any errors or omissions or for the unavailability of information and services. Consequently, users acknowledge that they use this information under their sole responsibility.
 
 {{% /info_2_columns_col2 %}}
 

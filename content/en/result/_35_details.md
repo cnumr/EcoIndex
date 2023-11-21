@@ -9,9 +9,9 @@ weight = 35
 
 [//]: # "infobulle"
 
-To calculate the environmental performance of a webpage, we take several elements into account : the number of DOM elements (Document Object Model), the weight of the data transferred and the number of HTTP requests.
+To calculate the environmental performance of a webpage, we take several elements into account: the number of DOM elements (Document Object Model), the weight of the data transferred and the number of HTTP requests.
 
-Learn more : [How does it work?](/comment-ca-marche/)
+Learn more: [How does it work?](/comment-ca-marche/)
 
 [//]: # "texte"
 

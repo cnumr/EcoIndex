@@ -18,7 +18,7 @@ Eco-designing a website means taking into account its environmental impact at ea
 Eco-design aims to question every digital trades, for the better: in addition to its positive impact for the environment, it also improves efficiency of digital services.
 Many tools and good practices are available to guide you on this virtuous path.
 
-The eco-design approach of a digital service is based on 5 fundamentals :
+The eco-design approach of a digital service is based on 5 fundamentals:
 
 - Definition of the service's **functional unit**: i.e. its main function for the user, as an action (for exemple: "buying a train ticket" or "consulting its bank account weekly")
 - Assessing the environmental impact of **every equipment necessary** for the service implementation...
@@ -26,8 +26,8 @@ The eco-design approach of a digital service is based on 5 fundamentals :
 - ... according to **several environmental indicators** (resources depletion, water consumption, pollutant emissions...)!
 - Following a process of constant improvement, prioritizing main levers of improvement first.
 
-Learn more : [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/) et
-[Sobriété numérique : les clés pour agir](https://www.greenit.fr/2019/09/10/sobriete-numerique-les-cles-pour-agir/)
+Learn more: <a lang="fr" hreflang="fr" href="https://ecoconceptionweb.com/">Ecoconception web, les 115 bonnes pratiques</a> and
+<a lang="fr" hreflang="fr" href="https://www.greenit.fr/2019/09/10/sobriete-numerique-les-cles-pour-agir/">Sobriété numérique : les clés pour agir</a>
 
 {{% /info_2_columns_col2 %}}
 
