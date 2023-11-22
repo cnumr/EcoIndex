@@ -7,16 +7,23 @@
 				</div>
 				<h2 data-int="grade_title"></h2>
 				<p class="font-size:1">
-					Score : <span><span data-int="score">0</span> / 100</span>
+					{{ i18n "ResultScore" }} <span><span data-int="score">0</span> / 100</span>
 				</p>
 				<hr class="small" />
 				<div class="info-collapse">
+					{{ $label := i18n "ResultScoreExplainationLabel" }}
+					{{ $content := i18n "ResultScoreExplainationContent" }}
+					{{ $knowMore := i18n "ResultScoreExplainationKnowMore" }}
+					{{ $moreHref := i18n "HowDoesItWorksURL" }}
+					{{ $moreLabel := i18n "HowDoesItWorksTitle" }}
+
 					{{ partial "components/collapse" (dict
 						"context" .
-						"label" "Que veut dire mon score"
-						"content" "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note tend vers A, plus le score est élevé, mieux c’est !). La performance environnementale est calculée en fonction de 3 indicateurs techniques : le poids, la complexité, et le nombre de requêtes de la page."
-						"moreHref" "/comment-ca-marche"
-						"moreLabel" "Comment ça marche"
+						"label" $label
+						"content" $content
+						"knowMore" $knowMore
+						"moreHref" $moreHref
+						"moreLabel" $moreLabel
 						)
 					}}
 				</div>
@@ -80,19 +87,19 @@
 						<span class="result-notation-info-label" data-int-attr="size_binary_score">
 							<span data-int="size_verdict"></span>
 						</span>
-						<span class="result-notation-info-number"><span data-int="size">0</span> Mo</span>
+						<span class="result-notation-info-number">{{ i18n "ResultNotationInfoNumberSize" | safeHTML }}</span>
 					</li>
 					<li class="result-notation-info-item">
 						<span class="result-notation-info-label" data-int-attr="nodes_binary_score">
 							<span data-int="nodes_verdict"></span>
 						</span>
-						<span class="result-notation-info-number"><span data-int="nodes">0</span> éléments</span>
+						<span class="result-notation-info-number">{{ i18n "ResultNotationInfoNumberNodes" | safeHTML }}</span>
 					</li>
 					<li class="result-notation-info-item">
 						<span class="result-notation-info-label" data-int-attr="requests_binary_score">
 							<span data-int="requests_verdict"></span>
 						</span>
-						<span class="result-notation-info-number"><span data-int="requests">0</span> requêtes</span>
+						<span class="result-notation-info-number">{{ i18n "ResultNotationInfoNumberRequests" | safeHTML }}</span>
 					</li>
 				</ul>
 				{{/* TODO: On click go to detail section */}}
