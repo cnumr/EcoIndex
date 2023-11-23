@@ -56,7 +56,12 @@ class AnalysisService {
 		}
 	}
 
-	async fetchAnalysisById(id, pathname) {
+	/**
+	 * 
+	 * @param {string} id
+	 * @param {string} resultPagePrefix
+	 */
+	async fetchAnalysisById(id, resultPagePrefix) {
 		// Check local storage: if analysis results object exist returns it
 		let apiResult = ResultCacheService.get(id);
 		if (apiResult) {
@@ -70,7 +75,7 @@ class AnalysisService {
 				(result) => {
 					apiResult = result;
 					ResultCacheService.add(result);
-					redirectToResults(result.id, pathname);
+					redirectToResults(result.id, resultPagePrefix);
 					EcoIndexDialog.close();
 				},
 				(e) => {

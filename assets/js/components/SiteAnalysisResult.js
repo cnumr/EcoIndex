@@ -38,6 +38,7 @@ class SiteAnalysisResult {
 	 */
 	async _init() {
 		const urlParams = new URLSearchParams(window.location.search);
+		const langSwitchersElements = document.querySelectorAll(".language-switcher a.lang")
 
 		let pageResultData = {};
 
@@ -48,12 +49,24 @@ class SiteAnalysisResult {
 				pageResultData[key] = value;
 			}
 
+			// update the link URL of every lang switcher
+			langSwitchersElements.forEach((a) => {
+				const href = a.getAttribute("href") + "?" + urlParams.toString()
+				a.setAttribute("href", href)
+			})
+
 			// else fetch analysis result from id
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
 			const id = urlParams.get("id");
 			// window.location.pathname is something like /resultat (in french) or /en/result (in english)
 			pageResultData = await AnalysisService.fetchAnalysisById(id, window.location.pathname);
+
+			// update the link URL of every lang switcher
+			langSwitchersElements.forEach((a) => {
+				const href = a.getAttribute("href") + "?id=" + id
+				a.setAttribute("href", href)
+			})
 		} else {
 			// TODO: redirect to error page or show dialog ?
 			window.location = `${window.location.origin}/erreur/?status=404`;
