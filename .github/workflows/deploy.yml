@@ -1,4 +1,4 @@
-name: Deploy rsync
+name: RSYNC Deploy
 
 on:
   push:
@@ -6,9 +6,28 @@ on:
       - "v*.*.*"
 
 jobs:
-  deploy:
+  env:
+    name: Get deploy environment based on tag suffix
     runs-on: ubuntu-latest
-    environment: production
+    outputs:
+      target-env: ${{ steps.get_environment.outputs.target-env }}
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v3
+      - name: 🚀 Get Environment
+        id: get_environment
+        run: |
+          if [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+-rc[0-9]+$ ]]; then
+            echo "target-env: preproduction" > $GITHUB_OUTPUT
+          elif [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "target-env: production" > $GITHUB_OUTPUT
+          fi
+
+  deploy:
+    needs: env
+    environment: 
+      name: ${{ needs.env.outputs.target-env }}
+    runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
         uses: actions/checkout@v3
