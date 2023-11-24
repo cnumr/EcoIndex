@@ -2,6 +2,8 @@ name: RSYNC Deploy
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "v*.*.*"
 
@@ -17,10 +19,10 @@ jobs:
       - name: 🚀 Get Environment
         id: get_environment
         run: |
-          if [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+-rc[0-9]+$ ]]; then
-            echo "target-env: preproduction" > $GITHUB_OUTPUT
-          elif [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "target-env: production" > $GITHUB_OUTPUT
+          if [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "target-env=production" > $GITHUB_OUTPUT
+          else
+            echo "target-env=preproduction" > $GITHUB_OUTPUT
           fi
 
   deploy:
@@ -45,4 +47,6 @@ jobs:
           echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: 🚀 Deploy
-        run: rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}
+        run: |
+          echo "Deploying to ${{ needs.env.outputs.target-env }}" >> $GITHUB_STEP_SUMMARY
+          rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}
