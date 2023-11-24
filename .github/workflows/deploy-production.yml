@@ -1,12 +1,13 @@
-name: Deploy rsync
+name: Déploiement RSYNC en production
 
 on:
   push:
     tags:
-      - "v*.*.*"
+      - "v*.*.*-production"
 
 jobs:
   deploy:
+    environment: production
     runs-on: ubuntu-latest
     environment: production
     steps:
