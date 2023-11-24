@@ -3,8 +3,7 @@ name: RSYNC Deploy
 on:
   push:
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+"
-      - "v[0-9]+.[0-9]+.[0-9]+-rc[0-9]+]"
+      - "v*.*.*"
 
 jobs:
   env:
@@ -18,9 +17,9 @@ jobs:
       - name: 🚀 Get Environment
         id: get_environment
         run: |
-          if [[ ${{ github.ref }} == *"rc"* ]]; then
+          if [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+-rc[0-9]+$ ]]; then
             echo "target-env: preproduction" > $GITHUB_OUTPUT
-          else
+          elif [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "target-env: production" > $GITHUB_OUTPUT
           fi
 
