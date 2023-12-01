@@ -2,7 +2,6 @@
 id = "badge"
 widget = "badge"
 weight = 940
-draft = true
 +++
 
 ## Ajouter le badge à votre page
@@ -15,5 +14,5 @@ un contrôle régulier.
 
 [//]: # "texte du badge"
 
-L’empreinte environnementale de cette page est plus faible que la moyenne. Calcul réalisé sur www.ecoindex.fr le [date du calcul]
-[télécharger le badge](download)
+L’empreinte environnementale de cette page est plus faible que la moyenne. Calcul réalisé sur www.ecoindex.fr le [date
+du calcul] [télécharger le badge](download)

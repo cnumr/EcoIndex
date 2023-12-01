@@ -3,22 +3,28 @@ id = "ecoindex"
 weight = 40
 +++
 
-## Le calcul de l’EcoIndex
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Les trois critères sont injectés dans notre algorithme pour calculer l’EcoIndex de
-la page testée. Nous les associons via une moyenne pondérée de :
+{{% info_2_columns_col1 %}}
 
-- 3 pour le DOM
-- 2 pour les requêtes HTTP
-- 1 pour le poids des données transférées
+## EcoIndex calculation
 
-Différentes analyses micro et macro soulignent le poids prépondérant du tiers « internaute » en terme d’impacts
-environnementaux, surtout lors de la fabrication des équipements. C’est pour cette raison qu’il est surpondéré par
-rapport aux autres.
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+These three criteria are injected into our algorithm to calculate the EcoIndex of the tested page. We associate them via a weighted average of:
+
+- 3 for DOM complexity
+- 2 for HTTP requests
+- 1 for data transferred size
+
+Various micro and macro analyzes underline the overriding importance of the "Internet user" regarding environmental impacts, especially during the manufacture of connected devices. This is why the "DOM complexity" criteria is "overweighted" compared to the others.
 
 {{% equation %}}
 
-Afin de prendre en compte la disparité dans les mesures des trois indicateurs, nous positionnons la valeur constatée
-pour chaque critère dans un quantile, en tenant compte de sa proximité avec les bornes inférieures/supérieures du
-quantile. Les bornes de l’échelle de l’EcoIndex (0 à 100) ont été mises au point et validées en analysant la base
-HTTParchive (500 000 URLs).
+In order to consider the disparity in these 3 indicators measure, we place the value observed for each criterion in a quantile, taking into account its proximity to lower/upper limits of the quantile. Limits of EcoIndex scale (0 to 100) were determined and validated analyzing The HTTP Archive database (500,000 URLs).
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

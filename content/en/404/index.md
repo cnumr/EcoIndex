@@ -1,5 +1,4 @@
 +++
-draft = true
 title = "Page not found"
 decoType = "404"
 +++

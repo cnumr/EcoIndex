@@ -57,14 +57,14 @@
 		</div>
 		<div class="rlr-slider-labels">
 			{{/* TODO: add to dictionary */}}
-			<span>min</span>
+			<span>{{ i18n "Min" }}</span>
 			{{/* TODO: get medium from api ? */}}
-			<span>mediane: {{ $rangeMedianRounded }}</span>
-			<span>max</span>
+			<span>{{ i18n "Median" }} {{ $rangeMedianRounded }}</span>
+			<span>{{ i18n "Max" }}</span>
 		</div>
 	</div>
 	<div class="rlr-infos">
-		<span class="rlr-target-info">Cible : {{ .rangeValueTarget | markdownify }}</span>
-		<span class="rlr-unit">Unité : {{ .unitsLegend | markdownify }}</span>
+		<span class="rlr-target-info">{{ i18n "Target" }} {{ .rangeValueTarget | markdownify }}</span>
+		<span class="rlr-unit">{{ i18n "Unit" }} {{ .unitsLegend | markdownify }}</span>
 	</div>
 </div>

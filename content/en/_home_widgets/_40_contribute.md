@@ -3,8 +3,22 @@ id = "contribute"
 weight = 40
 +++
 
-## You like this project? You can contribute
+{{% info_2_columns %}}
 
-Join the community [...] and participate to our actions.
+{{% info_2_columns_col1 %}}
 
-[**Join us**](/en/join-us)
+## Are you interested?
+
+You can contribute to this project
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Join our community of digital sustainability and eco-design experts and take part in our actions.
+
+[**Join us**](/en/join-us/)
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

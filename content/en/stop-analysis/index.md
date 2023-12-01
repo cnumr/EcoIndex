@@ -1,6 +1,6 @@
 +++
-draft = true
 title = "Stop Analysis"
+slug = "stop-analysis"
 +++
 
 {{% hero %}}

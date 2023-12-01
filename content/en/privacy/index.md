@@ -1,6 +1,6 @@
 +++
-draft = true
 title = "Privacy"
+slug = "privacy"
 decoType = "generic"
 
 [menu]
@@ -10,7 +10,7 @@ decoType = "generic"
 
 {{% hero %}}
 
-# Privacy
+# Privacy policy
 
 {{% /hero %}}
 

@@ -114,13 +114,14 @@ function initSubmitUrlForm() {
 		e.preventDefault();
 
 		const url = e.target.querySelector("input[name='siteurl']").value;
-		launchAnalysisByURL(url);
+		const resultUrlPrefix = form.getAttribute("action")
+		launchAnalysisByURL(url, resultUrlPrefix);
 	});
 }
 
-async function launchAnalysisByURL(url) {
+async function launchAnalysisByURL(url, resultUrlPrefix) {
 	try {
-		await AnalysisService.launchAnalysisByURL(url);
+		await AnalysisService.launchAnalysisByURL(url, resultUrlPrefix);
 		updateFormMessages({ success: true });
 	} catch (error) {
 		updateFormMessages({ success: false, error });

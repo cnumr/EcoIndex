@@ -3,18 +3,24 @@ id = "intellectual-property"
 weight = 80
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Intellectual property
 
-L’algorithme EcoIndex, le service EcoIndex.fr et les autres outils associés, sont en accès gratuit, mais sont soumis à
-des droits de propriété intellectuelle. Leur utilisation est encadrée par une licence d’utilisation.
+{{% /info_2_columns_col1 %}}
 
-L’outil Ecoindex mis à disposition sur le site Ecoindex.fr est proposé sous licence
-[Creative Commons CC-By-NC-ND](https://creativecommons.org/licenses/by-nc-nd/2.0/fr/) Cela signifie que tout le monde
-peut l’utiliser, à condition de citer la source des chiffres obtenus – EcoIndex.fr et d’insérer un lien vers le service
-[http://ecoindex.fr](http://ecoindex.fr). Il n’est pas possible d’en faire un usage commercial ni de le modifier.
+{{% info_2_columns_col2 %}}
 
-Cependant, vous pouvez proposer vos modifications à GreenIt et au Collectif Conception Numérique Responsable pour
-contribuer au savoir-faire commun et l’enrichir. Vous pouvez trouvez les sources et contribuer sur Github [insérer lien
-versGitHub]
+The EcoIndex algorithm, the EcoIndex.fr service and other associated tools are available free of charge, but are subject to intellectual property rights. Their use is governed by a user licence.
 
-Tous les autres droits de propriété intellectuelle sont réservés.
+The Ecoindex tool made available on the Ecoindex.fr website is licensed under a [Creative Commons CC-By-NC-ND](https://creativecommons.org/licenses/by-nc-nd/2.0/) licence. This means that anyone can use it, provided that they cite the source of the figures obtained - EcoIndex.fr - and insert a link to the service [http://ecoindex.fr](http://ecoindex.fr). It may not be used for commercial purposes or modified.
+
+However, you can propose your modifications to GreenIT and the <span lang="fr">Collectif Conception Numérique Responsable</span> in order to contribute to and enrich the common know-how. You can find the sources and contribute on [GitHub](https://github.com/cnumr/EcoIndex)
+
+All other intellectual property rights are reserved.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

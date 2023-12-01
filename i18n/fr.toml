@@ -1,5 +1,7 @@
 [EcoIndexFormIntro]
 	other = "Entrez l’adresse d’une page web pour le découvrir !"
+[EcoIndexFormInputLabel]
+	other = "Entrez l’adresse d’une page web pour découvrir le score :"
 [EcoIndexFormPlaceholder]
 	other = "https://exemple.org"
 [EcoIndexFormSubmitText]
@@ -12,6 +14,58 @@
 	other = "Erreur lors de l’analyse"
 [AbortAnalysis]
 	other = "Arrêter l’analyse"
+[ResultScore]
+	other = "Score&nbsp;:"
+[ResultScoreExplainationLabel]
+	other = "Que veut dire mon score"
+[ResultScoreExplainationContent]
+	other = "La performance environnementale est représentée par un score sur 100 et une note de A à G (plus la note tend vers A, plus le score est élevé, mieux c’est !). La performance environnementale est calculée en fonction de 3 indicateurs techniques : le poids, la complexité, et le nombre de requêtes de la page."
+[ResultScoreExplainationKnowMore]
+	other = "En savoir plus&nbsp;:"
+[ResultNotationInfoNumberSize]
+	other = "<span data-int=\"size\">0</span> Mo"
+[ResultNotationInfoNumberNodes]
+	other = "<span data-int=\"nodes\">0</span> éléments"
+[ResultNotationInfoNumberRequests]
+	other = "<span data-int=\"requests\">0</span> requêtes"
+[ResultFootprintIndicatorsLabel]
+	other = "Quels sont les indicateurs ?"
+[ResultFootprintResultsWaterText]
+	other = "Consommation <br />d’eau bleue"
+[ResultFootprintResultsGESText]
+	other = "Émission de gaz <br />à effet de serre"
+[ResultFootprintExplainationTitle ]
+	other = "Ça veut dire quoi ?<hr>"
+[ResultFootprintExplainationText ]
+	other = "Pour vous donner une idée, 1 kg CO2e équivaut à un trajet d’environ **3 km en voiture**. Une douche consomme en moyenne 6 litres d’eau à la minute. <br><br>Si votre page émet **1,7g CO2e** et consomme **2,5cl d’eau**, cela signifie que pour 1000 visiteurs mensuels, l’empreinte est de **1,7kg de CO2e et 25 litres d’eau** par mois – soit un trajet de 5,5km en voiture et une douche de 4 minutes."
+[ResultFootprintExplainationMoreInfo ]
+	other = "Pour aller plus loin : <a href=\"https://raphael-lemaire.com/2020/02/02/mise-en-perspective-suite/\">Mise en perspective des impacts écologiques du numérique</a>"
+[ResultDetailsCalculationExplainedLabel]
+	other = "Comment est calculé le score ?"
+[ResultDetailsCalculationExplainedContent]
+	other = "Pour calculer la performance environnementale d’une page, nous prenons en compte plusieurs éléments : le nombre d’éléments du DOM (Document Object Model), le poids des données transférées, et le nombre de requêtes HTTP. Pour en savoir plus sur notre méthode de calcul."
+[ResultDetailsResultWeightLabel]
+	other = "Poids de la page"
+[ResultDetailsResultWeightUnits]
+	other = "Mo"
+[ResultDetailsResultWeightUnitsLegend]
+	other = "mégaoctet (Mo)"
+[ResultDetailsResultComplexityLabel]
+	other = "Complexité"
+[ResultDetailsResultComplexityUnits]
+	other = "éléments"
+[ResultDetailsResultComplexityUnitsLegend]
+	other = "Nombre d’éléments du DOM"
+[ResultDetailsResultRequestsLabel]
+	other = "Requêtes"
+[ResultDetailsResultRequestsUnits]
+	other = "requêtes"
+[ResultDetailsResultRequestsUnitsLegend]
+	other = "Nombre de requêtes serveur"
+[HowDoesItWorksURL]
+	other = "/comment-ca-marche"
+[HowDoesItWorksTitle]
+	other = "Comment ça marche ?"
 [Back]
 	other = "Retour"
 [ReTest]
@@ -92,3 +146,13 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "Partager mon résultat"
 [CopyURL]
 	other = "Copier l’adresse"
+[Target]
+	other = "Cible&nbsp;:"
+[Unit]
+	other = "Unité&nbsp;:"
+[Max]
+	other = "max"
+[Median]
+	other = "médiane&nbsp;:"
+[Min]
+	other = "min"

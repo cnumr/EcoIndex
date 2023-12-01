@@ -1,5 +1,6 @@
 +++
 title = "About"
+slug = "about"
 
 [menu]
 	[menu.extra]

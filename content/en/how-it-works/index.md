@@ -1,6 +1,6 @@
 +++
-draft = true
 title = "How it works"
+slug = "how-it-works"
 
 [menu]
 	[menu.main]
@@ -9,7 +9,7 @@ title = "How it works"
 
 {{% hero %}}
 
-# How it works
+# How does it work?
 
 {{% /hero %}}
 

@@ -3,9 +3,18 @@ id = "formula"
 weight = 50
 +++
 
-## Le calcul de la note
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Une fois l’EcoIndex obtenu, nous classons cette valeur par rapport aux autres
-valeurs de la base EcoIndex. Nous obtenons donc un rang. Nous répartissons les rangs sur une échelle allant de A à G
-(norme européenne). Vous obtenez donc une seconde information : la performance de l’URL par rapport aux autres URLs
-testées. Il s’agit donc d’une performance relative à l’échantillon étudié.
+{{% info_2_columns_col1 %}}
+
+## Score calculation
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Once we get the EcoIndex, we rank this value in relation to other values available in EcoIndex.fr database. We then obtain a rank. Ranks are dispatched on a scale from A to G (European standard). So you are given a second information: the URL performance compared to other URLs tested. Therefore, it's a performance relative to the sample studied.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

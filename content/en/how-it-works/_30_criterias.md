@@ -3,11 +3,22 @@ id = "criterias"
 weight = 30
 +++
 
-## Le choix des critères
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Chacun des critères décrits ci-dessus (taille du DOM, poids des données et
-requêtes HTTP) a été choisi pour représenter chaque tiers de l’architecture d’un service numérique :
+{{% info_2_columns_col1 %}}
 
-- l’internaute et ses équipements pour le nombre d’éléments du DOM ;
-- le réseau pour les données transférées ;
-- le serveur pour le nombre de requêtes HTTP.
+## Criteria's choice
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Each criteria described above (DOM complexity, data size and HTTP requests number) was chosen to represent each third of a digital service architecture:
+
+- the Internet user and their equipment => number of DOM elements;
+- the network => transferred data;
+- the server => number of HTTP requests.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

@@ -7,7 +7,7 @@ weight = 40
 
 {{% info_2_columns_col1 %}}
 
-## The toolbox
+## Toolbox
 
 {{% /info_2_columns_col1 %}}
 
@@ -15,78 +15,71 @@ weight = 40
 
 ### Browser plugins
 
-#### Green IT Analysis | EcoIndex in the pocket
+#### Green IT Analysis plugin | EcoIndex in the pocket
 
-EcoIndex and some good practices are united in the same extension! On Chrome and Firefox, you can test
-the environmental footprint of any web page and build a history to reproduce the path of your
-users. So practical!
-<p>
-{{% content_link href="https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad?hl=fr" %}}Chrome extension{{% /content_link %}}
-<br>
-{{% content_link href="https://addons.mozilla.org/fr/firefox/addon/greenit-analysis/" %}}Firefox extension{{% /content_link %}}
-</p>
+EcoIndex and some of the good practices brought together in the same extension! Available on Chrome and Firefox. You can test any webpage environmental footprint and establish history to reproduce user journey. Very practical!
 
-Contribute the source code by going to the [Greenit Analysis Plugin GitHub](https://github.com/cnumr/GreenIT-Analysis)
+[**Chrome Extension >**](https://chrome.google.com/webstore/detail/greenit-analysis/mofbfhffeklkbebfclfaiifefjflcpad)
 
-#### The Ecoindex plugin
+[**Firefox Extension >**](https://addons.mozilla.org/fr/firefox/addon/greenit-analysis/)
 
-The Ecoindex plugin allows you to display the existing ecoindex score in the database of the ecoindex.fr site of a web page in the browser. It is available for Firefox, Chrome, Edge and Opera. It will allow you to see the latest ratings for the same page, but also the ratings on the other pages of your site. Finally, it simplifies the analysis of a page:
+Contribute to source code on [GitHub](https://github.com/cnumr/GreenIT-Analysis)
 
-<p>
-{{% content_link href="https://chrome.google.com/webstore/detail/ecoindexen/apeadjelacokohnkfclnhjlihklpclmp" %}}Chrome Extension{{% /content_link %}}
-<br>
-{{% content_link href="https://addons.mozilla.org/fr/firefox/addon/ecoindex-fr/" %}}Firefox extension{{% /content_link %}}
-<br>
-{{% content_link href="https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah" %}}Edge Extension{{% /content_link %}}
-<br>
-{{% content_link href="https://addons.opera.com/fr/extensions/details/ecoindexfr/" %}}Opera extension{{% /content_link %}}
-</p>
+#### EcoIndex plugin
 
-Contribute the source code by going to the [Ecoindex plugin GitHub](https://github.com/cnumr/ecoindex-browser-plugin)
+EcoIndex plugin allows you to display the existing EcoIndex score of a webpage (from EcoIndex.fr webstite's database) directly in browser. Available for Firefox, Chrome, Edge and Opera. It'll display the latest grade for the page you're on, but also existing grades for other pages of the same website. Lastly it simplifies page analysis:
+
+[**Chrome extension >**](https://chrome.google.com/webstore/detail/ecoindexfr/apeadjelacokohnkfclnhjlihklpclmp)
+
+[**Firefox extension >**](https://addons.mozilla.org/fr/firefox/addon/ecoindex-fr/)
+
+[**Edge extension >**](https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah)
+
+[**Opera extension >**](https://addons.opera.com/fr/extensions/details/ecoindexfr/)
+
+Contribute to source code on [GitHub](https://github.com/cnumr/ecoindex-browser-plugin)
 
 #### Why different results between these 2 plugins?
 
-The 2 plugins have different operating modes to perform analyzes and the results may therefore differ from one tool to another:
+When performing analysis, these two plugins have different operating modes, therefore results may vary from one tool to the other:
 
-- The Greenit Analysis plugin works in your browser taking into account the current context of the user (IP address, browser Plugins installed, cache, session cookies...). More details on the [plugin documentation](https://github.com/cnumr/GreenIT-Analysis#r%C3%A9sultats-diff%C3%A9rents-entre-deux-analyses)
-- The Ecoindex plugin uses the ecoindex.fr API which will open a blank chrome browser on each analysis with a predefined scenario. More details on the [operation of the API](https://www.ecoindex.fr/comment-ca-marche/#m%C3%A9thodologie-danalyse)
+- GreenIT Analysis plugin operates in your browser, taking user's context into account (IP adress, installed browser plugins, cache, session cookies...) More details on [plugin documentation](https://github.com/cnumr/GreenIT-Analysis#r%C3%A9sultats-diff%C3%A9rents-entre-deux-analyses)
 
-### The Ecoindex badge
+- EcoIndex plugin uses ecoindex.fr API: it opens a blank Chrome browser for each analysis using a predefined scenario. More details on [the API operating mode](https://www.ecoindex.fr/comment-ca-marche/#m%C3%A9thodologie-danalyse)
 
-The Ecoindex badge makes it easy to display the ecoindex score on your page. To do this, simply add an html code to your page.
 
-<p>
-{{% content_link href="https://github.com/cnumr/ecoindex_badge" %}}The Ecoindex badge project page{{% /content_link %}}
-</p>
+### EcoIndex badge
 
-### Ecoindex command line
+This badge allows you to easily display the obtained EcoIndex score on your webpage. To do this, simply add 2 lines of html code to your page.
 
-The Ecoindex CLI project makes it possible to launch an analysis of a web page from the command line. Developed in python, it is available for Linux, Mac and Windows. It will allow you to launch an analysis of a page or a set of pages, generate a result file in csv or json format, generate an HTML report...
+[**View EcoIndex badge project on GitHub >**](https://github.com/cnumr/ecoindex_badge)
 
-<p>
-{{% content_link href="https://github.com/cnumr/ecoindex_cli" %}}The Ecoindex CLI project page{{% /content_link %}}
-</p>
 
-### GitHub | Up to you
+### EcoIndex command line interface
 
-EcoIndex is a community and open source project that only asks to be enriched through the contribution of experts and
-passionate. You can consult the GitHub of the project at any time in order to better understand it and, why not, to
-participate !
-<p>
-{{% content_link href="https://github.com/cnumr" %}}GitHub Cnumr{{% /content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/EcoIndex" %}}GitHub frontend site EcoIndex{{% /content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/ecoindex_api" %}}GitHub backend site EcoIndex{{% /content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/GreenIT-Analysis" %}}GitHub plugin GreenIT Analysis{{% /content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/ecoindex-browser-plugin" %}}GitHub Ecoindex plugin{{%/content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/ecoindex_badge" %}}GitHub Ecoindex badge{{%/content_link %}}
-<br>
-{{% content_link href="https://github.com/cnumr/ecoindex_cli" %}}GitHub CLI Ecoindex{{%/content_link %}}
-</p>
+EcoIndex CLI allows you to launch a webpage analysis in command line. Developed in Python, it's available for Linux, Mac and Windows. It'll allow you to launch analysis for a single or several webpages, to generate results in CSV or JSON files, to generate HTML report...
+
+[**View EcoIndex CLI project on GitHub >**](https://github.com/cnumr/ecoindex_cli)
+
+
+### GitHub | It's up to you!
+
+EcoIndex is a community and open source project: ready to be enhanced through experts and enthusiasts contributions!
+You can consult this project on GitHub anytime for better understanding and, why not, participate!
+
+[**GitHub / Cnumr >**](https://github.com/cnumr)
+
+[**GitHub / EcoIndex website / frontend >**](https://github.com/cnumr/EcoIndex)
+
+[**GitHub / EcoIndex website / backend >**](https://github.com/cnumr/ecoindex_api)
+
+[**GitHub / GreenIT Analysis plugin >**](https://github.com/cnumr/GreenIT-Analysis)
+
+[**GitHub / Ecoindex plugin >**](https://github.com/cnumr/ecoindex-browser-plugin)
+
+[**GitHub / EcoIndex badge >**](https://github.com/cnumr/ecoindex_badge)
+
+[**GitHub / EcoIndex CLI >**](https://github.com/cnumr/ecoindex_cli)
 
 {{% /info_2_columns_col2 %}}
 

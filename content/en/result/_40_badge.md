@@ -1,18 +1,18 @@
 +++
 id = "badge"
 widget = "badge"
-weight = 40
+weight = 940
 +++
 
-## Ajouter le badge à votre page
+## Add the badge on your web page
 
 [//]: # "TODO: cette page ne s’affiche que si le résultat est supérieur ou égal à B"
 
-Nous ne sommes pas responsables de l’utilisation qui est faite du badge. Si vous ajoutez ce badge à votre site vous
-devez vous assurer que la page est conforme aux bonnes pratiques d’écoconception et d’accessibilité, et effectuer un
-contrôle régulier.
+We are not responsible for the use made of this badge. If you add this badge to your website you
+must ensure that the web page complies with good ecodesign and accessibility practices, and perform
+regular page checks.
 
 [//]: # "texte du badge"
 
-L’empreinte environnementale de cette page est faible Calcul réalisé sur www.ecoindex.fr le [date du calcul]
-[télécharger le badge](download)
+The environmental footprint of this page is lower than average.
+Calculation made with www.ecoindex.fr on [date of calculation] [download the badge](download)

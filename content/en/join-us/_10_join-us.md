@@ -3,17 +3,27 @@ id = "join-us"
 weight = 10
 +++
 
-## Prenez part à la communauté des acteurs du numérique responsable
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] Pour échanger sur les sujets du numérique responsable, de la sobriété numérique,
-de l’écoconception facteur 4, de la lowtech, etc. nous vous proposons de nous retrouver sur :
+{{% info_2_columns_col1 %}}
 
-- [Linkedin](https://www.linkedin.com/groups/1912076/)
+## Take part in the community of digital sustainability actors
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+To exchange on digital sustainability and sobriety, net-zero ecodesign, low tech... Join us on:
+
+- [LinkedIn](https://www.linkedin.com/groups/1912076/)
 - [Facebook](https://www.facebook.com/greenitfr)
 
-Pour l’écoconception et la conception responsable de service numérique, préférez le groupe de discussion dédié ici :
-[Ecoconception web](https://groups.google.com/forum/#%21forum/ecoconceptionweb). Vous pouvez vous y inscrire en envoyant
-un mail vide à ecoconceptionweb+subscribe@googlegroups.com.
+For ecodesign and sustainable design of digital services, prefer those dedicated discussion group:
+- [Web ecodesign on Google Groups](https://groups.google.com/forum/#%21forum/ecoconceptionweb). To subscribe, send an empty email to ecoconceptionweb+subscribe@googlegroups.com.
+- [GreenIT's org on Mattermost](https://chat.greenit.eco/)
 
-Nous vous proposons en plus une liste de discussion généraliste, dédiée à ces sujets : greenit@simplelists.com. Elle
-vous permet de poser des questions et d’échanger sur tous les sujets du numérique responsable.
+You can also ask questions and exchange informations about any digital sustainability topic on this discussion list: greenit@simplelists.com.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

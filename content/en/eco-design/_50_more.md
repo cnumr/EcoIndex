@@ -3,20 +3,24 @@ id = "more"
 weight = 50
 +++
 
-## Au-delà de l’écoconception
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] L’écoconception des services numériques ne peut pas à elle seule réduire
-significativement l’empreinte du numérique mondial. D’autres mesures simples, à contre-courant de l’optique de
-croissance effrénée de notre société, doivent être mises en oeuvre pour changer le cours des choses.
+{{% info_2_columns_col1 %}}
 
-- **Réduire le nombre d’objets connectés** en favorisant leur **mutualisation** et leur substitution, par exemple en
-  faisant fonctionner les modems d’un immeuble via un dispositif centralisé. On peut aussi **ouvrir leurs APIs** pour
-  allonger leur durée de vie – les APIs sont des interfaces de programmation qui servent notamment à échanger des
-  données entre l’objet connecté et les serveurs du fabricant ou de ses partenaires.
-- **Réduire le nombre d’écrans plats** en les remplaçant par d’autres dispositifs d’affichage : lunettes de réalité
-  virtuelle, vidéo projecteurs LED, etc.
-- **Augmenter la durée de vie des équipements** en allongeant la durée de garantie légale, en favorisant le réemploi, et
-  en luttant contre certains modèles économiques (opérateurs téléphoniques notamment).
+## Beyond eco-design
 
-Source : Pour en savoir plus :
-[Empreinte environnementale du numérique mondial](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/)
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+Eco-design of digital services alone cannot significantly reduce global digital footprint. Other simple measures, against the current of our society unrestrained growth, must be implemented to change the actual trajectory.
+
+- **Reducing connected devices number** by promoting **pooling and substitution**, for example: using a centralized device to operate all the modems of one building. We can also **open their API** to extend their lifespan - API are programming interfaces notably used to exchange data between connected devices and servers of manufacturers or their partners.
+- **Reducing flat screens number** by switching them with other display devices: VR headset, LED video projectors... And above all good books and quality time with family and friends, away from screens ;-)
+- **Increasing devices lifespan** by extending legal warranty period, promoting reuse and fighting against some economic models (particularly mobile phones operators).
+
+Learn more: [Global digital environmental footprint](https://www.greenit.fr/etude-empreinte-environnementale-du-numerique-mondial/)
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

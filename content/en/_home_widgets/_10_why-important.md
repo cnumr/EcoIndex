@@ -3,15 +3,28 @@ id = "why-important"
 weight = 10
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Why is it important?
 
-### Le numérique, ce n’est pas que du vent
+Digital technologies are not just "clouds"
 
-[**WARNING !!! A passer en anglais**] Aujourd’hui, l’empreinte environnementale des nouvelles technologies représente
-plus de gaz à effet de serre que l’aviation civile.
+{{% /info_2_columns_col1 %}}
 
-Et ce chiffre est en constante augmentation : de plus en plus de gens ont accès au numérique et les objets connectés ne
-cessent de se multiplier.
+{{% info_2_columns_col2 %}}
 
-{{% highlight %}} **Le numérique mondial représente un 7ème continent de la taille de 2 à 3 fois celle de la France.**
+Today, the environmental footprint of digital technologies emits more greenhouse gases than civil aviation. 
+
+And it's constantly increasing: more and more people have access to Internet and connected devices are multiplying. 
+
+{{% highlight %}}
+
+**Digital technologies could be considered as a 7th continent, 2 to 3 times the size of France.**
+
 {{% /highlight %}}
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

@@ -21,9 +21,9 @@ L’outil Ecoindex mis à disposition sur le site Ecoindex.fr est proposé sous 
 peut l’utiliser, à condition de citer la source des chiffres obtenus – EcoIndex.fr et d’insérer un lien vers le service
 [http://ecoindex.fr](http://ecoindex.fr). Il n’est pas possible d’en faire un usage commercial ni de le modifier.
 
-Cependant, vous pouvez proposer vos modifications à GreenIt et au Collectif Conception Numérique Responsable pour
+Cependant, vous pouvez proposer vos modifications à GreenIT et au Collectif Conception Numérique Responsable pour
 contribuer au savoir-faire commun et l’enrichir. Vous pouvez trouvez les sources et contribuer sur
-[Github](https://github.com/cnumr/EcoIndex)
+[GitHub](https://github.com/cnumr/EcoIndex)
 
 Tous les autres droits de propriété intellectuelle sont réservés.
 

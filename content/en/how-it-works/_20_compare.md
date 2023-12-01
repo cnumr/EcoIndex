@@ -3,11 +3,18 @@ id = "compare"
 weight = 20
 +++
 
-## Comparer ce qui est comparable
+{{% info_2_columns %}}
 
-[**WARNING !!! A passer en anglais**] EcoIndex.fr a été conçu pour comparer des URL du même type : par exemple, la page
-“Article” de différents sites d’information ou la page d’accueil de différents sites institutionnels. Notre moteur de
-calcul n’est pas en mesure de détecter automatiquement le type de page ou d’URL analysée. Certains types de sites ont,
-de manière générale, un impact plus élevé que d’autres. Il faut donc comparer ce qui est comparable : par exemple, ça
-n’aurait pas vraiment de sens de mettre côte à côte la page d’accueil d’un gros site marchand comme Amazon et un article
-publié dans Le Monde !
+{{% info_2_columns_col1 %}}
+
+## Compare like-for-like
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+EcoIndex.fr was designed to compare URL of the same type, for example: comparing the "article page" of several news websites, or homepages of different institutional websites. Our calculation engine is not able to automatically detect the type of page or URL analyzed. Some types of websites usually tend to have higher impact than others. Therefore, we must compare what is comparable, for example: it would make no sense to put Amazon's homepage side-by-side with an article page published on the New York Times website.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}
