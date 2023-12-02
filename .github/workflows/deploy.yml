@@ -19,10 +19,10 @@ jobs:
       - name: 🚀 Get Environment
         id: get_environment
         run: |
-          if [[ ${{ github.ref }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "target-env=production" > $GITHUB_OUTPUT
+          if [[ ${{ github.ref_name }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "target-env=production" >> $GITHUB_OUTPUT
           else
-            echo "target-env=preproduction" > $GITHUB_OUTPUT
+            echo "target-env=preproduction" >> $GITHUB_OUTPUT
           fi
 
   deploy:
