@@ -115,6 +115,7 @@ class SiteAnalysisResult {
 		this._setDomContent(pageResultData, "data-int", "data-int-attr");
 
 		// specific components updates
+		this._updateUrl(pageResultData.url)
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultsFromSelect();
 		this._updatetResultRangeSliders(pageResultData);
@@ -259,6 +260,17 @@ class SiteAnalysisResult {
 	_updatetResultRangeSliders(data) {
 		const sliderEls = document.querySelectorAll(".js-rlr");
 		sliderEls.forEach((sliderEl) => new ResultRangeSlider({ sliderEl, data }));
+	}
+
+	/**
+	 * Update the href and title attribute of the element that contains the analyzed URL
+	 * @param {string} url
+	 */
+	_updateUrl(url) {
+		const urlElement = this.el.querySelector(".result-url")
+		
+		urlElement.setAttribute("href", url)
+		urlElement.setAttribute("title", url)
 	}
 }
 export default SiteAnalysisResult;
