@@ -37,7 +37,7 @@
 [ResultFootprintExplainationTitle ]
 	other = "What does that mean?<hr>"
 [ResultFootprintExplainationText ]
-	other = "To give you an idea, 1 kg CO2e is equivalent to a journey of around **3 km by car**. A shower uses an average of 6 litres of water per minute. <br><br>If your page emits **1,7g CO2e** and uses **2,5cl of water**, that means that for 1000 monthly visitors, the footprint is **1,7kg de CO2e and 25 litres of water** per month – equivalent to a 5.5km car journey and a 4-minute shower."
+	other = "To give you an idea, 1 kg CO2e is equivalent to a journey of around **5 km by car**. A shower uses an average of 6 litres of water per minute. <br><br>If your page emits **1,7g CO2e** and uses **2,5cl of water**, that means that for 1000 monthly visitors, the footprint is **1,7kg de CO2e and 25 litres of water** per month – equivalent to a 5.5km car journey and a 4-minute shower."
 [ResultFootprintExplainationMoreInfo ]
 	other = "To find out more: <a lang=\"fr\" hreflang=\"fr\" href=\"https://raphael-lemaire.com/2020/02/02/mise-en-perspective-suite/\">Mise en perspective des impacts écologiques du numérique</a>"
 [ResultDetailsCalculationExplainedLabel]
