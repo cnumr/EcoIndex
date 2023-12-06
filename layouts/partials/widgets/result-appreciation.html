@@ -7,13 +7,13 @@
 				</div>
 				<h2 data-int="grade_title"></h2>
 				<p class="font-size:1">
-					{{ i18n "ResultScore" }} <span><span data-int="score">0</span> / 100</span>
+					{{ i18n "ResultScore" | safeHTML }} <span><span data-int="score">0</span> / 100</span>
 				</p>
 				<hr class="small" />
 				<div class="info-collapse">
 					{{ $label := i18n "ResultScoreExplainationLabel" }}
 					{{ $content := i18n "ResultScoreExplainationContent" }}
-					{{ $knowMore := i18n "ResultScoreExplainationKnowMore" }}
+					{{ $knowMore := i18n "ResultScoreExplainationKnowMore" | safeHTML }}
 					{{ $moreHref := i18n "HowDoesItWorksURL" }}
 					{{ $moreLabel := i18n "HowDoesItWorksTitle" }}
 

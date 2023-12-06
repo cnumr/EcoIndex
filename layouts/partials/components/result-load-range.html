@@ -59,12 +59,12 @@
 			{{/* TODO: add to dictionary */}}
 			<span>{{ i18n "Min" }}</span>
 			{{/* TODO: get medium from api ? */}}
-			<span>{{ i18n "Median" }} {{ $rangeMedianRounded }}</span>
+			<span>{{ i18n "Median" | safeHTML }} {{ $rangeMedianRounded }}</span>
 			<span>{{ i18n "Max" }}</span>
 		</div>
 	</div>
 	<div class="rlr-infos">
-		<span class="rlr-target-info">{{ i18n "Target" }} {{ .rangeValueTarget | markdownify }}</span>
-		<span class="rlr-unit">{{ i18n "Unit" }} {{ .unitsLegend | markdownify }}</span>
+		<span class="rlr-target-info">{{ i18n "Target" | safeHTML }} {{ .rangeValueTarget | markdownify }}</span>
+		<span class="rlr-unit">{{ i18n "Unit" | safeHTML }} {{ .unitsLegend | markdownify }}</span>
 	</div>
 </div>
