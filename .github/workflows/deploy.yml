@@ -15,7 +15,7 @@ jobs:
       target-env: ${{ steps.get_environment.outputs.target-env }}
     steps:
       - name: 🛒 Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 🚀 Get Environment
         id: get_environment
         run: |
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: ✨ Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
