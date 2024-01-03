@@ -65,7 +65,7 @@ async function initButtonRemakeAnalysis() {
 		e.preventDefault();
 
 		const url = ResultCacheService.getLast().url;
-		await AnalysisService.launchAnalysisByURL(url);
+		await AnalysisService.launchAnalysisByURL(url, window.location.pathname);
 	});
 }
 
