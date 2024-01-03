@@ -3,8 +3,10 @@ id="intro"
 widget="result-intro"
 +++
 
-Calculated on {{< result-date >}}
+Calculated 
 
 <h1 class="h2 result-url-wrapper">
-Results for {{< result-url >}}
+    Results from {{< result-date >}}
 </h1>
+
+{{< result-url >}}
