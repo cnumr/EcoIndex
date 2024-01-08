@@ -2,10 +2,6 @@ import ky from "ky";
 
 class ApiService {
 	#controller = null;
-
-	// TODO import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
-
-	// TODO set from .env ?
 	#baseURL = "https://api.ecoindex.fr/v1/";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
