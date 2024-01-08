@@ -20,10 +20,10 @@ weight = 10
   - [Gaétan Pautler](https://www.linkedin.com/in/gaetanpautler/)
   - [Léo Parpeix](https://www.linkedin.com/in/l%C3%A9o-parpeix-464832111/)
 - Développement
-  - [Yaacov Cohen](https://www.linkedin.com/in/yaacovcohen/)
+  - [Yaacov Cohen](https://www.linkedin.com/in/yaacovcohen/?locale=fr_FR)
   - [Romuald Priol](https://www.linkedin.com/in/romuald-p/)
   - [Romain Dulieu](https://www.linkedin.com/in/romain-dulieu-53a354120/)
-  - [Vincent Vatelot](https://www.linkedin.com/in/vincent-vatelot-7a31149/)
+  - [Vincent Vatelot](https://vincent-vatelot.welovedevs.com/)
   - [Bastien Cornier](https://www.linkedin.com/in/bastiencornier/)
   - [Julien Wilhelm](https://www.linkedin.com/in/julien-wilhelm/)
 

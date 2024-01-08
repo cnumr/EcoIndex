@@ -24,7 +24,7 @@
 		<div>{{ .content | printf "%s\n\n<p></p>" | markdownify | replaceRE "\n*<p></p>\n*$" "" | safeHTML }}</div>
 		{{ if and (isset . "moreHref") (isset . "moreLabel") }}
 			<hr class="x-small" />
-			En savoir plus :&nbsp;
+			{{ .knowMore }}
 			{{ partial "components/content-link" (dict
 				"href" .moreHref
 				"label" .moreLabel

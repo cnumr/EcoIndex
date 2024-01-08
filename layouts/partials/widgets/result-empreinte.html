@@ -6,12 +6,16 @@
 				<h2>{{ i18n `EnvironmentalFootprint` }}</h2>
 				<hr class="small" />
 				<div class="info-collapse">
+					{{ $label := i18n "ResultFootprintIndicatorsLabel" }}
+					{{ $moreHref := i18n "HowDoesItWorksURL" }}
+					{{ $moreLabel := i18n "HowDoesItWorksTitle" }}
+
 					{{ partial "components/collapse" (dict
 						"context" .
-						"label" "Quels sont les indicateurs ?"
+						"label" $label
 						"content" .Params.collapse_info
-						"moreHref" "/comment-ca-marche"
-						"moreLabel" "Comment ça marche"
+						"moreHref" $moreHref
+						"moreLabel" $moreLabel
 						)
 					}}
 				</div>
@@ -29,23 +33,28 @@
 				</p>
 				{{/* Footprint results from page */}}
 				<div class="grid-l " style="--min-cell-width:160px;">
+					{{ $title := i18n "ResultFootprintResultsWaterText" | safeHTML }}
 					{{ partial "components/highlight-info-card" (dict
 						"icon" "water-drop"
 						"title" "<span class='footprint-result' data-int='water' data-unit='cl'>0</span>"
-						"text" "Consommation <br />d'eau bleue"
+						"text" $title
 						)
 					}}
+					{{ $title := i18n "ResultFootprintResultsGESText" | safeHTML }}
 					{{ partial "components/highlight-info-card" (dict
 						"icon" "cloud"
 						"title" "<span class='footprint-result' data-int='ges' data-unit='gCO2e'>0</span>"
-						"text" "Émission de gaz <br />à effet de serre"
+						"text" $title
 						)
 					}}
 				</div>
+				{{ $title := i18n "ResultFootprintExplainationTitle" }}
+				{{ $text := i18n "ResultFootprintExplainationText" }}
+				{{ $moreInfo := i18n "ResultFootprintExplainationMoreInfo" | safeHTML }}
 				{{ partial "components/highlight-info-card" (dict
-					"title" "Ça veut dire quoi ?<hr>"
-					"text" "Pour vous donner une idée, 1 kg CO2e équivaut à un trajet d’environ **3 km en voiture**. Une douche consomme en moyenne 6 litres d’eau à la minute. <br><br>Si votre page émet **1,7g CO2e** et consomme **2,5cl d’eau**, cela signifie que pour 1000 visiteurs mensuels, l’empreinte est de **1,7kg de CO2e et 25 litres d’eau** par mois – soit un trajet de 5,5km en voiture et une douche de 4 minutes."
-					"moreInfo" "Pour aller plus loin : <a href='https://raphael-lemaire.com/2020/02/02/mise-en-perspective-suite/'>Mise en perspective des impacts écologiques du numérique</a>"
+					"title" $title
+					"text" $text
+					"moreInfo" $moreInfo
 					)
 				}}
 			</div>

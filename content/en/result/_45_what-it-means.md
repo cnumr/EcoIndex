@@ -1,19 +1,14 @@
 +++
 id = "what-it-means"
-weight = 45
+weight = 945
 +++
 
 ### What does it mean?
 
-Pour vous donner une idée, **1 kg CO2e** équivaut à un trajet d’environ **3 km en voiture**. 1,5L d’eau, c’est une
-bouteille comme celles que vous pouvez trouver au supermarché.
+To give you an idea, **1kg CO2e** is similar to driving about **5km by car**.
+Taking a shower consumes an average of 6 liters of water per minute.
 
-Si, lorsqu’elle s’affiche, votre page consomme **1,7g CO2e** et **2,5cl d’eau**, cela signifie que pour 1000 visiteurs
-mensuels, elle consomme un total de **1,7kg de CO2e et 25 litres d’eau par mois** – soit un trajet de 5,5km en voiture
-et 16,5 bouteilles d’eau. A vous de faire le calcul en prenant en compte l’empreinte de votre page rapportée à votre
-nombre de visiteurs mensuels !
+If your webpage emits **1.7g CO2e** and consumes **2.5cl of water**, it means that for 1000 monthly visitors, its footprint  is **1.7kg CO2e and 25l of water**: similar to driving a car 5.5km and taking a 4 minutes shower.
 
-Infobulle: à rédiger (revoir contenu maquette)
-
-Pour aller plus loin :
-[Mise en perspective des impacts écologiques du numérique](http://raphael-lemaire.com/2019/11/02/mise-en-perspective-impacts-numerique/)
+To go further:
+[Putting the ecological impacts of digital technology into perspective - in french](https://raphael-lemaire.com/2022/12/11/mep-maj/)

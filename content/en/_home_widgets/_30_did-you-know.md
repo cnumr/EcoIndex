@@ -3,9 +3,20 @@ id = "did-you-know"
 weight = 30
 +++
 
+{{% info_2_columns %}}
+
+{{% info_2_columns_col1 %}}
+
 ## Did you know?
 
-[**WARNING !!! A passer en anglais**] Le poids d’une page web a été multiplié par 115 entre 1995 et 2015 et n’a pas
-cessé d’augmenter depuis !
+{{% /info_2_columns_col1 %}}
 
-[**En savoir plus sur l’empreinte environnementale du numérique**](https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial/)
+{{% info_2_columns_col2 %}}
+
+An average web page weight has been multiplied by 155 between 1995 and 2022 and it doesn't stop increasing!
+
+**<a hreflang="fr" href="https://www.greenit.fr/empreinte-environnementale-du-numerique-mondial">Learn more about digital environmental footprint</a>**
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

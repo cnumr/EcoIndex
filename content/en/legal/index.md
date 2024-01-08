@@ -1,6 +1,6 @@
 +++
-draft = true
 title = "Legal"
+slug = "legal"
 decoType = "generic"
 
 [menu]
@@ -10,7 +10,7 @@ decoType = "generic"
 
 {{% hero %}}
 
-# Legal
+# Legal terms
 
 {{% /hero %}}
 

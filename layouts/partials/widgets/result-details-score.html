@@ -7,12 +7,17 @@
 				<p class="font-size:1">{{ i18n `AboutScoreDetails` }}</p>
 				<hr class="small" />
 				<div class="info-collapse">
+					{{ $label := i18n "ResultDetailsCalculationExplainedLabel" }}
+					{{ $content := i18n "ResultDetailsCalculationExplainedContent" }}
+					{{ $moreHref := i18n "HowDoesItWorksURL" }}
+					{{ $moreLabel := i18n "HowDoesItWorksTitle" }}
+
 					{{ partial "components/collapse" (dict
 						"context" .
-						"label" "Comment est calculé le score ?"
-						"content" "Pour calculer la performance environnementale d’une page, nous prenons en compte plusieurs éléments : le nombre d’éléments du DOM (Document Object Model), le poids des données transférées, et le nombre de requêtes HTTP. Pour en savoir plus sur notre méthode de calcul."
-						"moreHref" "/comment-ca-marche"
-						"moreLabel" "Comment ça marche"
+						"label" $label
+						"content" $content
+						"moreHref" $moreHref
+						"moreLabel" $moreLabel
 						)
 					}}
 				</div>
@@ -22,44 +27,53 @@
 				{{/* TODO: get notes colors from value with min and max */}}
 				{{/* TODO: interactive */}}
 				{{/* Weight result details */}}
+				{{ $title := i18n "ResultDetailsResultWeightLabel" }}
+				{{ $units := i18n "ResultDetailsResultWeightUnits" }}
+				{{ $unitsLegend := i18n "ResultDetailsResultWeightUnitsLegend" }}
 				{{ partial "components/result-load-range" (dict
-					"title" "Poids de la page"
+					"title" $title
 					"icon" "weight"
-					"verdict" "<span >Trop lourde</span>"
+					"verdict" "<span>Trop lourde</span>"
 					"rangeValue" "<span data-int='size'></span>"
 					"rangeValueMin" "0"
 					"rangeValueMax" "4.82"
 					"rangeValueTarget" "1.024"
-					"units" "Mo"
-					"unitsLegend" "mégaoctet (Mo)"
+					"units" $units
+					"unitsLegend" $unitsLegend
 					"dataValueKey" "size"
 					)
 				}}
 				{{/* Dom complexity result details */}}
+				{{ $title := i18n "ResultDetailsResultComplexityLabel" }}
+				{{ $units := i18n "ResultDetailsResultComplexityUnits" }}
+				{{ $unitsLegend := i18n "ResultDetailsResultComplexityUnitsLegend" }}
 				{{ partial "components/result-load-range" (dict
-					"title" "Complexité"
+					"title" $title
 					"icon" "complexity"
-					"verdict" "<span >Trop complexe</span>"
+					"verdict" "<span>Trop complexe</span>"
 					"rangeValue" "<span data-int='nodes'></span>"
 					"rangeValueMin" "0"
 					"rangeValueMax" "1386"
 					"rangeValueTarget" "600"
-					"units" "éléments"
-					"unitsLegend" "Nombre d’éléments du DOM"
+					"units" $units
+					"unitsLegend" $unitsLegend
 					"dataValueKey" "nodes"
 					)
 				}}
 				{{/* Request number result details */}}
+				{{ $title := i18n "ResultDetailsResultRequestsLabel" }}
+				{{ $units := i18n "ResultDetailsResultRequestsUnits" }}
+				{{ $unitsLegend := i18n "ResultDetailsResultRequestsUnitsLegend" }}
 				{{ partial "components/result-load-range" (dict
-					"title" "Requêtes"
+					"title" $title
 					"icon" "request"
-					"verdict" "<span >Peu de requêtes</span>"
+					"verdict" "<span>Peu de requêtes</span>"
 					"rangeValue" "<span data-int='requests'></span>"
 					"rangeValueMin" "0"
 					"rangeValueMax" "156"
 					"rangeValueTarget" "40"
-					"units" "requêtes"
-					"unitsLegend" "Nombre de requêtes serveur"
+					"units" $units
+					"unitsLegend" $unitsLegend
 					"dataValueKey" "requests"
 					)
 				}}

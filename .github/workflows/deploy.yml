@@ -1,16 +1,38 @@
-name: Deploy rsync
+name: RSYNC Deploy
 
 on:
   push:
+    branches:
+      - main
     tags:
       - "v*.*.*"
 
 jobs:
+  env:
+    name: Get deploy environment based on tag suffix
+    runs-on: ubuntu-latest
+    outputs:
+      target-env: ${{ steps.get_environment.outputs.target-env }}
+    steps:
+      - name: 🛒 Checkout
+        uses: actions/checkout@v4
+      - name: 🚀 Get Environment
+        id: get_environment
+        run: |
+          if [[ ${{ github.ref_name }} =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "target-env=production" >> $GITHUB_OUTPUT
+          else
+            echo "target-env=preproduction" >> $GITHUB_OUTPUT
+          fi
+
   deploy:
+    needs: env
+    environment: 
+      name: ${{ needs.env.outputs.target-env }}
     runs-on: ubuntu-latest
     steps:
       - name: 🛒 Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: ✨ Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -25,4 +47,6 @@ jobs:
           echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: 🚀 Deploy
-        run: rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}
+        run: |
+          echo "Deploying to ${{ needs.env.outputs.target-env }}" >> $GITHUB_STEP_SUMMARY
+          rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './public/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}

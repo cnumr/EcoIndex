@@ -9,7 +9,6 @@ class ApiService {
 	#apiKey = params.api.key;
 	#baseURL = params.api.baseurl;
 	#host = params.api.host;
-
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
@@ -96,8 +95,6 @@ class ApiService {
 			signal,
 			headers: {
 				"content-type": "application/json",
-				"X-RapidAPI-Host": this.#host,
-				"X-RapidAPI-Key": this.#apiKey,
 			},
 			redirect: "follow",
 		}).json();

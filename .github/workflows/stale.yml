@@ -1,0 +1,24 @@
+name: Vérification des demandes en attente
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          stale-issue-message: Cette issue a été marquée comme inactive car elle n'a pas eu de mise à jour depuis 30 jours. Si elle n'est pas mise à jour d'ici 7 jours, elle sera fermée automatiquement. Pour éviter qu'elle soit fermée, vous pouvez ajouter le label `keep open`.
+          stale-pr-message: Cette pull request a été marquée comme inactive car elle n'a pas eu de mise à jour depuis 30 jours. Si elle n'est pas mise à jour d'ici 7 jours, elle sera fermée automatiquement. Pour éviter qu'elle soit fermée, vous pouvez ajouter le label `keep open`.
+          exempt-pr-labels: "keep open"
+          exempt-issue-labels: "keep open"
+          close-issue-message: Cette issue a été fermée car elle est inactive depuis 37 jours. Si vous pensez que c'est une erreur, vous pouvez la rouvrir.
+          close-pr-message: Cette pull request a été fermée car elle est inactive depuis 37 jours. Si vous pensez que c'est une erreur, vous pouvez la rouvrir.

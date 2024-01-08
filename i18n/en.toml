@@ -1,5 +1,7 @@
 [EcoIndexFormIntro]
 	other = "Enter a website URL to discover it!"
+[EcoIndexFormInputLabel]
+	other = "Enter a website URL to discover the score:"
 [EcoIndexFormPlaceholder]
 	other = "https://example.org"
 [EcoIndexFormSubmitText]
@@ -12,6 +14,58 @@
 	other = "An error occured during analysis"
 [AbortAnalysis]
 	other = "Stop analysis"
+[ResultScore]
+	other = "Score:"
+[ResultScoreExplainationLabel]
+	other = "What does my score mean"
+[ResultScoreExplainationContent]
+	other = "Environmental performance is represented by a score out of 100 and a grade from A to G (the higher the grade, the better!). Environmental performance is calculated on the basis of 3 technical indicators: weight, complexity and number of page requests."
+[ResultScoreExplainationKnowMore]
+	other = "Find out more:"
+[ResultNotationInfoNumberSize]
+	other = "<span data-int=\"size\">0</span> Mb"
+[ResultNotationInfoNumberNodes]
+	other = "<span data-int=\"nodes\">0</span> elements"
+[ResultNotationInfoNumberRequests]
+	other = "<span data-int=\"requests\">0</span> requests"
+[ResultFootprintIndicatorsLabel]
+	other = "What are the indicators?"
+[ResultFootprintResultsWaterText]
+	other = "Blue water <br />consumption"
+[ResultFootprintResultsGESText]
+	other = "Greenhouse gas emissions"
+[ResultFootprintExplainationTitle ]
+	other = "What does that mean?<hr>"
+[ResultFootprintExplainationText ]
+	other = "To give you an idea, 1 kg CO2e is equivalent to a journey of around **5 km by car**. A shower uses an average of 6 litres of water per minute. <br><br>If your page emits **1,7g CO2e** and uses **2,5cl of water**, that means that for 1000 monthly visitors, the footprint is **1,7kg de CO2e and 25 litres of water** per month – equivalent to a 5.5km car journey and a 4-minute shower."
+[ResultFootprintExplainationMoreInfo ]
+	other = "To find out more: <a lang=\"fr\" hreflang=\"fr\" href=\"https://raphael-lemaire.com/2020/02/02/mise-en-perspective-suite/\">Mise en perspective des impacts écologiques du numérique</a>"
+[ResultDetailsCalculationExplainedLabel]
+	other = "How is the score calculated?"
+[ResultDetailsCalculationExplainedContent]
+	other = "To calculate the environmental performance of a page, we take several factors into account: the number of elements in the DOM (Document Object Model), the weight of the data transferred and the number of HTTP requests. Find out more about our calculation method."
+[ResultDetailsResultWeightLabel]
+	other = "Page weight"
+[ResultDetailsResultWeightUnits]
+	other = "Mb"
+[ResultDetailsResultWeightUnitsLegend]
+	other = "megabyte (Mb)"
+[ResultDetailsResultComplexityLabel]
+	other = "Complexity"
+[ResultDetailsResultComplexityUnits]
+	other = "elements"
+[ResultDetailsResultComplexityUnitsLegend]
+	other = "Number of DOM elements"
+[ResultDetailsResultRequestsLabel]
+	other = "Requests"
+[ResultDetailsResultRequestsUnits]
+	other = "requests"
+[ResultDetailsResultRequestsUnitsLegend]
+	other = "Number of server requests"
+[HowDoesItWorksURL]
+	other = "/en/how-it-works"
+[HowDoesItWorksTitle]
+	other = "How does it work?"
 [Back]
 	other = "Back"
 [ReTest]
@@ -51,6 +105,8 @@ for “##URL##”"""
 [en]
 	other = "English"
 [GreenITAssociation]
+	other = "Green IT"
+[GreenITAssociationLong]
 	other = "Association Green IT"
 [NeutralIT]
 	other = "Neutral IT"
@@ -82,13 +138,21 @@ More information on page [How it works](/how-it-works/)."""
 	other = "This resource you want to test is not a standard HTML page with mimeType 'text/html'"
 [Error521]
 	other = "The page you want to test can not be analyzed because its response status code is not 200"
-[BetaMessage]
-	other = "This site is in **beta** version. Feel free to give us feedback on [Github discussions](https://github.com/cnumr/EcoIndex/discussions/)"
 [NoJSMessage]
-	other = "**Warning** : JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
+	other = "**Warning**: JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
 [Error404]
 	other = "404 error"
 [ShareTheResult]
 	other = "Share my result"
 [CopyURL]
 	other = "Copy the address"
+[Target]
+	other = "Target:"
+[Unit]
+	other = "Unit:"
+[Max]
+	other = "max"
+[Median]
+	other = "median:"
+[Min]
+	other = "min"

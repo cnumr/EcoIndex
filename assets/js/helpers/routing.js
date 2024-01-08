@@ -4,8 +4,8 @@
  * Redirects to the results page given an analysis id (retrieved from back-end)
  *
  * @param {string} analysisId EcoIndex analyis identifier
+ * @param {string} resultUrlPrefix Results page prefix URL
  */
-export function redirectToResults(analysisId) {
-	// TODO: get lang relative url
-	window.location = `${window.location.origin}/resultat/?id=${analysisId}`;
+export function redirectToResults(analysisId, resultUrlPrefix) {
+	window.location = `${window.location.origin}${resultUrlPrefix}?id=${analysisId}`;
 }

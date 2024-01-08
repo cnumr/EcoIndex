@@ -2,10 +2,6 @@
 id = "intro"
 +++
 
-[**WARNING !!! A passer en anglais**]
+EcoIndex helps raising awareness on Internet environmental footprint and offers practical solutions.
 
-EcoIndex permet de prendre conscience de l’impact environnemental d’internet et de proposer des solutions concrètes.
-
-L’analyse est gratuite, automatique et vous aide à identifier rapidement les sites web et services en ligne à revoir en
-priorité. Elle ne dispense pas de l’analyse complémentaire d’un·e expert·e pour disposer d’un bilan opérationnel complet
-et fiable.
+This analysis is free, automatic and helps you quickly identify websites and online services to review in priority. This does not exempt you from the additional analysis of an expert to have a complete and reliable operational report.

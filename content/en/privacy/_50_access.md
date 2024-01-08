@@ -3,15 +3,20 @@ id = "access"
 weight = 50
 +++
 
-## Accès au site et à l’outil Ecoindex
+{{% info_2_columns %}}
 
-L’outil Ecoindex est un outil technique, dont l’algorithme est ouvert et expliqué sur le site en toute transparence. Il
-vise à donner une première indication de la performance et de l’empreinte environnementale d’une URL, sur la base des
-informations présentes dans le code de cette URL. En analysant les URLs constituant le service numérique (site web,
-etc.) EcoIndex.fr permet de reconstituer les impacts environnementaux associés à un parcours type. L’outil, ainsi que
-les résultats des requêtes, ne peuvent être utilisés à d’autres fins, notamment à des fins commerciales, publicitaires
-ou de publicité comparative.
+{{% info_2_columns_col1 %}}
 
-Son utilisation est gratuite, mais soumise à conditions. Merci de les respecter. L’outil Ecoindex ne doit pas être
-utilisé de manière abusive, illicite ou illégitime. Il est notamment interdit de scripter EcoIndex.fr, c’est-à-dire
-d’automatiser l’enchaînement d’analyses.
+## Access to the site and the Ecoindex tool
+
+{{% /info_2_columns_col1 %}}
+
+{{% info_2_columns_col2 %}}
+
+The Ecoindex tool is a technical tool whose algorithm is openly explained on the site. It aims to give an initial indication of the performance and environmental footprint of a URL, based on the information information present in the code of this URL. By analysing the URLs making up the digital service (website, etc.) EcoIndex.fr can be used to reconstruct the environmental impacts associated with a typical route. The tool and the the results of queries, may not be used for any other purpose, in particular for commercial, advertising or comparative advertising.
+
+Its use is free, but subject to conditions. Please respect them. The Ecoindex tool must not be used in an abusive, illicit or illegitimate manner. In particular, it is forbidden to script EcoIndex.fr, i.e. to automate the sequence of analyses.
+
+{{% /info_2_columns_col2 %}}
+
+{{% /info_2_columns %}}

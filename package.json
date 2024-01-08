@@ -24,21 +24,21 @@
 		}
 	},
 	"dependencies": {
-		"@babel/cli": "^7.20.7",
-		"@babel/core": "^7.20.12",
+		"@babel/cli": "^7.21.0",
+		"@babel/core": "^7.21.3",
 		"@babel/preset-env": "^7.20.2",
 		"@fullhuman/postcss-purgecss": "^5.0.0",
 		"@webcomponents/webcomponentsjs": "^2.7.0",
 		"a11y-dialog": "^7.5.1",
-		"autoprefixer": "^10.4.12",
+		"autoprefixer": "^10.4.14",
 		"babel-plugin-array-includes": "^2.0.3",
-		"core-js": "^3.27.2",
+		"core-js": "^3.29.1",
 		"css-vars-ponyfill": "^2.3.2",
-		"ky": "^0.33.2",
-		"postcss": "^8.4.21",
-		"postcss-calc": "^8.0",
+		"ky": "^1.2.0",
+		"postcss": "^8.4.31",
+		"postcss-calc": "^9.0",
 		"postcss-cli": "^10.1.0",
-		"postcss-preset-env": "^8.0.0-alpha.1",
+		"postcss-preset-env": "^9.3.0",
 		"postcss-simple-vars": "^7.0",
 		"purgecss": "^5.0"
 	},
@@ -47,7 +47,7 @@
 		"prettier-plugin-go-template": "*"
 	},
 	"name": "EcoIndex",
-	"version": "0.10.1",
+	"version": "0.17.2",
 	"scripts": {
 		"version": "node ./bin/update-package-hugo.mjs"
 	}

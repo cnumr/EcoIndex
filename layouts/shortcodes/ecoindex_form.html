@@ -1,11 +1,11 @@
-<form action="{{- ($.Page.GetPage `/loading`).RelPermalink -}}" method="post" class="stack-l js-analysis-submit-form">
+<form action="{{ if .Get "action" }}{{ .Get "action" }}{{ else }}{{- ($.Page.GetPage `/loading`).RelPermalink -}}{{ end }}" method="post" class="stack-l js-analysis-submit-form">
+	<label for="siteurl">{{ i18n `EcoIndexFormInputLabel` }}</label>
 	<div class="with-sidebar-l --right-side --p75">
 		<div>
 			<input
-				type="url"
+				id="siteurl"
 				name="siteurl"
 				placeholder="{{ i18n `EcoIndexFormPlaceholder` }}"
-				size="40"
 				required
 				title="{{ i18n `EcoIndexFormInputInvalid` }}"
 				aria-invalid="false" />

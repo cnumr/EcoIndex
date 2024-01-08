@@ -1,6 +1,6 @@
 +++
-draft = true
 title = "Join us"
+slug = "join-us"
 decoType = "contribute"
 
 [menu]
@@ -12,7 +12,7 @@ decoType = "contribute"
 
 {{% hero %}}
 
-# Nous rejoindre
+# Join us
 
 {{% /hero %}}
 
