@@ -1,14 +1,12 @@
 import ky from "ky";
-import params from "@params";
 
 class ApiService {
 	#controller = null;
 
-	// Params imported from Hugo config params
-	// (they can be defined through environment variables)
-	#apiKey = params.api.key;
-	#baseURL = params.api.baseurl;
-	#host = params.api.host;
+	// TODO import data with build : https://gohugo.io/hugo-pipes/js/#:~:text=params%20%5Bmap%20or,New%20in%20v0.78.0
+
+	// TODO set from .env ?
+	#baseURL = "https://api.ecoindex.fr/v1/";
 	#browserWidth = 1920;
 	#browserHeight = 1080;
 
@@ -87,7 +85,9 @@ class ApiService {
 	async #fetchApi(slug, options) {
 		this.abortAnalysis();
 		const controller = (this.#controller = new AbortController());
+
 		const { signal } = controller;
+
 		const response = await ky(slug, {
 			...options,
 			prefixUrl: this.#baseURL,
