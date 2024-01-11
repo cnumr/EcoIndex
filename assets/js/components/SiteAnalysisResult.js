@@ -39,6 +39,7 @@ class SiteAnalysisResult {
 	async _init() {
 		const urlParams = new URLSearchParams(window.location.search);
 		const langSwitchersElements = document.querySelectorAll(".language-switcher a.lang")
+		const screenshotImgElement = document.querySelector(".result-screenshot")
 
 		let pageResultData = {};
 
@@ -58,13 +59,19 @@ class SiteAnalysisResult {
 			// else fetch analysis result from id
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
-			const id = urlParams.get("id");
+			const analysisId = urlParams.get("id");
+
 			// window.location.pathname is something like /resultat (in french) or /en/result (in english)
-			pageResultData = await AnalysisService.fetchAnalysisById(id, window.location.pathname);
+			pageResultData = await AnalysisService.fetchAnalysisById(analysisId, window.location.pathname)
+
+			try {
+				const screenshotDataUri = await AnalysisService.fetchAnalysisScreenshotById(analysisId)
+				screenshotImgElement.setAttribute("src", screenshotDataUri)
+			} catch (error) {} // we don't care if the screenshot cannot be fetch: the user will have a blanck rectangle instead but the results are still accessible
 
 			// update the link URL of every lang switcher
 			langSwitchersElements.forEach((a) => {
-				const href = a.getAttribute("href") + "?id=" + id
+				const href = a.getAttribute("href") + "?id=" + analysisId
 				a.setAttribute("href", href)
 			})
 		} else {
