@@ -57,12 +57,11 @@ class AnalysisService {
 	}
 
 	/**
-	 * Do not use this.#handleError as we do not want to trigger the error modal if this fetch fails.
 	 * @param {string} id 
-	 * @returns {Promise<string | ArrayBuffer>}
+	 * @returns {string}
 	 */
-	async fetchAnalysisScreenshotById(id) {
-		return ApiService.fetchAnalysisScreenshotById(id)
+	fetchAnalysisScreenshotUrlById(id) {
+		return ApiService.fetchAnalysisScreenshotUrlById(id)
 	}
 
 	/**

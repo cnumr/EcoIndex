@@ -22,7 +22,8 @@ class ApiService {
 				url,
 			},
 		};
-		return this.#fetchApi("tasks/ecoindexes", options).json();
+
+		return this.#fetchApi("tasks/ecoindexes", options);
 	}
 
 	/**
@@ -41,28 +42,16 @@ class ApiService {
 			},
 		};
 
-		return this.#fetchApi("tasks/ecoindexes/" + id, options).json();
+		return this.#fetchApi("tasks/ecoindexes/" + id, options);
 	}
 
 	/**
-	 * Request the screenshot of the analyzed page
+	 * Get the URL that generates the screenshot of the analyzed page
 	 * @param {string} id Analysis Id
-	 * @returns {Promise<string | ArrayBuffer>}
+	 * @returns {string} API URL
 	 */
-	async fetchAnalysisScreenshotById(id) {
-		const options = {
-			method: "get",
-		};
-
-		const response = await this.#fetchApi(`ecoindexes/${id}/screenshot`, options);
-		const blob = await response.blob()
-
-		return new Promise((resolve, reject) => {
-			const fileReader = new FileReader()
-			fileReader.onload = e => resolve(e.target.result);
-			fileReader.onerror = e => reject(e)
-			fileReader.readAsDataURL(blob)
-		})
+	fetchAnalysisScreenshotUrlById(id) {
+		return `${BASE_URL}ecoindexes/${id}/screenshot`;
 	}
 
 	/**
@@ -75,7 +64,8 @@ class ApiService {
 		const options = {
 			method: "get",
 		};
-		return this.#fetchApi("ecoindexes/" + id, options).json();
+
+		return this.#fetchApi("ecoindexes/" + id, options);
 	}
 
 	/**
@@ -98,7 +88,7 @@ class ApiService {
 	 * @param {string} [options.method] Method: 'post' or 'get'
 	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
 	 * @param {Object} [options.retry] Retry object to override default Ky retry request property
-	 * @returns {import("ky").ResponsePromise} response object
+	 * @returns {Promise<import("ky").KyResponse>} response object
 	 */
 	async #fetchApi(slug, options) {
 		this.abortAnalysis();
@@ -115,7 +105,7 @@ class ApiService {
 				"content-type": "application/json",
 			},
 			redirect: "follow",
-		})
+		}).json()
 	}
 }
 

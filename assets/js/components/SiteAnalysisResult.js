@@ -64,10 +64,8 @@ class SiteAnalysisResult {
 			// window.location.pathname is something like /resultat (in french) or /en/result (in english)
 			pageResultData = await AnalysisService.fetchAnalysisById(analysisId, window.location.pathname)
 
-			try {
-				const screenshotDataUri = await AnalysisService.fetchAnalysisScreenshotById(analysisId)
-				screenshotImgElement.setAttribute("src", screenshotDataUri)
-			} catch (error) {} // we don't care if the screenshot cannot be fetch: the user will have a blanck rectangle instead but the results are still accessible
+			const screenshotUrl = AnalysisService.fetchAnalysisScreenshotUrlById(analysisId)
+			screenshotImgElement.setAttribute("src", screenshotUrl)
 
 			// update the link URL of every lang switcher
 			langSwitchersElements.forEach((a) => {
