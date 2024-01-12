@@ -48,6 +48,11 @@ class SiteAnalysisResult {
 		if (urlParams.has("url") && urlParams.has("size") && urlParams.has("ges")) {
 			for (const [key, value] of urlParams.entries()) {
 				pageResultData[key] = value;
+
+				if (key === "id") {
+					const screenshotUrl = AnalysisService.fetchAnalysisScreenshotUrlById(urlParams.get("id"))
+					screenshotImgElement.setAttribute("src", screenshotUrl)
+				}
 			}
 
 			// update the link URL of every lang switcher
