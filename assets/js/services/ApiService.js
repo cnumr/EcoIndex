@@ -1,34 +1,36 @@
 import ky from "ky";
 
+const BASE_URL = "https://api.ecoindex.fr/v1/"
+const BROWSER_WIDTH = 1920
+const BROWSER_HEIGHT = 1080;
+
 class ApiService {
 	#controller = null;
-	#baseURL = "https://api.ecoindex.fr/v1/";
-	#browserWidth = 1920;
-	#browserHeight = 1080;
 
 	/**
 	 * Create a new analysis task by URL
 	 *
 	 * @param {string} url URL
-	 * @returns {Response} response object
+	 * @returns {Promise<import("ky").KyResponse>}
 	 */
 	async newAnalysisTaskByURL(url) {
 		const options = {
 			method: "post",
 			json: {
-				width: this.#browserWidth,
-				height: this.#browserHeight,
+				width: BROWSER_WIDTH,
+				height: BROWSER_HEIGHT,
 				url,
 			},
 		};
+
 		return this.#fetchApi("tasks/ecoindexes", options);
 	}
 
 	/**
 	 * Request a task analysis by its id
 	 *
-	 * @param {string} id Id
-	 * @returns {Response} response object
+	 * @param {string} id Analysis Id
+	 * @returns {Promise<import("ky").KyResponse>}
 	 */
 	async fetchAnalysisTaskById(id) {
 		const options = {
@@ -44,15 +46,25 @@ class ApiService {
 	}
 
 	/**
+	 * Get the URL that generates the screenshot of the analyzed page
+	 * @param {string} id Analysis Id
+	 * @returns {string} API URL
+	 */
+	fetchAnalysisScreenshotUrlById(id) {
+		return `${BASE_URL}ecoindexes/${id}/screenshot`;
+	}
+
+	/**
 	 * Request an analysis by its id
 	 *
 	 * @param {string} id Id
-	 * @returns {Response} response object
+	 * @returns {Promise<import("ky").KyResponse>}
 	 */
 	async fetchAnalysisById(id) {
 		const options = {
 			method: "get",
 		};
+
 		return this.#fetchApi("ecoindexes/" + id, options);
 	}
 
@@ -75,8 +87,8 @@ class ApiService {
 	 * @param {Object} options object (with url or id)
 	 * @param {string} [options.method] Method: 'post' or 'get'
 	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
-	 * @param {Object} [Options.retry] Retry object to override default Ky retry request property
-	 * @returns {Response} response object
+	 * @param {Object} [options.retry] Retry object to override default Ky retry request property
+	 * @returns {Promise<import("ky").KyResponse>} response object
 	 */
 	async #fetchApi(slug, options) {
 		this.abortAnalysis();
@@ -84,18 +96,16 @@ class ApiService {
 
 		const { signal } = controller;
 
-		const response = await ky(slug, {
+		return ky(slug, {
 			...options,
-			prefixUrl: this.#baseURL,
+			prefixUrl: BASE_URL,
 			timeout: 60000, // 60s instead of 10s default
 			signal,
 			headers: {
 				"content-type": "application/json",
 			},
 			redirect: "follow",
-		}).json();
-
-		return response;
+		}).json()
 	}
 }
 

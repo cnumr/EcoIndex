@@ -57,6 +57,14 @@ class AnalysisService {
 	}
 
 	/**
+	 * @param {string} id 
+	 * @returns {string}
+	 */
+	fetchAnalysisScreenshotUrlById(id) {
+		return ApiService.fetchAnalysisScreenshotUrlById(id)
+	}
+
+	/**
 	 * 
 	 * @param {string} id
 	 * @param {string} resultPagePrefix
