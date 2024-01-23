@@ -14,5 +14,4 @@ un contrôle régulier.
 
 [//]: # "texte du badge"
 
-L’empreinte environnementale de cette page est plus faible que la moyenne. Calcul réalisé sur www.ecoindex.fr le [date
-du calcul] [télécharger le badge](download)
+L’empreinte environnementale de cette page est plus faible que la moyenne. Calcul réalisé sur www.ecoindex.fr le <span class="result-date" data-int="date"></span>. [Télécharger le badge](https://github.com/cnumr/ecoindex_badge).
