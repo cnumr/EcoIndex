@@ -15,4 +15,4 @@ regular page checks.
 [//]: # "texte du badge"
 
 The environmental footprint of this page is lower than average.
-Calculation made with www.ecoindex.fr on {{< result-date >}}. [Download the badge](https://github.com/cnumr/ecoindex_badge).
+Calculation made with www.ecoindex.fr on {{< result-date >}}. Highlight your score on the webpage by adding the ecoIndex badge; see how [on the project page](https://github.com/cnumr/ecoindex_badge).
