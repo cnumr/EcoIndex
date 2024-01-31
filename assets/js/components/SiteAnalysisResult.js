@@ -19,14 +19,15 @@ class SiteAnalysisResult {
 	/**
 	 * Create a site analysis result page with updated dom from api data
 	 * @param {Element} el
+	 * @param {string} currentLocale
 	 */
-	constructor(el) {
+	constructor(el, currentLocale) {
 		this.el = el;
 
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
 
-		this._init();
+		this._init(currentLocale);
 	}
 
 	/**
@@ -34,9 +35,10 @@ class SiteAnalysisResult {
 	 *
 	 * Checks if an analysis results object exists. If yes, use it.
 	 * Otherwise, fetches data from server.
-	 *
+	 * 
+	 * @param {string} currentLocale
 	 */
-	async _init() {
+	async _init(currentLocale) {
 		const urlParams = new URLSearchParams(window.location.search);
 		const langSwitchersElements = document.querySelectorAll(".language-switcher a.lang")
 		const screenshotImgElement = document.querySelector(".result-screenshot")
@@ -86,10 +88,16 @@ class SiteAnalysisResult {
 		// update page size from ko to mo
 		pageResultData.size = Math.round(pageResultData.size) / 1000;
 
-		// set page result title
+		// set page result title and message
 		pageResultData.grade_title = this.resultRelativeTextData.verdictTitles[pageResultData.grade];
-
 		pageResultData.grade_message = this.resultRelativeTextData.verdictMessages[pageResultData.grade];
+		
+		// convert the date from an UTC string in to a human-readable string according to the current locale
+		const date = new Date(pageResultData.date)
+		pageResultData.date = Intl.DateTimeFormat(currentLocale, {
+			dateStyle: "full",
+			timeStyle: "medium",
+		}).format(date)
 
 		// set page result params binary scores (0/1 : good/bad)
 		pageResultData = {

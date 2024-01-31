@@ -7,9 +7,11 @@ import SiteAnalysisResult from "./components/SiteAnalysisResult";
 // ------------------------------------------------------------------------- INIT APP
 
 function initApp() {
+	// pick the current locale from the DOM once the application starts: aavoid several picking in the different components
+	const currentLocale = document.getElementsByTagName("html")[0].getAttribute("lang")
 	initMenu();
 	initCollapses();
-	initPageResult();
+	initPageResult(currentLocale);
 	initSubmitUrlForm();
 	initButtonRemakeAnalysis();
 	initButtonShareURL();
@@ -47,11 +49,12 @@ function initCollapses() {
 
 /**
  * Init page result interactive data from api or url params
+ * @param {string} currentLocale 
  */
-function initPageResult() {
+function initPageResult(currentLocale) {
 	const resultPageContentEl = document.querySelector(".js-result-container");
 	if (!resultPageContentEl) return;
-	new SiteAnalysisResult(resultPageContentEl);
+	new SiteAnalysisResult(resultPageContentEl, currentLocale);
 }
 
 /**
