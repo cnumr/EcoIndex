@@ -269,8 +269,7 @@ class SiteAnalysisResult {
 	_updateUrl(url) {
 		const urlElement = this.el.querySelector(".result-url")
 		
-		urlElement.setAttribute("href", url)
-		urlElement.setAttribute("title", url)
+		urlElement.setAttribute("value", url)
 	}
 }
 export default SiteAnalysisResult;

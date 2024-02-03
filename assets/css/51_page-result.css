@@ -2,32 +2,6 @@
  * RESULT PAGE SPECIFIC STYLES
  */
 
- .result-url-wrapper {
-	font-weight: var(--font-weight-bold);
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
- }
-
- /**
-  * For small screens, put the URL on a new line,
-  * and move truncate feature from the wrapper to the URL.
-  */
- @media (max-width: 60rem) {
-	.result-url-wrapper {
-		overflow: auto;
-		text-overflow: initial;
-		white-space: initial;
-	}
-
-	.result-url {
-		display: block;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
- }
-
 /*! purgecss start ignore */
 .result-badge {
 	font-size: var(--s2);
