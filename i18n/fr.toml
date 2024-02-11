@@ -122,6 +122,12 @@ pour « ##URL## »"""
 	other = "Veuillez réessayer plus tard"
 [Close]
 	other = "Fermer"
+[Error401]
+	other = "Erreur 401"
+[Error403]
+	other = "Erreur 403"
+[Error404]
+	other = "Erreur 404"
 [Error422]
 	other = "Un paramètre n’est pas valide, pouvez-vous vérifier votre requête ?"
 [Error429]
@@ -140,8 +146,6 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "La page que vous essayez de tester ne peut pas être analysée car elle est en erreur (son code réponse n'est pas 200)"
 [NoJSMessage]
 	other = "**Attention** : Javascript est actuellement requis pour le fonctionnement de la nouvelle version d'ecoIndex ([activer JavaScript dans votre navigateur](https://www.enable-javascript.com/fr/))."
-[Error404]
-	other = "Erreur 404"
 [ShareTheResult]
 	other = "Partager mon résultat"
 [CopyURL]
