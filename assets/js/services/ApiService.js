@@ -23,7 +23,7 @@ class ApiService {
 			},
 		};
 
-		return this.#fetchApi("tasks/ecoindexes", options);
+		return this.#fetchApi("tasks/ecoindexes/", options);
 	}
 
 	/**
