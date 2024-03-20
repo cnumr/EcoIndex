@@ -35,7 +35,7 @@
 		"core-js": "^3.29.1",
 		"css-vars-ponyfill": "^2.3.2",
 		"ky": "^1.2.0",
-		"postcss": "^8.4.31",
+		"postcss": "^8.4.37",
 		"postcss-calc": "^9.0",
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^9.3.0",
