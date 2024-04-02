@@ -25,12 +25,12 @@ Le projet se base sur le module Hugo [base-structure](https://gitlab.com/goodimp
 
 1. Téléchargez et installez la dernière version _extented_ disponible de Hugo
    ([procédure d'installation de Hugo, en anglais](https://gohugo.io/getting-started/installing/)).
-2. Téléchargez et installez la dernière version de NodeJS
-   ([page de téléchargement de NodeJS](https://nodejs.org/fr/download/)).
+2. Téléchargez et installez la version 18 de Node.js
+   ([page de téléchargement de Node.js, en anglais](https://nodejs.org/en/download)).
 3. Depuis un terminal :
    1. Clonez ce dépôt avec la commande `git clone https://github.com/cnumr/EcoIndex.git` ou avec
       `git clone git@github.com:cnumr/EcoIndex.git` si vous utilisez SSH.
-   2. Installez les dernières dépendances avec la commmande `npm install`.
+   2. Installez les dépendances avec la commmande `npm install`.
    3. Démarrez le serveur Hugo avec la commande `hugo server`.
 4. Rendez-vous à l'adresse <http://localhost:1313> avec votre navigateur web.
 
@@ -42,7 +42,7 @@ Le projet se base sur le module Hugo [base-structure](https://gitlab.com/goodimp
 $ hugo serve --environment production
 ```
 
-#### Tester le projet en local avec des clones locaux de modules utilisés dans le projet (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css)
+#### Tester le projet en local avec des clones locaux de modules utilisés dans le projet (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css))
 
 ```sh
 $ env HUGO_MODULE_REPLACEMENTS="gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css" hugo serve
@@ -118,11 +118,11 @@ The project is based on the Hugo module [base-structure](https://gitlab.com/good
 
 1. Download and install the latest _extented_ version available of Hugo
    ([Hugo installation procedure](https://gohugo.io/getting-started/installing/)).
-2. Download and install the latest version of NodeJS ([NodeJS download page](https://nodejs.org/en/download/)).
-3. From a terminal :
+2. Download and install version 18 of Node.js ([Node.js download page](https://nodejs.org/en/download/)).
+3. From a terminal:
    1. Clone this repository with the command `git clone https://github.com/cnumr/EcoIndex.git` or with
       `git clone git@github.com:cnumr/EcoIndex.git` if you prefer to use SSH.
-   2. Install the latest dependencies with the command `npm install`.
+   2. Install the dependencies with the command `npm install`.
    3. Start the Hugo server with the command `hugo server`.
 4. Go to <http://localhost:1313> with your web browser.
 
@@ -134,7 +134,7 @@ The project is based on the Hugo module [base-structure](https://gitlab.com/good
 $ hugo serve --environment production
 ```
 
-#### Testing on dev environment with local checkouts of the modules used in the project (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css)
+#### Testing on dev environment with local checkouts of the modules used in the project (ex. [Good Impact Base Structure](https://gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure/edit#js-general-project-settings) et [Every Layout Pure CSS](https://gitlab.com/goodimpact/every-layout-css))
 
 ```
 $ env HUGO_MODULE_REPLACEMENTS="gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure -> ~/workspace/modules/base-structure,gitlab.com/goodimpact/every-layout-css -> ~/workspace/every-layout-css" hugo serve
