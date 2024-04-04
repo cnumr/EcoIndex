@@ -1,4 +1,11 @@
 {
+	"name": "EcoIndex",
+	"version": "0.19.0",
+	"private": "true",
+	"engines": {
+		"node": ">=18",
+		"npm": ">=8"
+	},
 	"comments": {
 		"dependencies": {
 			"@babel/cli": "gitlab.com/goodimpact/goodimpact-hugo/modules/base-structure",
@@ -46,8 +53,6 @@
 		"prettier": "*",
 		"prettier-plugin-go-template": "*"
 	},
-	"name": "EcoIndex",
-	"version": "0.19.0",
 	"scripts": {
 		"version": "node ./bin/update-package-hugo.mjs"
 	}
