@@ -50,7 +50,7 @@ class ApiService {
 	 * @param {string} id Analysis Id
 	 * @returns {string} API URL
 	 */
-	fetchAnalysisScreenshotUrlById(id) {
+	getAnalysisScreenshotUrlById(id) {
 		return `${BASE_URL}ecoindexes/${id}/screenshot`;
 	}
 
