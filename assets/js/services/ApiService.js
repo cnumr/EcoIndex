@@ -1,7 +1,7 @@
 import ky from "ky";
 
-const BASE_URL = "https://api.ecoindex.fr/v1/"
-const BROWSER_WIDTH = 1920
+const BASE_URL = "https://api.ecoindex.fr/v1/";
+const BROWSER_WIDTH = 1920;
 const BROWSER_HEIGHT = 1080;
 
 class ApiService {
@@ -36,7 +36,7 @@ class ApiService {
 		const options = {
 			method: "get",
 			retry: {
-				limit: 30,
+				limit: 300,
 				statusCodes: [425],
 				backoffLimit: 2000,
 			},
@@ -99,13 +99,13 @@ class ApiService {
 		return ky(slug, {
 			...options,
 			prefixUrl: BASE_URL,
-			timeout: 60000, // 60s instead of 10s default
+			timeout: false, // Set to no timeout
 			signal,
 			headers: {
 				"content-type": "application/json",
 			},
 			redirect: "follow",
-		}).json()
+		}).json();
 	}
 }
 
