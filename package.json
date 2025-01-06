@@ -34,7 +34,7 @@
 		"@babel/cli": "^7.21.0",
 		"@babel/core": "^7.21.3",
 		"@babel/preset-env": "^7.20.2",
-		"@fullhuman/postcss-purgecss": "^5.0.0",
+		"@fullhuman/postcss-purgecss": "^7.0.2",
 		"@webcomponents/webcomponentsjs": "^2.7.0",
 		"a11y-dialog": "^7.5.1",
 		"autoprefixer": "^10.4.14",
