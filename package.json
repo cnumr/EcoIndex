@@ -45,7 +45,7 @@
 		"postcss": "^8.4.31",
 		"postcss-calc": "^9.0",
 		"postcss-cli": "^10.1.0",
-		"postcss-preset-env": "^9.3.0",
+		"postcss-preset-env": "^10.1.4",
 		"postcss-simple-vars": "^7.0",
 		"purgecss": "^5.0"
 	},
