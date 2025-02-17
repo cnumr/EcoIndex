@@ -32,7 +32,7 @@
 	},
 	"dependencies": {
 		"@babel/cli": "^7.21.0",
-		"@babel/core": "^7.21.3",
+		"@babel/core": "^7.26.9",
 		"@babel/preset-env": "^7.20.2",
 		"@fullhuman/postcss-purgecss": "^5.0.0",
 		"@webcomponents/webcomponentsjs": "^2.7.0",
