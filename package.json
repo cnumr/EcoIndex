@@ -47,7 +47,7 @@
 		"postcss-cli": "^10.1.0",
 		"postcss-preset-env": "^9.3.0",
 		"postcss-simple-vars": "^7.0",
-		"purgecss": "^5.0"
+		"purgecss": "^7.0"
 	},
 	"devDependencies": {
 		"prettier": "*",
