@@ -1,6 +1,6 @@
 {
 	"name": "EcoIndex",
-	"version": "0.19.0",
+	"version": "0.21.1",
 	"private": "true",
 	"engines": {
 		"node": ">=18",
