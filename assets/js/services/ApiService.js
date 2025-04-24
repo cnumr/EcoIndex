@@ -17,9 +17,11 @@ class ApiService {
 		const options = {
 			method: "post",
 			json: {
-				width: BROWSER_WIDTH,
-				height: BROWSER_HEIGHT,
-				url,
+				web_page: {
+					width: BROWSER_WIDTH,
+					height: BROWSER_HEIGHT,
+					url,
+				}
 			},
 		};
 
