@@ -9,30 +9,16 @@ class EcoIndexDialog {
 	static #a11yDialog = null;
 
 	static ERROR_MESSAGES = {
-		404: `
-	{{- i18n "Error404" | markdownify -}}
-	`,
-		422: `
-	{{- i18n "Error422" | markdownify -}}
-	`,
-		429: `
-	{{- i18n "Error429" | markdownify -}}
-	`,
-		500: `
-	{{- i18n "Error500" | markdownify  -}}
-	`,
-		502: `
-	{{- i18n "Error502" | markdownify  -}}
-	`,
-		504: `
-	{{- i18n "Error504" | markdownify  -}}
-	`,
-		520: `
-	{{- i18n "Error520" | markdownify  -}}
-	`,
-		521: `
-	{{- i18n "Error521" | markdownify  -}}
-	`,
+		401: `{{- i18n "Error401" | markdownify -}}`,
+		403: `{{- i18n "Error403" | markdownify -}}`,
+		404: `{{- i18n "Error404" | markdownify -}}`,
+		422: `{{- i18n "Error422" | markdownify -}}`,
+		429: `{{- i18n "Error429" | markdownify -}}`,
+		500: `{{- i18n "Error500" | markdownify  -}}`,
+		502: `{{- i18n "Error502" | markdownify  -}}`,
+		504: `{{- i18n "Error504" | markdownify  -}}`,
+		520: `{{- i18n "Error520" | markdownify  -}}`,
+		521: `{{- i18n "Error521" | markdownify  -}}`,
 	};
 
 	/**
@@ -44,8 +30,7 @@ class EcoIndexDialog {
 	 * @returns {boolean} true if success, otherwise true
 	 */
 	static openPendingAnalysis(url) {
-		let title = `
-{{- (i18n "AnalysisInProgressFor") -}}`;
+		let title = `{{- (i18n "AnalysisInProgressFor") -}}`;
 		title = replaceKeyIn(title, "URL", url);
 
 		EcoIndexDialog.#openLoadingRequest(title);
@@ -56,8 +41,7 @@ class EcoIndexDialog {
 	 * with a loading spinner (abort possible)
 	 */
 	static openAnalysisRetrieval() {
-		const title = `
-{{- (i18n "AnalysisRetrieval") -}}`;
+		const title = `{{- (i18n "AnalysisRetrieval") -}}`;
 
 		EcoIndexDialog.#openLoadingRequest(title);
 	}
@@ -71,8 +55,7 @@ class EcoIndexDialog {
 	 */
 	static openErrorMessage(errorCode, details) {
 		// Title
-		const title = `
-{{- (i18n "AnalysisErrorTitle") -}}`;
+		const title = `{{- (i18n "AnalysisErrorTitle") -}}`;
 
 		// Body (message)
 		let errorMessage = errorCode
@@ -98,8 +81,7 @@ class EcoIndexDialog {
 	 */
 	static openResultSharing(url) {
 		// Title
-		const title = `
-{{- (i18n "ShareTheResult") -}}`;
+		const title = `{{- (i18n "ShareTheResult") -}}`;
 
 		// Body (message)
 		const body = `
