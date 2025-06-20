@@ -28,7 +28,7 @@ GreenIT Analysis allows you to:
 <br>
 {{% content_link href="https://addons.mozilla.org/fr/firefox/addon/greenit-analysis/" %}}Firefox plugin{{% /content_link %}}
 <br>
-{{% content_link href="https://github.com/cnumr/ecoindex_cli" %}}Command-line interface{{% /content_link %}}
+{{% content_link href="https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_cli#readme" %}}Command-line interface{{% /content_link %}}
 </p>
 
 {{% /info_2_columns_col2 %}}

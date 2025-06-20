@@ -58,7 +58,7 @@ This badge allows you to easily display the obtained EcoIndex score on your webp
 
 EcoIndex CLI allows you to launch a webpage analysis in command line. Developed in Python, it's available for Linux, Mac and Windows. It'll allow you to launch analysis for a single or several webpages, to generate results in CSV or JSON files, to generate HTML report...
 
-[**View EcoIndex CLI project on GitHub >**](https://github.com/cnumr/ecoindex_cli)
+[**View EcoIndex CLI project on GitHub >**](https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_cli#readme)
 
 
 ### GitHub | It's up to you!
@@ -70,7 +70,7 @@ You can consult this project on GitHub anytime for better understanding and, why
 
 [**GitHub / EcoIndex website / frontend >**](https://github.com/cnumr/EcoIndex)
 
-[**GitHub / EcoIndex website / backend >**](https://github.com/cnumr/ecoindex_api)
+[**GitHub / EcoIndex website / backend >**](https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_api#readme)
 
 [**GitHub / GreenIT Analysis plugin >**](https://github.com/cnumr/GreenIT-Analysis)
 
@@ -78,7 +78,7 @@ You can consult this project on GitHub anytime for better understanding and, why
 
 [**GitHub / EcoIndex badge >**](https://github.com/cnumr/ecoindex_badge)
 
-[**GitHub / EcoIndex CLI >**](https://github.com/cnumr/ecoindex_cli)
+[**GitHub / EcoIndex CLI >**](https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_cli#readme)
 
 {{% /info_2_columns_col2 %}}
 
