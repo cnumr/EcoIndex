@@ -13,7 +13,7 @@ weight = 80
 
 {{% info_2_columns_col2 %}}
 
-EcoIndex ne donne aucune information sur les efforts faits en termes d’éco&shy;conception. A l’instar d’un radar qui
+Le service en ligne EcoIndex.fr ne donne aucune information sur les efforts faits en termes d’éco&shy;conception. A l’instar d’un radar qui
 mesure une vitesse instantanée, EcoIndex mesure la performance environnementale instantanée. Une analyse complémentaire
 est nécessaire pour évaluer la maturité / le niveau d’éco&shy;conception de l’URL étudiée. Les chiffres fournis par
 EcoIndex sont des ordres de grandeur. Ils vous indiquent si votre site est plutôt efficient ou pas, et si son empreinte

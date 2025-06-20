@@ -10,7 +10,7 @@ decoType = "home"
 
 {{% hero %}}
 
-# What is the environmental impact of your website?
+# Evaluate the environmental performance of your site
 
 {{% /hero %}}
 

@@ -13,8 +13,7 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-Nous collectons des informations au sujet des URL renseignées dans notre barre de test et les stockons dans notre base
-de données. Les informations collectées sont les suivantes :
+Le service EcoIndex.fr collecte des informations techniques liées à l'URL renseignée dans la barre de test présente sur la <a href="https://www.ecoindex.fr/" title="Accueil EcoIndex.fr">page d'accueil du site</a>. Les informations collectées sont les suivantes :
 
 - URL, poids de la page testée, nombre de requêtes de la page testée, nombre d’éléments du DOM de la page testée.
 - Ces informations sont stockées sans limite de temps afin de permettre des comparatifs dans le temps en cas de requête

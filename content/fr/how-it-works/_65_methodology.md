@@ -13,7 +13,7 @@ weight = 65
 
 {{% info_2_columns_col2 %}}
 
-Le site internet ecoindex.fr utilise l'API [ecoindex_api](https://github.com/cnumr/ecoindex_api) pour faire tourner les analyses de page. Le projet ecoindex_api embarque un [driver chrome pour selenium](https://github.com/ultrafunkamsterdam/undetected-chromedriver).
+Le site internet ecoindex.fr utilise l'API [ecoindex_api](https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_api#readme) pour faire tourner les analyses de page. Le projet ecoindex_api embarque un [driver chrome pour selenium](https://github.com/ultrafunkamsterdam/undetected-chromedriver).
 
 Lorsqu'on lance une analyse, on va donc charger la page demandée dans un vrai navigateur Chrome et jouer le scénario suivant :
 

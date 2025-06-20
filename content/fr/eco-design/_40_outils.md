@@ -38,8 +38,6 @@ Le plugin Ecoindex permet d'afficher le score écoindex existant dans la base de
 {{% content_link href="https://addons.mozilla.org/fr/firefox/addon/ecoindex-fr/" %}}Extension Firefox{{% /content_link %}}
 <br>
 {{% content_link href="https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah" %}}Extension Edge{{% /content_link %}}
-<br>
-{{% content_link href="https://addons.opera.com/fr/extensions/details/ecoindexfr/" %}}Extension Opera{{% /content_link %}}
 </p>
 
 Contribuez au code source en allant sur le [GitHub du plugin Ecoindex](https://github.com/cnumr/ecoindex-browser-plugin)
@@ -64,7 +62,7 @@ Le badge Ecoindex permet d'afficher le score écoindex simplement sur votre page
 Le projet Ecoindex CLI permet de lancer une analyse d'une page web en ligne de commande. Développé en python, il est disponible pour Linux, Mac et Windows. Il vous permettra lancer une analyse d'une page ou d'un ensemble de pages, générer un fichier de résultat au format csv ou json, générer un rapport HTML...
 
 <p>
-{{% content_link href="https://github.com/cnumr/ecoindex_cli" %}}La page du projet Ecoindex CLI{{% /content_link %}}
+{{% content_link href="https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_cli#readme" %}}La page du projet Ecoindex CLI{{% /content_link %}}
 </p>
 
 ### GitHub | A vous de jouer
@@ -77,7 +75,7 @@ participer !
 <br>
 {{% content_link href="https://github.com/cnumr/EcoIndex" %}}GitHub frontend site EcoIndex{{% /content_link %}}
 <br>
-{{% content_link href="https://github.com/cnumr/ecoindex_api" %}}GitHub backend site EcoIndex{{% /content_link %}}
+{{% content_link href="https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_api#readme" %}}GitHub backend site EcoIndex{{% /content_link %}}
 <br>
 {{% content_link href="https://github.com/cnumr/GreenIT-Analysis" %}}GitHub plugin GreenIT Analysis{{% /content_link %}}
 <br>
@@ -85,7 +83,7 @@ participer !
 <br>
 {{% content_link href="https://github.com/cnumr/ecoindex_badge" %}}GitHub badge Ecoindex{{% /content_link %}}
 <br>
-{{% content_link href="https://github.com/cnumr/ecoindex_cli" %}}GitHub CLI Ecoindex{{% /content_link %}}
+{{% content_link href="https://github.com/cnumr/EcoIndex_python/tree/main/projects/ecoindex_cli#readme" %}}GitHub CLI Ecoindex{{% /content_link %}}
 </p>
 
 {{% /info_2_columns_col2 %}}

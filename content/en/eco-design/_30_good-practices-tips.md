@@ -36,6 +36,8 @@ Here are some good practices to start with!
 - **Group images into a sprite** and combine certain CSS stylesheets and JavaScript libraries.
 - **Prefer static webpages** when possible, rather than using a CMS. You can use static site generators or Jamstack architecture.
 
+More information on the best practices of the Web Ecodesign Framework (RWEB): [Book (fr)](https://ecoconceptionweb.com/) - [Site](https://ref.greenit.fr/rweb/en.html) – [GitHub](https://github.com/cnumr/best-practices)
+
 {{% /info_2_columns_col2 %}}
 
 {{% /info_2_columns %}}

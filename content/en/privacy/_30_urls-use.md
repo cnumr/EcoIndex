@@ -13,7 +13,7 @@ weight = 30
 
 {{% info_2_columns_col2 %}}
 
-We collect information about the URL written in our test bar and we store them in our database. The information collected is as follows:
+The EcoIndex.fr service collects technical information related to the URL entered in the test bar on the <a href="https://www.ecoindex.fr/en/" title="Accueil EcoIndex.fr">home page of the site</a>. The information collected is as follows:
 
 - URL, weight of the page tested, number of requests of the page tested, number of the DOM elements in the page tested.
 - This information is stored with no time limit in order to enable comparisons over time in case of subsequent request on the same URL, which seems to us to be relevant data for analysis and follow-up.
