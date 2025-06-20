@@ -47,7 +47,7 @@ Voici, pour commencer, quelques bonnes pratiques à mettre en application !
 - **Favorisez les pages statiques**, quand cela est possible, plutôt que d’utiliser un CMS. Vous pouvez utiliser des
   générateurs de sites statiques ou une architecture JAMstack.
 
-Plus d’infos sur les bonnes pratiques : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
+Plus d’infos sur les bonnes pratiques du Référentiel d’écoconception web (RWEB) : [Livre](https://ecoconceptionweb.com/) - [Site](https://ref.greenit.fr/rweb) – [GitHub](https://github.com/cnumr/best-practices)
 
 {{% /info_2_columns_col2 %}}
 

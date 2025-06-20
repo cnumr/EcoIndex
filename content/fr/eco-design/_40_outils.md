@@ -38,8 +38,6 @@ Le plugin Ecoindex permet d'afficher le score écoindex existant dans la base de
 {{% content_link href="https://addons.mozilla.org/fr/firefox/addon/ecoindex-fr/" %}}Extension Firefox{{% /content_link %}}
 <br>
 {{% content_link href="https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah" %}}Extension Edge{{% /content_link %}}
-<br>
-{{% content_link href="https://addons.opera.com/fr/extensions/details/ecoindexfr/" %}}Extension Opera{{% /content_link %}}
 </p>
 
 Contribuez au code source en allant sur le [GitHub du plugin Ecoindex](https://github.com/cnumr/ecoindex-browser-plugin)

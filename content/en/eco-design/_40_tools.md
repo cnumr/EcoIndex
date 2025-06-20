@@ -35,7 +35,6 @@ EcoIndex plugin allows you to display the existing EcoIndex score of a webpage (
 
 [**Edge extension >**](https://microsoftedge.microsoft.com/addons/detail/fioadgdggjngcpbeilfgacmddamnhnah)
 
-[**Opera extension >**](https://addons.opera.com/fr/extensions/details/ecoindexfr/)
 
 Contribute to source code on [GitHub](https://github.com/cnumr/ecoindex-browser-plugin)
 
