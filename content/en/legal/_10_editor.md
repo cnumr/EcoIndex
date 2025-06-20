@@ -15,7 +15,7 @@ weight = 10
 
 Collectif Green IT (Green IT association and GreenIT.fr)
 
-The ecoindex.fr website edition and publication direction are managed by Frédéric Bordage: info@greenit.fr
+The editing and publication management of the ecoindex.fr website are provided by its owner: Frédéric Bordage (info@greenit.fr).
 
 {{% /info_2_columns_col2 %}}
 

@@ -13,7 +13,8 @@ weight = 10
 
 {{% info_2_columns_col2 %}}
 
-EcoIndex is a service offered by GreenIT.fr and the Collectif Conception Numérique Responsable. We provide tools and thoughts to help individuals, organizations and public authorities to build a sustainable and more enviable digital future for our children.
+EcoIndex.fr is an online service published by Frédéric Bordage as part of the Green IT collective.
+It is available to anyone who complies with the terms of use specified below.
 
 {{% /info_2_columns_col2 %}}
 

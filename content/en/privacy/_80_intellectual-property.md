@@ -13,13 +13,19 @@ weight = 80
 
 {{% info_2_columns_col2 %}}
 
-The EcoIndex algorithm, the EcoIndex.fr service and other associated tools are available free of charge, but are subject to intellectual property rights. Their use is governed by a user licence.
+The EcoIndex algorithm, the EcoIndex.fr online service, and other associated tools are freely available but are subject to intellectual property rights. Their use is governed by a user license.
 
-The Ecoindex tool made available on the Ecoindex.fr website is licensed under a [Creative Commons CC-By-NC-ND](https://creativecommons.org/licenses/by-nc-nd/2.0/) licence. This means that anyone can use it, provided that they cite the source of the figures obtained - EcoIndex.fr - and insert a link to the service [http://ecoindex.fr](http://ecoindex.fr). It may not be used for commercial purposes or modified.
+The Ecoindex.fr online service is made available under a Creative Commons CC-By-NC-ND license. This means that anyone can use it, provided that they cite:
+- the source of the figures obtained: EcoIndex.fr;
+- and include a link to the service http://ecoindex.fr.
 
-However, you can propose your modifications to GreenIT and the <span lang="fr">Collectif Conception Numérique Responsable</span> in order to contribute to and enrich the common know-how. You can find the sources and contribute on [GitHub](https://github.com/cnumr/EcoIndex)
+It is not permitted to make commercial use of or modify:
+- the EcoIndex.fr online service;
+- the results provided by the EcoIndex.fr service.
 
-All other intellectual property rights are reserved.
+It is also prohibited to publish a copy or derivative version of the EcoIndex.fr service.
+
+If you would like to improve the EcoIndex.fr service, you can submit your modifications and improvements directly to its repositories: https://github.com/cnumr/EcoIndex and https://github.com/cnumr/EcoIndex_python.
 
 {{% /info_2_columns_col2 %}}
 

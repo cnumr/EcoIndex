@@ -16,9 +16,7 @@ weight = 20
 Aucune donnée personnelle des utilisateur·ices procédant à un test sur EcoIndex.fr n’est collectée. Ce site n’utilise
 pas de cookies.
 
-L’inscription à la mailing list mentionnée sur la page “Nous rejoindre” est volontaire. Par votre inscription, vous
-acceptez de rejoindre la communauté GreenIT.fr et le Collectif Conception Numérique Responsable, et de recevoir les
-échanges de messages intervenant sur l’outil de messagerie de groupes de Google. Les paramètres du groupe sont
+L’inscription au forum de discussion mentionné sur la page «  Nous rejoindre  » est volontaire. Par votre inscription, vous acceptez de rejoindre l'espace de discussion du collectif Green IT et de recevoir les échanges de messages intervenant sur l’outil de messagerie de groupes de Google. Les paramètres du groupe sont
 accessibles depuis l’onglet “À propos” et “Mes paramètres d’adhésion” du groupe Google (y a-t-il des paramétrages,
 accessibles quelque part à la consultation de tous?). En particulier, votre adresse e-mail est visible de l’ensemble des
 membres du groupe. Frédéric Bordage est propriétaire de ce groupe. Vous pouvez paramétrer votre participation et quitter

@@ -15,7 +15,7 @@ weight = 10
 
 Collectif Green IT (association Green IT et GreenIT.fr)
 
-L’édition et la direction de la publication du site ecoindex.fr est assurée par Frédéric Bordage : info@greenit.fr
+L’édition et la direction de la publication du site ecoindex.fr sont assurées par son propriétaire : Frédéric Bordage (info@greenit.fr).
 
 {{% /info_2_columns_col2 %}}
 

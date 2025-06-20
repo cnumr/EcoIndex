@@ -13,7 +13,7 @@ weight = 70
 
 {{% info_2_columns_col2 %}}
 
-The EcoIndex.fr badge can be obtained by any user after testing a URL by obtaining a score equal to A or B. It can be used on a web page to attest to its good environmental performance. GreenIT.fr and the <span lang="fr">Collectif Conception Numérique Responsable</span> can in no way be held responsible for the use made of the badge. It is the responsibility of those using the badge on their site to ensure that the page complies with good eco-design and accessibility practices and to carry out regular checks.
+The <a href="https://github.com/cnumr/ecoindex_badge" title="Ecoindex Badge">EcoIndex.fr</a> badge can be obtained by any user after testing a URL. It can be published on a web page to attest to the latter's environmental performance. The publisher of the EcoIndex.fr online service cannot be held responsible for the use made of the badge.
 
 {{% /info_2_columns_col2 %}}
 
