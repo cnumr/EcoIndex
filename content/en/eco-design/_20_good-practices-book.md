@@ -18,9 +18,9 @@ For websites designers and developers, the book [Ecoconception web, les 115 bonn
 - Book: <a lang="fr" hreflang="fr" href="https://ecoconceptionweb.com/">Ecoconception web, les 115 bonnes pratiques</a>
 - Good practices online: <a lang="fr" hreflang="fr" href="https://github.com/cnumr/best-practices#les-115-bonnes-pratiques">Les 115 bonnes pratiques (GitHub)</a>
 - The Web Ecodesign Framework (RWEB)
-    - French: [Website](https://ref.greenit.fr/rweb/fr.html) - [GitHub](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
-    - English: [Website](https://ref.greenit.fr/rweb/en.html) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.en.md)
-    - Spanish: [Website](https://ref.greenit.fr/rweb/es.html) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.es.md)
+    - French: [Website](https://rweb.greenit.fr/fr) - [GitHub](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
+    - English: [Website](https://rweb.greenit.fr/en) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.en.md)
+    - Spanish: [Website](https://rweb.greenit.fr/es) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.es.md)
 
 
 {{% /info_2_columns_col2 %}}

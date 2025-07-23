@@ -22,9 +22,9 @@ clé : une empreinte ressources divisée au minimum par deux !
 - Le livre : [Ecoconception web, les 115 bonnes pratiques](https://ecoconceptionweb.com/)
 - Les bonnes pratiques en ligne : [Les 115 bonnes pratiques (GitHub)](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
 - Le Référentiel d’écoconception web (RWEB)
-    - Français : [Site web](https://ref.greenit.fr/rweb/fr.html) - [GitHub](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
-    - English : [Site web](https://ref.greenit.fr/rweb/en.html) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.en.md)
-    - Español : [Site web](https://ref.greenit.fr/rweb/es.html) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.es.md)
+    - Français : [Site web](https://rweb.greenit.fr/fr) - [GitHub](https://github.com/cnumr/best-practices#les-115-bonnes-pratiques)
+    - English : [Site web](https://rweb.greenit.fr/en) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.en.md)
+    - Español : [Site web](https://rweb.greenit.fr/es) - [GitHub](https://github.com/cnumr/best-practices/blob/main/README.es.md)
 
 {{% /info_2_columns_col2 %}}
 
