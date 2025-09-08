@@ -40,7 +40,7 @@
 		"autoprefixer": "^10.4.14",
 		"babel-plugin-array-includes": "^2.0.3",
 		"core-js": "^3.29.1",
-		"css-vars-ponyfill": "^2.3.2",
+		"css-vars-ponyfill": "^2.4.9",
 		"ky": "^1.2.0",
 		"postcss": "^8.4.31",
 		"postcss-calc": "^9.0",
