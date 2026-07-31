@@ -13,9 +13,9 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-Ce site est hébergé par [Neutral IT](https://neutral-it.com/hebergement-web/) dont le siège social est 114 rue de Maubeuge – 75010 PARIS
+Ce site est hébergé par [Hodi](https://hodi.host/fr/) dont le siège social est 14 rue Pasteur, 97400 Saint-Denis, La Réunion
 
-contact@neutral-it.com
+hello@hodi.host
 
 {{% /info_2_columns_col2 %}}
 

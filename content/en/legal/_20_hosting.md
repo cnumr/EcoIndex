@@ -13,7 +13,9 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-This site is hosted by <a hreflang="fr" href="https://neutral-it.com/hebergement-web/">Neutral Hosting</a> whose head office is located 114 rue de Maubeuge – 75010 PARIS
+This site is hosted by <a href="https://hodi.host/en/">Hodi</a> whose head office is located 14 rue Pasteur, 97400 Saint-Denis, La Réunion
+
+hello@hodi.host
 
 {{% /info_2_columns_col2 %}}
 
