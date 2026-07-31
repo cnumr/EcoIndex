@@ -108,8 +108,8 @@ for “##URL##”"""
 	other = "Green IT"
 [GreenITAssociationLong]
 	other = "Association Green IT"
-[NeutralIT]
-	other = "Neutral IT"
+[Hodi]
+	other = "Hodi"
 [NewWindow]
 	other = "new window"
 [Cancel]

@@ -7,21 +7,34 @@ weight = 30
 
 {{% info_2_columns_col1 %}}
 
-## Hosting by Neutral IT
+## Hosting by Hodi
 
 {{% /info_2_columns_col1 %}}
 
 {{% info_2_columns_col2 %}}
 
-This site is hosted by Neutral IT, which stands out on several environmental levels:
+This site is hosted by Hodi, a French hosting provider whose infrastructure in France limits its environmental impacts on two levels:
 
-- It has 13 datacenters in France, located in Lyon, Nantes, Paris, Lille. Those datacenters **reuse 96% of the energy they consume** to heat swimming pools and domestic hot water.
-- It uses powerful **refurbished second-hand servers** previously used by research and IT industries.
-- It was proven, through a Life Cycle Analysis, that the environmental footprint of IT services hosted in their datacenters was drastically optimized: **116% reduction in greenhouse gases emissions** compared to non-optimized datacenters!
-- The distributed architecture of its datacenters allows Neutral-IT to **host high availability services.**
-- The company **only uses open source technologies** to operate and monitor its servers and services.
+1. the eco-responsible datacenters that house it;
+2. and the way the host optimizes the use of its servers.
 
-Do not hesitate to [contact](https://neutral-it.com/#contact) them for your hosting needs.
+### Eco-responsible IT centres
+
+Our IT centres prioritize refurbished hardware (from reuse rather than manufacturing new equipment), electricity produced from low-impact renewable primary energy (wind, photovoltaic, hydro), and a PUE target below 1.3 at full capacity thanks to natural cooling (free cooling) to optimize energy efficiency.
+
+### Responsible operations
+
+On the operations side, half of the microprocessors (CPUs) are automatically shut down at night when load allows, which reduces the nominal electricity consumption of the infrastructure, and malicious bot traffic — nearly 30% of global web traffic — is blocked by default: fewer useless requests and less electricity wasted.
+
+### EcoIndex integrated by default
+
+Hodi goes further by integrating EcoIndex measurement by default on its customers' sites. Because the environmental footprint of a website does not depend only on the host: how it is designed and used matters just as much. The goal is to help everyone quantify, understand, and reduce their impacts.
+
+### For responsible digital development in Africa
+
+Beyond France, Hodi is committed to more responsible digital development in Africa by offering African companies the same kind of responsible infrastructure at continental scale.
+
+Do not hesitate to [contact](https://hodi.host/en/contact/?utm_source=ecoindex&utm_medium=referral&utm_content=about) the Hodi team for your hosting needs.
 
 {{% /info_2_columns_col2 %}}
 
