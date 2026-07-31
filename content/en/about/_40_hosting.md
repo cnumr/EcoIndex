@@ -34,7 +34,7 @@ Hodi goes further by integrating EcoIndex measurement by default on its customer
 
 Beyond France, Hodi is committed to more responsible digital development in Africa by offering African companies the same kind of responsible infrastructure at continental scale.
 
-Do not hesitate to [contact](https://hodi.host/en/contact/) the Hodi team for your hosting needs.
+Do not hesitate to [contact](https://hodi.host/en/contact/?utm_source=ecoindex&utm_medium=referral&utm_content=about) the Hodi team for your hosting needs.
 
 {{% /info_2_columns_col2 %}}
 

@@ -13,7 +13,7 @@ weight = 20
 
 {{% info_2_columns_col2 %}}
 
-Ce site est hébergé par [Hodi](https://hodi.host/fr/) dont le siège social est 14 rue Pasteur, 97400 Saint-Denis, La Réunion
+Ce site est hébergé par [Hodi](https://hodi.host/fr/?utm_source=ecoindex&utm_medium=referral&utm_content=legal) dont le siège social est 14 rue Pasteur, 97400 Saint-Denis, La Réunion
 
 hello@hodi.host
 

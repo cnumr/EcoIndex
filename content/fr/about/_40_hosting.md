@@ -34,7 +34,7 @@ Hodi va plus loin en intégrant par défaut la mesure EcoIndex sur les sites de 
 
 Au-delà de la France, Hodi s'engage pour un développement plus responsable du numérique en Afrique en proposant aux entreprises africaines le même type d'infrastructures responsables à l'échelle du continent.
 
-N'hésitez pas à [contacter](https://hodi.host/fr/contact/) l'équipe Hodi pour vos besoins d'hébergement.
+N'hésitez pas à [contacter](https://hodi.host/fr/contact/?utm_source=ecoindex&utm_medium=referral&utm_content=about) l'équipe Hodi pour vos besoins d'hébergement.
 
 {{% /info_2_columns_col2 %}}
 
