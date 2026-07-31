@@ -13,3 +13,11 @@ disableKinds = ["section", "taxonomy", "term"]
 # Do not output RSS for home (default output for home is HTML + RSS)
 [outputs]
 	home = ["HTML"]
+
+[security]
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$', 'babel', 'node']
+
+  [security.node]
+    [security.node.permissions]
+      allowRead = ['/root', '.']
