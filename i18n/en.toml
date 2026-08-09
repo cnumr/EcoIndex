@@ -122,6 +122,12 @@ for “##URL##”"""
 	other = "Please retry later."
 [Close]
 	other = "Close"
+[Error401]
+	other = "401 error"
+[Error403]
+	other = "403 error"
+[Error404]
+	other = "404 error"
 [Error422]
 	other = "There is an invalid parameter, check your request."
 [Error429]
@@ -140,8 +146,6 @@ More information on page [How it works](/how-it-works/)."""
 	other = "The page you want to test can not be analyzed because its response status code is not 200"
 [NoJSMessage]
 	other = "**Warning**: JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
-[Error404]
-	other = "404 error"
 [ShareTheResult]
 	other = "Share my result"
 [CopyURL]

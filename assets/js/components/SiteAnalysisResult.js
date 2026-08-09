@@ -52,7 +52,7 @@ class SiteAnalysisResult {
 				pageResultData[key] = value;
 
 				if (key === "id") {
-					const screenshotUrl = AnalysisService.fetchAnalysisScreenshotUrlById(urlParams.get("id"))
+					const screenshotUrl = AnalysisService.getAnalysisScreenshotUrlById(urlParams.get("id"))
 					screenshotImgElement.setAttribute("src", screenshotUrl)
 				}
 			}
@@ -71,7 +71,7 @@ class SiteAnalysisResult {
 			// window.location.pathname is something like /resultat (in french) or /en/result (in english)
 			pageResultData = await AnalysisService.fetchAnalysisById(analysisId, window.location.pathname)
 
-			const screenshotUrl = AnalysisService.fetchAnalysisScreenshotUrlById(analysisId)
+			const screenshotUrl = AnalysisService.getAnalysisScreenshotUrlById(analysisId)
 			screenshotImgElement.setAttribute("src", screenshotUrl)
 
 			// update the link URL of every lang switcher
