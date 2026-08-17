@@ -2,6 +2,7 @@ import { camelize } from "../helpers/stringUtils";
 import { getUrlHostName } from "../helpers/urlUtils";
 import AnalysisService from "../services/AnalysisService";
 import ResultRangeSlider from "./ResultRangeSlider";
+import RequestDetails from "./RequestDetails";
 
 /**
  * @typedef ResultRelativeTextData
@@ -23,6 +24,7 @@ class SiteAnalysisResult {
 	 */
 	constructor(el, currentLocale) {
 		this.el = el;
+		this.locale = currentLocale;
 
 		/** @type {ResultRelativeTextData} */
 		this.resultRelativeTextData = resultRelativeTextData;
@@ -44,6 +46,7 @@ class SiteAnalysisResult {
 		const screenshotImgElement = document.querySelector(".result-screenshot")
 
 		let pageResultData = {};
+		const analysisId = urlParams.get("id");
 
 		// get params from url
 		// NOTE : url params example to test : "?width=1920&height=1080&url=https%3A%2F%2Fwww.leroymerlin.fr&grade=E&score=34&ges=2.32&water=3.48&date=2021-11-17T12%3A40%3A18.575464&page_type=null&id=2d43d4c9-6ad0-4dc8-a769-09b3b2249bf3&version=1&size=1119.963&nodes=1286&requests=65&host=www.leroymerlin.fr"
@@ -66,8 +69,6 @@ class SiteAnalysisResult {
 			// else fetch analysis result from id
 			// NOTE : url params example to test : "?id=ec839aca-7c12-42e8-8541-5f7f94c36b7f
 		} else if (urlParams.has("id")) {
-			const analysisId = urlParams.get("id");
-
 			// window.location.pathname is something like /resultat (in french) or /en/result (in english)
 			pageResultData = await AnalysisService.fetchAnalysisById(analysisId, window.location.pathname)
 
@@ -119,6 +120,42 @@ class SiteAnalysisResult {
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultsFromSelect();
 		this._updatetResultRangeSliders(pageResultData);
+		this._loadRequestDetails(analysisId, pageResultData.host);
+	}
+
+	/**
+	 * Fetch and display HTTP request details when they exist for this analysis.
+	 * Older results without collected details stay unchanged.
+	 *
+	 * @param {string|null} analysisId
+	 * @param {string} [host]
+	 */
+	async _loadRequestDetails(analysisId, host) {
+		if (!analysisId) return;
+
+		const requestDetails = await AnalysisService.fetchAnalysisRequestsById(analysisId);
+		if (!requestDetails || !requestDetails.items || !requestDetails.items.length) return;
+
+		const detailsWidget = this.el.querySelector("#details");
+		const infoContainer = this.el.querySelector(".info-container");
+		if (!detailsWidget && !infoContainer) return;
+
+		const widget = document.createElement("div");
+		widget.id = "request-details";
+		widget.className = "wg-result-requests wgi-result-requests-request-details section-theme-dark";
+		const inner = document.createElement("section");
+		inner.className = "center-l box-l --s2p0";
+		const content = document.createElement("div");
+		inner.appendChild(content);
+		widget.appendChild(inner);
+
+		if (detailsWidget) {
+			detailsWidget.after(widget);
+		} else {
+			infoContainer.appendChild(widget);
+		}
+
+		new RequestDetails(content, requestDetails, { host, locale: this.locale });
 	}
 
 	/**

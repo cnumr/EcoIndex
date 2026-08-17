@@ -65,6 +65,21 @@ class AnalysisService {
 	}
 
 	/**
+	 * Fetch HTTP request details for an analysis.
+	 * Returns `null` when details are unavailable (older analyses, 404, network error).
+	 *
+	 * @param {string} id
+	 * @returns {Promise<object|null>}
+	 */
+	async fetchAnalysisRequestsById(id) {
+		try {
+			return await ApiService.fetchAnalysisRequestsById(id);
+		} catch {
+			return null;
+		}
+	}
+
+	/**
 	 * 
 	 * @param {string} id
 	 * @param {string} resultPagePrefix
