@@ -250,7 +250,7 @@ class RequestDetails {
 		this.tableBody = this._el("tbody");
 		this.listTableHead = this._el("thead", {}, [
 			this._el("tr", {}, [
-				this._sortHeader("url", t("RequestDetailsColUrl")),
+				this._sortHeader("url", t("RequestDetailsColUrl"), "request-details-url"),
 				this._sortHeader("category", t("RequestDetailsColCategory")),
 				this._sortHeader("status", t("RequestDetailsColStatus")),
 				this._sortHeader("size", t("RequestDetailsColSize"), "request-details-num"),

@@ -3,7 +3,6 @@
  */
 
 .request-details {
-	max-width: 100%;
 	min-width: 0;
 }
 
@@ -229,9 +228,12 @@
 	table-layout: fixed;
 }
 
-.request-details-url {
-	width: 52%;
-	max-width: none;
+.request-details-table-wrap.--list .request-details-url {
+	width: 68%;
+}
+
+.request-details-table-wrap.--list .request-details-num {
+	width: 7%;
 }
 
 .request-details-link {

@@ -145,6 +145,8 @@ class SiteAnalysisResult {
 		widget.className = "wg-result-requests wgi-result-requests-request-details section-theme-dark";
 		const inner = document.createElement("section");
 		inner.className = "center-l box-l --s2p0";
+		const content = document.createElement("div");
+		inner.appendChild(content);
 		widget.appendChild(inner);
 
 		if (detailsWidget) {
@@ -153,7 +155,7 @@ class SiteAnalysisResult {
 			infoContainer.appendChild(widget);
 		}
 
-		new RequestDetails(inner, requestDetails, { host, locale: this.locale });
+		new RequestDetails(content, requestDetails, { host, locale: this.locale });
 	}
 
 	/**
