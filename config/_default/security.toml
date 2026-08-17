@@ -1,0 +1,9 @@
+# Hugo 0.165+ no longer allows `node` by default; Babel still invokes it.
+# Disable the Node permission sandbox so Babel (Node 22) can run.
+# This file overrides the theme module's config/_default/security.toml
+# (putting [security.exec] in config.toml duplicates that table and fails unmarshal).
+[exec]
+	allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$', '^tailwindcss$', 'babel', '^node$']
+
+[node.permissions]
+	disable = true
