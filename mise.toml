@@ -1,0 +1,4 @@
+[tools]
+hugo = "latest"
+go = "latest"
+node = "24"

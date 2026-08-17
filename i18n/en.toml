@@ -156,3 +156,57 @@ More information on page [How it works](/how-it-works/)."""
 	other = "median:"
 [Min]
 	other = "min"
+[RequestDetailsTitle]
+	other = "Request details"
+[RequestDetailsIntro]
+	other = "Here is the HTTP request breakdown for the page: the heaviest resource types, the domains called, and the full list. This helps identify what is weighing on the score."
+[RequestDetailsTotals]
+	other = "##count## requests · ##size##"
+[RequestDetailsByCategory]
+	other = "By resource type"
+[RequestDetailsByDomain]
+	other = "By domain"
+[RequestDetailsListToggle]
+	other = "See the ##count## requests"
+[RequestDetailsFilterAll]
+	other = "All"
+[RequestDetailsColUrl]
+	other = "URL"
+[RequestDetailsColCategory]
+	other = "Type"
+[RequestDetailsColDomain]
+	other = "Domain"
+[RequestDetailsColStatus]
+	other = "Status"
+[RequestDetailsColSize]
+	other = "Weight"
+[RequestDetailsColCount]
+	other = "Requests"
+[RequestDetailsThirdParty]
+	other = "third-party"
+[RequestDetailsBarLabel]
+	other = "Transferred weight breakdown by resource type"
+[RequestDetailsEmpty]
+	other = "No requests for this filter."
+[RequestDetailsCategoryHtml]
+	other = "HTML"
+[RequestDetailsCategoryCss]
+	other = "CSS"
+[RequestDetailsCategoryJavascript]
+	other = "JavaScript"
+[RequestDetailsCategoryImage]
+	other = "Images"
+[RequestDetailsCategoryFont]
+	other = "Fonts"
+[RequestDetailsCategoryVideo]
+	other = "Video"
+[RequestDetailsCategoryAudio]
+	other = "Audio"
+[RequestDetailsCategoryOther]
+	other = "Other"
+[RequestDetailsUnitByte]
+	other = "B"
+[RequestDetailsUnitKb]
+	other = "KB"
+[RequestDetailsUnitMb]
+	other = "MB"

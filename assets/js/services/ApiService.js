@@ -21,7 +21,8 @@ class ApiService {
 					width: BROWSER_WIDTH,
 					height: BROWSER_HEIGHT,
 					url,
-				}
+				},
+				include_requests_detail: true,
 			},
 		};
 
@@ -71,6 +72,24 @@ class ApiService {
 	}
 
 	/**
+	 * Request the HTTP request details of an analysis by its id.
+	 * Returns `null` when the analysis exists but details were not collected.
+	 *
+	 * @param {string} id Analysis Id
+	 * @returns {Promise<object|null>}
+	 */
+	async fetchAnalysisRequestsById(id) {
+		try {
+			return await this.#fetchApi("ecoindexes/" + id + "/requests", {
+				method: "get",
+				abort: false,
+			});
+		} catch {
+			return null;
+		}
+	}
+
+	/**
 	 * Aborts analysis request
 	 *
 	 * @returns {boolean} true for success else false
@@ -90,19 +109,24 @@ class ApiService {
 	 * @param {string} [options.method] Method: 'post' or 'get'
 	 * @param {Object} [options.json] Object of properties to post in body (relevant for post method)
 	 * @param {Object} [options.retry] Retry object to override default Ky retry request property
+	 * @param {boolean} [options.abort=true] Abort any in-flight analysis request before fetching
 	 * @returns {Promise<import("ky").KyResponse>} response object
 	 */
 	async #fetchApi(slug, options) {
-		this.abortAnalysis();
-		const controller = (this.#controller = new AbortController());
+		const { abort = true, ...kyOptions } = options;
 
-		const { signal } = controller;
+		let signal;
+		if (abort) {
+			this.abortAnalysis();
+			const controller = (this.#controller = new AbortController());
+			signal = controller.signal;
+		}
 
 		return ky(slug, {
-			...options,
+			...kyOptions,
 			prefixUrl: BASE_URL,
 			timeout: false, // Set to no timeout
-			signal,
+			...(signal ? { signal } : {}),
 			headers: {
 				"content-type": "application/json",
 			},

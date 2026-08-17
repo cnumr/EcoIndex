@@ -156,3 +156,57 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "médiane&nbsp;:"
 [Min]
 	other = "min"
+[RequestDetailsTitle]
+	other = "Détail des requêtes"
+[RequestDetailsIntro]
+	other = "Voici la composition des requêtes HTTP de la page : les types de ressources les plus lourds, les domaines appelés, et la liste détaillée. Cela aide à identifier ce qui pèse sur le score."
+[RequestDetailsTotals]
+	other = "##count## requêtes · ##size##"
+[RequestDetailsByCategory]
+	other = "Par type de ressource"
+[RequestDetailsByDomain]
+	other = "Par domaine"
+[RequestDetailsListToggle]
+	other = "Voir les ##count## requêtes"
+[RequestDetailsFilterAll]
+	other = "Tous"
+[RequestDetailsColUrl]
+	other = "URL"
+[RequestDetailsColCategory]
+	other = "Type"
+[RequestDetailsColDomain]
+	other = "Domaine"
+[RequestDetailsColStatus]
+	other = "Statut"
+[RequestDetailsColSize]
+	other = "Poids"
+[RequestDetailsColCount]
+	other = "Requêtes"
+[RequestDetailsThirdParty]
+	other = "tiers"
+[RequestDetailsBarLabel]
+	other = "Répartition du poids transféré par type de ressource"
+[RequestDetailsEmpty]
+	other = "Aucune requête pour ce filtre."
+[RequestDetailsCategoryHtml]
+	other = "HTML"
+[RequestDetailsCategoryCss]
+	other = "CSS"
+[RequestDetailsCategoryJavascript]
+	other = "JavaScript"
+[RequestDetailsCategoryImage]
+	other = "Images"
+[RequestDetailsCategoryFont]
+	other = "Polices"
+[RequestDetailsCategoryVideo]
+	other = "Vidéo"
+[RequestDetailsCategoryAudio]
+	other = "Audio"
+[RequestDetailsCategoryOther]
+	other = "Autre"
+[RequestDetailsUnitByte]
+	other = "o"
+[RequestDetailsUnitKb]
+	other = "Ko"
+[RequestDetailsUnitMb]
+	other = "Mo"

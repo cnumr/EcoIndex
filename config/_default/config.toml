@@ -10,6 +10,14 @@ defaultContentLanguage = "fr"
 
 disableKinds = ["section", "taxonomy", "term"]
 
+# Hugo 0.165+ no longer allows `node` by default; Babel still invokes it.
+# Disable the Node permission sandbox so Babel (Node 22) can run.
+[security.exec]
+	allow = ['^(dart-)?sass(-embedded)?$', '^go$', '^npx$', '^postcss$', '^tailwindcss$', 'babel', '^node$']
+
+[security.node.permissions]
+	disable = true
+
 # Do not output RSS for home (default output for home is HTML + RSS)
 [outputs]
 	home = ["HTML"]
