@@ -80,6 +80,18 @@ L’analyse est en cours
 pour « ##URL## »"""
 [AnalysisRetrieval]
 	other = "Récupération de l’analyse"
+[AnalysisQueueNext]
+	other = "Vous êtes le prochain dans la file d’attente."
+[AnalysisQueueWaiting]
+	other = "Il y a ##POSITION## analyses avant la vôtre."
+[AnalysisQueueWaitingOne]
+	other = "Il y a 1 analyse avant la vôtre."
+[AnalysisQueueRunning]
+	other = "C’est votre tour, l’analyse est en cours."
+[AnalysisQueueBusy]
+	other = "##COUNT## analyses actuellement en cours."
+[AnalysisQueueBusyOne]
+	other = "1 analyse actuellement en cours."
 [NotAvailable]
 	other = "Non disponible"
 [ScoreDetails]

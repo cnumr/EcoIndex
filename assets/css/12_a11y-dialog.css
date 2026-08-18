@@ -35,6 +35,12 @@
 	font-size: var(--s1);
 }
 
+.dialog-queue-status {
+	text-align: center;
+	font-size: var(--s0);
+	min-height: 1.5em;
+}
+
 .dialog-buttons {
 	width: 100%;
 	text-align: right;
