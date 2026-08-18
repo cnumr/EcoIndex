@@ -24,7 +24,9 @@ class AnalysisService {
 
 			ApiService.newAnalysisTaskByURL(url).then(
 				(taskId) => {
-					ApiService.fetchAnalysisTaskById(taskId).then(
+					ApiService.fetchAnalysisTaskById(taskId, (task) => {
+						EcoIndexDialog.updateQueueStatus(task);
+					}).then(
 						(taskResult) => {
 							const ecoindex = taskResult.ecoindex_result;
 

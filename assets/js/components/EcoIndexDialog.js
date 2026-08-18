@@ -48,7 +48,7 @@ class EcoIndexDialog {
 {{- (i18n "AnalysisInProgressFor") -}}`;
 		title = replaceKeyIn(title, "URL", url);
 
-		EcoIndexDialog.#openLoadingRequest(title);
+		EcoIndexDialog.#openLoadingRequest(title, true);
 	}
 
 	/**
@@ -60,6 +60,55 @@ class EcoIndexDialog {
 {{- (i18n "AnalysisRetrieval") -}}`;
 
 		EcoIndexDialog.#openLoadingRequest(title);
+	}
+
+	/**
+	 * Update the pending-analysis dialog with queue position information
+	 * returned by GET /v1/tasks/ecoindexes/{id} while the task is still pending.
+	 *
+	 * @param {Object} task Task payload
+	 * @param {number|null} [task.queue_position] Position in the waiting queue (0 = next)
+	 * @param {number} [task.tasks_in_progress] Number of tasks currently running
+	 */
+	static updateQueueStatus(task = {}) {
+		const el = document.querySelector("#dialog-queue-status");
+		if (!el) {
+			return;
+		}
+
+		const queuePosition = task.queue_position;
+		const tasksInProgress = task.tasks_in_progress;
+		const parts = [];
+
+		if (queuePosition === 0) {
+			parts.push(`{{- i18n "AnalysisQueueNext" -}}`);
+		} else if (typeof queuePosition === "number") {
+			parts.push(
+				queuePosition === 1
+					? `{{- i18n "AnalysisQueueWaitingOne" -}}`
+					: replaceKeyIn(
+							`{{- i18n "AnalysisQueueWaiting" -}}`,
+							"POSITION",
+							String(queuePosition)
+					  )
+			);
+		} else {
+			parts.push(`{{- i18n "AnalysisQueueRunning" -}}`);
+		}
+
+		if (typeof tasksInProgress === "number" && tasksInProgress > 0) {
+			parts.push(
+				tasksInProgress === 1
+					? `{{- i18n "AnalysisQueueBusyOne" -}}`
+					: replaceKeyIn(
+							`{{- i18n "AnalysisQueueBusy" -}}`,
+							"COUNT",
+							String(tasksInProgress)
+					  )
+			);
+		}
+
+		el.innerHTML = parts.join("<br>");
 	}
 
 	/**
@@ -133,9 +182,10 @@ class EcoIndexDialog {
 	/**
 	 * Opens the modal dialog to display a "loading in progress" message
 	 * with a spinner animation
-	 * @param title Title to be displayed on the modal
+	 * @param {string} title Title to be displayed on the modal
+	 * @param {boolean} [showQueueStatus=false] Show a live region for queue updates
 	 */
-	static #openLoadingRequest(title) {
+	static #openLoadingRequest(title, showQueueStatus = false) {
 		EcoIndexDialog.#createAndShowDialog(title, {
 			actions: [
 				{
@@ -146,6 +196,9 @@ class EcoIndexDialog {
 					label: "{{- i18n `Cancel` -}}",
 				},
 			],
+			body: showQueueStatus
+				? '<p id="dialog-queue-status" class="dialog-queue-status" aria-live="polite"></p>'
+				: "",
 			hasSpinner: true,
 			keepOpen: true,
 		});

@@ -33,15 +33,30 @@ class ApiService {
 	 * Request a task analysis by its id
 	 *
 	 * @param {string} id Analysis Id
+	 * @param {function} [onProgress] Called on each 425 (too early) response with the task payload
 	 * @returns {Promise<import("ky").KyResponse>}
 	 */
-	async fetchAnalysisTaskById(id) {
+	async fetchAnalysisTaskById(id, onProgress) {
 		const options = {
 			method: "get",
 			retry: {
 				limit: 300,
 				statusCodes: [425],
 				backoffLimit: 2000,
+			},
+			hooks: {
+				afterResponse: [
+					async (_request, _options, response) => {
+						if (response.status === 425 && typeof onProgress === "function") {
+							try {
+								onProgress(await response.clone().json());
+							} catch {
+								// Ignore unreadable intermediate payloads
+							}
+						}
+						return response;
+					},
+				],
 			},
 		};
 
