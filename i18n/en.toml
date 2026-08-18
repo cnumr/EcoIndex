@@ -134,6 +134,14 @@ for “##URL##”"""
 	other = "Please retry later."
 [Close]
 	other = "Close"
+[Error400]
+	other = "This URL is unreachable. Check the address (typo, site offline, unknown domain…) and try again."
+[Error401]
+	other = "This page requires authentication. EcoIndex can only analyze publicly accessible pages."
+[Error403]
+	other = "Access to this page was denied. The site is probably blocking the analysis (antibot protection or forbidden access). You can try again later, or test another page."
+[Error403Excluded]
+	other = "This domain is excluded from EcoIndex analyses."
 [Error422]
 	other = "There is an invalid parameter, check your request."
 [Error429]
@@ -141,15 +149,15 @@ for “##URL##”"""
 You have reached the limit of ##daily_limit_per_host## calls per day for the domain name ##host##.  
 More information on page [How it works](/how-it-works/)."""
 [Error500]
-	other = "An error occurred on the server. You can try again later."
+	other = "An unexpected error occurred during the analysis. This is usually temporary: please try again in a few moments."
 [Error502]
 	other = "The URL you provided is not valid. Please check the URL and try again."
 [Error504]
 	other = "The page you want to test does not respond. Please try again later."
 [Error520]
-	other = "This resource you want to test is not a standard HTML page with mimeType 'text/html'"
+	other = "This resource is not an HTML page (PDF, image, JSON, etc.). EcoIndex can only analyze standard HTML web pages."
 [Error521]
-	other = "The page you want to test can not be analyzed because its response status code is not 200"
+	other = "The page could not be analyzed because the server did not return HTTP 200. It may be missing, protected, redirected, or temporarily in error."
 [NoJSMessage]
 	other = "**Warning**: JavaScript is currently required for the new version of ecoIndex to work ([enable JavaScript in your browser](https://www.enable-javascript.com/))."
 [Error404]
