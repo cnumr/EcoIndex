@@ -9,6 +9,15 @@ class EcoIndexDialog {
 	static #a11yDialog = null;
 
 	static ERROR_MESSAGES = {
+		400: `
+	{{- i18n "Error400" | markdownify -}}
+	`,
+		401: `
+	{{- i18n "Error401" | markdownify -}}
+	`,
+		403: `
+	{{- i18n "Error403" | markdownify -}}
+	`,
 		404: `
 	{{- i18n "Error404" | markdownify -}}
 	`,
@@ -123,20 +132,60 @@ class EcoIndexDialog {
 		const title = `
 {{- (i18n "AnalysisErrorTitle") -}}`;
 
-		// Body (message)
-		let errorMessage = errorCode
-			? EcoIndexDialog.ERROR_MESSAGES[errorCode]
-			: `{{- (i18n "AnalysisErrorDefaultMessage") -}}`;
-		// Replace variables given in details object
-		if (details instanceof Object) {
-			for (const [key, value] of Object.entries(details)) {
-				errorMessage = replaceKeyIn(errorMessage, key, value);
-			}
+		const code = Number(errorCode);
+		let errorMessage =
+			code === 403 && EcoIndexDialog.#isExcludedHost(details)
+				? `
+{{- (i18n "Error403Excluded") | markdownify -}}
+`
+				: EcoIndexDialog.ERROR_MESSAGES[code] ||
+				  `{{- (i18n "AnalysisErrorDefaultMessage") -}}`;
+
+		for (const [key, value] of Object.entries(
+			EcoIndexDialog.#flattenDetails(details)
+		)) {
+			errorMessage = replaceKeyIn(errorMessage, key, value);
 		}
 
 		EcoIndexDialog.#createAndShowDialog(title, {
 			body: `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`,
 		});
+	}
+
+	static #isExcludedHost(details) {
+		const text =
+			typeof details === "string"
+				? details
+				: details?.detail ?? details?.message ?? "";
+		return String(text).toLowerCase().includes("excluded");
+	}
+
+	static #isScalar(value) {
+		return (
+			typeof value === "string" ||
+			typeof value === "number" ||
+			typeof value === "boolean"
+		);
+	}
+
+	static #flattenDetails(details) {
+		if (details == null || typeof details !== "object") {
+			return {};
+		}
+
+		const interpolations = {};
+		for (const [key, value] of Object.entries(details)) {
+			if (value != null && typeof value === "object" && !Array.isArray(value)) {
+				for (const [nestedKey, nestedValue] of Object.entries(value)) {
+					if (EcoIndexDialog.#isScalar(nestedValue)) {
+						interpolations[nestedKey] = String(nestedValue);
+					}
+				}
+			} else if (EcoIndexDialog.#isScalar(value)) {
+				interpolations[key] = String(value);
+			}
+		}
+		return interpolations;
 	}
 
 	/**

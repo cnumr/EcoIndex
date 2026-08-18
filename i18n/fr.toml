@@ -134,6 +134,14 @@ pour « ##URL## »"""
 	other = "Veuillez réessayer plus tard"
 [Close]
 	other = "Fermer"
+[Error400]
+	other = "Cette URL est injoignable. Vérifiez l’adresse saisie (faute de frappe, site hors ligne, nom de domaine inexistant…) puis réessayez."
+[Error401]
+	other = "Cette page nécessite une authentification. EcoIndex ne peut analyser que des pages accessibles publiquement."
+[Error403]
+	other = "L’accès à cette page a été refusé. Le site bloque probablement l’analyse (protection antibot, accès interdit). Vous pouvez réessayer plus tard, ou tester une autre page."
+[Error403Excluded]
+	other = "Ce nom de domaine est exclu des analyses EcoIndex."
 [Error422]
 	other = "Un paramètre n’est pas valide, pouvez-vous vérifier votre requête ?"
 [Error429]
@@ -141,15 +149,15 @@ pour « ##URL## »"""
 Vous avez atteint la limite de ##daily_limit_per_host## appels par jour pour le nom de domaine ##host##.  
 Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/comment-ca-marche/)"""
 [Error500]
-	other = "Une erreur est survenue sur le serveur, veuillez réessayer plus tard."
+	other = "Une erreur inattendue s’est produite pendant l’analyse. Le problème est généralement temporaire : veuillez réessayer dans quelques instants."
 [Error502]
 	other = "L’url demandée n’est pas valide. Veuillez vérifier l’URL et réessayer."
 [Error504]
 	other = "La page web indiquée ne semble pas répondre. Pouvez vous réessayer plus tard ?"
 [Error520]
-	other = "La ressource que vous essayez d'analyser n'est pas une page HTML standard avec un mimetype 'text/html'"
+	other = "Cette ressource n’est pas une page HTML (fichier PDF, image, JSON, etc.). EcoIndex ne peut analyser que des pages web au format HTML."
 [Error521]
-	other = "La page que vous essayez de tester ne peut pas être analysée car elle est en erreur (son code réponse n'est pas 200)"
+	other = "La page n’a pas pu être analysée car le serveur n’a pas renvoyé un code HTTP 200. Elle est peut-être introuvable, protégée, en redirection ou temporairement en erreur."
 [NoJSMessage]
 	other = "**Attention** : Javascript est actuellement requis pour le fonctionnement de la nouvelle version d'ecoIndex ([activer JavaScript dans votre navigateur](https://www.enable-javascript.com/fr/))."
 [Error404]
