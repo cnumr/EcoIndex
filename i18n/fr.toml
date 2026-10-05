@@ -230,3 +230,39 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "Ko"
 [RequestDetailsUnitMb]
 	other = "Mo"
+[BestPracticesTitle]
+	other = "Bonnes pratiques"
+[BestPracticesIntro]
+	other = "Voici l’évaluation des bonnes pratiques <a href=\"https://rweb.greenit.fr/fr\" target=\"_blank\" rel=\"noopener noreferrer\">RWEB</a> sur cette page : ce qui est respecté, ce qui mérite attention, et ce qui échoue. Cela aide à prioriser les actions d’écoconception. Les bonnes pratiques ont été définies par les experts du collectif Green IT."
+[BestPracticesTotals]
+	other = "##ok## OK · ##warn## à surveiller · ##fail## en échec"
+[BestPracticesBarLabel]
+	other = "Répartition des bonnes pratiques par statut"
+[BestPracticesFilterAll]
+	other = "Toutes"
+[BestPracticesStatusOk]
+	other = "OK"
+[BestPracticesStatusWarn]
+	other = "À surveiller"
+[BestPracticesStatusFail]
+	other = "Échec"
+[BestPracticesCategoryNetwork]
+	other = "Réseau"
+[BestPracticesCategoryUserDevice]
+	other = "Appareil utilisateur"
+[BestPracticesCategoryOther]
+	other = "Autre"
+[BestPracticesValue]
+	other = "Valeur mesurée : ##value##"
+[BestPracticesThresholds]
+	other = "Seuils : alerte ##warn## · échec ##fail##"
+[BestPracticesLearnMore]
+	other = "Voir la fiche RWEB"
+[BestPracticesDetailsToggle]
+	other = "Voir les ##count## détails"
+[BestPracticesCategoryToggle]
+	other = "##category## (##count##)"
+[BestPracticesEmpty]
+	other = "Aucune bonne pratique pour ce filtre."
+[BestPracticesRwebId]
+	other = "##id##"
