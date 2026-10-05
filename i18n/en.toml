@@ -230,3 +230,39 @@ More information on page [How it works](/how-it-works/)."""
 	other = "KB"
 [RequestDetailsUnitMb]
 	other = "MB"
+[BestPracticesTitle]
+	other = "Best practices"
+[BestPracticesIntro]
+	other = "Here is the <a href=\"https://rweb.greenit.fr/en\" target=\"_blank\" rel=\"noopener noreferrer\">RWEB</a> best-practices evaluation for this page: what passes, what needs attention, and what fails. This helps prioritize eco-design actions. These best practices were defined by Green IT collective experts."
+[BestPracticesTotals]
+	other = "##ok## ok · ##warn## to watch · ##fail## failing"
+[BestPracticesBarLabel]
+	other = "Best practices breakdown by status"
+[BestPracticesFilterAll]
+	other = "All"
+[BestPracticesStatusOk]
+	other = "OK"
+[BestPracticesStatusWarn]
+	other = "Watch"
+[BestPracticesStatusFail]
+	other = "Fail"
+[BestPracticesCategoryNetwork]
+	other = "Network"
+[BestPracticesCategoryUserDevice]
+	other = "User device"
+[BestPracticesCategoryOther]
+	other = "Other"
+[BestPracticesValue]
+	other = "Measured value: ##value##"
+[BestPracticesThresholds]
+	other = "Thresholds: warn ##warn## · fail ##fail##"
+[BestPracticesLearnMore]
+	other = "See the RWEB sheet"
+[BestPracticesDetailsToggle]
+	other = "See the ##count## details"
+[BestPracticesCategoryToggle]
+	other = "##category## (##count##)"
+[BestPracticesEmpty]
+	other = "No best practices for this filter."
+[BestPracticesRwebId]
+	other = "##id##"

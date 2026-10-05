@@ -3,6 +3,7 @@ import { getUrlHostName } from "../helpers/urlUtils";
 import AnalysisService from "../services/AnalysisService";
 import ResultRangeSlider from "./ResultRangeSlider";
 import RequestDetails from "./RequestDetails";
+import BestPractices from "./BestPractices";
 
 /**
  * @typedef ResultRelativeTextData
@@ -120,7 +121,8 @@ class SiteAnalysisResult {
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultsFromSelect();
 		this._updatetResultRangeSliders(pageResultData);
-		this._loadRequestDetails(analysisId, pageResultData.host);
+		await this._loadRequestDetails(analysisId, pageResultData.host);
+		await this._loadBestPractices(analysisId);
 	}
 
 	/**
@@ -136,26 +138,66 @@ class SiteAnalysisResult {
 		const requestDetails = await AnalysisService.fetchAnalysisRequestsById(analysisId);
 		if (!requestDetails || !requestDetails.items || !requestDetails.items.length) return;
 
+		const content = this._insertResultPanel("request-details", "wg-result-requests wgi-result-requests-request-details section-theme-dark");
+		if (!content) return;
+
+		new RequestDetails(content, requestDetails, { host, locale: this.locale });
+	}
+
+	/**
+	 * Fetch and display best-practices results when they exist for this analysis.
+	 * Older results without collected practices stay unchanged.
+	 *
+	 * @param {string|null} analysisId
+	 */
+	async _loadBestPractices(analysisId) {
+		if (!analysisId) return;
+
+		const bestPractices = await AnalysisService.fetchAnalysisBestPracticesById(analysisId);
+		if (!bestPractices || !bestPractices.results || !bestPractices.results.length) return;
+
+		const content = this._insertResultPanel(
+			"best-practices",
+			"wg-result-best-practices wgi-result-best-practices-best-practices section-theme-dark",
+			"#request-details",
+		);
+		if (!content) return;
+
+		new BestPractices(content, bestPractices, { locale: this.locale });
+	}
+
+	/**
+	 * Insert a dynamic result panel after a preferred sibling (or #details).
+	 *
+	 * @param {string} id
+	 * @param {string} className
+	 * @param {string} [preferAfterSelector]
+	 * @returns {HTMLElement|null} content container for the panel component
+	 */
+	_insertResultPanel(id, className, preferAfterSelector) {
+		const preferredSibling = preferAfterSelector ? this.el.querySelector(preferAfterSelector) : null;
 		const detailsWidget = this.el.querySelector("#details");
 		const infoContainer = this.el.querySelector(".info-container");
-		if (!detailsWidget && !infoContainer) return;
+		if (!preferredSibling && !detailsWidget && !infoContainer) return null;
 
 		const widget = document.createElement("div");
-		widget.id = "request-details";
-		widget.className = "wg-result-requests wgi-result-requests-request-details section-theme-dark";
+		widget.id = id;
+		widget.className = className;
 		const inner = document.createElement("section");
 		inner.className = "center-l box-l --s2p0";
 		const content = document.createElement("div");
 		inner.appendChild(content);
 		widget.appendChild(inner);
 
-		if (detailsWidget) {
+		if (preferredSibling) {
+			preferredSibling.after(widget);
+		} else if (detailsWidget) {
 			detailsWidget.after(widget);
 		} else {
 			infoContainer.appendChild(widget);
 		}
 
-		new RequestDetails(content, requestDetails, { host, locale: this.locale });
+		return content;
 	}
 
 	/**

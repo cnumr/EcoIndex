@@ -82,6 +82,21 @@ class AnalysisService {
 	}
 
 	/**
+	 * Fetch best-practices results for an analysis.
+	 * Returns `null` when results are unavailable (older analyses, 204, network error).
+	 *
+	 * @param {string} id
+	 * @returns {Promise<object|null>}
+	 */
+	async fetchAnalysisBestPracticesById(id) {
+		try {
+			return await ApiService.fetchAnalysisBestPracticesById(id);
+		} catch {
+			return null;
+		}
+	}
+
+	/**
 	 * 
 	 * @param {string} id
 	 * @param {string} resultPagePrefix

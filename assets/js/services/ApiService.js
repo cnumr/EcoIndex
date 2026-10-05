@@ -23,6 +23,7 @@ class ApiService {
 					url,
 				},
 				include_requests_detail: true,
+				include_best_practices: true,
 			},
 		};
 
@@ -96,6 +97,24 @@ class ApiService {
 	async fetchAnalysisRequestsById(id) {
 		try {
 			return await this.#fetchApi("ecoindexes/" + id + "/requests", {
+				method: "get",
+				abort: false,
+			});
+		} catch {
+			return null;
+		}
+	}
+
+	/**
+	 * Request the best-practices results of an analysis by its id.
+	 * Returns `null` when the analysis exists but practices were not collected.
+	 *
+	 * @param {string} id Analysis Id
+	 * @returns {Promise<object|null>}
+	 */
+	async fetchAnalysisBestPracticesById(id) {
+		try {
+			return await this.#fetchApi("ecoindexes/" + id + "/best-practices", {
 				method: "get",
 				abort: false,
 			});
