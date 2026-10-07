@@ -250,6 +250,8 @@ More information on page [How it works](/how-it-works/)."""
 	other = "Network"
 [BestPracticesCategoryUserDevice]
 	other = "User device"
+[BestPracticesCategoryDatacenter]
+	other = "Datacenter"
 [BestPracticesCategoryOther]
 	other = "Other"
 [BestPracticesValue]

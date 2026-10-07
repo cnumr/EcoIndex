@@ -250,6 +250,8 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "Réseau"
 [BestPracticesCategoryUserDevice]
 	other = "Appareil utilisateur"
+[BestPracticesCategoryDatacenter]
+	other = "Datacenter"
 [BestPracticesCategoryOther]
 	other = "Autre"
 [BestPracticesValue]
