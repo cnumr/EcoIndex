@@ -216,7 +216,7 @@ class BestPractices {
 	 */
 	_renderCategoryGroup(group) {
 		const expanded =
-			this.categoryExpanded[group.key] != null ? this.categoryExpanded[group.key] : true;
+			this.categoryExpanded[group.key] != null ? this.categoryExpanded[group.key] : false;
 		this.categoryExpanded[group.key] = expanded;
 
 		const contentId = `best-practices-category-${group.key}`;
