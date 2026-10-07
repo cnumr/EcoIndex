@@ -79,7 +79,7 @@
 Analysis in progress  
 for “##URL##”"""
 [AnalysisRetrieval]
-	other = "Récupération de l'analyse"
+	other = "Retrieving the analysis"
 [AnalysisQueueNext]
 	other = "You are next in the queue."
 [AnalysisQueueWaiting]
@@ -87,7 +87,7 @@ for “##URL##”"""
 [AnalysisQueueWaitingOne]
 	other = "There is 1 analysis ahead of yours."
 [AnalysisQueueRunning]
-	other = "It's your turn, the analysis is running."
+	other = "It’s your turn, the analysis is running."
 [AnalysisQueueBusy]
 	other = "##COUNT## analyses currently running."
 [AnalysisQueueBusyOne]
