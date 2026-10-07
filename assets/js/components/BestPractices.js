@@ -1,7 +1,7 @@
 import Collapse from "./Collapse";
 
 const STATUS_ORDER = ["fail", "warn", "ok"];
-const CATEGORY_ORDER = ["network", "user-device", "other"];
+const CATEGORY_ORDER = ["network", "user-device", "datacenter", "other"];
 
 const I18N = {
 	BestPracticesTitle: `{{- i18n "BestPracticesTitle" -}}`,
@@ -14,6 +14,7 @@ const I18N = {
 	BestPracticesStatusFail: `{{- i18n "BestPracticesStatusFail" -}}`,
 	BestPracticesCategoryNetwork: `{{- i18n "BestPracticesCategoryNetwork" -}}`,
 	BestPracticesCategoryUserDevice: `{{- i18n "BestPracticesCategoryUserDevice" -}}`,
+	BestPracticesCategoryDatacenter: `{{- i18n "BestPracticesCategoryDatacenter" -}}`,
 	BestPracticesCategoryOther: `{{- i18n "BestPracticesCategoryOther" -}}`,
 	BestPracticesValue: `{{- i18n "BestPracticesValue" -}}`,
 	BestPracticesThresholds: `{{- i18n "BestPracticesThresholds" -}}`,
@@ -215,7 +216,7 @@ class BestPractices {
 	 */
 	_renderCategoryGroup(group) {
 		const expanded =
-			this.categoryExpanded[group.key] != null ? this.categoryExpanded[group.key] : true;
+			this.categoryExpanded[group.key] != null ? this.categoryExpanded[group.key] : false;
 		this.categoryExpanded[group.key] = expanded;
 
 		const contentId = `best-practices-category-${group.key}`;
@@ -422,6 +423,7 @@ class BestPractices {
 		const key = String(or(category, "other")).toLowerCase();
 		if (key === "user-device" || key === "user_device" || key === "userdevice") return "user-device";
 		if (key === "network") return "network";
+		if (key === "datacenter" || key === "data-center" || key === "data_center") return "datacenter";
 		return "other";
 	}
 
@@ -438,6 +440,7 @@ class BestPractices {
 		const labels = {
 			network: t("BestPracticesCategoryNetwork"),
 			"user-device": t("BestPracticesCategoryUserDevice"),
+			datacenter: t("BestPracticesCategoryDatacenter"),
 			other: t("BestPracticesCategoryOther"),
 		};
 		return or(labels[category], category);
