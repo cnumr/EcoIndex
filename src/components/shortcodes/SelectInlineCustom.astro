@@ -1,0 +1,15 @@
+---
+interface Props {
+	options?: (string | number)[];
+}
+
+const { options = [1000, 100, 10] } = Astro.props;
+---
+
+<span class="select-inline-custom">
+	<select>
+		{options.map((option) => (
+			<option>{option}</option>
+		))}
+	</select>
+</span>

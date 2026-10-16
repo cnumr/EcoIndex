@@ -1,0 +1,69 @@
+---
+import type { Locale } from '../../config/site';
+import { resultTextData } from '../../config/result-text';
+import { t } from '../../i18n';
+import Collapse from '../shortcodes/Collapse.astro';
+import ResultLoadRange from '../shortcodes/ResultLoadRange.astro';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const params = resultTextData[locale].resultParametersMinMaxValues;
+---
+
+<section class="center-l box-l --s2p0">
+	<div class="stack-l with-sidebar-l --s3">
+		<div>
+			<div class="info_2_columns_col1 stack-l">
+				<h2 id="score-details">{t(locale, 'ScoreDetails')}</h2>
+				<p class="font-size:1">{t(locale, 'AboutScoreDetails')}</p>
+				<hr class="small" />
+				<div class="info-collapse">
+					<Collapse
+						label={t(locale, 'ResultDetailsCalculationExplainedLabel')}
+						content={t(locale, 'ResultDetailsCalculationExplainedContent')}
+						moreHref={t(locale, 'HowDoesItWorksURL')}
+						moreLabel={t(locale, 'HowDoesItWorksTitle')}
+					/>
+				</div>
+			</div>
+			<div class="info_2_columns_col2 stack-l center-l --s3">
+				<ResultLoadRange
+					locale={locale}
+					title={t(locale, 'ResultDetailsResultWeightLabel')}
+					icon="weight"
+					rangeValueMin={String(params.size.min)}
+					rangeValueMax={String(params.size.max)}
+					rangeValueTarget={String(params.size.target)}
+					units={t(locale, 'ResultDetailsResultWeightUnits')}
+					unitsLegend={t(locale, 'ResultDetailsResultWeightUnitsLegend')}
+					dataValueKey="size"
+				/>
+				<ResultLoadRange
+					locale={locale}
+					title={t(locale, 'ResultDetailsResultComplexityLabel')}
+					icon="complexity"
+					rangeValueMin={String(params.nodes.min)}
+					rangeValueMax={String(params.nodes.max)}
+					rangeValueTarget={String(params.nodes.target)}
+					units={t(locale, 'ResultDetailsResultComplexityUnits')}
+					unitsLegend={t(locale, 'ResultDetailsResultComplexityUnitsLegend')}
+					dataValueKey="nodes"
+				/>
+				<ResultLoadRange
+					locale={locale}
+					title={t(locale, 'ResultDetailsResultRequestsLabel')}
+					icon="request"
+					rangeValueMin={String(params.requests.min)}
+					rangeValueMax={String(params.requests.max)}
+					rangeValueTarget={String(params.requests.target)}
+					units={t(locale, 'ResultDetailsResultRequestsUnits')}
+					unitsLegend={t(locale, 'ResultDetailsResultRequestsUnitsLegend')}
+					dataValueKey="requests"
+				/>
+			</div>
+		</div>
+	</div>
+</section>

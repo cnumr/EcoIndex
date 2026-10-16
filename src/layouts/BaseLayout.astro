@@ -1,0 +1,77 @@
+---
+import type { Locale } from '../config/site';
+import { locales } from '../config/site';
+import { getMessages, t } from '../i18n';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	locale: Locale;
+	title: string;
+	description?: string;
+	decoType?: string;
+	customClass?: string;
+	alternatePath?: string;
+}
+
+const { locale, title, description, decoType, customClass, alternatePath } = Astro.props;
+const siteDescription = description ?? locales[locale].description;
+const currentPath = Astro.url.pathname;
+const i18nMessages = getMessages(locale);
+const noJsMessage = t(locale, 'NoJSMessage');
+const skipLinkLabel = t(locale, 'GoToContent');
+const stackClass = ['stack-l', '--s3', customClass].filter(Boolean).join(' ');
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content={siteDescription} />
+		<meta name="theme-color" content="#007e5f" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>"
+		/>
+		<title>{title} | EcoIndex</title>
+		<script define:vars={{ i18nMessages, locale }}>
+			window.__i18n = i18nMessages;
+			window.__locale = locale;
+		</script>
+		<script is:inline>
+			document.documentElement.classList.add('js-ok');
+		</script>
+	</head>
+	<body>
+		<a href="#main" class="skip-link">
+			{skipLinkLabel}
+		</a>
+
+		<Header
+			locale={locale}
+			currentPath={currentPath}
+			decoType={decoType}
+			alternatePath={alternatePath}
+		/>
+
+		<main id="main" role="main" tabindex="-1">
+			<noscript>
+				<div
+					class="top-warning"
+					set:html={noJsMessage.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}
+				/>
+			</noscript>
+			<div class={stackClass}>
+				<slot />
+			</div>
+		</main>
+
+		<Footer locale={locale} currentPath={currentPath} />
+
+		<script>
+			import '../scripts/index';
+		</script>
+	</body>
+</html>

@@ -1,0 +1,7 @@
+/**
+ * Revert Every Layout CSS property changes since version used in goodimpact-hugo/modules/base-structure v0.0.0-20221129171738-d8c79a5e4c78
+ */
+.box-l.--s2p0 {
+	/* use value from .box-l */
+	padding: var(--s1, 1.3rem);
+}

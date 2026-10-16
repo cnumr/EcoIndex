@@ -1,0 +1,15 @@
+/**
+ * EcoIndex grade colors — GENERATED FILE, do not edit by hand.
+ * Source: ecoindex_reference (grades[].color)
+ * Regenerate: bun run reference:sync
+ */
+
+:root {
+	--color-grade-A: #349A47;
+	--color-grade-B: #51B84B;
+	--color-grade-C: #CADB2A;
+	--color-grade-D: #F6EB15;
+	--color-grade-E: #FECD06;
+	--color-grade-F: #F99839;
+	--color-grade-G: #ED2124;
+}

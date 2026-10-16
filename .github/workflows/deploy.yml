@@ -1,0 +1,42 @@
+name: Deploy preproduction
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build and deploy to preproduction
+    runs-on: ubuntu-latest
+    environment:
+      name: preproduction
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup mise
+        uses: jdx/mise-action@v2
+
+      - name: Install runtimes
+        run: mise install
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Check ecoindex_reference sync
+        run: bun run reference:check
+
+      - name: Build
+        run: bun run build
+
+      - name: Install SSH Key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: |
+          echo "Deploying to preproduction" >> "$GITHUB_STEP_SUMMARY"
+          rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './dist/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}

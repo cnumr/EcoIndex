@@ -1,0 +1,50 @@
+---
+interface Props {
+	label: string;
+	content: string;
+	knowMore?: string;
+	moreHref?: string;
+	moreLabel?: string;
+}
+
+const { label, content, knowMore, moreHref, moreLabel } = Astro.props;
+const randomId = Math.random().toString(36).slice(2, 8);
+---
+
+<div class="js-collapse">
+	<button
+		class="collapse-button js-collapse-button button-default font-weight:bold text-align:start"
+		aria-label={label}
+		aria-expanded="false"
+		aria-describedby={`collapse-${randomId}`}
+		type="button"
+	>
+		<span class="text-decoration:underline">{label}</span>&nbsp;
+		<span>
+			<svg aria-hidden="true">
+				<use href="#icon-anchor-down"></use>
+			</svg>
+		</span>
+	</button>
+	<div
+		class="collapse-content js-collapse-content display:none"
+		id={`collapse-${randomId}`}
+		role="region"
+	>
+		<div set:html={content} />
+		{moreHref && moreLabel && (
+			<>
+				<hr class="x-small" />
+				{knowMore && <span set:html={knowMore} />}
+				<a class="content-link" href={moreHref}>
+					{moreLabel}
+					<span>
+						<svg aria-hidden="true">
+							<use href="#icon-anchor-down" />
+						</svg>
+					</span>
+				</a>
+			</>
+		)}
+	</div>
+</div>

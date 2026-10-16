@@ -1,0 +1,31 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+
+interface Props {
+	locale?: Locale;
+	action?: string;
+}
+
+const locale = (Astro.props.locale ?? Astro.props['locale'] ?? 'fr') as Locale;
+const action = Astro.props.action ?? (locale === 'fr' ? '/chargement' : '/en/loading');
+---
+
+<form action={action} method="post" class="stack-l js-analysis-submit-form">
+	<label for="siteurl">{t(locale, 'EcoIndexFormInputLabel')}</label>
+	<div class="with-sidebar-l --right-side --p75">
+		<div>
+			<input
+				id="siteurl"
+				name="siteurl"
+				placeholder={t(locale, 'EcoIndexFormPlaceholder')}
+				required
+				title={t(locale, 'EcoIndexFormInputInvalid')}
+				aria-invalid="false"
+			/>
+			<div>
+				<input type="submit" value={t(locale, 'EcoIndexFormSubmitText')} />
+			</div>
+		</div>
+	</div>
+</form>

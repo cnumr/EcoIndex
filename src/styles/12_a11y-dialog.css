@@ -1,0 +1,72 @@
+/*! purgecss start ignore */
+.dialog-container {
+	overflow: auto;
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.dialog-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: var(--color-overlay-bg);
+	animation: fade-in 200ms both;
+}
+
+.dialog-content {
+	background-color: var(--color-primary);
+	margin: auto;
+	padding: var(--s1);
+	position: relative;
+	animation: fade-in 400ms 200ms both, slide-up 400ms 200ms both;
+	max-width: calc(100% - 2 * var(--s1));
+	width: var(--measure);
+	border-radius: 2px;
+}
+
+#dialog-title {
+	font-size: var(--s1);
+}
+
+.dialog-queue-status {
+	text-align: center;
+	font-size: var(--s0);
+	min-height: 1.5em;
+}
+
+.dialog-buttons {
+	width: 100%;
+	text-align: right;
+}
+.dialog-buttons > * {
+	margin: auto;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(10%);
+	}
+}
+
+@media (min-width: 30rem) {
+	.dialog-content {
+		padding: var(--s4);
+	}
+	#dialog-title {
+		font-size: var(--s3);
+	}
+}
+/*! purgecss end ignore */

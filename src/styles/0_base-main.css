@@ -1,0 +1,220 @@
+body {
+	font-size: calc(0.1vw + 1em);
+	font-family: var(--font-plain);
+}
+
+/* Compatibility with older browsers */
+footer,
+header,
+main,
+nav {
+	display: block;
+}
+
+/* Basic border on form elements */
+button,
+input,
+select,
+textarea {
+	border-width: var(--border-thin);
+	max-width: 100%;
+}
+
+/**
+	Note: when this stylesheet is loaded ".wc" class is not yet added to web components
+	That's why here we use "*". Also, check <noscript> tag used in css.html,
+*/
+*:not(:defined) {
+	opacity: 0;
+}
+
+@media (max-width: 30rem) {
+	* {
+		hyphens: auto;
+		word-break: break-word;
+	}
+}
+
+/**
+	At this point, "js-ok" class has been added by critical JS and "wc" class is added to all web components
+*/
+.js-ok .wc:defined {
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* Focus */
+:focus {
+	outline: var(--border-focus) var(--focus-style) var(--color-focus-dark);
+	transition-property: outline-width;
+	transition-duration: 0.3s;
+}
+:focus-within {
+	z-index: 1;
+}
+[tabindex="-1"]:focus {
+	outline: none;
+}
+
+/* High contrast mode fixes */
+button,
+pre {
+	outline: var(--border-thin) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/* Media */
+img,
+[role="img"] {
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+figcaption,
+.figcaption {
+	margin-top: var(--s-1);
+	font-size: var(--s-1);
+}
+
+/* Code */
+code {
+	font-family: var(--font-mono);
+}
+pre code {
+	color: var(--color-light);
+	background-color: var(--color-dark);
+	display: block;
+	padding: var(--s1);
+	overflow-x: auto;
+}
+
+/* Keyboard styles */
+kbd {
+	line-height: 1;
+	font-size: var(--s-1);
+	color: var(--color-light);
+	background-color: var(--color-dark);
+	padding: 0.125em 0.5em;
+	border-radius: 0.125em;
+}
+
+/* Tables */
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+table code {
+	white-space: nowrap;
+}
+th,
+td {
+	border-width: var(--border-thin);
+	padding: var(--s-1);
+	text-align: left;
+}
+td:first-child {
+	font-weight: var(--font-weight-bold);
+}
+.main-props-table {
+	overflow-x: auto;
+}
+.main-props-table td:last-child {
+	font-size: var(--s-1);
+}
+
+/* Main link */
+[href="#main"] {
+	display: inline-block;
+	position: absolute;
+	top: -10rem;
+}
+[href="#main"]:focus {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+	line-height: var(--line-height-small);
+	font-family: var(--font-special);
+	font-weight: var(--font-weight-bold);
+}
+h1,
+.h1 {
+	font-size: var(--s4);
+}
+h2,
+.h2 {
+	font-size: var(--s3);
+}
+h3,
+.h3 {
+	font-size: var(--s2);
+}
+h4,
+.h4 {
+	font-size: var(--s1);
+}
+
+p {
+	hyphens: auto;
+}
+
+ul:not([class]) li {
+	list-style-type: var(--list-style-type);
+}
+ul:not([class]) ul:not([class]) > li {
+	margin-top: var(--s-4);
+}
+ul:not([class]) > li + li {
+	margin-top: var(--s-1);
+}
+
+ol[class],
+ul[class] {
+	margin: 0;
+	padding-left: 0;
+}
+
+ul[class] li {
+	list-style: none;
+}
+
+ul:not([class]) li {
+	list-style-position: inside;
+}
+
+hr {
+	border-top-width: var(--border-thin);
+	margin-top: var(--border-thin);
+	margin-bottom: var(--border-thin);
+	margin-left: 0;
+	margin-right: 0;
+}
+
+form label,
+form button {
+	display: block;
+	width: fit-content;
+}
+form button {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1#typography-style-guide {
+	font-size: var(--s5);
+	font-weight: normal;
+	padding: var(--s5) 0;
+}

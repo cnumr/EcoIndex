@@ -1,0 +1,13 @@
+---
+interface Props {
+	minCellWidth?: string;
+	class?: string;
+}
+
+const { minCellWidth, class: className } = Astro.props;
+const style = minCellWidth ? `--min-cell-width:${minCellWidth}px;` : undefined;
+---
+
+<div class:list={['grid-l', className]} style={style}>
+	<slot />
+</div>

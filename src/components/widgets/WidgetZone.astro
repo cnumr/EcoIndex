@@ -1,0 +1,65 @@
+---
+import type { Locale } from '../../config/site';
+import { getContainerClass, getWidgetClass } from '../../lib/content';
+import { getWidgetLoader, getWidgetMdxComponents } from '../../lib/widget-context';
+import BadgeWidget from './BadgeWidget.astro';
+import TextWidget from './TextWidget.astro';
+import ResultIntroWidget from './ResultIntroWidget.astro';
+import ResultAppreciationWidget from './ResultAppreciationWidget.astro';
+import ResultEmpreinteWidget from './ResultEmpreinteWidget.astro';
+import ResultDetailsScoreWidget from './ResultDetailsScoreWidget.astro';
+
+interface Props {
+	zone?: string;
+	type?: string;
+}
+
+const { zone, type: containerType } = Astro.props;
+const widgets = getWidgetLoader()(zone);
+const widgetMdxComponents = getWidgetMdxComponents();
+const containerClass = getContainerClass(containerType);
+const locale: Locale = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
+---
+
+<div class={containerClass}>
+	{widgets.map(({ entry, WidgetContent }) => {
+		const widgetType = (entry.data.widget as string) ?? 'text';
+		const hashId =
+			(entry.data.id as string) ?? entry.id.split('/').pop()?.replace(/^_/, '') ?? 'widget';
+		const widgetClass = getWidgetClass(
+			widgetType,
+			hashId,
+			entry.data.widget_class as string | undefined,
+		);
+
+		return (
+			<div id={hashId} class={widgetClass}>
+				{widgetType === 'text' ? (
+					<TextWidget>
+						<WidgetContent components={widgetMdxComponents} />
+					</TextWidget>
+				) : widgetType === 'badge' ? (
+					<BadgeWidget>
+						<WidgetContent components={widgetMdxComponents} />
+					</BadgeWidget>
+				) : widgetType === 'result-intro' ? (
+					<ResultIntroWidget locale={locale}>
+						<WidgetContent components={widgetMdxComponents} />
+					</ResultIntroWidget>
+				) : widgetType === 'result-appreciation' ? (
+					<ResultAppreciationWidget locale={locale} />
+				) : widgetType === 'result-empreinte' ? (
+					<ResultEmpreinteWidget
+						locale={locale}
+						footprintIntroText={entry.data.footprint_intro_text as string | undefined}
+						collapseInfo={entry.data.collapse_info as string | undefined}
+					/>
+				) : widgetType === 'result-details-score' ? (
+					<ResultDetailsScoreWidget locale={locale} />
+				) : (
+					<WidgetContent components={widgetMdxComponents} />
+				)}
+			</div>
+		);
+	})}
+</div>

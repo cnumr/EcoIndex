@@ -1,0 +1,24 @@
+---
+import SectionPage from '../../components/SectionPage.astro';
+
+export function getStaticPaths() {
+	const slugs = [
+		'how-it-works',
+		'ecodesign',
+		'about',
+		'join-us',
+		'legal',
+		'privacy',
+		'result',
+		'error',
+		'stop-analysis',
+		'404',
+	];
+
+	return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<SectionPage locale="en" slug={slug} />

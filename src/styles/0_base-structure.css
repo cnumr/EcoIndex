@@ -1,0 +1,125 @@
+/* Base structure tokens (from goodimpact-hugo base-structure variables.css) */
+
+:root {
+	/* Fonts */
+	--font-plain: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+		'Cantarell', 'Fira Sans', 'Droid Sans', 'San Francisco', 'Helvetica Neue', sans-serif;
+	--font-special: var(--font-plain);
+	--font-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+		'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
+		'Courier New', Courier, monospace;
+
+	--list-style-type: '\2013\00a0';
+
+	/* Colors (overridden by 0_variables.css for EcoIndex palette) */
+	--color-dark: hsl(0, 0%, 2%);
+	--color-darkish: hsl(0, 0%, 25%);
+	--color-lightish: hsl(0, 0%, 90%);
+	--color-light: hsl(0, 0%, 98%);
+	--color-lightest: white;
+	--color-mid: hsl(0, 0%, 50%);
+	--color-highlight-dark: var(--color-darkish);
+	--color-highlight-light: var(--color-lightish);
+	--color-focus-dark: hsl(181, 90%, 36%);
+	--color-focus-light: hsl(181, 90%, 80%);
+
+	--decoration-highlight: solid;
+
+	--ratio: 1.3;
+
+	--s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+	--s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+	--s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
+	--s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
+	--s-1: calc(var(--s0) / var(--ratio));
+
+	--s0: 1rem;
+	--s1: calc(var(--s0) * var(--ratio));
+	--s2: calc(var(--s0) * var(--ratio) * var(--ratio));
+	--s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
+	--s4: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+	--s5: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+
+	--p0: 1vw;
+	--p1: calc(var(--p0) * var(--ratio));
+	--p2: calc(var(--p0) * var(--ratio) * var(--ratio));
+	--p3: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio));
+	--p4: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+	--p5: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+
+	--s0p0: calc(var(--s0) + var(--p0));
+	--s0p1: calc(var(--s0) + var(--p1));
+	--s0p2: calc(var(--s0) + var(--p2));
+	--s0p3: calc(var(--s0) + var(--p3));
+	--s0p4: calc(var(--s0) + var(--p4));
+	--s0p5: calc(var(--s0) + var(--p5));
+
+	--s1p0: calc(var(--s1) + var(--p0));
+	--s1p1: calc(var(--s1) + var(--p1));
+	--s1p2: calc(var(--s1) + var(--p2));
+	--s1p3: calc(var(--s1) + var(--p3));
+	--s1p4: calc(var(--s1) + var(--p4));
+	--s1p5: calc(var(--s1) + var(--p5));
+
+	--s2p0: calc(var(--s2) + var(--p0));
+	--s2p1: calc(var(--s2) + var(--p1));
+	--s2p2: calc(var(--s2) + var(--p2));
+	--s2p3: calc(var(--s2) + var(--p3));
+	--s2p4: calc(var(--s2) + var(--p4));
+	--s2p5: calc(var(--s2) + var(--p5));
+
+	--s3p0: calc(var(--s3) + var(--p0));
+	--s3p1: calc(var(--s3) + var(--p1));
+	--s3p2: calc(var(--s3) + var(--p2));
+	--s3p3: calc(var(--s3) + var(--p3));
+	--s3p4: calc(var(--s3) + var(--p4));
+	--s3p5: calc(var(--s3) + var(--p5));
+
+	--s4p0: calc(var(--s4) + var(--p0));
+	--s4p1: calc(var(--s4) + var(--p1));
+	--s4p2: calc(var(--s4) + var(--p2));
+	--s4p3: calc(var(--s4) + var(--p3));
+	--s4p4: calc(var(--s4) + var(--p4));
+	--s4p5: calc(var(--s4) + var(--p5));
+
+	--s5p0: calc(var(--s5) + var(--p0));
+	--s5p1: calc(var(--s5) + var(--p1));
+	--s5p2: calc(var(--s5) + var(--p2));
+	--s5p3: calc(var(--s5) + var(--p3));
+	--s5p4: calc(var(--s5) + var(--p4));
+	--s5p5: calc(var(--s5) + var(--p5));
+
+	--measure: 65ch;
+
+	--line-height: var(--ratio);
+	--line-height-small: normal;
+
+	--border-extra-thin: 1px;
+	--border-thin: 2px;
+	--border-medium: 4px;
+	--border-thick: var(--s-3);
+	--border-focus: var(--border-thick);
+	--focus-style: solid;
+
+	--font-weight-thin: 100;
+	--font-weight-normal: normal;
+	--font-weight-bold: 600;
+	--font-weight-super-bold: 900;
+
+	--spinner-size: 3rem;
+	--spinner-stroke-width: 0.25rem;
+}
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+}
+
+.icon-l {
+	height: 1cap;
+	width: 1cap;
+}
+
+.with-icon-l .icon-l {
+	margin-right: var(--s0, 1rem);
+}

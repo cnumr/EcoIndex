@@ -1,0 +1,80 @@
+---
+import type { Locale } from '../../config/site';
+import { footerMenu } from '../../config/site';
+import { t } from '../../i18n';
+
+interface Props {
+	locale: Locale;
+	currentPath: string;
+}
+
+const { locale, currentPath } = Astro.props;
+const items = footerMenu[locale].sort((a, b) => a.weight - b.weight);
+
+function isActive(href: string): boolean {
+	return currentPath.startsWith(href);
+}
+---
+
+<div class="footer-container">
+	<div>
+		<footer role="contentinfo" class="wrapper">
+			<div class="cluster-l">
+				<nav role="navigation">
+					<div class="cluster-l">
+						<ul>
+							{items.map((item) => (
+								<li>
+									{!item.newtab && isActive(item.href) ? (
+										<span aria-current="page">{item.label}</span>
+									) : (
+										<a
+											href={item.href}
+											{...(item.newtab
+												? { target: '_blank', rel: 'noopener' }
+												: {})}
+										>
+											{item.label}
+										</a>
+									)}
+								</li>
+							))}
+						</ul>
+					</div>
+					<figure class="enlarge-link">
+						<a
+							href="https://hodi.host/?utm_source=ecoindex&utm_medium=referral&utm_content=footer"
+							target="_blank"
+							rel="noopener"
+							title={`${t(locale, 'Hodi')} – ${t(locale, 'NewWindow')}`}
+						>
+							<img
+								src="/images/logo-hodi.svg"
+								width="100"
+								height="50"
+								alt={t(locale, 'Hodi')}
+							/>
+						</a>
+						<figcaption>{t(locale, 'Hodi')}</figcaption>
+					</figure>
+					<figure class="enlarge-link">
+						<a
+							href="https://asso.greenit.fr/"
+							target="_blank"
+							rel="noopener"
+							title={`${t(locale, 'GreenITAssociationLong')} – ${t(locale, 'NewWindow')}`}
+						>
+							<img
+								src="/images/logo-greenit.svg"
+								width="126"
+								height="50"
+								alt={t(locale, 'GreenITAssociationLong')}
+							/>
+						</a>
+						<figcaption>{t(locale, 'GreenITAssociation')}</figcaption>
+					</figure>
+				</nav>
+			</div>
+		</footer>
+	</div>
+</div>

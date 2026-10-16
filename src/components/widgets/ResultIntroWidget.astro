@@ -1,0 +1,56 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+
+interface Props {
+	locale: Locale;
+}
+
+const { locale } = Astro.props;
+const homeHref = locale === 'fr' ? '/' : '/en/';
+---
+
+<div class="hero hero--space-1 box-l center-l">
+	<section class="stack-l --s4">
+		<div class="switcher-l">
+			<div class="align-items:center flex-wrap:nowrap">
+				<div>
+					<a href={homeHref} class="button-default font-size:1">
+						<svg aria-hidden="true">
+							<use href="#icon-arrow-left"></use>
+						</svg>
+						&nbsp;{t(locale, 'Back')}
+					</a>
+				</div>
+
+				<div class="display:flex justify-content:end text-align:end">
+					<a href={homeHref} class="button-default js-button-retest">
+						<span
+							class="icon-square-wrapper bg-darkish"
+							aria-label={t(locale, 'ReTest')}
+						>
+							<svg aria-hidden="true">
+								<use href="#icon-refresh"></use>
+							</svg>
+						</span>
+						&nbsp;<span class="hide-mobile">{t(locale, 'ReTest')}</span>
+					</a>
+					<a id="share-btn" href={homeHref} role="button" class="button-default">
+						<span
+							class="icon-square-wrapper bg-darkish"
+							aria-label={t(locale, 'Share')}
+						>
+							<svg aria-hidden="true">
+								<use href="#icon-share"></use>
+							</svg>
+						</span>
+						&nbsp;<span class="hide-mobile">{t(locale, 'Share')}</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="stack-l">
+			<slot />
+		</div>
+	</section>
+</div>

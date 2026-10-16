@@ -1,0 +1,29 @@
+---
+interface Props {
+	icon?: string;
+	title?: string;
+	moreInfo?: string;
+}
+
+const { icon, title, moreInfo } = Astro.props;
+---
+
+<div class="box-l em-card">
+	{icon && (
+		<svg aria-hidden="true">
+			<use href={`#icon-${icon}`} />
+		</svg>
+	)}
+	{title && <p class="h4 bold" set:html={title} />}
+	<div>
+		<slot />
+	</div>
+	{moreInfo && (
+		<p class="em-card-more-info">
+			<span class="info-badge icon-square-wrapper bg-darkish">
+				<span>?</span>
+			</span>
+			<span set:html={moreInfo} />
+		</p>
+	)}
+</div>

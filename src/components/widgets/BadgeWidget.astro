@@ -1,0 +1,64 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+
+const locale = (Astro.url.pathname.startsWith('/en') ? 'en' : 'fr') as Locale;
+---
+
+<div class="center-l box-l --s2p0">
+	<section class="stack-l">
+		<slot />
+		<div class="badge-integration js-badge-integration" hidden>
+			<div class="badge-integration-preview">
+				<a class="js-badge-preview-link" href="#" target="_blank" rel="noopener noreferrer">
+					<img
+						class="js-badge-preview-img"
+						alt={t(locale, 'BadgeAlt')}
+						width="108"
+						height="32"
+					/>
+				</a>
+			</div>
+			<div class="badge-integration-controls cluster-l">
+				<label>
+					{t(locale, 'BadgeThemeLabel')}
+					<span class="select-inline-custom">
+						<select class="js-badge-theme" name="badge-theme">
+							<option value="light" selected>
+								{t(locale, 'BadgeThemeLight')}
+							</option>
+							<option value="dark">{t(locale, 'BadgeThemeDark')}</option>
+						</select>
+					</span>
+				</label>
+				<label>
+					{t(locale, 'BadgeVersionLabel')}
+					<span class="select-inline-custom">
+						<select class="js-badge-version" name="badge-version">
+							<option value="static" selected>
+								{t(locale, 'BadgeVersionStatic')}
+							</option>
+							<option value="js">{t(locale, 'BadgeVersionJs')}</option>
+						</select>
+					</span>
+				</label>
+			</div>
+			<div class="badge-integration-snippet">
+				<code class="js-badge-snippet"></code>
+				<button type="button" class="js-badge-copy">
+					{t(locale, 'BadgeCopy')}
+				</button>
+			</div>
+			<p class="badge-integration-more">
+				{t(locale, 'BadgeLearnMore')}{' '}
+				<a
+					href="https://github.com/cnumr/ecoindex_badge"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					{t(locale, 'BadgeLearnMoreLink')}
+				</a>
+			</p>
+		</div>
+	</section>
+</div>

@@ -1,0 +1,14 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+
+const locale: Locale = Astro.url.pathname.startsWith('/en') ? 'en' : 'fr';
+---
+
+<img
+	src="/images/equation.svg"
+	width="368"
+	height="38"
+	alt={t(locale, 'EquationEcoIndex')}
+	loading="lazy"
+/>

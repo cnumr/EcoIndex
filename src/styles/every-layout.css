@@ -1,0 +1,495 @@
+/* Every Layout Pure CSS — https://gitlab.com/goodimpact/every-layout-css */
+
+/*
+The Stack
+See https://every-layout.dev/layouts/stack/
+
+Example:
+	<div class="stack-l --recursive --s2">
+		<div><!-- first level child --></div>
+		<div><!-- first level sibling --></div>
+		<div>
+			<div><!-- second level child --></div>
+			<div><!-- second level sibling --></div>
+		</div>
+	</div>
+*/
+
+.stack-l {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+.stack-l > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* Space between siblings. Default is var(--s1, 1.3rem) */
+.stack-l > * + * {
+	margin-top: var(--s1, 1.3rem);
+}
+.stack-l.--s2 > * + * {
+	margin-top: var(--s2, 1.69rem);
+}
+.stack-l.--s3 > * + * {
+	margin-top: var(--s3, 2.197rem);
+}
+.stack-l.--s4 > * + * {
+	margin-top: var(--s4, 2.8561rem);
+}
+.stack-l.--s5 > * + * {
+	margin-top: var(--s5, 3.7129rem);
+}
+
+/* Apply the spaces recursively */
+.stack-l.--recursive * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.stack-l.--recursive * + * {
+	margin-top: var(--s1, 1.3rem);
+}
+.stack-l.--recursive.--s2 * + * {
+	margin-top: var(--s2, 1.69rem);
+}
+.stack-l.--recursive.--s3 * + * {
+	margin-top: var(--s3, 2.197rem);
+}
+.stack-l.--recursive.--s4 * + * {
+	margin-top: var(--s4, 2.8561rem);
+}
+.stack-l.--recursive--.s5 * + * {
+	margin-top: var(--s5, 3.7129rem);
+}
+
+/* Split the stack after n elements (1 to 10) */
+.stack-l.--split-after-1:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-2:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-3:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-4:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-5:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-6:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-7:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-8:only-child {
+	height: 100%;
+}
+.stack-l.--split-after-9:only-child {
+	height: 100%;
+}
+
+.stack-l.--split-after-1 > :nth-child(1) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-2 > :nth-child(2) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-3 > :nth-child(3) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-4 > :nth-child(4) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-5 > :nth-child(5) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-6 > :nth-child(6) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-7 > :nth-child(7) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-8 > :nth-child(8) {
+	margin-bottom: auto;
+}
+.stack-l.--split-after-9 > :nth-child(9) {
+	margin-bottom: auto;
+}
+
+
+/*
+The Box
+See https://every-layout.dev/layouts/box/
+
+Example, a box with a header:
+	<article class="box-l">
+		<header class="box-l"></header>
+		<div class="box-l"></div>
+	</article>
+*/
+
+.box-l {
+	display: block;
+	padding: var(--s1, 1.3rem);
+	/* ↓ For high contrast mode */
+	outline: var(--border-thin, 2px) solid transparent;
+	outline-offset: calc(var(--border-thin) * -1);
+}
+
+.box-l.--s2p0 {
+	padding: var(--s2p0, calc(1.69rem + 1vw));
+}
+
+.box-l * {
+	color: inherit;
+}
+
+.box-l.--no-padding {
+	padding: 0;
+}
+
+
+/*
+The Center
+See https://every-layout.dev/layouts/center/
+
+Example:
+	<div class="box-l">
+		<div class="center-l">
+			<div class="stack-l">
+				<!-- Any flow content here (headings, paragraphs, etc) -->
+			</div>
+		</div>
+	</div>
+*/
+
+.center-l {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: var(--measure, 65ch);
+}
+
+/* Center text as well */
+.center-l.--and-text {
+	text-align: center;
+}
+
+/* Add gutters */
+.center-l.--gutters {
+	box-sizing: content-box;
+	padding-left: var(--s1, 1.3rem);
+	padding-right: var(--s1, 1.3rem);
+}
+
+/* Center child elements narrower than the max value */
+.center-l.--intrinsic {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+/*
+The Cluster
+See https://every-layout.dev/layouts/cluster/
+
+Warning! this layout needs an intermediary wrapper
+
+Example:
+	<div class="cluster-l">
+		<ul> <!-- ← intermediary wrapper with negative margin -->
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+*/
+
+.cluster-l > * {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: calc(var(--s1, 1.3rem) / 2 * -1) !important;
+}
+
+.cluster-l > * > * {
+	margin: calc(var(--s1, 1.3rem) / 2) !important;
+}
+
+/* No margin */
+.cluster-l.--no-margin > * {
+	margin: 0 !important;
+}
+
+.cluster-l.--no-margin > * > * {
+	margin: 0 !important;
+}
+
+/* Small margin */
+.cluster-l.--s-1 > * {
+	margin: calc(var(--s-1, 0.769rem) / 2 * -1) !important;
+}
+
+.cluster-l.--s-1 > * > * {
+	margin: calc(var(--s-1, 0.769rem) / 2) !important;
+}
+
+/* Horizontal alignment (justify-content): space-between */
+.cluster-l.--space-between > * {
+	justify-content: space-between;
+}
+
+/* Horizontal alignment (justify-content): flex-start */
+.cluster-l.--flex-start > * {
+	justify-content: flex-start;
+}
+
+/* Horizontal alignment (justify-content): flex-end */
+.cluster-l.--flex-end > * {
+	justify-content: flex-end;
+}
+
+
+/*
+The Cover
+See https://every-layout.dev/layouts/cover/
+
+Example:
+	<div class="cover-l">
+		<h1 class="cover-l__middle">Welcome!</h1>
+	</div>
+*/
+
+.cover-l {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: var(--s1, 1.3rem);
+}
+
+.cover-l > * {
+  margin-top: var(--s1, 1.3rem);
+  margin-bottom: var(--s1, 1.3rem);
+}
+
+.cover-l > :first-child:not(.cover-l__middle) {
+  margin-top: 0;
+}
+
+.cover-l > :last-child:not(.cover-l__middle) {
+  margin-bottom: 0;
+}
+
+.cover-l > .cover-l__middle {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+/*
+The Grid
+See https://every-layout.dev/layouts/grid/
+
+Example:
+	<div class="grid-l">
+		<div class="box-l">
+			<div class="stack-l">
+				<!-- card content -->
+			</div>
+		</div>
+		<div class="box-l">
+			<div class="stack-l">
+				<!-- card content -->
+			</div>
+		</div>
+		<div class="box-l">
+			<div class="stack-l">
+				<!-- card content -->
+			</div>
+		</div>
+		<div class="box-l">
+			<div class="stack-l">
+				<!-- card content -->
+			</div>
+		</div>
+		<!-- etc -->
+	</div>
+*/
+
+@supports (display: grid) {
+	.grid-l {
+		display: grid;
+		grid-gap: var(--s1);
+	}
+}
+
+@supports (display: grid) and (width: min(var(--min-cell-width, 250px), 100%)) {
+	.grid-l {
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(var(--min-cell-width, 250px), 100%), 1fr)
+		);
+	}
+}
+
+
+/*
+The Icon
+See https://every-layout.dev/layouts/icon/
+
+Info: this layout could need a parent container (.with-icon-l)
+
+Example:
+	<button>
+		<div class="icon-l" space="0.5em">
+			<svg>
+				<use href="/images/icons/icons.svg#cross"></use>
+			</svg>
+			Close
+		</div>
+	</button>
+*/
+
+.with-icon-l {
+	display: inline-flex;
+	align-items: baseline;
+}
+
+.icon-l {
+	height: 0.75em;
+	height: 1cap;
+	width: 0.75em;
+	width: 1cap;
+}
+
+.with-icon-l .icon-l {
+	margin-right: var(--s0, 1rem);
+}
+
+
+/*
+The Sidebar
+See https://every-layout.dev/layouts/sidebar/
+
+Warning! this layout needs an intermediary wrapper
+
+Example:
+	<div class="with-sidebar-l">
+		<div>
+			<div><!-- sidebar --></div>
+			<div><!-- non-sidebar --></div>
+		</div>
+	</div>
+*/
+
+.with-sidebar-l > * {
+	display: flex;
+	flex-wrap: wrap;
+	margin: calc(var(--s1, 1.3rem) / 2 * -1) !important;
+}
+.with-sidebar-l > * > * {
+	margin: calc(var(--s1, 1.3rem) / 2) !important;
+}
+
+/* no gap between sidebar and non-sidebar */
+.with-sidebar-l.--no-gap > * {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.with-sidebar-l.--no-gap > * > * {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+/* large gap between sidebar and non-sidebar */
+.with-sidebar-l.--s3 > * {
+	margin-left: calc(var(--s3, calc(2.197rem)) / 2 * -1) !important;
+	margin-right: calc(var(--s3, calc(2.197rem)) / 2 * -1) !important;
+}
+.with-sidebar-l.--s3 > * > * {
+	margin-left: calc(var(--s3, calc(2.197rem)) / 2) !important;
+	margin-right: calc(var(--s3, calc(2.197rem)) / 2) !important;
+}
+
+/* Default sidebar is on the left (first child) */
+.with-sidebar-l:not(.--right-side) > * > :first-child {
+	flex-grow: 1;
+}
+.with-sidebar-l:not(.--right-side) > * > :last-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-width: 50%;
+}
+.with-sidebar-l:not(.--right-side).--p75 > * > :last-child {
+	min-width: 75%;
+}
+
+/* Use --right-side for a sidebar on the right (sidebar is last child) */
+.with-sidebar-l.--right-side > * > :last-child {
+	flex-grow: 1;
+}
+.with-sidebar-l.--right-side > * > :first-child {
+	flex-basis: 0;
+	flex-grow: 999;
+	min-width: 50%;
+}
+.with-sidebar-l.--right-side.--p75 > * > :first-child {
+	min-width: 75%;
+}
+
+
+/*
+The Switcher
+See https://every-layout.dev/layouts/switcher/
+
+Warning! this layout needs an intermediary wrapper
+
+Example:
+	<div class="switcher-l">
+		<ul> <!-- ← intermediary wrapper with negative margin -->
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+*/
+.switcher-l > * {
+	display: flex;
+	flex-wrap: wrap;
+	margin: calc((var(--s1, 1.3rem) / 2) * -1) !important;
+}
+
+/*
+Make the component switch between a horizontal and vertical
+layout at a regular container width (--measure, 65ch)
+*/
+.switcher-l > * > * {
+	flex-grow: 1;
+	flex-basis: calc((var(--measure, 65ch) - 100%) * 999);
+	margin: calc(var(--s1, 1.3rem) / 2) !important;
+}
+
+/*
+Set a maximum number of elements allowed to appear
+in the horizontal configuration
+*/
+.switcher-l.--threshold-2 > * > :nth-last-child(n + 3),
+.switcher-l.--threshold-2 > * > :nth-last-child(n + 3) ~ * {
+	flex-basis: 100%;
+}
+.switcher-l.--threshold-3 > * > :nth-last-child(n + 4),
+.switcher-l.--threshold-3 > * > :nth-last-child(n + 4) ~ * {
+	flex-basis: 100%;
+}
+.switcher-l.--threshold-4 > * > :nth-last-child(n + 5),
+.switcher-l.--threshold-4 > * > :nth-last-child(n + 5) ~ * {
+	flex-basis: 100%;
+}
+
+

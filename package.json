@@ -1,17 +1,55 @@
 {
-  "name": "ecoindex-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^7.0.7"
-  }
+	"name": "ecoindex-astro",
+	"type": "module",
+	"version": "0.24.0",
+	"private": true,
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"migrate": "bun run scripts/migrate-content.ts",
+		"i18n": "bun run scripts/convert-i18n.ts",
+		"reference:sync": "bun run scripts/sync-ecoindex-reference.ts",
+		"reference:check": "bun run scripts/sync-ecoindex-reference.ts --check",
+		"grades:generate": "bun run reference:sync",
+		"grades:check": "bun run reference:check",
+		"check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
+		"typecheck": "astro check",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"test:coverage": "vitest run --coverage",
+		"lint": "eslint .",
+		"format": "prettier --write \"src/**/*.{ts,js,astro}\" \"scripts/**/*.ts\" \"*.{mjs,cjs,ts,json,md}\" \".github/**/*.{yml,yaml}\" \"eslint.config.js\"",
+		"format:check": "prettier --check \"src/**/*.{ts,js,astro}\" \"scripts/**/*.ts\" \"*.{mjs,cjs,ts,json,md}\" \".github/**/*.{yml,yaml}\" \"eslint.config.js\"",
+		"docker:build": "docker compose build",
+		"docker:up": "docker compose up -d",
+		"docker:dev": "docker compose --profile dev up"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^7.0.2",
+		"a11y-dialog": "^8.1.5",
+		"astro": "^7.0.7",
+		"ky": "^2.0.2"
+	},
+	"devDependencies": {
+		"@astrojs/check": "^0.9.10",
+		"@types/node": "^26.1.1",
+		"@typescript-eslint/parser": "^8.71.2",
+		"@vitest/coverage-v8": "^5.0.5",
+		"autoprefixer": "^10.5.2",
+		"eslint": "^10.12.0",
+		"eslint-plugin-astro": "^3.2.1",
+		"happy-dom": "^21.0.3",
+		"postcss": "^8.5.16",
+		"postcss-preset-env": "^11.3.2",
+		"prettier": "^3.9.5",
+		"prettier-plugin-astro": "^1.1.1",
+		"typescript": "~5.9",
+		"typescript-eslint": "^8.71.2",
+		"vitest": "^5.0.5"
+	}
 }

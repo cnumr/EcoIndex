@@ -1,0 +1,66 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+import Collapse from '../shortcodes/Collapse.astro';
+import SelectInlineCustom from '../shortcodes/SelectInlineCustom.astro';
+import HighlightInfoCard from '../shortcodes/HighlightInfoCard.astro';
+
+interface Props {
+	locale: Locale;
+	footprintIntroText?: string;
+	collapseInfo?: string;
+}
+
+const { locale, footprintIntroText = '', collapseInfo = '' } = Astro.props;
+const [introBefore = '', introAfter = ''] = footprintIntroText.split('<select-inline/>');
+---
+
+<section class="center-l box-l --s2p0">
+	<div class="stack-l with-sidebar-l --s3">
+		<div>
+			<div class="info_2_columns_col1 stack-l">
+				<h2>{t(locale, 'EnvironmentalFootprint')}</h2>
+				<hr class="small" />
+				{collapseInfo && (
+					<div class="info-collapse">
+						<Collapse
+							label={t(locale, 'ResultFootprintIndicatorsLabel')}
+							content={collapseInfo}
+							moreHref={t(locale, 'HowDoesItWorksURL')}
+							moreLabel={t(locale, 'HowDoesItWorksTitle')}
+						/>
+					</div>
+				)}
+			</div>
+			<div class="info_2_columns_col2 stack-l center-l --s3">
+				<p>
+					{introBefore}
+					<span class="js-footprint-factor-select">
+						<SelectInlineCustom options={[1000, 100, 10]} />
+					</span>
+					{introAfter}
+				</p>
+				<div class="grid-l" style="--min-cell-width:160px;">
+					<HighlightInfoCard
+						icon="water-drop"
+						title={`<span class='footprint-result' data-int='water' data-unit='cl'>0</span>`}
+					>
+						<span set:html={t(locale, 'ResultFootprintResultsWaterText')} />
+					</HighlightInfoCard>
+					<HighlightInfoCard
+						icon="cloud"
+						title={`<span class='footprint-result' data-int='ges' data-unit='gCO2e'>0</span>`}
+					>
+						<span set:html={t(locale, 'ResultFootprintResultsGESText')} />
+					</HighlightInfoCard>
+				</div>
+				<HighlightInfoCard
+					title={t(locale, 'ResultFootprintExplainationTitle')}
+					moreInfo={t(locale, 'ResultFootprintExplainationMoreInfo')}
+				>
+					{t(locale, 'ResultFootprintExplainationText')}
+				</HighlightInfoCard>
+			</div>
+		</div>
+	</div>
+</section>

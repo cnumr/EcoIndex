@@ -1,0 +1,163 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Semver bump type'
+        type: choice
+        required: true
+        default: minor
+        options:
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    name: Bump version, commit and tag
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.bump.outputs.version }}
+      previous_tag: ${{ steps.previous_tag.outputs.tag }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: main
+
+      - name: Find previous tag
+        id: previous_tag
+        run: |
+          PREVIOUS_TAG=$(git tag -l 'v*.*.*' --sort=-v:refname | head -n1 || true)
+          echo "tag=${PREVIOUS_TAG}" >> "$GITHUB_OUTPUT"
+          if [ -n "${PREVIOUS_TAG}" ]; then
+            echo "Previous tag: ${PREVIOUS_TAG}" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No previous tag found (first release)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Setup mise
+        uses: jdx/mise-action@v2
+
+      - name: Install runtimes
+        run: mise install
+
+      - name: Bump package.json version
+        id: bump
+        run: |
+          VERSION=$(node -e "
+            const fs = require('fs');
+            const p = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const [a, b, c] = p.version.split('.').map(Number);
+            const bump = process.env.BUMP;
+            if (bump === 'major') p.version = \`\${a + 1}.0.0\`;
+            else if (bump === 'minor') p.version = \`\${a}.\${b + 1}.0\`;
+            else p.version = \`\${a}.\${b}.\${c + 1}\`;
+            fs.writeFileSync('package.json', JSON.stringify(p, null, '\t') + '\n');
+            process.stdout.write(p.version);
+          ")
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Bumped version to ${VERSION}" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          BUMP: ${{ inputs.bump }}
+
+      - name: Commit and tag
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: package.json
+          message: 'chore: bump version to ${{ steps.bump.outputs.version }}'
+          tag: v${{ steps.bump.outputs.version }}
+          push: true
+
+  deploy:
+    name: Build and deploy to production
+    needs: bump
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: v${{ needs.bump.outputs.version }}
+
+      - name: Setup mise
+        uses: jdx/mise-action@v2
+
+      - name: Install runtimes
+        run: mise install
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Check ecoindex_reference sync
+        run: bun run reference:check
+
+      - name: Build
+        run: bun run build
+
+      - name: Install SSH Key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.RSYNC_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+
+      - name: Deploy
+        run: |
+          echo "Deploying v${{ needs.bump.outputs.version }} to production" >> "$GITHUB_STEP_SUMMARY"
+          rsync -rpzv --exclude="screenshots" -e 'ssh -p ${{ secrets.RSYNC_REMOTE_PORT }}' './dist/' ${{ secrets.RSYNC_REMOTE_USER }}@${{ secrets.RSYNC_REMOTE_HOST }}:${{ secrets.RSYNC_REMOTE_FOLDER }}
+
+  release:
+    name: Create GitHub Release
+    needs: [bump, deploy]
+    runs-on: ubuntu-latest
+    env:
+      MATTERMOST_RELEASE_URL: ${{ secrets.MATTERMOST_RELEASE_URL }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: v${{ needs.bump.outputs.version }}
+
+      - name: Generate changelog
+        id: changelog
+        if: ${{ needs.bump.outputs.previous_tag != '' }}
+        uses: requarks/changelog-action@v1
+        with:
+          token: ${{ github.token }}
+          fromTag: v${{ needs.bump.outputs.version }}
+          toTag: ${{ needs.bump.outputs.previous_tag }}
+          writeToFile: false
+
+      - name: Write changelog file
+        run: |
+          if [ -n "${{ steps.changelog.outputs.changes }}" ]; then
+            echo "${{ steps.changelog.outputs.changes }}" > /tmp/changelog.md
+          else
+            echo "## v${{ needs.bump.outputs.version }}" > /tmp/changelog.md
+            echo "" >> /tmp/changelog.md
+            echo "Initial release." >> /tmp/changelog.md
+          fi
+
+      - name: Create Release
+        id: create_release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          makeLatest: true
+          name: v${{ needs.bump.outputs.version }}
+          tag: v${{ needs.bump.outputs.version }}
+          token: ${{ github.token }}
+          bodyFile: /tmp/changelog.md
+
+      - name: Notify Mattermost
+        if: ${{ env.MATTERMOST_RELEASE_URL != '' }}
+        run: |
+          echo "{\"icon_url\":\"https://icon-library.com/images/github-icon-png/github-icon-png-29.jpg\",\"text\":\":tada: Une nouvelle release a été publiée pour le projet **${{ github.repository }}: v${{ needs.bump.outputs.version }}** :tada: \\n\\nPlus d'infos ici: ${{ steps.create_release.outputs.html_url }}\"}" > mattermost.json
+          curl -X POST -H 'Content-Type: application/json' -d @mattermost.json "${{ env.MATTERMOST_RELEASE_URL }}"

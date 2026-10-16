@@ -1,0 +1,311 @@
+/**
+ * BEST PRACTICES (result page)
+ */
+
+.best-practices {
+	min-width: 0;
+}
+
+.best-practices-card {
+	box-sizing: border-box;
+	min-width: 0;
+	background-color: #fff;
+	border-radius: 0.3125rem;
+	padding: 1.25rem 1.5rem;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.06);
+	overflow: hidden;
+}
+
+.best-practices > h2,
+.best-practices > p {
+	margin: 0;
+}
+
+.best-practices-totals {
+	font-weight: var(--font-weight-bold);
+	margin: 0;
+}
+
+.best-practices-bar[role="img"] {
+	display: flex;
+	width: 100%;
+	height: 0.75rem;
+	border-radius: 0.33rem;
+	overflow: hidden;
+	background: rgba(var(--color-dark-rgb), 0.08);
+}
+
+.best-practices-bar-segment {
+	box-sizing: border-box;
+	height: 100%;
+	min-width: 2px;
+}
+
+.best-practices-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.info-container .best-practices-legend {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.best-practices-legend-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	font-size: 0.85rem;
+}
+
+.best-practices-swatch {
+	display: inline-block;
+	width: 0.65rem;
+	height: 0.65rem;
+	border-radius: 0.15rem;
+	vertical-align: 0.05em;
+	background: currentColor;
+}
+
+.best-practices-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.best-practices-filter {
+	cursor: pointer;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.2);
+	border-radius: 2rem;
+	padding: 0.2em 0.8em;
+	background: #fff;
+	font: inherit;
+	font-size: 0.85rem;
+}
+
+.best-practices-filter[aria-pressed="true"] {
+	background: var(--color-dark);
+	color: #fff;
+	border-color: var(--color-dark);
+}
+
+.best-practices-rules {
+	min-width: 0;
+}
+
+.best-practices-category {
+	min-width: 0;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.08);
+	border-radius: 0.3125rem;
+	overflow: hidden;
+	background: #fff;
+}
+
+.best-practices-category-toggle {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.35rem 0.75rem;
+	font-weight: var(--font-weight-bold);
+	text-align: start;
+	width: 100%;
+	padding: 0.85rem 1rem;
+	border-radius: 0;
+}
+
+.best-practices-category-toggle-label {
+	flex: 1 1 auto;
+}
+
+.best-practices-category-toggle-status {
+	font-size: 0.8rem;
+	font-weight: var(--font-weight-normal);
+	opacity: 0.8;
+}
+
+.best-practices-category-toggle svg {
+	margin-left: auto;
+	transition: transform 0.2s ease;
+	flex: 0 0 auto;
+}
+
+.best-practices-category-toggle[aria-expanded="true"] svg {
+	transform: rotate(180deg);
+}
+
+.best-practices-category-rules {
+	padding: 0 1rem 1rem;
+	min-width: 0;
+}
+
+.best-practices-empty {
+	margin: 0;
+	font-size: 0.95rem;
+}
+
+.best-practices-rule {
+	box-sizing: border-box;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.08);
+	border-left-width: 0.35rem;
+	border-radius: 0.3125rem;
+	padding: 1rem 1.15rem;
+	background: rgba(var(--color-dark-rgb), 0.02);
+}
+
+.best-practices-rule.--ok {
+	border-left-color: #007e5f;
+}
+
+.best-practices-rule.--warn {
+	border-left-color: #fb9929;
+}
+
+.best-practices-rule.--fail {
+	border-left-color: #d73a35;
+}
+
+.best-practices-rule-header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	margin-bottom: 0.75rem;
+}
+
+.best-practices-rule-meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem 0.75rem;
+	font-size: 0.8rem;
+}
+
+.best-practices-badge {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: var(--font-weight-bold);
+	padding: 0.1em 0.55em;
+	border-radius: 0.25rem;
+	white-space: nowrap;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+}
+
+.best-practices-badge.--ok {
+	background: rgba(0, 126, 95, 0.12);
+	color: #007e5f;
+}
+
+.best-practices-badge.--warn {
+	background: rgba(251, 153, 41, 0.18);
+	color: #a65d00;
+}
+
+.best-practices-badge.--fail {
+	background: rgba(215, 58, 53, 0.12);
+	color: #d73a35;
+}
+
+.best-practices-category,
+.best-practices-rweb {
+	color: rgba(var(--color-dark-rgb), 0.72);
+}
+
+.best-practices-rule-title {
+	font-size: var(--s1);
+	font-weight: var(--font-weight-bold);
+	margin: 0;
+}
+
+.best-practices-rule-link {
+	text-decoration: none;
+	background-image: none;
+}
+
+.best-practices-rule-link:hover {
+	text-decoration: underline;
+}
+
+.best-practices-rule-message,
+.best-practices-rule-description,
+.best-practices-learn-more {
+	margin: 0;
+}
+
+.best-practices-rule-description {
+	font-size: 0.9rem;
+	opacity: 0.9;
+}
+
+.best-practices-metrics {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 1.25rem;
+	font-size: 0.9rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.info-container .best-practices-metrics {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.best-practices-details-toggle {
+	font-weight: var(--font-weight-bold);
+	text-align: start;
+	width: 100%;
+}
+
+.best-practices-details-toggle svg {
+	margin-left: 0.25em;
+	transition: transform 0.2s ease;
+}
+
+.best-practices-details-toggle[aria-expanded="true"] svg {
+	transform: rotate(180deg);
+}
+
+.best-practices-details-list {
+	margin: 0.5rem 0 0;
+	padding-left: 1.1rem;
+	max-height: 14rem;
+	overflow: auto;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	word-break: break-word;
+}
+
+.best-practices-detail-link {
+	text-decoration: none;
+	background-image: none;
+}
+
+.best-practices-detail-link:hover {
+	text-decoration: underline;
+}
+
+.best-practices-bar-segment.--ok,
+.best-practices-swatch.--ok {
+	background-color: #007e5f;
+	color: #007e5f;
+}
+
+.best-practices-bar-segment.--warn,
+.best-practices-swatch.--warn {
+	background-color: #fb9929;
+	color: #fb9929;
+}
+
+.best-practices-bar-segment.--fail,
+.best-practices-swatch.--fail {
+	background-color: #d73a35;
+	color: #d73a35;
+}

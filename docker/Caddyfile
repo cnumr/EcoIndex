@@ -1,0 +1,19 @@
+:80 {
+	root * /srv
+	encode gzip zstd
+
+	# Astro static output (directory index.html + clean URLs)
+	try_files {path} {path}/ {path}/index.html
+	file_server
+
+	@static {
+		path *.css *.js *.svg *.webp *.png *.jpg *.jpeg *.woff *.woff2
+	}
+	header @static Cache-Control "public, immutable, max-age=604800"
+
+	header {
+		X-Frame-Options "SAMEORIGIN"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+	}
+}

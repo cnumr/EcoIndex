@@ -1,0 +1,91 @@
+---
+import type { Locale } from '../../config/site';
+import { t } from '../../i18n';
+
+interface Props {
+	locale: Locale;
+	title: string;
+	icon?: string;
+	rangeValueMin: string;
+	rangeValueMax: string;
+	rangeValueTarget: string;
+	units: string;
+	unitsLegend: string;
+	dataValueKey: string;
+}
+
+const {
+	locale,
+	title,
+	icon,
+	rangeValueMin,
+	rangeValueMax,
+	rangeValueTarget,
+	units,
+	unitsLegend,
+	dataValueKey,
+} = Astro.props;
+
+const randomId = Math.random().toString(36).slice(2, 8);
+const rangeMedianRounded =
+	Math.round(((parseFloat(rangeValueMin) + parseFloat(rangeValueMax)) / 2) * 100) / 100;
+---
+
+<div class="result-load-range js-rlr">
+	<div
+		class="rlr-badge rlr-verdict-badge js-rlr-verdict-badge"
+		data-int-attr={`${dataValueKey}_binary_score`}
+	>
+		<span data-int={`${dataValueKey}_verdict`}></span>
+	</div>
+
+	<label id={`rlr-label-${randomId}`} class="rlr-label bold font-size:1">
+		{icon && (
+			<span class="svg-inline">
+				<svg aria-hidden="true">
+					<use href={`#icon-${icon}`} />
+				</svg>
+			</span>
+		)}
+		<span set:html={title} />
+	</label>
+	<div class="rlr-slider-wrapper">
+		<div class="rlr-slider js-rlr-slider">
+			<div class="rlr-track"></div>
+			<div
+				class="rlr-slider-handle js-rlr-slider-handle"
+				role="slider"
+				data-int-value-from={dataValueKey}
+				data-int-attr={`${dataValueKey}_binary_score`}
+				aria-labelledby={`rlr-label-${randomId}`}
+				aria-valuemin={rangeValueMin}
+				aria-valuemax={rangeValueMax}
+				aria-valuenow=""
+				aria-valuetext=""
+			>
+				<span
+					class="rlr-handle-value rlr-badge"
+					data-int-attr={`${dataValueKey}_binary_score`}
+				>
+					<span>
+						<span data-int={dataValueKey}></span> {units}
+					</span>
+				</span>
+				<div class="rlr-handle-tip"></div>
+			</div>
+			<div
+				class="rlr-slider-handle-target js-rlr-slider-handle-target"
+				data-value={rangeValueTarget}
+			></div>
+		</div>
+		<div class="rlr-slider-labels">
+			<span>{t(locale, 'Min')}</span>
+			<span set:html={`${t(locale, 'Median')} ${rangeMedianRounded}`} />
+			<span>{t(locale, 'Max')}</span>
+		</div>
+	</div>
+	<div class="rlr-infos">
+		<span class="rlr-target-info" set:html={`${t(locale, 'Target')} ${rangeValueTarget}`} />
+		<span class="rlr-unit" set:html={`${t(locale, 'Unit')} ${unitsLegend}`} />
+	</div>
+</div>

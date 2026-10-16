@@ -1,0 +1,162 @@
+/* Visually hidden */
+.skip-link:not(:focus),
+.vh {
+	border: 0 !important;
+	clip: rect(0 0 0 0) !important;
+	clip-path: inset(50%) !important;
+	height: 1px !important;
+	margin: 0 !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	white-space: nowrap !important;
+	width: 1px !important;
+}
+
+.wrapper {
+	max-width: 100%;
+	width: 80rem;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+@media (max-width: 60rem) {
+	.desktop-only {
+		display: none;
+	}
+}
+
+@media (min-width: 60.001rem) {
+	.mobile-only {
+		display: none;
+	}
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.display\:none {
+	display: none;
+}
+
+.display\:block {
+	display: block;
+}
+
+.display\:flex {
+	display: flex;
+}
+
+.justify-content\:space-between {
+	justify-content: space-between;
+}
+
+.justify-content\:end {
+	justify-content: end;
+}
+
+.align-items\:center {
+	align-items: center;
+}
+
+.flex-wrap\:nowrap {
+	flex-wrap: nowrap;
+}
+
+.filter\:invert {
+	filter: invert(100%);
+}
+
+.text-align\:center {
+	text-align: center;
+}
+
+.text-align\:start {
+	text-align: start;
+}
+
+.text-align\:end {
+	text-align: end;
+}
+
+.font-size\:body {
+	font-size: 1rem;
+}
+
+.font-size\:small {
+	font-size: 0.75rem;
+}
+
+.font-size\:1 {
+	font-size: var(--s1);
+}
+
+.font-style\:italic {
+	font-style: italic;
+}
+
+.font-weight\:bold {
+	font-weight: bold;
+}
+
+.font-weight\:semi-bold {
+	font-weight: 600;
+}
+
+.text-decoration\:underline {
+	text-decoration: underline;
+}
+
+.max-width\:quarter {
+	max-width: calc(var(--measure) / 4);
+}
+
+.width\:100\% {
+	width: 100%;
+}
+
+.height\:100\% {
+	height: 100%;
+}
+
+.color-dark {
+	color: var(--color-dark);
+}
+
+.color-darkish {
+	color: var(--color-darkish);
+}
+
+.color-light {
+	color: var(--color-light);
+}
+
+.color-lightish {
+	color: var(--color-lightish);
+}
+
+.color-mid {
+	color: var(--color-mid);
+}
+
+.bg-dark {
+	background-color: var(--color-dark);
+}
+
+.bg-darkish {
+	background-color: var(--color-darkish);
+}
+
+.bg-light {
+	background-color: var(--color-light);
+}
+
+.bg-lightish {
+	background-color: var(--color-lightish);
+}
+
+.bg-mid {
+	background-color: var(--color-mid);
+}

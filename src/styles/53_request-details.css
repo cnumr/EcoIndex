@@ -1,0 +1,331 @@
+/**
+ * REQUEST DETAILS (result page)
+ */
+
+.request-details {
+	min-width: 0;
+}
+
+.request-details-card {
+	box-sizing: border-box;
+	min-width: 0;
+	background-color: #fff;
+	border-radius: 0.3125rem;
+	padding: 1.25rem 1.5rem;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.06);
+	overflow: hidden;
+}
+
+.request-details > h2,
+.request-details > p {
+	margin: 0;
+}
+
+.request-details-heading {
+	font-size: var(--s1);
+	font-weight: var(--font-weight-bold);
+	margin: 0;
+}
+
+.request-details-totals {
+	font-weight: var(--font-weight-bold);
+	margin: 0;
+}
+
+.request-details-bar[role="img"] {
+	display: flex;
+	width: 100%;
+	max-width: 100%;
+	height: 0.75rem;
+	margin-left: 0;
+	margin-right: 0;
+	border-radius: 0.33rem;
+	overflow: hidden;
+	background: rgba(var(--color-dark-rgb), 0.08);
+}
+
+.request-details-bar-segment {
+	box-sizing: border-box;
+	height: 100%;
+	min-width: 2px;
+}
+
+.request-details-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem 1rem;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.info-container .request-details-legend {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.request-details-legend-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	font-size: 0.85rem;
+}
+
+.request-details-swatch {
+	display: inline-block;
+	width: 0.65rem;
+	height: 0.65rem;
+	border-radius: 0.15rem;
+	margin-right: 0.45em;
+	vertical-align: 0.05em;
+	background: currentColor;
+}
+
+.request-details-grid {
+	display: grid;
+	gap: var(--s1);
+	min-width: 0;
+}
+
+.request-details-grid > * {
+	min-width: 0;
+}
+
+@media (min-width: 50rem) {
+	.request-details-grid {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+		align-items: start;
+	}
+}
+
+.request-details-table-wrap {
+	overflow-x: auto;
+}
+
+.request-details-table-wrap.--domains,
+.request-details-table-wrap.--list {
+	max-height: 22rem;
+	overflow-y: auto;
+}
+
+.request-details-table {
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+	font-size: 0.9rem;
+}
+
+.request-details-table th,
+.request-details-table td {
+	text-align: start;
+	padding: 0.55rem 0.75rem 0.55rem 0;
+	vertical-align: top;
+	border: none !important;
+	box-shadow: inset 0 -1px 0 rgba(var(--color-dark-rgb), 0.08);
+}
+
+.request-details-table tbody tr:last-child th,
+.request-details-table tbody tr:last-child td {
+	box-shadow: none;
+}
+
+.request-details-table th:last-child,
+.request-details-table td:last-child {
+	padding-right: 0;
+}
+
+.request-details-table th {
+	font-size: 0.75rem;
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+}
+
+.request-details-type {
+	display: inline-flex;
+	align-items: center;
+}
+
+.request-details-table .request-details-num {
+	text-align: end;
+	font-variant-numeric: tabular-nums;
+	white-space: nowrap;
+}
+
+.request-details-sort {
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+	font: inherit;
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 0.15em;
+}
+
+.request-details-domain-cell {
+	min-width: 8rem;
+}
+
+.request-details-domain {
+	display: inline-block;
+	word-break: break-word;
+	margin-right: 0.4em;
+}
+
+.request-details-badge {
+	display: inline-block;
+	font-size: 0.7rem;
+	font-weight: var(--font-weight-bold);
+	padding: 0.05em 0.45em;
+	border-radius: 0.25rem;
+	background: rgba(var(--color-dark-rgb), 0.08);
+	color: var(--color-dark);
+	white-space: nowrap;
+}
+
+.request-details-meter {
+	display: block;
+	height: 0.35rem;
+	margin-top: 0.4rem;
+	border-radius: 1rem;
+	background: rgba(var(--color-dark-rgb), 0.08);
+	overflow: hidden;
+}
+
+.request-details-meter > span {
+	display: block;
+	height: 100%;
+	border-radius: inherit;
+	background: var(--color-dark-green-2);
+}
+
+.request-details-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.request-details-filter {
+	cursor: pointer;
+	border: 1px solid rgba(var(--color-dark-rgb), 0.2);
+	border-radius: 2rem;
+	padding: 0.2em 0.8em;
+	background: #fff;
+	font: inherit;
+	font-size: 0.85rem;
+}
+
+.request-details-filter[aria-pressed="true"] {
+	background: var(--color-dark);
+	color: #fff;
+	border-color: var(--color-dark);
+}
+
+.request-details-table-wrap.--list .request-details-table {
+	table-layout: fixed;
+}
+
+.request-details-table-wrap.--list .request-details-url {
+	width: 68%;
+}
+
+.request-details-table-wrap.--list .request-details-num {
+	width: 7%;
+}
+
+.request-details-link {
+	display: inline-block;
+	max-width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	text-decoration: none;
+	background-image: none;
+}
+
+.request-details-link:hover {
+	text-decoration: underline;
+}
+
+.request-details-status.is-error {
+	color: var(--color-vermillion);
+	font-weight: var(--font-weight-bold);
+}
+
+.request-details .js-collapse-button {
+	font-weight: var(--font-weight-bold);
+	text-align: start;
+	width: 100%;
+}
+
+.request-details .js-collapse-button svg {
+	margin-left: 0.25em;
+	transition: transform 0.2s ease;
+}
+
+.request-details .js-collapse-button[aria-expanded="true"] svg {
+	transform: rotate(180deg);
+}
+
+.request-details-bar-segment.--html,
+.request-details-swatch.--html {
+	background-color: #007e5f;
+	color: #007e5f;
+}
+
+.request-details-bar-segment.--css,
+.request-details-swatch.--css {
+	background-color: #1d7a9c;
+	color: #1d7a9c;
+}
+
+.request-details-bar-segment.--javascript,
+.request-details-swatch.--javascript {
+	background-color: #fb9929;
+	color: #fb9929;
+}
+
+.request-details-bar-segment.--image,
+.request-details-swatch.--image {
+	background-color: #34bc6e;
+	color: #34bc6e;
+}
+
+.request-details-bar-segment.--font,
+.request-details-swatch.--font {
+	background-color: #7b61c1;
+	color: #7b61c1;
+}
+
+.request-details-bar-segment.--video,
+.request-details-swatch.--video {
+	background-color: #f01c16;
+	color: #f01c16;
+}
+
+.request-details-bar-segment.--audio,
+.request-details-swatch.--audio {
+	background-color: #d73a35;
+	color: #d73a35;
+}
+
+.request-details-bar-segment.--other,
+.request-details-swatch.--other {
+	background-color: #5a6a70;
+	color: #5a6a70;
+}
+
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

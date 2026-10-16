@@ -1,0 +1,137 @@
+---
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Locale } from '../config/site';
+import { getSectionFromSlug, getPageUrl, pageTitles } from '../config/site';
+import { getSectionPage } from '../lib/content';
+import { resultTextData } from '../config/result-text';
+import { setWidgetContext, type RenderedWidget } from '../lib/widget-context';
+import WidgetZone from '../components/widgets/WidgetZone.astro';
+import Hero from '../components/shortcodes/Hero.astro';
+import Highlight from '../components/shortcodes/Highlight.astro';
+import Info2Columns from '../components/shortcodes/Info2Columns.astro';
+import Info2ColumnsCol1 from '../components/shortcodes/Info2ColumnsCol1.astro';
+import Info2ColumnsCol2 from '../components/shortcodes/Info2ColumnsCol2.astro';
+import EcoIndexForm from '../components/shortcodes/EcoIndexForm.astro';
+import ContentLink from '../components/shortcodes/ContentLink.astro';
+import HighlightInfoCard from '../components/shortcodes/HighlightInfoCard.astro';
+import Equation from '../components/shortcodes/Equation.astro';
+import Grid from '../components/shortcodes/Grid.astro';
+import Info1Column from '../components/shortcodes/Info1Column.astro';
+import ErrorSection from '../components/shortcodes/ErrorSection.astro';
+import ResultUrl from '../components/shortcodes/ResultUrl.astro';
+import ResultDate from '../components/shortcodes/ResultDate.astro';
+
+interface Props {
+	locale: Locale;
+	slug?: string;
+}
+
+const { locale, slug = '' } = Astro.props;
+
+const section = slug === '' || slug === undefined ? 'home' : getSectionFromSlug(locale, slug);
+
+const page = section ? await getSectionPage(locale, section) : undefined;
+const notFound = !section || !page;
+
+let Content: Awaited<ReturnType<typeof render>>['Content'] | null = null;
+let title = 'EcoIndex';
+let decoType: string | undefined;
+let customClass: string | undefined;
+let alternatePath = '/';
+let symbolsSvg = '';
+let renderedWidgets: RenderedWidget[] = [];
+let resultData: (typeof resultTextData)[Locale] | null = null;
+
+if (!notFound && page) {
+	const rendered = await render(page);
+	Content = rendered.Content;
+	title = page.data.title ?? pageTitles[section]?.[locale] ?? 'EcoIndex';
+	decoType = page.data.decoType;
+	customClass = page.data.custom_class;
+
+	const otherLocale: Locale = locale === 'fr' ? 'en' : 'fr';
+	alternatePath = getPageUrl(otherLocale, section);
+
+	symbolsSvg = readFileSync(join(process.cwd(), 'public/symbols.svg'), 'utf-8');
+
+	const allWidgetEntries = await getCollection(locale);
+	const sectionWidgets = allWidgetEntries.filter(
+		(e) =>
+			e.data.type === 'widget' &&
+			e.data.section === section &&
+			e.data.active !== false &&
+			e.data.draft !== true,
+	);
+
+	renderedWidgets = await Promise.all(
+		sectionWidgets.map(async (entry) => {
+			const { Content: WidgetContent } = await render(entry);
+			const fileName = entry.id.split('/').pop() ?? '';
+			return { entry, WidgetContent, fileName };
+		}),
+	);
+
+	resultData = section === 'result' ? resultTextData[locale] : null;
+}
+
+function parseZone(fileName: string): string {
+	const match = fileName.match(/^_(?:zone-([^_]+)_|#([^_]+)_)/);
+	return match ? (match[1] ?? match[2]) : 'default';
+}
+
+function getWidgetsForZone(zone?: string) {
+	const targetZone = zone ?? 'default';
+	return renderedWidgets
+		.filter(({ fileName }) => parseZone(fileName) === targetZone)
+		.sort((a, b) => Number(a.entry.data.weight ?? 0) - Number(b.entry.data.weight ?? 0));
+}
+
+const mdxComponents = {
+	Hero,
+	Highlight,
+	Info2Columns,
+	Info2ColumnsCol1,
+	Info2ColumnsCol2,
+	EcoIndexForm,
+	ContentLink,
+	HighlightInfoCard,
+	Equation,
+	Grid,
+	Info1Column,
+	ErrorSection,
+	ResultUrl,
+	ResultDate,
+	Widgets: WidgetZone,
+};
+
+if (!notFound) {
+	setWidgetContext(getWidgetsForZone, mdxComponents);
+}
+---
+
+{notFound ? (
+	<BaseLayout locale={locale} title="404" alternatePath={locale === 'fr' ? '/en/404' : '/404'}>
+		<h1>404</h1>
+		<p>Page introuvable</p>
+	</BaseLayout>
+) : (
+	<BaseLayout
+		locale={locale}
+		title={title}
+		decoType={decoType}
+		customClass={customClass}
+		alternatePath={alternatePath}
+	>
+		{resultData && <script define:vars={{ resultData }}>
+			window.__siteData = {
+				...(window.__siteData ?? {}),
+				resultRelativeTextData: resultData,
+			};
+		</script>}
+		<div class="svg-symbols" aria-hidden="true" set:html={symbolsSvg} />
+		{Content && <Content components={mdxComponents} />}
+	</BaseLayout>
+)}
