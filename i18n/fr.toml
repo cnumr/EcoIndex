@@ -150,6 +150,8 @@ Vous avez atteint la limite de ##daily_limit_per_host## appels par jour pour le 
 Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/comment-ca-marche/)"""
 [SeeLatestResult]
 	other = "Voir le dernier résultat"
+[RedirectToLatestResult]
+	other = "Redirection vers le dernier résultat dans ##SECONDS## secondes…"
 [Error500]
 	other = "Une erreur inattendue s’est produite pendant l’analyse. Le problème est généralement temporaire : veuillez réessayer dans quelques instants."
 [Error502]

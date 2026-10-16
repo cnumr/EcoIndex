@@ -7,6 +7,8 @@ import { replaceKeyIn } from "../helpers/stringUtils";
  */
 class EcoIndexDialog {
 	static #a11yDialog = null;
+	static #quotaRedirectTimeoutId = null;
+	static #quotaRedirectIntervalId = null;
 
 	static ERROR_MESSAGES = {
 		400: `
@@ -138,32 +140,78 @@ class EcoIndexDialog {
 
 	/**
 	 * Open the modal dialog for a daily quota exceeded (HTTP 429).
-	 * Offers a button to open the last analysis returned by the API.
+	 * Auto-redirects to the last analysis after 3 seconds; the user can go sooner or cancel.
 	 *
 	 * @param {Object} details Quota error detail, including latest_result
-	 * @param {function} onSeeLatestResult Callback when the user chooses to open the last result
+	 * @param {function} onSeeLatestResult Callback to open the last result
 	 */
 	static openQuotaExceeded(details, onSeeLatestResult) {
 		const title = `
 {{- (i18n "AnalysisErrorTitle") -}}`;
+		const redirectDelaySeconds = 3;
+		const redirectMessageTemplate = `{{- i18n "RedirectToLatestResult" -}}`;
+
+		EcoIndexDialog.#clearQuotaRedirectTimers();
+
+		const goToLatestResult = function () {
+			EcoIndexDialog.#clearQuotaRedirectTimers();
+			if (typeof onSeeLatestResult === "function") {
+				onSeeLatestResult();
+			}
+		};
 
 		EcoIndexDialog.#createAndShowDialog(title, {
-			body: EcoIndexDialog.#buildErrorBody(429, details),
+			body:
+				EcoIndexDialog.#buildErrorBody(429, details) +
+				`<p id="dialog-quota-redirect" class="dialog-quota-redirect" aria-live="polite">${replaceKeyIn(
+					redirectMessageTemplate,
+					"SECONDS",
+					String(redirectDelaySeconds)
+				)}</p>`,
 			actions: [
 				{
-					cb: function () {
-						if (typeof onSeeLatestResult === "function") {
-							onSeeLatestResult();
-						}
-					},
+					cb: goToLatestResult,
 					label: "{{- i18n `SeeLatestResult` -}}",
 				},
 				{
-					cb: EcoIndexDialog.close,
+					cb: function () {
+						EcoIndexDialog.#clearQuotaRedirectTimers();
+						EcoIndexDialog.close();
+					},
 					label: "{{- i18n `Close` -}}",
 				},
 			],
 		});
+
+		let remainingSeconds = redirectDelaySeconds;
+		EcoIndexDialog.#quotaRedirectIntervalId = window.setInterval(() => {
+			remainingSeconds -= 1;
+			const redirectEl = document.querySelector("#dialog-quota-redirect");
+			if (!redirectEl || remainingSeconds <= 0) {
+				return;
+			}
+			redirectEl.textContent = replaceKeyIn(
+				redirectMessageTemplate,
+				"SECONDS",
+				String(remainingSeconds)
+			);
+		}, 1000);
+
+		EcoIndexDialog.#quotaRedirectTimeoutId = window.setTimeout(
+			goToLatestResult,
+			redirectDelaySeconds * 1000
+		);
+	}
+
+	static #clearQuotaRedirectTimers() {
+		if (EcoIndexDialog.#quotaRedirectTimeoutId != null) {
+			window.clearTimeout(EcoIndexDialog.#quotaRedirectTimeoutId);
+			EcoIndexDialog.#quotaRedirectTimeoutId = null;
+		}
+		if (EcoIndexDialog.#quotaRedirectIntervalId != null) {
+			window.clearInterval(EcoIndexDialog.#quotaRedirectIntervalId);
+			EcoIndexDialog.#quotaRedirectIntervalId = null;
+		}
 	}
 
 	/**
@@ -256,6 +304,8 @@ class EcoIndexDialog {
 	 * @returns {boolean} true if success, otherwise true
 	 */
 	static close() {
+		EcoIndexDialog.#clearQuotaRedirectTimers();
+
 		const a11yDialog = EcoIndexDialog.#a11yDialog;
 		if (!a11yDialog) {
 			console.error("EcoIndexDialog not initialized.");
@@ -361,6 +411,7 @@ class EcoIndexDialog {
 		a11yDialog
 			.on("show", () => (html.style.overflowY = "hidden"))
 			.on("hide", function(e) {
+				EcoIndexDialog.#clearQuotaRedirectTimers();
 				html.style.overflowY = "";
 				const dialogEl = document.querySelector("#dialog");
 				dialogEl.remove();
