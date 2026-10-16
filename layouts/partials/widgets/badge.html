@@ -1,7 +1,55 @@
 <div class="center-l box-l --s2p0">
 	<section class="stack-l">
-		<h2>{{- .Title -}}</h2>
-		<h3>{{- .Params.content.subtitle -}}</h3>
-		<div>{{ partial "content.html" .Content }}</div>
+		{{ partial "content.html" .Content }}
+		<div class="badge-integration js-badge-integration" hidden>
+			<div class="badge-integration-preview">
+				<a
+					class="js-badge-preview-link"
+					href="#"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<img
+						class="js-badge-preview-img"
+						alt="{{ i18n `BadgeAlt` }}"
+						width="108"
+						height="32"
+					/>
+				</a>
+			</div>
+			<div class="badge-integration-controls cluster-l">
+				<label>
+					{{ i18n `BadgeThemeLabel` }}
+					<span class="select-inline-custom">
+						<select class="js-badge-theme" name="badge-theme">
+							<option value="light" selected>{{ i18n `BadgeThemeLight` }}</option>
+							<option value="dark">{{ i18n `BadgeThemeDark` }}</option>
+						</select>
+					</span>
+				</label>
+				<label>
+					{{ i18n `BadgeVersionLabel` }}
+					<span class="select-inline-custom">
+						<select class="js-badge-version" name="badge-version">
+							<option value="static" selected>{{ i18n `BadgeVersionStatic` }}</option>
+							<option value="js">{{ i18n `BadgeVersionJs` }}</option>
+						</select>
+					</span>
+				</label>
+			</div>
+			<div class="badge-integration-snippet">
+				<code class="js-badge-snippet"></code>
+				<button type="button" class="js-badge-copy">{{ i18n `BadgeCopy` }}</button>
+			</div>
+			<p class="badge-integration-more">
+				{{ i18n `BadgeLearnMore` }}
+				<a
+					href="https://github.com/cnumr/ecoindex_badge"
+					target="_blank"
+					rel="noopener noreferrer"
+					>{{ i18n `BadgeLearnMoreLink` }}</a
+				>
+			</p>
+		</div>
 	</section>
 </div>

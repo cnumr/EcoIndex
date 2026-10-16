@@ -12,6 +12,5 @@ Nous ne sommes pas responsables de l’utilisation qui est faite du badge. Si vo
 devez vous assurer que la page est conforme aux bonnes pratiques d’éco&shy;conception et d’accessibilité, et effectuer
 un contrôle régulier.
 
-[//]: # "texte du badge"
-
-L’empreinte environnementale de cette page est plus faible que la moyenne. Calcul réalisé sur www.ecoindex.fr le {{< result-date >}}. Mettez votre score en évidence sur la page web en ajoutant le badge ecoIndex; voir comment sur [la page du projet](https://github.com/cnumr/ecoindex_badge).
+Vous pouvez afficher le score EcoIndex de cette page sur votre site en y intégrant le badge.
+Choisissez un thème et une version, puis copiez le code HTML ci-dessous.

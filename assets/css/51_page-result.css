@@ -155,4 +155,53 @@
 	content: attr(data-unit);
 	padding-left: 0.4em;
 }
+
+/* Badge integration (result page) */
+.badge-integration {
+	display: flex;
+	flex-direction: column;
+	gap: var(--s0);
+}
+
+.badge-integration-preview .js-badge-preview-img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.badge-integration-controls {
+	align-items: center;
+	gap: var(--s0);
+}
+
+.badge-integration-controls label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	flex-wrap: wrap;
+}
+
+.badge-integration-snippet {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: var(--s-1, 0.5rem);
+}
+
+.badge-integration-snippet code {
+	display: block;
+	width: 100%;
+	padding: var(--s0);
+	background: var(--color-light, #f5f5f5);
+	color: var(--color-darkish, #555);
+	font-family: var(--font-mono, monospace);
+	font-size: 0.875em;
+	white-space: pre-wrap;
+	word-break: break-all;
+	border-radius: var(--border-radius-small, 0.25rem);
+}
+
+.badge-integration-more {
+	font-size: 0.95em;
+}
 /*! purgecss end ignore */
