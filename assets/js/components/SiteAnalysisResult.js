@@ -1,6 +1,7 @@
 import { camelize } from "../helpers/stringUtils";
 import { getUrlHostName } from "../helpers/urlUtils";
 import AnalysisService from "../services/AnalysisService";
+import BadgeIntegration from "./BadgeIntegration";
 import ResultRangeSlider from "./ResultRangeSlider";
 import RequestDetails from "./RequestDetails";
 import BestPractices from "./BestPractices";
@@ -118,6 +119,7 @@ class SiteAnalysisResult {
 
 		// specific components updates
 		this._updateUrl(pageResultData.url)
+		this._updateBadgeIntegration(pageResultData.url);
 		this._updateNoteChart(pageResultData.grade);
 		this._updateFootprintResultsFromSelect();
 		this._updatetResultRangeSliders(pageResultData);
@@ -349,6 +351,16 @@ class SiteAnalysisResult {
 		const urlElement = this.el.querySelector(".result-url")
 		
 		urlElement.setAttribute("value", url)
+	}
+
+	/**
+	 * Initialise the badge integration widget with the analysed page URL
+	 * @param {string} url
+	 */
+	_updateBadgeIntegration(url) {
+		const badgeEl = this.el.querySelector(".js-badge-integration");
+		if (!badgeEl) return;
+		new BadgeIntegration(badgeEl).setUrl(url);
 	}
 }
 export default SiteAnalysisResult;

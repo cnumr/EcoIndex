@@ -176,6 +176,28 @@ Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/commen
 	other = "médiane&nbsp;:"
 [Min]
 	other = "min"
+[BadgeAlt]
+	other = "Badge EcoIndex"
+[BadgeThemeLabel]
+	other = "Thème du badge :"
+[BadgeThemeLight]
+	other = "Clair"
+[BadgeThemeDark]
+	other = "Sombre"
+[BadgeVersionLabel]
+	other = "Version :"
+[BadgeVersionStatic]
+	other = "Sans JavaScript"
+[BadgeVersionJs]
+	other = "Avec JavaScript"
+[BadgeCopy]
+	other = "Copier le code"
+[BadgeCopied]
+	other = "Code copié"
+[BadgeLearnMore]
+	other = "En savoir plus :"
+[BadgeLearnMoreLink]
+	other = "projet ecoindex_badge sur GitHub"
 [RequestDetailsTitle]
 	other = "Détail des requêtes"
 [RequestDetailsIntro]
