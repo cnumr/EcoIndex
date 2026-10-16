@@ -128,10 +128,50 @@ class EcoIndexDialog {
 	 *                         e.g. {daily_limit_per_host, host, message}
 	 */
 	static openErrorMessage(errorCode, details) {
-		// Title
 		const title = `
 {{- (i18n "AnalysisErrorTitle") -}}`;
 
+		EcoIndexDialog.#createAndShowDialog(title, {
+			body: EcoIndexDialog.#buildErrorBody(errorCode, details),
+		});
+	}
+
+	/**
+	 * Open the modal dialog for a daily quota exceeded (HTTP 429).
+	 * Offers a button to open the last analysis returned by the API.
+	 *
+	 * @param {Object} details Quota error detail, including latest_result
+	 * @param {function} onSeeLatestResult Callback when the user chooses to open the last result
+	 */
+	static openQuotaExceeded(details, onSeeLatestResult) {
+		const title = `
+{{- (i18n "AnalysisErrorTitle") -}}`;
+
+		EcoIndexDialog.#createAndShowDialog(title, {
+			body: EcoIndexDialog.#buildErrorBody(429, details),
+			actions: [
+				{
+					cb: function () {
+						if (typeof onSeeLatestResult === "function") {
+							onSeeLatestResult();
+						}
+					},
+					label: "{{- i18n `SeeLatestResult` -}}",
+				},
+				{
+					cb: EcoIndexDialog.close,
+					label: "{{- i18n `Close` -}}",
+				},
+			],
+		});
+	}
+
+	/**
+	 * @param {string|number} errorCode
+	 * @param {Object} details
+	 * @returns {string}
+	 */
+	static #buildErrorBody(errorCode, details) {
 		const code = Number(errorCode);
 		let errorMessage =
 			code === 403 && EcoIndexDialog.#isExcludedHost(details)
@@ -147,9 +187,7 @@ class EcoIndexDialog {
 			errorMessage = replaceKeyIn(errorMessage, key, value);
 		}
 
-		EcoIndexDialog.#createAndShowDialog(title, {
-			body: `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`,
-		});
+		return `<p>{{- (i18n "AnalysisErrorIntro") | safeHTML -}}</p><p>${errorMessage}</p>`;
 	}
 
 	static #isExcludedHost(details) {

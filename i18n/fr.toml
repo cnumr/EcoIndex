@@ -148,6 +148,8 @@ pour « ##URL## »"""
 	other = """
 Vous avez atteint la limite de ##daily_limit_per_host## appels par jour pour le nom de domaine ##host##.  
 Pour en savoir plus, veuiller consulter la page [Comment ça marche ?](/comment-ca-marche/)"""
+[SeeLatestResult]
+	other = "Voir le dernier résultat"
 [Error500]
 	other = "Une erreur inattendue s’est produite pendant l’analyse. Le problème est généralement temporaire : veuillez réessayer dans quelques instants."
 [Error502]

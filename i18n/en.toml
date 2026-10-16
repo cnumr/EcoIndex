@@ -148,6 +148,8 @@ for “##URL##”"""
 	other = """
 You have reached the limit of ##daily_limit_per_host## calls per day for the domain name ##host##.  
 More information on page [How it works](/how-it-works/)."""
+[SeeLatestResult]
+	other = "See the latest result"
 [Error500]
 	other = "An unexpected error occurred during the analysis. This is usually temporary: please try again in a few moments."
 [Error502]
