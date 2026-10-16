@@ -45,16 +45,16 @@ class AnalysisService {
 							}
 						},
 						(e) => {
-							this.#handleError(e);
+							this.#handleError(e, resultUrlPrefix);
 						}
 					);
 				},
 				(e) => {
-					this.#handleError(e);
+					this.#handleError(e, resultUrlPrefix);
 				}
 			);
 		} catch (e) {
-			this.#handleError(e);
+			this.#handleError(e, resultUrlPrefix);
 		}
 	}
 
@@ -119,17 +119,21 @@ class AnalysisService {
 					EcoIndexDialog.close();
 				},
 				(e) => {
-					this.#handleError(e);
+					this.#handleError(e, resultPagePrefix);
 				}
 			);
 		} catch (e) {
-			this.#handleError(e);
+			this.#handleError(e, resultPagePrefix);
 			return null;
 		}
 		return apiResult;
 	}
 
-	async #handleError(e) {
+	/**
+	 * @param {Error} e
+	 * @param {string} [resultUrlPrefix]
+	 */
+	async #handleError(e, resultUrlPrefix) {
 		// Non HTTP errors (TODO improve test)
 		if (e.name !== "HTTPError" && e.name !== "TypeError" && e.name !== "TimeoutError") {
 			throw e;
@@ -142,7 +146,19 @@ class AnalysisService {
 		const response = e.response;
 		if (response) {
 			const json = await response.json();
-			EcoIndexDialog.openErrorMessage(response.status, json.detail);
+			const detail = json.detail;
+			const latestResult = detail?.latest_result;
+
+			// API 429 includes the last analysis for the host: offer to open it
+			if (response.status === 429 && latestResult?.id && resultUrlPrefix) {
+				EcoIndexDialog.openQuotaExceeded(detail, () => {
+					ResultCacheService.add(latestResult);
+					redirectToResults(latestResult.id, resultUrlPrefix);
+				});
+				return;
+			}
+
+			EcoIndexDialog.openErrorMessage(response.status, detail);
 		} else {
 			EcoIndexDialog.openErrorMessage();
 		}
