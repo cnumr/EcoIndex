@@ -198,7 +198,7 @@ Enchaînement automatique :
 
 1. **Bump** — lit la version dans `package.json`, l’incrémente, commit (`chore: bump version to X.Y.Z`), pousse et crée le tag `vX.Y.Z`
 2. **Deploy** — checkout du tag, build, rsync vers l’environment `production`
-3. **GitHub Release** — génère un changelog depuis le tag précédent, publie la release `vX.Y.Z`, puis notifie Mattermost si `MATTERMOST_RELEASE_URL` est défini
+3. **GitHub Release** — génère un changelog depuis le tag précédent _sur l’historique courant_ (les tags Hugo hors historique Astro sont ignorés), publie la release `vX.Y.Z`, puis notifie Mattermost si `MATTERMOST_RELEASE_URL` est défini
 
 ### Licence
 
@@ -366,7 +366,7 @@ Automatic sequence:
 
 1. **Bump** — increments `package.json`, commits (`chore: bump version to X.Y.Z`), pushes, and creates tag `vX.Y.Z`
 2. **Deploy** — checks out the tag, builds, rsyncs to the `production` environment
-3. **GitHub Release** — builds a changelog since the previous tag, publishes release `vX.Y.Z`, then notifies Mattermost if `MATTERMOST_RELEASE_URL` is set
+3. **GitHub Release** — builds a changelog since the previous tag _on the current history_ (Hugo tags outside the Astro history are ignored), publishes release `vX.Y.Z`, then notifies Mattermost if `MATTERMOST_RELEASE_URL` is set
 
 ## License
 

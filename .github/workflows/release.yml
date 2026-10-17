@@ -33,12 +33,13 @@ jobs:
       - name: Find previous tag
         id: previous_tag
         run: |
-          PREVIOUS_TAG=$(git tag -l 'v*.*.*' --sort=-v:refname | head -n1 || true)
+          # Only tags reachable from HEAD (ignores Hugo tags from unrelated history).
+          PREVIOUS_TAG=$(git describe --tags --match 'v*.*.*' --abbrev=0 2>/dev/null || true)
           echo "tag=${PREVIOUS_TAG}" >> "$GITHUB_OUTPUT"
           if [ -n "${PREVIOUS_TAG}" ]; then
             echo "Previous tag: ${PREVIOUS_TAG}" >> "$GITHUB_STEP_SUMMARY"
           else
-            echo "No previous tag found (first release)" >> "$GITHUB_STEP_SUMMARY"
+            echo "No previous tag found on this history (first Astro release)" >> "$GITHUB_STEP_SUMMARY"
           fi
 
       - name: Setup mise
@@ -128,6 +129,7 @@ jobs:
       - name: Generate changelog
         id: changelog
         if: ${{ needs.bump.outputs.previous_tag != '' }}
+        continue-on-error: true
         uses: requarks/changelog-action@v1
         with:
           token: ${{ github.token }}
@@ -139,10 +141,18 @@ jobs:
         run: |
           if [ -n "${{ steps.changelog.outputs.changes }}" ]; then
             echo "${{ steps.changelog.outputs.changes }}" > /tmp/changelog.md
+          elif [ -n "${{ needs.bump.outputs.previous_tag }}" ]; then
+            {
+              echo "## v${{ needs.bump.outputs.version }}"
+              echo ""
+              echo "Release v${{ needs.bump.outputs.version }} (changelog unavailable between \`${{ needs.bump.outputs.previous_tag }}\` and this tag)."
+            } > /tmp/changelog.md
           else
-            echo "## v${{ needs.bump.outputs.version }}" > /tmp/changelog.md
-            echo "" >> /tmp/changelog.md
-            echo "Initial release." >> /tmp/changelog.md
+            {
+              echo "## v${{ needs.bump.outputs.version }}"
+              echo ""
+              echo "First release on the Astro codebase."
+            } > /tmp/changelog.md
           fi
 
       - name: Create Release
