@@ -38,6 +38,8 @@ describe('ApiService', () => {
 						height: api.browserHeight,
 						url: 'https://example.com',
 					},
+					include_requests_detail: true,
+					include_best_practices: true,
 				},
 			}),
 		);

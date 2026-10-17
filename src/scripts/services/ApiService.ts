@@ -18,6 +18,8 @@ class ApiService {
 					height: api.browserHeight,
 					url,
 				},
+				include_requests_detail: true,
+				include_best_practices: true,
 			},
 		};
 

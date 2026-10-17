@@ -165,7 +165,14 @@ class EcoIndexDialog {
 			errorMessage = replaceKeyIn(errorMessage, key, value);
 		}
 
-		return `<p>${t('AnalysisErrorIntro')}</p><p>${errorMessage}</p>`;
+		return `<p>${t('AnalysisErrorIntro')}</p><p>${EcoIndexDialog.#markdownInline(errorMessage)}</p>`;
+	}
+
+	/** Minimal markdown → HTML for error messages (links + line breaks), like Hugo markdownify. */
+	static #markdownInline(text: string): string {
+		return text
+			.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+			.replace(/\n/g, '<br>');
 	}
 
 	static #isExcludedHost(details: unknown): boolean {
