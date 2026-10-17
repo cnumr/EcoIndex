@@ -121,20 +121,21 @@ Chaque page est composée de fragments Markdown / MDX (`_10_*.mdx`) chargés par
 
 ### CI / CD
 
-Trois workflows GitHub Actions :
+Quatre workflows GitHub Actions :
 
 | Workflow | Fichier | Déclencheur |
 | -------- | ------- | ----------- |
 | Validation du build | `.github/workflows/quality.yml` | ouverture / mise à jour d’une PR |
 | Deploy preproduction | `.github/workflows/deploy.yml` | push sur `main` |
+| Deploy manual | `.github/workflows/deploy-manual.yml` | manuel (`workflow_dispatch`) |
 | Release | `.github/workflows/release.yml` | manuel (`workflow_dispatch`) |
 
 #### Configurer le déploiement
 
 Créer deux **Environments** GitHub (`Settings` → `Environments`) :
 
-- `preproduction` — utilisé par le deploy automatique sur `main`
-- `production` — utilisé par le workflow **Release**
+- `preproduction` — utilisé par le deploy automatique sur `main` et le deploy manuel
+- `production` — utilisé par le deploy manuel et le workflow **Release**
 
 Dans **chaque** environment, définir les secrets suivants (valeurs propres à la cible) :
 
@@ -173,6 +174,19 @@ Le workflow **Deploy preproduction** se déclenche sur le push vers `main`. Il :
 2. déploie `dist/` par **rsync/SSH** vers l’environment `preproduction`
 
 La production n’est **pas** mise à jour à ce stade.
+
+#### Deploy manuel (préprod ou prod)
+
+Pour redéployer une branche / un tag **sans** bump de version ni GitHub Release :
+
+1. Aller dans **Actions** → **Deploy manual** → **Run workflow**
+2. Choisir la branche ou le tag à déployer
+3. Choisir la cible : `preproduction` ou `production`
+4. Lancer le workflow
+
+Le job build le site puis synchronise `dist/` via rsync vers l’environment choisi (mêmes secrets SSH). Utile pour rejouer un deploy préprod, ou pousser en prod un commit déjà tagué sans passer par **Release**.
+
+> **Release** reste le chemin nominal pour la prod (bump + tag + changelog + Mattermost). Le deploy manuel prod ne crée ni tag ni release GitHub.
 
 #### Lancer une release (production)
 
@@ -275,20 +289,21 @@ bun run docker:dev
 
 ### CI / CD
 
-Three GitHub Actions workflows:
+Four GitHub Actions workflows:
 
 | Workflow | File | Trigger |
 | -------- | ---- | ------- |
 | Validation du build | `.github/workflows/quality.yml` | PR opened / updated |
 | Deploy preproduction | `.github/workflows/deploy.yml` | push to `main` |
+| Deploy manual | `.github/workflows/deploy-manual.yml` | manual (`workflow_dispatch`) |
 | Release | `.github/workflows/release.yml` | manual (`workflow_dispatch`) |
 
 #### Configure deployment
 
 Create two GitHub **Environments** (`Settings` → `Environments`):
 
-- `preproduction` — used by the automatic deploy on `main`
-- `production` — used by the **Release** workflow
+- `preproduction` — used by the automatic deploy on `main` and the manual deploy
+- `production` — used by the manual deploy and the **Release** workflow
 
 In **each** environment, set these secrets (values specific to that target):
 
@@ -327,6 +342,19 @@ The **Deploy preproduction** workflow runs on push to `main`. It:
 2. deploys `dist/` via **rsync/SSH** to the `preproduction` environment
 
 Production is **not** updated at this stage.
+
+#### Manual deploy (preprod or prod)
+
+To redeploy a branch / tag **without** a version bump or GitHub Release:
+
+1. Go to **Actions** → **Deploy manual** → **Run workflow**
+2. Select the branch or tag to deploy
+3. Choose the target: `preproduction` or `production`
+4. Start the workflow
+
+The job builds the site then rsyncs `dist/` to the selected environment (same SSH secrets). Useful to replay a preprod deploy, or push to prod an already-tagged commit without running **Release**.
+
+> **Release** remains the nominal path for production (bump + tag + changelog + Mattermost). A manual prod deploy does not create a tag or GitHub Release.
 
 #### Ship a release (production)
 
