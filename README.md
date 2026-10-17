@@ -123,12 +123,12 @@ Chaque page est composée de fragments Markdown / MDX (`_10_*.mdx`) chargés par
 
 Quatre workflows GitHub Actions :
 
-| Workflow | Fichier | Déclencheur |
-| -------- | ------- | ----------- |
-| Validation du build | `.github/workflows/quality.yml` | ouverture / mise à jour d’une PR |
-| Deploy preproduction | `.github/workflows/deploy.yml` | push sur `main` |
-| Deploy manual | `.github/workflows/deploy-manual.yml` | manuel (`workflow_dispatch`) |
-| Release | `.github/workflows/release.yml` | manuel (`workflow_dispatch`) |
+| Workflow             | Fichier                               | Déclencheur                      |
+| -------------------- | ------------------------------------- | -------------------------------- |
+| Validation du build  | `.github/workflows/quality.yml`       | ouverture / mise à jour d’une PR |
+| Deploy preproduction | `.github/workflows/deploy.yml`        | push sur `main`                  |
+| Deploy manual        | `.github/workflows/deploy-manual.yml` | manuel (`workflow_dispatch`)     |
+| Release              | `.github/workflows/release.yml`       | manuel (`workflow_dispatch`)     |
 
 #### Configurer le déploiement
 
@@ -139,19 +139,19 @@ Créer deux **Environments** GitHub (`Settings` → `Environments`) :
 
 Dans **chaque** environment, définir les secrets suivants (valeurs propres à la cible) :
 
-| Secret | Description |
-| ------ | ----------- |
-| `RSYNC_PRIVATE_SSH_KEY` | Clé privée SSH pour se connecter au serveur |
-| `RSYNC_KNOWN_HOSTS` | Entrée `known_hosts` du serveur (évite le prompt host key) |
-| `RSYNC_REMOTE_PORT` | Port SSH |
-| `RSYNC_REMOTE_USER` | Utilisateur SSH |
-| `RSYNC_REMOTE_HOST` | Hôte du serveur |
-| `RSYNC_REMOTE_FOLDER` | Chemin distant où synchroniser le contenu de `dist/` |
+| Secret                  | Description                                                |
+| ----------------------- | ---------------------------------------------------------- |
+| `RSYNC_PRIVATE_SSH_KEY` | Clé privée SSH pour se connecter au serveur                |
+| `RSYNC_KNOWN_HOSTS`     | Entrée `known_hosts` du serveur (évite le prompt host key) |
+| `RSYNC_REMOTE_PORT`     | Port SSH                                                   |
+| `RSYNC_REMOTE_USER`     | Utilisateur SSH                                            |
+| `RSYNC_REMOTE_HOST`     | Hôte du serveur                                            |
+| `RSYNC_REMOTE_FOLDER`   | Chemin distant où synchroniser le contenu de `dist/`       |
 
 Optionnel (au niveau repository ou environment `production`) :
 
-| Secret | Description |
-| ------ | ----------- |
+| Secret                   | Description                                                                    |
+| ------------------------ | ------------------------------------------------------------------------------ |
 | `MATTERMOST_RELEASE_URL` | Webhook Mattermost pour notifier une release (si absent, la notif est ignorée) |
 
 Les jobs de deploy ont besoin des droits d’accès aux environments (éventuellement protection rules / reviewers sur `production`).
@@ -291,12 +291,12 @@ bun run docker:dev
 
 Four GitHub Actions workflows:
 
-| Workflow | File | Trigger |
-| -------- | ---- | ------- |
-| Validation du build | `.github/workflows/quality.yml` | PR opened / updated |
-| Deploy preproduction | `.github/workflows/deploy.yml` | push to `main` |
-| Deploy manual | `.github/workflows/deploy-manual.yml` | manual (`workflow_dispatch`) |
-| Release | `.github/workflows/release.yml` | manual (`workflow_dispatch`) |
+| Workflow             | File                                  | Trigger                      |
+| -------------------- | ------------------------------------- | ---------------------------- |
+| Validation du build  | `.github/workflows/quality.yml`       | PR opened / updated          |
+| Deploy preproduction | `.github/workflows/deploy.yml`        | push to `main`               |
+| Deploy manual        | `.github/workflows/deploy-manual.yml` | manual (`workflow_dispatch`) |
+| Release              | `.github/workflows/release.yml`       | manual (`workflow_dispatch`) |
 
 #### Configure deployment
 
@@ -307,19 +307,19 @@ Create two GitHub **Environments** (`Settings` → `Environments`):
 
 In **each** environment, set these secrets (values specific to that target):
 
-| Secret | Description |
-| ------ | ----------- |
-| `RSYNC_PRIVATE_SSH_KEY` | SSH private key used to connect to the server |
-| `RSYNC_KNOWN_HOSTS` | Server `known_hosts` entry (avoids host-key prompts) |
-| `RSYNC_REMOTE_PORT` | SSH port |
-| `RSYNC_REMOTE_USER` | SSH user |
-| `RSYNC_REMOTE_HOST` | Server host |
-| `RSYNC_REMOTE_FOLDER` | Remote path where `dist/` content is synced |
+| Secret                  | Description                                          |
+| ----------------------- | ---------------------------------------------------- |
+| `RSYNC_PRIVATE_SSH_KEY` | SSH private key used to connect to the server        |
+| `RSYNC_KNOWN_HOSTS`     | Server `known_hosts` entry (avoids host-key prompts) |
+| `RSYNC_REMOTE_PORT`     | SSH port                                             |
+| `RSYNC_REMOTE_USER`     | SSH user                                             |
+| `RSYNC_REMOTE_HOST`     | Server host                                          |
+| `RSYNC_REMOTE_FOLDER`   | Remote path where `dist/` content is synced          |
 
 Optional (repository level or `production` environment):
 
-| Secret | Description |
-| ------ | ----------- |
+| Secret                   | Description                                                     |
+| ------------------------ | --------------------------------------------------------------- |
 | `MATTERMOST_RELEASE_URL` | Mattermost webhook for release notifications (skipped if unset) |
 
 Deploy jobs need access to those environments (you may add protection rules / reviewers on `production`).
