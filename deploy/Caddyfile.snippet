@@ -5,7 +5,10 @@
 # after setting `root * /srv/...`.
 
 (ecoindex_static) {
-	encode gzip zstd
+	# Default minimum_length is 512; lower it so small CSS/JS/SVG still get Content-Encoding.
+	encode gzip zstd {
+		minimum_length 128
+	}
 
 	# Fingerprinted Astro assets + other static files (long cache).
 	# HTML is intentionally left without a long-lived Cache-Control.

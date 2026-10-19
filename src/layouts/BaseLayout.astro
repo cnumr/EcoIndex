@@ -37,7 +37,10 @@ const stackClass = ['stack-l', '--s3', customClass].filter(Boolean).join(' ');
 		/>
 		<link rel="stylesheet" href={printStylesheet} media="print" />
 		<title>{title} | EcoIndex</title>
-		<script is:inline src="/js/js-ok.js"></script>
+		{/* One-liner only: a separate tiny JS file would skip Caddy encode (< 512 B). */}
+		<script is:inline>
+			document.documentElement.classList.add('js-ok');
+		</script>
 	</head>
 	<body>
 		<a href="#main" class="skip-link">
