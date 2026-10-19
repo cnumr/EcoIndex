@@ -21,15 +21,14 @@ class SiteAnalysisResult {
 	locale: string;
 	resultRelativeTextData: ResultRelativeTextData;
 
-	constructor(el: Element, currentLocale: string) {
+	constructor(
+		el: Element,
+		currentLocale: string,
+		resultRelativeTextData: ResultRelativeTextData,
+	) {
 		this.el = el;
 		this.locale = currentLocale;
-
-		this.resultRelativeTextData =
-			(typeof window !== 'undefined' && window.__siteData?.resultRelativeTextData) ||
-			(typeof resultRelativeTextData !== 'undefined'
-				? resultRelativeTextData
-				: ({} as ResultRelativeTextData));
+		this.resultRelativeTextData = resultRelativeTextData;
 
 		void this._init(currentLocale);
 	}

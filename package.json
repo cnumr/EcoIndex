@@ -24,10 +24,7 @@
 		"test:coverage": "vitest run --coverage",
 		"lint": "eslint .",
 		"format": "prettier --write \"src/**/*.{ts,js,astro}\" \"scripts/**/*.ts\" \"*.{mjs,cjs,ts,json,md}\" \".github/**/*.{yml,yaml}\" \"eslint.config.js\"",
-		"format:check": "prettier --check \"src/**/*.{ts,js,astro}\" \"scripts/**/*.ts\" \"*.{mjs,cjs,ts,json,md}\" \".github/**/*.{yml,yaml}\" \"eslint.config.js\"",
-		"docker:build": "docker compose build",
-		"docker:up": "docker compose up -d",
-		"docker:dev": "docker compose --profile dev up"
+		"format:check": "prettier --check \"src/**/*.{ts,js,astro}\" \"scripts/**/*.ts\" \"*.{mjs,cjs,ts,json,md}\" \".github/**/*.{yml,yaml}\" \"eslint.config.js\""
 	},
 	"dependencies": {
 		"@astrojs/mdx": "^7.0.2",

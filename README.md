@@ -66,23 +66,6 @@ bun run reference:check   # vérifie (utilisé en CI)
 
 Source : JSON distant sur `main` de `ecoindex_reference`, ou fichier local via `ECOINDEX_REFERENCE_PATH`.
 
-### Docker
-
-**Production** (Caddy sert le build statique `dist/`) :
-
-```bash
-bun run docker:build
-bun run docker:up     # http://localhost:8080
-```
-
-**Développement** (hot reload dans un conteneur) :
-
-```bash
-bun run docker:dev
-# ou :
-docker compose --profile dev up
-```
-
 ### Architecture
 
 ```
@@ -155,6 +138,10 @@ Optionnel (au niveau repository ou environment `production`) :
 | `MATTERMOST_RELEASE_URL` | Webhook Mattermost pour notifier une release (si absent, la notif est ignorée) |
 
 Les jobs de deploy ont besoin des droits d’accès aux environments (éventuellement protection rules / reviewers sur `production`).
+
+#### Caddy (compression + cache)
+
+Le front est servi par Caddy (`file_server` sur `/srv/preprod` et `/srv/prod`). Pour les bonnes pratiques RWEB 0075 / 0076, appliquer le snippet versionné [`deploy/Caddyfile.snippet`](deploy/Caddyfile.snippet) sur l’hôte (importer `ecoindex_static` dans `www.ecoindex.fr` et `site-tmp.ecoindex.fr`), puis recharger Caddy. Ce fichier n’est **pas** déployé par rsync.
 
 #### Quand on ouvre une PR
 
@@ -272,21 +259,6 @@ bun run reference:check   # verify (used in CI)
 
 Source: remote JSON on `ecoindex_reference` `main`, or a local file via `ECOINDEX_REFERENCE_PATH`.
 
-### Docker
-
-**Production** (Caddy serves the static `dist/` build):
-
-```bash
-bun run docker:build
-bun run docker:up     # http://localhost:8080
-```
-
-**Development** (hot reload in a container):
-
-```bash
-bun run docker:dev
-```
-
 ### CI / CD
 
 Four GitHub Actions workflows:
@@ -323,6 +295,10 @@ Optional (repository level or `production` environment):
 | `MATTERMOST_RELEASE_URL` | Mattermost webhook for release notifications (skipped if unset) |
 
 Deploy jobs need access to those environments (you may add protection rules / reviewers on `production`).
+
+#### Caddy (compression + cache)
+
+The front is served by Caddy (`file_server` on `/srv/preprod` and `/srv/prod`). For RWEB 0075 / 0076, apply the versioned snippet [`deploy/Caddyfile.snippet`](deploy/Caddyfile.snippet) on the host (import `ecoindex_static` in `www.ecoindex.fr` and `site-tmp.ecoindex.fr`), then reload Caddy. This file is **not** deployed by rsync.
 
 #### When a PR is opened
 

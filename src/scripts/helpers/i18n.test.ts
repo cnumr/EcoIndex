@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import { t } from './i18n';
+import { loadI18n, setMessagesForTests, t } from './i18n';
 
 describe('t (client)', () => {
 	afterEach(() => {
-		delete window.__i18n;
+		setMessagesForTests({});
 	});
 
 	it('returns key when message is missing', () => {
@@ -11,7 +11,18 @@ describe('t (client)', () => {
 	});
 
 	it('returns translated message with replacements', () => {
-		window.__i18n = { Hello: 'Bonjour ##NAME##' };
+		setMessagesForTests({ Hello: 'Bonjour ##NAME##' });
 		expect(t('Hello', { NAME: 'Alice' })).toBe('Bonjour Alice');
+	});
+
+	it('loadI18n loads fr messages by default', async () => {
+		document.documentElement.lang = 'fr';
+		await loadI18n();
+		expect(t('Close')).toBe('Fermer');
+	});
+
+	it('loadI18n loads en messages when locale is en', async () => {
+		await loadI18n('en');
+		expect(t('Close')).toBe('Close');
 	});
 });
