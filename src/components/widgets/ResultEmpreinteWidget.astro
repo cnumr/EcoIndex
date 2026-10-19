@@ -58,7 +58,12 @@ const [introBefore = '', introAfter = ''] = footprintIntroText.split('<select-in
 					title={t(locale, 'ResultFootprintExplainationTitle')}
 					moreInfo={t(locale, 'ResultFootprintExplainationMoreInfo')}
 				>
-					{t(locale, 'ResultFootprintExplainationText')}
+					<span
+						set:html={t(locale, 'ResultFootprintExplainationText').replace(
+							/\*\*(.*?)\*\*/g,
+							'<strong>$1</strong>',
+						)}
+					/>
 				</HighlightInfoCard>
 			</div>
 		</div>

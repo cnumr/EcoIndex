@@ -1,0 +1,32 @@
+# Reference snippet for EcoIndex static front (RWEB 0075 + 0076).
+# Not deployed by rsync — apply on the Caddy host, then reload.
+#
+# Usage: import `ecoindex_static` in www.ecoindex.fr and site-tmp.ecoindex.fr
+# after setting `root * /srv/...`.
+
+(ecoindex_static) {
+	encode gzip zstd
+
+	# Fingerprinted Astro assets + other static files (long cache).
+	# HTML is intentionally left without a long-lived Cache-Control.
+	@static {
+		path *.css *.js *.mjs *.svg *.webp *.png *.jpg *.jpeg *.woff *.woff2 /_astro/*
+	}
+	header @static Cache-Control "public, max-age=604800, immutable"
+
+	file_server
+}
+
+# Example integration:
+#
+# site-tmp.ecoindex.fr {
+# 	root * /srv/preprod
+# 	import ecoindex_static
+# 	import access_log
+# }
+#
+# www.ecoindex.fr {
+# 	root * /srv/prod
+# 	import ecoindex_static
+# 	import access_log
+# }

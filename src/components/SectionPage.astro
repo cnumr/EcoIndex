@@ -6,7 +6,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import type { Locale } from '../config/site';
 import { getSectionFromSlug, getPageUrl, pageTitles } from '../config/site';
 import { getSectionPage } from '../lib/content';
-import { resultTextData } from '../config/result-text';
 import { setWidgetContext, type RenderedWidget } from '../lib/widget-context';
 import WidgetZone from '../components/widgets/WidgetZone.astro';
 import Hero from '../components/shortcodes/Hero.astro';
@@ -43,7 +42,6 @@ let customClass: string | undefined;
 let alternatePath = '/';
 let symbolsSvg = '';
 let renderedWidgets: RenderedWidget[] = [];
-let resultData: (typeof resultTextData)[Locale] | null = null;
 
 if (!notFound && page) {
 	const rendered = await render(page);
@@ -73,8 +71,6 @@ if (!notFound && page) {
 			return { entry, WidgetContent, fileName };
 		}),
 	);
-
-	resultData = section === 'result' ? resultTextData[locale] : null;
 }
 
 function parseZone(fileName: string): string {
@@ -125,12 +121,6 @@ if (!notFound) {
 		customClass={customClass}
 		alternatePath={alternatePath}
 	>
-		{resultData && <script define:vars={{ resultData }}>
-			window.__siteData = {
-				...(window.__siteData ?? {}),
-				resultRelativeTextData: resultData,
-			};
-		</script>}
 		<div class="svg-symbols" aria-hidden="true" set:html={symbolsSvg} />
 		{Content && <Content components={mdxComponents} />}
 	</BaseLayout>

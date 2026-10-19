@@ -1,0 +1,46 @@
+/* Print stylesheet (RWEB 0031) — lean ink-saving layout */
+
+@page {
+	margin: 1.5cm;
+}
+
+body {
+	background: #fff;
+	color: #000;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 11pt;
+	line-height: 1.4;
+}
+
+.skip-link,
+.header-container,
+.footer-container,
+.deco-container,
+.menu-btn-container,
+.language-switcher,
+.svg-symbols,
+.top-warning,
+.js-button-retest,
+#share-btn,
+.info-collapse,
+.shadow-container::before,
+.shadow-container::after {
+	display: none !important;
+}
+
+a[href^='http']::after {
+	content: ' (' attr(href) ')';
+	font-size: 0.85em;
+	font-weight: normal;
+}
+
+img {
+	max-width: 100% !important;
+	page-break-inside: avoid;
+}
+
+h1,
+h2,
+h3 {
+	page-break-after: avoid;
+}

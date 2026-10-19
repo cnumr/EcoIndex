@@ -3,19 +3,22 @@ import Collapse from './components/Collapse';
 import EcoIndexDialog from './components/EcoIndexDialog';
 import ResultCacheService from './services/ResultCacheService';
 import SiteAnalysisResult from './components/SiteAnalysisResult';
-import { t } from './helpers/i18n';
+import { loadI18n, t } from './helpers/i18n';
 
-function initApp(): void {
+async function initApp(): Promise<void> {
 	const currentLocale = document.getElementsByTagName('html')[0]?.getAttribute('lang') ?? 'fr';
+	await loadI18n(currentLocale);
 	initMenu();
 	initCollapses();
-	initPageResult(currentLocale);
+	await initPageResult(currentLocale);
 	initSubmitUrlForm();
 	void initButtonRemakeAnalysis();
 	void initButtonShareURL();
 }
 
-window.addEventListener('DOMContentLoaded', initApp);
+window.addEventListener('DOMContentLoaded', () => {
+	void initApp();
+});
 
 function initMenu(): void {
 	const menuBtn = document.querySelector('.menu-btn');
@@ -35,10 +38,13 @@ function initCollapses(): void {
 	collapseElements.forEach((collapseElement) => new Collapse(collapseElement));
 }
 
-function initPageResult(currentLocale: string): void {
+async function initPageResult(currentLocale: string): Promise<void> {
 	const resultPageContentEl = document.querySelector('.js-result-container');
 	if (!resultPageContentEl) return;
-	new SiteAnalysisResult(resultPageContentEl, currentLocale);
+
+	const { resultTextData } = await import('../config/result-text');
+	const locale = currentLocale === 'en' ? 'en' : 'fr';
+	new SiteAnalysisResult(resultPageContentEl, currentLocale, resultTextData[locale]);
 }
 
 async function initButtonRemakeAnalysis(): Promise<void> {
