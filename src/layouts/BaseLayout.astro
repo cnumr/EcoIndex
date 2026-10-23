@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '../config/site';
-import { locales } from '../config/site';
+import { locales, site } from '../config/site';
 import { t } from '../i18n';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
@@ -22,6 +22,9 @@ const currentPath = Astro.url.pathname;
 const noJsMessage = t(locale, 'NoJSMessage');
 const skipLinkLabel = t(locale, 'GoToContent');
 const stackClass = ['stack-l', '--s3', customClass].filter(Boolean).join(' ');
+const pageTitle = `${title} | EcoIndex`;
+const canonicalUrl = new URL(currentPath, Astro.site ?? site.baseUrl).href;
+const ogImageUrl = new URL('/images/logo.png', Astro.site ?? site.baseUrl).href;
 ---
 
 <!doctype html>
@@ -30,13 +33,32 @@ const stackClass = ['stack-l', '--s3', customClass].filter(Boolean).join(' ');
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={siteDescription} />
-		<meta name="theme-color" content="#007e5f" />
+		<meta name="theme-color" content={site.themeColor} />
+		{/* Same favicon as the Hugo site (green circle emoji + Safari mask-icon). */}
 		<link
 			rel="icon"
-			href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.866em%22 font-size=%22100%22>🟢</text></svg>"
 		/>
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="mask-icon" href="/images/disc.svg" color="#00cc99" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="EcoIndex" />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={siteDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={siteDescription} />
+		<meta name="twitter:image" content={ogImageUrl} />
 		<link rel="stylesheet" href={printStylesheet} media="print" />
-		<title>{title} | EcoIndex</title>
+		<title>{pageTitle}</title>
 		{/* One-liner only: a separate tiny JS file would skip Caddy encode (< 512 B). */}
 		<script is:inline>
 			document.documentElement.classList.add('js-ok');
