@@ -25,7 +25,7 @@ jobs:
       previous_tag: ${{ steps.previous_tag.outputs.tag }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           ref: main
@@ -43,7 +43,7 @@ jobs:
           fi
 
       - name: Setup mise
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@f5be966e4a917d54244728e6a5fdcd1d93a35e6c # v5.2.6
 
       - name: Install runtimes
         run: mise install
@@ -68,7 +68,7 @@ jobs:
           BUMP: ${{ inputs.bump }}
 
       - name: Commit and tag
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@f68b41bfefb2ed558185ab6ab97b620866ebe369 # v11.1.1
         with:
           add: package.json
           message: 'chore: bump version to ${{ steps.bump.outputs.version }}'
@@ -83,12 +83,12 @@ jobs:
       name: production
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: v${{ needs.bump.outputs.version }}
 
       - name: Setup mise
-        uses: jdx/mise-action@v2
+        uses: jdx/mise-action@f5be966e4a917d54244728e6a5fdcd1d93a35e6c # v5.2.6
 
       - name: Install runtimes
         run: mise install
@@ -121,7 +121,7 @@ jobs:
       MATTERMOST_RELEASE_URL: ${{ secrets.MATTERMOST_RELEASE_URL }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
           ref: v${{ needs.bump.outputs.version }}
@@ -130,7 +130,7 @@ jobs:
         id: changelog
         if: ${{ needs.bump.outputs.previous_tag != '' }}
         continue-on-error: true
-        uses: requarks/changelog-action@v1
+        uses: requarks/changelog-action@7ce6be4c4d2233ae2a943694ca34f23aeafa1054 # v1.11.0
         with:
           token: ${{ github.token }}
           fromTag: v${{ needs.bump.outputs.version }}
@@ -157,7 +157,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
           allowUpdates: true
           makeLatest: true
