@@ -1,5 +1,4 @@
 [tools]
-node = "22"
 bun = "latest"
 
 [env]
