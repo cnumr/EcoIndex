@@ -27,7 +27,7 @@ Les données de référence (couleurs des notes A–G, cibles de score) sont syn
 ### Prérequis
 
 - [mise](https://mise.jdx.dev/) (gestion des runtimes)
-- Node.js 22+ et [Bun](https://bun.sh/) (installés via mise)
+- [Bun](https://bun.sh/) (installés via mise)
 
 ```bash
 mise trust    # une seule fois, pour activer .mise.toml
@@ -220,7 +220,7 @@ Reference data (grade A–G colors, score targets) is synced from
 ### Prerequisites
 
 - [mise](https://mise.jdx.dev/) (runtime manager)
-- Node.js 22+ and [Bun](https://bun.sh/) (installed via mise)
+- [Bun](https://bun.sh/) (installed via mise)
 
 ```bash
 mise trust    # once, to enable .mise.toml
