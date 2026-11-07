@@ -2,10 +2,12 @@
 
 :root {
 	/* Fonts */
-	--font-plain: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-		'Cantarell', 'Fira Sans', 'Droid Sans', 'San Francisco', 'Helvetica Neue', sans-serif;
+	--font-plain:
+		-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+		'Fira Sans', 'Droid Sans', 'San Francisco', 'Helvetica Neue', sans-serif;
 	--font-special: var(--font-plain);
-	--font-mono: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
+	--font-mono:
+		Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter',
 		'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L', Monaco,
 		'Courier New', Courier, monospace;
 
@@ -27,7 +29,9 @@
 
 	--ratio: 1.3;
 
-	--s-5: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
+	--s-5: calc(
+		var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio)
+	);
 	--s-4: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio) / var(--ratio));
 	--s-3: calc(var(--s0) / var(--ratio) / var(--ratio) / var(--ratio));
 	--s-2: calc(var(--s0) / var(--ratio) / var(--ratio));
@@ -38,14 +42,18 @@
 	--s2: calc(var(--s0) * var(--ratio) * var(--ratio));
 	--s3: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio));
 	--s4: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-	--s5: calc(var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+	--s5: calc(
+		var(--s0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio)
+	);
 
 	--p0: 1vw;
 	--p1: calc(var(--p0) * var(--ratio));
 	--p2: calc(var(--p0) * var(--ratio) * var(--ratio));
 	--p3: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio));
 	--p4: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
-	--p5: calc(var(--p0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio));
+	--p5: calc(
+		var(--p0) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio) * var(--ratio)
+	);
 
 	--s0p0: calc(var(--s0) + var(--p0));
 	--s0p1: calc(var(--s0) + var(--p1));

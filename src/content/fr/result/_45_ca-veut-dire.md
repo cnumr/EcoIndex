@@ -1,9 +1,9 @@
 ---
-locale: "fr"
-section: "result"
-id: "ca-veut-dire"
+locale: 'fr'
+section: 'result'
+id: 'ca-veut-dire'
 weight: 945
-type: "widget"
+type: 'widget'
 ---
 
 ### Ca veut dire quoi ?

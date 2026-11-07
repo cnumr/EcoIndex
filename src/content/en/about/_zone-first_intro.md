@@ -1,8 +1,8 @@
 ---
-locale: "en"
-section: "about"
-id: "intro"
-type: "widget"
+locale: 'en'
+section: 'about'
+id: 'intro'
+type: 'widget'
 ---
 
 EcoIndex.fr is an online service initially designed by Frédéric Bordage (GreenIT.fr) and produced by Gwenael Chailleu and Thomas Samain (Nxtweb).

@@ -1,8 +1,8 @@
 ---
-locale: "fr"
-section: "about"
-id: "intro"
-type: "widget"
+locale: 'fr'
+section: 'about'
+id: 'intro'
+type: 'widget'
 ---
 
 À l’origine, EcoIndex.fr est un service en ligne conçu et proposé par Frédéric Bordage (GreenIT.fr) et réalisé par

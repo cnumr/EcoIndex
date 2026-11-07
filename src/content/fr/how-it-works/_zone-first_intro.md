@@ -1,8 +1,8 @@
 ---
-locale: "fr"
-section: "how-it-works"
-id: "intro"
-type: "widget"
+locale: 'fr'
+section: 'how-it-works'
+id: 'intro'
+type: 'widget'
 ---
 
 EcoIndex permet de prendre conscience de l’impact environnemental d’internet et de proposer des solutions concrètes.

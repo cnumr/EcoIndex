@@ -25,8 +25,8 @@
 	stroke-width: var(--border-thin);
 	transition: d 0.25s;
 }
-.js-ok .menu-btn[aria-expanded="true"] path {
-	d: path("M3,3 27,27 M15,15 15,15 M3,27 27,3");
+.js-ok .menu-btn[aria-expanded='true'] path {
+	d: path('M3,3 27,27 M15,15 15,15 M3,27 27,3');
 }
 
 .main-nav-container {
@@ -55,12 +55,12 @@
 		justify-content: center;
 	}
 
-	.js-ok .main-nav-container[data-open="true"] {
+	.js-ok .main-nav-container[data-open='true'] {
 		height: 100vh;
 		display: block;
 	}
 
-	.js-ok .main-nav-container[data-open="false"] {
+	.js-ok .main-nav-container[data-open='false'] {
 		display: none;
 	}
 

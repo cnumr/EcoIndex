@@ -9,7 +9,7 @@
 	color: white;
 }
 .select-inline-custom:after {
-	content: "";
+	content: '';
 	position: absolute;
 	z-index: 1;
 	top: 50%;
