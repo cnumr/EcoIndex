@@ -8,12 +8,8 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"migrate": "bun run scripts/migrate-content.ts",
-		"i18n": "bun run scripts/convert-i18n.ts",
 		"reference:sync": "bun run scripts/sync-ecoindex-reference.ts",
 		"reference:check": "bun run scripts/sync-ecoindex-reference.ts --check",
-		"grades:generate": "bun run reference:sync",
-		"grades:check": "bun run reference:check",
 		"check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
 		"typecheck": "astro check",
 		"test": "vitest run",
@@ -28,6 +24,7 @@
 		"@astrojs/mdx": "^7.0.2",
 		"a11y-dialog": "^8.1.5",
 		"astro": "^7.0.7",
+		"ecoindex_reference": "github:cnumr/ecoindex_reference",
 		"ky": "^2.0.2"
 	},
 	"devDependencies": {
