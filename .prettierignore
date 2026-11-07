@@ -1,6 +1,2 @@
-dist
-node_modules
-.astro
 bun.lock
-public/symbols.svg
 LICENSE.md
