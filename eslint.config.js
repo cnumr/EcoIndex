@@ -1,7 +1,8 @@
-import { defineConfig } from "eslint/config";
-import globals from "globals";
+import { defineConfig } from 'eslint/config';
+import globals from 'globals';
 import eslintPluginAstro from 'eslint-plugin-astro';
 import tseslint from 'typescript-eslint';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default defineConfig([
 	{
@@ -13,8 +14,8 @@ export default defineConfig([
 		languageOptions: {
 			globals: {
 				...globals.browser,
-			}
-		}
+			},
+		},
 	},
 	{
 		files: ['**/*.{ts,tsx,astro}'],
@@ -25,4 +26,5 @@ export default defineConfig([
 			],
 		},
 	},
+	eslintPluginPrettierRecommended,
 ]);
