@@ -1,13 +1,14 @@
-import { defineConfig } from 'eslint/config';
-import globals from 'globals';
 import eslintPluginAstro from 'eslint-plugin-astro';
-import tseslint from 'typescript-eslint';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import { defineConfig, includeIgnoreFile } from 'eslint/config';
+import globals from 'globals';
+import { fileURLToPath } from 'node:url';
+import tseslint from 'typescript-eslint';
+
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
 export default defineConfig([
-	{
-		ignores: ['dist/**', 'node_modules/**', '.astro/**', 'public/**', 'bun.lock'],
-	},
+	includeIgnoreFile(gitignorePath, { gitignoreResolution: true }),
 	...tseslint.configs.recommended,
 	...eslintPluginAstro.configs.recommended,
 	{
