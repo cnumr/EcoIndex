@@ -1,34 +1,34 @@
 ---
-locale: "fr"
-section: "about"
-id: "contribution"
+locale: 'fr'
+section: 'about'
+id: 'contribution'
 weight: 10
-type: "widget"
+type: 'widget'
 ---
 
 ## Contributeurs et contributrices de cette version
 
 - Auteur
-  - [Frédéric Bordage](https://www.linkedin.com/in/fbordage/)
+    - [Frédéric Bordage](https://www.linkedin.com/in/fbordage/)
 - Gestion de projet
-  - [Mathias Fryde](https://www.linkedin.com/in/mfryde/)
-  - [Margot Faudeil](https://www.linkedin.com/in/margot-faudeil-53b81886/)
-  - [Tanguy de Montmarin](https://www.linkedin.com/in/tanguy-de-montmarin-35355353/)
+    - [Mathias Fryde](https://www.linkedin.com/in/mfryde/)
+    - [Margot Faudeil](https://www.linkedin.com/in/margot-faudeil-53b81886/)
+    - [Tanguy de Montmarin](https://www.linkedin.com/in/tanguy-de-montmarin-35355353/)
 - UX Design
-  - [Aurélie Baton](https://www.linkedin.com/in/aureliebaton/)
+    - [Aurélie Baton](https://www.linkedin.com/in/aureliebaton/)
 - Contenus
-  - [Aurélie Baton](https://www.linkedin.com/in/aureliebaton/)
-  - [Margot Faudeil](https://www.linkedin.com/in/margot-faudeil-53b81886/)
+    - [Aurélie Baton](https://www.linkedin.com/in/aureliebaton/)
+    - [Margot Faudeil](https://www.linkedin.com/in/margot-faudeil-53b81886/)
 - Webdesign
-  - [Gaétan Pautler](https://www.linkedin.com/in/gaetanpautler/)
-  - [Léo Parpeix](https://www.linkedin.com/in/l%C3%A9o-parpeix-464832111/)
+    - [Gaétan Pautler](https://www.linkedin.com/in/gaetanpautler/)
+    - [Léo Parpeix](https://www.linkedin.com/in/l%C3%A9o-parpeix-464832111/)
 - Développement
-  - [Yaacov Cohen](https://www.linkedin.com/in/yaacovcohen/?locale=fr_FR)
-  - [Romuald Priol](https://www.linkedin.com/in/romuald-p/)
-  - [Romain Dulieu](https://www.linkedin.com/in/romain-dulieu-53a354120/)
-  - [Vincent Vatelot](https://vincent-vatelot.welovedevs.com/)
-  - [Bastien Cornier](https://www.linkedin.com/in/bastiencornier/)
-  - [Julien Wilhelm](https://www.linkedin.com/in/julien-wilhelm/)
+    - [Yaacov Cohen](https://www.linkedin.com/in/yaacovcohen/?locale=fr_FR)
+    - [Romuald Priol](https://www.linkedin.com/in/romuald-p/)
+    - [Romain Dulieu](https://www.linkedin.com/in/romain-dulieu-53a354120/)
+    - [Vincent Vatelot](https://vincent-vatelot.welovedevs.com/)
+    - [Bastien Cornier](https://www.linkedin.com/in/bastiencornier/)
+    - [Julien Wilhelm](https://www.linkedin.com/in/julien-wilhelm/)
 
 Nous remercions également :
 

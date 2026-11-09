@@ -14,72 +14,72 @@
 	justify-content: center;
 	border-radius: 100%;
 }
-.result-badge[data-int-grade-value="A"] {
+.result-badge[data-int-grade-value='A'] {
 	color: #fff;
 }
 
-.result-badge[data-int-grade-value="A"],
+.result-badge[data-int-grade-value='A'],
 .notation-level-chart:nth-child(1) > *,
-.result-notation-info-item[data-int-item-score="1"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='1'] .result-notation-info-label::before {
 	background-color: var(--color-grade-A);
 }
 
-.result-badge[data-int-grade-value="B"],
+.result-badge[data-int-grade-value='B'],
 .notation-level-chart:nth-child(2) > *,
-.result-notation-info-item[data-int-item-score="2"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='2'] .result-notation-info-label::before {
 	background-color: var(--color-grade-B);
 }
 
-.result-badge[data-int-grade-value="C"],
+.result-badge[data-int-grade-value='C'],
 .notation-level-chart:nth-child(3) > *,
-.result-notation-info-item[data-int-item-score="3"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='3'] .result-notation-info-label::before {
 	background-color: var(--color-grade-C);
 }
 
-.result-badge[data-int-grade-value="D"],
+.result-badge[data-int-grade-value='D'],
 .notation-level-chart:nth-child(4) > *,
-.result-notation-info-item[data-int-item-score="4"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='4'] .result-notation-info-label::before {
 	background-color: var(--color-grade-D);
 }
 
-.result-badge[data-int-grade-value="E"],
+.result-badge[data-int-grade-value='E'],
 .notation-level-chart:nth-child(5) > *,
-.result-notation-info-item[data-int-item-score="5"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='5'] .result-notation-info-label::before {
 	background-color: var(--color-grade-E);
 }
 
-.result-badge[data-int-grade-value="F"],
+.result-badge[data-int-grade-value='F'],
 .notation-level-chart:nth-child(6) > *,
-.result-notation-info-item[data-int-item-score="6"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='6'] .result-notation-info-label::before {
 	background-color: var(--color-grade-F);
 }
 
-.result-badge[data-int-grade-value="G"],
+.result-badge[data-int-grade-value='G'],
 .notation-level-chart:nth-child(7) > *,
-.result-notation-info-item[data-int-item-score="7"] .result-notation-info-label::before {
+.result-notation-info-item[data-int-item-score='7'] .result-notation-info-label::before {
 	background-color: var(--color-grade-G);
 }
 
 /* White color on bg for contrasts */
-.result-badge[data-int-grade-value="A"],
-.result-badge[data-int-grade-value="G"],
+.result-badge[data-int-grade-value='A'],
+.result-badge[data-int-grade-value='G'],
 .notation-level-chart:nth-child(1).--active,
 .notation-level-chart:nth-child(7).--active {
 	color: #fff;
 }
 
 /* Binary scores (good/bad) result params colors  */
-.result-load-range [data-int-item-score="0"],
-[data-int-size-binary-score-value="0"],
-[data-int-nodes-binary-score-value="0"],
-[data-int-requests-binary-score-value="0"] {
+.result-load-range [data-int-item-score='0'],
+[data-int-size-binary-score-value='0'],
+[data-int-nodes-binary-score-value='0'],
+[data-int-requests-binary-score-value='0'] {
 	color: var(--color-grade-A);
 }
-.result-load-range [data-int-item-score=""],
-.result-load-range [data-int-item-score="1"],
-[data-int-size-binary-score-value="1"],
-[data-int-nodes-binary-score-value="1"],
-[data-int-requests-binary-score-value="1"] {
+.result-load-range [data-int-item-score=''],
+.result-load-range [data-int-item-score='1'],
+[data-int-size-binary-score-value='1'],
+[data-int-nodes-binary-score-value='1'],
+[data-int-requests-binary-score-value='1'] {
 	color: var(--color-grade-E);
 }
 
@@ -136,7 +136,7 @@
 }
 
 .result-notation-info-item .result-notation-info-label::before {
-	content: "";
+	content: '';
 	width: 0.5rem;
 	display: inline-block;
 	height: 0.5rem;

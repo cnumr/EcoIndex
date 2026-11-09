@@ -1,6 +1,9 @@
-dist
-node_modules
-.astro
 bun.lock
-public/symbols.svg
 LICENSE.md
+# Generated files
+src/config/ecoindex-targets.ts
+src/styles/0_grade-colors.css
+# prettier-plugin-astro seems to have a bug with nested lists
+**/*.mdx
+# Avoid lint-staged issues
+.prettierignore

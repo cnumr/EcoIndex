@@ -9,9 +9,9 @@
 	padding: var(--s-5);
 	border-radius: var(--s-5);
 }
-.language-switcher .lang[aria-current="true"]::after {
+.language-switcher .lang[aria-current='true']::after {
 	position: absolute;
-	content: "\A";
+	content: '\A';
 	top: 100%;
 	left: calc(50% - var(--s-3) / 2);
 	width: var(--s-3);
@@ -19,10 +19,10 @@
 	border-radius: 50%;
 	background-color: var(--color-highlight-light);
 }
-.language-switcher .lang[aria-current="true"] {
+.language-switcher .lang[aria-current='true'] {
 	font-weight: var(--font-weight-bold);
 }
 
-.language-switcher .lang[aria-current="true"]::after {
+.language-switcher .lang[aria-current='true']::after {
 	color: var(--color-lightish);
 }

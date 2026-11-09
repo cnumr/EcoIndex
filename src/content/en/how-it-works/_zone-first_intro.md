@@ -1,8 +1,8 @@
 ---
-locale: "en"
-section: "how-it-works"
-id: "intro"
-type: "widget"
+locale: 'en'
+section: 'how-it-works'
+id: 'intro'
+type: 'widget'
 ---
 
 EcoIndex helps raising awareness on Internet environmental footprint and offers practical solutions.

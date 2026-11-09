@@ -51,7 +51,7 @@ textarea {
 :focus-within {
 	z-index: 1;
 }
-[tabindex="-1"]:focus {
+[tabindex='-1']:focus {
 	outline: none;
 }
 
@@ -71,7 +71,7 @@ pre {
 
 /* Media */
 img,
-[role="img"] {
+[role='img'] {
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -130,12 +130,12 @@ td:first-child {
 }
 
 /* Main link */
-[href="#main"] {
+[href='#main'] {
 	display: inline-block;
 	position: absolute;
 	top: -10rem;
 }
-[href="#main"]:focus {
+[href='#main']:focus {
 	position: absolute;
 	z-index: 10;
 	top: 0;

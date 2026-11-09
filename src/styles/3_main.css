@@ -29,7 +29,7 @@ html {
 	outline-width: 0;
 }
 .enlarge-link a:before {
-	content: "";
+	content: '';
 	display: block;
 	height: 100%;
 	inset: 0;
@@ -44,10 +44,10 @@ html {
 }
 
 /* A elements that don't have a class get default styles */
-:not(figure) > [target="_blank"]::after,
-figure > [target="_blank"] + figcaption::after {
+:not(figure) > [target='_blank']::after,
+figure > [target='_blank'] + figcaption::after {
 	background-color: currentcolor;
-	content: "";
+	content: '';
 	display: inline-block;
 	height: 1rem;
 	margin-left: 0.25rem;
@@ -58,7 +58,7 @@ figure > [target="_blank"] + figcaption::after {
 }
 
 a:not([class]):hover,
-figure > [target="_blank"]:hover + figcaption {
+figure > [target='_blank']:hover + figcaption {
 	text-decoration: underline;
 	text-decoration-color: var(--color-light);
 }
@@ -93,11 +93,11 @@ hr.x-small {
 }
 
 /* Main link */
-[href="#main"] {
+[href='#main'] {
 	padding: 0 var(--s-1);
 	background-color: var(--color-light);
 }
-[href="#main"]:focus {
+[href='#main']:focus {
 	color: var(--color-dark);
 	border-color: var(--color-lightish);
 	left: var(--border-thick);
@@ -111,10 +111,10 @@ blockquote {
 	padding-bottom: var(--s1);
 }
 blockquote > p:before {
-	content: "\00ab\202F";
+	content: '\00ab\202F';
 }
 blockquote > p:after {
-	content: "\202F\00bb";
+	content: '\202F\00bb';
 }
 
 dt {
@@ -150,14 +150,16 @@ input {
 /* Remove default style when autocomplete */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-	transition: background-color 600000s 0s, color 600000s 0s;
+	transition:
+		background-color 600000s 0s,
+		color 600000s 0s;
 }
 input[data-autocompleted] {
 	background-color: transparent !important;
 }
 
-input[type="submit"],
-input[type="button"],
+input[type='submit'],
+input[type='button'],
 button {
 	text-align: left;
 	cursor: pointer;
@@ -183,12 +185,12 @@ button {
 
 /* Navigation */
 nav a,
-span[aria-current="page"],
-span[data-state="active"] {
+span[aria-current='page'],
+span[data-state='active'] {
 	text-decoration: none;
 }
-nav span[aria-current="page"],
-nav span[data-state="active"] {
+nav span[aria-current='page'],
+nav span[data-state='active'] {
 	border-bottom-width: var(--border-thick);
 	border-color: var(--color-highlight-light);
 	padding-bottom: var(--s-5);

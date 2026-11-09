@@ -1,8 +1,8 @@
 ---
-locale: "fr"
-section: "eco-design"
-id: "intro"
-type: "widget"
+locale: 'fr'
+section: 'eco-design'
+id: 'intro'
+type: 'widget'
 ---
 
 L’éco&shy;conception des services numériques est l’une des clés permettant de réduire l’empreinte environnementale du

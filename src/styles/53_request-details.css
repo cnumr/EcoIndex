@@ -32,7 +32,7 @@
 	margin: 0;
 }
 
-.request-details-bar[role="img"] {
+.request-details-bar[role='img'] {
 	display: flex;
 	width: 100%;
 	max-width: 100%;
@@ -218,7 +218,7 @@
 	font-size: 0.85rem;
 }
 
-.request-details-filter[aria-pressed="true"] {
+.request-details-filter[aria-pressed='true'] {
 	background: var(--color-dark);
 	color: #fff;
 	border-color: var(--color-dark);
@@ -268,7 +268,7 @@
 	transition: transform 0.2s ease;
 }
 
-.request-details .js-collapse-button[aria-expanded="true"] svg {
+.request-details .js-collapse-button[aria-expanded='true'] svg {
 	transform: rotate(180deg);
 }
 
