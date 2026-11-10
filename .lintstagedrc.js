@@ -1,5 +1,5 @@
 import { defineConfig } from 'lint-staged/config';
 
 export default defineConfig({
-	'*': ['prettier --write', 'eslint'],
+	'*.{css,js,cjs,mjs,ts,astro,json,md,yml,yaml,md}': ['prettier --write', 'eslint'],
 });
