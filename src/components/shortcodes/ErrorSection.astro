@@ -1,6 +1,5 @@
 ---
-import type { Locale } from '../../config/site';
-import { t } from '../../i18n';
+import { type Locale, t } from '../../i18n';
 
 interface Props {
 	message?: string;
@@ -9,7 +8,7 @@ interface Props {
 }
 
 const { message, class: className, locale = 'fr' } = Astro.props;
-const defaultMessage = message ?? t(locale, 'Error404');
+const defaultMessage = message ?? t(locale, 'ErrorAnalysisMessage');
 ---
 
 <div

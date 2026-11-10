@@ -184,5 +184,6 @@
 	"ResultVerdictParameterNodesMin": "Simple",
 	"ResultVerdictParameterNodesMax": "Trop complexe",
 	"ResultVerdictParameterRequestsMin": "Peu de requêtes",
-	"ResultVerdictParameterRequestsMax": "Trop de requêtes"
+	"ResultVerdictParameterRequestsMax": "Trop de requêtes",
+	"ErrorAnalysisMessage": "Houston, nous avons un problème"
 }
