@@ -1,4 +1,4 @@
-export type Locale = 'fr' | 'en';
+import { type Locale, t } from '../i18n';
 
 export interface SiteConfig {
 	baseUrl: string;
@@ -29,17 +29,15 @@ export interface LocaleConfig {
 export const locales: Record<Locale, LocaleConfig> = {
 	fr: {
 		code: 'fr',
-		name: 'Français',
+		name: t('fr', 'fr'),
 		prefix: '',
-		description:
-			"Évaluez gratuitement la performance et l'empreinte environnementale de votre site web",
+		description: t('fr', 'MetaDescription'),
 	},
 	en: {
 		code: 'en',
-		name: 'English',
+		name: t('en', 'en'),
 		prefix: '/en',
-		description:
-			'Evaluate the performance and environmental footprint of your website for free',
+		description: t('en', 'MetaDescription'),
 	},
 };
 
@@ -69,7 +67,7 @@ export function getPageUrl(locale: Locale, section: string): string {
 
 export function getSectionFromSlug(locale: Locale, slug: string): string | undefined {
 	for (const [section, slugs] of Object.entries(routes)) {
-		if (slugs[locale] === slug) return section;
+		if (slugs[locale as Locale] === slug) return section;
 	}
 	return undefined;
 }
@@ -98,42 +96,75 @@ export const extraMenu: Record<Locale, { section: string; weight: number }[]> = 
 	],
 };
 
+export const pageTitles: Record<string, Record<Locale, string>> = {
+	home: { fr: t('fr', 'PageTitleHome'), en: t('en', 'PageTitleHome') },
+	'how-it-works': {
+		fr: t('fr', 'PageTitleHowItWorks'),
+		en: t('en', 'PageTitleHowItWorks'),
+	},
+	'eco-design': {
+		fr: t('fr', 'PageTitleEcoDesign'),
+		en: t('en', 'PageTitleEcoDesign'),
+	},
+	about: { fr: t('fr', 'PageTitleAbout'), en: t('en', 'PageTitleAbout') },
+	'join-us': { fr: t('fr', 'PageTitleJoinUs'), en: t('en', 'PageTitleJoinUs') },
+	legal: { fr: t('fr', 'PageTitleLegal'), en: t('en', 'PageTitleLegal') },
+	privacy: { fr: t('fr', 'PageTitlePrivacy'), en: t('en', 'PageTitlePrivacy') },
+	result: { fr: t('fr', 'PageTitleResult'), en: t('en', 'PageTitleResult') },
+	error: { fr: t('fr', 'PageTitleError'), en: t('en', 'PageTitleError') },
+	'stop-analysis': {
+		fr: t('fr', 'PageTitleStopAnalysis'),
+		en: t('en', 'PageTitleStopAnalysis'),
+	},
+};
+
 export const footerMenu: Record<Locale, MenuItem[]> = {
 	fr: [
-		{ label: 'Nous rejoindre', href: getPageUrl('fr', 'join-us'), weight: 1 },
-		{ label: 'Mentions légales', href: getPageUrl('fr', 'legal'), weight: 2 },
-		{ label: 'Politique de confidentialité', href: getPageUrl('fr', 'privacy'), weight: 3 },
 		{
-			label: 'GitHub',
+			label: t('fr', 'FooterMenuJoinUs'),
+			href: getPageUrl('fr', 'join-us'),
+			weight: 1,
+		},
+		{
+			label: t('fr', 'FooterMenuLegalNotice'),
+			href: getPageUrl('fr', 'legal'),
+			weight: 2,
+		},
+		{
+			label: t('fr', 'FooterMenuPrivacy'),
+			href: getPageUrl('fr', 'privacy'),
+			weight: 3,
+		},
+		{
+			label: t('fr', 'FooterMenuGitHub'),
 			href: 'https://github.com/cnumr/Ecoindex/',
 			weight: 10,
 			newtab: true,
 		},
 	],
 	en: [
-		{ label: 'Join us', href: getPageUrl('en', 'join-us'), weight: 1 },
-		{ label: 'Legal notice', href: getPageUrl('en', 'legal'), weight: 2 },
-		{ label: 'Privacy', href: getPageUrl('en', 'privacy'), weight: 3 },
 		{
-			label: 'GitHub',
+			label: t('en', 'FooterMenuJoinUs'),
+			href: getPageUrl('en', 'join-us'),
+			weight: 1,
+		},
+		{
+			label: t('en', 'FooterMenuLegalNotice'),
+			href: getPageUrl('en', 'legal'),
+			weight: 2,
+		},
+		{
+			label: t('en', 'FooterMenuPrivacy'),
+			href: getPageUrl('en', 'privacy'),
+			weight: 3,
+		},
+		{
+			label: t('en', 'FooterMenuGitHub'),
 			href: 'https://github.com/cnumr/Ecoindex/',
 			weight: 10,
 			newtab: true,
 		},
 	],
-};
-
-export const pageTitles: Record<string, Record<Locale, string>> = {
-	home: { fr: 'Testez un site', en: 'Test a website' },
-	'how-it-works': { fr: 'Comment ça marche ?', en: 'How does it work?' },
-	'eco-design': { fr: "L'écoconception", en: 'Eco-design' },
-	about: { fr: 'À propos', en: 'About' },
-	'join-us': { fr: 'Nous rejoindre', en: 'Join us' },
-	legal: { fr: 'Mentions légales', en: 'Legal notice' },
-	privacy: { fr: 'Confidentialité', en: 'Privacy' },
-	result: { fr: 'Résultat', en: 'Result' },
-	error: { fr: 'Erreur', en: 'Error' },
-	'stop-analysis': { fr: "Arrêt de l'analyse", en: 'Stop analysis' },
 };
 
 export function buildMenuItems(

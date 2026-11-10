@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import type { Locale } from '../config/site';
+import type { Locale } from '../i18n';
 
 type ContentEntry = CollectionEntry<'fr'> | CollectionEntry<'en'>;
 

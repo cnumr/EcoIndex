@@ -71,7 +71,7 @@ class BadgeIntegration {
 
 	#buildStaticSnippet(redirectUrl: string, badgeUrl: string): string {
 		return `<a href="${redirectUrl}" target="_blank">
-    <img src="${badgeUrl}" alt="Ecoindex Badge" />
+    <img src="${badgeUrl}" alt="${t('BadgeAlt')}" />
 </a>`;
 	}
 

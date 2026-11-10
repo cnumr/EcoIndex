@@ -1,7 +1,6 @@
 ---
-import type { Locale } from '../../config/site';
 import { buildMenuItems, extraMenu, mainMenu } from '../../config/site';
-import { t } from '../../i18n';
+import { type Locale, t } from '../../i18n';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
@@ -82,7 +81,7 @@ const showBurger = decoType === 'home';
 						>
 							<path d="M3,3 27,3 M3,15 27,15 M3,27 27,27"></path>
 						</svg>
-						Menu
+						{t(locale, 'MenuButton')}
 					</button>
 				</div>
 			</div>
