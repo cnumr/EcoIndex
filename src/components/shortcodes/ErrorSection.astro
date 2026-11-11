@@ -1,10 +1,14 @@
 ---
+import { type Locale, t } from '../../i18n';
+
 interface Props {
 	message?: string;
 	class?: string;
+	locale?: Locale;
 }
 
-const { message, class: className } = Astro.props;
+const { message, class: className, locale = 'fr' } = Astro.props;
+const defaultMessage = message ?? t(locale, 'ErrorAnalysisMessage');
 ---
 
 <div
@@ -18,7 +22,7 @@ const { message, class: className } = Astro.props;
 		className,
 	]}
 >
-	{message && <h1 class="error-section-message h1">{message}</h1>}
+	<h1 class="error-section-message h1">{defaultMessage}</h1>
 	<div class="content --s2p0">
 		<slot />
 	</div>

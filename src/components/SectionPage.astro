@@ -3,7 +3,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import type { Locale } from '../config/site';
+import { type Locale, t } from '../i18n';
 import { getSectionFromSlug, getPageUrl, pageTitles } from '../config/site';
 import { getSectionPage } from '../lib/content';
 import { setWidgetContext, type RenderedWidget } from '../lib/widget-context';
@@ -109,9 +109,13 @@ if (!notFound) {
 ---
 
 {notFound ? (
-	<BaseLayout locale={locale} title="404" alternatePath={locale === 'fr' ? '/en/404' : '/404'}>
-		<h1>404</h1>
-		<p>Page introuvable</p>
+	<BaseLayout
+		locale={locale}
+		title={t(locale, 'Error404')}
+		alternatePath={locale === 'fr' ? '/en/404' : '/404'}
+	>
+		<h1>{t(locale, 'Error404')}</h1>
+		<p>{t(locale, 'PageNotFound')}</p>
 	</BaseLayout>
 ) : (
 	<BaseLayout

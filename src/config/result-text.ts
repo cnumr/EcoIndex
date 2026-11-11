@@ -1,4 +1,5 @@
 import { ecoindexTargets } from './ecoindex-targets';
+import { type Locale, t } from '../i18n';
 
 /** Display min/max for result sliders (not sourced from ecoindex_reference). */
 const resultParametersDisplayBounds = {
@@ -13,65 +14,67 @@ const resultParametersMinMaxValues = {
 	requests: { ...resultParametersDisplayBounds.requests, target: ecoindexTargets.requests },
 } as const;
 
+function getVerdictTitles(locale: Locale): Record<string, string> {
+	return {
+		A: t(locale, 'ResultVerdictTitleA'),
+		B: t(locale, 'ResultVerdictTitleB'),
+		C: t(locale, 'ResultVerdictTitleC'),
+		D: t(locale, 'ResultVerdictTitleD'),
+		E: t(locale, 'ResultVerdictTitleE'),
+		F: t(locale, 'ResultVerdictTitleF'),
+		G: t(locale, 'ResultVerdictTitleG'),
+	};
+}
+
+function getVerdictMessages(locale: Locale): Record<string, string> {
+	return {
+		A: t(locale, 'ResultVerdictMessageA'),
+		B: t(locale, 'ResultVerdictMessageB'),
+		C: t(locale, 'ResultVerdictMessageC'),
+		D: t(locale, 'ResultVerdictMessageD'),
+		E: t(locale, 'ResultVerdictMessageE'),
+		F: t(locale, 'ResultVerdictMessageF'),
+		G: t(locale, 'ResultVerdictMessageG'),
+	};
+}
+
+function getVerdictParameters(locale: Locale): Record<string, [string, string]> {
+	return {
+		size: [
+			t(locale, 'ResultVerdictParameterSizeMin'),
+			t(locale, 'ResultVerdictParameterSizeMax'),
+		],
+		nodes: [
+			t(locale, 'ResultVerdictParameterNodesMin'),
+			t(locale, 'ResultVerdictParameterNodesMax'),
+		],
+		requests: [
+			t(locale, 'ResultVerdictParameterRequestsMin'),
+			t(locale, 'ResultVerdictParameterRequestsMax'),
+		],
+	};
+}
+
+function getFootprintUnitsData() {
+	return {
+		water: { order: ['cl', 'l'] as const, factor: 100 },
+		ges: { order: ['gCO2e', 'kgCO2e'] as const, factor: 1000 },
+	};
+}
+
 export const resultTextData = {
 	fr: {
-		verdictTitles: {
-			A: 'Bravo !',
-			B: 'Pas mal du tout !',
-			C: 'Encore un effort !',
-			D: 'Hum, pas top.',
-			E: 'Hum, pas top.',
-			F: 'Outch.',
-			G: 'Outch.',
-		},
-		verdictMessages: {
-			A: 'Le top. On se rapproche dangereusement de la perfection. ',
-			B: 'Si toutes les pages web pouvaient être aussi légères que celle-ci, le numérique serait plus vert',
-			C: 'Vous y êtes presque ! Encore quelques efforts et ce sera bon.',
-			D: 'La bonne nouvelle, c’est que vous pouvez faire beaucoup mieux !',
-			E: 'La bonne nouvelle, c’est que vous pouvez faire beaucoup mieux !',
-			F: 'On ne va pas se le cacher : ça fait mal. Il est temps d’agir !',
-			G: 'On ne va pas se le cacher : ça fait mal. Il est temps d’agir !',
-		},
-		verdictParameters: {
-			size: ['Si légère', 'Trop lourde'],
-			nodes: ['Simple', 'Trop complexe'],
-			requests: ['Peu de requêtes', 'Trop de requêtes'],
-		},
+		verdictTitles: getVerdictTitles('fr'),
+		verdictMessages: getVerdictMessages('fr'),
+		verdictParameters: getVerdictParameters('fr'),
 		resultParametersMinMaxValues,
-		footprintUnitsData: {
-			water: { order: ['cl', 'l'], factor: 100 },
-			ges: { order: ['gCO2e', 'kgCO2e'], factor: 1000 },
-		},
+		footprintUnitsData: getFootprintUnitsData(),
 	},
 	en: {
-		verdictTitles: {
-			A: 'Well done!',
-			B: 'Not bad at all!',
-			C: 'Almost there!',
-			D: 'Hmm, not great.',
-			E: 'Hmm, not great.',
-			F: 'Ouch.',
-			G: 'Ouch.',
-		},
-		verdictMessages: {
-			A: "Excellent! We're getting dangerously close to perfection!.",
-			B: 'If all web pages could be as light as this one, internet would be greener',
-			C: "You're almost there! Just a little more effort and it's all good.",
-			D: 'The good news is that you can do much better!',
-			E: 'The good news is that you can do much better!',
-			F: "Let's not hide it: it hurts. Time to act!",
-			G: "Let's not hide it: it hurts. Time to act!",
-		},
-		verdictParameters: {
-			size: ['So light', 'Too heavy'],
-			nodes: ['Simple', 'Too complex'],
-			requests: ['Few requests', 'Too many requests'],
-		},
+		verdictTitles: getVerdictTitles('en'),
+		verdictMessages: getVerdictMessages('en'),
+		verdictParameters: getVerdictParameters('en'),
 		resultParametersMinMaxValues,
-		footprintUnitsData: {
-			water: { order: ['cl', 'l'], factor: 100 },
-			ges: { order: ['gCO2e', 'kgCO2e'], factor: 1000 },
-		},
+		footprintUnitsData: getFootprintUnitsData(),
 	},
 } as const;

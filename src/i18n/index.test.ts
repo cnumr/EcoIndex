@@ -1,31 +1,21 @@
 import { describe, expect, it } from 'vitest';
-import { getMessages, t } from './index';
+import { t } from './index';
 
 describe('t (server)', () => {
-	it('returns FR message', () => {
-		const messages = getMessages('fr');
-		const key = Object.keys(messages)[0];
-		expect(key).toBeTruthy();
-		expect(t('fr', key!)).toBe(messages[key!]);
+	it('falls back to the translation key if translations do not exist', () => {
+		expect(t('en', '___missing___' as 'fr')).toBe('___missing___');
 	});
 
-	it('falls back to FR then key', () => {
-		expect(t('en', '___missing___')).toBe('___missing___');
+	it('returns the translated key if replacement tokens are absent from the translated message', () => {
+		expect(t('fr', 'Any' as 'fr', { X: '1' })).toBe('Any');
 	});
 
-	it('applies replacements', () => {
-		const messages = getMessages('fr');
-		const keyWithPlaceholder = Object.entries(messages).find(([, v]) => v.includes('##'))?.[0];
-		if (!keyWithPlaceholder) {
-			expect(t('fr', 'Any', { X: '1' })).toBe('Any');
-			return;
-		}
-		const raw = messages[keyWithPlaceholder]!;
-		const placeholder = raw.match(/##(\w+)##/)?.[1];
-		if (!placeholder) return;
-		expect(t('fr', keyWithPlaceholder, { [placeholder]: 'VALUE' })).toContain('VALUE');
-		expect(t('fr', keyWithPlaceholder, { [placeholder]: 'VALUE' })).not.toContain(
-			`##${placeholder}##`,
-		);
+	it('returns the translated message with tokens replaced tokens if they are present', () => {
+		const message = t('fr', 'Error429');
+
+		const placeholder = message.match(/##(\w+)##/)?.[1] as string;
+
+		expect(t('fr', 'Error429', { [placeholder]: 'VALUE' })).toContain('VALUE');
+		expect(t('fr', 'Error429', { [placeholder]: 'VALUE' })).not.toContain(`##${placeholder}##`);
 	});
 });
