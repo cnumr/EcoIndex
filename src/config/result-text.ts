@@ -1,5 +1,5 @@
-import { ecoindexTargets } from './ecoindex-targets';
 import { type Locale, t } from '../i18n';
+import { targets } from 'ecoindex_reference';
 
 /** Display min/max for result sliders (not sourced from ecoindex_reference). */
 const resultParametersDisplayBounds = {
@@ -9,9 +9,9 @@ const resultParametersDisplayBounds = {
 } as const;
 
 const resultParametersMinMaxValues = {
-	size: { ...resultParametersDisplayBounds.size, target: ecoindexTargets.size },
-	nodes: { ...resultParametersDisplayBounds.nodes, target: ecoindexTargets.nodes },
-	requests: { ...resultParametersDisplayBounds.requests, target: ecoindexTargets.requests },
+	size: { ...resultParametersDisplayBounds.size, target: targets.response_size },
+	nodes: { ...resultParametersDisplayBounds.nodes, target: targets.dom_size },
+	requests: { ...resultParametersDisplayBounds.requests, target: targets.nb_request },
 } as const;
 
 function getVerdictTitles(locale: Locale): Record<string, string> {

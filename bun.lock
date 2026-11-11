@@ -8,6 +8,7 @@
         "@astrojs/mdx": "^7.0.2",
         "a11y-dialog": "^8.1.5",
         "astro": "^7.0.7",
+        "ecoindex_reference": "github:cnumr/ecoindex_reference#ee98d7de79c75ccbfd0146a776d5ae68dba5678d",
         "ky": "^2.0.2",
       },
       "devDependencies": {
@@ -669,6 +670,8 @@
     "domutils": ["domutils@3.2.2", "", { "dependencies": { "dom-serializer": "^2.0.0", "domelementtype": "^2.3.0", "domhandler": "^5.0.3" } }, "sha512-6kZKyUajlDuqlHKVX1w7gyslj9MPIXzIFiz/rGu35uC1wMi+kMhQwGhl4lt9unC9Vb9INnY9Z3/ZA3+FhASLaw=="],
 
     "dset": ["dset@3.1.4", "", {}, "sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA=="],
+
+    "ecoindex_reference": ["ecoindex_reference@github:cnumr/ecoindex_reference#ee98d7d", {}, "cnumr-ecoindex_reference-ee98d7d", "sha512-9jjgGVNBxyclJ53MCoMCqLeL3UWS+2p+jdhaGLWJSJpdFdbe0BaJUIk33i0uMGXMnOlJHewL8xAng52aWOnGFw=="],
 
     "electron-to-chromium": ["electron-to-chromium@1.5.389", "", {}, "sha512-cEto7aeOqBfU1D+c5py5pE+ooscKE75JifxLBdFUZsqAxRS6y7kebtxAZvICszSl05gPjYHDTjY+lXpyGvpJbg=="],
 
