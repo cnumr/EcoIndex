@@ -24,7 +24,7 @@
 		"@astrojs/mdx": "^7.0.2",
 		"a11y-dialog": "^8.1.5",
 		"astro": "^7.0.7",
-		"ecoindex_reference": "github:cnumr/ecoindex_reference",
+		"ecoindex_reference": "github:cnumr/ecoindex_reference#ee98d7de79c75ccbfd0146a776d5ae68dba5678d",
 		"ky": "^2.0.2"
 	},
 	"devDependencies": {
