@@ -1,0 +1,59 @@
+[tools]
+bun = "1.4.4"
+
+# Some source code files must be generated each time the ecoindex_reference dependency changes
+# By watching the bun.lock, we can guarantee that the generated files are up-to-date if project dependencies change (removed, added, updated).
+[[watch_files]]
+patterns = ["bun.lock"]
+task = "reference:sync"
+
+[tasks.dev]
+description = "Runs Astro's development server. Uses Hot Module Replacement (HMR) to update your browser as you save changes in your editor."
+run = "bunx astro dev"
+
+[tasks.build]
+description = "Builds your site for deployment."
+run = "bunx astro build"
+depends = ["reference:sync"]
+
+[tasks.preview]
+description = "Preview your site locally after building to catch any errors in your build output before deploying it."
+run = "bunx astro preview"
+depends = ["build"]
+
+[tasks.typecheck]
+description = "Runs diagnostics (such as type-checking within .astro files) against your project and reports errors to the console."
+run = "bunx astro check"
+
+[tasks."reference:sync"]
+description = "Generate additional source files according to the data from the ecoindex_reference dependency"
+run = "bun scripts/sync-ecoindex-reference.ts"
+hide = true
+
+[tasks.test]
+description = "Run unit tests"
+run = "bunx vitest run"
+
+[tasks."test:watch"]
+description = "Run unit tests in watch mode"
+run = [ { task = "test", args = ["--watch"] } ]
+
+[tasks."test:coverage"]
+description = "Run unit tests and generate coverage"
+run = [ { task = "test", args = ["--coverage"] } ]
+
+[tasks.lint]
+description = "Check if source code is linted"
+run = "bunx eslint ."
+
+[tasks."lint:fix"]
+description = "Fix lint errors"
+run = [ { task = "lint", args = ["--fix"] } ]
+
+[tasks.format]
+description = "Check if source code is formatted"
+run = "bunx prettier ."
+
+[tasks."format:fix"]
+description = "Fix source code formatting"
+run = [ { task = "format", args = ["--write"] } ]

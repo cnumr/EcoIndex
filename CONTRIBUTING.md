@@ -26,14 +26,16 @@ mise install
 2. Installez les dépendances et lancez le serveur de développement :
     ```bash
     bun install
-    bun run dev        # http://localhost:4321
+    mise run dev       # http://localhost:4321
     ```
 3. Autres commandes utiles :
     ```bash
-    bun run build      # génère dist/
-    bun run preview    # prévisualise le build
-    bun run test       # tests unitaires (Vitest)
-    bun run check      # format + lint + typecheck + tests
+    mise run build     # génère dist/
+    mise run preview   # prévisualise le build
+    mise run test      # tests unitaires (Vitest)
+    mise run format    # vérifie le formatage
+    mise run lint      # vérifie le linting
+    mise run typecheck # vérifie le typage
     ```
 
 ### Synchronisation `ecoindex_reference`
@@ -41,11 +43,12 @@ mise install
 Les couleurs de notes et les cibles (poids, DOM, requêtes) sont générées depuis la référence officielle :
 
 ```bash
-bun run reference:sync    # régénère CSS + targets
-bun run reference:check   # vérifie (utilisé en CI)
+mise run reference:sync    # régénère CSS + targets
 ```
 
-Source : JSON distant sur `main` de `ecoindex_reference`, ou fichier local via `ECOINDEX_REFERENCE_PATH`.
+La synchronisation est **automatique** : mise surveille les changements dans `bun.lock` et déclenche `reference:sync` si nécessaire.
+
+Source : dépendance `ecoindex_reference`, ou fichier local via `ECOINDEX_REFERENCE_PATH`.
 
 ### Architecture
 
@@ -89,7 +92,7 @@ Quatre workflows GitHub Actions :
 
 | Workflow             | Fichier                               | Déclencheur                      |
 | -------------------- | ------------------------------------- | -------------------------------- |
-| Validation du build  | `.github/workflows/quality.yml`       | ouverture / mise à jour d’une PR |
+| Code quality checks  | `.github/workflows/quality.yml`       | ouverture / mise à jour d’une PR |
 | Deploy preproduction | `.github/workflows/deploy.yml`        | push sur `main`                  |
 | Deploy manual        | `.github/workflows/deploy-manual.yml` | manuel (`workflow_dispatch`)     |
 | Release              | `.github/workflows/release.yml`       | manuel (`workflow_dispatch`)     |
@@ -126,11 +129,10 @@ Le front est servi par Caddy (`file_server` sur `/srv/preprod` et `/srv/prod`). 
 
 #### Quand on ouvre une PR
 
-Le workflow **Validation du build** s’exécute automatiquement. Il :
+Le workflow **Code quality checks** s’exécute automatiquement. Il :
 
 1. installe les runtimes (mise) et les dépendances (`bun install --frozen-lockfile`)
-2. vérifie la sync `ecoindex_reference` (`reference:check`)
-3. lance `format:check`, `lint`, `typecheck`, `test`, puis `build`
+2. lance `format`, `lint`, `typecheck`, `test`, puis `build`
 
 Aucun déploiement n’est effectué. La PR peut être mergée une fois ces checks verts.
 
@@ -138,7 +140,7 @@ Aucun déploiement n’est effectué. La PR peut être mergée une fois ces chec
 
 Le workflow **Deploy preproduction** se déclenche sur le push vers `main`. Il :
 
-1. vérifie `reference:check` et build le site
+1. build le site (la sync `ecoindex_reference` est automatique)
 2. déploie `dist/` par **rsync/SSH** vers l’environment `preproduction`
 
 La production n’est **pas** mise à jour à ce stade.
@@ -196,14 +198,16 @@ mise install
 2. Install dependencies and start the dev server:
     ```bash
     bun install
-    bun run dev        # http://localhost:4321
+    mise run dev       # http://localhost:4321
     ```
 3. Useful commands:
     ```bash
-    bun run build      # outputs dist/
-    bun run preview    # preview the production build
-    bun run test       # unit tests (Vitest)
-    bun run check      # format + lint + typecheck + tests
+    mise run build     # outputs dist/
+    mise run preview   # preview the production build
+    mise run test      # unit tests (Vitest)
+    mise run format    # check formatting
+    mise run lint      # check linting
+    mise run typecheck # check types
     ```
 
 ### Syncing `ecoindex_reference`
@@ -211,11 +215,12 @@ mise install
 Grade colors and score targets are generated from the official reference:
 
 ```bash
-bun run reference:sync    # regenerate CSS + targets
-bun run reference:check   # verify (used in CI)
+mise run reference:sync    # regenerate CSS + targets
 ```
 
-Source: remote JSON on `ecoindex_reference` `main`, or a local file via `ECOINDEX_REFERENCE_PATH`.
+Sync is **automatic**: mise watches for changes in `bun.lock` and triggers `reference:sync` as needed.
+
+Source: `ecoindex_reference` dependency, or a local file via `ECOINDEX_REFERENCE_PATH`.
 
 ### CI / CD
 
@@ -223,7 +228,7 @@ Four GitHub Actions workflows:
 
 | Workflow             | File                                  | Trigger                      |
 | -------------------- | ------------------------------------- | ---------------------------- |
-| Validation du build  | `.github/workflows/quality.yml`       | PR opened / updated          |
+| Code quality checks  | `.github/workflows/quality.yml`       | PR opened / updated          |
 | Deploy preproduction | `.github/workflows/deploy.yml`        | push to `main`               |
 | Deploy manual        | `.github/workflows/deploy-manual.yml` | manual (`workflow_dispatch`) |
 | Release              | `.github/workflows/release.yml`       | manual (`workflow_dispatch`) |
@@ -260,11 +265,10 @@ The front is served by Caddy (`file_server` on `/srv/preprod` and `/srv/prod`). 
 
 #### When a PR is opened
 
-The **Validation du build** workflow runs automatically. It:
+The **Code quality checks** workflow runs automatically. It:
 
 1. installs runtimes (mise) and dependencies (`bun install --frozen-lockfile`)
-2. checks `ecoindex_reference` sync (`reference:check`)
-3. runs `format:check`, `lint`, `typecheck`, `test`, then `build`
+2. runs `format`, `lint`, `typecheck`, `test`, then `build`
 
 Nothing is deployed. Merge once those checks are green.
 
@@ -272,7 +276,7 @@ Nothing is deployed. Merge once those checks are green.
 
 The **Deploy preproduction** workflow runs on push to `main`. It:
 
-1. runs `reference:check` and builds the site
+1. builds the site (the `ecoindex_reference` sync is automatic)
 2. deploys `dist/` via **rsync/SSH** to the `preproduction` environment
 
 Production is **not** updated at this stage.
